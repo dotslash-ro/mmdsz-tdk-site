@@ -1,15 +1,11 @@
-import mmdszLogo from "../assets/mmdsz-logo.png"
+import mmdszLogo from "../assets/mmdsz-logo.png";
 
 const Footer = () => {
   return (
     <footer className="bg-tdk-secondary py-8">
       <div className="flex flex-col justify-evenly gap-8 py-8 px-6 md:flex-row">
         <div className="flex flex-col items-center">
-          <img
-            src={mmdszLogo}
-            alt="mmdsz-logo"
-            className="h-64 w-64"
-          />
+          <img src={mmdszLogo} alt="mmdsz-logo" className="h-64 w-64" />
         </div>
         <div>
           <h2 className="mb-6 text-sm font-semibold uppercase text-white">

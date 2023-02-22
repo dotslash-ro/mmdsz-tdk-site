@@ -1,4 +1,5 @@
 import { withLayout } from "../layout/withLayout";
+import rules from "../assets/pontozas.webp";
 
 const Rules = () => {
   return (
@@ -217,8 +218,7 @@ const Rules = () => {
           főszervezők kérik fel. Az elbíráló bizottság a pontozási rendszernek
           megfelelően értékeli a dolgozatokat.
         </p>{" "}
-        <h3>Szempont és adható pontszám</h3>{" "}
-        <img src="/dist/assets/pontozas.webp" alt="pontozas" />
+        <h3>Szempont és adható pontszám</h3> <img src={rules} alt="pontozas" />
         <ol className="ml-6 list-decimal text-gray-800">
           {" "}
           <li>

@@ -1,16 +1,12 @@
 import { NavLink } from "react-router-dom";
-import tdkLogo from "../assets/tdk-logo.jpg"
+import tdkLogo from "../assets/tdk-logo.jpg";
 
 const Navbar = () => {
   return (
     <header className="flex h-fit items-center justify-evenly bg-tdk-primary py-3 drop-shadow-lg md:py-0">
       <div>
         <NavLink to="/" className="">
-          <img
-            src={tdkLogo}
-            alt="logo"
-            className="h-24 w-24"
-          />
+          <img src={tdkLogo} alt="logo" className="h-24 w-24" />
         </NavLink>
       </div>
       <div className="flex flex-col md:flex-row">
