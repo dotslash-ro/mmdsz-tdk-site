@@ -6,7 +6,7 @@ const Navbar = () => {
       <div>
         <NavLink to="/" className="">
           <img
-            src="./src/assets/tdk-logo.jpg"
+            src="./dist/assets/tdk-logo.jpg"
             alt="logo"
             className="h-24 w-24"
           />

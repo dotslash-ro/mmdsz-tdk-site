@@ -218,7 +218,7 @@ const Rules = () => {
           megfelelően értékeli a dolgozatokat.
         </p>{" "}
         <h3>Szempont és adható pontszám</h3>{" "}
-        <img src="/src/assets/pontozas.webp" alt="pontozas" />
+        <img src="/dist/assets/pontozas.webp" alt="pontozas" />
         <ol className="ml-6 list-decimal text-gray-800">
           {" "}
           <li>

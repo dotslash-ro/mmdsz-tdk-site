@@ -4,7 +4,7 @@ const Footer = () => {
       <div className="flex flex-col justify-evenly gap-8 py-8 px-6 md:flex-row">
         <div className="flex flex-col items-center">
           <img
-            src="src/assets/mmdsz-logo.png"
+            src="dist/assets/mmdsz-logo.png"
             alt="mmdsz-logo"
             className="h-64 w-64"
           />
