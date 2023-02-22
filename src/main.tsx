@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import Landing from "./pages/landing";
 import About from "./pages/about";
@@ -10,7 +10,7 @@ import Rules from "./pages/rules";
 import PastJournals from "./pages/journals";
 import Journal from "./components/journal";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <Landing />,

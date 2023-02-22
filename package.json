@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://dotslash-ro.github.io/mmdsz-tdk-site",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
