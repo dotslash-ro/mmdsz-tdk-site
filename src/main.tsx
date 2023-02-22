@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createHashRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import Landing from "./pages/landing";
 import About from "./pages/about";
@@ -10,7 +10,7 @@ import Rules from "./pages/rules";
 import PastJournals from "./pages/journals";
 import Journal from "./components/journal";
 
-const router = createHashRouter([
+const router = createBrowserRouter([
   {
     path: "/",
     element: <Landing />,
@@ -46,7 +46,7 @@ const router = createHashRouter([
       { path: ":year", element: <Journal /> },
     ],
   },
-]);
+], {basename:"/mmdsz-tdk-site"});
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
