@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import tdkLogo from "../assets/tdk-logo.jpg"
 
 const Navbar = () => {
   return (
@@ -6,7 +7,7 @@ const Navbar = () => {
       <div>
         <NavLink to="/" className="">
           <img
-            src="./dist/assets/tdk-logo.jpg"
+            src={tdkLogo}
             alt="logo"
             className="h-24 w-24"
           />
