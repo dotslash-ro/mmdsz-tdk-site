@@ -44,6 +44,7 @@ const InitialSignupForm = () => {
     } else {
       setSignupStatus("not-signedup");
     }
+    setAcceptedTerms(false);
   }, []);
 
   async function onSignup() {
