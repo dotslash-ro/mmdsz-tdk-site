@@ -18,7 +18,7 @@ const Landing = () => {
             </h2>
           </div>
           <div className="py-8 text-center font-medium uppercase text-white md:text-lg lg:text-2xl">
-            <span className="font-bold">Marosvásárhely 2023.</span> Május 10-13
+            <span className="font-bold">Marosvásárhely 2023.</span> Május 10-13.
           </div>
         </div>
       </div>

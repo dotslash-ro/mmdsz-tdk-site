@@ -126,6 +126,7 @@ const InitialSignupForm = () => {
           onClick={() => {
             localStorage.removeItem("signupStatus");
             setSignupStatus("not-signedup");
+            setAcceptedTerms(false);
           }}
         >
           Új dolgozat feltöltése →
