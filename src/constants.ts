@@ -25,7 +25,7 @@ export const sectionList = [
   "Fogorvostudomány",
   "Fül-Orr-Gégészet",
   "Gasztroenterológia",
-  "Gyermekgyógyásza",
+  "Gyermekgyógyászat",
   "Gyógyszerészet",
   "Infektológia",
   "Kardiológia",
@@ -51,4 +51,5 @@ export const sectionList = [
   "Onkológia",
   "Egészségügyszervezés",
   "Poszter Szekció",
+  "Egyéb"
 ];

@@ -13,7 +13,7 @@ const Timeline = () => {
             Jelentkezés és dolgozatok feltöltése
           </h3>
           <time className="mb-10 text-lg font-normal leading-none text-gray-500">
-            2023. március 3-10
+            2023. március 3-10.
           </time>
           <div className="m-6">
             <InitialSignupForm />

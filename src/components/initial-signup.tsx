@@ -456,7 +456,8 @@ const InitialSignupForm = () => {
       university.length &&
       section.length &&
       hungarianTitle !== "" &&
-      email != "" ? (
+      email != "" &&
+      agreementDoc ? (
         <button
           className="rounded-full bg-tdk-accent px-10 py-4 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-xl"
           onClick={onSignup}
