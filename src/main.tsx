@@ -48,7 +48,6 @@ const router = createHashRouter(
       ],
     },
   ],
-  { basename: "/mmdsz-tdk-site" }
 );
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
