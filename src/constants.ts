@@ -1,4 +1,4 @@
-export const serverUrl = "https://mmdsz-tdk-edge-functions-dotslash-ro.vercel.app/api";
+export const serverUrl = "https://mmdsz-tdk-functions.vercel.app/api";
 
 export const universityList = [
   "",
