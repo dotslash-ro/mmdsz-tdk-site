@@ -9,7 +9,7 @@ const Landing = () => {
       <div className="flex justify-center bg-banner bg-cover bg-local bg-center">
         <div className="flex flex-grow flex-col items-center bg-gradient-to-t from-transparent to-tdk-primary pt-20 bg-blend-lighten">
           <div className="">
-            <h2 className="text-3xl font-black uppercase text-white md:text-5xl lg:text-8xl">
+            <h2 className="font-hero text-6xl uppercase  tracking-tighter text-white md:text-5xl lg:text-8xl">
               <div>
                 {" "}
                 <span className="text-tdk-accent">30.</span> Tudományos

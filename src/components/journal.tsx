@@ -58,6 +58,11 @@ const Journal = () => {
         file={journal}
         className="h-full w-full"
         onLoadSuccess={({ numPages }) => setNumPages(numPages)}
+        loading={
+          <div className="flex h-full w-full flex-grow items-center justify-center">
+            <ClipLoader />
+          </div>
+        }
       >
         <Page
           pageNumber={pageNumber}

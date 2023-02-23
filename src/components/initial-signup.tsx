@@ -3,6 +3,9 @@ import FileUpload from "../components/file-upload";
 import { serverUrl, universityList, sectionList } from "../constants";
 import { useEffect, useState } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
+// @ts-ignore
+import agreementDocUrl from "../assets/tdk-nyilatkozat.docx";
+
 const signupStatuses = [
   "not-signedup",
   "in-progress",
@@ -51,7 +54,6 @@ const InitialSignupForm = () => {
     // by setting status to in-progress, the spinner will display
     setSignupStatus("in-progress");
 
-    const saveApplicantURL = `${serverUrl}/applicant`;
     // send applicant data to backend
     const body = JSON.stringify({
       applicantName,
@@ -69,7 +71,7 @@ const InitialSignupForm = () => {
       conclusions,
     });
     try {
-      const response = await fetch(saveApplicantURL, {
+      const response = await fetch(`${serverUrl}/signup`, {
         method: "POST",
         body: body,
         headers: {
@@ -80,23 +82,19 @@ const InitialSignupForm = () => {
         setSignupStatus("error");
       }
     } catch (e) {
+      console.log(e);
       setSignupStatus("error");
       return;
     }
     // prepare form data for file upload
     const data = new FormData();
-    data.append(
-      "agreement",
-      agreementDoc,
-      `${applicantName}-Szemelyes-Hozzajarulas.docx`
-    );
-    const documentUploadURL = new URL(`${serverUrl}/file-upload`);
-    documentUploadURL.searchParams.append("applicantName", applicantName);
-    documentUploadURL.searchParams.append("section", section);
-    documentUploadURL.searchParams.append("university", university);
+    data.append("files", agreementDoc);
+    data.append("section", section);
+    data.append("university", university);
+    data.append("applicantName", applicantName);
     // upload document to backend
     try {
-      const response = await fetch(documentUploadURL, {
+      const response = await fetch(`${serverUrl}/upload`, {
         method: "POST",
         body: data,
       });
@@ -107,6 +105,7 @@ const InitialSignupForm = () => {
         localStorage.setItem("signupStatus", "signed-up");
       }
     } catch (e) {
+      console.log(e);
       setSignupStatus("error");
     }
   }
@@ -134,13 +133,21 @@ const InitialSignupForm = () => {
     );
   } else if (signupStatus === "error") {
     return (
-      <div className="flex h-48 flex-col items-center justify-center gap-3">
-        <div className="text-xl font-semibold text-red-400">
+      <div className="flex h-48 flex-col items-center justify-center">
+        <div className="py-6 text-center text-xl font-semibold text-red-400">
           Sajnos a jelentkezés feldolgozása alatt egy hiba lépett fel!
         </div>
-        <div className="text-lg text-gray-600">
-          Vedd fel a szervezőkkel a kapcsolatot:{" "}
-          <span className="text-sky-400 underline">
+        <button
+          className="rounded-full bg-tdk-accent py-3 px-5 text-lg font-bold text-white hover:underline"
+          onClick={() => {
+            setSignupStatus("not-signedup");
+          }}
+        >
+          Újrapbróbálkozás →
+        </button>
+        <div className="pt-6 text-center font-light text-gray-600">
+          Ha a hiba továbbra is fent áll, vedd fel a szervezőkkel a kapcsolatot:{" "}
+          <span className="text-sky-400 hover:underline">
             <a href="mailto:tdk@mmdsz.ro">tdk@mmdsz.ro </a>
           </span>
         </div>
@@ -318,7 +325,7 @@ const InitialSignupForm = () => {
       <h3 className="mt-10 mb-4 block text-lg font-medium text-gray-900">
         Dolgozat tartalmának feltöltése
       </h3>
-      <p className="py-2">
+      <div className="py-2">
         Formai követelmények:
         <ul className="list-disc py-2 text-sm text-gray-400">
           <li>
@@ -326,7 +333,7 @@ const InitialSignupForm = () => {
             nélkül).
           </li>
         </ul>
-      </p>
+      </div>
       <div className="mb-6">
         <label
           htmlFor="introduction"
@@ -403,10 +410,7 @@ const InitialSignupForm = () => {
         <p className="py-2 text-gray-600">
           A saját hozzájárulási nyilatkozat nevű dokumentum igazolja a szerző
           hozzájárulását a dolgozathoz.{" "}
-          <a
-            className="text-sky-600 underline"
-            href={`${serverUrl}/files/agreement`}
-          >
+          <a className="text-sky-600 underline" href={agreementDocUrl}>
             A minta dokumentum ide kattintással tölthető le.
           </a>
         </p>

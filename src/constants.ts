@@ -1,4 +1,4 @@
-export const serverUrl = "http://localhost:8090/api";
+export const serverUrl = "https://mmdsz-tdk-edge-functions.vercel.app/api";
 
 export const universityList = [
   "",
@@ -26,9 +26,9 @@ export const sectionList = [
   "Fül-Orr-Gégészet",
   "Gasztroenterológia",
   "Gyermekgyógyásza",
-  "Gyógyszerésze",
+  "Gyógyszerészet",
   "Infektológia",
-  "Kardiológi",
+  "Kardiológia",
   "Megelőző Orvostudomány És Népegészségtan",
   "Mikrobiológia",
   "Neurológia",

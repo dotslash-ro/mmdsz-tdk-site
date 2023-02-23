@@ -9,7 +9,10 @@ module.exports = {
         "tdk-accent": "#f16d2d",
       },
       backgroundImage: {
-        banner: "url(/src/assets/tdk-banner.png)",
+        banner: "url(/src/assets/tdk-banner2.jpg)",
+      },
+      fontFamily: {
+        hero: ["Akzidenz Grotesk"],
       },
     },
   },
