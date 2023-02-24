@@ -556,7 +556,7 @@ const InitialSignupForm = () => {
           </NavLink>
         </label>
       </div>
-      {agreementDoc ? (
+      {isValid && agreementDoc ? (
         <button
           className="rounded-full bg-tdk-accent px-10 py-4 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-xl"
           type="submit"
