@@ -53,9 +53,11 @@ const FileUpload = ({ file, setFile, fileFormats, id }: FileUploadProps) => {
             id={id}
             type="file"
             name="document"
+            accept="application/msword, application/pdf"
             className="hidden"
             onChange={(e) => {
               if (e.target.files) {
+                console.log(e.target.files[0].name);
                 setFile(e.target.files[0]);
               }
             }}

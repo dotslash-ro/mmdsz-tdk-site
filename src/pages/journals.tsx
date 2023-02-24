@@ -16,19 +16,18 @@ const PastJournals = () => {
         <select
           id="universities"
           className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-tdk-primary"
+          onChange={(e) => {
+            navigate(`${(e.target as HTMLSelectElement).value}`);
+          }}
         >
           {[...Array(11).keys()]
             .map((year) => year + 2012)
             .map((year, index) => {
-              return (
-                <option key={index} onClick={() => navigate(`${year}`)}>
-                  {year}
-                </option>
-              );
+              return <option key={index}>{year}</option>;
             })}
         </select>
       </div>
-      <div className="relative mx-10 flex flex-grow justify-center md:w-4/5">
+      <div className="mx-10 flex w-screen flex-grow justify-center md:w-4/5">
         <Outlet />
       </div>
     </div>

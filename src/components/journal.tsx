@@ -53,29 +53,31 @@ const Journal = () => {
   }
 
   return (
-    <div className="h-fit w-fit">
-      <Document
-        file={journal}
-        className="h-full w-full"
-        onLoadSuccess={({ numPages }) => setNumPages(numPages)}
-        loading={
-          <div className="flex h-full w-full flex-grow items-center justify-center">
-            <ClipLoader />
-          </div>
-        }
-      >
-        <Page
-          pageNumber={pageNumber}
-          className="h-full w-full border drop-shadow-md"
+    <div className="flex flex-col">
+      <div className="h-fit w-fit">
+        <Document
+          file={journal}
+          className="h-full w-full"
+          onLoadSuccess={({ numPages }) => setNumPages(numPages)}
           loading={
             <div className="flex h-full w-full flex-grow items-center justify-center">
               <ClipLoader />
             </div>
           }
-          scale={0.85}
-        />
-      </Document>
-      <div className="mx-4 my-4 flex w-full items-center justify-around rounded-full bg-gray-100 py-2 drop-shadow-md">
+        >
+          <Page
+            pageNumber={pageNumber}
+            className="h-full w-full border drop-shadow-md"
+            loading={
+              <div className="flex h-full w-full flex-grow items-center justify-center">
+                <ClipLoader />
+              </div>
+            }
+            scale={0.85}
+          />
+        </Document>
+      </div>
+      <div className="mx-4 my-4 flex items-center justify-around rounded-full bg-gray-100 py-2 drop-shadow-md">
         <button
           className="rounded-full bg-tdk-accent text-white drop-shadow-md"
           onClick={() =>
