@@ -12,6 +12,10 @@ import { zodResolver } from "@hookform/resolvers/zod";
 const formValidationSchema = z.object({
   applicantName: z.string().min(1, { message: "Add meg a neved!" }),
   university: z.string().min(1, { message: "Válaszd ki az egyetemed!" }),
+  otherUniversity: z
+    .string()
+    .min(1, { message: "Add meg az egyetemed nevét!" })
+    .optional(),
   section: z.enum(sectionList, {
     errorMap: () => ({
       message: "Válassz egy témakört!",
@@ -61,6 +65,7 @@ const InitialSignupForm = () => {
   const {
     register,
     handleSubmit,
+    watch,
     reset,
     formState: { errors, isValid, isSubmitting },
   } = useForm<FormValidationSchema>({
@@ -82,6 +87,7 @@ const InitialSignupForm = () => {
 
   const onSignup: SubmitHandler<FormValidationSchema> = async ({
     university,
+    otherUniversity,
     section,
     email,
     applicantName,
@@ -102,7 +108,7 @@ const InitialSignupForm = () => {
     // send applicant data to backend
     const body = JSON.stringify({
       applicantName,
-      university,
+      university: university == "Egyéb" ? otherUniversity : university,
       studyYear: Number.parseInt(studyYear),
       email,
       hungarianTitle,
@@ -336,6 +342,29 @@ const InitialSignupForm = () => {
           </p>
         )}
       </div>
+      {watch("university") === "Egyéb" && (
+        <div className="mb-6">
+          <label
+            htmlFor="other-university"
+            className="mb-2 block text-lg font-medium text-gray-900"
+          >
+            Egyetem neve
+          </label>
+          <input
+            type="text"
+            id="other-university"
+            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            {...register("otherUniversity")}
+            aria-invalid={errors.otherUniversity ? "true" : "false"}
+          />
+          {errors.otherUniversity && (
+            <p className="mt-2 text-xs italic text-red-500">
+              {" "}
+              {errors.otherUniversity?.message}
+            </p>
+          )}
+        </div>
+      )}
       <div className="mb-6">
         <label
           htmlFor="sections"

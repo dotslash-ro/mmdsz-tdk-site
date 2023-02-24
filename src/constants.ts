@@ -8,6 +8,7 @@ export const universityList = [
   "Pécsi Tudomány Egyetem",
   "Szegedi Tudomány Egyetem",
   "Sapientia Erdélyi Magyar Tudományegyetem",
+  "Egyéb",
 ];
 
 export const sectionList = [
@@ -51,5 +52,4 @@ export const sectionList = [
   "Onkológia",
   "Egészségügyszervezés",
   "Poszter Szekció",
-  "Egyéb",
 ] as const;
