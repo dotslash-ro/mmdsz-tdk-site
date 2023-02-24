@@ -5,33 +5,67 @@ import { useEffect, useState } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
 // @ts-ignore
 import agreementDocUrl from "../assets/tdk-nyilatkozat.docx";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 
-const signupStatuses = [
-  "not-signedup",
-  "in-progress",
-  "signed-up",
-  "error",
-] as const;
+const formValidationSchema = z.object({
+  applicantName: z.string().min(1, { message: "Add meg a neved!" }),
+  university: z.string().min(1, { message: "Válaszd ki az egyetemed!" }),
+  section: z.enum(sectionList, {
+    errorMap: () => ({
+      message: "Válassz egy témakört!",
+    }),
+  }),
+  email: z.string().email({ message: "Add meg az e-mail címed!" }),
+  acceptedTerms: z.literal(true, {
+    errorMap: () => ({ message: "El kell fogadnod a szabályzatot!" }),
+  }),
+  hungarianTitle: z
+    .string()
+    .min(1, { message: "Add meg a dolgozatod magyar címét!" }),
+  romanianTitle: z
+    .string()
+    .min(1, { message: "Add meg a dolgozatod román címét!" }),
+  englishTitle: z
+    .string()
+    .min(1, { message: "Add meg a dolgozatod angol címét!" }),
+  introduction: z
+    .string()
+    .min(1, { message: 'Vezesd be a dolgozatod "Bevezetés" bekezdését!' }),
+  mission: z
+    .string()
+    .min(1, { message: 'Vezesd be a dolgozatod "Célkitűzések" bekezdését!' }),
+  methods: z
+    .string()
+    .min(1, { message: 'Vezesd be a dolgozatod "Módszerek" bekezdését!' }),
+  results: z
+    .string()
+    .min(1, { message: 'Vezesd be a dolgozatod "Eredmények" bekezdését!' }),
+  conclusions: z.string().min(1, {
+    message: 'Vezesd be a dolgozatod "Következtetések" bekezdését!',
+  }),
+  studyYear: z.string().regex(/[123456]/),
+});
+
+type FormValidationSchema = z.infer<typeof formValidationSchema>;
+
+const signupStatuses = ["not-signedup", "signed-up", "error"] as const;
 type SignupStatus = (typeof signupStatuses)[number];
 
 const InitialSignupForm = () => {
-  const [applicantName, setApplicantName] = useState("");
-  const [university, setUniversity] = useState("");
-  const [hungarianTitle, setHungarianTitle] = useState("");
-  const [romanianTitle, setRomanianTitle] = useState("");
-  const [englishTitle, setEnglishTitle] = useState("");
-  const [studyYear, setStudyYear] = useState(0);
-  const [email, setEmail] = useState("");
-  const [introduction, setIntroduction] = useState("");
-  const [mission, setMission] = useState("");
-  const [methods, setMethods] = useState("");
-  const [results, setResults] = useState("");
-  const [conclusions, setConclusions] = useState("");
-  const [section, setSection] = useState("");
-  const [acceptedTerms, setAcceptedTerms] = useState(false);
   const [agreementDoc, setAgreementDoc] = useState<File>();
   const [signupStatus, setSignupStatus] =
     useState<SignupStatus>("not-signedup");
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isValid, isSubmitting },
+  } = useForm<FormValidationSchema>({
+    resolver: zodResolver(formValidationSchema),
+  });
 
   useEffect(() => {
     const _signupStatus = localStorage.getItem("signupStatus");
@@ -44,22 +78,32 @@ const InitialSignupForm = () => {
     } else {
       setSignupStatus("not-signedup");
     }
-    setAcceptedTerms(false);
   }, []);
 
-  async function onSignup() {
+  const onSignup: SubmitHandler<FormValidationSchema> = async ({
+    university,
+    section,
+    email,
+    applicantName,
+    englishTitle,
+    hungarianTitle,
+    romanianTitle,
+    studyYear,
+    introduction,
+    mission,
+    methods,
+    results,
+    conclusions,
+  }) => {
     if (!agreementDoc) {
       return;
     }
-
-    // by setting status to in-progress, the spinner will display
-    setSignupStatus("in-progress");
 
     // send applicant data to backend
     const body = JSON.stringify({
       applicantName,
       university,
-      studyYear,
+      studyYear: Number.parseInt(studyYear),
       email,
       hungarianTitle,
       romanianTitle,
@@ -81,6 +125,7 @@ const InitialSignupForm = () => {
       });
       if (response.status != 200) {
         setSignupStatus("error");
+        return;
       }
     } catch (e) {
       console.log(e);
@@ -93,6 +138,7 @@ const InitialSignupForm = () => {
     data.append("section", section);
     data.append("university", university);
     data.append("applicantName", applicantName);
+
     // upload document to backend
     try {
       const response = await fetch(`${serverUrl}/upload`, {
@@ -109,15 +155,17 @@ const InitialSignupForm = () => {
       console.log(e);
       setSignupStatus("error");
     }
-  }
+  };
 
-  if (signupStatus === "in-progress") {
+  if (isSubmitting) {
     return (
       <div className="flex h-48 items-center justify-center">
         <ClipLoader loading={true} />
       </div>
     );
-  } else if (signupStatus === "signed-up") {
+  }
+
+  if (signupStatus === "signed-up") {
     return (
       <div className="flex h-48 flex-col items-center justify-center text-lg text-gray-600">
         Jelentkezésed sikeresen regisztráltuk!
@@ -126,14 +174,15 @@ const InitialSignupForm = () => {
           onClick={() => {
             localStorage.removeItem("signupStatus");
             setSignupStatus("not-signedup");
-            setAcceptedTerms(false);
+            reset();
           }}
         >
           Új dolgozat feltöltése →
         </div>
       </div>
     );
-  } else if (signupStatus === "error") {
+  }
+  if (signupStatus === "error") {
     return (
       <div className="flex h-48 flex-col items-center justify-center">
         <div className="py-6 text-center text-xl font-semibold text-red-400">
@@ -158,7 +207,7 @@ const InitialSignupForm = () => {
   }
 
   return (
-    <div className="py-10">
+    <form className="py-10" onSubmit={handleSubmit(onSignup)}>
       <div className="mb-6">
         <label
           htmlFor="name"
@@ -170,11 +219,14 @@ const InitialSignupForm = () => {
           type="text"
           id="name"
           className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-          required
-          onInput={(e) =>
-            setApplicantName((e.target as HTMLInputElement).value)
-          }
+          {...register("applicantName")}
         />
+        {errors.applicantName && (
+          <p className="mt-2 text-xs italic text-red-500">
+            {" "}
+            {errors.applicantName?.message}
+          </p>
+        )}
       </div>
       <div className="mb-6">
         <label
@@ -187,11 +239,14 @@ const InitialSignupForm = () => {
           type="text"
           id="title"
           className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-          required
-          onInput={(e) =>
-            setHungarianTitle((e.target as HTMLInputElement).value)
-          }
+          {...register("hungarianTitle")}
         />
+        {errors.hungarianTitle && (
+          <p className="mt-2 text-xs italic text-red-500">
+            {" "}
+            {errors.hungarianTitle?.message}
+          </p>
+        )}
       </div>
       <div className="mb-6">
         <label
@@ -204,11 +259,14 @@ const InitialSignupForm = () => {
           type="text"
           id="title"
           className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-          required
-          onInput={(e) =>
-            setRomanianTitle((e.target as HTMLInputElement).value)
-          }
+          {...register("romanianTitle")}
         />
+        {errors.romanianTitle && (
+          <p className="mt-2 text-xs italic text-red-500">
+            {" "}
+            {errors.romanianTitle?.message}
+          </p>
+        )}
       </div>
       <div className="mb-6">
         <label
@@ -221,9 +279,14 @@ const InitialSignupForm = () => {
           type="text"
           id="title"
           className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-          required
-          onInput={(e) => setEnglishTitle((e.target as HTMLInputElement).value)}
+          {...register("englishTitle")}
         />
+        {errors.englishTitle && (
+          <p className="mt-2 text-xs italic text-red-500">
+            {" "}
+            {errors.englishTitle?.message}
+          </p>
+        )}
       </div>
       <div className="mb-6">
         <label
@@ -236,9 +299,15 @@ const InitialSignupForm = () => {
           type="email"
           id="email"
           className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-          required
-          onInput={(e) => setEmail((e.target as HTMLInputElement).value)}
+          {...register("email")}
+          aria-invalid={errors.email ? "true" : "false"}
         />
+        {errors.email && (
+          <p className="mt-2 text-xs italic text-red-500">
+            {" "}
+            {errors.email?.message}
+          </p>
+        )}
       </div>
       <div className="mb-6">
         <label
@@ -250,19 +319,22 @@ const InitialSignupForm = () => {
         <select
           id="universities"
           className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-tdk-primary"
+          {...register("university")}
         >
           {universityList.map((university, index) => {
             return (
-              <option
-                className="text-md"
-                key={index}
-                onClick={(e) => setUniversity(university)}
-              >
+              <option className="text-md" key={index}>
                 {university}
               </option>
             );
           })}
         </select>
+        {errors.university && (
+          <p className="mt-2 text-xs italic text-red-500">
+            {" "}
+            {errors.university?.message}
+          </p>
+        )}
       </div>
       <div className="mb-6">
         <label
@@ -274,55 +346,56 @@ const InitialSignupForm = () => {
         <select
           id="sections"
           className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-tdk-primary"
+          {...register("section")}
         >
           {sectionList.map((section, index) => {
             return (
-              <option
-                className="text-md"
-                key={index}
-                onClick={() => setSection(section)}
-              >
+              <option className="text-md" key={index}>
                 {section}
               </option>
             );
           })}
         </select>
+        {errors.section && (
+          <p className="mt-2 text-xs italic text-red-500">
+            {" "}
+            {errors.section?.message}
+          </p>
+        )}
       </div>
       <div className="mb-6">
         <h3 className="mb-4 text-lg font-medium text-gray-900">Évfolyam</h3>
-        <ul className="ml-4 w-full items-center rounded-lg border border-gray-200 bg-gray-50 text-sm font-medium text-gray-900 sm:flex">
+        <fieldset className="flex flex-wrap justify-evenly gap-3">
           {[...Array(6).keys()]
             .map((i) => i + 1)
-            .map((i) => {
-              return (
-                <li
-                  className="w-full border-b border-gray-200 hover:bg-gray-200 sm:border-b-0 sm:border-r"
-                  key={i}
+            .map((i) => (
+              <div key={i}>
+                <input
+                  type="radio"
+                  value={i}
+                  id={`studyYear-${i}`}
+                  className="peer hidden"
+                  {...register("studyYear")}
+                  name="studyYear"
+                  checked
+                />
+
+                <label
+                  htmlFor={`studyYear-${i}`}
+                  className="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 py-2 px-3 text-gray-900 hover:border-gray-300 peer-checked:bg-tdk-accent peer-checked:text-white md:px-5"
                 >
-                  <div
-                    className="flex items-center pl-3"
-                    onClick={() => {
-                      setStudyYear(i);
-                    }}
-                  >
-                    <input
-                      id={`horizontal-list-radio-${i}`}
-                      type="radio"
-                      value={i}
-                      name="list-radio"
-                      className="h-4 w-4 border-gray-300 bg-gray-50 "
-                    />
-                    <label
-                      htmlFor={`horizontal-list-radio-${i}`}
-                      className="ml-2 w-full py-3 text-sm font-medium text-gray-900"
-                    >
-                      {i}
-                    </label>
-                  </div>
-                </li>
-              );
-            })}
-        </ul>
+                  <p className="text-sm font-medium">{i}.</p>
+                </label>
+              </div>
+            ))}
+        </fieldset>
+
+        {errors.studyYear && (
+          <p className="mt-2 text-xs italic text-red-500">
+            {" "}
+            {errors.studyYear?.message}
+          </p>
+        )}
       </div>
       <h3 className="mt-10 mb-4 block text-lg font-medium text-gray-900">
         Dolgozat tartalmának feltöltése
@@ -346,10 +419,14 @@ const InitialSignupForm = () => {
         <textarea
           id="large-input"
           className="sm:text-md block w-full whitespace-pre-line rounded-lg border border-gray-300 bg-gray-50 p-6 text-gray-900 focus:border-blue-500 focus:ring-blue-500"
-          onChange={(e) =>
-            setIntroduction((e.target as HTMLTextAreaElement).value)
-          }
+          {...register("introduction")}
         />
+        {errors.introduction && (
+          <p className="mt-2 text-xs italic text-red-500">
+            {" "}
+            {errors.introduction?.message}
+          </p>
+        )}
       </div>
       <div className="mb-6">
         <label
@@ -361,8 +438,14 @@ const InitialSignupForm = () => {
         <textarea
           id="mission"
           className="sm:text-md block w-full whitespace-pre-line rounded-lg border border-gray-300 bg-gray-50 p-6 text-gray-900 focus:border-blue-500 focus:ring-blue-500"
-          onChange={(e) => setMission((e.target as HTMLTextAreaElement).value)}
+          {...register("mission")}
         />
+        {errors.mission && (
+          <p className="mt-2 text-xs italic text-red-500">
+            {" "}
+            {errors.mission?.message}
+          </p>
+        )}
       </div>
       <div className="mb-6">
         <label
@@ -374,8 +457,14 @@ const InitialSignupForm = () => {
         <textarea
           id="methods"
           className="sm:text-md block w-full whitespace-pre-line rounded-lg border border-gray-300 bg-gray-50 p-6 text-gray-900 focus:border-blue-500 focus:ring-blue-500"
-          onChange={(e) => setMethods((e.target as HTMLTextAreaElement).value)}
+          {...register("methods")}
         />
+        {errors.methods && (
+          <p className="mt-2 text-xs italic text-red-500">
+            {" "}
+            {errors.methods?.message}
+          </p>
+        )}
       </div>
       <div className="mb-6">
         <label
@@ -387,8 +476,14 @@ const InitialSignupForm = () => {
         <textarea
           id="results"
           className="sm:text-md block w-full whitespace-pre-line rounded-lg border border-gray-300 bg-gray-50 p-6 text-gray-900 focus:border-blue-500 focus:ring-blue-500"
-          onChange={(e) => setResults((e.target as HTMLTextAreaElement).value)}
+          {...register("results")}
         />
+        {errors.results && (
+          <p className="mt-2 text-xs italic text-red-500">
+            {" "}
+            {errors.results?.message}
+          </p>
+        )}
       </div>
       <div className="mb-6">
         <label
@@ -400,10 +495,14 @@ const InitialSignupForm = () => {
         <textarea
           id="conclusions"
           className="sm:text-md block w-full whitespace-pre-line rounded-lg border border-gray-300 bg-gray-50 p-6 text-gray-900 focus:border-blue-500 focus:ring-blue-500"
-          onChange={(e) =>
-            setConclusions((e.target as HTMLTextAreaElement).value)
-          }
+          {...register("conclusions")}
         />
+        {errors.conclusions && (
+          <p className="mt-2 text-xs italic text-red-500">
+            {" "}
+            {errors.conclusions?.message}
+          </p>
+        )}
       </div>
       <h3 className="mt-10 mb-4 block text-lg font-medium text-gray-900">
         Saját hozzájárulási nyilatkozat feltöltése
@@ -437,9 +536,14 @@ const InitialSignupForm = () => {
             type="checkbox"
             value=""
             className="focus:ring-3 h-4 w-4 rounded border border-gray-300 bg-gray-50 focus:ring-blue-300 "
-            required
-            onClick={() => setAcceptedTerms(!acceptedTerms)}
+            {...register("acceptedTerms")}
           />
+          {errors.acceptedTerms && (
+            <p className="mt-2 text-xs italic text-red-500">
+              {" "}
+              {errors.acceptedTerms?.message}
+            </p>
+          )}
         </div>
         <label htmlFor="terms" className="ml-2 text-gray-600">
           A jelentkezéssel beleegyezel a szabályzatba.{" "}
@@ -452,16 +556,10 @@ const InitialSignupForm = () => {
           </NavLink>
         </label>
       </div>
-      {acceptedTerms &&
-      applicantName !== "" &&
-      university.length &&
-      section.length &&
-      hungarianTitle !== "" &&
-      email != "" &&
-      agreementDoc ? (
+      {isValid && agreementDoc ? (
         <button
           className="rounded-full bg-tdk-accent px-10 py-4 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-xl"
-          onClick={onSignup}
+          type="submit"
         >
           Jelentkezés
         </button>
@@ -474,7 +572,7 @@ const InitialSignupForm = () => {
           Jelentkezés
         </button>
       )}
-    </div>
+    </form>
   );
 };
 

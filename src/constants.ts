@@ -51,5 +51,5 @@ export const sectionList = [
   "Onkológia",
   "Egészségügyszervezés",
   "Poszter Szekció",
-  "Egyéb"
-];
+  "Egyéb",
+] as const;
