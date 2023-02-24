@@ -3,19 +3,19 @@ import tdkLogo from "../assets/tdk-logo.jpg";
 
 const Navbar = () => {
   return (
-    <header className="flex h-fit items-center justify-evenly bg-tdk-primary py-3 drop-shadow-lg md:py-0">
-      <div>
+    <header className="top-0 z-10 flex h-fit items-center justify-evenly bg-tdk-primary py-3 drop-shadow-lg lg:sticky lg:py-0">
+      <div className="hidden lg:block">
         <NavLink to="/" className="">
           <img src={tdkLogo} alt="logo" className="h-24 w-24" />
         </NavLink>
       </div>
-      <div className="flex flex-col md:flex-row">
+      <div className="flex flex-col lg:flex-row">
         <NavLink
           to="/szabalyzat"
           className={({ isActive }) =>
             isActive
-              ? "md:font-base flex items-center justify-center px-5 text-sm uppercase text-white underline md:py-0 md:font-bold"
-              : "md:font-base flex items-center justify-center px-5 text-sm uppercase text-white hover:underline md:py-0 md:font-bold"
+              ? "lg:font-base flex items-center justify-center px-5 py-3 text-sm font-bold uppercase text-white underline lg:py-0"
+              : "lg:font-base flex items-center justify-center px-5 py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
           }
         >
           Szabályzat
@@ -24,8 +24,8 @@ const Navbar = () => {
           to="/rolunk"
           className={({ isActive }) =>
             isActive
-              ? "md:font-base flex items-center justify-center px-5 text-sm uppercase text-white underline md:py-0 md:font-bold"
-              : "md:font-base flex items-center justify-center px-5 text-sm uppercase text-white hover:underline md:py-0 md:font-bold"
+              ? "lg:font-base flex items-center justify-center px-5 py-3 text-sm font-bold uppercase text-white underline lg:py-0"
+              : "lg:font-base flex items-center justify-center px-5 py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
           }
         >
           Rólunk
@@ -34,8 +34,8 @@ const Navbar = () => {
           to="/szervezok"
           className={({ isActive }) =>
             isActive
-              ? "md:font-base flex items-center justify-center px-5 text-sm uppercase text-white underline md:py-0 md:font-bold"
-              : "md:font-base flex items-center justify-center px-5 text-sm uppercase text-white hover:underline md:py-0 md:font-bold"
+              ? "lg:font-base flex items-center justify-center px-5 py-3 text-sm font-bold uppercase text-white underline lg:py-0"
+              : "lg:font-base flex items-center justify-center px-5 py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
           }
         >
           Szervezőknek
@@ -44,8 +44,8 @@ const Navbar = () => {
           to="/kapcsolat"
           className={({ isActive }) =>
             isActive
-              ? "md:font-base flex items-center justify-center px-5 text-sm uppercase text-white underline md:py-0 md:font-bold"
-              : "md:font-base flex items-center justify-center px-5 text-sm uppercase text-white hover:underline md:py-0 md:font-bold"
+              ? "lg:font-base flex items-center justify-center px-5 py-3 text-sm font-bold uppercase text-white underline lg:py-0"
+              : "lg:font-base flex items-center justify-center px-5 py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
           }
         >
           Kapcsolat
@@ -54,8 +54,8 @@ const Navbar = () => {
           to="/osszefoglalok"
           className={({ isActive }) =>
             isActive
-              ? "md:font-base flex items-center justify-center px-5 text-sm uppercase text-white underline md:py-0 md:font-bold"
-              : "md:font-base flex items-center justify-center px-5 text-sm uppercase text-white hover:underline md:py-0 md:font-bold"
+              ? "lg:font-base flex items-center justify-center px-5 py-3 text-sm font-bold uppercase text-white underline lg:py-0"
+              : "lg:font-base flex items-center justify-center px-5 py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
           }
         >
           Összefoglaló kötetek
@@ -65,7 +65,7 @@ const Navbar = () => {
           className={({ isActive }) =>
             isActive
               ? "hidden"
-              : "flex items-center justify-center px-5 py-2 text-sm uppercase text-white hover:underline md:rounded-full md:bg-tdk-accent md:text-base md:font-bold"
+              : "flex items-center justify-center px-5 py-2 py-3 text-sm font-bold uppercase text-tdk-accent hover:underline lg:rounded-full lg:bg-tdk-accent lg:text-base lg:font-bold lg:text-white"
           }
         >
           Jelentkezés

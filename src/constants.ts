@@ -2,7 +2,7 @@ export const serverUrl = "https://mmdsz-tdk-functions.vercel.app/api";
 
 export const universityList = [
   "",
-  'MOGYTTE',
+  "MOGYTTE",
   "SE",
   "DE",
   "PTE",

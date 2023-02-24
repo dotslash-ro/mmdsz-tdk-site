@@ -15,7 +15,14 @@ const Timeline = () => {
           <time className="mb-10 text-lg font-normal leading-none text-gray-500">
             2023. március 3-10.
           </time>
-          <div className="m-6">
+          <div
+            className={
+              new Date() < new Date(2023, 3, 3) ||
+              new Date() > new Date(2023, 3, 20)
+                ? "pointer-events-none opacity-50 grayscale"
+                : ""
+            }
+          >
             <InitialSignupForm />
           </div>
         </li>

@@ -44,7 +44,7 @@ const Landing = () => {
 
         <div className="flex flex-col gap-10 px-20 md:flex-row">
           <Link
-            to="szabalyzat"
+            to="rolunk"
             className="rounded-full bg-neutral-200 px-10 py-4 font-semibold uppercase text-black drop-shadow-md hover:underline xl:text-xl"
           >
             Tudj meg többet
@@ -57,7 +57,6 @@ const Landing = () => {
           </Link>
         </div>
       </div>
-      <Schedule />
       <Sponsors />
     </>
   );

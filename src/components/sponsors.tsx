@@ -20,23 +20,78 @@ import emeLogo from "../assets/eme.webp";
 import timkoLogo from "../assets/timko.webp";
 import endIboLogo from "../assets/end-ibo.png";
 import cliniLabLogo from "../assets/clini-lab.webp";
-import studiumLogo from "../assets/studium-prospero.png";
+import omdszLogo from "../assets/omdsz.png";
+import bgaLogo from "../assets/bgalap.png";
+import otdkLogo from "../assets/otdk.png";
+import pmtgmLogo from "../assets/pmtgm.jpg";
+import mtaLogo from "../assets/mta.jpeg";
+import szbaLogo from "../assets/sztba.jpeg";
+import cjmLogo from "../assets/cjm.jpg";
+import megvalosultLogo from "../assets/megvalosult.jpg";
 
 const Sponsors = () => {
   return (
     <div className="py-20">
-      <h2 className="pb-10 text-center text-5xl font-bold">Támogatóink</h2>
+      <h2 className="pb-20 text-center text-5xl font-bold">Partnereink</h2>
       <div className="flex flex-wrap justify-center gap-4 space-y-2 px-20">
+        <img
+          src={itmLogo}
+          className="h-32 w-32 object-scale-down transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
+        />
+        <img
+          src={bgaLogo}
+          className="h-32 w-64 object-scale-down transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
+        />
+        <img
+          src={mtaLogo}
+          className="h-32 w-64 object-scale-down transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
+        />
+        <img
+          src={megvalosultLogo}
+          className="h-32 w-64 object-scale-down transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
+        />
+        <img
+          src={eetLogo}
+          className="h-32 w-64 object-scale-down transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
+        />
         <img
           src={umfstLogo}
           className="h-32 w-64 object-scale-down transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
         />
         <img
-          src={itmLogo}
+          src={omdszLogo}
           className="h-32 w-64 object-scale-down transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
         />
         <img
-          src={eetLogo}
+          src={otdkLogo}
+          className="h-32 w-64 object-scale-down transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
+        />
+        <img
+          src={emeLogo}
+          className="h-32 w-64 object-scale-down transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
+        />
+        <img
+          src={pmtgmLogo}
+          className="h-32 w-64 object-scale-down transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
+        />
+        <img
+          src={cjmLogo}
+          className="h-32 w-64 object-scale-down transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
+        />
+        <img
+          src={ntpLogo}
+          className="h-32 w-64 object-scale-down transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
+        />
+        <img
+          src={spLogo}
+          className="h-32 w-64 object-scale-down transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
+        />
+        <img
+          src={szbaLogo}
+          className="h-32 w-64 object-scale-down transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
+        />
+        {/* <img
+          src={bgLogo}
           className="h-32 w-64 object-scale-down transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
         />
         <img
@@ -48,15 +103,7 @@ const Sponsors = () => {
           className="h-32 w-64 object-scale-down transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
         />
         <img
-          src={bgLogo}
-          className="h-32 w-64 object-scale-down transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
-        />
-        <img
           src={blazeLogo}
-          className="h-32 w-64 object-scale-down transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
-        />
-        <img
-          src={spLogo}
           className="h-32 w-64 object-scale-down transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
         />
         <img
@@ -68,16 +115,8 @@ const Sponsors = () => {
           className="h-32 w-64 object-scale-down transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
         />
         <img
-          src={ntpLogo}
-          className="h-32 w-64 object-scale-down transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
-        />
-        <img
           src={cliniLabLogo}
           className="h-32 w-64 object-scale-down transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
-        />
-        <img
-          src={studiumLogo}
-          className="h-32 w-64 object-scale-down invert transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
         />
         <img
           src={demmersLogo}
@@ -104,10 +143,6 @@ const Sponsors = () => {
           className="h-32 w-64 object-scale-down transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
         />
         <img
-          src={emeLogo}
-          className="h-32 w-64 object-scale-down transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
-        />
-        <img
           src={timkoLogo}
           className="h-32 w-64 object-scale-down transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
         />
@@ -118,8 +153,12 @@ const Sponsors = () => {
         <img
           src={gyermelyiLogo}
           className="h-32 w-64 object-scale-down transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
-        />{" "}
+        />{" "} */}
       </div>
+      <h2 className="pb-10 pt-20 text-center text-5xl font-bold">
+        Szponzoraink
+      </h2>
+      <div className="flex flex-wrap justify-center gap-4 space-y-2 px-20"></div>
     </div>
   );
 };

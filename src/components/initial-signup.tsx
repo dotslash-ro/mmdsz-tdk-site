@@ -322,7 +322,6 @@ const InitialSignupForm = () => {
                   name="studyYear"
                   checked
                 />
-
                 <label
                   htmlFor={`studyYear-${i}`}
                   className="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 py-2 px-3 text-gray-900 hover:border-gray-300 peer-checked:bg-tdk-accent peer-checked:text-white md:px-5"
@@ -332,7 +331,6 @@ const InitialSignupForm = () => {
               </div>
             ))}
         </fieldset>
-
         {errors.studyYear && (
           <p className="mt-2 text-xs italic text-red-500">
             {" "}
@@ -401,7 +399,6 @@ const InitialSignupForm = () => {
           </p>
         )}
       </div>
-
       <div className="mb-6">
         <label
           htmlFor="sections"
@@ -429,7 +426,6 @@ const InitialSignupForm = () => {
           </p>
         )}
       </div>
-
       <h3 className="mt-10 mb-4 block text-lg font-medium text-gray-900">
         Kivonat tartalmának feltöltése
       </h3>

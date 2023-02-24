@@ -3,9 +3,9 @@ import rules from "../assets/pontozas.webp";
 
 const Rules = () => {
   return (
-    <div className="flex flex-row justify-center py-20 px-5">
-      <div className="lg:w-1/2">
-        <h1 className="pt-6 pb-4 text-2xl font-bold"> Szabályzat </h1>
+    <div className="py-20 px-5">
+      <h1 className="pb-20 text-center text-5xl font-bold">Szabályzat</h1>
+      <div className="mx-auto lg:w-1/2">
         <h2 className="pt-6 pb-4 text-lg font-medium">
           1. Röviden a Tudományos Diákköri Konferenciáról
         </h2>{" "}
