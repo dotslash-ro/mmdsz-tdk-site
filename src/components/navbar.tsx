@@ -31,6 +31,16 @@ const Navbar = () => {
           Rólunk
         </NavLink>
         <NavLink
+          to="/szervezok"
+          className={({ isActive }) =>
+            isActive
+              ? "md:font-base flex items-center justify-center px-5 text-sm uppercase text-white underline md:py-0 md:font-bold"
+              : "md:font-base flex items-center justify-center px-5 text-sm uppercase text-white hover:underline md:py-0 md:font-bold"
+          }
+        >
+          Szervezőknek
+        </NavLink>
+        <NavLink
           to="/kapcsolat"
           className={({ isActive }) =>
             isActive

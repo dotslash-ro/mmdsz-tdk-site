@@ -27,27 +27,27 @@ const formValidationSchema = z.object({
   }),
   hungarianTitle: z
     .string()
-    .min(1, { message: "Add meg a dolgozatod magyar címét!" }),
+    .min(1, { message: "Add meg a Kivonatod magyar címét!" }),
   romanianTitle: z
     .string()
-    .min(1, { message: "Add meg a dolgozatod román címét!" }),
+    .min(1, { message: "Add meg a Kivonatod román címét!" }),
   englishTitle: z
     .string()
-    .min(1, { message: "Add meg a dolgozatod angol címét!" }),
+    .min(1, { message: "Add meg a Kivonatod angol címét!" }),
   introduction: z
     .string()
-    .min(1, { message: 'Vezesd be a dolgozatod "Bevezetés" bekezdését!' }),
+    .min(1, { message: 'Vezesd be a Kivonatod "Bevezetés" bekezdését!' }),
   mission: z
     .string()
-    .min(1, { message: 'Vezesd be a dolgozatod "Célkitűzések" bekezdését!' }),
+    .min(1, { message: 'Vezesd be a Kivonatod "Célkitűzések" bekezdését!' }),
   methods: z
     .string()
-    .min(1, { message: 'Vezesd be a dolgozatod "Módszerek" bekezdését!' }),
+    .min(1, { message: 'Vezesd be a Kivonatod "Módszerek" bekezdését!' }),
   results: z
     .string()
-    .min(1, { message: 'Vezesd be a dolgozatod "Eredmények" bekezdését!' }),
+    .min(1, { message: 'Vezesd be a Kivonatod "Eredmények" bekezdését!' }),
   conclusions: z.string().min(1, {
-    message: 'Vezesd be a dolgozatod "Következtetések" bekezdését!',
+    message: 'Vezesd be a Kivonatod "Következtetések" bekezdését!',
   }),
   studyYear: z.string().regex(/[123456]/),
 });
@@ -183,7 +183,7 @@ const InitialSignupForm = () => {
             reset();
           }}
         >
-          Új dolgozat feltöltése →
+          Új Kivonat feltöltése →
         </div>
       </div>
     );
@@ -214,6 +214,7 @@ const InitialSignupForm = () => {
 
   return (
     <form className="py-10" onSubmit={handleSubmit(onSignup)}>
+      <h2 className="py-8 text-xl font-light uppercase">Személyes adatok</h2>
       <div className="mb-6">
         <label
           htmlFor="name"
@@ -231,66 +232,6 @@ const InitialSignupForm = () => {
           <p className="mt-2 text-xs italic text-red-500">
             {" "}
             {errors.applicantName?.message}
-          </p>
-        )}
-      </div>
-      <div className="mb-6">
-        <label
-          htmlFor="title"
-          className="mb-2 block text-lg font-medium text-gray-900"
-        >
-          Dolgozat címe magyarul
-        </label>
-        <input
-          type="text"
-          id="title"
-          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-          {...register("hungarianTitle")}
-        />
-        {errors.hungarianTitle && (
-          <p className="mt-2 text-xs italic text-red-500">
-            {" "}
-            {errors.hungarianTitle?.message}
-          </p>
-        )}
-      </div>
-      <div className="mb-6">
-        <label
-          htmlFor="title"
-          className="mb-2 block text-lg font-medium text-gray-900"
-        >
-          Dolgozat címe románul
-        </label>
-        <input
-          type="text"
-          id="title"
-          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-          {...register("romanianTitle")}
-        />
-        {errors.romanianTitle && (
-          <p className="mt-2 text-xs italic text-red-500">
-            {" "}
-            {errors.romanianTitle?.message}
-          </p>
-        )}
-      </div>
-      <div className="mb-6">
-        <label
-          htmlFor="title"
-          className="mb-2 block text-lg font-medium text-gray-900"
-        >
-          Dolgozat címe angolul
-        </label>
-        <input
-          type="text"
-          id="title"
-          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-          {...register("englishTitle")}
-        />
-        {errors.englishTitle && (
-          <p className="mt-2 text-xs italic text-red-500">
-            {" "}
-            {errors.englishTitle?.message}
           </p>
         )}
       </div>
@@ -366,33 +307,6 @@ const InitialSignupForm = () => {
         </div>
       )}
       <div className="mb-6">
-        <label
-          htmlFor="sections"
-          className="mb-2 block text-lg font-medium text-gray-900"
-        >
-          Témakörök
-        </label>
-        <select
-          id="sections"
-          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-tdk-primary"
-          {...register("section")}
-        >
-          {sectionList.map((section, index) => {
-            return (
-              <option className="text-md" key={index}>
-                {section}
-              </option>
-            );
-          })}
-        </select>
-        {errors.section && (
-          <p className="mt-2 text-xs italic text-red-500">
-            {" "}
-            {errors.section?.message}
-          </p>
-        )}
-      </div>
-      <div className="mb-6">
         <h3 className="mb-4 text-lg font-medium text-gray-900">Évfolyam</h3>
         <fieldset className="flex flex-wrap justify-evenly gap-3">
           {[...Array(6).keys()]
@@ -426,8 +340,98 @@ const InitialSignupForm = () => {
           </p>
         )}
       </div>
+      <h2 className="py-8 text-xl font-light uppercase">Kivonat</h2>
+      <div className="mb-6">
+        <label
+          htmlFor="title"
+          className="mb-2 block text-lg font-medium text-gray-900"
+        >
+          Kivonat címe magyarul
+        </label>
+        <input
+          type="text"
+          id="title"
+          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+          {...register("hungarianTitle")}
+        />
+        {errors.hungarianTitle && (
+          <p className="mt-2 text-xs italic text-red-500">
+            {" "}
+            {errors.hungarianTitle?.message}
+          </p>
+        )}
+      </div>
+      <div className="mb-6">
+        <label
+          htmlFor="title"
+          className="mb-2 block text-lg font-medium text-gray-900"
+        >
+          Kivonat címe románul
+        </label>
+        <input
+          type="text"
+          id="title"
+          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+          {...register("romanianTitle")}
+        />
+        {errors.romanianTitle && (
+          <p className="mt-2 text-xs italic text-red-500">
+            {" "}
+            {errors.romanianTitle?.message}
+          </p>
+        )}
+      </div>
+      <div className="mb-6">
+        <label
+          htmlFor="title"
+          className="mb-2 block text-lg font-medium text-gray-900"
+        >
+          Kivonat címe angolul
+        </label>
+        <input
+          type="text"
+          id="title"
+          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+          {...register("englishTitle")}
+        />
+        {errors.englishTitle && (
+          <p className="mt-2 text-xs italic text-red-500">
+            {" "}
+            {errors.englishTitle?.message}
+          </p>
+        )}
+      </div>
+
+      <div className="mb-6">
+        <label
+          htmlFor="sections"
+          className="mb-2 block text-lg font-medium text-gray-900"
+        >
+          Témakör
+        </label>
+        <select
+          id="sections"
+          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-tdk-primary"
+          {...register("section")}
+        >
+          {sectionList.map((section, index) => {
+            return (
+              <option className="text-md" key={index}>
+                {section}
+              </option>
+            );
+          })}
+        </select>
+        {errors.section && (
+          <p className="mt-2 text-xs italic text-red-500">
+            {" "}
+            {errors.section?.message}
+          </p>
+        )}
+      </div>
+
       <h3 className="mt-10 mb-4 block text-lg font-medium text-gray-900">
-        Dolgozat tartalmának feltöltése
+        Kivonat tartalmának feltöltése
       </h3>
       <div className="py-2">
         Formai követelmények:
@@ -539,7 +543,7 @@ const InitialSignupForm = () => {
       <div className="ml-4">
         <p className="py-2 text-gray-600">
           A saját hozzájárulási nyilatkozat nevű dokumentum igazolja a szerző
-          hozzájárulását a dolgozathoz.{" "}
+          hozzájárulását a Kivonathoz.{" "}
           <a className="text-sky-600 underline" href={agreementDocUrl}>
             A minta dokumentum ide kattintással tölthető le.
           </a>

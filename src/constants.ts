@@ -2,12 +2,11 @@ export const serverUrl = "https://mmdsz-tdk-functions.vercel.app/api";
 
 export const universityList = [
   "",
-  'Marosvásárhelyi "George Emil Palade" Orvosi, Gyógyszerészeti, Tudományos és Technológiai Egyetem',
-  "Semmelweis Egyetem",
-  "Debreceni Egyetem",
-  "Pécsi Tudomány Egyetem",
-  "Szegedi Tudomány Egyetem",
-  "Sapientia Erdélyi Magyar Tudományegyetem",
+  'MOGYTTE',
+  "SE",
+  "DE",
+  "PTE",
+  "SZTE",
   "Egyéb",
 ];
 

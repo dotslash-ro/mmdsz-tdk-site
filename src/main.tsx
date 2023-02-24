@@ -13,6 +13,7 @@ import Timeline from "./pages/timeline";
 import Rules from "./pages/rules";
 import PastJournals from "./pages/journals";
 import Journal from "./components/journal";
+import Organizers from "./pages/organizers";
 
 const router = createHashRouter([
   {
@@ -34,6 +35,10 @@ const router = createHashRouter([
   {
     path: "/szabalyzat",
     element: <Rules />,
+  },
+  {
+    path: "/szervezok",
+    element: <Organizers />,
   },
   {
     path: "/osszefoglalok",
