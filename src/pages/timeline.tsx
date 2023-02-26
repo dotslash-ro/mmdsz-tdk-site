@@ -1,5 +1,3 @@
-import InitialSignupForm from "../components/initial-signup";
-import PersonalInfo from "../components/personal-info";
 import PresentationUpload from "../components/presentation-upload";
 import SecondUploadForm from "../components/second-upload";
 import SignupWrapper from "../components/signup-wrapper";
@@ -9,12 +7,17 @@ const Timeline = () => {
   return (
     <div className="flex justify-center py-20 px-6">
       <ol className="relative space-y-32 border-l border-gray-300 lg:w-1/2">
+        <li className="mb-4 ml-10 font-light text-gray-500">
+          <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border-2 border-white bg-gray-500"></div>
+          Görgess lefele, hogy többet megtudj a TDK-n való részvételhez
+          szökséges lépésekről.
+        </li>
         <li className="mb-10 ml-10">
           <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border-2 border-white bg-gray-500"></div>
           <h3 className="pb-4 text-2xl font-semibold text-gray-900">
             Jelentkezés és dolgozatok feltöltése
           </h3>
-          <time className="mb-10 text-lg font-normal leading-none text-gray-500">
+          <time className="mb-10 font-light leading-none text-gray-500">
             2023. március 3-10.
           </time>
           <div>
@@ -26,7 +29,7 @@ const Timeline = () => {
           <h3 className="pb-4 text-2xl font-semibold text-gray-900">
             Dolgozatok ellenőrzése
           </h3>
-          <time className="mb-10 text-lg font-normal leading-none text-gray-500">
+          <time className="mb-10 font-light leading-none text-gray-500">
             2023. március 13-20.
           </time>
           <div className="m-6">
@@ -52,7 +55,7 @@ const Timeline = () => {
             <h3 className="pb-4 text-2xl font-semibold text-gray-900">
               Javított dolgozatok feltöltése
             </h3>
-            <time className="mb-10 text-lg font-normal leading-none text-gray-500">
+            <time className="mb-10 font-light leading-none text-gray-500">
               2023. március 20-24.
             </time>
             <div className="m-6">
@@ -72,7 +75,7 @@ const Timeline = () => {
             <h3 className="pb-4 text-2xl font-semibold text-gray-900">
               A dolgozatok végső elbírálása
             </h3>
-            <time className="mb-10 text-lg font-normal leading-none text-gray-500">
+            <time className="mb-10 font-light leading-none text-gray-500">
               2023. március 27-29.
             </time>
             <div className="m-6">
@@ -100,7 +103,7 @@ const Timeline = () => {
             <h3 className="pb-4 text-2xl font-semibold text-gray-900">
               Regisztrációs díj befizetése
             </h3>
-            <time className="mb-10 text-lg font-normal leading-none text-gray-500">
+            <time className="mb-10 font-light leading-none text-gray-500">
               2023. április 24-28.
             </time>
             <div className="m-6">
@@ -131,7 +134,7 @@ const Timeline = () => {
             <h3 className="pb-4 text-2xl font-semibold text-gray-900">
               Prezentációk feltöltése
             </h3>
-            <time className="mb-10 text-lg font-normal leading-none text-gray-500">
+            <time className="mb-10 font-light leading-none text-gray-500">
               2023. április 27-30.
             </time>
             <div className="m-6">
