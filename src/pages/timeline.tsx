@@ -1,6 +1,8 @@
 import InitialSignupForm from "../components/initial-signup";
+import PersonalInfo from "../components/personal-info";
 import PresentationUpload from "../components/presentation-upload";
 import SecondUploadForm from "../components/second-upload";
+import SignupWrapper from "../components/signup-wrapper";
 import { withLayout } from "../layout/withLayout";
 
 const Timeline = () => {
@@ -15,15 +17,8 @@ const Timeline = () => {
           <time className="mb-10 text-lg font-normal leading-none text-gray-500">
             2023. március 3-10.
           </time>
-          <div
-            className={
-              new Date() < new Date(2023, 3, 3) ||
-              new Date() > new Date(2023, 3, 20)
-                ? "pointer-events-none opacity-50 grayscale"
-                : ""
-            }
-          >
-            <InitialSignupForm />
+          <div>
+            <SignupWrapper />
           </div>
         </li>
         <li className="mb-10 ml-10">

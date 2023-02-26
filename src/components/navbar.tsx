@@ -65,7 +65,7 @@ const Navbar = () => {
           className={({ isActive }) =>
             isActive
               ? "hidden"
-              : "flex items-center justify-center px-5 py-2 py-3 text-sm font-bold uppercase text-tdk-accent hover:underline lg:rounded-full lg:bg-tdk-accent lg:text-base lg:font-bold lg:text-white"
+              : "flex items-center justify-center px-5 py-3 text-sm font-bold uppercase text-tdk-accent hover:underline lg:rounded-full lg:bg-tdk-accent lg:text-base lg:font-bold lg:text-white"
           }
         >
           Jelentkezés
