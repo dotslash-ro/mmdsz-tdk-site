@@ -395,12 +395,13 @@ const Organizers = () => {
         <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-10 py-8 drop-shadow-md">
           <h2 className="py-5 text-xl font-light">Főszervezők</h2>
           <ul className="list-disc">
-            <li className="font-bold">Biró Konrád-János</li>
-            <li className="font-bold">Deák Gellért-Gedeon</li>
-            <li className="font-bold">Márton Kincső</li>
-            <li className="font-bold">Miklós Noémi </li>
-            <li className="font-bold">Szabó-Benedek Nóra</li>
-            <li className="font-bold">Varga László - MMDSZ elnök</li>
+            <div className="font-bold">Biró Konrád-János</div>
+            <div className="font-bold">Deák Gellért-Gedeon</div>
+            <div className="font-bold">Márton Kincső</div>
+            <div className="font-bold">Miklós Noémi </div>
+            <div className="font-bold">Szabó-Benedek Nóra</div>
+            <h2 className="py-5 text-center text-xl font-light">MMDSZ elnök</h2>
+            <div className="text-center font-bold">Varga László</div>
           </ul>
           <p className="p-5 text-sm font-light"></p>
         </div>

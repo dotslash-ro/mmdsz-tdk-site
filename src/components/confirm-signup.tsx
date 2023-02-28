@@ -264,7 +264,7 @@ const ConfirmSignup = ({
               target="_blank"
               className="text-sky-600 underline"
             >
-              Szabáyzat elolvasása →
+              Szabályzat elolvasása →
             </NavLink>
           </label>
         </div>

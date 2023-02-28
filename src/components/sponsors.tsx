@@ -156,7 +156,7 @@ const Sponsors = () => {
         />{" "} */}
       </div>
       <h2 className="pb-10 pt-20 text-center text-5xl font-bold">
-        Szponzoraink
+        Támogatóink
       </h2>
       <div className="flex flex-wrap justify-center gap-4 space-y-2 px-20"></div>
     </div>

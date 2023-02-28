@@ -13,6 +13,14 @@ const personalInfoSchema = z.object({
     .min(1, { message: "Add meg az egyetemed nevét!" })
     .optional(),
   email: z.string().email({ message: "Add meg az e-mail címed!" }),
+  department: z
+    .string()
+    .min(1, { message: "Add meg a kart, amelyen tanulsz!" }),
+  phoneNumber: z
+    .string()
+    .min(1, { message: "Add meg a telefonszámod!" })
+    .max(11, { message: "Helytelen telefonszám!" })
+    .regex(/[\+0123456789\w]/, "Helytelen telefonszám!"),
   studyYear: z.string().regex(/[123456]/),
 });
 
@@ -31,13 +39,13 @@ const PersonalInfo = ({
     register,
     handleSubmit,
     watch,
-    reset,
     formState: { errors, isValid, isSubmitting },
   } = useForm<PersonalInfoSchema>({
     resolver: zodResolver(personalInfoSchema),
   });
 
   const onSubmit: SubmitHandler<PersonalInfoSchema> = (data) => {
+    console.log("here");
     setPersonalInfo(data);
     setCurrentStep("documentInfo");
   };
@@ -96,6 +104,27 @@ const PersonalInfo = ({
         </div>
         <div className="mb-6">
           <label
+            htmlFor="phone"
+            className="mb-2 block text-lg font-medium text-gray-900"
+          >
+            Telefon szám
+          </label>
+          <input
+            type="text"
+            id="phone"
+            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            {...register("phoneNumber")}
+            aria-invalid={errors.phoneNumber ? "true" : "false"}
+          />
+          {errors.phoneNumber && (
+            <p className="mt-2 text-xs italic text-red-500">
+              {" "}
+              {errors.phoneNumber?.message}
+            </p>
+          )}
+        </div>
+        <div className="mb-6">
+          <label
             htmlFor="universities"
             className="mb-2 block text-lg font-medium text-gray-900"
           >
@@ -144,6 +173,27 @@ const PersonalInfo = ({
             )}
           </div>
         )}
+        <div className="mb-6">
+          <label
+            htmlFor="department"
+            className="mb-2 block text-lg font-medium text-gray-900"
+          >
+            Kar
+          </label>
+          <input
+            type="text"
+            id="department"
+            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            {...register("department")}
+            aria-invalid={errors.department ? "true" : "false"}
+          />
+          {errors.department && (
+            <p className="mt-2 text-xs italic text-red-500">
+              {" "}
+              {errors.department?.message}
+            </p>
+          )}
+        </div>
         <div className="mb-6">
           <h3 className="mb-4 text-lg font-medium text-gray-900">Évfolyam</h3>
           <fieldset className="flex flex-wrap justify-evenly gap-3">
@@ -195,6 +245,7 @@ const PersonalInfo = ({
             <button
               className="rounded-full bg-gray-300 px-10 font-semibold uppercase text-black drop-shadow-md xl:text-lg"
               disabled
+              type="submit"
               title="A továbblépéshez ki kell töltedened az adataid!"
             >
               Tovább

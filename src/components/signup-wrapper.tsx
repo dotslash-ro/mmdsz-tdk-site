@@ -8,6 +8,7 @@ import ConfirmSignup from "./confirm-signup";
 import CoAuthorInfos from "./coauthor-info-wrapper";
 import CoordinatorInfos from "./coordinator-info-wrapper";
 import { serverUrl } from "../constants";
+import { ClipLoader } from "react-spinners";
 
 const signupSteps = [
   "personalInfo",
@@ -40,6 +41,7 @@ const SignupWrapper = () => {
     Array<CoordinatorInfoSchema>
   >([]);
   const [agreementDoc, setAgreementDoc] = useState<File>();
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const _signupStatus = localStorage.getItem("signupStatus");
@@ -66,6 +68,7 @@ const SignupWrapper = () => {
       coordinatorInfos,
     });
     try {
+      setLoading(true);
       const response = await fetch(`${serverUrl}/signup`, {
         method: "POST",
         body: body,
@@ -74,11 +77,13 @@ const SignupWrapper = () => {
         },
       });
       if (response.status != 200) {
+        setLoading(false);
         setSignupStatus("error");
         return;
       }
     } catch (e) {
       console.log(e);
+      setLoading(false);
       setSignupStatus("error");
       return;
     }
@@ -105,7 +110,16 @@ const SignupWrapper = () => {
       console.log(e);
       setSignupStatus("error");
     }
+    setLoading(false);
   };
+
+  if (loading) {
+    return (
+      <div className="flex h-48 items-center justify-center">
+        <ClipLoader loading={true} />
+      </div>
+    );
+  }
 
   if (signupStatus === "signed-up") {
     return (

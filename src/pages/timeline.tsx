@@ -10,7 +10,7 @@ const Timeline = () => {
         <li className="mb-4 ml-10 font-light text-gray-500">
           <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border-2 border-white bg-gray-500"></div>
           Görgess lefele, hogy többet megtudj a TDK-n való részvételhez
-          szökséges lépésekről.
+          szükséges lépésekről.
         </li>
         <li className="mb-10 ml-10">
           <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border-2 border-white bg-gray-500"></div>
