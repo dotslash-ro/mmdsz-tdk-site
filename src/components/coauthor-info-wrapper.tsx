@@ -58,7 +58,7 @@ const CoAuthorInfos = ({
           </p>
         </div>
         <button
-          className="my-2 rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-xl"
+          className="my-2 rounded-full bg-tdk-accent px-10 py-2 py-2 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-xl"
           onClick={() => {
             setCoAuthorInfosParent(coAuthorInfos);
             setCurrentStep("coordinatorInfo");

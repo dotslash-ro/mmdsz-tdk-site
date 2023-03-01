@@ -220,7 +220,7 @@ const CoAuthorInfo = ({
         </div>
         {!isSubmitted && (!isDirty || isValid) && (
           <button
-            className="my-1 w-full rounded-full border border-gray-300 py-2 text-center uppercase text-black drop-shadow-md hover:bg-gray-100 hover:underline xl:text-lg"
+            className="mt-2 mb-4 w-full rounded-full bg-tdk-accent py-2 text-center font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-lg"
             type="submit"
           >
             Társszerző adatainak elmentése

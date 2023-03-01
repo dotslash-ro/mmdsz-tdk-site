@@ -280,14 +280,14 @@ const ConfirmSignup = ({
           </div>
           {isValid ? (
             <button
-              className="rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-lg"
+              className="mt-6 w-full rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-lg"
               type="submit"
             >
               Jelentkezés
             </button>
           ) : (
             <button
-              className="rounded-full bg-gray-300 px-10 py-2 font-semibold uppercase drop-shadow-md xl:text-lg"
+              className="w-full rounded-full bg-gray-300 px-10 py-2 font-semibold uppercase drop-shadow-md xl:text-lg"
               disabled
               title="A jelentkezéshez el kell fogadnod a szabályzatot!"
             >

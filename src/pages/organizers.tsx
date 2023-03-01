@@ -2,12 +2,12 @@ import { withLayout } from "../layout/withLayout";
 
 const Organizers = () => {
   return (
-    <div className="px-20 py-40">
+    <div className="px-5 py-40 md:px-10 lg:px-20">
       <h1 className="pb-20 pt-20 text-center text-5xl font-bold">
         Szervezőknek
       </h1>
-      <div className="grid grid-cols-1 justify-items-stretch gap-10 px-10 py-8 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
-        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-10 py-8 drop-shadow-md">
+      <div className="grid grid-cols-1 justify-items-stretch gap-10 py-8 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-5 py-8 drop-shadow-md md:px-10">
           <h2 className="py-5 text-xl font-light">Akkreditáció</h2>
           <ul className="list-disc">
             <li className="font-bold">Römer Ambrus Júlia</li>
@@ -24,7 +24,7 @@ const Organizers = () => {
             igényel.
           </p>
         </div>
-        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-10 py-8 drop-shadow-md">
+        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-5 py-8 drop-shadow-md md:px-10">
           <h2 className="py-5 text-xl font-light">Díjak</h2>
           <ul className="list-disc">
             <li className="font-bold">Simon Bernadett</li>
@@ -40,7 +40,7 @@ const Organizers = () => {
             az átadásra és eljuttatják annak helyszínére.
           </p>
         </div>
-        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-10 py-8 drop-shadow-md">
+        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-5 py-8 drop-shadow-md md:px-10">
           <h2 className="py-5 text-xl font-light">Étkezés</h2>
           <ul className="list-disc">
             <li className="font-bold">Barcsay Zselyke </li>
@@ -63,7 +63,7 @@ const Organizers = () => {
             kiscsoport feladatkörébe tartoznak.
           </p>
         </div>
-        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-10 py-8 drop-shadow-md">
+        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-5 py-8 drop-shadow-md md:px-10">
           <h2 className="py-5 text-xl font-light">Fotó</h2>
           <ul className="list-disc">
             <li className="font-bold">Cseke Tibor </li>
@@ -86,7 +86,7 @@ const Organizers = () => {
             az átadásra és eljuttatják annak helyszínére.
           </p>
         </div>
-        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-10 py-8 drop-shadow-md">
+        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-5 py-8 drop-shadow-md md:px-10">
           <h2 className="py-5 text-xl font-light">Gála</h2>
           <ul className="list-disc">
             <li className="font-bold">Miklósi Réka</li>
@@ -105,7 +105,7 @@ const Organizers = () => {
             hogy csak jogosult személyek vehessenek részt az estélyen.
           </p>
         </div>
-        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-10 py-8 drop-shadow-md">
+        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-5 py-8 drop-shadow-md md:px-10">
           <h2 className="py-5 text-xl font-light">Infóiroda</h2>
           <ul className="list-disc">
             <li className="font-bold">Ábrán Annamária</li>
@@ -133,7 +133,7 @@ const Organizers = () => {
             információkat, eligazítást nyújtanak.
           </p>
         </div>
-        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-10 py-8 drop-shadow-md">
+        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-5 py-8 drop-shadow-md md:px-10">
           <h2 className="py-5 text-xl font-light">Kirándulás</h2>
           <ul className="list-disc">
             <li className="font-bold">Pándi Aliz</li>
@@ -141,7 +141,7 @@ const Organizers = () => {
             <li>Kovács Kamilla</li>
           </ul>
         </div>
-        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-10 py-8 drop-shadow-md">
+        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-5 py-8 drop-shadow-md md:px-10">
           <h2 className="py-5 text-xl font-light">Korrektúra és kivonatok</h2>
           <ul className="list-disc">
             <li className="font-bold">Sebesi Hanna </li>
@@ -161,7 +161,7 @@ const Organizers = () => {
             szervezési lehetősége ez.
           </p>
         </div>
-        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-10 py-8 drop-shadow-md">
+        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-5 py-8 drop-shadow-md md:px-10">
           <h2 className="py-5 text-xl font-light">Média és kommunikáció</h2>
           <ul className="list-disc">
             <li className="font-bold">Kiss Boglárka</li>
@@ -179,7 +179,7 @@ const Organizers = () => {
             és intézik a tudósítást a rendezvény előtt, alatt és után.
           </p>
         </div>
-        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-10 py-8 drop-shadow-md">
+        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-5 py-8 drop-shadow-md md:px-10">
           <h2 className="py-5 text-xl font-light">Pontozás</h2>
           <ul className="list-disc">
             <li className="font-bold">Farkas Eszter</li>
@@ -202,7 +202,7 @@ const Organizers = () => {
             kiscsoport vezetőknek.
           </p>
         </div>
-        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-10 py-8 drop-shadow-md">
+        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-5 py-8 drop-shadow-md md:px-10">
           <h2 className="py-5 text-xl font-light">Protokoll</h2>
           <ul className="list-disc">
             <li>Cseke Krisztina</li>
@@ -215,7 +215,7 @@ const Organizers = () => {
           </ul>
           <p className="p-5 text-sm font-light"></p>
         </div>
-        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-10 py-8 drop-shadow-md">
+        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-5 py-8 drop-shadow-md md:px-10">
           <h2 className="py-5 text-xl font-light">Szállítás</h2>
           <ul className="list-disc">
             <li className="font-bold">Kakasi András </li>
@@ -234,7 +234,7 @@ const Organizers = () => {
             alatt elhasznált üzemanyag költségeit megtérítjük.
           </p>
         </div>
-        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-10 py-8 drop-shadow-md">
+        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-5 py-8 drop-shadow-md md:px-10">
           <h2 className="py-5 text-xl font-light">Szponzor</h2>
           <ul className="list-disc">
             <li className="font-bold">Bonda Boglár</li>
@@ -254,7 +254,7 @@ const Organizers = () => {
             visszajuttatják ezen kellékeket.
           </p>
         </div>
-        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-10 py-8 drop-shadow-md">
+        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-5 py-8 drop-shadow-md md:px-10">
           <h2 className="py-5 text-xl font-light">Technika</h2>
           <ul className="list-disc">
             <li className="font-bold">Tischler Hunor</li>
@@ -285,7 +285,7 @@ const Organizers = () => {
             mindezeket rendberakják.
           </p>
         </div>
-        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-10 py-8 drop-shadow-md">
+        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-5 py-8 drop-shadow-md md:px-10">
           <h2 className="py-5 text-xl font-light">Teremrendezés</h2>
           <ul className="list-disc">
             <li className="font-bold">Adorján Előd </li>
@@ -316,7 +316,7 @@ const Organizers = () => {
             biztosítása.
           </p>
         </div>
-        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-10 py-8 drop-shadow-md">
+        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-5 py-8 drop-shadow-md md:px-10">
           <h2 className="py-5 text-xl font-light">Tördelés</h2>
           <ul className="list-disc">
             <li className="font-bold">Salló Hanna-Boglárka</li>
@@ -325,7 +325,7 @@ const Organizers = () => {
             <li>Sztáncsuj Eszter</li>
           </ul>
         </div>
-        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-10 py-8 drop-shadow-md">
+        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-5 py-8 drop-shadow-md md:px-10">
           <h2 className="py-5 text-xl font-light">Ülésvezetés</h2>
           <ul className="list-disc">
             <li className="font-bold">Majercsik Szilárd</li>
@@ -356,7 +356,7 @@ const Organizers = () => {
             Munkaidejük többnyire a rendezvény idejére tehető.
           </p>
         </div>
-        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-10 py-8 drop-shadow-md">
+        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-5 py-8 drop-shadow-md md:px-10">
           <h2 className="py-5 text-xl font-light">Workshop</h2>
           <ul className="list-disc">
             <li className="font-bold">Farczki Dóra </li>
@@ -387,7 +387,7 @@ const Organizers = () => {
             kiküldéséért.
           </p>
         </div>
-        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-10 py-8 drop-shadow-md">
+        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-5 py-8 drop-shadow-md md:px-10">
           <h2 className="py-5 text-xl font-light">Főszervezők</h2>
           <ul className="list-disc">
             <div className="font-bold">Biró Konrád-János</div>

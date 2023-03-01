@@ -2,7 +2,7 @@ import { withLayout } from "../layout/withLayout";
 
 const About = () => {
   return (
-    <div className="mx-auto py-20 px-20 lg:w-1/2">
+    <div className="mx-auto py-20 px-5 lg:w-1/2">
       <div>
         <h2 className="pb-10 text-center text-5xl font-bold">Az MMDSZ-ről</h2>
         <p className="font-light">

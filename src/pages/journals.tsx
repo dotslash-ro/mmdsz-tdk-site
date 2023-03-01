@@ -27,7 +27,7 @@ const PastJournals = () => {
             })}
         </select>
       </div>
-      <div className="mx-10 flex w-screen flex-grow justify-center md:w-4/5">
+      <div className="mx-2 flex h-screen flex-grow justify-center md:mx-10 md:w-4/5">
         <Outlet />
       </div>
     </div>

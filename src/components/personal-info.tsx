@@ -235,14 +235,14 @@ const PersonalInfo = ({
           </div>
           {isValid ? (
             <button
-              className="rounded-full bg-tdk-accent px-10 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-lg"
+              className="rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-lg"
               type="submit"
             >
               Tovább
             </button>
           ) : (
             <button
-              className="rounded-full bg-gray-300 px-10 font-semibold uppercase text-black drop-shadow-md xl:text-lg"
+              className="rounded-full bg-gray-300 px-10 py-2 font-semibold uppercase text-black drop-shadow-md xl:text-lg"
               disabled
               type="submit"
               title="A továbblépéshez ki kell töltedened az adataid!"

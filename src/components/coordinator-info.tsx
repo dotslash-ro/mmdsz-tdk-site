@@ -168,17 +168,17 @@ const CoordinatorInfo = ({ setCoordinatorInfo }: CoordinatorInfoFormProps) => {
         {!isSubmitted &&
           (isValid ? (
             <button
-              className="my-1 w-full rounded-full bg-tdk-accent py-2 text-center font-bold uppercase text-white drop-shadow-md hover:underline xl:text-lg"
+              className="mt-2 mb-4 w-full rounded-full bg-tdk-accent py-2 text-center font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-lg"
               type="submit"
             >
-              Témavezető adatai elmentése
+              Témavezető adatainak elmentése
             </button>
           ) : (
             <button
               className="my-1 w-full rounded-full border bg-gray-300 py-2 text-center uppercase xl:text-lg"
               disabled
             >
-              Témavezető adatai elmentése
+              Témavezető adatainak elmentése
             </button>
           ))}
       </form>
