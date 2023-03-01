@@ -88,7 +88,7 @@ const AgreementDoc = ({
           />
         </label>
       </div>
-      <div className="flex items-end justify-evenly gap-x-4 py-2">
+      <div className="flex flex-col justify-center gap-x-4 py-2 md:flex-row md:justify-evenly">
         <div className="flex w-full flex-col px-3">
           <div className="overflow-hidden rounded-full bg-gray-200">
             <div className="h-2 w-5/6 rounded-full bg-blue-400"></div>
@@ -99,7 +99,7 @@ const AgreementDoc = ({
         </div>
         {agreementDoc ? (
           <button
-            className="rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-xl"
+            className="mt-4 rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-xl"
             onClick={() => {
               setCurrentStep("confirmSignup");
             }}
@@ -108,7 +108,7 @@ const AgreementDoc = ({
           </button>
         ) : (
           <button
-            className="rounded-full bg-gray-300 px-10 py-2 font-semibold uppercase text-black drop-shadow-md xl:text-xl"
+            className="mt-4 rounded-full bg-gray-300 px-10 py-2 font-semibold uppercase text-black drop-shadow-md xl:text-xl"
             disabled
             title="A továbblépéshez fel kell töltened a hozzájárulási nyilatkozatot!"
           >
