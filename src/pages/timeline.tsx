@@ -55,14 +55,7 @@ const Timeline = () => {
           <time className="mb-10 font-light leading-none text-gray-500">
             2023. március 20-24.
           </time>
-          <div
-            className={
-              new Date() < new Date(2023, 3, 20) ||
-              new Date() > new Date(2023, 3, 24)
-                ? "pointer-events-none opacity-50 grayscale"
-                : ""
-            }
-          >
+          <div className="pointer-events-none opacity-50 grayscale">
             <div className="m-6">
               <SecondUploadForm />
             </div>
@@ -76,13 +69,7 @@ const Timeline = () => {
           <time className="mb-10 font-light leading-none text-gray-500">
             2023. március 27-29.
           </time>
-          <div
-            className={
-              new Date() < new Date(2023, 3, 30)
-                ? "pointer-events-none opacity-50 grayscale"
-                : ""
-            }
-          >
+          <div className="pointer-events-none opacity-50 grayscale">
             <div className="m-6">
               <p className="text-gray-500">
                 A kijavított dolgozatokat ismét ellenőrzik a szervezők és
@@ -100,14 +87,7 @@ const Timeline = () => {
           <h3 className="pb-4 text-2xl font-semibold text-gray-900">
             Regisztrációs díj befizetése
           </h3>
-          <div
-            className={
-              new Date() < new Date(2023, 4, 24) ||
-              new Date() > new Date(2023, 4, 28)
-                ? "pointer-events-none opacity-50 grayscale"
-                : ""
-            }
-          >
+          <div className="pointer-events-none opacity-50 grayscale">
             <time className="mb-10 font-light leading-none text-gray-500">
               2023. április 24-28.
             </time>
@@ -134,14 +114,7 @@ const Timeline = () => {
           <time className="mb-10 font-light leading-none text-gray-500">
             2023. április 27-30.
           </time>
-          <div
-            className={
-              new Date() < new Date(2023, 4, 27) ||
-              new Date() > new Date(2023, 4, 30)
-                ? "pointer-events-none opacity-50 grayscale"
-                : ""
-            }
-          >
+          <div className="pointer-events-none opacity-50 grayscale">
             <div className="m-6">
               <PresentationUpload />
             </div>
