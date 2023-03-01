@@ -2,10 +2,8 @@ import { withLayout } from "../layout/withLayout";
 
 const Organizers = () => {
   return (
-    <div className="px-5 py-40 md:px-10 lg:px-20">
-      <h1 className="pb-20 pt-20 text-center text-5xl font-bold">
-        Szervezőknek
-      </h1>
+    <div className="px-5 py-20 md:px-10 lg:px-20">
+      <h1 className="pb-20 text-center text-5xl font-bold">Szervezőknek</h1>
       <div className="grid grid-cols-1 justify-items-stretch gap-10 py-8 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
         <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-5 py-8 drop-shadow-md md:px-10">
           <h2 className="py-5 text-xl font-light">Akkreditáció</h2>
