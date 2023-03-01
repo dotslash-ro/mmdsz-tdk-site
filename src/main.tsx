@@ -60,7 +60,6 @@ const router = createHashRouter([
       { path: ":year", element: <Journal /> },
     ],
   },
-  
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
