@@ -1,9 +1,11 @@
+import { useRef } from "react";
 import PresentationUpload from "../components/presentation-upload";
 import SecondUploadForm from "../components/second-upload";
 import SignupWrapper from "../components/signup-wrapper";
 import { withLayout } from "../layout/withLayout";
 
 const Timeline = () => {
+  const initialSignupContainerRef = useRef<HTMLDivElement | null>(null);
   return (
     <div className="flex justify-center py-20 px-6">
       <ol className="relative space-y-32 border-l border-gray-300 lg:w-1/2">
@@ -13,7 +15,10 @@ const Timeline = () => {
           szükséges lépésekről.
         </li>
         <li className="mb-10 ml-10">
-          <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border-2 border-white bg-gray-500"></div>
+          <div
+            className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border-2 border-white bg-gray-500"
+            ref={initialSignupContainerRef}
+          ></div>
           <h3 className="pb-4 text-2xl font-semibold text-gray-900">
             Jelentkezés és dolgozatok feltöltése
           </h3>
@@ -21,7 +26,7 @@ const Timeline = () => {
             2023. március 3-10.
           </time>
           <div>
-            <SignupWrapper />
+            <SignupWrapper scrollToRef={initialSignupContainerRef} />
           </div>
         </li>
         <li className="mb-10 ml-10">

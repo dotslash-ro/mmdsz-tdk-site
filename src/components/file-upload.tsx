@@ -57,7 +57,6 @@ const FileUpload = ({ file, setFile, fileFormats, id }: FileUploadProps) => {
             className="hidden"
             onChange={(e) => {
               if (e.target.files) {
-                console.log(e.target.files[0].name);
                 setFile(e.target.files[0]);
               }
             }}

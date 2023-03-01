@@ -69,18 +69,21 @@ const Organizers = () => {
             <li className="font-bold">Cseke Tibor </li>
             <li>Ábrahám Ákos</li>
             <li>Adlevak Alexandra-Dora</li>
+            <li>Csegzi Andrea</li>
             <li>Jakab Alpár-István</li>
+            <li>Kántor Renáta</li>
+            <li>Kovács István</li>
+            <li>Nagy Krisztina</li>
             <li>Nemes Eszter</li>
-            <li>7 hely a Marosvásárhelyi Művészeti Egyetem diákjai számára</li>
+            <li>Szabó Apor</li>
+            <li>Szász Erika</li>
+            <li>Török Tina</li>
           </ul>
           <p className="p-5 text-sm font-light">
-            Az étkezésért felelős szervezők rendezvény előtti feladata a
-            bevásárlás. Rendezvény alatt ők azok, akik reggelente megkenik a
-            szendvicseket, felelnek azért, hogy ezek kijussanak a helyszínre,
-            majd ott napközben a büfé asztal mögül kiszolgálják a résztvevőket
-            (szervezők, oktatók, meghívottak) szendviccsel, kiflivel, kávéval,
-            teával és vízzel. Az étkezéssel kapcsolatos utómunkák szintén a
-            kiscsoport feladatkörébe tartoznak.
+            Ezen kiscsoport tagjai gondoskodnak a konferencia előtt a díjak és
+            virágok beszerzéséről, összeállításáról, illetve elosztásáról.
+            Záróünnepség előtt ők csomagolják be a díjakat, amiket előkészítenek
+            az átadásra és eljuttatják annak helyszínére.
           </p>
         </div>
         <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-10 py-8 drop-shadow-md">
@@ -111,7 +114,9 @@ const Organizers = () => {
             <li>Biró Edina-Kata</li>
             <li>Bogyó Boróka</li>
             <li>Borbély Barbara</li>
+            <li>Csatlós Zsanett-Timea</li>
             <li>Czimbalmos Eszter-Réka</li>
+            <li>Géder Dóra-Szilvia</li>
             <li>Nagy Réka</li>
             <li>Péter Kriszta-Enikő</li>
             <li>Stekbauer Anett</li>
@@ -205,7 +210,6 @@ const Organizers = () => {
             <li>Lozsádi Zsombor</li>
             <li>Miklós Mátyás Levente</li>
             <li>Orbán Zsófia</li>
-            <li>Nagy Réka</li>
             <li>Tőkés Nikolett</li>
             <li>Zsidó Imola</li>
           </ul>
@@ -253,7 +257,7 @@ const Organizers = () => {
         <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-10 py-8 drop-shadow-md">
           <h2 className="py-5 text-xl font-light">Technika</h2>
           <ul className="list-disc">
-            <li className="font-bold">Kiss Balázs </li>
+            <li className="font-bold">Tischler Hunor</li>
             <li className="font-bold">Máthé István </li>
             <li>Baczoni Boglárka</li>
             <li>Bakó Naómi-Zsuzsanna</li>
@@ -268,7 +272,7 @@ const Organizers = () => {
             <li>Măgdălina Ovidiu-Cristian</li>
             <li>Schmidt Simona-Raluca</li>
             <li>Szőcs Kurkó Sebestyén</li>
-            <li>Tischler Hunor</li>
+            <li>Veress Károly Tamás</li>
           </ul>
           <p className="p-5 text-sm font-light">
             A technikás kiscsoport tagjai azok a szervezők, akik irányítják az
@@ -320,22 +324,13 @@ const Organizers = () => {
             <li>Pap Gyopárka</li>
             <li>Sztáncsuj Eszter</li>
           </ul>
-          <p className="p-5 text-sm font-light">
-            A teremrendezés kiscsoport szervezői a helyszínért felelősek. Ehhez
-            hozzátartozik minden, a termekben lévő kellék beszerzése és a
-            rendezvény ideje alatt be-, illetve elpakolása. Ugyanakkor a
-            roll-upok, a pop-up, a székek, asztalok, virágok egyik teremből a
-            másikba való áthordása és a teremrendezés alatt felhasznált kellékek
-            épségének megőrzése is ezen kiscsoport feladatához tartozik. Nem
-            utolsó sorban az elbíráló bizottság számára víz, pohár, nasi
-            biztosítása.
-          </p>
         </div>
         <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-10 py-8 drop-shadow-md">
           <h2 className="py-5 text-xl font-light">Ülésvezetés</h2>
           <ul className="list-disc">
             <li className="font-bold">Majercsik Szilárd</li>
             <li className="font-bold">Máthé Andrea</li>
+            <li>Benedek Bianka</li>
             <li>Dandé Csongor-Ottó</li>
             <li>Ferencz Boglárka</li>
             <li>Gál Zsuzsánna</li>

@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { MutableRefObject, useEffect, useState } from "react";
 import PersonalInfo, { PersonalInfoSchema } from "./personal-info";
 import DocumentInfo, { DocumentInfoSchema } from "./document-info";
-import { CoAuthorInfoSchema } from "./coauthor-info";
+import CoAuthorInfo, { CoAuthorInfoSchema } from "./coauthor-info";
 import AgreementDoc from "./agreement-doc";
 import { CoordinatorInfoSchema } from "./coordinator-info";
 import ConfirmSignup from "./confirm-signup";
@@ -23,7 +23,11 @@ export type SignupStep = (typeof signupSteps)[number];
 const signupStatuses = ["not-signedup", "signed-up", "error"] as const;
 type SignupStatus = (typeof signupStatuses)[number];
 
-const SignupWrapper = () => {
+const SignupWrapper = ({
+  scrollToRef,
+}: {
+  scrollToRef: MutableRefObject<HTMLDivElement | null>;
+}) => {
   const [signupStatus, setSignupStatus] =
     useState<SignupStatus>("not-signedup");
 
@@ -56,19 +60,36 @@ const SignupWrapper = () => {
     }
   }, []);
 
+  useEffect(() => {
+    scrollToRef?.current?.scrollIntoView({ behavior: "smooth" });
+  }, [currentStep]);
+
   const onSignup = async () => {
     if (!personalInfo || !documentInfo || !agreementDoc) {
       return;
     }
     // send applicant data to backend
     const body = JSON.stringify({
-      personalInfo,
+      personalInfo: {
+        ...personalInfo,
+        university:
+          personalInfo.university == "Egyéb"
+            ? personalInfo.otherUniversity
+            : personalInfo.university,
+      },
       documentInfo,
-      coAuthorInfos,
+      coAuthorInfos: coAuthorInfos.map((coAuthorInfo) => ({
+        ...coAuthorInfo,
+        university:
+          coAuthorInfo.university == "Egyéb"
+            ? coAuthorInfo.otherUniversity
+            : coAuthorInfo.university,
+      })),
       coordinatorInfos,
     });
     try {
       setLoading(true);
+      scrollToRef?.current?.scrollIntoView({ behavior: "smooth" });
       const response = await fetch(`${serverUrl}/signup`, {
         method: "POST",
         body: body,
@@ -147,6 +168,7 @@ const SignupWrapper = () => {
         <button
           className="rounded-full bg-tdk-accent py-2 px-5 text-lg font-bold uppercase text-white hover:underline"
           onClick={() => {
+            setCurrentStep("personalInfo");
             setSignupStatus("not-signedup");
           }}
         >

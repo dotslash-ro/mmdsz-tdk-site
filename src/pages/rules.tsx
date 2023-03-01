@@ -375,7 +375,9 @@ const Rules = () => {
           Szekciónként legfeljebb 1 dolgozat jelölhető. Poszter szekcióból nem
           történik jelölés.
         </p>{" "}
-        <h2>A poszter szekció szabályai:</h2>{" "}
+        <h2 className="pt-6 pb-4 text-lg font-medium">
+          A poszter szekció szabályai:
+        </h2>{" "}
         <p className="py-2 text-gray-800">
           A poszter szekcióban bemutatott dolgozatok kivonata, az előadás
           szekció dolgozatainak kivonataihoz hasonlóan és velük egyidőben

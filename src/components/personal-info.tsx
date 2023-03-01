@@ -45,7 +45,6 @@ const PersonalInfo = ({
   });
 
   const onSubmit: SubmitHandler<PersonalInfoSchema> = (data) => {
-    console.log("here");
     setPersonalInfo(data);
     setCurrentStep("documentInfo");
   };
@@ -107,10 +106,10 @@ const PersonalInfo = ({
             htmlFor="phone"
             className="mb-2 block text-lg font-medium text-gray-900"
           >
-            Telefon szám
+            Telefonszám
           </label>
           <input
-            type="text"
+            type="tel"
             id="phone"
             className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500"
             {...register("phoneNumber")}

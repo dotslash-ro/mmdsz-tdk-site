@@ -11,6 +11,16 @@ const Navbar = () => {
       </div>
       <div className="flex flex-col lg:flex-row">
         <NavLink
+          to="/tdkerdezz"
+          className={({ isActive }) =>
+            isActive
+              ? "lg:font-base flex items-center justify-center px-5 py-3 text-sm font-bold uppercase text-white underline lg:py-0"
+              : "lg:font-base flex items-center justify-center px-5 py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
+          }
+        >
+          TDKérdezz
+        </NavLink>
+        <NavLink
           to="/szabalyzat"
           className={({ isActive }) =>
             isActive

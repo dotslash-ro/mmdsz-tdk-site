@@ -2,7 +2,6 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { universityList } from "../constants";
-import { SignupStep } from "./signup-wrapper";
 import { ClipLoader } from "react-spinners";
 
 const CoAuthorInfoSchema = z.object({
@@ -16,6 +15,9 @@ const CoAuthorInfoSchema = z.object({
     .string()
     .min(1, { message: "Add meg a társszerző egyetemének nevét!" })
     .optional(),
+  department: z
+    .string()
+    .min(1, { message: "Add meg a kart, amelyen tanulsz!" }),
   email: z
     .literal("")
     .or(z.string().email({ message: "Add meg a társszerző email címét" })),
@@ -163,6 +165,27 @@ const CoAuthorInfo = ({
           </div>
         )}
         <div className="mb-6">
+          <label
+            htmlFor="department"
+            className="mb-2 block text-lg font-medium text-gray-900"
+          >
+            Társszerző kara
+          </label>
+          <input
+            type="text"
+            id="department"
+            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            {...register("department")}
+            aria-invalid={errors.department ? "true" : "false"}
+          />
+          {errors.department && (
+            <p className="mt-2 text-xs italic text-red-500">
+              {" "}
+              {errors.department?.message}
+            </p>
+          )}
+        </div>
+        <div className="mb-6">
           <h3 className="mb-4 text-lg font-medium text-gray-900">
             Társszerző évfolyama
           </h3>
@@ -195,12 +218,12 @@ const CoAuthorInfo = ({
             </p>
           )}
         </div>
-        {!isSubmitted && (
+        {!isSubmitted && (!isDirty || isValid) && (
           <button
             className="my-1 w-full rounded-full border border-gray-300 py-2 text-center uppercase text-black drop-shadow-md hover:bg-gray-100 hover:underline xl:text-lg"
             type="submit"
           >
-            Társszerző adatai elmentése
+            Társszerző adatainak elmentése
           </button>
         )}
       </form>

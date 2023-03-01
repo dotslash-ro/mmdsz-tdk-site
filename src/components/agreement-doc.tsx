@@ -82,7 +82,6 @@ const AgreementDoc = ({
             className="hidden"
             onChange={(e) => {
               if (e.target.files) {
-                console.log(e.target.files[0].name);
                 setAgreementDoc(e.target.files[0]);
               }
             }}
