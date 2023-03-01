@@ -60,7 +60,8 @@ const router = createHashRouter([
       { path: ":year", element: <Journal /> },
     ],
   },
-]);
+  
+], {basename: "/mmdsz-tdk"});
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
