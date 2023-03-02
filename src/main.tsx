@@ -16,7 +16,7 @@ import Journal from "./components/journal";
 import Organizers from "./pages/organizers";
 import FAQ from "./pages/faq";
 
-const router = createHashRouter([
+const router = createBrowserRouter([
   {
     path: "/",
     element: <Landing />,

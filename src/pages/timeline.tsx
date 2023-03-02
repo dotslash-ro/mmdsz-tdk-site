@@ -39,11 +39,12 @@ const Timeline = () => {
           </time>
           <div className="m-6">
             <p className="text-gray-500">
-              Miután a tanárok ellenőrzik a dolgozatokat, az el nem fogadott
+              Miután az oktatók ellenőrzik a dolgozatokat, az el nem fogadott
               dolgozatokat van lehetőség kijavítani és újra feltölteni.{" "}
             </p>
-            <p className="text-gray-500">
-              A dolgozatok elbírálásáról email-ben értesítenek majd a szervezők.
+            <p className="mt-4 text-gray-500">
+              Az el nem fogadott dolgozatokról e-mailben értesítenek majd a
+              szervezők.
             </p>
           </div>
         </li>
@@ -72,12 +73,11 @@ const Timeline = () => {
           <div className="pointer-events-none opacity-50 grayscale">
             <div className="m-6">
               <p className="text-gray-500">
-                A kijavított dolgozatokat ismét ellenőrzik a szervezők és
-                tanárok.
+                A kijavított dolgozatokat ismét ellenőrzik az oktatók.
               </p>
-              <p className="text-gray-500">
-                A bemutatásra választott dolgozatokról a szervezők email-ben
-                értesítik majd a jelentkezőket.
+              <p className="mt-4 text-gray-500">
+                Az el nem fogadott dolgozatokról e-mailben értesítenek majd a
+                szervezők.
               </p>
             </div>
           </div>
