@@ -25,7 +25,38 @@ const Timeline = () => {
           <time className="mb-10 font-light leading-none text-gray-500">
             2023. március 3-10.
           </time>
-          <div className="pointer-events-none opacity-50 grayscale">
+          <div className="">
+            <p className="text-gray-500">
+              <h3 className="mb-4 mt-8 font-light text-gray-500">
+                A kivonat feltöltéséhez: az alábbi adatokra lesz szükség:
+              </h3>
+              <ul className="ml-6 list-disc">
+                <li>
+                  A kivonat maximális hossza 2200 karakter (szóköz nélkül, cím
+                  nélkül).{" "}
+                </li>
+                <li>A cím 3 nyelven (magyar, román, angol). </li>
+                <li>
+                  A kivonat szövegének az alábbi szerkezetet kell követnie:
+                  bevezetés, célkitűzések, módszerek, eredmények és
+                  következtetés.
+                </li>
+              </ul>
+              <h3 className="mb-4 mt-6 font-light text-gray-500">
+                A beküldéshez az alábbi adatokra lesz szükség:{" "}
+              </h3>
+              <ul className="ml-6 list-disc">
+                <li>
+                  A szerző neve, egyetem, évfolyam, email, kar, telefonszám.
+                </li>
+                <li>
+                  Társszerzők neve, e-mail címe, egyeteme, évfolyama, kara{" "}
+                </li>
+                <li>
+                  Témavezető neve és beosztása, valamint egyetem (intézet).{" "}
+                </li>
+              </ul>
+            </p>
             <SignupWrapper scrollToRef={initialSignupContainerRef} />
           </div>
         </li>
