@@ -102,7 +102,7 @@ const Timeline = () => {
               </p>
               <p className="font-semibold text-gray-500">
                 Az MMDSZ kártyát felmutató diákok 10 RON kedvezményben
-                részesülnek.
+                részesülnek, az első dolgozat esetén.
               </p>
             </div>
           </div>
