@@ -35,7 +35,7 @@ const Timeline = () => {
                   A kivonat maximális hossza 2200 karakter (szóköz nélkül, cím
                   nélkül).{" "}
                 </li>
-                <li>A cím 3 nyelven (magyar, román, angol). </li>
+                <li>A cím 3 nyelven (magyar, román, angol).</li>
                 <li>
                   A kivonat szövegének az alábbi szerkezetet kell követnie:
                   bevezetés, célkitűzések, módszerek, eredmények és
