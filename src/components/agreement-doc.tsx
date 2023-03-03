@@ -1,4 +1,6 @@
 // @ts-ignore
+import exampleAgreementDocUrl from "../assets/tdk-pelda-nyilatkozat.docx";
+// @ts-ignore
 import agreementDocUrl from "../assets/tdk-nyilatkozat.docx";
 import { SignupStep } from "./signup-wrapper";
 
@@ -16,11 +18,17 @@ const AgreementDoc = ({
   return (
     <div>
       <div className="ml-4">
-        <p className="py-2 text-gray-600">
+        <p className="mt-8 text-gray-600">
           A saját hozzájárulási nyilatkozat nevű dokumentum igazolja a szerző
           hozzájárulását a Kivonathoz.{" "}
+        </p>
+        <p>
+          <a className="text-sky-600 underline" href={exampleAgreementDocUrl}>
+            Egy kitöltött, példa dokumentum ide kattintással tölthető le.
+          </a>
+          , Míg az eredeti, kitöltendő dokumentum{" "}
           <a className="text-sky-600 underline" href={agreementDocUrl}>
-            A minta dokumentum ide kattintással tölthető le.
+            innen tölthető le.
           </a>
         </p>
         <p className="text-gray-600">

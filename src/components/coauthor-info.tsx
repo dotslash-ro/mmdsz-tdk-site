@@ -3,6 +3,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { universityList } from "../constants";
 import { ClipLoader } from "react-spinners";
+import { useEffect } from "react";
 
 const CoAuthorInfoSchema = z.object({
   coAuthorName: z
@@ -35,6 +36,7 @@ export type CoAuthorInfoSchema = z.infer<typeof CoAuthorInfoSchema>;
 interface CoAuthorInfoFormProps {
   setCoAuthorInfo: (CoAuthorInfo: CoAuthorInfoSchema) => void;
   removeCoAuthorForm: () => void;
+  setIsDirty: (isDirty: boolean) => void;
   index: number;
 }
 
@@ -42,6 +44,7 @@ const CoAuthorInfo = ({
   setCoAuthorInfo,
   removeCoAuthorForm,
   index,
+  setIsDirty,
 }: CoAuthorInfoFormProps) => {
   const {
     register,
@@ -55,6 +58,9 @@ const CoAuthorInfo = ({
   const onSubmit: SubmitHandler<CoAuthorInfoSchema> = (data) => {
     setCoAuthorInfo(data);
   };
+  useEffect(() => {
+    setIsDirty(!isSubmitted && isDirty);
+  }, [isSubmitted, isDirty]);
 
   if (isSubmitting) {
     return (

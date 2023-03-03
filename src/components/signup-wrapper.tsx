@@ -186,10 +186,36 @@ const SignupWrapper = ({
 
   if (currentStep == "personalInfo") {
     return (
-      <PersonalInfo
-        setPersonalInfo={setPersonalInfo}
-        setCurrentStep={setCurrentStep}
-      />
+      <>
+        <p className="text-gray-500">
+          <h3 className="mb-4 mt-8 font-light text-gray-500">
+            A kivonat feltöltéséhez: az alábbi adatokra lesz szükség:
+          </h3>
+          <ul className="ml-6 list-disc">
+            <li>
+              A kivonat maximális hossza 2200 karakter (szóköz nélkül, cím
+              nélkül).{" "}
+            </li>
+            <li>A cím 3 nyelven (magyar, román, angol).</li>
+            <li>
+              A kivonat szövegének az alábbi szerkezetet kell követnie:
+              bevezetés, célkitűzések, módszerek, eredmények és következtetés.
+            </li>
+          </ul>
+          <h3 className="mb-4 mt-6 font-light text-gray-500">
+            A beküldéshez az alábbi adatokra lesz szükség:{" "}
+          </h3>
+          <ul className="ml-6 list-disc">
+            <li>A szerző neve, egyetem, évfolyam, email, kar, telefonszám.</li>
+            <li>Társszerzők neve, e-mail címe, egyeteme, évfolyama, kara </li>
+            <li>Témavezető neve és beosztása, valamint egyetem (intézet). </li>
+          </ul>
+        </p>
+        <PersonalInfo
+          setPersonalInfo={setPersonalInfo}
+          setCurrentStep={setCurrentStep}
+        />
+      </>
     );
   }
   if (currentStep == "documentInfo") {

@@ -15,6 +15,7 @@ const CoAuthorInfos = ({
   const [coAuthorInfos, setCoAuthorInfos] = useState<Array<CoAuthorInfoSchema>>(
     []
   );
+  const [isDirty, setIsDirty] = useState(false);
 
   return (
     <div>
@@ -33,6 +34,7 @@ const CoAuthorInfos = ({
                   }
                   removeCoAuthorForm={() => setCoAuthorCount(coAuthorCount - 1)}
                   index={index}
+                  setIsDirty={setIsDirty}
                 />
               </div>
             );
@@ -57,15 +59,24 @@ const CoAuthorInfos = ({
             3/6 - Társszerzők adatai
           </p>
         </div>
-        <button
-          className="my-2 rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-xl"
-          onClick={() => {
-            setCoAuthorInfosParent(coAuthorInfos);
-            setCurrentStep("coordinatorInfo");
-          }}
-        >
-          Tovább
-        </button>
+        {!isDirty ? (
+          <button
+            className="my-2 rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-xl"
+            onClick={() => {
+              setCoAuthorInfosParent(coAuthorInfos);
+              setCurrentStep("coordinatorInfo");
+            }}
+          >
+            Tovább
+          </button>
+        ) : (
+          <button
+            className="my-2 rounded-full bg-gray-300 px-10 py-2 font-semibold uppercase drop-shadow-md xl:text-xl"
+            disabled
+          >
+            Tovább
+          </button>
+        )}
       </div>
     </div>
   );
