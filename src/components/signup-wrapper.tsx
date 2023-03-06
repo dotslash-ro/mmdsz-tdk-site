@@ -1,7 +1,11 @@
 import { MutableRefObject, useEffect, useState } from "react";
 import PersonalInfo, { PersonalInfoSchema } from "./personal-info";
 import DocumentInfo, { DocumentInfoSchema } from "./document-info";
-import CoAuthorInfo, { CoAuthorInfoSchema } from "./coauthor-info";
+import { CoAuthorInfoSchema } from "./coauthor-info";
+// @ts-ignore
+import exampleAgreementDocUrl from "../assets/tdk-pelda-nyilatkozat.docx";
+// @ts-ignore
+import agreementDocUrl from "../assets/tdk-nyilatkozat.docx";
 import AgreementDoc from "./agreement-doc";
 import { CoordinatorInfoSchema } from "./coordinator-info";
 import ConfirmSignup from "./confirm-signup";
@@ -11,6 +15,7 @@ import { serverUrl } from "../constants";
 import { ClipLoader } from "react-spinners";
 
 const signupSteps = [
+  "preSignup",
   "personalInfo",
   "documentInfo",
   "coAuthorInfo",
@@ -31,7 +36,7 @@ const SignupWrapper = ({
   const [signupStatus, setSignupStatus] =
     useState<SignupStatus>("not-signedup");
 
-  const [currentStep, setCurrentStep] = useState<SignupStep>("personalInfo");
+  const [currentStep, setCurrentStep] = useState<SignupStep>("preSignup");
   const [personalInfo, setPersonalInfo] = useState<
     PersonalInfoSchema | undefined
   >(undefined);
@@ -184,38 +189,83 @@ const SignupWrapper = ({
     );
   }
 
-  if (currentStep == "personalInfo") {
+  if (currentStep == "preSignup") {
     return (
-      <>
+      <p className="">
+        <h3 className="mb-4 mt-8 text-lg font-light text-gray-800">
+          A kivonat feltöltéséhez: az alábbi adatokra lesz szükség:
+        </h3>
+        <ul className="ml-6 list-disc text-gray-500">
+          <li>
+            A kivonat maximális hossza 2200 karakter (szóköz nélkül, cím
+            nélkül).{" "}
+          </li>
+          <li>A cím 3 nyelven (magyar, román, angol).</li>
+          <li>
+            A kivonat szövegének az alábbi szerkezetet kell követnie: bevezetés,
+            célkitűzések, módszerek, eredmények és következtetés.
+          </li>
+        </ul>
+        <h3 className="mb-4 mt-6 text-lg font-light text-gray-800">
+          A beküldéshez az alábbi adatokra lesz szükség:{" "}
+        </h3>
+        <ul className="ml-6 list-disc text-gray-500">
+          <li>A szerző neve, egyetem, évfolyam, email, kar, telefonszám.</li>
+          <li>Társszerzők neve, e-mail címe, egyeteme, évfolyama, kara </li>
+          <li>Témavezető neve és beosztása, valamint egyetem (intézet). </li>
+        </ul>
+        <h3 className="mb-4 mt-6 text-lg font-light text-gray-800">
+          Saját hozzájárulási nyilatkozat
+        </h3>
+        <p className="mt-8 text-gray-500">
+          A tavalyi évhez hasonlóan idén is szükséges a saját hozzájárulási
+          nyilatkozat kitöltése.{" "}
+        </p>
+        <p className="mt-4 text-gray-500">
+          Egy kitöltött, példa dokumentum{" "}
+          <a className="text-sky-600 underline" href={exampleAgreementDocUrl}>
+            ide{" "}
+          </a>
+          kattintással tölthető le.
+        </p>
+        <p className="mt-4 text-gray-500">
+          Az eredeti, kitöltendő dokumentum{" "}
+          <a className="text-sky-600 underline" href={agreementDocUrl}>
+            innen tölthető le.
+          </a>
+        </p>
         <p className="text-gray-500">
-          <h3 className="mb-4 mt-8 font-light text-gray-500">
-            A kivonat feltöltéséhez: az alábbi adatokra lesz szükség:
-          </h3>
-          <ul className="ml-6 list-disc">
-            <li>
-              A kivonat maximális hossza 2200 karakter (szóköz nélkül, cím
-              nélkül).{" "}
-            </li>
-            <li>A cím 3 nyelven (magyar, román, angol).</li>
-            <li>
-              A kivonat szövegének az alábbi szerkezetet kell követnie:
-              bevezetés, célkitűzések, módszerek, eredmények és következtetés.
-            </li>
-          </ul>
-          <h3 className="mb-4 mt-6 font-light text-gray-500">
-            A beküldéshez az alábbi adatokra lesz szükség:{" "}
-          </h3>
-          <ul className="ml-6 list-disc">
-            <li>A szerző neve, egyetem, évfolyam, email, kar, telefonszám.</li>
-            <li>Társszerzők neve, e-mail címe, egyeteme, évfolyama, kara </li>
-            <li>Témavezető neve és beosztása, valamint egyetem (intézet). </li>
+          A kék színnel kiegészített részek példaként szolgálnak az űrlap
+          kitöltéséhez. Kérünk, hogy figyelmesen olvasd végig a dokumentumot
+          kitöltés közben.
+        </p>
+        <p className="mt-4 text-gray-500">
+          A fájlra vonatkozó követelmények:
+          <ul className="ml-4 list-disc">
+            <li>.pdf fájl formátum</li>
+            <li>Maximum 1 MB fájl méret.</li>
           </ul>
         </p>
-        <PersonalInfo
-          setPersonalInfo={setPersonalInfo}
-          setCurrentStep={setCurrentStep}
-        />
-      </>
+        <p className="mt-4 text-gray-500">
+          Amennyiben további kérdések merülnének fel, keress minket az e-mail
+          címünkön (tdk@mmdsz.ro), vagy írj a konferencia Facebook oldalán.
+        </p>
+        <button
+          className="mt-6 rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-xl"
+          onClick={() => setCurrentStep("personalInfo")}
+        >
+          Jelentkezés
+        </button>
+      </p>
+    );
+  }
+
+  if (currentStep == "personalInfo") {
+    return (
+      <PersonalInfo
+        setPersonalInfo={setPersonalInfo}
+        setCurrentStep={setCurrentStep}
+      />
     );
   }
   if (currentStep == "documentInfo") {

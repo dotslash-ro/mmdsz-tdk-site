@@ -18,26 +18,81 @@ const AgreementDoc = ({
   return (
     <div>
       <div className="ml-4">
-        <p className="mt-8 text-gray-600">
+        <p className="mt-8 text-gray-500">
           A saját hozzájárulási nyilatkozat nevű dokumentum igazolja a szerző
           hozzájárulását a Kivonathoz.{" "}
         </p>
-        <p>
+        <p className="mt-4 text-gray-500">
+          Egy kitöltött, példa dokumentum{" "}
           <a className="text-sky-600 underline" href={exampleAgreementDocUrl}>
-            Egy kitöltött, példa dokumentum ide kattintással tölthető le.
+            ide{" "}
           </a>
-          , Míg az eredeti, kitöltendő dokumentum{" "}
+          kattintással tölthető le.
+        </p>
+        <p className="mt-4 text-gray-500">
+          Az eredeti, kitöltendő dokumentum{" "}
           <a className="text-sky-600 underline" href={agreementDocUrl}>
             innen tölthető le.
           </a>
         </p>
-        <p className="text-gray-600">
+        <p className="text-gray-500">
           A kék színnel kiegészített részek példaként szolgálnak az űrlap
           kitöltéséhez. Kérünk, hogy figyelmesen olvasd végig a dokumentumot
-          kitöltés közben. Amennyiben további kérdések merülnének fel, keress
-          minket az e-mail címünkön (tdk@mmdsz.ro), vagy írj a konferencia
-          Facebook oldalán.
+          kitöltés közben.
         </p>
+        <p className="mt-4 text-gray-500">
+          A fájlra vonatkozó követelmények:
+          <ul className="ml-4 list-disc">
+            <li>.pdf fájl formátum</li>
+            <li>Maximum 1 MB fájl méret.</li>
+          </ul>
+        </p>
+        <p className="mt-4 text-gray-500">
+          Amennyiben további kérdések merülnének fel, keress minket az e-mail
+          címünkön (tdk@mmdsz.ro), vagy írj a konferencia Facebook oldalán.
+        </p>
+      </div>
+      <div>
+        {agreementDoc && agreementDoc.size > 1_000_000 && (
+          <div>
+            <div
+              role="alert"
+              className="mt-4 rounded border-l-4 border-red-500 bg-red-50 p-4"
+            >
+              <strong className="block font-medium text-red-800">
+                {" "}
+                A fájl túl nagy!{" "}
+              </strong>
+
+              <p className="mt-2 text-sm text-red-700">
+                A legnagyobb megengedett fájl méret 1 MB. Ha nem sikerül ennél
+                kisebb méretben beszkennelni a nyilatkozatot, kérünk töltsd fel
+                az eredeti nyilatkozatot és folytasd a jelentkezést, majd a
+                kitöltött nyilatkozatot juttasd el más csatornákon a
+                szervezőkhöz (pl. e-mailen keresztül).
+              </p>
+            </div>
+          </div>
+        )}
+      </div>
+      <div>
+        {agreementDoc && agreementDoc.name.split(".").at(-1) != "pdf" && (
+          <div>
+            <div
+              role="alert"
+              className="mt-4 rounded border-l-4 border-red-500 bg-red-50 p-4"
+            >
+              <strong className="block font-medium text-red-800">
+                {" "}
+                Helytelen fájl formátum!
+              </strong>
+
+              <p className="mt-2 text-sm text-red-700">
+                Kérünk a nyilatkozatot ".pdf" formátumban töltsétek fel!
+              </p>
+            </div>
+          </div>
+        )}
       </div>
       <div className="my-6 flex w-full items-center justify-center">
         <label
