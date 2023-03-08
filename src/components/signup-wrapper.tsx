@@ -35,6 +35,7 @@ const SignupWrapper = ({
 }) => {
   const [signupStatus, setSignupStatus] =
     useState<SignupStatus>("not-signedup");
+  const [dataUploaded, setDataUploaded] = useState(false);
 
   const [currentStep, setCurrentStep] = useState<SignupStep>("preSignup");
   const [personalInfo, setPersonalInfo] = useState<
@@ -53,6 +54,7 @@ const SignupWrapper = ({
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    // fetch signup status from localstorage
     const _signupStatus = localStorage.getItem("signupStatus");
     if (!_signupStatus) {
       setSignupStatus("not-signedup");
@@ -62,6 +64,36 @@ const SignupWrapper = ({
       setSignupStatus(_signupStatus as SignupStatus);
     } else {
       setSignupStatus("not-signedup");
+    }
+
+    // fetch dataUploaded from localstorage
+    const _dataUploaded = localStorage.getItem("dataUploaded");
+    if (_dataUploaded && _dataUploaded === "true") {
+      setDataUploaded(true);
+      setCurrentStep("agreementDoc");
+    }
+
+    // fetch personal info, from previous session, if any
+    const _personalInfo = localStorage.getItem("personalInfo");
+    if (_personalInfo) {
+      setPersonalInfo(JSON.parse(_personalInfo) as PersonalInfoSchema);
+    }
+    // fetch document info, from previous session, if any
+    const _documentInfo = localStorage.getItem("documentInfo");
+    if (_documentInfo) {
+      setDocumentInfo(JSON.parse(_documentInfo) as DocumentInfoSchema);
+    }
+    // fetch co-author info, from previous session, if any
+    const _coAuthorInfos = localStorage.getItem("coAuthorInfos");
+    if (_coAuthorInfos) {
+      setCoAuthorInfos(JSON.parse(_coAuthorInfos) as CoAuthorInfoSchema[]);
+    }
+    // fetch coordinator info, from previous session, if any
+    const _coordinatorInfos = localStorage.getItem("coordinatorInfos");
+    if (_coordinatorInfos) {
+      setCoordinatorInfos(
+        JSON.parse(_coordinatorInfos) as CoordinatorInfoSchema[]
+      );
     }
   }, []);
 
@@ -73,45 +105,59 @@ const SignupWrapper = ({
     if (!personalInfo || !documentInfo || !agreementDoc) {
       return;
     }
-    // send applicant data to backend
-    const body = JSON.stringify({
-      personalInfo: {
-        ...personalInfo,
-        university:
-          personalInfo.university == "Egyéb"
-            ? personalInfo.otherUniversity
-            : personalInfo.university,
-      },
-      documentInfo,
-      coAuthorInfos: coAuthorInfos.map((coAuthorInfo) => ({
-        ...coAuthorInfo,
-        university:
-          coAuthorInfo.university == "Egyéb"
-            ? coAuthorInfo.otherUniversity
-            : coAuthorInfo.university,
-      })),
-      coordinatorInfos,
-    });
-    try {
-      setLoading(true);
-      scrollToRef?.current?.scrollIntoView({ behavior: "smooth" });
-      const response = await fetch(`${serverUrl}/signup`, {
-        method: "POST",
-        body: body,
-        headers: {
-          "Content-Type": "application/json",
+    if (!dataUploaded) {
+      // send applicant data to backend
+      const body = JSON.stringify({
+        personalInfo: {
+          ...personalInfo,
+          university:
+            personalInfo.university == "Egyéb"
+              ? personalInfo.otherUniversity
+              : personalInfo.university,
         },
+        documentInfo,
+        coAuthorInfos: coAuthorInfos.map((coAuthorInfo) => ({
+          ...coAuthorInfo,
+          university:
+            coAuthorInfo.university == "Egyéb"
+              ? coAuthorInfo.otherUniversity
+              : coAuthorInfo.university,
+        })),
+        coordinatorInfos,
       });
-      if (response.status != 200) {
+      try {
+        setLoading(true);
+        scrollToRef?.current?.scrollIntoView({ behavior: "smooth" });
+        const response = await fetch(`${serverUrl}/signup`, {
+          method: "POST",
+          body: body,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        if (response.status != 200) {
+          setLoading(false);
+          setSignupStatus("error");
+          return;
+        }
+      } catch (e) {
+        console.log(e);
         setLoading(false);
         setSignupStatus("error");
         return;
       }
-    } catch (e) {
-      console.log(e);
-      setLoading(false);
-      setSignupStatus("error");
-      return;
+      // after successful upload, set flag to no longer require applicant data
+      setDataUploaded(true);
+      localStorage.setItem("dataUploaded", "true");
+
+      // persist form data for later use if file upload fails
+      localStorage.setItem("personalInfo", JSON.stringify(personalInfo));
+      localStorage.setItem("documentInfo", JSON.stringify(documentInfo));
+      localStorage.setItem("coAuthorInfos", JSON.stringify(coAuthorInfos));
+      localStorage.setItem(
+        "coordinatorInfos",
+        JSON.stringify(coordinatorInfos)
+      );
     }
     // prepare form data for file upload
     const data = new FormData();
@@ -155,7 +201,13 @@ const SignupWrapper = ({
           className="py-3 text-sm text-sky-600 hover:cursor-pointer hover:underline"
           onClick={() => {
             localStorage.removeItem("signupStatus");
+            localStorage.removeItem("personalInfo");
+            localStorage.removeItem("documentInfo");
+            localStorage.removeItem("coAuthorInfos");
+            localStorage.removeItem("coordinatorInfos");
+            localStorage.removeItem("dataUploaded");
             setSignupStatus("not-signedup");
+            setDataUploaded(false);
             setCurrentStep("personalInfo");
           }}
         >
@@ -164,11 +216,37 @@ const SignupWrapper = ({
       </div>
     );
   }
-  if (signupStatus === "error") {
+  if (signupStatus === "error" && dataUploaded) {
     return (
       <div className="flex h-48 flex-col items-center justify-center">
         <div className="py-6 text-center text-xl font-semibold text-red-400">
-          Sajnos a jelentkezés feldolgozása alatt egy hiba lépett fel!
+          Sajnos a hozzájárulási nyilatkozat feltöltése alatt egy hiba lépett
+          fel!
+        </div>
+        <button
+          className="rounded-full bg-tdk-accent py-2 px-5 text-lg font-bold uppercase text-white hover:underline"
+          onClick={() => {
+            setCurrentStep("agreementDoc");
+            setSignupStatus("not-signedup");
+          }}
+        >
+          Újrapbróbálkozás →
+        </button>
+        <div className="pt-6 text-center font-light text-gray-600">
+          Ha a hiba továbbra is fent áll, vedd fel a szervezőkkel a kapcsolatot:{" "}
+          <span className="text-sky-400 hover:underline">
+            <a href="mailto:tdk@mmdsz.ro">tdk@mmdsz.ro </a>
+          </span>
+        </div>
+      </div>
+    );
+  }
+
+  if (signupStatus === "error" && !dataUploaded) {
+    return (
+      <div className="flex h-48 flex-col items-center justify-center">
+        <div className="py-6 text-center text-xl font-semibold text-red-400">
+          Sajnos egy hiba lépett fel a jelentkezés feldolgozása alatt.
         </div>
         <button
           className="rounded-full bg-tdk-accent py-2 px-5 text-lg font-bold uppercase text-white hover:underline"
