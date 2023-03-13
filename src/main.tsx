@@ -1,10 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import {
-  createBrowserRouter,
-  createHashRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import Landing from "./pages/landing";
 import About from "./pages/about";
@@ -15,6 +11,7 @@ import PastJournals from "./pages/journals";
 import Journal from "./components/journal";
 import Organizers from "./pages/organizers";
 import FAQ from "./pages/faq";
+import GDPR from "./pages/gdpr";
 
 const router = createHashRouter([
   {
@@ -44,6 +41,10 @@ const router = createHashRouter([
   {
     path: "/tdkerdezz",
     element: <FAQ />,
+  },
+  {
+    path: "/gdpr",
+    element: <GDPR />,
   },
   {
     path: "/osszefoglalok",

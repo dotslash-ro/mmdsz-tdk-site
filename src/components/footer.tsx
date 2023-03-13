@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import mmdszLogo from "../assets/mmdsz-logo.png";
 
 const Footer = () => {
@@ -127,6 +128,19 @@ const Footer = () => {
                 ANOSR
               </a>
             </li>
+          </ul>
+        </div>
+        <div>
+          <h2 className="mb-6 text-sm font-semibold uppercase text-white">
+            Szabáyzatok
+          </h2>
+          <ul className="text-sm text-neutral-500">
+            <li className="mb-4">
+              <NavLink to="/gdpr" className="hover:underline">
+                GDPR
+              </NavLink>
+            </li>
+            <li className="mb-4"></li>
           </ul>
         </div>
       </div>

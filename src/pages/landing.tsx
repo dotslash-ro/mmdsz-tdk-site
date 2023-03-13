@@ -53,7 +53,7 @@ const Landing = () => {
             to="/jelentkezes"
             className="rounded-full bg-tdk-accent px-10 py-4 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-xl"
           >
-            Jelentkezés →
+            Információk →
           </Link>
         </div>
       </div>

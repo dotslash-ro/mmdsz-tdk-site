@@ -89,7 +89,7 @@ const Navbar = () => {
             : "flex items-center justify-center px-5 py-3 text-sm font-bold uppercase text-tdk-accent drop-shadow-lg hover:underline lg:rounded-full lg:bg-tdk-accent lg:text-base lg:font-bold lg:text-white"
         }
       >
-        Jelentkezés
+        Információk
       </NavLink>
     </header>
   );
