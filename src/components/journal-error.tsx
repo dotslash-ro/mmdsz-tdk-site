@@ -38,11 +38,11 @@ const JournalError = () => {
   }, [year]);
 
   return (
-    <div className="flex flex-grow items-center justify-center font-light text-gray-500">
+    <div className="flex flex-grow flex-col items-center justify-center font-light text-gray-500">
       {" "}
       Sajnos nem sikerült megjeleníteni az összefoglaló kötetet. A Safari
       böngésző iOS-en nem támogatja PDF fájlok megjelenítését. Az összefoglaló
-      letölthető{" "}
+      kötet letölthető{" "}
       <a
         className="font-semibold text-sky-400 hover:underline"
         href={journal}
