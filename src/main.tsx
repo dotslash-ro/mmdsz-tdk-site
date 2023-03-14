@@ -58,7 +58,17 @@ const router = createHashRouter([
           </div>
         ),
       },
-      { path: ":year", element: <Journal /> },
+      {
+        path: ":year",
+        element: <Journal />,
+        errorElement: (
+          <div className="flex flex-grow items-center justify-center font-light text-gray-500">
+            {" "}
+            Sajnos nem sikerült betölteni az összefoglaló kötetet. A Safari
+            böngésző iOS-en nem támogatja PDF fájlok megjelenetísét.
+          </div>
+        ),
+      },
     ],
   },
 ]);
