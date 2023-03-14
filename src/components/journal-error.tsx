@@ -10,7 +10,7 @@ import journal2015 from "../assets/2015-suppl1.pdf";
 import journal2014 from "../assets/2014-suppl1.pdf";
 import journal2013 from "../assets/2013-suppl1.pdf";
 import journal2012 from "../assets/2012-suppl1.pdf";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const yearToJournalMap: Map<string, string> = new Map([
   ["2022", journal2022],
@@ -29,28 +29,32 @@ const yearToJournalMap: Map<string, string> = new Map([
 const JournalError = () => {
   const { year } = useParams();
   const [journal, setJournal] = useState("");
+  const errorMsgRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (!year || !yearToJournalMap.get(year)) {
       return;
     }
     setJournal(yearToJournalMap.get(year) ?? "");
+    errorMsgRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [year]);
 
   return (
     <div className="flex flex-grow flex-col items-center justify-center font-light text-gray-500">
       {" "}
-      Sajnos nem sikerült megjeleníteni az összefoglaló kötetet. A Safari
-      böngésző iOS-en nem támogatja PDF fájlok megjelenítését. Az összefoglaló
-      kötet letölthető{" "}
-      <a
-        className="font-semibold text-sky-400 hover:underline"
-        href={journal}
-        download
-      >
-        ide
-      </a>{" "}
-      kattintással.
+      <div ref={errorMsgRef} className="scroll-mt-10">
+        Sajnos nem sikerült megjeleníteni az összefoglaló kötetet. A Safari
+        böngésző iOS-en nem támogatja PDF fájlok megjelenítését. Az összefoglaló
+        kötet letölthető{" "}
+        <a
+          className="font-semibold text-sky-400 hover:underline"
+          href={journal}
+          download
+        >
+          ide
+        </a>{" "}
+        kattintással.
+      </div>
     </div>
   );
 };
