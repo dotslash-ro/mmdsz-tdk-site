@@ -12,6 +12,7 @@ import Journal from "./components/journal";
 import Organizers from "./pages/organizers";
 import FAQ from "./pages/faq";
 import GDPR from "./pages/gdpr";
+import JournalError from "./components/journal-error";
 
 const router = createHashRouter([
   {
@@ -61,13 +62,7 @@ const router = createHashRouter([
       {
         path: ":year",
         element: <Journal />,
-        errorElement: (
-          <div className="flex flex-grow items-center justify-center font-light text-gray-500">
-            {" "}
-            Sajnos nem sikerült betölteni az összefoglaló kötetet. A Safari
-            böngésző iOS-en nem támogatja PDF fájlok megjelenetísét.
-          </div>
-        ),
+        errorElement: <JournalError />,
       },
     ],
   },
