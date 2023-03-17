@@ -50,7 +50,7 @@ const Timeline = () => {
             Dolgozatok ellenőrzése
           </h3>
           <time className="mb-10 font-light leading-none text-gray-500">
-            2023. március 13-20.
+            2023. március 13-21.
           </time>
           <div className="m-6">
             <p className="text-gray-500">
@@ -66,14 +66,15 @@ const Timeline = () => {
         <li className="mb-10 ml-10 scroll-mt-10 md:scroll-mt-32" id="slide-3">
           <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border-2 border-white bg-gray-500"></div>
           <h3 className="pb-4 text-2xl font-semibold text-gray-900">
-            Javított dolgozatok feltöltése
+            Javított dolgozatok elküldése
           </h3>
           <time className="mb-10 font-light leading-none text-gray-500">
-            2023. március 20-24.
+            2023. március 21-25.
           </time>
           <div className="pointer-events-none opacity-50 grayscale">
             <div className="m-6">
-              <SecondUploadForm />
+              A kijavított dolgozatokat e-mailen keresztül lehet eljuttatni a
+              szervezőkhöz.
             </div>
           </div>
         </li>
