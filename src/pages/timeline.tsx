@@ -121,7 +121,7 @@ const Timeline = () => {
                 </h5>{" "}
                 <ul className="ml-6 list-disc">
                   <li>
-                    A<b>sociația Studenților Maghiari din Târgu Mureș CIF:</b>{" "}
+                    <b>Asociația Studenților Maghiari din Târgu Mureș CIF:</b>{" "}
                     8434501
                   </li>{" "}
                   <li>
