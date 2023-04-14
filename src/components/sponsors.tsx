@@ -28,6 +28,7 @@ import mtaLogo from "../assets/mta.jpeg";
 import szbaLogo from "../assets/sztba.jpeg";
 import cjmLogo from "../assets/cjm.jpg";
 import megvalosultLogo from "../assets/megvalosult.jpg";
+import mmmLogo from "../assets/mmm.jpg";
 
 const Sponsors = () => {
   return (
@@ -60,6 +61,10 @@ const Sponsors = () => {
           />
           <img
             src={cjmLogo}
+            className="h-32 w-64 object-scale-down mix-blend-multiply transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
+          />
+          <img
+            src={mmmLogo}
             className="h-32 w-64 object-scale-down mix-blend-multiply transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
           />
           <img
@@ -103,6 +108,7 @@ const Sponsors = () => {
             src={szbaLogo}
             className="h-32 w-64 object-scale-down mix-blend-multiply transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
           />
+
           {/* <img
             src={bgLogo}
             className="h-32 w-64 object-scale-down transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96 mix-blend-multiply"
