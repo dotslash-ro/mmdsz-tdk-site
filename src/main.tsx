@@ -14,6 +14,7 @@ import FAQ from "./pages/faq";
 import GDPR from "./pages/gdpr";
 import JournalError from "./components/journal-error";
 import Workshops from "./pages/workshops";
+import Accreditation from "./pages/accreditation";
 
 const router = createHashRouter([
   {
@@ -51,6 +52,10 @@ const router = createHashRouter([
   {
     path: "/workshopok",
     element: <Workshops />,
+  },
+  {
+    path: "/akkreditacio",
+    element: <Accreditation />,
   },
   {
     path: "/osszefoglalok",
