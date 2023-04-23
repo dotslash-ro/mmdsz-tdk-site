@@ -29,6 +29,7 @@ import szbaLogo from "../assets/sztba.jpeg";
 import cjmLogo from "../assets/cjm.jpg";
 import megvalosultLogo from "../assets/megvalosult.jpg";
 import mmmLogo from "../assets/mmm.jpg";
+import kimLogo from "../assets/kim.jpg";
 
 const Sponsors = () => {
   return (
@@ -69,6 +70,10 @@ const Sponsors = () => {
           />
           <img
             src={eetLogo}
+            className="h-32 w-64 object-scale-down mix-blend-multiply transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
+          />
+          <img
+            src={kimLogo}
             className="h-32 w-64 object-scale-down mix-blend-multiply transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
           />
           <img
