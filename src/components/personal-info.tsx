@@ -19,9 +19,8 @@ const personalInfoSchema = z.object({
   phoneNumber: z
     .string()
     .min(1, { message: "Add meg a telefonszámod!" })
-    .max(13, { message: "Helytelen telefonszám!" })
-    .regex(/[\+0123456789\w]/, "Helytelen telefonszám!"),
-  studyYear: z.string().regex(/[123456]/),
+    .max(13, { message: "Helytelen telefonszám!" }),
+  studyYear: z.string(),
 });
 
 export type PersonalInfoSchema = z.infer<typeof personalInfoSchema>;
