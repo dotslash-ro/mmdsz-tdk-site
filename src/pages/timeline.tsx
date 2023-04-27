@@ -103,22 +103,24 @@ const Timeline = () => {
           <div className="">
             <p className="m-6">
               Kedves TDK-zó diákok! Indul a prezentációk feltöltésének
-              periódusa. Fontos megjegyzés, hogy a bemutatók feltöltése után nem
-              áll módunkban semmilyen utólagos módosítás eszközölése, a
-              prezentációk a feltöltött formában kerülnek bemutatásra a
-              konferencián! megértéseteket köszönjük! Várjuk a bemutatóitokat!
+              periódusa.{" "}
             </p>
-            <p className="m-6">
-              A prezentációkat{" "}
-              <a
-                href="https://forms.gle/HPpNsiBkxkMNZFXr5"
-                className="text-sky-600 hover:underline"
-                target="_blank"
-              >
-                az alábbi Google Forms
-              </a>{" "}
-              kitöltésével lehet feltölteni:
-            </p>
+            <p className="m-6 font-semibold">
+              {" "}
+              Fontos megjegyzés, hogy a bemutatók feltöltése után nem áll
+              módunkban semmilyen utólagos módosítás eszközölése, a prezentációk
+              a feltöltött formában kerülnek bemutatásra a konferencián!
+              Megértéseteket köszönjük!
+            </p>{" "}
+            <p className="m-6">Várjuk a bemutatóitokat!</p>
+            <a
+              href="https://forms.gle/HPpNsiBkxkMNZFXr5"
+              target="_blank"
+              className="mt-8 flex w-fit items-center justify-center rounded-full bg-tdk-accent px-5 py-3 text-sm font-bold uppercase text-white drop-shadow-lg hover:underline lg:text-base lg:font-bold"
+            >
+              {" "}
+              Prezentáció feltöltése
+            </a>
             {/* <iframe
               src="https://forms.gle/HPpNsiBkxkMNZFXr5"
               className="h-128 w-full"
