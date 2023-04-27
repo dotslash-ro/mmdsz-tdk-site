@@ -1,5 +1,6 @@
 export const serverUrl = "https://mmdsz-tdk-functions.vercel.app/api";
-
+export const workshopServerUrl = "http://localhost:8000/api";
+export const maxSignUpPerEmail = 2;
 export const universityList = [
   "",
   "MOGYTTE",
@@ -52,3 +53,6 @@ export const sectionList = [
   "Traumatológia",
   "Urológia",
 ] as const;
+
+export const oauthClientId =
+  "858299120064-428uvpomj4tre0ek9mh58uc7ushudiio.apps.googleusercontent.com";

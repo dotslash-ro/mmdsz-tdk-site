@@ -1,4 +1,10 @@
-export interface WorkshopProps {
+import { Ref, RefObject, useEffect, useState } from "react";
+import { workshopServerUrl } from "../constants";
+import { ClipLoader } from "react-spinners";
+import WorkshopSignupButton from "./workshop-signup-btn";
+
+export type WorkshopType = {
+  id: string;
   title: string;
   speakers: string;
   targetAudience: string;
@@ -7,32 +13,128 @@ export interface WorkshopProps {
   date: string;
   noOfAvailableSeats: number;
   noOfTotalSeats: number;
-}
+};
 
-const Workshop = ({
-  title,
-  speakers,
-  targetAudience,
-  description,
-  location,
-  date,
-  noOfAvailableSeats,
-  noOfTotalSeats,
-}: WorkshopProps) => {
+export type WorkshopProps = {
+  id: string;
+  email: string | undefined;
+  canSignUp: boolean;
+};
+
+const Workshop = ({ id, email, canSignUp }: WorkshopProps) => {
+  const [workshop, setWorkshop] = useState<WorkshopType | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [hasSignedUp, setHasSignedUp] = useState(false);
+
+  async function fetchWorkshopData() {
+    const resp = await fetch(`${workshopServerUrl}/workshop/${id}`);
+    if (resp.status != 200) {
+      return null; //error, handle please
+    }
+    const data = await resp.json();
+    setWorkshop(data);
+
+    if (email) {
+      const resp2 = await fetch(
+        `${workshopServerUrl}/application/has-applied`,
+        {
+          method: "POST",
+          body: JSON.stringify({ email: email, workshopId: id }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      const { hasSignedUp } = await resp2.json();
+      setHasSignedUp(hasSignedUp);
+    }
+  }
+
+  useEffect(() => {
+    fetchWorkshopData();
+  }, []);
+
+  async function onSignup() {
+    setLoading(true);
+    const resp = await fetch(`${workshopServerUrl}/application`, {
+      method: "POST",
+      body: JSON.stringify({ email: email, workshopId: id }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    await fetchWorkshopData();
+    setLoading(false);
+  }
+
+  async function onCancelSignup() {
+    setLoading(true);
+    const resp = await fetch(`${workshopServerUrl}/application`, {
+      method: "DELETE",
+      body: JSON.stringify({ email: email, workshopId: id }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    await fetchWorkshopData();
+    setLoading(false);
+  }
+
+  if (!workshop) {
+    return (
+      <div className="flex h-64 w-full items-center justify-center">
+        <ClipLoader />
+      </div>
+    );
+  }
+
   return (
     <div className="">
-      <h2 className="pt-6 pb-2 text-3xl font-bold">{title}</h2>
-      <h3 className="pb-2 text-xl font-light text-gray-700">{speakers}</h3>
-      <h4 className="pb-6 text-sm text-gray-600">
-        {location} - {date}
-      </h4>
-      <p className="pb-6 text-gray-700"> {description}</p>
-      <div className="flex justify-between">
-        <div>{targetAudience}</div>
-        <div>
-          {noOfAvailableSeats}/{noOfTotalSeats}
-        </div>
-        <button className="hover:underline ">Jelentkezés →</button>
+      <h3 className="text-md font-semibold text-gray-500">
+        {workshop.speakers}:
+      </h3>
+      <h2 className="ml-4 pt-2 pb-2 text-2xl font-bold">{workshop.title}</h2>
+      <div className="ml-4 flex">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          className="h-6 w-6 fill-gray-600"
+        >
+          <path d="M12 1c-3.148 0-6 2.553-6 5.702 0 3.148 2.602 6.907 6 12.298 3.398-5.391 6-9.15 6-12.298 0-3.149-2.851-5.702-6-5.702zm0 8c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2zm12 14h-24l4-8h3.135c.385.641.798 1.309 1.232 2h-3.131l-2 4h17.527l-2-4h-3.131c.435-.691.848-1.359 1.232-2h3.136l4 8z" />
+        </svg>
+        <h4 className="ml-4 pb-2 text-sm text-gray-600">{workshop.location}</h4>
+      </div>
+      <div className="ml-4 flex pt-2">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          className="h-5 w-5 fill-gray-600"
+        >
+          <path d="M17 3v-2c0-.552.447-1 1-1s1 .448 1 1v2c0 .552-.447 1-1 1s-1-.448-1-1zm-12 1c.553 0 1-.448 1-1v-2c0-.552-.447-1-1-1-.553 0-1 .448-1 1v2c0 .552.447 1 1 1zm13 13v-3h-1v4h3v-1h-2zm-5 .5c0 2.481 2.019 4.5 4.5 4.5s4.5-2.019 4.5-4.5-2.019-4.5-4.5-4.5-4.5 2.019-4.5 4.5zm11 0c0 3.59-2.91 6.5-6.5 6.5s-6.5-2.91-6.5-6.5 2.91-6.5 6.5-6.5 6.5 2.91 6.5 6.5zm-14.237 3.5h-7.763v-13h19v1.763c.727.33 1.399.757 2 1.268v-9.031h-3v1c0 1.316-1.278 2.339-2.658 1.894-.831-.268-1.342-1.111-1.342-1.984v-.91h-9v1c0 1.316-1.278 2.339-2.658 1.894-.831-.268-1.342-1.111-1.342-1.984v-.91h-3v21h11.031c-.511-.601-.938-1.273-1.268-2z" />
+        </svg>
+        <h4 className="ml-4 pb-6 text-sm text-gray-600">{workshop.date}</h4>
+      </div>
+      <p className="pb-6 pt-4 text-gray-700"> {workshop.description}</p>
+      <div className="pt-3">
+        <b>Részvételi kritérium(ok): </b>
+        {workshop.targetAudience}
+      </div>
+      <div className="pt-1">
+        <b>Elérhető helyek száma: </b> {workshop.noOfAvailableSeats}/
+        {workshop.noOfTotalSeats}
+      </div>
+      <div className="flex justify-end pt-4">
+        <WorkshopSignupButton
+          canSignUp={canSignUp}
+          hasLoggedIn={!!email}
+          hasSignedUp={hasSignedUp}
+          onSignUp={onSignup}
+          onCancelSignup={onCancelSignup}
+          loading={loading}
+          noOfAvailableSeats={workshop.noOfAvailableSeats}
+        />
       </div>
     </div>
   );
