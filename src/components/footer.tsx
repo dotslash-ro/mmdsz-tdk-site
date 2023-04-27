@@ -132,7 +132,7 @@ const Footer = () => {
         </div>
         <div>
           <h2 className="mb-6 text-sm font-semibold uppercase text-white">
-            Szabáyzatok
+            Szabályzatok
           </h2>
           <ul className="text-sm text-neutral-500">
             <li className="mb-4">

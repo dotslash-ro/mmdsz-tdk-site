@@ -15,6 +15,9 @@ import GDPR from "./pages/gdpr";
 import JournalError from "./components/journal-error";
 import Workshops from "./pages/workshops";
 import Accreditation from "./pages/accreditation";
+import { GoogleOAuthProvider } from "@react-oauth/google";
+import { oauthClientId } from "./constants";
+import WorkshopLogin from "./pages/workshop-login";
 
 const router = createHashRouter([
   {
@@ -50,12 +53,16 @@ const router = createHashRouter([
     element: <GDPR />,
   },
   {
-    path: "/workshopok",
+    path: "/workshop",
     element: <Workshops />,
   },
   {
     path: "/akkreditacio",
     element: <Accreditation />,
+  },
+  {
+    path: "/workshop-bejelentkezes",
+    element: <WorkshopLogin />,
   },
   {
     path: "/osszefoglalok",
@@ -79,7 +86,9 @@ const router = createHashRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+  <GoogleOAuthProvider clientId={oauthClientId}>
+    <React.StrictMode>
+      <RouterProvider router={router} />
+    </React.StrictMode>
+  </GoogleOAuthProvider>
 );

@@ -3,6 +3,9 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      spacing: {
+        128: "32rem",
+      },
       colors: {
         "tdk-primary": "#2b5955",
         "tdk-secondary": "#0a3032",
