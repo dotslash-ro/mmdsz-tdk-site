@@ -20,16 +20,26 @@ const Accreditation = () => {
         regisztrációt, melyre lehetőség nyílik a konferencia teljes ideje alatt!
       </p>{" "}
       <p className="py-2 text-gray-800">
-        Az akkreditációs díj, helyszíni és online regisztráció során:
-        <ul className="ml-6 mt-4 list-disc italic text-gray-700">
-          <li>főorvosok és szakorvosok számára: 350 RON (24 EMC)</li>{" "}
-          <li>rezidens orvosok számára: 250 RON (24 EMC)</li>{" "}
-          <li>
-            gyógyszerészek és gyógyszerész rezidensek számára: 150 RON (24 EFC)
-          </li>
+        Regisztrációs díjak (helyszínen készpénzes kifizetés (számla
+        igényelhető), előzetes regisztráció esetén banki átutalás):
+        <h4 className="pt-6 text-lg font-semibold text-neutral-600">
+          Előzetes regisztráció (online) - banki átutalás:
+        </h4>
+        <ul className="ml-6 mt-1 list-disc italic text-gray-700">
+          <li>főorvosok és szakorvosok számára: 250 RON</li>{" "}
+          <li>rezidens orvosok számára: 200 RON</li>{" "}
+          <li>gyógyszerészek és gyógyszerész rezidensek számára: 150 RON</li>
+        </ul>
+        <h4 className="pt-6 text-lg font-semibold text-neutral-600">
+          Helyszíni regisztráció - készpénzes kifizetés:
+        </h4>
+        <ul className="ml-6 mt-1 list-disc italic text-gray-700">
+          <li>főorvosok és szakorvosok számára: 300 RON</li>{" "}
+          <li>rezidens orvosok számára: 250 RON</li>{" "}
+          <li>gyógyszerészek és gyógyszerész rezidensek számára: 150 RON</li>
         </ul>
       </p>{" "}
-      <p className="py-2 text-gray-800">
+      <p className="py-4 text-gray-800">
         A díj magában foglalja az akkreditációs diplomát és egy jelképes
         ajándékcsomagot, amely a konferencia helyszínén az Akkreditációs pultnál
         vehető át.
