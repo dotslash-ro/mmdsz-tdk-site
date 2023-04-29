@@ -75,17 +75,17 @@ const Workshops = () => {
   //   })();
   // }, [profile]);
 
-  if (error) {
-    return <>Error lol</>;
-  }
+  // if (error) {
+  //   return <>Error lol</>;
+  // }
 
-  if (loading) {
-    return (
-      <div className="flex h-screen items-center justify-center">
-        <ClipLoader />
-      </div>
-    );
-  }
+  // if (loading) {
+  //   return (
+  //     <div className="flex h-screen items-center justify-center">
+  //       <ClipLoader />
+  //     </div>
+  //   );
+  // }
 
   return (
     <>
