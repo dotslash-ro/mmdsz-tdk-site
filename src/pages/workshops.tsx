@@ -28,6 +28,7 @@ const Workshops = () => {
   const login = useGoogleLogin({ onSuccess: (res) => setUser(res) });
 
   useEffect(() => {
+    console.log(studyYear);
     setWorkshopsToShow(
       workshops
         .filter((workshop) =>

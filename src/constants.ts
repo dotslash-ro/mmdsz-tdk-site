@@ -598,14 +598,14 @@ export const workshops = [
     yearTo: 6,
   },
   {
-    id: "clh21wgwt001efqng0j56v075",
+    id: "clh21wgwt001efqng0j56v076",
     title: "Fogászati fotózás",
     speakers: "Dr. Markovics Emese, Dr. Pongrácz Mátyás",
     targetAudience: "5-öd évtől",
     location: "Pomadent",
     date: "2023.05.11. (Csütörtök), 14:00-16:00",
     description:
-      "A workshopban szó esik a fényképezőgép működéséről és beállításairól ü a résztvevők meglévő tudásának függvényében részletesebben vagy felületesebben. Ezután a fogászati szék mellett bemutatjuk a fényképezési protokollt, amit használunk a technikai laboratóriummal való kommunikációhoz és az esztétikai és funkcionális változások követésére. A résztvevők elsajátíthatják a szükséges fényképek elkészítésének módját és felhasználási lehetőségeiket.",
+      "A workshopban szó esik a fényképezőgép működéséről és beállításairól a résztvevők meglévő tudásának függvényében részletesebben vagy felületesebben. Ezután a fogászati szék mellett bemutatjuk a fényképezési protokollt, amit használunk a technikai laboratóriummal való kommunikációhoz és az esztétikai és funkcionális változások követésére. A résztvevők elsajátíthatják a szükséges fényképek elkészítésének módját és felhasználási lehetőségeiket.",
     noOfAvailableSeats: 10,
     noOfTotalSeats: 10,
     section: "FOK",
