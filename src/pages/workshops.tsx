@@ -156,15 +156,14 @@ const Workshops = () => {
             <select
               id="section-select"
               className="ml-4 block w-full rounded-full border border-gray-400 bg-white p-2.5 text-gray-900 focus:border-tdk-primary"
+              onChange={(e) =>
+                setSection((e.target as HTMLSelectElement).value)
+              }
             >
               {["", "ÁOK", "FOK", "GYK", "Mindenkinek"].map(
                 (section, index) => {
                   return (
-                    <option
-                      className="text-md"
-                      key={index}
-                      onClick={() => setSection(section)}
-                    >
+                    <option className="text-md" key={index}>
                       {section}
                     </option>
                   );
@@ -182,20 +181,17 @@ const Workshops = () => {
             <select
               id="study-year-select"
               className="ml-4 block w-full rounded-full border border-gray-400 bg-white p-2.5 text-gray-900 focus:border-tdk-primary"
+              onChange={(e) =>
+                setStudyYear(
+                  (e.target as HTMLSelectElement).value.length
+                    ? Number.parseInt((e.target as HTMLSelectElement).value)
+                    : undefined
+                )
+              }
             >
               {["", "1", "2", "3", "4", "5", "6"].map((studyYear, index) => {
                 return (
-                  <option
-                    className="text-md"
-                    key={index}
-                    onClick={() =>
-                      setStudyYear(
-                        studyYear.length
-                          ? Number.parseInt(studyYear)
-                          : undefined
-                      )
-                    }
-                  >
+                  <option className="text-md" key={index}>
                     {studyYear}
                   </option>
                 );
