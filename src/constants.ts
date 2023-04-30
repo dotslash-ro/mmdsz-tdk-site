@@ -64,14 +64,14 @@ export const workshops = [
       '"A veszélyes szőlő". Két, a szőlő illetve kontaminált bor okozta megbetegedés diagnosztikai és terápiás kihívásai.',
     speakers: "Dr. Szabó Mónika",
     targetAudience: "3-ad évtől",
-    location: "",
+    location: "Gyógyszerészeti Kar 1-es Előadó Terem",
     date: "2023.05.11 (Csütörtök), 14:00-16:00",
     description:
       "A műhelymunka keretén belül sor kerül két sajátosabb, ritkább eset interaktív differenciál diagnosztikai megbeszélésére és terápiás kihívásainak tárgyalására valamint, a felmerülő lehetséges hibaforrások kiemelésére.",
     noOfAvailableSeats: 40,
     noOfTotalSeats: 40,
     section: "AOK",
-    yearFrom: 1,
+    yearFrom: 3,
     yearTo: 6,
   },
   {
@@ -83,10 +83,10 @@ export const workshops = [
     date: "2023.05.10 (Szerda), 10:00-12:00",
     description:
       "Szövethiányos állapotok esetén a helyi lebenyek alkalmazása nélkülözhetetlen egy funkcionális és esztétikus eredmény eléréséhez, egy plasztikai sebész repertoárjában, bármilyen anatómia zónáról legyen szó. A workshop célja úgy elméleti, mind gyakorlati szempontból hozzásegíteni a résztvevőket ahhoz, hogy a megfelelő lebenyeket, a megfelelő zónában használva sikeresen meg tudják oldani a szövethiányos állapotokat, legyen az trauma utáni vagy egy tumor eltávolításának következménye.",
-    noOfAvailableSeats: 13,
+    noOfAvailableSeats: 14,
     noOfTotalSeats: 14,
     section: "AOK",
-    yearFrom: 1,
+    yearFrom: 3,
     yearTo: 6,
   },
   {
@@ -101,7 +101,7 @@ export const workshops = [
     noOfAvailableSeats: 20,
     noOfTotalSeats: 20,
     section: "AOK",
-    yearFrom: 1,
+    yearFrom: 2,
     yearTo: 6,
   },
   {
@@ -111,23 +111,23 @@ export const workshops = [
     speakers:
       "Dr. Horváth Emőke, egyetemi docens; Dr. Mezei Tibor, egyetemi docens; Dr. Kövecsi Attila, egyetemi adjunktus; Dr. Kovács Zsolt, egyetemi adjunktus; Dr. Szodorai Rita, egyetemi tanársegéd",
     targetAudience: "4-ed évtől",
-    location: "MOGyTTE Patológia Tanszék gyakorlóterme",
+    location: "MOGYTTE Patológia Tanszék gyakorlóterme",
     date: "2023.05.09 (Kedd), 16:00-17:00",
     description:
       "A patológusok által összegyűjtött információt (szövettani lelet) sokan használják fel (beleértve az onkológusokat, epidemiológusokat, rákregiszterrel foglalkozókat és gyógyszerfejlesztőket), hogy a beteg túlélési eredményeit javítsák, de vajon a diagnózishoz elengedhetetlen klinikai, labordiagnosztikai és imagisztikai kivizsgálások eredményei könnyen elérhetőek-e a patológus számára? Esetismertetéseinkkel ezekre a kérdésekre keressük a választ és a megoldásokat a szakmaiságra támaszkodva.",
     noOfAvailableSeats: 20,
     noOfTotalSeats: 20,
     section: "AOK",
-    yearFrom: 1,
+    yearFrom: 4,
     yearTo: 6,
   },
   {
     id: "clgwcorr30000fq1dfpvf75az",
     title: "EKG egyszerűen",
     speakers: "Dr. Kocsis Lóránd",
-    targetAudience: "2-od évtől",
-    location: "Studium HUB - Felső Előadóterem",
-    date: "2023.05.11 (Csütörtök), 15:00-17:00",
+    targetAudience: "1. évtől",
+    location: "330as terem",
+    date: "2023.05.11 (Csütörtök), 16:00-17:00",
     description:
       "A műhelymunka a klinikai gyakorlatban gyakrabban előforduló EKG esetek egyszerű felismerésére vezeti rá a résztvevőket.",
     noOfAvailableSeats: 60,
@@ -147,7 +147,7 @@ export const workshops = [
     noOfAvailableSeats: 30,
     noOfTotalSeats: 30,
     section: "AOK",
-    yearFrom: 1,
+    yearFrom: 4,
     yearTo: 6,
   },
   {
@@ -172,7 +172,7 @@ export const workshops = [
     speakers: "Dr. Máté-István Ildikó",
     targetAudience:
       "1-től 4-ed évig, kicsi olló, szemöldök csipesz, orvosi köpeny",
-    location: "",
+    location: "Anatómia tanszék, 1-es előadó terem",
     date: "2023.05.11 (Csütörtök), 15:00-17:00",
     description:
       "Szem anatómiájának általános ismertetése, majd kettes csoportokban lehetőség nyílik a disznószem boncolására a doktornő vezetésével.",
@@ -180,7 +180,7 @@ export const workshops = [
     noOfTotalSeats: 10,
     section: "AOK",
     yearFrom: 1,
-    yearTo: 6,
+    yearTo: 4,
   },
   {
     id: "clh1u5rlb0000fqtgq5qm131r",
@@ -322,7 +322,7 @@ export const workshops = [
   },
   {
     id: "clh1vpsq5000gfqngr9zac6tf",
-    title: "Alapismeretek az ultrahang diagnosztikában",
+    title: "Alapismeretek az ultrahang diagnosztikában (I.)",
     speakers: "Dr. Baróti Beáta",
     targetAudience: "4-ed évtől, orvosi köpeny, vonalzó",
     location: "Radiológia, Nagykórház",
@@ -331,6 +331,21 @@ export const workshops = [
       "Belelátni az emberi szervezetbe, közvetlenül ránézni szervekre, fájdalmak vagy tünetek szervi okát fürkészni, megelőzni vagy éppen indikálni egy orvosi beavatkozást, megelőzni a nagyobb bajt, mindezt teljesen kíméletesen, fájdalommentesen és a legkisebb kockázat nélkül - ez az ultrahangos diagnosztika szerepe a modern orvoslásban.",
     noOfAvailableSeats: 20,
     noOfTotalSeats: 20,
+    section: "AOK",
+    yearFrom: 4,
+    yearTo: 6,
+  },
+  {
+    id: "clh2g9z7b0002fqeqsoze0cav",
+    title: "Laparoszkópia a gyakorlatban",
+    speakers: "Dr.ifj. Kiss Szilárd Leó",
+    targetAudience: "4-ed évtől",
+    location: "Studium HUB - Alsó Előadóterem",
+    date: "2023.05.10. (Szerda), 18:00-20:00",
+    description:
+      "A laparoszkós manőverek elsajátítása gyakorlást igényel. Bár az elmélet sokak számára ismerős lehet, keveseknek adatott meg, hogy tudásukat gyakorlatba ültessék. Idén lehetőség nyílik kipróbálni és fejleszteni manualitásod egy laparoszkópás tréningfelszerelés segítségével.",
+    noOfAvailableSeats: 10,
+    noOfTotalSeats: 10,
     section: "AOK",
     yearFrom: 4,
     yearTo: 6,
@@ -355,7 +370,7 @@ export const workshops = [
     title: "Mire jó a dermatoszkópia?",
     speakers: "Dr. Gáspár Réka",
     targetAudience: "5-öd évtől",
-    location: "nr. 330",
+    location: "330-as terem",
     date: "2023.05.11 (Csütörtök), 12:00-13:30",
     description:
       "A dermatoszkópia a bőr gyors és hatékony non-invazív, in-vivo mikroszkópos vizsgálatát jelenti. A különböző pigmentált és nem pigmentált, benignus és malignus bőrtumorok vizsgálatában és diagnosztizálásában a dermatoszkópos vizsgálat elengedhetetlenül fontos elemmé vált. A bőrrákszűrés alapeszköze, és nem feltétlenül csak a bőrgyógyászok számára. Hatékonyságát és hasznosságát jelzi továbbá, hogy a fentiek mellett a dermatoszkópia ma már a gyulladásos, az autoimmun és az infekciózus dermatózisok, illetve az alopéciák és körömelváltozások klinikai vizsgálatában is helyet kap. A sok kép és a vizualitás garantált.",
@@ -399,11 +414,12 @@ export const workshops = [
     id: "clh1w1u37000qfqngrhc9ue1c",
     title: "Gyógyszertan vetélkedő",
     speakers: "Dr. Gáll Zsolt, Dr. Bába László",
-    targetAudience: "2-od évtől.",
+    targetAudience:
+      "2-od évtől. A jelentkezők, a helyszínen vegyes, négy fős csapatokra lesznek osztva",
     location: "Gyógyszerészi kar épülete, farmakológia laboratórium (C4)",
-    date: "2023.05.12 (Péntek), 10:00-12:00",
+    date: "2023.05.12 (Péntek), 14:00-17:00",
     description:
-      "A gyógyszertan vetélkedő a 2-6. éves általános orvosis, valamint a 3-5. éves gyógyszerészetis diákok gyógyszertan és klinikai gyógyszerészet képességeit hivatott összemérni, interaktív esetbemutatók segítségével. A szervezők a 4 fős csapatok alap gyógyszertan ismereteit, valamint klinikai esetorientált gondolkodásukat egyaránt felmérik, így a jelentkezőket arra bátorítják, hogy lehetőség szerint vegyes (orvos- és gyógyszerészhallgatók) csapatokban jelentkezzenek. A három órás műhelymunka keretein belül, a bemutatott esetek rövid átbeszélése után alegjobb pontszámot elérő csapatokat díjazzák.",
+      "A gyógyszertan vetélkedő a 2-6. éves általános orvosis, valamint a 3-5. éves gyógyszerészetis diákok gyógyszertan és klinikai gyógyszerészet képességeit hivatott összemérni, interaktív esetbemutatók segítségével. A résztvevők a 4 fős csapatok alap gyógyszertan ismereteit, valamint klinikai esetorientált gondolkodásukat egyaránt felmérik, így a jelentkezőket arra bátorítják, hogy lehetőség szerint vegyes (orvos- és gyógyszerészhallgatók) csapatokban jelentkezzenek. A három órás műhelymunka keretein belül, a bemutatott esetek rövid átbeszélése után alegjobb pontszámot elérő csapatokat díjazzák.",
     noOfAvailableSeats: 12,
     noOfTotalSeats: 12,
     section: "AOK",
@@ -436,8 +452,8 @@ export const workshops = [
     date: "2023.05.12. (Péntek), 9:00-12:00",
     description:
       "A workshop keretében funkcionális szempontok alapján újra rendszerezzük az állkapocsízületről megtanult korábbi ismereteket. Közösen tekintjük át és gondoljuk végig a mandibula alapmozgásait, hogy megérthessük a rágás rendkívül komplex folyamatát. Részletesen beszélünk a gyakorlati szempontból fontos maxillo-mandibularis pozíciókról. Végül de nem utolsó sorban át kell rágnunk magunkat néhány definíción, amik nélkül nincs tudományos igényű szakmai munka.",
-    noOfAvailableSeats: 10,
-    noOfTotalSeats: 10,
+    noOfAvailableSeats: 30,
+    noOfTotalSeats: 30,
     section: "FOK",
     yearFrom: 4,
     yearTo: 6,
@@ -467,8 +483,8 @@ export const workshops = [
     date: "2023.05.11. (Csütörtök), 10:30-12:00",
     description:
       "A workshop a másod - hatodéves fogorvostanhallgatóknak szól és alkalmat nyújt begyakorolni a soft kefével történő Bass fogmosási technikát, illetve az interdentális terek tisztítását szolgáló eszközök kiválasztását és helyes alkalmazását. A résztvevők kipróbálhatják továbbá az Oral-B IO és Genius X elektromos fogkeféket és napirendre kerülnek a szájápolás kapcsán készült legújabb kutatásokkal.",
-    noOfAvailableSeats: 15,
-    noOfTotalSeats: 15,
+    noOfAvailableSeats: 20,
+    noOfTotalSeats: 20,
     section: "FOK",
     yearFrom: 2,
     yearTo: 6,
@@ -478,7 +494,7 @@ export const workshops = [
     title:
       "Útmutató a moláris restaurációkhoz-Alapvető vonalak a tökéletes rágófelszín helyreállításához",
     speakers: "Dr. Bardocz-Veres Zsuzsanna",
-    targetAudience: "4-ed vagy 5-öd év, orvosi köpeny/scrub",
+    targetAudience: "-ed évtől 5-öd évig, orvosi köpeny/scrub",
     location: "",
     date: "2023.05.10. (Szerda), 16:00-20:00",
     description:
@@ -506,7 +522,7 @@ export const workshops = [
   },
   {
     id: "clh21g7jt0014fqngi0x4souy",
-    title: "Direkt posterior restaurációk – eszközök és anyagok",
+    title: "Direkt posterior restaurációk ü eszközök és anyagok",
     speakers: "Dr. Kerekes-Máthé Bernadette, Dr. Kovács Mónika",
     targetAudience: "3-ad évtől, orvosi köpeny, maszk",
     location: "",
@@ -589,11 +605,27 @@ export const workshops = [
     location: "Pomadent",
     date: "2023.05.11. (Csütörtök), 14:00-16:00",
     description:
-      "A workshopban szó esik a fényképezőgép működéséről és beállításairól – a résztvevők meglévő tudásának függvényében részletesebben vagy felületesebben. Ezután a fogászati szék mellett bemutatjuk a fényképezési protokollt, amit használunk a technikai laboratóriummal való kommunikációhoz és az esztétikai és funkcionális változások követésére. A résztvevők elsajátíthatják a szükséges fényképek elkészítésének módját és felhasználási lehetőségeiket.",
+      "A workshopban szó esik a fényképezőgép működéséről és beállításairól ü a résztvevők meglévő tudásának függvényében részletesebben vagy felületesebben. Ezután a fogászati szék mellett bemutatjuk a fényképezési protokollt, amit használunk a technikai laboratóriummal való kommunikációhoz és az esztétikai és funkcionális változások követésére. A résztvevők elsajátíthatják a szükséges fényképek elkészítésének módját és felhasználási lehetőségeiket.",
     noOfAvailableSeats: 10,
     noOfTotalSeats: 10,
     section: "FOK",
     yearFrom: 5,
+    yearTo: 6,
+  },
+  {
+    id: "clh21wgwt001efqng0j56v075",
+    title: "Agyagfog mintázó verseny",
+    speakers: "Dr. Kerekes-Máthé Bernadette, Jenei H.Viktória",
+    targetAudience:
+      "3-ad évtől. A versenyen való részvételhez 20 RON nevezési díj befizetse szükséges, mely részleteiről emailben tájékoztatjuk a résztvevőket ",
+    location: "",
+    date: "2023.05.10. (Szerda), 16:00-21:00",
+    description:
+      "Természetes metsző- és őrlőfog szoftverrel méretarányosan nagyított másának agyagból való mintázása. Cél az eredeti mintáknak megfelelő anatómiai formavilág megközelítése. Nevezési díj, az anyagköltség függvényében: 20 lej/fő. A munkákat egy az egyetemünk oktatóból álló bizottság fogja kiértékelni, a verseny díjazottjai értékes nyereményekkel gazdagodhatnak. További információkkal email-en jelentkezünk.",
+    noOfAvailableSeats: 20,
+    noOfTotalSeats: 20,
+    section: "FOK",
+    yearFrom: 3,
     yearTo: 6,
   },
   {
@@ -642,14 +674,30 @@ export const workshops = [
     yearTo: 5,
   },
   {
+    id: "clh28wlrf001kfqngm1z0p83h",
+    title: "Mennyi csokoládé egy kávé?",
+    speakers: "Dr. Fülöp Ibolya, Dr. Májai Erzsébet",
+    targetAudience: "2-5. év, orvosi köpeny, csokoládé",
+    location: "67. labor (Toxikológia)",
+    date: "2023.05.13 (Szombat), 11:30-13:00",
+    description:
+      "A workshop témája a koffein minőségi és mennyiségi meghatározása csokoládéból kromatográfiás módszerekkel.\nA koffein, bár vízben rosszul oldódik, a „könnyen” mérhető vegyületek közé tartozik, a meghatározás érdekessége a szokottól eltérő mintaelőkészítés: a koffein kivonása a csokoládé-összetevők közül és oldatba vitele a kromatográfiás méréshez.\nA workshop tervezett lépései:\n- néhány szó a koffeinről és a meghatározására alkalmas analitikai módszerekről\n- a mintaelőkészítés: elméleti háttér és gyakorlati kivitelezés,\n- kalibrálóoldat készítése\n- nagynyomású folyadékromatográfiás és vékonyrétegkromatográfiás meghatározás\n- a vizsgált csokoládé koffein-tartalmának számolása a kapott eredmények alapján és a címben szereplő kérdés megválaszolása.",
+    noOfAvailableSeats: 10,
+    noOfTotalSeats: 10,
+    section: "GYK",
+    yearFrom: 2,
+    yearTo: 5,
+  },
+  {
     id: "clh290zb80000fqeqglxz2ij7",
     title: "Gyógyszertan vetélkedő",
     speakers: "Dr. Gáll Zsolt, Dr. Bába László",
-    targetAudience: "3-5. év",
+    targetAudience:
+      "3-5. év. A helyszínen vegyes, négy fős csapatokra lesznek osztva.",
     location: "Gyógyszerészi kar épülete, farmakológia laboratórium (C4)",
     date: "2023.05.12 (Péntek), 14:00-15:00",
     description:
-      "A gyógyszertan vetélkedő a 2-6. éves általános orvosis, valamint a 3-5. éves gyógyszerészetis diákok gyógyszertan és klinikai gyógyszerészet képességeit hivatott összemérni, interaktív esetbemutatók segítségével. A szervezők a 4 fős csapatok alap gyógyszertan ismereteit, valamint klinikai esetorientált gondolkodásukat egyaránt felmérik, így a jelentkezőket arra bátorítják, hogy lehetőség szerint vegyes (orvos- és gyógyszerészhallgatók) csapatokban jelentkezzenek. A három órás műhelymunka keretein belül, a bemutatott esetek rövid átbeszélése után alegjobb pontszámot elérő csapatokat díjazzák.",
+      "A gyógyszertan vetélkedő a 2-6. éves általános orvosis, valamint a 3-5. éves gyógyszerészetis diákok gyógyszertan és klinikai gyógyszerészet képességeit hivatott összemérni, interaktív esetbemutatók segítségével. A résztvevők a 4 fős csapatok alap gyógyszertan ismereteit, valamint klinikai esetorientált gondolkodásukat egyaránt felmérik, így a jelentkezőket arra bátorítják, hogy lehetőség szerint vegyes (orvos- és gyógyszerészhallgatók) csapatokban jelentkezzenek. A három órás műhelymunka keretein belül, a bemutatott esetek rövid átbeszélése után alegjobb pontszámot elérő csapatokat díjazzák.",
     noOfAvailableSeats: 10,
     noOfTotalSeats: 10,
     section: "GYK",
@@ -657,25 +705,10 @@ export const workshops = [
     yearTo: 5,
   },
   {
-    id: "clh2g9z7b0002fqeqsoze0cav",
-    title: "Laparoszkópia a gyakorlatban",
-    speakers: "Dr.ifj. Kiss Szilárd Leó",
-    targetAudience: "4-ed évtől",
-    location: "Studium HUB - Alsó Előadóterem",
-    date: "2023.05.10. (Szerda), 18:00-20:00",
-    description:
-      "A laparoszkós manőverek elsajátítása gyakorlást igényel. Bár az elmélet sokak számára ismerős lehet, keveseknek adatott meg, hogy tudásukat gyakorlatba ültessék. Idén lehetőség nyílik kipróbálni és fejleszteni manualitásod egy laparoszkópás tréningfelszerelés segítségével.",
-    noOfAvailableSeats: 10,
-    noOfTotalSeats: 10,
-    section: "AOK",
-    yearFrom: 4,
-    yearTo: 6,
-  },
-  {
     id: "clh2gchn00004fqeqln1dh4bm",
     title: "Bálint csoport",
     speakers: "Dr. Munzlinger Attila, Dr. Munzlinger Ildikó, Dr. Farkas Evelyn",
-    targetAudience: "4-ed évtől",
+    targetAudience: "nincs kritérium",
     location: "Studium Hub - Kávézó",
     date: "2023.05.13 (Szombat), 12:00-14:00",
     description:
@@ -689,7 +722,7 @@ export const workshops = [
   {
     id: "clh2gfqzs0006fqeqbcdkcf7u",
     title:
-      "Ismerkedés a nutriciós státusz felmérésére használt eszközökkel és a gyakorlati használat elsajátitása",
+      "Ismerkedés a nutriciós státusz felmérésére használt eszközökkel és a gyakorlati használat elsajátitása (I.)",
     speakers: "Dr. Sükösd Nagy Beáta ",
     targetAudience: "1. évtől",
     location: "IntegraViva",
@@ -705,7 +738,7 @@ export const workshops = [
   {
     id: "clh2gg3j20008fqeqslks1oa8",
     title:
-      "Ismerkedés a nutriciós státusz felmérésére használt eszközökkel és a gyakorlati használat elsajátitása",
+      "Ismerkedés a nutriciós státusz felmérésére használt eszközökkel és a gyakorlati használat elsajátitása (II.)",
     speakers: "Dr. Sükösd Nagy Beáta ",
     targetAudience: "1. évtől",
     location: "IntegraViva",
@@ -741,7 +774,7 @@ export const workshops = [
     location: "Studium Hub - Kávézó",
     date: "2023.05.11. (Csütörtök), 11:00-16:00",
     description:
-      "„Nehéz témák és helyzetek az Önreflexió és reflexió összefonódásában” – különös tekintettel a rajzfilm-karakterek és a mentális zavarok kapcsolatára a személyiségfejlődésünk útján. – Mit kezdhetünk a tényekkel? Melyek a tények a témában?\nA televízió sok otthonban a legfontosabb háztartási készülékké lépett elő, egyfajta világra nyíló ablakként funkcionálva. Bár a televíziókészülékek számának gyors növekedése mindenkit érintett valamilyen módon, azonban a televíziónak a gyermekekre gyakorolt hatása a leginkább riasztó (Özer, 2015). - A kultivációs elmélet azt állítja, hogy a média üzeneteinek való széleskörű és halmozott kitettség jelentősen befolyásolja a médiafogyasztóknak a társadalmi valóságról alkotott képét. Ez az elméleti modell feltételezi, hogy az emberek a valósághoz való hozzáállásukat, hiedelmeiket és elvárásaikat a televízióban, videón, filmekben, magazinokban stb. látottak és hallottak alapján alakítják ki. Később ezekre a hiedelmekre, nézetekre és elvárásokra alapozzák viselkedésüket valós szituációkban.– MI A HELYZET A RAJZFILM KARAKTEREIVEL? MIT TEHETÜNK A TÉNYEK ISMERETÉBEN SEGÍTŐKÉNT? SEGÍTHET A SZUPERVÍZIÓ FOLYAMATA TISZTÍTANI A KÉPET?\nAz önreflexió a folyamat kulcsfogalma. Cél az önreflexivitás mértékének mélyítése, végső soron a belső szupervízor kifejlesztése. Védett körben, konfidenciális térben, folyamatban tapasztalatokra való reflexióban. Sokszor elég a felismerés, hogy dolgok a helyükre kerülhessenek.",
+      "„Nehéz témák és helyzetek az Önreflexió és reflexió összefonódásában” ü különös tekintettel a rajzfilm-karakterek és a mentális zavarok kapcsolatára a személyiségfejlődésünk útján. ü Mit kezdhetünk a tényekkel? Melyek a tények a témában?\nA televízió sok otthonban a legfontosabb háztartási készülékké lépett elő, egyfajta világra nyíló ablakként funkcionálva. Bár a televíziókészülékek számának gyors növekedése mindenkit érintett valamilyen módon, azonban a televíziónak a gyermekekre gyakorolt hatása a leginkább riasztó (Özer, 2015). - A kultivációs elmélet azt állítja, hogy a média üzeneteinek való széleskörű és halmozott kitettség jelentősen befolyásolja a médiafogyasztóknak a társadalmi valóságról alkotott képét. Ez az elméleti modell feltételezi, hogy az emberek a valósághoz való hozzáállásukat, hiedelmeiket és elvárásaikat a televízióban, videón, filmekben, magazinokban stb. látottak és hallottak alapján alakítják ki. Később ezekre a hiedelmekre, nézetekre és elvárásokra alapozzák viselkedésüket valós szituációkban.ü MI A HELYZET A RAJZFILM KARAKTEREIVEL? MIT TEHETÜNK A TÉNYEK ISMERETÉBEN SEGÍTŐKÉNT? SEGÍTHET A SZUPERVÍZIÓ FOLYAMATA TISZTÍTANI A KÉPET?\nAz önreflexió a folyamat kulcsfogalma. Cél az önreflexivitás mértékének mélyítése, végső soron a belső szupervízor kifejlesztése. Védett körben, konfidenciális térben, folyamatban tapasztalatokra való reflexióban. Sokszor elég a felismerés, hogy dolgok a helyükre kerülhessenek.",
     noOfAvailableSeats: 23,
     noOfTotalSeats: 23,
     section: "ALL",
@@ -780,12 +813,13 @@ export const workshops = [
   },
   {
     id: "clh2gxpsv000ifqeqtfq834y6",
-    title: "Gyógynövények a mindennapjainkban",
+    title: "Gyógynövények a mindennapjainkban (I.)",
     speakers: "Dr. Varga Erzsébet",
     targetAudience: "1. évtől",
     location: "Egyetemünk Botanikus és Gyógynövénykertje",
     date: "2023.05.11. (Csütörtök), 15:00-16:30",
-    description: "",
+    description:
+      "A workshop célja a gyógynövények bemutatása a felhasználó, a fogyasztó szemszögéből és ennek a gyakorlati bemutatása az egyetemünk Botanikus és Gyógynövénykertjében található növények és gyógynövények segítségével. A workshop keretein belül néhány növényi hatóanyag minőségi meghatározására kerül sor a legújabb kivonási módszerek alkalmazásával, valamint ismertetve lesznek a Gyógynövénykertben található egzotikus növények és ezek fitoterápiás alkalmazása.",
     noOfAvailableSeats: 20,
     noOfTotalSeats: 20,
     section: "ALL",
@@ -793,17 +827,80 @@ export const workshops = [
     yearTo: 6,
   },
   {
-    id: "clh2gy1lp000kfqeql16sbuik",
-    title: "Gyógynövények a mindennapjainkban",
+    id: "clh2gy1lp000kfqeql16sbuiz",
+    title: "Gyógynövények a mindennapjainkban (II.)",
     speakers: "Dr. Varga Erzsébet",
     targetAudience: "1. évtől",
     location: "Egyetemünk Botanikus és Gyógynövénykertje",
     date: "2023.05.11. (Csütörtök), 16:30-18:00",
-    description: "",
+    description:
+      "A workshop célja a gyógynövények bemutatása a felhasználó, a fogyasztó szemszögéből és ennek a gyakorlati bemutatása az egyetemünk Botanikus és Gyógynövénykertjében található növények és gyógynövények segítségével. A workshop keretein belül néhány növényi hatóanyag minőségi meghatározására kerül sor a legújabb kivonási módszerek alkalmazásával, valamint ismertetve lesznek a Gyógynövénykertben található egzotikus növények és ezek fitoterápiás alkalmazása.",
     noOfAvailableSeats: 20,
     noOfTotalSeats: 20,
     section: "ALL",
     yearFrom: 1,
+    yearTo: 6,
+  },
+  {
+    id: "clh2gy1lp000kfqeql16sbuim",
+    title:
+      "Kalcium anyagcsere: laboratóriumi paraméterek, szabályozó tényezők, patobiokémiai szempontok",
+    speakers: "Dr. Nagy Előd, Dr. Kovács Béla, Dr. Nemes- Nagy Enikő",
+    targetAudience: "1. évtől, orvosi köpeny",
+    location: "Biokémia laboratórium, Gyógyszerészeti épület",
+    date: "2023.05.11. (Csütörtök), 18:30-20:00",
+    description:
+      "A workshop során bemutatjuk az össz- és ionizált szérum Ca2+ mérésére vonatkozó biokémiai technikákat, a calcium-szintet szabályozó parathormon, kalcitonin, 25-OH és 1,25-OH kolekalciferol élettani és kórélettani szerepét, valamint mérési módszereit; ugyancsak bemutatásra kerülnek a szöveti kalcium anyagcsere fontos citokin-szerű integrátorai, az osteoprotegerin (OPG) és a RANKL.",
+    noOfAvailableSeats: 30,
+    noOfTotalSeats: 30,
+    section: "AOK",
+    yearFrom: 1,
+    yearTo: 6,
+  },
+  {
+    id: "clh2gy1lp000kfqeql16sbuin",
+    title:
+      "Kalcium anyagcsere: laboratóriumi paraméterek, szabályozó tényezők, patobiokémiai szempontok",
+    speakers: "Dr. Nagy Előd, Dr. Kovács Béla, Dr. Nemes- Nagy Enikő",
+    targetAudience: "2-od évtől 5-öd évig, orvosi köpeny",
+    location: "Biokémia laboratórium, Gyógyszerészeti épület",
+    date: "2023.05.11. (Csütörtök), 17:00-18:30",
+    description:
+      "A workshop során bemutatjuk az össz- és ionizált szérum Ca2+ mérésére vonatkozó biokémiai technikákat, a calcium-szintet szabályozó parathormon, kalcitonin, 25-OH és 1,25-OH kolekalciferol élettani és kórélettani szerepét, valamint mérési módszereit; ugyancsak bemutatásra kerülnek a szöveti kalcium anyagcsere fontos citokin-szerű integrátorai, az osteoprotegerin (OPG) és a RANKL.",
+    noOfAvailableSeats: 30,
+    noOfTotalSeats: 30,
+    section: "GYK",
+    yearFrom: 2,
+    yearTo: 5,
+  },
+  {
+    id: "clh2gy1lp000kfqeql16sbuik",
+    title: "Bevezetés az abúzus szerek farmakológiájába",
+    speakers: "Dr. Bába László",
+    targetAudience: "2-od évtől 5-öd évig",
+    location: "Gyógyszerészi kar épülete, farmakológia laboratórium (C4)",
+    date: "2023.05.12 (Péntek), 12:00-13:00",
+    description:
+      "A műhelymunka betekintést kíván nyújtani az abúzusszerek hatásmechanizmusába és az ezek használatával összefüggő egészségkockázatokba.",
+    noOfAvailableSeats: 24,
+    noOfTotalSeats: 24,
+    section: "GYK",
+    yearFrom: 2,
+    yearTo: 5,
+  },
+  {
+    id: "clh2gy1lp000kfqeql16sbuil",
+    title: "Bevezetés az abúzus szerek farmakológiájába",
+    speakers: "Dr. Bába László",
+    targetAudience: "3-ad évtől 6-od évig",
+    location: "Gyógyszerészi kar épülete, farmakológia laboratórium (C4)",
+    date: "2023.05.12 (Péntek), 12:00-13:00",
+    description:
+      "A műhelymunka betekintést kíván nyújtani az abúzusszerek hatásmechanizmusába és az ezek használatával összefüggő egészségkockázatokba.",
+    noOfAvailableSeats: 24,
+    noOfTotalSeats: 24,
+    section: "AOK",
+    yearFrom: 3,
     yearTo: 6,
   },
 ];

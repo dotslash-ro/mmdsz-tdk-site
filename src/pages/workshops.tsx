@@ -1,10 +1,17 @@
 import { useGoogleLogin } from "@react-oauth/google";
 import Workshop, { WorkshopType } from "../components/workshop";
 import { withLayout } from "../layout/withLayout";
-import { useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { maxSignUpPerEmail, workshopServerUrl, workshops } from "../constants";
 import googleIcon from "../assets/google_icon.svg";
 import { ClipLoader } from "react-spinners";
+
+const sectionNameToSectionCodeMap = new Map([
+  ["ÁOK", "AOK"],
+  ["GYK", "GYK"],
+  ["FOK", "FOK"],
+  ["Mindenkinek", "ALL"],
+]);
 
 const Workshops = () => {
   const [user, setUser] = useState<any>();
@@ -14,8 +21,28 @@ const Workshops = () => {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
   const [canSignUp, setCanSingUp] = useState(true);
+  const [workshopsToShow, setWorkshopsToShow] = useState<WorkshopType[]>([]);
+  const [studyYear, setStudyYear] = useState<number | undefined>(undefined);
+  const [section, setSection] = useState("");
 
   const login = useGoogleLogin({ onSuccess: (res) => setUser(res) });
+
+  useEffect(() => {
+    setWorkshopsToShow(
+      workshops
+        .filter((workshop) =>
+          section.length
+            ? workshop.section === sectionNameToSectionCodeMap.get(section) ||
+              workshop.section === "ALL"
+            : true
+        )
+        .filter((workshop) =>
+          studyYear
+            ? studyYear <= workshop.yearTo && studyYear >= workshop.yearFrom
+            : true
+        )
+    );
+  }, [section, studyYear]);
 
   // async function fetchWorkshops() {
   //   const resp = await fetch(`${workshopServerUrl}/workshop/all`);
@@ -118,6 +145,64 @@ const Workshops = () => {
       </div> */}
       <div className="mx-auto py-20 px-5 lg:w-2/3">
         <h2 className="pb-20 text-center text-5xl font-bold">Műhelymunkák</h2>
+        <div className="flex flex-col items-center justify-center pb-10 md:flex-row md:space-x-10">
+          <div className="flex w-full flex-col px-5">
+            <label
+              htmlFor="section-select"
+              className="mb-2 block text-lg font-medium text-gray-900"
+            >
+              Kar
+            </label>
+            <select
+              id="section-select"
+              className="ml-4 block w-full rounded-full border border-gray-400 bg-white p-2.5 text-gray-900 focus:border-tdk-primary"
+            >
+              {["", "ÁOK", "FOK", "GYK", "Mindenkinek"].map(
+                (section, index) => {
+                  return (
+                    <option
+                      className="text-md"
+                      key={index}
+                      onClick={() => setSection(section)}
+                    >
+                      {section}
+                    </option>
+                  );
+                }
+              )}
+            </select>
+          </div>
+          <div className="flex w-full flex-col px-5 pt-5 md:pt-0">
+            <label
+              htmlFor="study-year-select"
+              className="mb-2 block text-lg font-medium text-gray-900"
+            >
+              Évfolyam
+            </label>
+            <select
+              id="study-year-select"
+              className="ml-4 block w-full rounded-full border border-gray-400 bg-white p-2.5 text-gray-900 focus:border-tdk-primary"
+            >
+              {["", "1", "2", "3", "4", "5", "6"].map((studyYear, index) => {
+                return (
+                  <option
+                    className="text-md"
+                    key={index}
+                    onClick={() =>
+                      setStudyYear(
+                        studyYear.length
+                          ? Number.parseInt(studyYear)
+                          : undefined
+                      )
+                    }
+                  >
+                    {studyYear}
+                  </option>
+                );
+              })}
+            </select>
+          </div>
+        </div>
         {/* {!profile && (
           <div className="flex justify-center pb-10 text-sm font-semibold text-neutral-500">
             A műhelymunkákra való jelentkezéshez csatlakoztatnod kell a Google
@@ -125,7 +210,7 @@ const Workshops = () => {
           </div>
         )} */}
         {/* <h3 className="pb-8 text-3xl font-light">Általános Orvosi Kar</h3> */}
-        {workshops.map((workshop, index) => (
+        {workshopsToShow.map((workshop, index) => (
           <div key={index}>
             <Workshop
               id={workshop.id}

@@ -52,12 +52,11 @@ const Workshop = ({ id, email, canSignUp }: WorkshopProps) => {
     //   setHasSignedUp(hasSignedUp);
     // }
     setWorkshop(workshops.filter((workshop) => workshop.id == id)[0]);
-    console.log(workshop);
   }
 
   useEffect(() => {
     fetchWorkshopData();
-  }, []);
+  }, [id]);
 
   async function onSignup() {
     setLoading(true);
