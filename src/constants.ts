@@ -79,7 +79,7 @@ export const workshops = [
     title: "A lebenyplasztika alkalmazása a különböző anatómiai zónákban",
     speakers: "Dr. Jankó Botond",
     targetAudience: "3-ad évtől, orvosi köpeny",
-    location: "Gecse Dániel Szakkollégium",
+    location: "Gecse Dániel Református Orvosi és Egészségügyi Szakkollégium",
     date: "2023.05.10 (Szerda), 10:00-12:00",
     description:
       "Szövethiányos állapotok esetén a helyi lebenyek alkalmazása nélkülözhetetlen egy funkcionális és esztétikus eredmény eléréséhez, egy plasztikai sebész repertoárjában, bármilyen anatómia zónáról legyen szó. A workshop célja úgy elméleti, mind gyakorlati szempontból hozzásegíteni a résztvevőket ahhoz, hogy a megfelelő lebenyeket, a megfelelő zónában használva sikeresen meg tudják oldani a szövethiányos állapotokat, legyen az trauma utáni vagy egy tumor eltávolításának következménye.",
@@ -109,7 +109,7 @@ export const workshops = [
     title:
       "Kórszövettani vizsgálat eredménye: diagnosis klinikai adatokkal vagy anélkül?",
     speakers:
-      "Dr. Horváth Emőke, egyetemi docens; Dr. Mezei Tibor, egyetemi docens; Dr. Kövecsi Attila, egyetemi adjunktus; Dr. Kovács Zsolt, egyetemi adjunktus; Dr. Szodorai Rita, egyetemi tanársegéd",
+      "Dr. Horváth Emőke, Dr. Mezei Tibor, Dr. Kövecsi Attila, Dr. Kovács Zsolt, Dr. Szodorai Rita:",
     targetAudience: "4-ed évtől",
     location: "MOGYTTE Patológia Tanszék gyakorlóterme",
     date: "2023.05.09 (Kedd), 16:00-17:00",
@@ -126,7 +126,7 @@ export const workshops = [
     title: "EKG egyszerűen",
     speakers: "Dr. Kocsis Lóránd",
     targetAudience: "1. évtől",
-    location: "330as terem",
+    location: "MOGYTTE Főépület, 330-as terem",
     date: "2023.05.11 (Csütörtök), 16:00-17:00",
     description:
       "A műhelymunka a klinikai gyakorlatban gyakrabban előforduló EKG esetek egyszerű felismerésére vezeti rá a résztvevőket.",
@@ -154,16 +154,17 @@ export const workshops = [
     id: "clgwe41tj0000fq36g32rjfq9",
     title: "Point of care echokardiográfia",
     speakers:
-      "Dr. Frigy Attila, Dr. Gábor Kelemen Hunor, Dr. Czerán Botond, Dr. Heidenhoffer Erhard, Dr. Cseke judit, Dr. Palkó Róbert",
+      "Dr. Frigy Attila, Dr. Gábor Kelemen Hunor, Dr. Czerán Botond, Dr. Heidenhoffer Erhard, Dr. Cseke Judit, Dr. Palkó Róbert",
     targetAudience: "4-ed évtől",
     location:
       "IV. Belgyógyászati Tanszék, Gh. Marinescu u. 1 szám, 3. emeleti előadóterem",
     date: "2023.05.10 (Szerda), 14:00-16:00",
-    description: "Rossz hírek közlése a mindennapi orvosi gyakorlatban",
+    description:
+      "A point of care (POC) echokardiográfia módszertanának és indikációinak rövid bemutatása, illetve klinikai alkalmazásának demonstrálása real life eseteken.",
     noOfAvailableSeats: 30,
     noOfTotalSeats: 30,
     section: "AOK",
-    yearFrom: 1,
+    yearFrom: 4,
     yearTo: 6,
   },
   {
@@ -200,17 +201,17 @@ export const workshops = [
   {
     id: "clh1uc1q20000fqng7zppe9fw",
     title:
-      "Vezető tünet mellkasfájdalom-fogódzok az ok tisztázásához, csapdák és tévutak",
-    speakers: "Dr. Germán Salló Márta",
-    targetAudience: "3-ad évtől",
+      "Vezető tünet mellkasfájdalom-fogódzók az ok tisztázásához, csapdák és tévutak",
+    speakers: "Dr. Germán-Salló Márta",
+    targetAudience: "1. évtől",
     location: "Studium HUB - Alsó Előadóterem",
     date: "2023.05.11 (Csütörtök), 10:00-12:00",
     description:
-      "A helyes diagnózis tisztázásához szükséges gyakorlati tennivalókat elsősorban a beteg tünetei határozzák meg. A mellkasi fájdalom egy gyakori tünet, okának tisztázása komoly kihívást jelenthet, hiszen a tévesen vagy nem időben felállított diagnózis döntő szerepet játszhat a beteg sorsának alakulásában. A diagnosztikai útvesztő során vannak olyan támpontok , algoritmusok melyek az anamnézis, fizikális és paraklinikai vizsgálatok kapcsán segítenek a mellkasfájdalom eredetének tisztázásában. A műhelygyakorlat során mellkasfájdalommal jelentkező betegek kerülnek bemutatásra. Kérdezz- felelek formában a mellkasfájdalom okairól, anamnesztikai és fizikális vizsgálati elemekről , valamint ezek alapján felállított feltételezett diagnózisról lesz szó. Mit kérdezzünk, milyen vizsgálatokat végezzünk el, milyen sorrendben és mit ne nézzünk el?",
+      "A helyes diagnózis tisztázásához szükséges gyakorlati tennivalókat elsősorban a beteg tünetei határozzák meg. A mellkasi fájdalom egy gyakori tünet, okának tisztázása komoly kihívást jelenthet, hiszen a tévesen vagy nem időben felállított diagnózis döntő szerepet játszhat a beteg sorsának alakulásában. A diagnosztikai útvesztő során vannak olyan támpontok, algoritmusok melyek az anamnézis, fizikális és paraklinikai vizsgálatok kapcsán segítenek a mellkasfájdalom eredetének tisztázásában. A műhelygyakorlat során mellkasfájdalommal jelentkező betegek kerülnek bemutatásra. Kérdezz- felelek formában a mellkasfájdalom okairól, anamnesztikai és fizikális vizsgálati elemekről , valamint ezek alapján felállított feltételezett diagnózisról lesz szó. Mit kérdezzünk, milyen vizsgálatokat végezzünk el, milyen sorrendben és mit ne nézzünk el?",
     noOfAvailableSeats: 30,
     noOfTotalSeats: 30,
     section: "AOK",
-    yearFrom: 3,
+    yearFrom: 1,
     yearTo: 6,
   },
   {
@@ -251,7 +252,7 @@ export const workshops = [
     location: "Anatómia tanszék, 1-es előadó terem",
     date: "2023.05.12 (Péntek), 10:00-12:00",
     description:
-      "Bemutatásra kerülnek a sebészetben használatos alap varrástechnikák és a résztveőknek lehetőségük nyílik megtanulni és gyakorlni ezeket. ",
+      "Bemutatásra kerülnek a sebészetben használatos alap varrástechnikák és a résztvevőknek lehetőségük nyílik megtanulni és gyakorolni ezeket. ",
     noOfAvailableSeats: 30,
     noOfTotalSeats: 30,
     section: "AOK",
@@ -267,7 +268,7 @@ export const workshops = [
     location: "Studium HUB - Felső Előadóterem",
     date: "2023.05.12 (Péntek), 10:30-12:30",
     description:
-      "A workshop keretén belül belgyógyászati gyakorlati megközelítésben az alábbiakra keressük a választ: 1. Miért az orvos dolga?\n2. Mit, mikor és miért kérünk?\n3. Miben segít minket a labordiagnosztika?\n4. Mi történik, amikor a páciens megelőzi az orvosi konzultációt?\n5. Mi történik, amikor nem ismerjük a beteget?\n6. Internetes adatbázisok (nem tudhatunk mindent), laborlelet-magyarázók\n7. Mitől jó egy labor a klinikus szempontjából?\n8. Fals pozitív / fals negatív eredmények\n9. Esetmegbeszélések",
+      "A workshop keretén belül belgyógyászati gyakorlati megközelítésben az alábbiakra keressük a választ:\n 1. Miért az orvos dolga?\n2. Mit, mikor és miért kérünk?\n3. Miben segít minket a labordiagnosztika?\n4. Mi történik, amikor a páciens megelőzi az orvosi konzultációt?\n5. Mi történik, amikor nem ismerjük a beteget?\n6. Internetes adatbázisok (nem tudhatunk mindent), laborlelet-magyarázók\n7. Mitől jó egy labor a klinikus szempontjából?\n8. Fals pozitív / fals negatív eredmények\n9. Esetmegbeszélések",
     noOfAvailableSeats: 20,
     noOfTotalSeats: 20,
     section: "AOK",
@@ -307,8 +308,8 @@ export const workshops = [
   },
   {
     id: "clh1vnlbv000efqng26j215fw",
-    title: "Anasztomozisok a gasztrointesztinalis sebészetben",
-    speakers: "Dr.Bauer Orsolya",
+    title: "Anasztomózisok a gasztrointesztinális sebészetben",
+    speakers: "Dr. Bauer Orsolya",
     targetAudience: "4-ed évtől, orvosi köpeny, vonalzó",
     location: "",
     date: "2023.05.10 (Szerda), 12:00-14:00",
@@ -325,27 +326,12 @@ export const workshops = [
     title: "Alapismeretek az ultrahang diagnosztikában (I.)",
     speakers: "Dr. Baróti Beáta",
     targetAudience: "4-ed évtől, orvosi köpeny, vonalzó",
-    location: "Radiológia, Nagykórház",
+    location: "Radiológia Osztály, Maros Megyei Sürgősségi Kórház",
     date: "2023.05.12 (Péntek), 14:30-16:00",
     description:
       "Belelátni az emberi szervezetbe, közvetlenül ránézni szervekre, fájdalmak vagy tünetek szervi okát fürkészni, megelőzni vagy éppen indikálni egy orvosi beavatkozást, megelőzni a nagyobb bajt, mindezt teljesen kíméletesen, fájdalommentesen és a legkisebb kockázat nélkül - ez az ultrahangos diagnosztika szerepe a modern orvoslásban.",
     noOfAvailableSeats: 20,
     noOfTotalSeats: 20,
-    section: "AOK",
-    yearFrom: 4,
-    yearTo: 6,
-  },
-  {
-    id: "clh2g9z7b0002fqeqsoze0cav",
-    title: "Laparoszkópia a gyakorlatban",
-    speakers: "Dr.ifj. Kiss Szilárd Leó",
-    targetAudience: "4-ed évtől",
-    location: "Studium HUB - Alsó Előadóterem",
-    date: "2023.05.10. (Szerda), 18:00-20:00",
-    description:
-      "A laparoszkós manőverek elsajátítása gyakorlást igényel. Bár az elmélet sokak számára ismerős lehet, keveseknek adatott meg, hogy tudásukat gyakorlatba ültessék. Idén lehetőség nyílik kipróbálni és fejleszteni manualitásod egy laparoszkópás tréningfelszerelés segítségével.",
-    noOfAvailableSeats: 10,
-    noOfTotalSeats: 10,
     section: "AOK",
     yearFrom: 4,
     yearTo: 6,
@@ -366,11 +352,27 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh2g9z7b0002fqeqsoze0cav",
+    title: "Laparoszkópia a gyakorlatban",
+    speakers:
+      "Dr. ifj. Kiss Szilárd Leó, Dr. Székely Edit, Dr. Ladányi Emmánuel",
+    targetAudience: "1. évtől",
+    location: "Studium HUB - Alsó Előadóterem",
+    date: "2023.05.10. (Szerda), 18:00-20:00",
+    description:
+      "A laparoszkós manőverek elsajátítása gyakorlást igényel. Bár az elmélet sokak számára ismerős lehet, keveseknek adatott meg, hogy tudásukat gyakorlatba ültessék. Idén lehetőség nyílik kipróbálni és fejleszteni manualitásod egy laparoszkópás tréningfelszerelés segítségével.",
+    noOfAvailableSeats: 10,
+    noOfTotalSeats: 10,
+    section: "AOK",
+    yearFrom: 1,
+    yearTo: 6,
+  },
+  {
     id: "clh1vu3sg000kfqnge4s4eu57",
     title: "Mire jó a dermatoszkópia?",
     speakers: "Dr. Gáspár Réka",
     targetAudience: "5-öd évtől",
-    location: "330-as terem",
+    location: "MOGYTTE Főépület, 330-as terem",
     date: "2023.05.11 (Csütörtök), 12:00-13:30",
     description:
       "A dermatoszkópia a bőr gyors és hatékony non-invazív, in-vivo mikroszkópos vizsgálatát jelenti. A különböző pigmentált és nem pigmentált, benignus és malignus bőrtumorok vizsgálatában és diagnosztizálásában a dermatoszkópos vizsgálat elengedhetetlenül fontos elemmé vált. A bőrrákszűrés alapeszköze, és nem feltétlenül csak a bőrgyógyászok számára. Hatékonyságát és hasznosságát jelzi továbbá, hogy a fentiek mellett a dermatoszkópia ma már a gyulladásos, az autoimmun és az infekciózus dermatózisok, illetve az alopéciák és körömelváltozások klinikai vizsgálatában is helyet kap. A sok kép és a vizualitás garantált.",
@@ -382,13 +384,13 @@ export const workshops = [
   },
   {
     id: "clh1vwph5000mfqngone324d8",
-    title: "Arritmológia- invazív vonatkozások",
-    speakers: "Dr. Kovacs István",
+    title: "Aritmológia- invazív vonatkozások",
+    speakers: "Dr. Kovács István",
     targetAudience: "2-od évtől",
-    location: "Kardiológia terem",
+    location: "Maros Megyei Sürgősségi Kórház, 7. emeleti Kardiológia Osztály",
     date: "2023.05.12 (Péntek), 16:00-18:00",
     description:
-      "Ritmuszavarok, szubsztrátum elmélet, klinikai-anatómiai vonatkozásai. valmint invazív kezelési metódusai ismertetése a műhelymunka résztvevőivel.",
+      "Ritmuszavarok, szubsztrátum elmélet, klinikai-anatómiai vonatkozásai, valamint invazív kezelési metódusai ismertetése a műhelymunka résztvevőivel.",
     noOfAvailableSeats: 70,
     noOfTotalSeats: 70,
     section: "AOK",
@@ -419,7 +421,7 @@ export const workshops = [
     location: "Gyógyszerészi kar épülete, farmakológia laboratórium (C4)",
     date: "2023.05.12 (Péntek), 14:00-17:00",
     description:
-      "A gyógyszertan vetélkedő a 2-6. éves általános orvosis, valamint a 3-5. éves gyógyszerészetis diákok gyógyszertan és klinikai gyógyszerészet képességeit hivatott összemérni, interaktív esetbemutatók segítségével. A résztvevők a 4 fős csapatok alap gyógyszertan ismereteit, valamint klinikai esetorientált gondolkodásukat egyaránt felmérik, így a jelentkezőket arra bátorítják, hogy lehetőség szerint vegyes (orvos- és gyógyszerészhallgatók) csapatokban jelentkezzenek. A három órás műhelymunka keretein belül, a bemutatott esetek rövid átbeszélése után alegjobb pontszámot elérő csapatokat díjazzák.",
+      "A gyógyszertan vetélkedő a 2-6. éves általános orvosis, valamint a 3-5. éves gyógyszerészetis diákok gyógyszertan és klinikai gyógyszerészet képességeit hivatott összemérni, interaktív esetbemutatók segítségével. A résztvevők a 4 fős csapatok alap gyógyszertan ismereteit, valamint klinikai esetorientált gondolkodásukat egyaránt felmérik. A jelentkező hallgatók a helyszínen lesznek csapatokba sorolva. A három órás műhelymunka keretein belül, a bemutatott esetek rövid átbeszélése után a legjobb pontszámot elérő csapatokat díjazzák.",
     noOfAvailableSeats: 12,
     noOfTotalSeats: 12,
     section: "AOK",
@@ -445,7 +447,7 @@ export const workshops = [
   {
     id: "clh210ww0000ufqngyv5rzer8",
     title:
-      "Az állkapocsízület anatómiája és normál működése. Kitüntetett állkapocs pozíciók. A manibula alap mozgásai.",
+      "Az állkapocsízület anatómiája és normál működése. Kitüntetett állkapocs-pozíciók. A mandibula alapmozgásai.",
     speakers: "Dr. Jász Máté",
     targetAudience: "4-ed évtől",
     location: "Studium HUB - Alsó Előadóterem",
@@ -479,7 +481,7 @@ export const workshops = [
     title: "A helyes szájápolás gyakorlata",
     speakers: "Dr. Petcu Blanka",
     targetAudience: "2-od évtől",
-    location: "Prevento",
+    location: "Fogorvosi Kar épülete, Preventológia Tanszék",
     date: "2023.05.11. (Csütörtök), 10:30-12:00",
     description:
       "A workshop a másod - hatodéves fogorvostanhallgatóknak szól és alkalmat nyújt begyakorolni a soft kefével történő Bass fogmosási technikát, illetve az interdentális terek tisztítását szolgáló eszközök kiválasztását és helyes alkalmazását. A résztvevők kipróbálhatják továbbá az Oral-B IO és Genius X elektromos fogkeféket és napirendre kerülnek a szájápolás kapcsán készült legújabb kutatásokkal.",
@@ -494,7 +496,7 @@ export const workshops = [
     title:
       "Útmutató a moláris restaurációkhoz-Alapvető vonalak a tökéletes rágófelszín helyreállításához",
     speakers: "Dr. Bardocz-Veres Zsuzsanna",
-    targetAudience: "-ed évtől 5-öd évig, orvosi köpeny/scrub",
+    targetAudience: "4-ed évtől 5-öd évig, orvosi köpeny/scrub",
     location: "",
     date: "2023.05.10. (Szerda), 16:00-20:00",
     description:
@@ -507,13 +509,13 @@ export const workshops = [
   },
   {
     id: "clh21crxh0012fqngfhsnfgt7",
-    title: "Csonkelőkészités, digitális lenyomatvétel",
+    title: "Csonkelőkészítés, digitális lenyomatvétel",
     speakers: "Dr. Jánosi Kinga Mária",
     targetAudience: "4-ed évtől, orvosi köpeny, maszk",
     location: "",
     date: "2023.05.11. (Csütörtök), 16:00-19:00",
     description:
-      "Egy fogpótlás minél tökéletesebb illeszkedésének előfeltétele a helyes és megfelelő csonkelőkészités. A preparációt követő szkennelés hasznos információkat szolgáltathat a csonk formájáról és az előkészités helyességéről.",
+      "Egy fogpótlás minél tökéletesebb illeszkedésének előfeltétele a helyes és megfelelő csonkelőkészítés. A preparációt követő szkennelés hasznos információkat szolgáltathat a csonk formájáról és az előkészítés helyességéről.",
     noOfAvailableSeats: 8,
     noOfTotalSeats: 8,
     section: "FOK",
@@ -522,7 +524,7 @@ export const workshops = [
   },
   {
     id: "clh21g7jt0014fqngi0x4souy",
-    title: "Direkt posterior restaurációk ü eszközök és anyagok",
+    title: "Direkt posterior restaurációk - eszközök és anyagok",
     speakers: "Dr. Kerekes-Máthé Bernadette, Dr. Kovács Mónika",
     targetAudience: "3-ad évtől, orvosi köpeny, maszk",
     location: "",
@@ -537,7 +539,7 @@ export const workshops = [
   },
   {
     id: "clh21ku090016fqng26qykra3",
-    title: "Lebenyképzés és varrástechnikák disznóálkapcson",
+    title: "Lebenyképzés és varrástechnikák disznóállkapcson",
     speakers: "Dr. Miklós Adorján, Dr. Bodó Tamás-Örs",
     targetAudience: "3-ad évtől, orvosi köpeny/scrub",
     location: "",
@@ -584,7 +586,7 @@ export const workshops = [
   },
   {
     id: "clh21um6o001cfqngjlp5bryj",
-    title: "Paradontális sínezés",
+    title: "Parodontális sínezés",
     speakers: "Dr. Benedek Csilla",
     targetAudience: "5-öd évtől, orvosi köpeny/scrub",
     location: "",
@@ -648,7 +650,7 @@ export const workshops = [
     title: "Láz- és fájdalomcsillapító szalagok előállítása és vizsgálata",
     speakers: "Dr. Rédai Emőke Margit",
     targetAudience: "3-5. év, orvosi köpeny",
-    location: "Techno labor",
+    location: "Technológiai labor",
     date: "2023.05.12 (Péntek), 10:00-12:00",
     description:
       "A műhelymunka során átbeszéljük egy modern, gyerekbarát gyógyszerforma létrehozásának lépéseit, az előállítási módszer kiválasztását, elkészítjük majd megvizsgáljuk a termék minőségét.",
@@ -660,13 +662,13 @@ export const workshops = [
   },
   {
     id: "clh28wlrf001kfqngm1z0p83h",
-    title: "Mennyi csokoládé egy kávé?",
+    title: "Mennyi csokoládé egy kávé? (I.)",
     speakers: "Dr. Fülöp Ibolya, Dr. Májai Erzsébet",
     targetAudience: "2-5. év, orvosi köpeny, csokoládé",
     location: "67. labor (Toxikológia)",
     date: "2023.05.13 (Szombat), 10:00-11:30",
     description:
-      "A workshop témája a koffein minőségi és mennyiségi meghatározása csokoládéból kromatográfiás módszerekkel.\nA koffein, bár vízben rosszul oldódik, a „könnyen” mérhető vegyületek közé tartozik, a meghatározás érdekessége a szokottól eltérő mintaelőkészítés: a koffein kivonása a csokoládé-összetevők közül és oldatba vitele a kromatográfiás méréshez.\nA workshop tervezett lépései:\n- néhány szó a koffeinről és a meghatározására alkalmas analitikai módszerekről\n- a mintaelőkészítés: elméleti háttér és gyakorlati kivitelezés,\n- kalibrálóoldat készítése\n- nagynyomású folyadékromatográfiás és vékonyrétegkromatográfiás meghatározás\n- a vizsgált csokoládé koffein-tartalmának számolása a kapott eredmények alapján és a címben szereplő kérdés megválaszolása.",
+      "A workshop témája a koffein minőségi és mennyiségi meghatározása csokoládéból kromatográfiás módszerekkel.\nA koffein, bár vízben rosszul oldódik, a „könnyen” mérhető vegyületek közé tartozik, a meghatározás érdekessége a szokottól eltérő mintaelőkészítés: a koffein kivonása a csokoládé-összetevők közül és oldatba vitele a kromatográfiás méréshez.\nA workshop tervezett lépései:\n- néhány szó a koffeinről és a meghatározására alkalmas analitikai módszerekről\n- a mintaelőkészítés: elméleti háttér és gyakorlati kivitelezés,\n- kalibrálóoldat készítése\n- nagynyomású folyadékkromatográfiás és vékonyréteg kromatográfiás meghatározás\n- a vizsgált csokoládé koffein-tartalmának számolása a kapott eredmények alapján és a címben szereplő kérdés megválaszolása.",
     noOfAvailableSeats: 10,
     noOfTotalSeats: 10,
     section: "GYK",
@@ -675,13 +677,13 @@ export const workshops = [
   },
   {
     id: "clh28wlrf001kfqngm1z0p83h",
-    title: "Mennyi csokoládé egy kávé?",
+    title: "Mennyi csokoládé egy kávé? (II.)",
     speakers: "Dr. Fülöp Ibolya, Dr. Májai Erzsébet",
     targetAudience: "2-5. év, orvosi köpeny, csokoládé",
     location: "67. labor (Toxikológia)",
     date: "2023.05.13 (Szombat), 11:30-13:00",
     description:
-      "A workshop témája a koffein minőségi és mennyiségi meghatározása csokoládéból kromatográfiás módszerekkel.\nA koffein, bár vízben rosszul oldódik, a „könnyen” mérhető vegyületek közé tartozik, a meghatározás érdekessége a szokottól eltérő mintaelőkészítés: a koffein kivonása a csokoládé-összetevők közül és oldatba vitele a kromatográfiás méréshez.\nA workshop tervezett lépései:\n- néhány szó a koffeinről és a meghatározására alkalmas analitikai módszerekről\n- a mintaelőkészítés: elméleti háttér és gyakorlati kivitelezés,\n- kalibrálóoldat készítése\n- nagynyomású folyadékromatográfiás és vékonyrétegkromatográfiás meghatározás\n- a vizsgált csokoládé koffein-tartalmának számolása a kapott eredmények alapján és a címben szereplő kérdés megválaszolása.",
+      "A workshop témája a koffein minőségi és mennyiségi meghatározása csokoládéból kromatográfiás módszerekkel.\nA koffein, bár vízben rosszul oldódik, a „könnyen” mérhető vegyületek közé tartozik, a meghatározás érdekessége a szokottól eltérő mintaelőkészítés: a koffein kivonása a csokoládé-összetevők közül és oldatba vitele a kromatográfiás méréshez.\nA workshop tervezett lépései:\n- néhány szó a koffeinről és a meghatározására alkalmas analitikai módszerekről\n- a mintaelőkészítés: elméleti háttér és gyakorlati kivitelezés,\n- kalibrálóoldat készítése\n- nagynyomású folyadékkromatográfiás és vékonyréteg kromatográfiás meghatározás\n- a vizsgált csokoládé koffein-tartalmának számolása a kapott eredmények alapján és a címben szereplő kérdés megválaszolása.",
     noOfAvailableSeats: 10,
     noOfTotalSeats: 10,
     section: "GYK",
@@ -697,7 +699,7 @@ export const workshops = [
     location: "Gyógyszerészi kar épülete, farmakológia laboratórium (C4)",
     date: "2023.05.12 (Péntek), 14:00-15:00",
     description:
-      "A gyógyszertan vetélkedő a 2-6. éves általános orvosis, valamint a 3-5. éves gyógyszerészetis diákok gyógyszertan és klinikai gyógyszerészet képességeit hivatott összemérni, interaktív esetbemutatók segítségével. A résztvevők a 4 fős csapatok alap gyógyszertan ismereteit, valamint klinikai esetorientált gondolkodásukat egyaránt felmérik, így a jelentkezőket arra bátorítják, hogy lehetőség szerint vegyes (orvos- és gyógyszerészhallgatók) csapatokban jelentkezzenek. A három órás műhelymunka keretein belül, a bemutatott esetek rövid átbeszélése után alegjobb pontszámot elérő csapatokat díjazzák.",
+      "A gyógyszertan vetélkedő a 2-6. éves általános orvosis, valamint a 3-5. éves gyógyszerészetis diákok gyógyszertan és klinikai gyógyszerészet képességeit hivatott összemérni, interaktív esetbemutatók segítségével. A résztvevők a 4 fős csapatok alap gyógyszertan ismereteit, valamint klinikai esetorientált gondolkodásukat egyaránt felmérik. A jelentkező hallgatók a helyszínen lesznek csapatokba sorolva. A három órás műhelymunka keretein belül, a bemutatott esetek rövid átbeszélése után a legjobb pontszámot elérő csapatokat díjazzák.",
     noOfAvailableSeats: 10,
     noOfTotalSeats: 10,
     section: "GYK",
@@ -722,7 +724,7 @@ export const workshops = [
   {
     id: "clh2gfqzs0006fqeqbcdkcf7u",
     title:
-      "Ismerkedés a nutriciós státusz felmérésére használt eszközökkel és a gyakorlati használat elsajátitása (I.)",
+      "Ismerkedés a nutriciós státusz felmérésére használt eszközökkel és a gyakorlati használat elsajátítása (I.)",
     speakers: "Dr. Sükösd Nagy Beáta ",
     targetAudience: "1. évtől",
     location: "IntegraViva",
@@ -738,8 +740,8 @@ export const workshops = [
   {
     id: "clh2gg3j20008fqeqslks1oa8",
     title:
-      "Ismerkedés a nutriciós státusz felmérésére használt eszközökkel és a gyakorlati használat elsajátitása (II.)",
-    speakers: "Dr. Sükösd Nagy Beáta ",
+      "Ismerkedés a nutriciós státusz felmérésére használt eszközökkel és a gyakorlati használat elsajátítása (II.)",
+    speakers: "Dr. Sükösd Nagy Beáta",
     targetAudience: "1. évtől",
     location: "IntegraViva",
     date: "2023.05.12 (Péntek), 12:00-13:30",
@@ -759,7 +761,7 @@ export const workshops = [
     location: "Studium HUB - Felső Előadóterem",
     date: "2023.05.10. (Szerda), 14:00-17:00",
     description:
-      "Az egészségügyi oktatásban, de amúgy ez elmondható a romániai társadalom számottevő hányadára az általános jogi kultúra fejlesztésére vajmi kevés hangsúly esik. Éppen ezért sok szakember (Nemcsak az egészségügyben dolgozók) mikor a szakmájához kapcsolódó jogi kérdésekkel találkozik sokszor értetlenül áll előttük, hiszen a jognak egy sajátos gondolkodás- és értelmezés módja van , amely egy bizonyos fokú absztraháló képességet feltételez, amelyet a legtöbb oktatási intézményben nem tanítanak.űn Az orvosi műhiba, de amúgy más szakmai műhibák kérdése is egy interdiszciplináris terület amely mindig legalább két szakma ötvözését és jogszabályainak kombinálását feltételezi, amelynek oktatása és elsajátítása nagy kihívás lehet jogi alapismeretek nélkül.Műhely gyakorlatunk erre próbál egy inkább probléma felvető és tudatosító mint oktató választ adni , melynek keretén belül a műhibával kapcsolatos bizonyos alapfogalmak elsajátítása után gyakorlati , konkrét eseteken keresztül megpróbálunk néhány általános irányvonalat kijelölni ebben a témában. A gyakorlat érdekessége lesz a perszimuláció avagy az “ördög ügyvédje”játék amelyben a résztvevők közül ügyészt ügyvédet valamint tettest választunk akik egy szimulált per keretén belül kell álláspontjuk mellett érvelni. A workshop nyitott mindenkinek nem feltételez előzetes jogi ismereteket.",
+      "Az egészségügyi oktatásban, de amúgy ez elmondható a romániai társadalom számottevő hányadára az általános jogi kultúra fejlesztésére vajmi kevés hangsúly esik. Éppen ezért sok szakember (Nemcsak az egészségügyben dolgozók) mikor a szakmájához kapcsolódó jogi kérdésekkel találkozik sokszor értetlenül áll előttük, hiszen a jognak egy sajátos gondolkodás- és értelmezés módja van , amely egy bizonyos fokú absztraháló képességet feltételez, amelyet a legtöbb oktatási intézményben nem tanítanak. Az orvosi műhiba, de amúgy más szakmai műhibák kérdése is egy interdiszciplináris terület amely mindig legalább két szakma Ötvözését és jogszabályainak kombinálását feltételezi, amelynek oktatása és elsajátítása nagy kihívás lehet jogi alapismeretek nélkül.Műhely gyakorlatunk erre próbál egy inkább probléma felvető és tudatosító mint oktató választ adni , melynek keretén belül a műhibával kapcsolatos bizonyos alapfogalmak Elsajátítása után gyakorlati , konkrét eseteken keresztül megpróbálunk néhány általános irányvonalat kijelölni ebben a témában. A gyakorlat érdekessége lesz a perszimuláció avagy az “ördög ügyvédje”játék amelyben a résztvevők közül ügyészt ügyvédet valamint tettest választunk akik egy szimulált per keretén belül kell Álláspontjuk mellett érvelniük. az workshop nyitott mindenkinek nem feltételez előzetes jogi ismereteket.",
     noOfAvailableSeats: 25,
     noOfTotalSeats: 25,
     section: "ALL",
@@ -769,7 +771,7 @@ export const workshops = [
   {
     id: "clh2gr0c5000cfqeqi6w8wai0",
     title: "Rajzfilmekben látható mentális zavarok",
-    speakers: "Drd Becsky Borbála",
+    speakers: "Drd. Becsky Borbála",
     targetAudience: "1. évtől",
     location: "Studium Hub - Kávézó",
     date: "2023.05.11. (Csütörtök), 11:00-16:00",
