@@ -125,7 +125,7 @@ export const workshops = [
     id: "clgwcorr30000fq1dfpvf75az",
     title: "EKG egyszerűen",
     speakers: "Dr. Kocsis Lóránd",
-    targetAudience: "1. évtől",
+    targetAudience: "2-od évtől",
     location: "MOGYTTE Főépület, 330-as terem",
     date: "2023.05.11 (Csütörtök), 16:00-17:00",
     description:
@@ -133,7 +133,7 @@ export const workshops = [
     noOfAvailableSeats: 60,
     noOfTotalSeats: 60,
     section: "AOK",
-    yearFrom: 1,
+    yearFrom: 2,
     yearTo: 6,
   },
   {
@@ -186,7 +186,8 @@ export const workshops = [
   {
     id: "clh1u5rlb0000fqtgq5qm131r",
     title: "Nemi úton terjedő fertőzések, mi rejlik a színfalak mögött",
-    speakers: "Dr. ifj. Kiss Szilárd Leó, Dr. Székely Edit, Dr. Ladányi Emmánuel",
+    speakers:
+      "Dr. ifj. Kiss Szilárd Leó, Dr. Székely Edit, Dr. Ladányi Emmánuel",
     targetAudience: "1. évtől",
     location: "Mikrobiológia tanszék",
     date: "2023.05.10 (Szerda), 17:00-18:30",
@@ -354,8 +355,7 @@ export const workshops = [
   {
     id: "clh2g9z7b0002fqeqsoze0cav",
     title: "Laparoszkópia a gyakorlatban",
-    speakers:
-      "Dr. ifj. Kiss Szilárd Leó, Dr. Székely Edit, Dr. Ladányi Emmánuel",
+    speakers: "Dr. ifj. Kiss Szilárd Leó",
     targetAudience: "1. évtől",
     location: "Studium HUB - Alsó Előadóterem",
     date: "2023.05.10. (Szerda), 18:00-20:00",
@@ -496,16 +496,16 @@ export const workshops = [
     title:
       "Útmutató a moláris restaurációkhoz-Alapvető vonalak a tökéletes rágófelszín helyreállításához",
     speakers: "Dr. Bardocz-Veres Zsuzsanna",
-    targetAudience: "4-ed évtől 5-öd évig, orvosi köpeny/scrub",
+    targetAudience: "4-ed évtől, orvosi köpeny/scrub",
     location: "",
     date: "2023.05.10. (Szerda), 16:00-20:00",
     description:
       "A fogmorfológia helyes helyreállítása alapvető a fogászatban, úgy esztétikai mint funkcionális szempontból. A workshop során, a résztvevők gyurmából megformáznak moláris felszíneket,ezáltal nem csak elméleti ismeretekkel gazdagodnak az okklúzális morfológia alapjait illetően hanem a gyakorlatra összpontosítva,olyan készségekkel a zsebükben távoznak, melyeket kamatoztathatnak majd a későbbiekben álomszép, élethű moláris töméseket készítve. Elsajátítják, az összetett okklúzális felszínek kialakítását kis és könnyen kezelhető lépésekre bontani, megismerkednek az alapvető fogfelszíni vonalakkal.",
-    noOfAvailableSeats: 10,
-    noOfTotalSeats: 10,
+    noOfAvailableSeats: 15,
+    noOfTotalSeats: 15,
     section: "FOK",
     yearFrom: 4,
-    yearTo: 5,
+    yearTo: 6,
   },
   {
     id: "clh21crxh0012fqngfhsnfgt7",
@@ -725,7 +725,7 @@ export const workshops = [
     id: "clh2gfqzs0006fqeqbcdkcf7u",
     title:
       "Ismerkedés a nutriciós státusz felmérésére használt eszközökkel és a gyakorlati használat elsajátítása (I.)",
-    speakers: "Dr. Sükösd Nagy Beáta ",
+    speakers: "Drd. Sükösd Nagy Beáta ",
     targetAudience: "1. évtől",
     location: "IntegraViva",
     date: "2023.05.12 (Péntek), 10:00-11:30",
@@ -741,7 +741,7 @@ export const workshops = [
     id: "clh2gg3j20008fqeqslks1oa8",
     title:
       "Ismerkedés a nutriciós státusz felmérésére használt eszközökkel és a gyakorlati használat elsajátítása (II.)",
-    speakers: "Dr. Sükösd Nagy Beáta",
+    speakers: "Drd. Sükösd Nagy Beáta",
     targetAudience: "1. évtől",
     location: "IntegraViva",
     date: "2023.05.12 (Péntek), 12:00-13:30",
