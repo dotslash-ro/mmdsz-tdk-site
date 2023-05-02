@@ -186,8 +186,8 @@ export const workshops = [
   {
     id: "clh1u5rlb0000fqtgq5qm131r",
     title: "Nemi úton terjedő fertőzések, mi rejlik a színfalak mögött",
-    speakers: "Dr Kiss Szilárd Leó, Dr Székely Edit, Dr Ladányi Emmánuel",
-    targetAudience: "1-től 6-ed évig",
+    speakers: "Dr. ifj. Kiss Szilárd Leó, Dr. Székely Edit, Dr. Ladányi Emmánuel",
+    targetAudience: "1. évtől",
     location: "Mikrobiológia tanszék",
     date: "2023.05.10 (Szerda), 17:00-18:30",
     description:
@@ -341,7 +341,7 @@ export const workshops = [
     title: "Alapismeretek az ultrahang diagnosztikában (II.)",
     speakers: "Dr. Baróti Beáta",
     targetAudience: "4-ed évtől, orvosi köpeny, vonalzó",
-    location: "Radiológia, Nagykórház",
+    location: "Radiológia Osztály, Maros Megyei Sürgősségi Kórház",
     date: "2023.05.12 (Péntek), 16:00-17:30",
     description:
       "Belelátni az emberi szervezetbe, közvetlenül ránézni szervekre, fájdalmak vagy tünetek szervi okát fürkészni, megelőzni vagy éppen indikálni egy orvosi beavatkozást, megelőzni a nagyobb bajt, mindezt teljesen kíméletesen, fájdalommentesen és a legkisebb kockázat nélkül - ez az ultrahangos diagnosztika szerepe a modern orvoslásban.",
@@ -676,7 +676,7 @@ export const workshops = [
     yearTo: 5,
   },
   {
-    id: "clh28wlrf001kfqngm1z0p83h",
+    id: "clh28wlrf001kfqngm1z0p83a",
     title: "Mennyi csokoládé egy kávé? (II.)",
     speakers: "Dr. Fülöp Ibolya, Dr. Májai Erzsébet",
     targetAudience: "2-5. év, orvosi köpeny, csokoládé",
