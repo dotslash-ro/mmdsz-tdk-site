@@ -62,7 +62,7 @@ const router = createHashRouter([
     element: <Accreditation />,
   },
   {
-    path: "/workshop-jelentkezes2",
+    path: "/workshop-jelentkezes",
     element: <WorkshopSignup />,
   },
   {

@@ -42,7 +42,7 @@ const Navbar = () => {
         Szabályzat
       </NavLink>
       <NavLink
-        to="/workshop"
+        to="/workshop-jelentkezes"
         className={({ isActive }) =>
           isActive
             ? "lg:font-base flex items-center justify-center px-5 py-3 text-sm font-bold uppercase text-white underline lg:py-0"

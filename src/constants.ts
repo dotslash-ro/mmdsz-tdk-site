@@ -1,6 +1,6 @@
 export const serverUrl = "https://mmdsz-tdk-functions.vercel.app/api";
 export const workshopServerUrl = //"http://localhost:8000/api";
-"https://mmdsz-tdk-workshop-backend-production.up.railway.app/api";
+  "https://mmdsz-tdk-workshop-backend-production.up.railway.app/api";
 export const maxSignUpPerEmail = 2;
 export const universityList = [
   "",
