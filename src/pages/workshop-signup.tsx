@@ -80,16 +80,9 @@ const Workshops = () => {
     const profileStr = localStorage.getItem("profile");
     if (profileStr) {
       setProfile(JSON.parse(profileStr));
-      console.log(profile);
     }
 
-    // get section and study year
-
-    const section = localStorage.getItem("section");
-    setSection(section ?? "");
-
     const personalInfoStr = localStorage.getItem("personalInfo");
-
     if (!personalInfoStr) {
       return;
     }
