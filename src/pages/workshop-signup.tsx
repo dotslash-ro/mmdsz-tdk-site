@@ -6,13 +6,6 @@ import googleIcon from "../assets/google_icon.svg";
 import { ClipLoader } from "react-spinners";
 import SignupWorkshop from "../components/signup-workshop";
 
-const sectionNameToSectionCodeMap = new Map([
-  ["ÁOK", "AOK"],
-  ["GYK", "GYK"],
-  ["FOK", "FOK"],
-  ["Mindenkinek", "ALL"],
-]);
-
 const Workshops = () => {
   const [user, setUser] = useState<any>();
   const [profile, setProfile] = useState<any>();
@@ -130,7 +123,7 @@ const Workshops = () => {
             className="ml-4 block w-full rounded-full border border-gray-400 bg-white p-2.5 text-gray-900 focus:border-tdk-primary"
             onChange={(e) => setSection((e.target as HTMLSelectElement).value)}
           >
-            {["", "ÁOK", "FOK", "GYK", "Mindenkinek"].map((section, index) => {
+            {["", "ÁOK", "FOK", "GYK"].map((section, index) => {
               return (
                 <option className="text-md" key={index}>
                   {section}
@@ -193,47 +186,46 @@ const Workshops = () => {
     );
   }
 
+  if (!profile) {
+    return (
+      <div className="mx-auto flex h-screen flex-col items-center justify-center px-10 pb-10 font-semibold text-neutral-500 lg:w-2/3">
+        A műhelymunkákra való jelentkezéshez csatlakoztatnod kell a Google
+        fiókod az oldalhoz!
+        <button
+          className="my-10 flex w-48 items-center justify-center rounded-full border bg-neutral-100 px-3 py-1 drop-shadow-md hover:underline"
+          onClick={() => login()}
+        >
+          <img src={googleIcon} className="h-6 w-6" />
+          <div className=" mx-3 my-2 font-semibold text-neutral-600 lg:block lg:px-3">
+            Bejelentkezés
+          </div>
+        </button>
+      </div>
+    );
+  }
+
   return (
     <>
       <div className="top-25 right-5 flex justify-center pt-8 pr-2 lg:fixed lg:justify-end lg:pt-5 lg:pr-5">
-        {!profile ? (
-          <button
-            className="flex items-center rounded-full border bg-neutral-100 px-3 py-1 drop-shadow-md hover:underline"
-            onClick={() => login()}
-          >
-            <img src={googleIcon} className="h-6 w-6" />
-            <div className=" mx-3 text-sm font-semibold text-neutral-600 lg:block lg:px-3">
-              Bejelentkezés
-            </div>
-          </button>
-        ) : (
-          <button
-            className="flex items-center justify-center rounded-full border bg-neutral-100 px-3 py-2 drop-shadow-md"
-            onClick={() => login()}
-          >
-            <img
-              src={profile.picture}
-              referrerPolicy="no-referrer"
-              className="mx-1 h-10 w-10 rounded-full"
-            />
-            <div className="mx-1 text-sm font-semibold text-neutral-600">
-              {profile.name}
-            </div>
-            <div className="ml-1 text-sm font-light text-neutral-500">
-              {personalInfo.section} - {personalInfo.studyYear}
-            </div>
-          </button>
-        )}
+        <button
+          className="flex items-center justify-center rounded-full border bg-neutral-100 px-3 py-2 drop-shadow-md"
+          onClick={() => login()}
+        >
+          <img
+            src={profile.picture}
+            referrerPolicy="no-referrer"
+            className="mx-1 h-10 w-10 rounded-full"
+          />
+          <div className="mx-1 text-sm font-semibold text-neutral-600">
+            {profile.name}
+          </div>
+          <div className="ml-1 text-sm font-light text-neutral-500">
+            {personalInfo.section} - {personalInfo.studyYear}
+          </div>
+        </button>
       </div>
       <div className="mx-auto py-20 px-5 lg:w-2/3">
         <h2 className="pb-20 text-center text-5xl font-bold">Műhelymunkák</h2>
-
-        {!profile && (
-          <div className="flex justify-center pb-10 text-sm font-semibold text-neutral-500">
-            A műhelymunkákra való jelentkezéshez csatlakoztatnod kell a Google
-            fiókod az oldalhoz!
-          </div>
-        )}
         {workshops.map((workshop, index) => (
           <div key={index}>
             <SignupWorkshop
