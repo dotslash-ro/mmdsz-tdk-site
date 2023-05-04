@@ -29,16 +29,17 @@ const Workshops = () => {
   const login = useGoogleLogin({ onSuccess: (res) => setUser(res) });
   //   }, [section, studyYear]);
   async function fetchWorkshops(section: string, studyYear: number) {
-    const resp = await fetch(
-      `${workshopServerUrl}/workshop/section/${section}/year/${studyYear}`
-    );
+    const resp = await fetch(`${workshopServerUrl}/workshop/filter`, {
+      method: "POST",
+      body: JSON.stringify({ studyYear, section }),
+      headers: { Accept: "application/json" },
+    });
     if (resp.status != 200) {
       setError(true);
       return;
     }
     const data = await resp.json();
     setWorkshops(data);
-    console.log(data);
     setLoading(false);
   }
 
