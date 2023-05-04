@@ -60,6 +60,7 @@ export const oauthClientId =
 
 export const workshops = [
   {
+    id: "clh9f5p9r0000mc198wvyd747",
     title:
       '"A veszélyes szőlő". Két, a szőlő illetve kontaminált bor okozta megbetegedés diagnosztikai és terápiás kihívásai.',
     speakers: "Dr. Szabó Mónika",
@@ -75,6 +76,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5pa90002mc19enieyf61",
     title: "A lebenyplasztika alkalmazása a különböző anatómiai zónákban",
     speakers: "Dr. Jankó Botond",
     targetAudience: "3-ad évtől, orvosi köpeny",
@@ -89,6 +91,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5pan0004mc19cs78e9nw",
     title: "Agar Art",
     speakers: "Dr. Székely Edit",
     targetAudience: "2-od évtől, orvosi köpeny",
@@ -103,6 +106,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5pay0006mc19rcmvvanw",
     title:
       "Kórszövettani vizsgálat eredménye: diagnosis klinikai adatokkal vagy anélkül?",
     speakers:
@@ -119,6 +123,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5pb80008mc19afxqhbsw",
     title: "EKG egyszerűen",
     speakers: "Dr. Kocsis Lóránd",
     targetAudience: "2-od évtől",
@@ -133,6 +138,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5pbg000amc195l5kqcqd",
     title: "Hogyan mondjam el neked, amit nem lehet…",
     speakers: "Dr. Kovács Judit",
     targetAudience: "4-ed évtől",
@@ -146,6 +152,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5pbq000cmc19dir49juc",
     title: "Point of care echokardiográfia",
     speakers:
       "Dr. Frigy Attila, Dr. Gábor Kelemen Hunor, Dr. Czerán Botond, Dr. Heidenhoffer Erhard, Dr. Cseke Judit, Dr. Palkó Róbert",
@@ -162,6 +169,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5pc3000emc19lsieoy81",
     title: "A szem anatómiája (disznószem boncolás)",
     speakers: "Dr. Máté-István Ildikó",
     targetAudience:
@@ -177,6 +185,7 @@ export const workshops = [
     yearTo: 4,
   },
   {
+    id: "clh9f5pcg000gmc19d95st07b",
     title: "Nemi úton terjedő fertőzések, mi rejlik a színfalak mögött",
     speakers:
       "Dr. ifj. Kiss Szilárd Leó, Dr. Székely Edit, Dr. Ladányi Emmánuel",
@@ -192,6 +201,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5pcp000imc19unn9i5px",
     title:
       "Vezető tünet mellkasfájdalom-fogódzók az ok tisztázásához, csapdák és tévutak",
     speakers: "Dr. Germán-Salló Márta",
@@ -207,6 +217,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5pcx000kmc19d4g6lmej",
     title: "Kommunikációs gyakorlatok a funkcionális tünetek ellátásához",
     speakers: "Dr. Szatmári Szabolcs, Dr. Csipor-Fodor Andrea",
     targetAudience: "3-ad évtől",
@@ -221,6 +232,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5pd5000mmc19bdm0e35c",
     title: "Alapvető érsebészeti technikák, érvarratok, érpótló anyagok",
     speakers: "Dr. Kaller Réka",
     targetAudience: "3-ad évtől, köpeny, kesztyű",
@@ -235,6 +247,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5pdc000omc19l1j79b4v",
     title: "Varrattechnikák a sebészetben",
     speakers: "Dr. Csiszér István, Dr. Lőte Sándor, Dr. László Attila",
     targetAudience: "2-od évtől, orvosi köpeny",
@@ -249,6 +262,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5pdl000qmc1919t049fl",
     title:
       "Laborvizsgálati eredmények kiértékelése klinikai kontextusban: értelmezések, összefüggések, buktatók",
     speakers: "Dr. Szatmári Krisztina",
@@ -264,6 +278,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5pds000smc191izdzu2z",
     title:
       "Lokális lebenyek és ínvarrat technikák alkalmazása a plasztikai sebészetben",
     speakers: "Dr. Bálint Orsolya",
@@ -279,6 +294,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5pe5000umc19pmyaq89d",
     title: "Ok nélkül? Pszichoszomatika a gyakorlatban",
     speakers: "Dr. Bálint Ágnes",
     targetAudience: "1. évtől",
@@ -293,6 +309,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5peg000wmc192ph4oroh",
     title: "Anasztomózisok a gasztrointesztinális sebészetben",
     speakers: "Dr. Bauer Orsolya",
     targetAudience: "4-ed évtől, orvosi köpeny, vonalzó",
@@ -307,6 +324,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5pep000ymc1939gp6c94",
     title: "Alapismeretek az ultrahang diagnosztikában (I.)",
     speakers: "Dr. Baróti Beáta",
     targetAudience: "4-ed évtől, orvosi köpeny, vonalzó",
@@ -321,6 +339,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5pez0010mc1976hyxmp3",
     title: "Alapismeretek az ultrahang diagnosztikában (II.)",
     speakers: "Dr. Baróti Beáta",
     targetAudience: "4-ed évtől, orvosi köpeny, vonalzó",
@@ -335,6 +354,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5pf90012mc195u9ndrk2",
     title: "Laparoszkópia a gyakorlatban (I.)",
     speakers: "Dr. id. Kiss Szilárd Leó",
     targetAudience: "4-ed évtől",
@@ -349,6 +369,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5pfi0014mc1989378dbo",
     title: "Laparoszkópia a gyakorlatban (II.)",
     speakers: "Dr. Derzsi Zoltán",
     targetAudience: "4-ed évtől",
@@ -363,6 +384,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5pfv0016mc19jfy20hiu",
     title: "Mire jó a dermatoszkópia?",
     speakers: "Dr. Gáspár Réka",
     targetAudience: "5-öd évtől",
@@ -377,6 +399,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5pg40018mc197nwws0wz",
     title: "Arritmológia- invazív vonatkozások",
     speakers: "Dr. Kovács István",
     targetAudience: "2-od évtől",
@@ -391,6 +414,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5pgb001amc193878zv3s",
     title: "A neurocranium tartalmának CT anatómiája és gyakoribb patológiái",
     speakers: "Dr. Dénes Lóránd és Dr. Baróti Beáta",
     targetAudience: "2-od évtől",
@@ -405,6 +429,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5pgl001cmc19yzi9bwnj",
     title: "Gyógyszertan vetélkedő",
     speakers: "Dr. Gáll Zsolt, Dr. Bába László",
     targetAudience:
@@ -420,6 +445,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5pgu001emc19rwtzrymm",
     title:
       "Ideális lágyrészprofil kialakítása implantációs fogpótlás körül az esztétikai zónában",
     speakers: "Dr. Szász Előd, Dr. Dakó Alpár",
@@ -435,6 +461,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5ph4001gmc192p5mehfk",
     title:
       "Az állkapocsízület anatómiája és normál működése. Kitüntetett állkapocs-pozíciók. A mandibula alapmozgásai.",
     speakers: "Dr. Jász Máté",
@@ -450,6 +477,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5phd001imc19vvufusfh",
     title:
       "Digital Dentistry egy helyen - a dicomLAB Platform bemutatása és Hands-on kipróbálása ",
     speakers: "Dr. Varga Endre",
@@ -465,6 +493,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5phn001kmc19iintdz1k",
     title: "A helyszín részleteivel kapcsolatban e-mailben értesítünk!",
     speakers: "Dr. Petcu Blanka",
     targetAudience: "2-od évtől",
@@ -479,6 +508,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5phw001mmc19dwnmi5di",
     title:
       "Útmutató a moláris restaurációkhoz-Alapvető vonalak a tökéletes rágófelszín helyreállításához",
     speakers: "Dr. Bardocz-Veres Zsuzsanna",
@@ -494,6 +524,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5pi4001omc19u9xxndcb",
     title: "Csonkelőkészítés, digitális lenyomatvétel",
     speakers: "Dr. Jánosi Kinga Mária",
     targetAudience: "4-ed évtől, orvosi köpeny, maszk",
@@ -508,6 +539,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5pib001qmc1962kno7dh",
     title: "Direkt posterior restaurációk - eszközök és anyagok",
     speakers: "Dr. Kerekes-Máthé Bernadette, Dr. Kovács Mónika",
     targetAudience: "3-ad évtől, orvosi köpeny, maszk",
@@ -522,6 +554,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5pil001smc19gwxmjlla",
     title: "Lebenyképzés és varrástechnikák disznóállkapcson",
     speakers: "Dr. Miklós Adorján, Dr. Bodó Tamás-Örs",
     targetAudience: "3-ad évtől, orvosi köpeny/scrub",
@@ -536,6 +569,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5pix001umc193m7e860g",
     title: "Guided Biofilm Therapy (GBT) alkalmazása a parodontológiában",
     speakers: "Dr. Kemper Róbert",
     targetAudience:
@@ -551,6 +585,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5pj8001wmc19z1d7lrdx",
     title:
       "Azonnali implantáció jelentősége a frontfogak implantológiai ellátásában. Navigált implantáció és azonnali ideiglenes pótlás készítése",
     speakers: "Dr. Chikány Tamás",
@@ -566,6 +601,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5pjg001ymc19pb35w62h",
     title: "Parodontális sínezés",
     speakers: "Dr. Benedek Csilla",
     targetAudience: "5-öd évtől, orvosi köpeny/scrub",
@@ -580,6 +616,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5pjq0020mc1956ih3md9",
     title: "Fogászati fotózás",
     speakers: "Dr. Markovics Emese, Dr. Pongrácz Mátyás",
     targetAudience: "5-öd évtől",
@@ -594,6 +631,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5pjz0022mc196kjuf0mt",
     title: "Agyagfog mintázó verseny",
     speakers: "Dr. Kerekes-Máthé Bernadette, Jenei H.Viktória",
     targetAudience:
@@ -609,6 +647,7 @@ export const workshops = [
     yearTo: 3,
   },
   {
+    id: "clh9f5pka0024mc19oxc0lu2x",
     title: "Agyagfog mintázó verseny",
     speakers: "Dr. Kerekes-Máthé Bernadette, Jenei H.Viktória",
     targetAudience:
@@ -624,6 +663,7 @@ export const workshops = [
     yearTo: 4,
   },
   {
+    id: "clh9f5pkl0026mc19wjbim17q",
     title: "Agyagfog mintázó verseny",
     speakers: "Dr. Kerekes-Máthé Bernadette, Jenei H.Viktória",
     targetAudience:
@@ -639,6 +679,7 @@ export const workshops = [
     yearTo: 5,
   },
   {
+    id: "clh9f5pkx0028mc19cy5shq1k",
     title: "Agyagfog mintázó verseny",
     speakers: "Dr. Kerekes-Máthé Bernadette, Jenei H.Viktória",
     targetAudience:
@@ -654,6 +695,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5plf002amc1972m4d4o8",
     title: "Periodikus jelenségek kémiai és biokémiai rendszerekben",
     speakers: "Dr. Donáth-Nagy Gabriella",
     targetAudience: "1-5. év, orvosi köpeny",
@@ -668,6 +710,7 @@ export const workshops = [
     yearTo: 5,
   },
   {
+    id: "clh9f5plq002cmc19rxj683c0",
     title: "Láz- és fájdalomcsillapító szalagok előállítása és vizsgálata",
     speakers: "Dr. Rédai Emőke Margit",
     targetAudience: "3-5. év, orvosi köpeny",
@@ -682,6 +725,7 @@ export const workshops = [
     yearTo: 5,
   },
   {
+    id: "clh9f5pm0002emc196abi4j66",
     title: "Mennyi csokoládé egy kávé? (I.)",
     speakers: "Dr. Fülöp Ibolya, Dr. Májai Erzsébet",
     targetAudience: "2-5. év, orvosi köpeny, csokoládé",
@@ -696,6 +740,7 @@ export const workshops = [
     yearTo: 5,
   },
   {
+    id: "clh9f5pm8002gmc19hmyjnx5n",
     title: "Mennyi csokoládé egy kávé? (II.)",
     speakers: "Dr. Fülöp Ibolya, Dr. Májai Erzsébet",
     targetAudience: "2-5. év, orvosi köpeny, csokoládé",
@@ -710,6 +755,7 @@ export const workshops = [
     yearTo: 5,
   },
   {
+    id: "clh9f5pmg002imc19flekdgfe",
     title: "Gyógyszertan vetélkedő",
     speakers: "Dr. Gáll Zsolt, Dr. Bába László",
     targetAudience:
@@ -725,6 +771,7 @@ export const workshops = [
     yearTo: 5,
   },
   {
+    id: "clh9f5pmo002kmc19k2f8r6tg",
     title: "Bálint csoport",
     speakers: "Dr. Munzlinger Attila, Dr. Munzlinger Ildikó, Dr. Farkas Evelyn",
     targetAudience: "nincs kritérium",
@@ -739,6 +786,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5pmw002mmc19byd0mzi7",
     title:
       "Ismerkedés a nutriciós státusz felmérésére használt eszközökkel és a gyakorlati használat elsajátítása (I.)",
     speakers: "Drd. Sükösd Nagy Beáta ",
@@ -754,6 +802,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5pn4002omc19lq6rc21n",
     title:
       "Ismerkedés a nutriciós státusz felmérésére használt eszközökkel és a gyakorlati használat elsajátítása (II.)",
     speakers: "Drd. Sükösd Nagy Beáta",
@@ -769,6 +818,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5pnc002qmc19he2cl0za",
     title: "Malpraxis a gyakorlatban-perszimuláció",
     speakers: "Dr. Gogolák Csongor",
     targetAudience: "1. évtől",
@@ -783,6 +833,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5pnl002smc199ny7w8lr",
     title: "Rajzfilmekben látható mentális zavarok",
     speakers: "Drd. Becsky Borbála",
     targetAudience: "1. évtől",
@@ -797,6 +848,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5pnw002umc199m185fcr",
     title: "Orvoslás a sorozatokban",
     speakers: "Dr. Fábián Emese",
     targetAudience: "1. évtől",
@@ -811,6 +863,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5po4002wmc19mdmn9bbz",
     title: "Merjünk életet menteni! (I.)",
     speakers: "Pontis Egészségügyi Szervezet",
     targetAudience: "1. évtől",
@@ -825,6 +878,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5poc002ymc19qi0nliw2",
     title: "Merjünk életet menteni! (II.)",
     speakers: "Pontis Egészségügyi Szervezet",
     targetAudience: "1. évtől",
@@ -839,6 +893,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5pol0030mc1997dvtmyt",
     title: "Gyógynövények a mindennapjainkban (I.)",
     speakers: "Dr. Varga Erzsébet",
     targetAudience: "1. évtől",
@@ -853,6 +908,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5pov0032mc197f6ouufh",
     title: "Gyógynövények a mindennapjainkban (II.)",
     speakers: "Dr. Varga Erzsébet",
     targetAudience: "1. évtől",
@@ -867,6 +923,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5pp50034mc19liutqg0w",
     title:
       "Kalcium anyagcsere: laboratóriumi paraméterek, szabályozó tényezők, patobiokémiai szempontok (I.)",
     speakers: "Prof. dr. Nagy Előd, Dr. Kovács Béla, Dr. Nemes- Nagy Enikő",
@@ -882,6 +939,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5ppc0036mc19l8ef3t1v",
     title:
       "Kalcium anyagcsere: laboratóriumi paraméterek, szabályozó tényezők, patobiokémiai szempontok (II.)",
     speakers: "Prof. dr. Nagy Előd, Dr. Kovács Béla, Dr. Nemes- Nagy Enikő",
@@ -897,6 +955,7 @@ export const workshops = [
     yearTo: 6,
   },
   {
+    id: "clh9f5ppn0038mc19yizplia3",
     title: "Bevezetés az abúzus szerek farmakológiájába",
     speakers: "Dr. Bába László",
     targetAudience: "2-od évtől 5-öd évig",
