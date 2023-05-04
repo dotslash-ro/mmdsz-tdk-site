@@ -31,8 +31,8 @@ const Workshops = () => {
   async function fetchWorkshops(section: string, studyYear: number) {
     const resp = await fetch(`${workshopServerUrl}/workshop/filter`, {
       method: "POST",
-      body: JSON.stringify({ studyYear, section }),
-      headers: { Accept: "application/json" },
+      body: JSON.stringify({ studyYear: studyYear, section: section }),
+      headers: { "Content-Type": "application/json" },
     });
     if (resp.status != 200) {
       setError(true);
@@ -177,7 +177,12 @@ const Workshops = () => {
   }
 
   if (error) {
-    return <>Error lol</>;
+    return (
+      <div className="h-screen items-center justify-center text-sm font-semibold text-rose-500">
+        Sajnos egy hiba lépett fel. Vedd fel a kapcsolatot a szervezőkkel a
+        következő címen: tdk@mmdsz.ro
+      </div>
+    );
   }
 
   if (loading) {

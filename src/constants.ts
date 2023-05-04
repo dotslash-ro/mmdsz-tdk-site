@@ -1,5 +1,5 @@
 export const serverUrl = "https://mmdsz-tdk-functions.vercel.app/api";
-export const workshopServerUrl =
+export const workshopServerUrl = //"http://localhost:8000/api";
   "https://mmdsz-tdk-workshop-backend-production.up.railway.app/api";
 export const maxSignUpPerEmail = 2;
 export const universityList = [
@@ -174,7 +174,7 @@ export const workshops = [
     speakers: "Dr. Máté-István Ildikó",
     targetAudience:
       "1-től 4-ed évig, kicsi olló, szemöldök csipesz, orvosi köpeny",
-    location: "Anatómia tanszék, 1-es előadó terem",
+    location: "Gecse Dániel Református Orvosi és Egészségügyi Szakkollégium",
     date: "2023.05.11 (Csütörtök), 15:00-17:00",
     description:
       "Szem anatómiájának általános ismertetése, majd kettes csoportokban lehetőség nyílik a disznószem boncolására a doktornő vezetésével.",
@@ -250,7 +250,7 @@ export const workshops = [
     id: "clh1v4abr0006fqngv40be9e4",
     title: "Varrattechnikák a sebészetben",
     speakers: "Dr. Csiszér István, Dr. Lőte Sándor, Dr. László Attila",
-    targetAudience: "2-od évtől",
+    targetAudience: "2-od évtől, orvosi köpeny",
     location: "Anatómia tanszék, 1-es előadó terem",
     date: "2023.05.12 (Péntek), 09:00-12:00",
     description:
@@ -284,7 +284,7 @@ export const workshops = [
     speakers: "Dr. Bálint Orsolya",
     targetAudience: "4-ed évtől, köpeny, vonalzó",
     location: "Anatómia tanszék, 1-es előadó terem",
-    date: "2023.05.11 (Csütörtök), 16:00-18:00",
+    date: "2023.05.11 (Csütörtök), 14:00-16:00",
     description:
       "A műhelymunka menete:\nI. Lokális lebenyplasztika és ínvarrat technikákról szóló bemutató (elméleti rész)\nII. Lokális lebenyek kialakítása disznóbőrön\nIII. Ínvarrat technikák gyakorlása disznólábon levő inakon",
     noOfAvailableSeats: 12,
@@ -816,11 +816,26 @@ export const workshops = [
   },
   {
     id: "clh2gvcx1000gfqeqfkvyxeo5",
-    title: "Merjünk életet menteni!",
+    title: "Merjünk életet menteni! (I.)",
     speakers: "Pontis Egészségügyi Szervezet",
     targetAudience: "1. évtől",
     location: "Studium HUB pincéje",
-    date: "2023.05.10. (Szerda), 14:00-20:00",
+    date: "2023.05.10. (Szerda), 14:00-17:00",
+    description:
+      "A Pontis Egészségügyi Szervezet egy fiatal, rezidens orvosokból álló szövetség, de elsősorban egy baráti társaság, akik az egészségnevelést és egészségmegőrzést tűzték ki maguk elé legfőbb célként.\n\nA már több rendben, sikeresen megtartott Alapszintű Újraélesztés képzés is ezen gondolatok mentén jött létre. Úgy laikusok, mint egészségügyi dolgozók számára a praktikus és korszerű tudásátadás a kívánt eredmény, azzal a nem titkolt szándékkal, hogy elsősorban a mentalitása változzon meg a képzésen résztvevő személyeknek. Hogy merjenek lépni embertársaik túlélése érdekében. Hogy merjenek életet menteni!",
+    noOfAvailableSeats: 16,
+    noOfTotalSeats: 16,
+    section: "Mindenkinek",
+    yearFrom: 1,
+    yearTo: 6,
+  },
+  {
+    id: "clh2gvcx1000gfqeqfkvyxeo6",
+    title: "Merjünk életet menteni! (II.)",
+    speakers: "Pontis Egészségügyi Szervezet",
+    targetAudience: "1. évtől",
+    location: "Studium HUB pincéje",
+    date: "2023.05.10. (Szerda), 17:00-20:00",
     description:
       "A Pontis Egészségügyi Szervezet egy fiatal, rezidens orvosokból álló szövetség, de elsősorban egy baráti társaság, akik az egészségnevelést és egészségmegőrzést tűzték ki maguk elé legfőbb célként.\n\nA már több rendben, sikeresen megtartott Alapszintű Újraélesztés képzés is ezen gondolatok mentén jött létre. Úgy laikusok, mint egészségügyi dolgozók számára a praktikus és korszerű tudásátadás a kívánt eredmény, azzal a nem titkolt szándékkal, hogy elsősorban a mentalitása változzon meg a képzésen résztvevő személyeknek. Hogy merjenek lépni embertársaik túlélése érdekében. Hogy merjenek életet menteni!",
     noOfAvailableSeats: 16,
