@@ -494,10 +494,10 @@ export const workshops = [
   },
   {
     id: "clh9f5phn001kmc19iintdz1k",
-    title: "A helyszín részleteivel kapcsolatban e-mailben értesítünk!",
+    title: "A helyes  szájápolás gyakorlata",
     speakers: "Dr. Petcu Blanka",
     targetAudience: "2-od évtől",
-    location: "Fogorvosi Kar épülete, Preventológia Tanszék",
+    location: "A helyszín részleteivel kapcsolatban e-mailben értesítünk!",
     date: "2023.05.12. (Péntek), 16:00-17:30",
     description:
       "A workshop a másod - hatodéves fogorvostanhallgatóknak szól és alkalmat nyújt begyakorolni a soft kefével történő Bass fogmosási technikát, illetve az interdentális terek tisztítását szolgáló eszközök kiválasztását és helyes alkalmazását. A résztvevők kipróbálhatják továbbá az Oral-B IO és Genius X elektromos fogkeféket és napirendre kerülnek a szájápolás kapcsán készült legújabb kutatásokkal.",
