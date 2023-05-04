@@ -1,0 +1,253 @@
+import { useGoogleLogin } from "@react-oauth/google";
+import { withLayout } from "../layout/withLayout";
+import { useEffect, useState } from "react";
+import { maxSignUpPerEmail, workshopServerUrl } from "../constants";
+import googleIcon from "../assets/google_icon.svg";
+import { ClipLoader } from "react-spinners";
+import SignupWorkshop from "../components/signup-workshop";
+
+const sectionNameToSectionCodeMap = new Map([
+  ["ÁOK", "AOK"],
+  ["GYK", "GYK"],
+  ["FOK", "FOK"],
+  ["Mindenkinek", "ALL"],
+]);
+
+const Workshops = () => {
+  const [user, setUser] = useState<any>();
+  const [profile, setProfile] = useState<any>();
+  const [workshops, setWorkshops] = useState<string[]>([]);
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [canSignUp, setCanSingUp] = useState(true);
+  const [personalInfo, setPersonalInfo] = useState<
+    { section: string; studyYear: number } | undefined
+  >(undefined);
+  const [studyYear, setStudyYear] = useState<number>(0);
+  const [section, setSection] = useState("");
+
+  const login = useGoogleLogin({ onSuccess: (res) => setUser(res) });
+  //   }, [section, studyYear]);
+  async function fetchWorkshops(section: string, studyYear: number) {
+    const resp = await fetch(
+      `${workshopServerUrl}/workshop/section/${section}/year/${studyYear}`
+    );
+    if (resp.status != 200) {
+      setError(true);
+      return;
+    }
+    const data = await resp.json();
+    setWorkshops(data);
+    console.log(data);
+    setLoading(false);
+  }
+
+  function saveSignupInfo() {
+    setPersonalInfo({ section, studyYear });
+    localStorage.setItem(
+      "personalInfo",
+      JSON.stringify({ section, studyYear })
+    );
+  }
+
+  useEffect(() => {
+    if (personalInfo) {
+      fetchWorkshops(personalInfo.section, personalInfo.studyYear);
+    }
+  }, [personalInfo]);
+
+  useEffect(() => {
+    (async () => {
+      if (user) {
+        const resp = await fetch(
+          `https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`,
+          {
+            headers: {
+              Authorization: `Bearer ${user.access_token}`,
+              Accept: "application/json",
+            },
+            method: "GET",
+          }
+        );
+        const data = await resp.json();
+        setProfile(data);
+      }
+    })();
+  }, [user]);
+
+  useEffect(() => {
+    // load profile info if any
+    const profileStr = localStorage.getItem("profile");
+    if (profileStr) {
+      setProfile(JSON.parse(profileStr));
+      console.log(profile);
+    }
+
+    // get section and study year
+
+    const section = localStorage.getItem("section");
+    setSection(section ?? "");
+
+    const personalInfoStr = localStorage.getItem("personalInfo");
+
+    if (!personalInfoStr) {
+      return;
+    }
+    setPersonalInfo(JSON.parse(personalInfoStr));
+  }, []);
+
+  useEffect(() => {
+    (async () => {
+      if (profile) {
+        localStorage.setItem("profile", JSON.stringify(profile));
+
+        await fetchApplicationNumberInfo();
+      }
+    })();
+  }, [profile]);
+
+  async function fetchApplicationNumberInfo() {
+    // fetch applications of user
+    const resp = await fetch(
+      `${workshopServerUrl}/application/${profile.email}`
+    );
+    const data = await resp.json();
+    setCanSingUp(data.length < maxSignUpPerEmail);
+  }
+
+  if (!personalInfo) {
+    return (
+      <div className="flex h-screen flex-col items-center justify-center px-5 lg:mx-auto lg:w-2/3">
+        {" "}
+        <p className="pb-6 text-center text-sm font-semibold text-gray-600">
+          Add meg a karod és évfolyamod, hogy a megfelelő műhelymukákat
+          mutathassuk neked. Ezt csak egyszer tudod megadni, utólag nem lehet
+          módosítani!
+        </p>
+        <div className="flex w-full flex-col px-5">
+          <label
+            htmlFor="section-select"
+            className="mb-2 block text-lg font-medium text-gray-900"
+          >
+            Kar
+          </label>
+          <select
+            id="section-select"
+            className="ml-4 block w-full rounded-full border border-gray-400 bg-white p-2.5 text-gray-900 focus:border-tdk-primary"
+            onChange={(e) => setSection((e.target as HTMLSelectElement).value)}
+          >
+            {["", "ÁOK", "FOK", "GYK", "Mindenkinek"].map((section, index) => {
+              return (
+                <option className="text-md" key={index}>
+                  {section}
+                </option>
+              );
+            })}
+          </select>
+        </div>
+        <div className="flex w-full flex-col px-5 pt-5 md:pt-0">
+          <label
+            htmlFor="study-year-select"
+            className="mb-2 block text-lg font-medium text-gray-900"
+          >
+            Évfolyam
+          </label>
+          <select
+            id="study-year-select"
+            className="ml-4 block w-full rounded-full border border-gray-400 bg-white p-2.5 text-gray-900 focus:border-tdk-primary"
+            onChange={(e) =>
+              setStudyYear(
+                (e.target as HTMLSelectElement).value.length
+                  ? Number.parseInt((e.target as HTMLSelectElement).value)
+                  : 0
+              )
+            }
+          >
+            {["", "1", "2", "3", "4", "5", "6"].map((studyYear, index) => {
+              return (
+                <option className="text-md" key={index}>
+                  {studyYear}
+                </option>
+              );
+            })}
+          </select>
+        </div>
+        <button
+          className="mt-8 flex w-fit items-center justify-center rounded-full bg-tdk-accent px-5 py-3 text-sm font-bold uppercase text-white drop-shadow-lg hover:underline lg:text-base lg:font-bold"
+          onClick={saveSignupInfo}
+        >
+          Mentés
+        </button>
+      </div>
+    );
+  }
+
+  if (error) {
+    return <>Error lol</>;
+  }
+
+  if (loading) {
+    return (
+      <div className="flex h-screen items-center justify-center">
+        <ClipLoader />
+      </div>
+    );
+  }
+
+  return (
+    <>
+      <div className="top-25 right-5 flex justify-center pt-8 pr-2 lg:fixed lg:justify-end lg:pt-5 lg:pr-5">
+        {!profile ? (
+          <button
+            className="flex items-center rounded-full border bg-neutral-100 px-3 py-1 drop-shadow-md hover:underline"
+            onClick={() => login()}
+          >
+            <img src={googleIcon} className="h-6 w-6" />
+            <div className=" mx-3 text-sm font-semibold text-neutral-600 lg:block lg:px-3">
+              Bejelentkezés
+            </div>
+          </button>
+        ) : (
+          <button
+            className="flex items-center justify-center rounded-full border bg-neutral-100 px-3 py-2 drop-shadow-md"
+            onClick={() => login()}
+          >
+            <img
+              src={profile.picture}
+              referrerPolicy="no-referrer"
+              className="mx-1 h-10 w-10 rounded-full"
+            />
+            <div className="mx-1 text-sm font-semibold text-neutral-600">
+              {profile.name}
+            </div>
+            <div className="ml-1 text-sm font-light text-neutral-500">
+              {personalInfo.section} - {personalInfo.studyYear}
+            </div>
+          </button>
+        )}
+      </div>
+      <div className="mx-auto py-20 px-5 lg:w-2/3">
+        <h2 className="pb-20 text-center text-5xl font-bold">Műhelymunkák</h2>
+
+        {!profile && (
+          <div className="flex justify-center pb-10 text-sm font-semibold text-neutral-500">
+            A műhelymunkákra való jelentkezéshez csatlakoztatnod kell a Google
+            fiókod az oldalhoz!
+          </div>
+        )}
+        {workshops.map((workshop, index) => (
+          <div key={index}>
+            <SignupWorkshop
+              id={workshop}
+              email={profile ? profile.email : null}
+              canSignUp={canSignUp}
+              fetchApplicationsNumber={fetchApplicationNumberInfo}
+            />
+          </div>
+        ))}
+      </div>
+    </>
+  );
+};
+
+export default withLayout(Workshops);

@@ -18,6 +18,7 @@ import Accreditation from "./pages/accreditation";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { oauthClientId } from "./constants";
 import WorkshopLogin from "./pages/workshop-login";
+import WorkshopSignup from "./pages/workshop-signup";
 
 const router = createHashRouter([
   {
@@ -61,8 +62,8 @@ const router = createHashRouter([
     element: <Accreditation />,
   },
   {
-    path: "/workshop-bejelentkezes",
-    element: <WorkshopLogin />,
+    path: "/workshop-jelentkezes",
+    element: <WorkshopSignup />,
   },
   {
     path: "/osszefoglalok",
