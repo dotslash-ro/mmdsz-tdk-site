@@ -526,7 +526,7 @@ export const workshops = [
     speakers: "Dr. Miklós Adorján, Dr. Bodó Tamás-Örs",
     targetAudience: "3-ad évtől, orvosi köpeny/scrub",
     location: "A helyszín részleteivel kapcsolatban e-mailben értesítünk!",
-    date: "2023.05.12. (Péntek), 14:00-16:00",
+    date: "2023.05.12. (Péntek), 15:00-17:00",
     description:
       "Ezen a műhelymunka keretén belül ismétlésre kerülnek a varrástechnikák, valamint a lebenyképzés alapjai. A szerzett tudást a műhelymunka résztvevői disznóállkapcson gyakorlatba is ültetik. ",
     noOfAvailableSeats: 20,
