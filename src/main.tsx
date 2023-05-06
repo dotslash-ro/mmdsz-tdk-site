@@ -61,10 +61,10 @@ const router = createHashRouter([
     path: "/akkreditacio",
     element: <Accreditation />,
   },
-  {
-    path: "/workshop-jelentkezes",
-    element: <WorkshopSignup />,
-  },
+  // {
+  //   path: "/workshop-jelentkezes",
+  //   element: <WorkshopSignup />,
+  // },
   {
     path: "/osszefoglalok",
     element: <PastJournals />,
