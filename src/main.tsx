@@ -62,8 +62,8 @@ const router = createHashRouter([
     element: <Accreditation />,
   },
   {
-    path: "/workshop-jelentkezes2",
-    element: <WorkshopSignup />,
+    path: "/workshop-jelentkezes",
+    element: <Workshops />,
     errorElement: (
       <div className="flex h-screen items-center justify-center">
         Jelenleg nem elérhető a jelentkezés.
