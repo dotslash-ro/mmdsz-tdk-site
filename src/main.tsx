@@ -62,7 +62,7 @@ const router = createHashRouter([
     element: <Accreditation />,
   },
   {
-    path: "/workshop-jelentkezes",
+    path: "/workshop-jelentkezes2",
     element: <WorkshopSignup />,
     errorElement: (
       <div className="flex h-screen items-center justify-center">
