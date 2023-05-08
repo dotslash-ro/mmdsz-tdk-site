@@ -63,16 +63,12 @@ const router = createHashRouter([
   },
   {
     path: "/workshop-jelentkezes",
-    element: <Workshops />,
+    element: <WorkshopSignup />,
     errorElement: (
       <div className="flex h-screen items-center justify-center">
         Jelenleg nem elérhető a jelentkezés.
       </div>
     ),
-  },
-  {
-    path: "/workshop-jelentkezes-2",
-    element: <WorkshopSignup />,
   },
   {
     path: "/osszefoglalok",

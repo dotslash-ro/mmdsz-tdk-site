@@ -153,7 +153,8 @@ const SignupWorkshop = ({
       </div>
       <div className="pt-1">
         <b>Elérhető helyek száma: </b> {workshop.noOfAvailableSeats}/
-        {workshop.noOfTotalSeats}
+        {workshop.noOfTotalSeats}{" "}
+        {workshop.noOfAvailableSeats > 0 ? " fentmaradó hely" : ""}
       </div>
       <div className="flex justify-end pt-4">
         <WorkshopSignupButton
