@@ -6,6 +6,12 @@ import rgLogo from "../assets/richter-gedeon.webp";
 import bgLogo from "../assets/balla-geza.webp";
 import blazeLogo from "../assets/blaze.jpg";
 import spLogo from "../assets/studium-prospero.png";
+import shLogo from "../assets/studium-hub.png";
+import gordonLogo from "../assets/gordon-logo.jpg";
+import univerLogo from "../assets/univer-logo.png";
+import gym18Logo from "../assets/18gym-logo.png";
+import cafe112Logo from "../assets/cafe112-logo2.png";
+
 import sgpLogo from "../assets/shadow-gastro-pub.webp";
 import petryLogo from "../assets/petry.webp";
 import gyermelyiLogo from "../assets/gyermelyi.webp";
@@ -13,8 +19,10 @@ import aicLogo from "../assets/aic.webp";
 import thereziaLogo from "../assets/therezia.webp";
 import demmersLogo from "../assets/demmer.webp";
 import ntpLogo from "../assets/ntp.jpg";
+import pcLogo from "../assets/perla-covasnei.jpg";
 import springMed from "../assets/springmed.webp";
 import opLogo from "../assets/ortoprofil.webp";
+import eldiLogo from "../assets/logo-eldi.png";
 import medicodeLogo from "../assets/medicode.webp";
 import emeLogo from "../assets/eme.webp";
 import timkoLogo from "../assets/timko.webp";
@@ -30,6 +38,8 @@ import cjmLogo from "../assets/cjm.jpg";
 import megvalosultLogo from "../assets/megvalosult.jpg";
 import mmmLogo from "../assets/mmm.jpg";
 import kimLogo from "../assets/kim.jpg";
+import rakocziLogo from "../assets/rakoczi.png";
+import gecseLogo from "../assets/gecse.jpg";
 
 const Sponsors = () => {
   return (
@@ -113,7 +123,14 @@ const Sponsors = () => {
             src={szbaLogo}
             className="h-32 w-64 object-scale-down mix-blend-multiply transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
           />
-
+          <img
+            src={rakocziLogo}
+            className="h-32 w-64 object-scale-down mix-blend-multiply transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
+          />
+          <img
+            src={gecseLogo}
+            className="h-32 w-64 object-scale-down mix-blend-multiply transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
+          />
           {/* <img
             src={bgLogo}
             className="h-32 w-64 object-scale-down transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96 mix-blend-multiply"
@@ -162,23 +179,71 @@ const Sponsors = () => {
           <img
             src={medicodeLogo}
             className="h-32 w-64 object-scale-down transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96 mix-blend-multiply"
-          />
-          <img
-            src={timkoLogo}
-            className="h-32 w-64 object-scale-down transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96 mix-blend-multiply"
-          />
-          <img
-            src={endIboLogo}
-            className="h-32 w-64 object-scale-down transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96 mix-blend-multiply"
-          />
-          <img
-            src={gyermelyiLogo}
-            className="h-32 w-64 object-scale-down transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96 mix-blend-multiply"
-          />{" "} */}
+          /> */}
         </div>
       </div>
+      <h2 className="text-center text-5xl font-bold">Kiemelt Támogatóink</h2>
+      <div className="flex flex-wrap justify-center gap-4 space-y-2 px-20">
+        <img
+          src={opLogo}
+          className="h-32 w-64 object-scale-down mix-blend-multiply transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
+        />
+        <img
+          src={rgLogo}
+          className="h-32 w-64 object-scale-down mix-blend-multiply transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
+        />
+        <img
+          src={bgLogo}
+          className="h-32 w-64 object-scale-down mix-blend-multiply transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
+        />
+        <img
+          src={endIboLogo}
+          className="h-32 w-64 object-scale-down mix-blend-multiply transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
+        />
+      </div>
       <h2 className="text-center text-5xl font-bold">Támogatóink</h2>
-      <div className="flex flex-wrap justify-center gap-4 space-y-2 px-20"></div>
+      <div className="flex flex-wrap justify-center gap-4 space-y-2 px-20">
+        <img
+          src={shLogo}
+          className="h-32 w-64 object-scale-down mix-blend-multiply transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
+        />
+        <img
+          src={gym18Logo}
+          className="h-32 w-64 object-scale-down mix-blend-multiply transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
+        />
+        <img
+          src={pcLogo}
+          className="h-32 w-64 object-scale-down mix-blend-multiply transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
+        />
+        <img
+          src={gyermelyiLogo}
+          className="h-32 w-64 object-scale-down mix-blend-multiply transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
+        />
+        <img
+          src={endIboLogo}
+          className="h-32 w-64 object-scale-down mix-blend-multiply transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
+        />
+        <img
+          src={cafe112Logo}
+          className="h-32 w-64 object-scale-down mix-blend-multiply transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
+        />
+        <img
+          src={univerLogo}
+          className="h-32 w-64 object-scale-down mix-blend-multiply transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
+        />
+        <img
+          src={timkoLogo}
+          className="h-32 w-64 object-scale-down mix-blend-multiply transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
+        />
+        <img
+          src={eldiLogo}
+          className="h-32 w-64 object-scale-down mix-blend-multiply transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
+        />
+        <img
+          src={gordonLogo}
+          className="h-32 w-64 object-scale-down mix-blend-multiply transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
+        />
+      </div>
     </div>
   );
 };

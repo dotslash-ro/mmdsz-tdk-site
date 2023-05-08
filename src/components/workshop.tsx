@@ -149,10 +149,10 @@ const Workshop = ({ id, email, canSignUp }: WorkshopProps) => {
         <b>Részvételi kritérium(ok): </b>
         {workshop.targetAudience}
       </div>
-      {/* <div className="pt-1">
+      <div className="pt-1">
         <b>Elérhető helyek száma: </b> {workshop.noOfAvailableSeats}/
         {workshop.noOfTotalSeats}
-      </div> */}
+      </div>
       {/* <div className="flex justify-end pt-4">
         <WorkshopSignupButton
           canSignUp={canSignUp}

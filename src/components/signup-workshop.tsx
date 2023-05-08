@@ -157,7 +157,7 @@ const SignupWorkshop = ({
       </div>
       <div className="flex justify-end pt-4">
         <WorkshopSignupButton
-          canSignUp={canSignUp}
+          canSignUp={true}
           hasLoggedIn={!!email}
           hasSignedUp={hasSignedUp}
           onSignUp={onSignup}

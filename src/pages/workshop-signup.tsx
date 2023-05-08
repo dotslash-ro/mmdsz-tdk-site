@@ -12,7 +12,6 @@ const Workshops = () => {
   const [workshops, setWorkshops] = useState<string[]>([]);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [canSignUp, setCanSingUp] = useState(true);
   const [personalInfo, setPersonalInfo] = useState<
     { section: string; studyYear: number } | undefined
   >(undefined);
@@ -20,7 +19,7 @@ const Workshops = () => {
   const [section, setSection] = useState("");
 
   const login = useGoogleLogin({ onSuccess: (res) => setUser(res) });
-  //   }, [section, studyYear]);
+
   async function fetchWorkshops(section: string, studyYear: number) {
     const resp = await fetch(`${workshopServerUrl}/workshop/filter`, {
       method: "POST",
@@ -95,11 +94,11 @@ const Workshops = () => {
 
   async function fetchApplicationNumberInfo() {
     // fetch applications of user
-    const resp = await fetch(
-      `${workshopServerUrl}/application/${profile.email}`
-    );
-    const data = await resp.json();
-    setCanSingUp(data.length < maxSignUpPerEmail);
+    // const resp = await fetch(
+    //   `${workshopServerUrl}/application/${profile.email}`
+    // );
+    // const data = await resp.json();
+    // setCanSingUp(data.length < maxSignUpPerEmail);
   }
 
   if (!personalInfo) {
@@ -231,7 +230,7 @@ const Workshops = () => {
             <SignupWorkshop
               id={workshop}
               email={profile ? profile.email : null}
-              canSignUp={canSignUp}
+              canSignUp={true}
               fetchApplicationsNumber={fetchApplicationNumberInfo}
             />
           </div>

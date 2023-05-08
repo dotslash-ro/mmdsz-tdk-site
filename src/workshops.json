@@ -1,18 +1,20 @@
 [
   {
+    "id": "clhdenmuh0000mc197qqpimp0",
     "title": "\"A veszélyes szőlő\". Két, a szőlő illetve kontaminált bor okozta megbetegedés diagnosztikai és terápiás kihívásai.",
     "speakers": "Dr. Szabó Mónika",
     "targetAudience": "3-ad évtől",
     "location": "Gyógyszerészeti Kar 1-es Előadó Terem",
     "date": "2023.05.11 (Csütörtök), 14:00-16:00",
     "description": "A műhelymunka keretén belül sor kerül két sajátosabb, ritkább eset interaktív differenciál diagnosztikai megbeszélésére és terápiás kihívásainak tárgyalására valamint, a felmerülő lehetséges hibaforrások kiemelésére.",
-    "noOfAvailableSeats": 27,
-    "noOfTotalSeats": 40,
+    "noOfAvailableSeats": 15,
+    "noOfTotalSeats": 15,
     "section": "ÁOK",
     "yearFrom": 3,
     "yearTo": 6
   },
   {
+    "id": "clhdenmuy0002mc19827oolh7",
     "title": "A lebenyplasztika alkalmazása a különböző anatómiai zónákban",
     "speakers": "Dr. Jankó Botond",
     "targetAudience": "3-ad évtől, orvosi köpeny",
@@ -26,6 +28,7 @@
     "yearTo": 6
   },
   {
+    "id": "clhdenmv80004mc193rqmli84",
     "title": "Agar Art",
     "speakers": "Dr. Székely Edit",
     "targetAudience": "2-od évtől, orvosi köpeny",
@@ -39,6 +42,7 @@
     "yearTo": 6
   },
   {
+    "id": "clhdenmvm0006mc19el1247v6",
     "title": "Kórszövettani vizsgálat eredménye: diagnosis klinikai adatokkal vagy anélkül?",
     "speakers": "Dr. Horváth Emőke, Dr. Mezei Tibor, Dr. Kövecsi Attila, Dr. Kovács Zsolt, Dr. Szodorai Rita:",
     "targetAudience": "4-ed évtől",
@@ -52,6 +56,7 @@
     "yearTo": 6
   },
   {
+    "id": "clhdenmvw0008mc19sb2dhq8y",
     "title": "EKG egyszerűen",
     "speakers": "Dr. Kocsis Lóránd",
     "targetAudience": "2-od évtől",
@@ -65,6 +70,7 @@
     "yearTo": 6
   },
   {
+    "id": "clhdenmw7000amc19huagsxnz",
     "title": "Hogyan mondjam el neked, amit nem lehet…",
     "speakers": "Dr. Kovács Judit",
     "targetAudience": "4-ed évtől",
@@ -78,19 +84,21 @@
     "yearTo": 6
   },
   {
+    "id": "clhdenmwj000cmc19d5uejbm5",
     "title": "Point of care echokardiográfia",
     "speakers": "Dr. Frigy Attila, Dr. Gábor Kelemen Hunor, Dr. Czerán Botond, Dr. Heidenhoffer Erhard, Dr. Cseke Judit, Dr. Palkó Róbert",
     "targetAudience": "4-ed évtől",
     "location": "IV. Belgyógyászati Tanszék, Gh. Marinescu u. 1 szám, 3. emeleti előadóterem",
     "date": "2023.05.10 (Szerda), 14:00-16:00",
     "description": "A point of care (POC) echokardiográfia módszertanának és indikációinak rövid bemutatása, illetve klinikai alkalmazásának demonstrálása real life eseteken.",
-    "noOfAvailableSeats": 8,
+    "noOfAvailableSeats": 0,
     "noOfTotalSeats": 30,
     "section": "ÁOK",
     "yearFrom": 4,
     "yearTo": 6
   },
   {
+    "id": "clhdenmxb000emc191ibier8c",
     "title": "A szem anatómiája (disznószem boncolás)",
     "speakers": "Dr. Máté-István Ildikó",
     "targetAudience": "1-től 4-ed évig, kicsi olló, szemöldök csipesz, orvosi köpeny",
@@ -104,6 +112,7 @@
     "yearTo": 4
   },
   {
+    "id": "clhdenmxn000gmc190l1sgxmn",
     "title": "Nemi úton terjedő fertőzések, mi rejlik a színfalak mögött",
     "speakers": "Dr. ifj. Kiss Szilárd Leó, Dr. Székely Edit, Dr. Ladányi Emmánuel",
     "targetAudience": "1. évtől",
@@ -117,19 +126,21 @@
     "yearTo": 6
   },
   {
+    "id": "clhdenmxy000imc19ybfwko02",
     "title": "Vezető tünet mellkasfájdalom-fogódzók az ok tisztázásához, csapdák és tévutak",
     "speakers": "Dr. Germán-Salló Márta",
     "targetAudience": "3-ad évtől",
     "location": "Studium HUB - Alsó Előadóterem",
     "date": "2023.05.12 (Péntek), 12:00-14:00",
     "description": "A helyes diagnózis tisztázásához szükséges gyakorlati tennivalókat elsősorban a beteg tünetei határozzák meg. A mellkasi fájdalom egy gyakori tünet, okának tisztázása komoly kihívást jelenthet, hiszen a tévesen vagy nem időben felállított diagnózis döntő szerepet játszhat a beteg sorsának alakulásában. A diagnosztikai útvesztő során vannak olyan támpontok, algoritmusok melyek az anamnézis, fizikális és paraklinikai vizsgálatok kapcsán segítenek a mellkasfájdalom eredetének tisztázásában. A műhelygyakorlat során mellkasfájdalommal jelentkező betegek kerülnek bemutatásra. Kérdezz- felelek formában a mellkasfájdalom okairól, anamnesztikai és fizikális vizsgálati elemekről , valamint ezek alapján felállított feltételezett diagnózisról lesz szó. Mit kérdezzünk, milyen vizsgálatokat végezzünk el, milyen sorrendben és mit ne nézzünk el?",
-    "noOfAvailableSeats": 6,
-    "noOfTotalSeats": 30,
+    "noOfAvailableSeats": 5,
+    "noOfTotalSeats": 5,
     "section": "ÁOK",
     "yearFrom": 3,
     "yearTo": 6
   },
   {
+    "id": "clhdenmy8000kmc19my5asqeu",
     "title": "Kommunikációs gyakorlatok a funkcionális tünetek ellátásához",
     "speakers": "Dr. Szatmári Szabolcs, Dr. Csipor-Fodor Andrea",
     "targetAudience": "3-ad évtől",
@@ -143,6 +154,7 @@
     "yearTo": 6
   },
   {
+    "id": "clhdenmyj000mmc19r93t5vm9",
     "title": "Alapvető érsebészeti technikák, érvarratok, érpótló anyagok",
     "speakers": "Dr. Kaller Réka",
     "targetAudience": "3-ad évtől, köpeny, kesztyű",
@@ -156,6 +168,7 @@
     "yearTo": 6
   },
   {
+    "id": "clhdenmys000omc19r38i8o3l",
     "title": "Varrattechnikák a sebészetben",
     "speakers": "Dr. Csiszér István, Dr. Lőte Sándor, Dr. László Attila",
     "targetAudience": "2-od évtől, orvosi köpeny",
@@ -169,6 +182,7 @@
     "yearTo": 6
   },
   {
+    "id": "clhdenmz4000qmc19y04qbg73",
     "title": "Laborvizsgálati eredmények kiértékelése klinikai kontextusban: értelmezések, összefüggések, buktatók",
     "speakers": "Dr. Szatmári Krisztina",
     "targetAudience": "4-ed évtől",
@@ -182,6 +196,7 @@
     "yearTo": 6
   },
   {
+    "id": "clhdenmzf000smc192uy7160g",
     "title": "Lokális lebenyek és ínvarrat technikák alkalmazása a plasztikai sebészetben",
     "speakers": "Dr. Bálint Orsolya",
     "targetAudience": "4-ed évtől, köpeny, vonalzó",
@@ -195,6 +210,7 @@
     "yearTo": 6
   },
   {
+    "id": "clhdenmzs000umc19q9c9m0l2",
     "title": "Ok nélkül? Pszichoszomatika a gyakorlatban",
     "speakers": "Dr. Bálint Ágnes",
     "targetAudience": "1. évtől",
@@ -208,19 +224,21 @@
     "yearTo": 6
   },
   {
+    "id": "clhdenn02000wmc193f88a5pk",
     "title": "Anasztomózisok a gasztrointesztinális sebészetben",
     "speakers": "Dr. Bauer Orsolya",
     "targetAudience": "4-ed évtől, orvosi köpeny, vonalzó",
     "location": "Anatómia tanszék, 1-es előadó terem",
     "date": "2023.05.10 (Szerda), 11:00-13:00",
     "description": "Mindazok számára akik elsajátították már az alapvető varrástechnikákat, lehetőség nyílik újabb technikák elsajátítására egy hands-on workshop keretén belül.",
-    "noOfAvailableSeats": 3,
+    "noOfAvailableSeats": 0,
     "noOfTotalSeats": 15,
     "section": "ÁOK",
     "yearFrom": 4,
     "yearTo": 6
   },
   {
+    "id": "clhdenn0d000ymc19dbroreld",
     "title": "Alapismeretek az ultrahang diagnosztikában (I.)",
     "speakers": "Dr. Baróti Beáta",
     "targetAudience": "4-ed évtől, orvosi köpeny, vonalzó",
@@ -234,6 +252,7 @@
     "yearTo": 6
   },
   {
+    "id": "clhdenn0o0010mc198t4k60ie",
     "title": "Alapismeretek az ultrahang diagnosztikában (II.)",
     "speakers": "Dr. Baróti Beáta",
     "targetAudience": "4-ed évtől, orvosi köpeny, vonalzó",
@@ -247,6 +266,7 @@
     "yearTo": 6
   },
   {
+    "id": "clhdenn100012mc19dl126dmx",
     "title": "Laparoszkópia a gyakorlatban (I.)",
     "speakers": "Dr. id. Kiss Szilárd Leó",
     "targetAudience": "4-ed évtől",
@@ -260,6 +280,7 @@
     "yearTo": 6
   },
   {
+    "id": "clhdenn1h0014mc19vx5g3eui",
     "title": "Laparoszkópia a gyakorlatban (II.)",
     "speakers": "Dr. Derzsi Zoltán",
     "targetAudience": "4-ed évtől",
@@ -273,32 +294,35 @@
     "yearTo": 6
   },
   {
+    "id": "clhdenn1v0016mc19qnfl1c8c",
     "title": "Mire jó a dermatoszkópia?",
     "speakers": "Dr. Gáspár Réka",
     "targetAudience": "5-öd évtől",
     "location": "MOGYTTE Főépület, 330-as terem",
     "date": "2023.05.11 (Csütörtök), 12:00-13:30",
     "description": "A dermatoszkópia a bőr gyors és hatékony non-invazív, in-vivo mikroszkópos vizsgálatát jelenti. A különböző pigmentált és nem pigmentált, benignus és malignus bőrtumorok vizsgálatában és diagnosztizálásában a dermatoszkópos vizsgálat elengedhetetlenül fontos elemmé vált. A bőrrákszűrés alapeszköze, és nem feltétlenül csak a bőrgyógyászok számára. Hatékonyságát és hasznosságát jelzi továbbá, hogy a fentiek mellett a dermatoszkópia ma már a gyulladásos, az autoimmun és az infekciózus dermatózisok, illetve az alopéciák és körömelváltozások klinikai vizsgálatában is helyet kap. A sok kép és a vizualitás garantált.",
-    "noOfAvailableSeats": 16,
-    "noOfTotalSeats": 30,
+    "noOfAvailableSeats": 15,
+    "noOfTotalSeats": 15,
     "section": "ÁOK",
     "yearFrom": 5,
     "yearTo": 6
   },
   {
+    "id": "clhdenn2a0018mc19pd61ay3h",
     "title": "Arritmológia- invazív vonatkozások",
     "speakers": "Dr. Kovács István",
     "targetAudience": "2-od évtől",
     "location": "Maros Megyei Sürgősségi Kórház, Földszint Kardiológia Osztály",
     "date": "2023.05.11 (Csütörtök), 14:00-16:00",
     "description": "Ritmuszavarok, szubsztrátum elmélet, klinikai-anatómiai vonatkozásai, valamint invazív kezelési metódusai ismertetése a műhelymunka résztvevőivel.",
-    "noOfAvailableSeats": 44,
-    "noOfTotalSeats": 70,
+    "noOfAvailableSeats": 15,
+    "noOfTotalSeats": 15,
     "section": "ÁOK",
     "yearFrom": 2,
     "yearTo": 6
   },
   {
+    "id": "clhdenn2o001amc19o08ye9kg",
     "title": "A neurocranium tartalmának CT anatómiája és gyakoribb patológiái",
     "speakers": "Dr. Dénes Lóránd és Dr. Baróti Beáta",
     "targetAudience": "2-od évtől",
@@ -312,32 +336,35 @@
     "yearTo": 6
   },
   {
+    "id": "clhdenn2y001cmc198gejtswq",
     "title": "Gyógyszertan vetélkedő",
     "speakers": "Dr. Gáll Zsolt, Dr. Bába László",
     "targetAudience": "2-od évtől. A jelentkezők, a helyszínen vegyes, négy fős csapatokra lesznek osztva",
     "location": "Gyógyszerészi kar épülete, farmakológia laboratórium (C4)",
     "date": "2023.05.12 (Péntek), 14:00-17:00",
     "description": "A gyógyszertan vetélkedő a 2-6. éves általános orvosis, valamint a 3-5. éves gyógyszerészetis diákok gyógyszertan és klinikai gyógyszerészet képességeit hivatott összemérni, interaktív esetbemutatók segítségével. A résztvevők a 4 fős csapatok alap gyógyszertan ismereteit, valamint klinikai esetorientált gondolkodásukat egyaránt felmérik. A jelentkező hallgatók a helyszínen lesznek csapatokba sorolva. A három órás műhelymunka keretein belül, a bemutatott esetek rövid átbeszélése után a legjobb pontszámot elérő csapatokat díjazzák.",
-    "noOfAvailableSeats": 7,
-    "noOfTotalSeats": 12,
+    "noOfAvailableSeats": 5,
+    "noOfTotalSeats": 5,
     "section": "ÁOK",
     "yearFrom": 2,
     "yearTo": 6
   },
   {
+    "id": "clhdenn37001emc19i24smaiz",
     "title": "Ideális lágyrészprofil kialakítása implantációs fogpótlás körül az esztétikai zónában",
     "speakers": "Dr. Szász Előd, Dr. Dakó Alpár",
     "targetAudience": "5-öd évtől, orvosi köpeny/scrub",
     "location": "A helyszín részleteivel kapcsolatban e-mailben értesítünk!",
     "date": "2023.05.13. (Szombat), 11:00-14:00",
     "description": "A természetes lágyrészprofil kialakítása implantációs fogpótlás körül az esztétikai zónában ma még mindig az egyik legnagyobb kihívás a gyakorló fogorvos számára. \nA fogpótlás végső esztétikája nemcsak annak megjelenésétől, hanem a környező lágyszövet háromdimenziós felépítésétől is függ.\nHa nem csak mechanikusan szeretnénk végezni az implantációs tevékenységeinket, hanem értve a mucositis és/vagy periimplantitis lehetséges következményeit, ismernünk kell a szöveti szinten zajló folyamatokat.\nAz implantátumra készülő restaurátum esetében a hosszútávú szövetstabilitás és természetes hatás elérése érdekében a kulcs az emergencia profil kialakítása. \nA hands-on során lépésenként bemutatásra kerül a fogorvos által szék mellett elkészíthető, implantátum körüli lágyrészek kondicionálásra  alkalmas ideiglenes fogpótlás.",
-    "noOfAvailableSeats": 4,
+    "noOfAvailableSeats": 0,
     "noOfTotalSeats": 10,
     "section": "FOK",
     "yearFrom": 5,
     "yearTo": 6
   },
   {
+    "id": "clhdenn3h001gmc191djgpeva",
     "title": "Az állkapocsízület anatómiája és normál működése. Kitüntetett állkapocs-pozíciók. A mandibula alapmozgásai.",
     "speakers": "Dr. Jász Máté",
     "targetAudience": "4-ed évtől",
@@ -351,32 +378,35 @@
     "yearTo": 6
   },
   {
+    "id": "clhdenn3q001imc19wurqoxxf",
     "title": "Digital Dentistry egy helyen - a dicomLAB Platform bemutatása és Hands-on kipróbálása ",
     "speakers": "Dr. Varga Endre",
     "targetAudience": "5-öd évtől, saját laptop",
     "location": "A helyszín részleteivel kapcsolatban e-mailben értesítünk!",
     "date": "2023.05.12. (Péntek), 17:00-20:00",
     "description": "Egy átfogó elméleti és gyakorlati kurzus keretében lehetőség van megismerni és kipróbálni egy modern számítógépes tervező és esetmenedzsment platformot. A gyakorlat során mind az implantációs pótlások tervezését, mind a sablonvezérelt implantációt kipróbálhatják az érdeklődők. Program:\nTechnológiai háttér és a dicomLAB Platform bemutatása\nEsetbemutatás\nSzoftver bemutatása\nMűtéti tervezés saját számítógépen demo eseteken\nNavigált implantáció hands-on gyakorlat műcsont modelleken, implantációs sablon segítségével",
-    "noOfAvailableSeats": 5,
+    "noOfAvailableSeats": 0,
     "noOfTotalSeats": 10,
     "section": "FOK",
     "yearFrom": 5,
     "yearTo": 6
   },
   {
-    "title": "A helyes  szájápolás gyakorlata",
+    "id": "clhdenn40001kmc195xua41dj",
+    "title": "A helyes szájápolás gyakorlata",
     "speakers": "Dr. Petcu Blanka",
     "targetAudience": "2-od évtől",
     "location": "A helyszín részleteivel kapcsolatban e-mailben értesítünk!",
     "date": "2023.05.12. (Péntek), 16:00-17:30",
     "description": "A workshop a másod - hatodéves fogorvostanhallgatóknak szól és alkalmat nyújt begyakorolni a soft kefével történő Bass fogmosási technikát, illetve az interdentális terek tisztítását szolgáló eszközök kiválasztását és helyes alkalmazását. A résztvevők kipróbálhatják továbbá az Oral-B IO és Genius X elektromos fogkeféket és napirendre kerülnek a szájápolás kapcsán készült legújabb kutatásokkal.",
-    "noOfAvailableSeats": 15,
-    "noOfTotalSeats": 20,
+    "noOfAvailableSeats": 10,
+    "noOfTotalSeats": 10,
     "section": "FOK",
     "yearFrom": 2,
     "yearTo": 6
   },
   {
+    "id": "clhdenn4a001mmc19caiyrz5q",
     "title": "Útmutató a moláris restaurációkhoz-Alapvető vonalak a tökéletes rágófelszín helyreállításához",
     "speakers": "Dr. Bardocz-Veres Zsuzsanna",
     "targetAudience": "4-ed évtől, orvosi köpeny/scrub",
@@ -390,6 +420,7 @@
     "yearTo": 6
   },
   {
+    "id": "clhdenn4m001omc19ki0ym4dl",
     "title": "Csonkelőkészítés, digitális lenyomatvétel",
     "speakers": "Dr. Jánosi Kinga Mária",
     "targetAudience": "4-ed évtől, orvosi köpeny, maszk",
@@ -403,6 +434,7 @@
     "yearTo": 6
   },
   {
+    "id": "clhdenn4w001qmc19cg2r7qki",
     "title": "Direkt posterior restaurációk - eszközök és anyagok",
     "speakers": "Dr. Kerekes-Máthé Bernadette, Dr. Kovács Mónika",
     "targetAudience": "3-ad évtől, orvosi köpeny, maszk",
@@ -416,6 +448,7 @@
     "yearTo": 6
   },
   {
+    "id": "clhdenn59001smc19ir0e3e9y",
     "title": "Lebenyképzés és varrástechnikák disznóállkapcson",
     "speakers": "Dr. Miklós Adorján, Dr. Bodó Tamás-Örs",
     "targetAudience": "3-ad évtől, orvosi köpeny/scrub",
@@ -429,19 +462,21 @@
     "yearTo": 6
   },
   {
+    "id": "clhdenn5l001umc19759ydm4q",
     "title": "Guided Biofilm Therapy (GBT) alkalmazása a parodontológiában",
     "speakers": "Dr. Kemper Róbert",
     "targetAudience": "5-öd évtől, orvosi köpeny, maszk. A  műhelymunka résztvevőit megkérjük, hogy péntek reggel ne mossanak fogat, annak érdekében, hogy minél nagyobb legyen a lepedék mennyisége.",
     "location": "A helyszín részleteivel kapcsolatban e-mailben értesítünk!",
     "date": "2023.05.12. (Péntek), 15:00-17:30",
     "description": "A fogágybetegségek megelőzésében és gyógyításában a betegek napi gondos szájhigiénéje mellett kiemelt szerepe van a rendszeres fogorvosi vagy dentálhigiénikusi biofilm/fogkő eltávolításnak. Ez a konzervatív parodontológia alapja. A tökéletes biofilm eltávolítása hagyományos eszközökkel sokszor lehetetlen . A svájci EMS cég az általa kifejlesztett homokfúvásos eljárással (GBT) forradalmasította, egyben fájdalom mentessé tette ezt a kezelést. A műhelymunka bemutatja egy előadás keretében a technológiát, majd modellen, és egymáson is kipróbáljuk a berendezést.",
-    "noOfAvailableSeats": 26,
-    "noOfTotalSeats": 30,
+    "noOfAvailableSeats": 10,
+    "noOfTotalSeats": 10,
     "section": "FOK",
     "yearFrom": 5,
     "yearTo": 6
   },
   {
+    "id": "clhdenn5w001wmc19epiqpcc7",
     "title": "Azonnali implantáció jelentősége a frontfogak implantológiai ellátásában. Navigált implantáció és azonnali ideiglenes pótlás készítése",
     "speakers": "Dr. Chikány Tamás",
     "targetAudience": "5-öd évtől, orvosi köpeny/scrub",
@@ -455,97 +490,105 @@
     "yearTo": 6
   },
   {
+    "id": "clhdenn67001ymc197zozr7h9",
     "title": "Parodontális sínezés",
     "speakers": "Dr. Benedek Csilla",
     "targetAudience": "5-öd évtől, orvosi köpeny/scrub",
     "location": "A helyszín részleteivel kapcsolatban e-mailben értesítünk!",
     "date": "2023.05.13. (Szombat), 14:00-17:00",
     "description": "A műhelymunkán ismertetésre kerül a parodontális sínezés amely egy olyan fogorvosi beavatkozás, amely a nagymértékben mozgatható fogakat egymáshoz, és a szomszédos stabil fogakhoz rögzíti egy üvegszállal és fogszínű, folyékony tömőanyaggal. Az összerögzített fogak kevésbé mozognak, jobban ellenállnak a rágóerőknek, és esztétikailag is előnyösebb képet mutatnak.",
-    "noOfAvailableSeats": 6,
+    "noOfAvailableSeats": 0,
     "noOfTotalSeats": 15,
     "section": "FOK",
     "yearFrom": 5,
     "yearTo": 6
   },
   {
+    "id": "clhdenn6g0020mc19az1kc5xd",
     "title": "Fogászati fotózás",
     "speakers": "Dr. Markovics Emese, Dr. Pongrácz Mátyás",
     "targetAudience": "5-öd évtől",
     "location": "Pomadent",
     "date": "2023.05.11. (Csütörtök), 14:00-16:00",
     "description": "A workshopban szó esik a fényképezőgép működéséről és beállításairól a résztvevők meglévő tudásának függvényében részletesebben vagy felületesebben. Ezután a fogászati szék mellett bemutatjuk a fényképezési protokollt, amit használunk a technikai laboratóriummal való kommunikációhoz és az esztétikai és funkcionális változások követésére. A résztvevők elsajátíthatják a szükséges fényképek elkészítésének módját és felhasználási lehetőségeiket.",
-    "noOfAvailableSeats": 3,
+    "noOfAvailableSeats": 0,
     "noOfTotalSeats": 10,
     "section": "FOK",
     "yearFrom": 5,
     "yearTo": 6
   },
   {
+    "id": "clhdenn6s0022mc19wgdk7w7o",
     "title": "Agyagfog mintázó verseny",
     "speakers": "Dr. Kerekes-Máthé Bernadette, Jenei H.Viktória",
     "targetAudience": "3-ad évtől. A versenyen való részvételhez 20 RON nevezési díj befizetse szükséges, mely részleteiről emailben tájékoztatjuk a résztvevőket ",
     "location": "A helyszín részleteivel kapcsolatban e-mailben értesítünk!",
     "date": "2023.05.10. (Szerda), 16:00-21:00",
     "description": "Természetes metsző- és őrlőfog szoftverrel méretarányosan nagyított másának agyagból való mintázása. Cél az eredeti mintáknak megfelelő anatómiai formavilág megközelítése. Nevezési díj, az anyagköltség függvényében: 20 lej/fő. A munkákat egy az egyetemünk oktatóból álló bizottság fogja kiértékelni, a verseny díjazottjai értékes nyereményekkel gazdagodhatnak. További információkkal email-en jelentkezünk.",
-    "noOfAvailableSeats": 2,
+    "noOfAvailableSeats": 0,
     "noOfTotalSeats": 5,
     "section": "FOK",
     "yearFrom": 3,
     "yearTo": 3
   },
   {
+    "id": "clhdenn760024mc196sakc0yk",
     "title": "Agyagfog mintázó verseny",
     "speakers": "Dr. Kerekes-Máthé Bernadette, Jenei H.Viktória",
     "targetAudience": "3-ad évtől. A versenyen való részvételhez 20 RON nevezési díj befizetse szükséges, mely részleteiről emailben tájékoztatjuk a résztvevőket ",
     "location": "A helyszín részleteivel kapcsolatban e-mailben értesítünk!",
     "date": "2023.05.10. (Szerda), 16:00-21:00",
     "description": "Természetes metsző- és őrlőfog szoftverrel méretarányosan nagyított másának agyagból való mintázása. Cél az eredeti mintáknak megfelelő anatómiai formavilág megközelítése. Nevezési díj, az anyagköltség függvényében: 20 lej/fő. A munkákat egy az egyetemünk oktatóból álló bizottság fogja kiértékelni, a verseny díjazottjai értékes nyereményekkel gazdagodhatnak. További információkkal email-en jelentkezünk.",
-    "noOfAvailableSeats": 2,
+    "noOfAvailableSeats": 0,
     "noOfTotalSeats": 5,
     "section": "FOK",
     "yearFrom": 4,
     "yearTo": 4
   },
   {
+    "id": "clhdenn7g0026mc19jcnjymrr",
     "title": "Agyagfog mintázó verseny",
     "speakers": "Dr. Kerekes-Máthé Bernadette, Jenei H.Viktória",
     "targetAudience": "3-ad évtől. A versenyen való részvételhez 20 RON nevezési díj befizetse szükséges, mely részleteiről emailben tájékoztatjuk a résztvevőket ",
     "location": "A helyszín részleteivel kapcsolatban e-mailben értesítünk!",
     "date": "2023.05.10. (Szerda), 16:00-21:00",
     "description": "Természetes metsző- és őrlőfog szoftverrel méretarányosan nagyított másának agyagból való mintázása. Cél az eredeti mintáknak megfelelő anatómiai formavilág megközelítése. Nevezési díj, az anyagköltség függvényében: 20 lej/fő. A munkákat egy az egyetemünk oktatóból álló bizottság fogja kiértékelni, a verseny díjazottjai értékes nyereményekkel gazdagodhatnak. További információkkal email-en jelentkezünk.",
-    "noOfAvailableSeats": 5,
+    "noOfAvailableSeats": 0,
     "noOfTotalSeats": 5,
     "section": "FOK",
     "yearFrom": 5,
     "yearTo": 5
   },
   {
+    "id": "clhdenn7r0028mc19tnxavlej",
     "title": "Agyagfog mintázó verseny",
     "speakers": "Dr. Kerekes-Máthé Bernadette, Jenei H.Viktória",
     "targetAudience": "3-ad évtől. A versenyen való részvételhez 20 RON nevezési díj befizetse szükséges, mely részleteiről emailben tájékoztatjuk a résztvevőket ",
     "location": "A helyszín részleteivel kapcsolatban e-mailben értesítünk!",
     "date": "2023.05.10. (Szerda), 16:00-21:00",
     "description": "Természetes metsző- és őrlőfog szoftverrel méretarányosan nagyított másának agyagból való mintázása. Cél az eredeti mintáknak megfelelő anatómiai formavilág megközelítése. Nevezési díj, az anyagköltség függvényében: 20 lej/fő. A munkákat egy az egyetemünk oktatóból álló bizottság fogja kiértékelni, a verseny díjazottjai értékes nyereményekkel gazdagodhatnak. További információkkal email-en jelentkezünk.",
-    "noOfAvailableSeats": 4,
+    "noOfAvailableSeats": 0,
     "noOfTotalSeats": 5,
     "section": "FOK",
     "yearFrom": 6,
     "yearTo": 6
   },
   {
+    "id": "clhdenn82002amc19gq0tuhoi",
     "title": "Periodikus jelenségek kémiai és biokémiai rendszerekben",
     "speakers": "Dr. Donáth-Nagy Gabriella",
     "targetAudience": "1-5. év, orvosi köpeny",
     "location": "Fizkém labor",
     "date": "2023.05.12 (Péntek), 16:00-17:00",
     "description": "A workshop célja bemutatni azokat a folyamatokat, amelyek időben periodikusan jelentkeznek, megérteni a folyamatok mozgatórugóját, az időbeli folyamatok térbeli rendezettséggé való átalakulását. Kísérletenként két időbeli és egy térbeli periodicitást tükröző folyamat lesz bemutatva.",
-    "noOfAvailableSeats": 21,
-    "noOfTotalSeats": 24,
+    "noOfAvailableSeats": 20,
+    "noOfTotalSeats": 20,
     "section": "GYK",
     "yearFrom": 1,
     "yearTo": 5
   },
   {
+    "id": "clhdenn8b002cmc19iclhyns2",
     "title": "Láz- és fájdalomcsillapító szalagok előállítása és vizsgálata",
     "speakers": "Dr. Rédai Emőke Margit",
     "targetAudience": "3-5. év, orvosi köpeny",
@@ -559,6 +602,7 @@
     "yearTo": 5
   },
   {
+    "id": "clhdenn8m002emc19tpj0n7os",
     "title": "Mennyi csokoládé egy kávé? (I.)",
     "speakers": "Dr. Fülöp Ibolya, Dr. Májai Erzsébet",
     "targetAudience": "2-5. év, orvosi köpeny, csokoládé",
@@ -572,45 +616,49 @@
     "yearTo": 5
   },
   {
+    "id": "clhdenn8w002gmc1973gzkt2t",
     "title": "Mennyi csokoládé egy kávé? (II.)",
     "speakers": "Dr. Fülöp Ibolya, Dr. Májai Erzsébet",
     "targetAudience": "2-5. év, orvosi köpeny, csokoládé",
     "location": "67. labor (Toxikológia)",
     "date": "2023.05.13 (Szombat), 11:30-13:00",
     "description": "A workshop témája a koffein minőségi és mennyiségi meghatározása csokoládéból kromatográfiás módszerekkel.\nA koffein, bár vízben rosszul oldódik, a „könnyen” mérhető vegyületek közé tartozik, a meghatározás érdekessége a szokottól eltérő mintaelőkészítés: a koffein kivonása a csokoládé-összetevők közül és oldatba vitele a kromatográfiás méréshez.\nA workshop tervezett lépései:\n- néhány szó a koffeinről és a meghatározására alkalmas analitikai módszerekről\n- a mintaelőkészítés: elméleti háttér és gyakorlati kivitelezés,\n- kalibrálóoldat készítése\n- nagynyomású folyadékkromatográfiás és vékonyréteg kromatográfiás meghatározás\n- a vizsgált csokoládé koffein-tartalmának számolása a kapott eredmények alapján és a címben szereplő kérdés megválaszolása.",
-    "noOfAvailableSeats": 1,
+    "noOfAvailableSeats": 0,
     "noOfTotalSeats": 10,
     "section": "GYK",
     "yearFrom": 2,
     "yearTo": 5
   },
   {
+    "id": "clhdenn96002imc1901xkudmn",
     "title": "Gyógyszertan vetélkedő",
     "speakers": "Dr. Gáll Zsolt, Dr. Bába László",
     "targetAudience": "3-5. év. A helyszínen vegyes, négy fős csapatokra lesznek osztva.",
     "location": "Gyógyszerészi kar épülete, farmakológia laboratórium (C4)",
     "date": "2023.05.12 (Péntek), 14:00-15:00",
     "description": "A gyógyszertan vetélkedő a 2-6. éves általános orvosis, valamint a 3-5. éves gyógyszerészetis diákok gyógyszertan és klinikai gyógyszerészet képességeit hivatott összemérni, interaktív esetbemutatók segítségével. A résztvevők a 4 fős csapatok alap gyógyszertan ismereteit, valamint klinikai esetorientált gondolkodásukat egyaránt felmérik. A jelentkező hallgatók a helyszínen lesznek csapatokba sorolva. A három órás műhelymunka keretein belül, a bemutatott esetek rövid átbeszélése után a legjobb pontszámot elérő csapatokat díjazzák.",
-    "noOfAvailableSeats": 7,
-    "noOfTotalSeats": 12,
+    "noOfAvailableSeats": 5,
+    "noOfTotalSeats": 5,
     "section": "GYK",
     "yearFrom": 3,
     "yearTo": 5
   },
   {
+    "id": "clhdenn9j002kmc19hqy619r0",
     "title": "Bálint csoport",
     "speakers": "Dr. Munzlinger Attila, Dr. Munzlinger Ildikó, Dr. Farkas Evelyn",
     "targetAudience": "nincs kritérium",
     "location": "Studium Hub - Kávézó",
     "date": "2023.05.13 (Szombat), 12:00-14:00",
     "description": "A Bálint-csoport nem specifikus szupportív csoportterápiás módszer orvosoknak és más segítő foglalkozásúaknak, melynek központi témája az orvos-beteg kapcsolat diszfunkciója. A csoportfoglalkozás pszichoanalitikus alapfogalmakra épül, fő célkitűzése a szakmai kiégés megelőzése.  Bemutató csoportunkban a résztvevők röviden megismerkednek a módszer történetével, elméleti alapjaival, és aktív résztvevői egy csoportfoglalkozásnak, melynek során egy konkrét esetet fognak megbeszélni a csoportvezető irányításával.",
-    "noOfAvailableSeats": 8,
+    "noOfAvailableSeats": 0,
     "noOfTotalSeats": 14,
     "section": "Mindenkinek",
     "yearFrom": 1,
     "yearTo": 6
   },
   {
+    "id": "clhdenn9r002mmc196ckm5fcq",
     "title": "Ismerkedés a nutriciós státusz felmérésére használt eszközökkel és a gyakorlati használat elsajátítása (I.)",
     "speakers": "Drd. Sükösd Nagy Beáta ",
     "targetAudience": "1. évtől",
@@ -624,6 +672,7 @@
     "yearTo": 6
   },
   {
+    "id": "clhdenna3002omc19xd9fjsni",
     "title": "Ismerkedés a nutriciós státusz felmérésére használt eszközökkel és a gyakorlati használat elsajátítása (II.)",
     "speakers": "Drd. Sükösd Nagy Beáta",
     "targetAudience": "1. évtől",
@@ -637,6 +686,7 @@
     "yearTo": 6
   },
   {
+    "id": "clhdennab002qmc19njf4ktnq",
     "title": "Malpraxis a gyakorlatban-perszimuláció",
     "speakers": "Dr. Gogolák Csongor",
     "targetAudience": "1. évtől",
@@ -650,6 +700,7 @@
     "yearTo": 6
   },
   {
+    "id": "clhdennan002smc19ofccy2yc",
     "title": "Rajzfilmekben látható mentális zavarok",
     "speakers": "Drd. Becsky Borbála",
     "targetAudience": "1. évtől",
@@ -663,6 +714,7 @@
     "yearTo": 6
   },
   {
+    "id": "clhdennav002umc19sb7a368z",
     "title": "Orvoslás a sorozatokban",
     "speakers": "Dr. Fábián Emese",
     "targetAudience": "1. évtől",
@@ -676,32 +728,35 @@
     "yearTo": 6
   },
   {
+    "id": "clhdennb6002wmc19pp34wgzl",
     "title": "Merjünk életet menteni! (I.)",
     "speakers": "Pontis Egészségügyi Szervezet",
     "targetAudience": "1. évtől",
     "location": "Studium HUB pincéje",
     "date": "2023.05.10. (Szerda), 14:00-17:00",
     "description": "A Pontis Egészségügyi Szervezet egy fiatal, rezidens orvosokból álló szövetség, de elsősorban egy baráti társaság, akik az egészségnevelést és egészségmegőrzést tűzték ki maguk elé legfőbb célként.\n\nA már több rendben, sikeresen megtartott Alapszintű Újraélesztés képzés is ezen gondolatok mentén jött létre. Úgy laikusok, mint egészségügyi dolgozók számára a praktikus és korszerű tudásátadás a kívánt eredmény, azzal a nem titkolt szándékkal, hogy elsősorban a mentalitása változzon meg a képzésen résztvevő személyeknek. Hogy merjenek lépni embertársaik túlélése érdekében. Hogy merjenek életet menteni!",
-    "noOfAvailableSeats": 1,
+    "noOfAvailableSeats": 0,
     "noOfTotalSeats": 16,
     "section": "Mindenkinek",
     "yearFrom": 1,
     "yearTo": 6
   },
   {
+    "id": "clhdennbg002ymc19hb4n3fo8",
     "title": "Merjünk életet menteni! (II.)",
     "speakers": "Pontis Egészségügyi Szervezet",
     "targetAudience": "1. évtől",
     "location": "Studium HUB pincéje",
     "date": "2023.05.10. (Szerda), 17:00-20:00",
     "description": "A Pontis Egészségügyi Szervezet egy fiatal, rezidens orvosokból álló szövetség, de elsősorban egy baráti társaság, akik az egészségnevelést és egészségmegőrzést tűzték ki maguk elé legfőbb célként.\n\nA már több rendben, sikeresen megtartott Alapszintű Újraélesztés képzés is ezen gondolatok mentén jött létre. Úgy laikusok, mint egészségügyi dolgozók számára a praktikus és korszerű tudásátadás a kívánt eredmény, azzal a nem titkolt szándékkal, hogy elsősorban a mentalitása változzon meg a képzésen résztvevő személyeknek. Hogy merjenek lépni embertársaik túlélése érdekében. Hogy merjenek életet menteni!",
-    "noOfAvailableSeats": 1,
+    "noOfAvailableSeats": 0,
     "noOfTotalSeats": 16,
     "section": "Mindenkinek",
     "yearFrom": 1,
     "yearTo": 6
   },
   {
+    "id": "clhdenncd0030mc19bxe46bog",
     "title": "Gyógynövények a mindennapjainkban (I.)",
     "speakers": "Dr. Varga Erzsébet",
     "targetAudience": "1. évtől",
@@ -715,6 +770,7 @@
     "yearTo": 6
   },
   {
+    "id": "clhdennct0032mc19ulivt1sj",
     "title": "Gyógynövények a mindennapjainkban (II.)",
     "speakers": "Dr. Varga Erzsébet",
     "targetAudience": "1. évtől",
@@ -728,32 +784,21 @@
     "yearTo": 6
   },
   {
-    "title": "Kalcium anyagcsere: laboratóriumi paraméterek, szabályozó tényezők, patobiokémiai szempontok (I.)",
-    "speakers": "Prof. dr. Nagy Előd, Dr. Kovács Béla, Dr. Nemes- Nagy Enikő",
-    "targetAudience": "1. évtől, orvosi köpeny",
-    "location": "Biokémia laboratórium, Gyógyszerészeti épület",
-    "date": "2023.05.11. (Csütörtök), 18:30-20:00",
-    "description": "A workshop során bemutatjuk az össz- és ionizált szérum Ca2+ mérésére vonatkozó biokémiai technikákat, a calcium-szintet szabályozó parathormon, kalcitonin, 25-OH és 1,25-OH kolekalciferol élettani és kórélettani szerepét, valamint mérési módszereit; ugyancsak bemutatásra kerülnek a szöveti kalcium anyagcsere fontos citokin-szerű integrátorai, az osteoprotegerin (OPG) és a RANKL.",
-    "noOfAvailableSeats": 24,
-    "noOfTotalSeats": 30,
-    "section": "ÁOK+GYK",
-    "yearFrom": 1,
-    "yearTo": 6
-  },
-  {
-    "title": "Kalcium anyagcsere: laboratóriumi paraméterek, szabályozó tényezők, patobiokémiai szempontok (II.)",
+    "id": "clhdennd40034mc19bhx5yof3",
+    "title": "Kalcium anyagcsere: laboratóriumi paraméterek, szabályozó tényezők, patobiokémiai szempontok",
     "speakers": "Prof. dr. Nagy Előd, Dr. Kovács Béla, Dr. Nemes- Nagy Enikő",
     "targetAudience": "1. évtől, orvosi köpeny",
     "location": "Biokémia laboratórium, Gyógyszerészeti épület",
     "date": "2023.05.11. (Csütörtök), 17:00-18:30",
-    "description": "A workshop során bemutatjuk az össz- és ionizált szérum Ca2+ mérésére vonatkozó biokémiai technikákat, a calcium-szintet szabályozó parathormon, kalcitonin, 25-OH és 1,25-OH kolekalciferol élettani és kórélettani szerepét, valamint mérési módszereit; ugyancsak bemutatásra kerülnek a szöveti kalcium anyagcsere fontos citokin-szerű integrátorai, az osteoprotegerin (OPG) és a RANKL.",
-    "noOfAvailableSeats": 28,
-    "noOfTotalSeats": 30,
+    "description": "A workshop során bemutatjuk az össz- és ionizált szérum Ca2+ mérésére vonatkozó biokémiai technikákat, a calcium-szintet szabályozó parathormon, kalcitonin, 25-OH és 1,25-OH kolekalciferol élettani és kórélettani szerepét, valamint mérési módszereit; ugyancsak bemutatásra kerülnek a szöveti kalcium anyagcsere fontos citokin-szerű integrátorai, az osteoprotegerin (OPG) és a RANKL.\n\nMegjegyzés: Annak érdekében, hogy a műhelymunka megvalósulhasson egy időpontra korlátoztuk. Mivel a második alkalomra több hallgató jelentkezett, így 17:00-18:30 között lesz megtartva a műhelymunka. Megkérünk mindenkit aki első körbe jelentkezett, és így mégsem tud résztvenni a műhelymunkán, jelezze a tdk@mmdsz.ro email címen. ",
+    "noOfAvailableSeats": 20,
+    "noOfTotalSeats": 20,
     "section": "ÁOK+GYK",
     "yearFrom": 1,
     "yearTo": 6
   },
   {
+    "id": "clhdenndr0038mc192wbcytqp",
     "title": "Bevezetés az abúzus szerek farmakológiájába",
     "speakers": "Dr. Bába László",
     "targetAudience": "2-od évtől 5-öd évig",

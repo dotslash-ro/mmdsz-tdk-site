@@ -71,6 +71,10 @@ const router = createHashRouter([
     ),
   },
   {
+    path: "/workshop-jelentkezes-2",
+    element: <WorkshopSignup />,
+  },
+  {
     path: "/osszefoglalok",
     element: <PastJournals />,
     children: [
