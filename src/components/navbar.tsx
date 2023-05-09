@@ -14,8 +14,8 @@ const Navbar = () => {
           to="/"
           className={({ isActive }) =>
             isActive
-              ? "lg:font-base flex items-center justify-center px-5 py-3 text-sm font-bold uppercase text-white underline lg:py-0"
-              : "lg:font-base flex items-center justify-center px-5 py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
+              ? "lg:font-base flex items-center justify-center px-3 py-3 text-sm font-bold uppercase text-white underline lg:py-0"
+              : "lg:font-base flex items-center justify-center px-3 py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
           }
         >
           Főoldal
@@ -26,8 +26,8 @@ const Navbar = () => {
         to="/szabalyzat"
         className={({ isActive }) =>
           isActive
-            ? "lg:font-base flex items-center justify-center px-5 py-3 text-sm font-bold uppercase text-white underline lg:py-0"
-            : "lg:font-base flex items-center justify-center px-5 py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
+            ? "lg:font-base flex items-center justify-center px-3 py-3 text-sm font-bold uppercase text-white underline lg:py-0"
+            : "lg:font-base flex items-center justify-center px-3 py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
         }
       >
         Szabályzat
@@ -36,8 +36,8 @@ const Navbar = () => {
         to="/workshop-jelentkezes"
         className={({ isActive }) =>
           isActive
-            ? "lg:font-base flex items-center justify-center px-5 py-3 text-sm font-bold uppercase text-white underline lg:py-0"
-            : "lg:font-base flex items-center justify-center px-5 py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
+            ? "lg:font-base flex items-center justify-center px-3 py-3 text-sm font-bold uppercase text-white underline lg:py-0"
+            : "lg:font-base flex items-center justify-center px-3 py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
         }
       >
         Műhelymunkák
@@ -46,8 +46,8 @@ const Navbar = () => {
         to="/akkreditacio"
         className={({ isActive }) =>
           isActive
-            ? "lg:font-base flex items-center justify-center px-5 py-3 text-sm font-bold uppercase text-white underline lg:py-0"
-            : "lg:font-base flex items-center justify-center px-5 py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
+            ? "lg:font-base flex items-center justify-center px-3 py-3 text-sm font-bold uppercase text-white underline lg:py-0"
+            : "lg:font-base flex items-center justify-center px-3 py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
         }
       >
         Akkreditáció
@@ -56,8 +56,8 @@ const Navbar = () => {
         to="/program"
         className={({ isActive }) =>
           isActive
-            ? "lg:font-base flex items-center justify-center px-5 py-3 text-sm font-bold uppercase text-white underline lg:py-0"
-            : "lg:font-base flex items-center justify-center px-5 py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
+            ? "lg:font-base flex items-center justify-center px-3 py-3 text-sm font-bold uppercase text-white underline lg:py-0"
+            : "lg:font-base flex items-center justify-center px-3 py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
         }
       >
         Programfüzet
@@ -66,8 +66,8 @@ const Navbar = () => {
         to="/rolunk"
         className={({ isActive }) =>
           isActive
-            ? "lg:font-base flex items-center justify-center px-5 py-3 text-sm font-bold uppercase text-white underline lg:py-0"
-            : "lg:font-base flex items-center justify-center px-5 py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
+            ? "lg:font-base flex items-center justify-center px-3 py-3 text-sm font-bold uppercase text-white underline lg:py-0"
+            : "lg:font-base flex items-center justify-center px-3 py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
         }
       >
         Rólunk
@@ -76,8 +76,8 @@ const Navbar = () => {
         to="/szervezok"
         className={({ isActive }) =>
           isActive
-            ? "lg:font-base flex items-center justify-center px-5 py-3 text-sm font-bold uppercase text-white underline lg:py-0"
-            : "lg:font-base flex items-center justify-center px-5 py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
+            ? "lg:font-base flex items-center justify-center px-3 py-3 text-sm font-bold uppercase text-white underline lg:py-0"
+            : "lg:font-base flex items-center justify-center px-3 py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
         }
       >
         Szervezőknek
@@ -86,8 +86,8 @@ const Navbar = () => {
         to="/kapcsolat"
         className={({ isActive }) =>
           isActive
-            ? "lg:font-base flex items-center justify-center px-5 py-3 text-sm font-bold uppercase text-white underline lg:py-0"
-            : "lg:font-base flex items-center justify-center px-5 py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
+            ? "lg:font-base flex items-center justify-center px-3 py-3 text-sm font-bold uppercase text-white underline lg:py-0"
+            : "lg:font-base flex items-center justify-center px-3 py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
         }
       >
         Kapcsolat
@@ -96,8 +96,8 @@ const Navbar = () => {
         to="/osszefoglalok"
         className={({ isActive }) =>
           isActive
-            ? "lg:font-base flex items-center justify-center px-5 py-3 text-sm font-bold uppercase text-white underline lg:py-0"
-            : "lg:font-base flex items-center justify-center px-5 py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
+            ? "lg:font-base flex items-center justify-center px-3 py-3 text-sm font-bold uppercase text-white underline lg:py-0"
+            : "lg:font-base flex items-center justify-center px-3 py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
         }
       >
         Összefoglaló kötetek
@@ -107,7 +107,7 @@ const Navbar = () => {
         className={({ isActive }) =>
           isActive
             ? "hidden"
-            : "flex items-center justify-center px-5 py-3 text-sm font-bold uppercase text-tdk-accent drop-shadow-lg hover:underline lg:rounded-full lg:bg-tdk-accent lg:text-base lg:font-bold lg:text-white"
+            : "flex items-center justify-center px-3 py-3 text-sm font-bold uppercase text-tdk-accent drop-shadow-lg hover:underline lg:rounded-full lg:bg-tdk-accent lg:text-base lg:font-bold lg:text-white"
         }
       >
         Információk
