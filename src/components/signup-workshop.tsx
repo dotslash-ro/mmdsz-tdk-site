@@ -143,10 +143,16 @@ const SignupWorkshop = ({
           {workshop.section} {workshop.yearFrom}. - {workshop.yearTo}. év
         </h4>
       </div>
-      <p className="whitespace-pre-line pb-6 pt-4 text-gray-700">
-        {" "}
-        {workshop.description}
-      </p>
+      {workshop.description == "clhf5d7jm002cmc19dsfy0491" ? (
+        <p className="whitespace-pre-line pb-6 pt-4 text-gray-700">
+          {" "}
+          {workshop.description}
+        </p>
+      ) : (
+        <p className="whitespace-pre-line pb-6 pt-4 font-semibold text-rose-700">
+          {workshop.description}
+        </p>
+      )}
       <div className="pt-3">
         <b>Részvételi kritérium(ok): </b>
         {workshop.targetAudience}

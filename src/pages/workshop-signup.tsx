@@ -224,7 +224,18 @@ const Workshops = () => {
         </button>
       </div>
       <div className="mx-auto py-20 px-5 lg:w-2/3">
-        <h2 className="pb-20 text-center text-5xl font-bold">Műhelymunkák</h2>
+        <h2 className="pb-10 text-center text-5xl font-bold">Műhelymunkák</h2>
+        <p className="pt-10 pb-20 text-center text-2xl font-thin">
+          A műhelymukák időszerinti beosztását{" "}
+          <a
+            className="text-sky-500 hover:underline"
+            href="https://docs.google.com/spreadsheets/d/1jxP5znjqZEuvqZomjdKyoU8wR6M70GqfuduG2vWLjR4/edit?usp=sharing"
+            target="_blank"
+          >
+            ebben
+          </a>{" "}
+          a táblázatban találjátok.
+        </p>
         {workshops.map((workshop, index) => (
           <div key={index}>
             <SignupWorkshop
