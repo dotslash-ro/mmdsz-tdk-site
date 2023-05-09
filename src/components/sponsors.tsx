@@ -55,6 +55,7 @@ import beatLogo from "../assets/beat-logo.png";
 import countryLogo from "../assets/country-logo.jpg";
 import dscLogo from "../assets/dsc-logo.png";
 import dwLogo from "../assets/dw-logo.png";
+import tulipartLogo from "../assets/tulipart-logo.png";
 import sgpLogo from "../assets/shadow-gastro-pub.webp";
 import petryLogo from "../assets/petry.webp";
 import gyermelyiLogo from "../assets/gyermelyi.webp";
@@ -94,6 +95,10 @@ const Sponsors = () => {
           Védnökeink
         </h2>
         <div className="flex flex-wrap justify-center gap-4 space-y-2 px-20 ">
+          <img
+            src={umfstLogo}
+            className="h-32 w-64 object-scale-down brightness-0 grayscale invert transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
+          />
           <img
             src={mtaLogo}
             className="h-32 w-64 object-scale-down mix-blend-lighten invert transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
@@ -436,6 +441,10 @@ const Sponsors = () => {
         />
         <img
           src={naturaliLogo}
+          className="h-32 w-64 object-scale-down mix-blend-multiply transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
+        />
+        <img
+          src={tulipartLogo}
           className="h-32 w-64 object-scale-down mix-blend-multiply transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
         />
         <img
