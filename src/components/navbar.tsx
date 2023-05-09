@@ -21,16 +21,7 @@ const Navbar = () => {
           Főoldal
         </NavLink>
       </div>
-      <NavLink
-        to="/tdkerdezz"
-        className={({ isActive }) =>
-          isActive
-            ? "lg:font-base flex items-center justify-center px-5 py-3 text-sm font-bold uppercase text-white underline lg:py-0"
-            : "lg:font-base flex items-center justify-center px-5 py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
-        }
-      >
-        TDKérdezz
-      </NavLink>
+
       <NavLink
         to="/szabalyzat"
         className={({ isActive }) =>
@@ -60,6 +51,16 @@ const Navbar = () => {
         }
       >
         Akkreditáció
+      </NavLink>
+      <NavLink
+        to="/program"
+        className={({ isActive }) =>
+          isActive
+            ? "lg:font-base flex items-center justify-center px-5 py-3 text-sm font-bold uppercase text-white underline lg:py-0"
+            : "lg:font-base flex items-center justify-center px-5 py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
+        }
+      >
+        Programfüzet
       </NavLink>
       <NavLink
         to="/rolunk"

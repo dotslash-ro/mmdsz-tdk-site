@@ -14,6 +14,7 @@ import FAQ from "./pages/faq";
 import GDPR from "./pages/gdpr";
 import JournalError from "./components/journal-error";
 import Workshops from "./pages/workshops";
+import Programme from "./pages/program";
 import Accreditation from "./pages/accreditation";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { oauthClientId } from "./constants";
@@ -60,6 +61,10 @@ const router = createHashRouter([
   {
     path: "/akkreditacio",
     element: <Accreditation />,
+  },
+  {
+    path: "/program",
+    element: <Programme />,
   },
   {
     path: "/workshop-jelentkezes",
