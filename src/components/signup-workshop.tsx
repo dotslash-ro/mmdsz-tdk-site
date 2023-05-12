@@ -1,4 +1,4 @@
-import { Ref, RefObject, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { workshopServerUrl, workshops } from "../constants";
 import { ClipLoader } from "react-spinners";
 import WorkshopSignupButton from "./workshop-signup-btn";
@@ -143,7 +143,8 @@ const SignupWorkshop = ({
           {workshop.section} {workshop.yearFrom}. - {workshop.yearTo}. év
         </h4>
       </div>
-      {workshop.id !== "clhf5d7jm002cmc19dsfy0491" ? (
+      {workshop.id !== "clhf5d7jm002cmc19dsfy0491" &&
+      workshop.id != "clhf5d7li002mmc19w5zr673h" ? (
         <p className="whitespace-pre-line pb-6 pt-4 text-gray-700">
           {" "}
           {workshop.description}
@@ -157,12 +158,12 @@ const SignupWorkshop = ({
         <b>Részvételi kritérium(ok): </b>
         {workshop.targetAudience}
       </div>
-      <div className="pt-1">
+      {/* <div className="pt-1">
         <b>Elérhető helyek száma: </b> {workshop.noOfAvailableSeats}/
-        {workshop.noOfTotalSeats}{" "}
+        {workshop.noOfTotalSeats}{  " "}
         {workshop.noOfAvailableSeats > 0 ? " fentmaradó hely" : ""}
-      </div>
-      <div className="flex justify-end pt-4">
+      </div> */}
+      {/* <div className="flex justify-end pt-4">
         <WorkshopSignupButton
           canSignUp={true}
           hasLoggedIn={!!email}
@@ -172,7 +173,7 @@ const SignupWorkshop = ({
           loading={loading}
           noOfAvailableSeats={workshop.noOfAvailableSeats}
         />
-      </div>
+      </div> */}
       <hr className="my-8 h-px border-0 bg-gray-200 dark:bg-gray-700"></hr>
     </div>
   );
