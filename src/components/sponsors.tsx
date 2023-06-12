@@ -85,6 +85,7 @@ import mmmLogo from "../assets/mmm.jpg";
 import kimLogo from "../assets/kim.jpg";
 import rakocziLogo from "../assets/rakoczi.png";
 import gecseLogo from "../assets/gecse.jpg";
+import communitasLogo from "../assets/communitas-logo.jpeg";
 import { transformer } from "zod";
 
 const Sponsors = () => {
@@ -308,6 +309,10 @@ const Sponsors = () => {
       <div className="flex flex-wrap justify-center gap-4 space-y-2 px-20">
         <img
           src={shLogo}
+          className="h-32 w-64 object-scale-down mix-blend-multiply transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
+        />
+        <img
+          src={communitasLogo}
           className="h-32 w-64 object-scale-down mix-blend-multiply transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
         />
         <img
