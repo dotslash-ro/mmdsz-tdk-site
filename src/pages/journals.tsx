@@ -20,7 +20,7 @@ const PastJournals = () => {
             navigate(`${(e.target as HTMLSelectElement).value}`);
           }}
         >
-          {[...Array(11).keys()]
+          {[...Array(12).keys()]
             .map((year) => year + 2012)
             .map((year, index) => {
               return <option key={index}>{year}</option>;

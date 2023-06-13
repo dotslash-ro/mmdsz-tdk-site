@@ -1,3 +1,4 @@
+import journal2023 from "../assets/2023-suppl2.pdf";
 import journal2022 from "../assets/2022-suppl1.pdf";
 import journal2021 from "../assets/2021-suppl1.pdf";
 import journal2020 from "../assets/2020-suppl1.pdf";
@@ -17,6 +18,7 @@ import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
 import "@react-pdf-viewer/default-layout/lib/styles/index.css";
 
 const yearToJournalMap: Map<string, string> = new Map([
+  ["2023", journal2023],
   ["2022", journal2022],
   ["2021", journal2021],
   ["2020", journal2020],
