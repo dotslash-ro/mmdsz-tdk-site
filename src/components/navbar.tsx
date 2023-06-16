@@ -32,7 +32,7 @@ const Navbar = () => {
       >
         Szabályzat
       </NavLink>
-      <NavLink
+      {/* <NavLink
         to="/workshop-jelentkezes"
         className={({ isActive }) =>
           isActive
@@ -41,7 +41,7 @@ const Navbar = () => {
         }
       >
         Műhelymunkák
-      </NavLink>
+      </NavLink> */}
       <NavLink
         to="/akkreditacio"
         className={({ isActive }) =>
@@ -52,7 +52,7 @@ const Navbar = () => {
       >
         Akkreditáció
       </NavLink>
-      <NavLink
+      {/* <NavLink
         to="/program"
         className={({ isActive }) =>
           isActive
@@ -61,7 +61,7 @@ const Navbar = () => {
         }
       >
         Programfüzet
-      </NavLink>
+      </NavLink> */}
       <NavLink
         to="/rolunk"
         className={({ isActive }) =>
@@ -72,7 +72,7 @@ const Navbar = () => {
       >
         Rólunk
       </NavLink>
-      {/* <NavLink
+      <NavLink
         to="/szervezok"
         className={({ isActive }) =>
           isActive
@@ -81,7 +81,7 @@ const Navbar = () => {
         }
       >
         Szervezőknek
-      </NavLink> */}
+      </NavLink>
       <NavLink
         to="/kapcsolat"
         className={({ isActive }) =>
@@ -102,7 +102,7 @@ const Navbar = () => {
       >
         Összefoglaló kötetek
       </NavLink>
-      <NavLink
+      {/* <NavLink
         to="/jelentkezes"
         className={({ isActive }) =>
           isActive
@@ -111,7 +111,7 @@ const Navbar = () => {
         }
       >
         Információk
-      </NavLink>
+      </NavLink> */}
     </header>
   );
 };

@@ -18,9 +18,6 @@ import Programme from "./pages/program";
 import Accreditation from "./pages/accreditation";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { oauthClientId } from "./constants";
-import WorkshopLogin from "./pages/workshop-login";
-import WorkshopSignup from "./pages/workshop-signup";
-import AllWorkshops from "./pages/all-workshops";
 
 const router = createHashRouter([
   {
@@ -66,19 +63,6 @@ const router = createHashRouter([
   {
     path: "/program",
     element: <Programme />,
-  },
-  {
-    path: "/clhgd99qk000008leb9394mh1",
-    element: <AllWorkshops />,
-  },
-  {
-    path: "/workshop-jelentkezes",
-    element: <WorkshopSignup />,
-    errorElement: (
-      <div className="flex h-screen items-center justify-center">
-        Jelenleg nem elérhető a jelentkezés.
-      </div>
-    ),
   },
   {
     path: "/osszefoglalok",
