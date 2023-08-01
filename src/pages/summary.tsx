@@ -9,7 +9,7 @@ const Summary = () => {
       <h1 className="pb-20 text-center text-5xl font-bold text-tdk-secondary">
         Összefoglaló
       </h1>
-      <div className="mx-auto w-2/3 space-y-10 text-neutral-700">
+      <div className="space-y-10 px-5 text-neutral-700 sm:mx-auto sm:w-2/3 sm:px-0">
         <div className="mx-auto flex flex-col items-center justify-start gap-10 xl:flex-row">
           <p className="xl:w-1/3">
             Idén 30. alkalommal került megrendezésre május 10-13 között a
@@ -90,6 +90,17 @@ const Summary = () => {
             className="w-full rounded-lg shadow-tdk-primary drop-shadow-lg xl:h-fit xl:w-auto"
           />
         </div>
+        <p>
+          Összességében a rendezvény{" "}
+          <em className="font-bold">160 lelkes szervező</em>, az egyetemünk
+          oktatói, partnereink és támogatóink áldozatos munkája által
+          valósulhatott meg. Külön kiemelnénk a{" "}
+          <em className="font-bold ">
+            Nemzeti Tehetség Programot (Magyarország Kulturális és Innovációs
+            Minisztériuma, Emberi Erőforrás Támogatáskezelő)
+          </em>
+          , mely pályázat nagyban segítette az esemény létrejöttét.
+        </p>
       </div>
     </div>
   );

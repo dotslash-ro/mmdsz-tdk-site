@@ -25,8 +25,8 @@ const Landing = () => {
         </div>
       </div>
       <div className="flex flex-col items-center gap-8 bg-white py-20">
-        <div className="mx-auto flex w-2/3 flex-col items-center justify-center gap-10 xl:flex-row">
-          <p className="text-xl font-light xl:w-1/3">
+        <div className="flex flex-col items-center justify-center gap-10 px-5 sm:mx-auto sm:w-2/3 sm:px-0 xl:flex-row">
+          <p className="font-light md:text-xl xl:w-1/3">
             Idén 30. alkalommal került megrendezésre május 10-13 között a
             Marosvásárhelyi Tudományos Diákköri Konferencia. A tudományos
             diákköri konferencia egyedülállónak számít, ugyanis az egyetemek
@@ -39,8 +39,8 @@ const Landing = () => {
             className="w-full rounded-lg shadow-tdk-primary drop-shadow-lg xl:h-fit xl:w-auto"
           />
         </div>
-        <div className="mx-auto flex w-2/3 flex-col items-center justify-center gap-10 xl:flex-row-reverse">
-          <p className="text-xl font-light xl:w-1/3">
+        <div className="flex flex-col items-center justify-center gap-10 px-5 sm:mx-auto sm:w-2/3 sm:px-0 xl:flex-row-reverse">
+          <p className="font-light md:text-xl xl:w-1/3">
             Az idei évben 15 külföldi meghívott előadó és 3 hazai előadó
             aktuális kutatásáról is hallhattak a érdeklődők, mindemellett 3
             panel beszélgetésre is sor került amelyeken során 4 külföldi-,
@@ -53,8 +53,8 @@ const Landing = () => {
             className="w-full rounded-lg shadow-tdk-primary drop-shadow-lg xl:h-fit xl:w-auto"
           />
         </div>
-        <div className="mx-auto flex w-2/3 flex-col items-center justify-center gap-10 xl:flex-row">
-          <p className="text-xl font-light xl:w-1/3">
+        <div className="flex flex-col items-center justify-center gap-10 px-5 sm:mx-auto sm:w-2/3 sm:px-0 xl:flex-row">
+          <p className="font-light md:text-xl xl:w-1/3">
             A konferencia alkalmával 209 dolgozat került bemutatásra, melyből
             171 hazai illetve 38 külföldi hallgatók által készített.
           </p>
