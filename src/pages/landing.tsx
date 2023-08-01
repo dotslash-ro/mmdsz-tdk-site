@@ -1,7 +1,9 @@
-import Schedule from "../components/schedule";
 import Sponsors from "../components/sponsors";
 import { withLayout } from "../layout/withLayout";
 import { Link } from "react-router-dom";
+import tdkPicture1 from "../assets/tdk-pic1.png";
+import tdkPicture2 from "../assets/tdk-pic2.png";
+import tdkPicture3 from "../assets/tdk-pic3.png";
 
 const Landing = () => {
   return (
@@ -9,7 +11,7 @@ const Landing = () => {
       <div className="flex justify-center bg-banner bg-cover bg-local bg-center">
         <div className="flex flex-grow flex-col items-center bg-gradient-to-t from-transparent to-tdk-primary pt-20 bg-blend-lighten">
           <div className="">
-            <h2 className="font-hero text-6xl uppercase  tracking-tighter text-white md:text-5xl lg:text-8xl">
+            <h2 className="font-hero text-6xl uppercase tracking-tighter text-white md:text-5xl lg:text-8xl">
               <div>
                 {" "}
                 <span className="text-tdk-accent">30.</span> Tudományos
@@ -22,38 +24,52 @@ const Landing = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center gap-8 bg-white py-40">
-        <p className="mx-auto w-2/3 text-xl font-light">
-          <a
-            href="https://mmdsz.ro"
-            className="text-indigo-400 hover:underline"
-          >
-            A Marosvásárhelyi Magyar Diákszövetség
-          </a>{" "}
-          1993 óta megrendezi a Tudományos Diákköri Konferenciát. A rendezvény
-          célja, hogy lehetőséget biztosítson a diákok számára a tudományos
-          ismeretek átadására és cseréjére, valamint lehetőséget nyújtson a
-          kutatásaik eredményeinek összehasonlítására.
-        </p>
-        <p className="mx-auto w-2/3 text-xl font-light">
-          A konferencia az egyedüli olyan rendezvény az erdélyi orvosképzésben,
-          ahol a hallgatók anyanyelvükön, magyarul mutathatják be tudományos
-          munkáikat, és mérhetik össze kutatásaik eredményeit az orvosi,
-          fogorvosi és a gyógyszerészeti szakterületeken belül.
-        </p>
-
-        <div className="flex flex-col gap-10 px-20 md:flex-row">
+      <div className="flex flex-col items-center gap-8 bg-white py-20">
+        <div className="mx-auto flex w-2/3 flex-col items-center justify-center gap-10 xl:flex-row">
+          <p className="text-xl font-light xl:w-1/3">
+            Idén 30. alkalommal került megrendezésre május 10-13 között a
+            Marosvásárhelyi Tudományos Diákköri Konferencia. A tudományos
+            diákköri konferencia egyedülállónak számít, ugyanis az egyetemek
+            magyar hallgatói anyanyelvükön mutathatják be tudományos
+            dolgozataikat.
+          </p>
+          <img
+            src={tdkPicture1}
+            alt="TDK"
+            className="w-full rounded-lg shadow-tdk-primary drop-shadow-lg xl:h-fit xl:w-auto"
+          />
+        </div>
+        <div className="mx-auto flex w-2/3 flex-col items-center justify-center gap-10 xl:flex-row-reverse">
+          <p className="text-xl font-light xl:w-1/3">
+            Az idei évben 15 külföldi meghívott előadó és 3 hazai előadó
+            aktuális kutatásáról is hallhattak a érdeklődők, mindemellett 3
+            panel beszélgetésre is sor került amelyeken során 4 külföldi-,
+            illetve 5 hazai szakember beszélgetésébe csatlakozhatott be a
+            hallgatóság.
+          </p>
+          <img
+            src={tdkPicture2}
+            alt="TDK"
+            className="w-full rounded-lg shadow-tdk-primary drop-shadow-lg xl:h-fit xl:w-auto"
+          />
+        </div>
+        <div className="mx-auto flex w-2/3 flex-col items-center justify-center gap-10 xl:flex-row">
+          <p className="text-xl font-light xl:w-1/3">
+            A konferencia alkalmával 209 dolgozat került bemutatásra, melyből
+            171 hazai illetve 38 külföldi hallgatók által készített.
+          </p>
+          <img
+            src={tdkPicture3}
+            alt="TDK"
+            className="w-full rounded-lg shadow-tdk-primary drop-shadow-lg xl:h-fit xl:w-auto"
+          />
+        </div>
+        <div className="flex flex-col gap-10 px-20 py-20 md:flex-row">
           <Link
-            to="rolunk"
-            className="rounded-full bg-neutral-200 px-10 py-4 font-semibold uppercase text-black drop-shadow-md hover:underline xl:text-xl"
-          >
-            Tudj meg többet
-          </Link>
-          <Link
-            to="/jelentkezes"
+            to="/osszefoglalo"
             className="rounded-full bg-tdk-accent px-10 py-4 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-xl"
           >
-            Információk →
+            Összefoglaló →
           </Link>
         </div>
       </div>

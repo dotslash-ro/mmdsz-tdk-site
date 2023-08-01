@@ -17,7 +17,7 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <div ref={rootRef}>
       <Navbar />
-      {children}
+      <div className="py-16">{children}</div>
       <Footer />
     </div>
   );
