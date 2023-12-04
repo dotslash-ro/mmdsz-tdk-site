@@ -2,27 +2,19 @@ import FileUpload from "./file-upload";
 import { serverUrl } from "../constants";
 import { useEffect, useState } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
-const uploadStatuses = [
-  "not-uploaded",
-  "in-progress",
-  "uploaded",
-  "error",
-] as const;
+const uploadStatuses = ["not-uploaded", "in-progress", "uploaded", "error"] as const;
 type UploadStatus = (typeof uploadStatuses)[number];
 
 const PresentationUpload = () => {
   const [email, setEmail] = useState("");
   const [file, setFile] = useState<File>();
-  const [uploadStatus, setUploadStatus] =
-    useState<UploadStatus>("not-uploaded");
+  const [uploadStatus, setUploadStatus] = useState<UploadStatus>("not-uploaded");
 
   useEffect(() => {
     const _uploadStatus = localStorage.getItem("uploadStatus");
     if (!_uploadStatus) {
       setUploadStatus("not-uploaded");
-    } else if (
-      uploadStatuses.find((validStatus) => validStatus === _uploadStatus)
-    ) {
+    } else if (uploadStatuses.find((validStatus) => validStatus === _uploadStatus)) {
       setUploadStatus(_uploadStatus as UploadStatus);
     } else {
       setUploadStatus("not-uploaded");
@@ -91,10 +83,7 @@ const PresentationUpload = () => {
   return (
     <div className="py-10">
       <div className="mb-6">
-        <label
-          htmlFor="email"
-          className="mb-2 block text-sm font-medium text-gray-900"
-        >
+        <label htmlFor="email" className="mb-2 block text-sm font-medium text-gray-900">
           Email cím
         </label>
         <input
@@ -105,15 +94,8 @@ const PresentationUpload = () => {
           onInput={(e) => setEmail((e.target as HTMLInputElement).value)}
         />
       </div>
-      <h3 className="mb-2 block text-sm font-medium text-gray-900">
-        Prezentáció feltöltése
-      </h3>
-      <FileUpload
-        file={file}
-        setFile={setFile}
-        fileFormats=".ppt vagy .pptx"
-        id="upload-presentation"
-      />
+      <h3 className="mb-2 block text-sm font-medium text-gray-900">Prezentáció feltöltése</h3>
+      <FileUpload file={file} setFile={setFile} fileFormats=".ppt vagy .pptx" id="upload-presentation" />
       <button
         className="rounded-full bg-tdk-accent px-10 py-4 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-xl"
         onClick={onSignup}

@@ -59,10 +59,7 @@ const ConfirmSignup = ({
           <h2 className="pt-4 pb-2 text-lg font-semibold">Személyes adatok</h2>
           <ul className="ml-6 list-disc">
             <li>
-              <label
-                htmlFor="applicantName"
-                className="mr-2 font-light italic text-gray-600"
-              >
+              <label htmlFor="applicantName" className="mr-2 font-light italic text-gray-600">
                 Jelentkező neve:
               </label>
               <span id="applicantName" className="mt-2 font-light">
@@ -70,23 +67,15 @@ const ConfirmSignup = ({
               </span>
             </li>
             <li>
-              <label
-                htmlFor="university"
-                className="mr-2 font-light italic text-gray-600"
-              >
+              <label htmlFor="university" className="mr-2 font-light italic text-gray-600">
                 Jelentkező egyeteme:
               </label>
               <span id="university" className="mt-2 font-light">
-                {personalInfo?.university == "Egyéb"
-                  ? personalInfo?.otherUniversity
-                  : personalInfo?.university}
+                {personalInfo?.university == "Egyéb" ? personalInfo?.otherUniversity : personalInfo?.university}
               </span>
             </li>
             <li>
-              <label
-                htmlFor="studyYear"
-                className="mr-2 font-light italic text-gray-600"
-              >
+              <label htmlFor="studyYear" className="mr-2 font-light italic text-gray-600">
                 Jelentkező évfolyama:
               </label>
               <span id="studyYear" className="mt-2 font-light">
@@ -99,10 +88,7 @@ const ConfirmSignup = ({
           <h2 className="pt-8 pb-2 text-lg font-semibold">Kivonat tartalma</h2>
           <ul className="ml-6 list-disc">
             <li>
-              <label
-                htmlFor="hungarianTitle"
-                className="mr-2 font-light italic text-gray-600"
-              >
+              <label htmlFor="hungarianTitle" className="mr-2 font-light italic text-gray-600">
                 Magyar cím:
               </label>
               <span id="hungarianTitle" className="mt-2 font-light">
@@ -110,10 +96,7 @@ const ConfirmSignup = ({
               </span>
             </li>
             <li>
-              <label
-                htmlFor="romanianTitle"
-                className="mr-2 font-light italic text-gray-600"
-              >
+              <label htmlFor="romanianTitle" className="mr-2 font-light italic text-gray-600">
                 Román cím:
               </label>
               <span id="romanianTitle" className="mt-2 font-light">
@@ -121,10 +104,7 @@ const ConfirmSignup = ({
               </span>
             </li>
             <li>
-              <label
-                htmlFor="englishTitle"
-                className="mr-2 font-light italic text-gray-600"
-              >
+              <label htmlFor="englishTitle" className="mr-2 font-light italic text-gray-600">
                 Angol cím:
               </label>
               <span id="englishTitle" className="mt-2 font-light">
@@ -142,10 +122,7 @@ const ConfirmSignup = ({
                   <h3 className="pt-4 pb-2">{index + 1}. Társszerző:</h3>
                   <ul className="ml-6 list-disc">
                     <li>
-                      <label
-                        htmlFor="applicantName"
-                        className="mr-2 font-light italic text-gray-600"
-                      >
+                      <label htmlFor="applicantName" className="mr-2 font-light italic text-gray-600">
                         Társszerző neve:
                       </label>
                       <span id="applicantName" className="mt-2 font-light">
@@ -153,23 +130,15 @@ const ConfirmSignup = ({
                       </span>
                     </li>
                     <li>
-                      <label
-                        htmlFor="university"
-                        className="mr-2 font-light italic text-gray-600"
-                      >
+                      <label htmlFor="university" className="mr-2 font-light italic text-gray-600">
                         Társszerző egyeteme:
                       </label>
                       <span id="university" className="mt-2 font-light">
-                        {coAuthorInfo.university == "Egyéb"
-                          ? coAuthorInfo.otherUniversity
-                          : coAuthorInfo.university}
+                        {coAuthorInfo.university == "Egyéb" ? coAuthorInfo.otherUniversity : coAuthorInfo.university}
                       </span>
                     </li>
                     <li>
-                      <label
-                        htmlFor="studyYear"
-                        className="mr-2 font-light italic text-gray-600"
-                      >
+                      <label htmlFor="studyYear" className="mr-2 font-light italic text-gray-600">
                         Társszerző évfolyama:
                       </label>
                       <span id="studyYeae" className="mt-2 font-light">
@@ -191,10 +160,7 @@ const ConfirmSignup = ({
                   <h3 className="pt-4 pb-2">{index + 1}. Témavezető:</h3>
                   <ul className="ml-6 list-disc">
                     <li>
-                      <label
-                        htmlFor="applicantName"
-                        className="mr-2 font-light italic text-gray-600"
-                      >
+                      <label htmlFor="applicantName" className="mr-2 font-light italic text-gray-600">
                         Témavezető neve:
                       </label>
                       <span id="applicantName" className="mt-2 font-light">
@@ -202,10 +168,7 @@ const ConfirmSignup = ({
                       </span>
                     </li>
                     <li>
-                      <label
-                        htmlFor="university"
-                        className="mr-2 font-light italic text-gray-600"
-                      >
+                      <label htmlFor="university" className="mr-2 font-light italic text-gray-600">
                         Témavezető intézménye:
                       </label>
                       <span id="university" className="mt-2 font-light">
@@ -213,16 +176,11 @@ const ConfirmSignup = ({
                       </span>
                     </li>
                     <li>
-                      <label
-                        htmlFor="title"
-                        className="mr-2 font-light italic text-gray-600"
-                      >
+                      <label htmlFor="title" className="mr-2 font-light italic text-gray-600">
                         Témavezető titulusa:
                       </label>
                       <span id="university" className="mt-2 font-light">
-                        {coordinatorInfo.title == "Egyéb"
-                          ? coordinatorInfo.otherTitle
-                          : coordinatorInfo.title}
+                        {coordinatorInfo.title == "Egyéb" ? coordinatorInfo.otherTitle : coordinatorInfo.title}
                       </span>
                     </li>
                   </ul>
@@ -232,9 +190,7 @@ const ConfirmSignup = ({
           </ul>
         </div>
         <div>
-          <h2 className="pt-8 pb-4 text-lg font-semibold">
-            Saját hozzájárulási nyilatkozat
-          </h2>
+          <h2 className="pt-8 pb-4 text-lg font-semibold">Saját hozzájárulási nyilatkozat</h2>
           <li>
             <span className="font-light italic">{agreementDoc?.name}</span>
           </li>
@@ -251,19 +207,12 @@ const ConfirmSignup = ({
               {...register("acceptedTerms")}
             />
             {errors.acceptedTerms && (
-              <p className="mx-3 mt-2 text-xs italic text-red-500">
-                {" "}
-                {errors.acceptedTerms?.message}
-              </p>
+              <p className="mx-3 mt-2 text-xs italic text-red-500"> {errors.acceptedTerms?.message}</p>
             )}
           </div>
           <label htmlFor="terms" className="ml-2 text-gray-600">
             A jelentkezéssel beleegyezel a szabályzatba.{" "}
-            <NavLink
-              to="/szabalyzat"
-              target="_blank"
-              className="text-sky-600 underline"
-            >
+            <NavLink to="/szabalyzat" target="_blank" className="text-sky-600 underline">
               Szabályzat elolvasása →
             </NavLink>
           </label>
@@ -274,9 +223,7 @@ const ConfirmSignup = ({
             <div className="overflow-hidden rounded-full bg-gray-200">
               <div className="h-2 w-full rounded-full bg-blue-500"></div>
             </div>
-            <p className="pt-3 text-sm font-light text-gray-400">
-              6/6 - Adatok ellenőrzése
-            </p>
+            <p className="pt-3 text-sm font-light text-gray-400">6/6 - Adatok ellenőrzése</p>
           </div>
           {isValid ? (
             <button

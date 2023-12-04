@@ -81,11 +81,9 @@ import communitasLogo from "../assets/communitas-logo.jpeg";
 const Sponsors = () => {
   return (
     <div className="space-y-10">
-      <div className="bg-tdk-primary py-20">
-        <h2 className="pb-20 text-center text-5xl font-bold text-white">
-          Védnökeink
-        </h2>
-        <div className="flex flex-wrap justify-center gap-4 space-y-2 px-20 pb-10">
+      <div className="bg-tdk-primary pt-20">
+        <h2 className="pb-20 text-center text-5xl font-bold text-white">Védnökeink</h2>
+        <div className="flex flex-wrap justify-center gap-4 space-y-2 px-20 pb-20">
           <img
             src={umfstLogo}
             className="h-32 w-64 object-scale-down brightness-0 grayscale invert transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
@@ -100,7 +98,7 @@ const Sponsors = () => {
           />
         </div>
       </div>
-      <div>
+      {/* <div>
         <h2 className="pb-20 text-center text-5xl font-bold">Partnereink</h2>
         <div className="flex flex-wrap justify-center gap-4 space-y-2 px-20 pb-20">
           <img
@@ -417,7 +415,7 @@ const Sponsors = () => {
           src={darociLogo}
           className="h-32 w-64 object-scale-down mix-blend-multiply transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
         />
-      </div>
+      </div> */}
     </div>
   );
 };

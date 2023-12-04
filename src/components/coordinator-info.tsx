@@ -5,15 +5,10 @@ import { ClipLoader } from "react-spinners";
 
 const coordinatorInfoSchema = z.object({
   coordinatorName: z.string().min(1, { message: "Add meg témavezető nevét!" }),
-  institute: z
-    .string()
-    .min(1, { message: "Add meg a témavezető intézményét!!" }),
+  institute: z.string().min(1, { message: "Add meg a témavezető intézményét!!" }),
   email: z.string().email({ message: "Add meg a témavezető e-mail címét!" }),
   title: z.string().min(1, { message: "Add meg a témavezető titulusát!" }),
-  otherTitle: z
-    .string()
-    .min(1, { message: "Add meg a témavezető titulusát!" })
-    .optional(),
+  otherTitle: z.string().min(1, { message: "Add meg a témavezető titulusát!" }).optional(),
 });
 
 export type CoordinatorInfoSchema = z.infer<typeof coordinatorInfoSchema>;
@@ -48,10 +43,7 @@ const CoordinatorInfo = ({ setCoordinatorInfo }: CoordinatorInfoFormProps) => {
     <div>
       <form className="py-10" onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-6">
-          <label
-            htmlFor="name"
-            className="mb-2 block text-lg font-medium text-gray-900"
-          >
+          <label htmlFor="name" className="mb-2 block text-lg font-medium text-gray-900">
             Témavezető neve
           </label>
           <input
@@ -61,17 +53,11 @@ const CoordinatorInfo = ({ setCoordinatorInfo }: CoordinatorInfoFormProps) => {
             {...register("coordinatorName")}
           />
           {errors.coordinatorName && (
-            <p className="mt-2 text-xs italic text-red-500">
-              {" "}
-              {errors.coordinatorName?.message}
-            </p>
+            <p className="mt-2 text-xs italic text-red-500"> {errors.coordinatorName?.message}</p>
           )}
         </div>
         <div className="mb-6">
-          <label
-            htmlFor="email"
-            className="mb-2 block text-lg font-medium text-gray-900"
-          >
+          <label htmlFor="email" className="mb-2 block text-lg font-medium text-gray-900">
             Témavezető email címe
           </label>
           <input
@@ -81,18 +67,10 @@ const CoordinatorInfo = ({ setCoordinatorInfo }: CoordinatorInfoFormProps) => {
             {...register("email")}
             aria-invalid={errors.email ? "true" : "false"}
           />
-          {errors.email && (
-            <p className="mt-2 text-xs italic text-red-500">
-              {" "}
-              {errors.email?.message}
-            </p>
-          )}
+          {errors.email && <p className="mt-2 text-xs italic text-red-500"> {errors.email?.message}</p>}
         </div>
         <div className="mb-6">
-          <label
-            htmlFor="institute"
-            className="mb-2 block text-lg font-medium text-gray-900"
-          >
+          <label htmlFor="institute" className="mb-2 block text-lg font-medium text-gray-900">
             Témavezető intézménye
           </label>
           <input
@@ -102,18 +80,10 @@ const CoordinatorInfo = ({ setCoordinatorInfo }: CoordinatorInfoFormProps) => {
             {...register("institute")}
           />
 
-          {errors.institute && (
-            <p className="mt-2 text-xs italic text-red-500">
-              {" "}
-              {errors.institute?.message}
-            </p>
-          )}
+          {errors.institute && <p className="mt-2 text-xs italic text-red-500"> {errors.institute?.message}</p>}
         </div>
         <div className="mb-6">
-          <label
-            htmlFor="titles"
-            className="mb-2 block text-lg font-medium text-gray-900"
-          >
+          <label htmlFor="titles" className="mb-2 block text-lg font-medium text-gray-900">
             Témavezető titulusa
           </label>
           <select
@@ -121,33 +91,21 @@ const CoordinatorInfo = ({ setCoordinatorInfo }: CoordinatorInfoFormProps) => {
             className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-tdk-primary"
             {...register("title")}
           >
-            {[
-              "Egyetemi tanár",
-              "Egyetemi docens",
-              "Egyetemi adjunktus",
-              "Egyetemi tanársegéd",
-              "Egyéb",
-            ].map((title, index) => {
-              return (
-                <option className="text-md" key={index}>
-                  {title}
-                </option>
-              );
-            })}
+            {["Egyetemi tanár", "Egyetemi docens", "Egyetemi adjunktus", "Egyetemi tanársegéd", "Egyéb"].map(
+              (title, index) => {
+                return (
+                  <option className="text-md" key={index}>
+                    {title}
+                  </option>
+                );
+              }
+            )}
           </select>
-          {errors.title && (
-            <p className="mt-2 text-xs italic text-red-500">
-              {" "}
-              {errors.title?.message}
-            </p>
-          )}
+          {errors.title && <p className="mt-2 text-xs italic text-red-500"> {errors.title?.message}</p>}
         </div>
         {watch("title") === "Egyéb" && (
           <div className="mb-6">
-            <label
-              htmlFor="other-title"
-              className="mb-2 block text-lg font-medium text-gray-900"
-            >
+            <label htmlFor="other-title" className="mb-2 block text-lg font-medium text-gray-900">
               Témavezető titulusa
             </label>
             <input
@@ -157,12 +115,7 @@ const CoordinatorInfo = ({ setCoordinatorInfo }: CoordinatorInfoFormProps) => {
               {...register("otherTitle")}
               aria-invalid={errors.otherTitle ? "true" : "false"}
             />
-            {errors.otherTitle && (
-              <p className="mt-2 text-xs italic text-red-500">
-                {" "}
-                {errors.otherTitle?.message}
-              </p>
-            )}
+            {errors.otherTitle && <p className="mt-2 text-xs italic text-red-500"> {errors.otherTitle?.message}</p>}
           </div>
         )}
         {!isSubmitted &&

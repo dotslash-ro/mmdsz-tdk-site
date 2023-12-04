@@ -6,29 +6,12 @@ import { ClipLoader } from "react-spinners";
 import { useEffect } from "react";
 
 const CoAuthorInfoSchema = z.object({
-  coAuthorName: z
-    .literal("")
-    .or(z.string().min(1, { message: "Add meg a társszerző nevét!" })),
-  university: z
-    .literal("")
-    .or(z.string().min(1, { message: "Add meg a társszerző egyetemét!" })),
-  otherUniversity: z
-    .string()
-    .min(1, { message: "Add meg a társszerző egyetemének nevét!" })
-    .optional(),
-  department: z
-    .string()
-    .min(1, { message: "Add meg a kart, amelyen tanulsz!" }),
-  email: z
-    .literal("")
-    .or(z.string().email({ message: "Add meg a társszerző email címét" })),
-  studyYear: z
-    .literal("")
-    .or(
-      z
-        .string()
-        .regex(/[123456]/, { message: "Add meg a társszerző évfolyamát!" })
-    ),
+  coAuthorName: z.literal("").or(z.string().min(1, { message: "Add meg a társszerző nevét!" })),
+  university: z.literal("").or(z.string().min(1, { message: "Add meg a társszerző egyetemét!" })),
+  otherUniversity: z.string().min(1, { message: "Add meg a társszerző egyetemének nevét!" }).optional(),
+  department: z.string().min(1, { message: "Add meg a kart, amelyen tanulsz!" }),
+  email: z.literal("").or(z.string().email({ message: "Add meg a társszerző email címét" })),
+  studyYear: z.literal("").or(z.string().regex(/[123456]/, { message: "Add meg a társszerző évfolyamát!" })),
 });
 
 export type CoAuthorInfoSchema = z.infer<typeof CoAuthorInfoSchema>;
@@ -40,12 +23,7 @@ interface CoAuthorInfoFormProps {
   index: number;
 }
 
-const CoAuthorInfo = ({
-  setCoAuthorInfo,
-  removeCoAuthorForm,
-  index,
-  setIsDirty,
-}: CoAuthorInfoFormProps) => {
+const CoAuthorInfo = ({ setCoAuthorInfo, removeCoAuthorForm, index, setIsDirty }: CoAuthorInfoFormProps) => {
   const {
     register,
     handleSubmit,
@@ -72,18 +50,12 @@ const CoAuthorInfo = ({
 
   return (
     <div className="relative">
-      <button
-        className="fixed right-1 top-1 text-lg font-semibold text-gray-400"
-        onClick={removeCoAuthorForm}
-      >
+      <button className="fixed right-1 top-1 text-lg font-semibold text-gray-400" onClick={removeCoAuthorForm}>
         x
       </button>
       <form className="py-10" onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-6">
-          <label
-            htmlFor="name"
-            className="mb-2 block text-lg font-medium text-gray-900"
-          >
+          <label htmlFor="name" className="mb-2 block text-lg font-medium text-gray-900">
             Társszerző neve
           </label>
           <input
@@ -92,18 +64,10 @@ const CoAuthorInfo = ({
             className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500"
             {...register("coAuthorName")}
           />
-          {errors.coAuthorName && (
-            <p className="mt-2 text-xs italic text-red-500">
-              {" "}
-              {errors.coAuthorName?.message}
-            </p>
-          )}
+          {errors.coAuthorName && <p className="mt-2 text-xs italic text-red-500"> {errors.coAuthorName?.message}</p>}
         </div>
         <div className="mb-6">
-          <label
-            htmlFor="email"
-            className="mb-2 block text-lg font-medium text-gray-900"
-          >
+          <label htmlFor="email" className="mb-2 block text-lg font-medium text-gray-900">
             Társszerző email címe
           </label>
           <input
@@ -113,18 +77,10 @@ const CoAuthorInfo = ({
             {...register("email")}
             aria-invalid={errors.email ? "true" : "false"}
           />
-          {errors.email && (
-            <p className="mt-2 text-xs italic text-red-500">
-              {" "}
-              {errors.email?.message}
-            </p>
-          )}
+          {errors.email && <p className="mt-2 text-xs italic text-red-500"> {errors.email?.message}</p>}
         </div>
         <div className="mb-6">
-          <label
-            htmlFor="universities"
-            className="mb-2 block text-lg font-medium text-gray-900"
-          >
+          <label htmlFor="universities" className="mb-2 block text-lg font-medium text-gray-900">
             Társszerző egyeteme
           </label>
           <select
@@ -140,19 +96,11 @@ const CoAuthorInfo = ({
               );
             })}
           </select>
-          {errors.university && (
-            <p className="mt-2 text-xs italic text-red-500">
-              {" "}
-              {errors.university?.message}
-            </p>
-          )}
+          {errors.university && <p className="mt-2 text-xs italic text-red-500"> {errors.university?.message}</p>}
         </div>
         {watch("university") === "Egyéb" && (
           <div className="mb-6">
-            <label
-              htmlFor="other-university"
-              className="mb-2 block text-lg font-medium text-gray-900"
-            >
+            <label htmlFor="other-university" className="mb-2 block text-lg font-medium text-gray-900">
               Társszerző egyetemének neve
             </label>
             <input
@@ -163,18 +111,12 @@ const CoAuthorInfo = ({
               aria-invalid={errors.otherUniversity ? "true" : "false"}
             />
             {errors.otherUniversity && (
-              <p className="mt-2 text-xs italic text-red-500">
-                {" "}
-                {errors.otherUniversity?.message}
-              </p>
+              <p className="mt-2 text-xs italic text-red-500"> {errors.otherUniversity?.message}</p>
             )}
           </div>
         )}
         <div className="mb-6">
-          <label
-            htmlFor="department"
-            className="mb-2 block text-lg font-medium text-gray-900"
-          >
+          <label htmlFor="department" className="mb-2 block text-lg font-medium text-gray-900">
             Társszerző kara
           </label>
           <input
@@ -184,17 +126,10 @@ const CoAuthorInfo = ({
             {...register("department")}
             aria-invalid={errors.department ? "true" : "false"}
           />
-          {errors.department && (
-            <p className="mt-2 text-xs italic text-red-500">
-              {" "}
-              {errors.department?.message}
-            </p>
-          )}
+          {errors.department && <p className="mt-2 text-xs italic text-red-500"> {errors.department?.message}</p>}
         </div>
         <div className="mb-6">
-          <h3 className="mb-4 text-lg font-medium text-gray-900">
-            Társszerző évfolyama
-          </h3>
+          <h3 className="mb-4 text-lg font-medium text-gray-900">Társszerző évfolyama</h3>
           <fieldset className="flex flex-wrap justify-evenly gap-3">
             {[...Array(6).keys()]
               .map((i) => i + 1)
@@ -217,12 +152,7 @@ const CoAuthorInfo = ({
                 </div>
               ))}
           </fieldset>
-          {errors.studyYear && (
-            <p className="mt-2 text-xs italic text-red-500">
-              {" "}
-              {errors.studyYear?.message}
-            </p>
-          )}
+          {errors.studyYear && <p className="mt-2 text-xs italic text-red-500"> {errors.studyYear?.message}</p>}
         </div>
         {!isSubmitted && (!isDirty || isValid) && (
           <button

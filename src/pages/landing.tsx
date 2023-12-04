@@ -27,11 +27,9 @@ const Landing = () => {
       <div className="flex flex-col items-center gap-8 bg-white py-20">
         <div className="flex flex-col items-center justify-center gap-10 px-5 sm:mx-auto sm:w-2/3 sm:px-0 xl:flex-row">
           <p className="font-light md:text-xl xl:w-1/3">
-            Idén 30. alkalommal került megrendezésre május 10-13 között a
-            Marosvásárhelyi Tudományos Diákköri Konferencia. A tudományos
-            diákköri konferencia egyedülállónak számít, ugyanis az egyetemek
-            magyar hallgatói anyanyelvükön mutathatják be tudományos
-            dolgozataikat.
+            Idén 30. alkalommal került megrendezésre május 10-13 között a Marosvásárhelyi Tudományos Diákköri
+            Konferencia. A tudományos diákköri konferencia egyedülállónak számít, ugyanis az egyetemek magyar hallgatói
+            anyanyelvükön mutathatják be tudományos dolgozataikat.
           </p>
           <img
             src={tdkPicture1}
@@ -41,11 +39,9 @@ const Landing = () => {
         </div>
         <div className="flex flex-col items-center justify-center gap-10 px-5 sm:mx-auto sm:w-2/3 sm:px-0 xl:flex-row-reverse">
           <p className="font-light md:text-xl xl:w-1/3">
-            Az idei évben 15 külföldi meghívott előadó és 3 hazai előadó
-            aktuális kutatásáról is hallhattak a érdeklődők, mindemellett 3
-            panel beszélgetésre is sor került amelyeken során 4 külföldi-,
-            illetve 5 hazai szakember beszélgetésébe csatlakozhatott be a
-            hallgatóság.
+            Az idei évben 15 külföldi meghívott előadó és 3 hazai előadó aktuális kutatásáról is hallhattak a
+            érdeklődők, mindemellett 3 panel beszélgetésre is sor került amelyeken során 4 külföldi-, illetve 5 hazai
+            szakember beszélgetésébe csatlakozhatott be a hallgatóság.
           </p>
           <img
             src={tdkPicture2}
@@ -55,8 +51,8 @@ const Landing = () => {
         </div>
         <div className="flex flex-col items-center justify-center gap-10 px-5 sm:mx-auto sm:w-2/3 sm:px-0 xl:flex-row">
           <p className="font-light md:text-xl xl:w-1/3">
-            A konferencia alkalmával 209 dolgozat került bemutatásra, melyből
-            171 hazai illetve 38 külföldi hallgatók által készített.
+            A konferencia alkalmával 209 dolgozat került bemutatásra, melyből 171 hazai illetve 38 külföldi hallgatók
+            által készített.
           </p>
           <img
             src={tdkPicture3}
@@ -69,7 +65,13 @@ const Landing = () => {
             to="/osszefoglalo"
             className="rounded-full bg-tdk-accent px-10 py-4 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-xl"
           >
-            Összefoglaló →
+            Összefoglaló 2023 →
+          </Link>
+          <Link
+            to="/szervezok"
+            className="rounded-full border border-gray-300 px-10 py-4 font-semibold uppercase drop-shadow-md hover:underline xl:text-xl"
+          >
+            Jelentkezz szervezőnek (2024) →
           </Link>
         </div>
       </div>

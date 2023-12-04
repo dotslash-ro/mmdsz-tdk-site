@@ -10,17 +10,12 @@ interface AgreementDocFormProps {
   setCurrentStep: (step: SignupStep) => void;
 }
 
-const AgreementDoc = ({
-  agreementDoc,
-  setAgreementDoc,
-  setCurrentStep,
-}: AgreementDocFormProps) => {
+const AgreementDoc = ({ agreementDoc, setAgreementDoc, setCurrentStep }: AgreementDocFormProps) => {
   return (
     <div>
       <div className="ml-4">
         <p className="mt-8 text-gray-500">
-          A saját hozzájárulási nyilatkozat nevű dokumentum igazolja a szerző
-          hozzájárulását a Kivonathoz.{" "}
+          A saját hozzájárulási nyilatkozat nevű dokumentum igazolja a szerző hozzájárulását a Kivonathoz.{" "}
         </p>
         <p className="mt-4 text-gray-500">
           Egy kitöltött, példa dokumentum{" "}
@@ -36,9 +31,8 @@ const AgreementDoc = ({
           </a>
         </p>
         <p className="text-gray-500">
-          A kék színnel kiegészített részek példaként szolgálnak az űrlap
-          kitöltéséhez. Kérünk, hogy figyelmesen olvasd végig a dokumentumot
-          kitöltés közben.
+          A kék színnel kiegészített részek példaként szolgálnak az űrlap kitöltéséhez. Kérünk, hogy figyelmesen olvasd
+          végig a dokumentumot kitöltés közben.
         </p>
         <p className="mt-4 text-gray-500">
           A fájlra vonatkozó követelmények:
@@ -48,28 +42,20 @@ const AgreementDoc = ({
           </ul>
         </p>
         <p className="mt-4 text-gray-500">
-          Amennyiben további kérdések merülnének fel, keress minket az e-mail
-          címünkön (tdk@mmdsz.ro), vagy írj a konferencia Facebook oldalán.
+          Amennyiben további kérdések merülnének fel, keress minket az e-mail címünkön (tdk@mmdsz.ro), vagy írj a
+          konferencia Facebook oldalán.
         </p>
       </div>
       <div>
         {agreementDoc && agreementDoc.size > 1_000_000 && (
           <div>
-            <div
-              role="alert"
-              className="mt-4 rounded border-l-4 border-red-500 bg-red-50 p-4"
-            >
-              <strong className="block font-medium text-red-800">
-                {" "}
-                A fájl túl nagy!{" "}
-              </strong>
+            <div role="alert" className="mt-4 rounded border-l-4 border-red-500 bg-red-50 p-4">
+              <strong className="block font-medium text-red-800"> A fájl túl nagy! </strong>
 
               <p className="mt-2 text-sm text-red-700">
-                A legnagyobb megengedett fájl méret 1 MB. Ha nem sikerül ennél
-                kisebb méretben beszkennelni a nyilatkozatot, kérünk töltsd fel
-                az eredeti nyilatkozatot és folytasd a jelentkezést, majd a
-                kitöltött nyilatkozatot juttasd el más csatornákon a
-                szervezőkhöz (pl. e-mailen keresztül).
+                A legnagyobb megengedett fájl méret 1 MB. Ha nem sikerül ennél kisebb méretben beszkennelni a
+                nyilatkozatot, kérünk töltsd fel az eredeti nyilatkozatot és folytasd a jelentkezést, majd a kitöltött
+                nyilatkozatot juttasd el más csatornákon a szervezőkhöz (pl. e-mailen keresztül).
               </p>
             </div>
           </div>
@@ -78,18 +64,10 @@ const AgreementDoc = ({
       <div>
         {agreementDoc && agreementDoc.name.split(".").at(-1) != "pdf" && (
           <div>
-            <div
-              role="alert"
-              className="mt-4 rounded border-l-4 border-red-500 bg-red-50 p-4"
-            >
-              <strong className="block font-medium text-red-800">
-                {" "}
-                Helytelen fájl formátum!
-              </strong>
+            <div role="alert" className="mt-4 rounded border-l-4 border-red-500 bg-red-50 p-4">
+              <strong className="block font-medium text-red-800"> Helytelen fájl formátum!</strong>
 
-              <p className="mt-2 text-sm text-red-700">
-                Kérünk a nyilatkozatot ".pdf" formátumban töltsétek fel!
-              </p>
+              <p className="mt-2 text-sm text-red-700">Kérünk a nyilatkozatot ".pdf" formátumban töltsétek fel!</p>
             </div>
           </div>
         )}
@@ -101,13 +79,7 @@ const AgreementDoc = ({
         >
           {!agreementDoc ? (
             <div className="flex flex-col items-center justify-center pt-5 pb-6">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                className="h-16 w-16"
-              >
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="h-16 w-16">
                 <path d="M23 17h-3v-3h-2v3h-3v2h3v3h2v-3h3v-2zm-7 5v2h-15v-24h10.189c3.163 0 9.811 7.223 9.811 9.614v2.386h-2v-1.543c0-4.107-6-2.457-6-2.457s1.518-6-2.638-6h-7.362v20h13z" />
               </svg>
               <p className="mb-2 py-3 text-gray-900">
@@ -127,12 +99,9 @@ const AgreementDoc = ({
                 >
                   <path d="M4 22v-20h16v11.543c0 4.107-6 2.457-6 2.457s1.518 6-2.638 6h-7.362zm18-7.614v-14.386h-20v24h10.189c3.163 0 9.811-7.223 9.811-9.614zm-10.967.614c2.258-4.05 3.826-6.13 5.967-7.999l-.278-.641c-2.596 1.616-3.993 2.833-6.106 5.231-1.125-.802-1.76-1.169-2.76-1.654l-.856.792c1.711 1.585 2.64 2.631 4.033 4.271z" />
                 </svg>
-                <p className="py-3 text-lg text-gray-900">
-                  {agreementDoc.name}
-                </p>
+                <p className="py-3 text-lg text-gray-900">{agreementDoc.name}</p>
                 <p className="mb-2 text-sm text-gray-500">
-                  Módosításhoz húzz ide egy más fájlt vagy kattints erre a
-                  mezőre
+                  Módosításhoz húzz ide egy más fájlt vagy kattints erre a mezőre
                 </p>
               </div>
             </div>
@@ -156,9 +125,7 @@ const AgreementDoc = ({
           <div className="overflow-hidden rounded-full bg-gray-200">
             <div className="h-2 w-5/6 rounded-full bg-blue-400"></div>
           </div>
-          <p className="pt-3 text-sm font-light text-gray-500">
-            5/6 - Saját hozzájárulási nyilatkozat feltöltése
-          </p>
+          <p className="pt-3 text-sm font-light text-gray-500">5/6 - Saját hozzájárulási nyilatkozat feltöltése</p>
         </div>
         {agreementDoc ? (
           <button

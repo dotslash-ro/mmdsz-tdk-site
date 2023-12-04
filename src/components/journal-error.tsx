@@ -43,14 +43,9 @@ const JournalError = () => {
     <div className="flex flex-grow flex-col items-center justify-center font-light text-gray-500">
       {" "}
       <div ref={errorMsgRef} className="scroll-mt-10">
-        Sajnos nem sikerült megjeleníteni az összefoglaló kötetet. A Safari
-        böngésző iOS-en nem támogatja PDF fájlok megjelenítését. Az összefoglaló
-        kötet letölthető{" "}
-        <a
-          className="font-semibold text-sky-400 hover:underline"
-          href={journal}
-          download
-        >
+        Sajnos nem sikerült megjeleníteni az összefoglaló kötetet. A Safari böngésző iOS-en nem támogatja PDF fájlok
+        megjelenítését. Az összefoglaló kötet letölthető{" "}
+        <a className="font-semibold text-sky-400 hover:underline" href={journal} download>
           ide
         </a>{" "}
         kattintással.

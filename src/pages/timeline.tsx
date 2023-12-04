@@ -5,9 +5,7 @@ const Timeline = () => {
   const [current, setCurrent] = useState(6);
 
   useEffect(() => {
-    document
-      .querySelector(`#slide-${current > 6 ? 1 : current}`)
-      ?.scrollIntoView({ behavior: "smooth" });
+    document.querySelector(`#slide-${current > 6 ? 1 : current}`)?.scrollIntoView({ behavior: "smooth" });
   }, [current]);
 
   return (
@@ -31,15 +29,9 @@ const Timeline = () => {
       <ol className="relative space-y-32 border-l border-gray-300 lg:w-1/2">
         <li className="mb-10 ml-10 scroll-mt-10 md:scroll-mt-32" id="slide-1">
           <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border-2 border-white bg-gray-500"></div>
-          <h3 className="pb-4 text-2xl font-semibold text-gray-900">
-            A 30. TDK véget ért.
-          </h3>
-          <time className="mb-10 font-light leading-none text-gray-500">
-            2023. május 10-13.
-          </time>
-          <div className="flex items-center pt-10 font-light text-gray-500">
-            Találkozzunk jövőre, a 31.-ik TDK-n!
-          </div>
+          <h3 className="pb-4 text-2xl font-semibold text-gray-900">A 30. TDK véget ért.</h3>
+          <time className="mb-10 font-light leading-none text-gray-500">2023. május 10-13.</time>
+          <div className="flex items-center pt-10 font-light text-gray-500">Találkozzunk jövőre, a 31.-ik TDK-n!</div>
         </li>
       </ol>
     </div>

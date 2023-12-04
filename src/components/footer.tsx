@@ -9,131 +9,77 @@ const Footer = () => {
           <img src={mmdszLogo} alt="mmdsz-logo" className="h-64 w-64" />
         </div>
         <div>
-          <h2 className="mb-6 text-sm font-semibold uppercase text-white">
-            Egyetemek weboldalai
-          </h2>
+          <h2 className="mb-6 text-sm font-semibold uppercase text-white">Egyetemek weboldalai</h2>
           <ul className="text-sm text-neutral-500">
             <li className="mb-4">
-              <a
-                href="https://umfst.ro"
-                target="_blank"
-                className="hover:underline"
-              >
+              <a href="https://umfst.ro" target="_blank" className="hover:underline">
                 MOGYTTE
               </a>
             </li>
             <li className="mb-4">
-              <a
-                href="https://sapientia.ro"
-                target="_blank"
-                className="hover:underline"
-              >
+              <a href="https://sapientia.ro" target="_blank" className="hover:underline">
                 Sapientia
               </a>
             </li>
             <li className="mb-4">
-              <a
-                href="https://uat.ro"
-                target="_blank"
-                className="hover:underline"
-              >
+              <a href="https://uat.ro" target="_blank" className="hover:underline">
                 Művészeti Egyetem
               </a>
             </li>
             <li className="mb-4">
-              <a
-                href="https://felvi.ro/faculty.php?id=521"
-                target="_blank"
-                className="hover:underline"
-              >
+              <a href="https://felvi.ro/faculty.php?id=521" target="_blank" className="hover:underline">
                 BBTE Marosvásárhely
               </a>
             </li>
           </ul>
         </div>
         <div>
-          <h2 className="mb-6 text-sm font-semibold uppercase text-white">
-            Partner Szervezetek
-          </h2>
+          <h2 className="mb-6 text-sm font-semibold uppercase text-white">Partner Szervezetek</h2>
           <ul className="text-sm text-neutral-500">
             <li className="mb-4">
-              <a
-                href="https://omdsz.ro"
-                target="_blank"
-                className="hover:underline"
-              >
+              <a href="https://omdsz.ro" target="_blank" className="hover:underline">
                 Országos Magyar Diákszövetség
               </a>
             </li>
             <li className="mb-4">
-              <a
-                href="https://studium.ro"
-                target="_blank"
-                className="hover:underline"
-              >
+              <a href="https://studium.ro" target="_blank" className="hover:underline">
                 Studium-Prospero
               </a>
             </li>
             <li className="mb-4">
-              <a
-                href="https://eme.ro"
-                target="_blank"
-                className="hover:underline"
-              >
+              <a href="https://eme.ro" target="_blank" className="hover:underline">
                 Erdélyi Múzeum Egyesület
               </a>
             </li>
             <li className="mb-4">
-              <a
-                href="https://szantbalazs.ro"
-                target="_blank"
-                className="hover:underline"
-              >
+              <a href="https://szantbalazs.ro" target="_blank" className="hover:underline">
                 Szent Balázs Alapítvány
               </a>
             </li>
             <li className="mb-4">
-              <a
-                href="https://rakocziszovetseg.org"
-                target="_blank"
-                className="hover:underline"
-              >
+              <a href="https://rakocziszovetseg.org" target="_blank" className="hover:underline">
                 Rákóczi Szövetség
               </a>
             </li>
             <li className="mb-4">
-              <a
-                href="https://kmei.ro"
-                target="_blank"
-                className="hover:underline"
-              >
+              <a href="https://kmei.ro" target="_blank" className="hover:underline">
                 Kolozsvári Egyetemi Magyar Intézet
               </a>
             </li>
             <li className="mb-4">
-              <a
-                href="https://hook.hu"
-                target="_blank"
-                className="hover:underline"
-              >
+              <a href="https://hook.hu" target="_blank" className="hover:underline">
                 HÖOK
               </a>
             </li>
             <li className="mb-4">
-              <a
-                href="https://anosr.ro"
-                target="_blank"
-                className="hover:underline"
-              >
+              <a href="https://anosr.ro" target="_blank" className="hover:underline">
                 ANOSR
               </a>
             </li>
           </ul>
         </div>
         <div>
-          <h2 className="mb-6 text-sm font-semibold uppercase text-white">
-            Szabályzatok
-          </h2>
+          <h2 className="mb-6 text-sm font-semibold uppercase text-white">Szabályzatok</h2>
           <ul className="text-sm text-neutral-500">
             <li className="mb-4">
               <NavLink to="/gdpr" className="hover:underline">
@@ -146,11 +92,7 @@ const Footer = () => {
       </div>
       <div className="flex flex-col items-center justify-center bg-tdk-secondary py-6 px-4 md:flex-row">
         <div className="text-center text-sm text-neutral-500">
-          <a
-            href="https://mmdsz.ro/"
-            className="hover:underline"
-            target="_blank"
-          >
+          <a href="https://mmdsz.ro/" className="hover:underline" target="_blank">
             MMDSZ
           </a>{" "}
           © 2023. All Rights Reserved.
@@ -176,10 +118,7 @@ const Footer = () => {
           </svg>
           <span className="sr-only">Facebook page</span>
         </a>
-        <a
-          href="https://instagram.com/tdk_mmdsz?igshid=YmMyMTA2M2Y="
-          className="text-gray-400 hover:text-gray-900"
-        >
+        <a href="https://instagram.com/tdk_mmdsz?igshid=YmMyMTA2M2Y=" className="text-gray-400 hover:text-gray-900">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"

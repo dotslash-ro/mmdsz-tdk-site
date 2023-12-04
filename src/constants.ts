@@ -1,16 +1,7 @@
 export const serverUrl = "https://mmdsz-tdk-functions.vercel.app/api";
-export const workshopServerUrl = //"http://localhost:8000/api";
-  "https://mmdsz-tdk-workshop-backend-production.up.railway.app/api";
+export const workshopServerUrl = "https://mmdsz-tdk-workshop-backend-production.up.railway.app/api"; //"http://localhost:8000/api";
 export const maxSignUpPerEmail = 4;
-export const universityList = [
-  "",
-  "MOGYTTE",
-  "SE",
-  "DE",
-  "PTE",
-  "SZTE",
-  "Egyéb",
-];
+export const universityList = ["", "MOGYTTE", "SE", "DE", "PTE", "SZTE", "Egyéb"];
 
 export const sectionList = [
   "",
@@ -55,8 +46,7 @@ export const sectionList = [
   "Urológia",
 ] as const;
 
-export const oauthClientId =
-  "858299120064-428uvpomj4tre0ek9mh58uc7ushudiio.apps.googleusercontent.com";
+export const oauthClientId = "858299120064-428uvpomj4tre0ek9mh58uc7ushudiio.apps.googleusercontent.com";
 
 export const workshops = [
   {
@@ -107,10 +97,8 @@ export const workshops = [
   },
   {
     id: "clhdenmvm0006mc19el1247v6",
-    title:
-      "Kórszövettani vizsgálat eredménye: diagnosis klinikai adatokkal vagy anélkül?",
-    speakers:
-      "Dr. Horváth Emőke, Dr. Mezei Tibor, Dr. Kövecsi Attila, Dr. Kovács Zsolt, Dr. Szodorai Rita:",
+    title: "Kórszövettani vizsgálat eredménye: diagnosis klinikai adatokkal vagy anélkül?",
+    speakers: "Dr. Horváth Emőke, Dr. Mezei Tibor, Dr. Kövecsi Attila, Dr. Kovács Zsolt, Dr. Szodorai Rita:",
     targetAudience: "4-ed évtől",
     location: "MOGYTTE Patológia Tanszék gyakorlóterme",
     date: "2023.05.09 (Kedd), 16:00-18:00",
@@ -157,8 +145,7 @@ export const workshops = [
     speakers:
       "Dr. Frigy Attila, Dr. Gábor Kelemen Hunor, Dr. Czerán Botond, Dr. Heidenhoffer Erhard, Dr. Cseke Judit, Dr. Palkó Róbert",
     targetAudience: "4-ed évtől",
-    location:
-      "IV. Belgyógyászati Tanszék, Gh. Marinescu u. 1 szám, 3. emeleti előadóterem",
+    location: "IV. Belgyógyászati Tanszék, Gh. Marinescu u. 1 szám, 3. emeleti előadóterem",
     date: "2023.05.10 (Szerda), 14:00-16:00",
     description:
       "A point of care (POC) echokardiográfia módszertanának és indikációinak rövid bemutatása, illetve klinikai alkalmazásának demonstrálása real life eseteken.",
@@ -172,8 +159,7 @@ export const workshops = [
     id: "clhdenmxb000emc191ibier8c",
     title: "A szem anatómiája (disznószem boncolás)",
     speakers: "Dr. Máté-István Ildikó",
-    targetAudience:
-      "1-től 4-ed évig, kicsi olló, szemöldök csipesz, orvosi köpeny",
+    targetAudience: "1-től 4-ed évig, kicsi olló, szemöldök csipesz, orvosi köpeny",
     location: "Gecse Dániel Református Orvosi és Egészségügyi Szakkollégium",
     date: "2023.05.11 (Csütörtök), 15:00-17:00",
     description:
@@ -187,8 +173,7 @@ export const workshops = [
   {
     id: "clhdenmxn000gmc190l1sgxmn",
     title: "Nemi úton terjedő fertőzések, mi rejlik a színfalak mögött",
-    speakers:
-      "Dr. ifj. Kiss Szilárd Leó, Dr. Székely Edit, Dr. Ladányi Emmánuel",
+    speakers: "Dr. ifj. Kiss Szilárd Leó, Dr. Székely Edit, Dr. Ladányi Emmánuel",
     targetAudience: "1. évtől",
     location: "Mikrobiológia tanszék",
     date: "2023.05.10 (Szerda), 17:00-18:30",
@@ -202,8 +187,7 @@ export const workshops = [
   },
   {
     id: "clhdenmxy000imc19ybfwko02",
-    title:
-      "Vezető tünet mellkasfájdalom-fogódzók az ok tisztázásához, csapdák és tévutak",
+    title: "Vezető tünet mellkasfájdalom-fogódzók az ok tisztázásához, csapdák és tévutak",
     speakers: "Dr. Germán-Salló Márta",
     targetAudience: "3-ad évtől",
     location: "Studium HUB - Alsó Előadóterem",
@@ -263,8 +247,7 @@ export const workshops = [
   },
   {
     id: "clhdenmz4000qmc19y04qbg73",
-    title:
-      "Laborvizsgálati eredmények kiértékelése klinikai kontextusban: értelmezések, összefüggések, buktatók",
+    title: "Laborvizsgálati eredmények kiértékelése klinikai kontextusban: értelmezések, összefüggések, buktatók",
     speakers: "Dr. Szatmári Krisztina",
     targetAudience: "4-ed évtől",
     location: "Studium HUB - Felső Előadóterem",
@@ -279,8 +262,7 @@ export const workshops = [
   },
   {
     id: "clhdenmzf000smc192uy7160g",
-    title:
-      "Lokális lebenyek és ínvarrat technikák alkalmazása a plasztikai sebészetben",
+    title: "Lokális lebenyek és ínvarrat technikák alkalmazása a plasztikai sebészetben",
     speakers: "Dr. Bálint Orsolya",
     targetAudience: "4-ed évtől, köpeny, vonalzó",
     location: "Anatómia tanszék, 1-es előadó terem",
@@ -432,8 +414,7 @@ export const workshops = [
     id: "clhdenn2y001cmc198gejtswq",
     title: "Gyógyszertan vetélkedő",
     speakers: "Dr. Gáll Zsolt, Dr. Bába László",
-    targetAudience:
-      "2-od évtől. A jelentkezők, a helyszínen vegyes, négy fős csapatokra lesznek osztva",
+    targetAudience: "2-od évtől. A jelentkezők, a helyszínen vegyes, négy fős csapatokra lesznek osztva",
     location: "Gyógyszerészi kar épülete, farmakológia laboratórium (C4)",
     date: "2023.05.12 (Péntek), 14:00-17:00",
     description:
@@ -446,8 +427,7 @@ export const workshops = [
   },
   {
     id: "clhdenn37001emc19i24smaiz",
-    title:
-      "Ideális lágyrészprofil kialakítása implantációs fogpótlás körül az esztétikai zónában",
+    title: "Ideális lágyrészprofil kialakítása implantációs fogpótlás körül az esztétikai zónában",
     speakers: "Dr. Szász Előd, Dr. Dakó Alpár",
     targetAudience: "5-öd évtől, orvosi köpeny/scrub",
     location: "Pedodoncia Ortodoncia tanszék ",
@@ -478,8 +458,7 @@ export const workshops = [
   },
   {
     id: "clhdenn3q001imc19wurqoxxf",
-    title:
-      "Digital Dentistry egy helyen - a dicomLAB Platform bemutatása és Hands-on kipróbálása ",
+    title: "Digital Dentistry egy helyen - a dicomLAB Platform bemutatása és Hands-on kipróbálása ",
     speakers: "Dr. Varga Endre",
     targetAudience: "5-öd évtől, saját laptop",
     location: "A helyszín részleteivel kapcsolatban e-mailben értesítünk!",
@@ -509,8 +488,7 @@ export const workshops = [
   },
   {
     id: "clhdenn4a001mmc19caiyrz5q",
-    title:
-      "Útmutató a moláris restaurációkhoz-Alapvető vonalak a tökéletes rágófelszín helyreállításához",
+    title: "Útmutató a moláris restaurációkhoz-Alapvető vonalak a tökéletes rágófelszín helyreállításához",
     speakers: "Dr. Bardocz-Veres Zsuzsanna",
     targetAudience: "4-ed évtől, orvosi köpeny/scrub",
     location: "E24-es terem",
@@ -774,8 +752,7 @@ export const workshops = [
     id: "clhdenn96002imc1901xkudmn",
     title: "Gyógyszertan vetélkedő",
     speakers: "Dr. Gáll Zsolt, Dr. Bába László",
-    targetAudience:
-      "3-5. év. A helyszínen vegyes, négy fős csapatokra lesznek osztva.",
+    targetAudience: "3-5. év. A helyszínen vegyes, négy fős csapatokra lesznek osztva.",
     location: "Gyógyszerészi kar épülete, farmakológia laboratórium (C4)",
     date: "2023.05.12 (Péntek), 14:00-15:00",
     description:
@@ -940,8 +917,7 @@ export const workshops = [
   },
   {
     id: "clhdennd40034mc19bhx5yof3",
-    title:
-      "Kalcium anyagcsere: laboratóriumi paraméterek, szabályozó tényezők, patobiokémiai szempontok",
+    title: "Kalcium anyagcsere: laboratóriumi paraméterek, szabályozó tényezők, patobiokémiai szempontok",
     speakers: "Prof. dr. Nagy Előd, Dr. Kovács Béla, Dr. Nemes- Nagy Enikő",
     targetAudience: "1. évtől, orvosi köpeny",
     location: "Biokémia laboratórium, Gyógyszerészeti épület",

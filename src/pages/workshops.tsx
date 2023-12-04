@@ -12,15 +12,9 @@ const Workshops = () => {
     setWorkshopsToShow(
       workshops
         .filter((workshop) =>
-          section.length
-            ? workshop.section === section || workshop.section === "Mindenkinek"
-            : true
+          section.length ? workshop.section === section || workshop.section === "Mindenkinek" : true
         )
-        .filter((workshop) =>
-          studyYear
-            ? studyYear <= workshop.yearTo && studyYear >= workshop.yearFrom
-            : true
-        )
+        .filter((workshop) => (studyYear ? studyYear <= workshop.yearTo && studyYear >= workshop.yearFrom : true))
     );
   }, [section, studyYear]);
 
@@ -30,35 +24,25 @@ const Workshops = () => {
         <h2 className="pb-20 text-center text-5xl font-bold">Műhelymunkák</h2>
         <div className="flex flex-col items-center justify-center pb-10 md:flex-row md:space-x-10">
           <div className="flex w-full flex-col px-5">
-            <label
-              htmlFor="section-select"
-              className="mb-2 block text-lg font-medium text-gray-900"
-            >
+            <label htmlFor="section-select" className="mb-2 block text-lg font-medium text-gray-900">
               Kar
             </label>
             <select
               id="section-select"
               className="ml-4 block w-full rounded-full border border-gray-400 bg-white p-2.5 text-gray-900 focus:border-tdk-primary"
-              onChange={(e) =>
-                setSection((e.target as HTMLSelectElement).value)
-              }
+              onChange={(e) => setSection((e.target as HTMLSelectElement).value)}
             >
-              {["", "ÁOK", "FOK", "GYK", "Mindenkinek"].map(
-                (section, index) => {
-                  return (
-                    <option className="text-md" key={index}>
-                      {section}
-                    </option>
-                  );
-                }
-              )}
+              {["", "ÁOK", "FOK", "GYK", "Mindenkinek"].map((section, index) => {
+                return (
+                  <option className="text-md" key={index}>
+                    {section}
+                  </option>
+                );
+              })}
             </select>
           </div>
           <div className="flex w-full flex-col px-5 pt-5 md:pt-0">
-            <label
-              htmlFor="study-year-select"
-              className="mb-2 block text-lg font-medium text-gray-900"
-            >
+            <label htmlFor="study-year-select" className="mb-2 block text-lg font-medium text-gray-900">
               Évfolyam
             </label>
             <select

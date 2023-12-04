@@ -4,19 +4,12 @@ import CoordinatorInfo, { CoordinatorInfoSchema } from "./coordinator-info";
 
 interface CoordinatorInfosProps {
   setCurrentStep: (step: SignupStep) => void;
-  setCoordinatorInfosParent: (
-    CoordinatorInfos: Array<CoordinatorInfoSchema>
-  ) => void;
+  setCoordinatorInfosParent: (CoordinatorInfos: Array<CoordinatorInfoSchema>) => void;
 }
 
-const CoordinatorInfos = ({
-  setCurrentStep,
-  setCoordinatorInfosParent,
-}: CoordinatorInfosProps) => {
+const CoordinatorInfos = ({ setCurrentStep, setCoordinatorInfosParent }: CoordinatorInfosProps) => {
   const [coordinatorCount, setCoordinatorCount] = useState(1);
-  const [coordinatorInfos, setCoordinatorInfos] = useState<
-    Array<CoordinatorInfoSchema>
-  >([]);
+  const [coordinatorInfos, setCoordinatorInfos] = useState<Array<CoordinatorInfoSchema>>([]);
 
   return (
     <div>
@@ -30,9 +23,7 @@ const CoordinatorInfos = ({
             return (
               <div key={index}>
                 <CoordinatorInfo
-                  setCoordinatorInfo={(coordinatorInfo) =>
-                    setCoordinatorInfos([...coordinatorInfos, coordinatorInfo])
-                  }
+                  setCoordinatorInfo={(coordinatorInfo) => setCoordinatorInfos([...coordinatorInfos, coordinatorInfo])}
                 />
               </div>
             );
@@ -53,9 +44,7 @@ const CoordinatorInfos = ({
           <div className="overflow-hidden rounded-full bg-gray-200">
             <div className="h-2 w-2/3 rounded-full bg-blue-400"></div>
           </div>
-          <p className="mt-4 text-sm font-light text-gray-500">
-            4/6 - Témavezető(k) adatai
-          </p>
+          <p className="mt-4 text-sm font-light text-gray-500">4/6 - Témavezető(k) adatai</p>
         </div>
         {coordinatorInfos.length > 0 ? (
           <button

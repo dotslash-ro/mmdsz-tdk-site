@@ -19,6 +19,7 @@ import Accreditation from "./pages/accreditation";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { oauthClientId } from "./constants";
 import Summary from "./pages/summary";
+import OrganizerSignup from "./pages/organizer-signup";
 
 const router = createHashRouter([
   {
@@ -68,6 +69,10 @@ const router = createHashRouter([
   {
     path: "/osszefoglalo",
     element: <Summary />,
+  },
+  {
+    path: "/szervezoi-jelentkezes",
+    element: <OrganizerSignup />,
   },
   {
     path: "/osszefoglalok",

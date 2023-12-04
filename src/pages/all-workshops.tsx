@@ -27,8 +27,7 @@ const AllWorkshops = () => {
   if (error) {
     return (
       <div className="h-screen items-center justify-center text-sm font-semibold text-rose-500">
-        Sajnos egy hiba lépett fel. Vedd fel a kapcsolatot a szervezőkkel a
-        következő címen: tdk@mmdsz.ro
+        Sajnos egy hiba lépett fel. Vedd fel a kapcsolatot a szervezőkkel a következő címen: tdk@mmdsz.ro
       </div>
     );
   }
@@ -47,12 +46,7 @@ const AllWorkshops = () => {
         <h2 className="pb-20 text-center text-5xl font-bold">Műhelymunkák</h2>
         {workshops.map((workshop, index) => (
           <div key={index}>
-            <SignupWorkshop
-              id={workshop}
-              email={undefined}
-              canSignUp={true}
-              fetchApplicationsNumber={async () => {}}
-            />
+            <SignupWorkshop id={workshop} email={undefined} canSignUp={true} fetchApplicationsNumber={async () => {}} />
           </div>
         ))}
       </div>

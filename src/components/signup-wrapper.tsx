@@ -28,28 +28,15 @@ export type SignupStep = (typeof signupSteps)[number];
 const signupStatuses = ["not-signedup", "signed-up", "error"] as const;
 type SignupStatus = (typeof signupStatuses)[number];
 
-const SignupWrapper = ({
-  scrollToRef,
-}: {
-  scrollToRef: MutableRefObject<HTMLDivElement | null>;
-}) => {
-  const [signupStatus, setSignupStatus] =
-    useState<SignupStatus>("not-signedup");
+const SignupWrapper = ({ scrollToRef }: { scrollToRef: MutableRefObject<HTMLDivElement | null> }) => {
+  const [signupStatus, setSignupStatus] = useState<SignupStatus>("not-signedup");
   const [dataUploaded, setDataUploaded] = useState(false);
 
   const [currentStep, setCurrentStep] = useState<SignupStep>("preSignup");
-  const [personalInfo, setPersonalInfo] = useState<
-    PersonalInfoSchema | undefined
-  >(undefined);
-  const [documentInfo, setDocumentInfo] = useState<
-    DocumentInfoSchema | undefined
-  >(undefined);
-  const [coAuthorInfos, setCoAuthorInfos] = useState<Array<CoAuthorInfoSchema>>(
-    []
-  );
-  const [coordinatorInfos, setCoordinatorInfos] = useState<
-    Array<CoordinatorInfoSchema>
-  >([]);
+  const [personalInfo, setPersonalInfo] = useState<PersonalInfoSchema | undefined>(undefined);
+  const [documentInfo, setDocumentInfo] = useState<DocumentInfoSchema | undefined>(undefined);
+  const [coAuthorInfos, setCoAuthorInfos] = useState<Array<CoAuthorInfoSchema>>([]);
+  const [coordinatorInfos, setCoordinatorInfos] = useState<Array<CoordinatorInfoSchema>>([]);
   const [agreementDoc, setAgreementDoc] = useState<File>();
   const [loading, setLoading] = useState(false);
 
@@ -58,9 +45,7 @@ const SignupWrapper = ({
     const _signupStatus = localStorage.getItem("signupStatus");
     if (!_signupStatus) {
       setSignupStatus("not-signedup");
-    } else if (
-      signupStatuses.find((validStatus) => validStatus === _signupStatus)
-    ) {
+    } else if (signupStatuses.find((validStatus) => validStatus === _signupStatus)) {
       setSignupStatus(_signupStatus as SignupStatus);
     } else {
       setSignupStatus("not-signedup");
@@ -91,9 +76,7 @@ const SignupWrapper = ({
     // fetch coordinator info, from previous session, if any
     const _coordinatorInfos = localStorage.getItem("coordinatorInfos");
     if (_coordinatorInfos) {
-      setCoordinatorInfos(
-        JSON.parse(_coordinatorInfos) as CoordinatorInfoSchema[]
-      );
+      setCoordinatorInfos(JSON.parse(_coordinatorInfos) as CoordinatorInfoSchema[]);
     }
   }, []);
 
@@ -110,18 +93,12 @@ const SignupWrapper = ({
       const body = JSON.stringify({
         personalInfo: {
           ...personalInfo,
-          university:
-            personalInfo.university == "Egyéb"
-              ? personalInfo.otherUniversity
-              : personalInfo.university,
+          university: personalInfo.university == "Egyéb" ? personalInfo.otherUniversity : personalInfo.university,
         },
         documentInfo,
         coAuthorInfos: coAuthorInfos.map((coAuthorInfo) => ({
           ...coAuthorInfo,
-          university:
-            coAuthorInfo.university == "Egyéb"
-              ? coAuthorInfo.otherUniversity
-              : coAuthorInfo.university,
+          university: coAuthorInfo.university == "Egyéb" ? coAuthorInfo.otherUniversity : coAuthorInfo.university,
         })),
         coordinatorInfos,
       });
@@ -154,10 +131,7 @@ const SignupWrapper = ({
       localStorage.setItem("personalInfo", JSON.stringify(personalInfo));
       localStorage.setItem("documentInfo", JSON.stringify(documentInfo));
       localStorage.setItem("coAuthorInfos", JSON.stringify(coAuthorInfos));
-      localStorage.setItem(
-        "coordinatorInfos",
-        JSON.stringify(coordinatorInfos)
-      );
+      localStorage.setItem("coordinatorInfos", JSON.stringify(coordinatorInfos));
     }
     // prepare form data for file upload
     const data = new FormData();
@@ -220,8 +194,7 @@ const SignupWrapper = ({
     return (
       <div className="flex h-48 flex-col items-center justify-center">
         <div className="py-6 text-center text-xl font-semibold text-red-400">
-          Sajnos a hozzájárulási nyilatkozat feltöltése alatt egy hiba lépett
-          fel!
+          Sajnos a hozzájárulási nyilatkozat feltöltése alatt egy hiba lépett fel!
         </div>
         <button
           className="rounded-full bg-tdk-accent py-2 px-5 text-lg font-bold uppercase text-white hover:underline"
@@ -274,30 +247,22 @@ const SignupWrapper = ({
           A kivonat feltöltéséhez: az alábbi adatokra lesz szükség:
         </h3>
         <ul className="ml-6 list-disc text-gray-500">
-          <li>
-            A kivonat maximális hossza 2200 karakter (szóköz nélkül, cím
-            nélkül).{" "}
-          </li>
+          <li>A kivonat maximális hossza 2200 karakter (szóköz nélkül, cím nélkül). </li>
           <li>A cím 3 nyelven (magyar, román, angol).</li>
           <li>
-            A kivonat szövegének az alábbi szerkezetet kell követnie: bevezetés,
-            célkitűzések, módszerek, eredmények és következtetés.
+            A kivonat szövegének az alábbi szerkezetet kell követnie: bevezetés, célkitűzések, módszerek, eredmények és
+            következtetés.
           </li>
         </ul>
-        <h3 className="mb-4 mt-6 text-lg font-light text-gray-800">
-          A beküldéshez az alábbi adatokra lesz szükség:{" "}
-        </h3>
+        <h3 className="mb-4 mt-6 text-lg font-light text-gray-800">A beküldéshez az alábbi adatokra lesz szükség: </h3>
         <ul className="ml-6 list-disc text-gray-500">
           <li>A szerző neve, egyetem, évfolyam, email, kar, telefonszám.</li>
           <li>Társszerzők neve, e-mail címe, egyeteme, évfolyama, kara </li>
           <li>Témavezető neve és beosztása, valamint egyetem (intézet). </li>
         </ul>
-        <h3 className="mb-4 mt-6 text-lg font-light text-gray-800">
-          Saját hozzájárulási nyilatkozat
-        </h3>
+        <h3 className="mb-4 mt-6 text-lg font-light text-gray-800">Saját hozzájárulási nyilatkozat</h3>
         <p className="mt-8 text-gray-500">
-          A tavalyi évhez hasonlóan idén is szükséges a saját hozzájárulási
-          nyilatkozat kitöltése.{" "}
+          A tavalyi évhez hasonlóan idén is szükséges a saját hozzájárulási nyilatkozat kitöltése.{" "}
         </p>
         <p className="mt-4 text-gray-500">
           Egy kitöltött, példa dokumentum{" "}
@@ -313,9 +278,8 @@ const SignupWrapper = ({
           </a>
         </p>
         <p className="text-gray-500">
-          A kék színnel kiegészített részek példaként szolgálnak az űrlap
-          kitöltéséhez. Kérünk, hogy figyelmesen olvasd végig a dokumentumot
-          kitöltés közben.
+          A kék színnel kiegészített részek példaként szolgálnak az űrlap kitöltéséhez. Kérünk, hogy figyelmesen olvasd
+          végig a dokumentumot kitöltés közben.
         </p>
         <p className="mt-4 text-gray-500">
           A fájlra vonatkozó követelmények:
@@ -325,8 +289,8 @@ const SignupWrapper = ({
           </ul>
         </p>
         <p className="mt-4 text-gray-500">
-          Amennyiben további kérdések merülnének fel, keress minket az e-mail
-          címünkön (tdk@mmdsz.ro), vagy írj a konferencia Facebook oldalán.
+          Amennyiben további kérdések merülnének fel, keress minket az e-mail címünkön (tdk@mmdsz.ro), vagy írj a
+          konferencia Facebook oldalán.
         </p>
         <button
           className="mt-6 rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-xl"
@@ -339,44 +303,20 @@ const SignupWrapper = ({
   }
 
   if (currentStep == "personalInfo") {
-    return (
-      <PersonalInfo
-        setPersonalInfo={setPersonalInfo}
-        setCurrentStep={setCurrentStep}
-      />
-    );
+    return <PersonalInfo setPersonalInfo={setPersonalInfo} setCurrentStep={setCurrentStep} />;
   }
   if (currentStep == "documentInfo") {
-    return (
-      <DocumentInfo
-        setDocumentInfo={setDocumentInfo}
-        setCurrentStep={setCurrentStep}
-      />
-    );
+    return <DocumentInfo setDocumentInfo={setDocumentInfo} setCurrentStep={setCurrentStep} />;
   }
   if (currentStep == "coAuthorInfo") {
-    return (
-      <CoAuthorInfos
-        setCoAuthorInfosParent={setCoAuthorInfos}
-        setCurrentStep={setCurrentStep}
-      />
-    );
+    return <CoAuthorInfos setCoAuthorInfosParent={setCoAuthorInfos} setCurrentStep={setCurrentStep} />;
   }
   if (currentStep == "coordinatorInfo") {
-    return (
-      <CoordinatorInfos
-        setCoordinatorInfosParent={setCoordinatorInfos}
-        setCurrentStep={setCurrentStep}
-      />
-    );
+    return <CoordinatorInfos setCoordinatorInfosParent={setCoordinatorInfos} setCurrentStep={setCurrentStep} />;
   }
   if (currentStep == "agreementDoc") {
     return (
-      <AgreementDoc
-        setAgreementDoc={setAgreementDoc}
-        agreementDoc={agreementDoc}
-        setCurrentStep={setCurrentStep}
-      />
+      <AgreementDoc setAgreementDoc={setAgreementDoc} agreementDoc={agreementDoc} setCurrentStep={setCurrentStep} />
     );
   }
 

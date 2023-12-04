@@ -12,9 +12,7 @@ const Workshops = () => {
   const [workshops, setWorkshops] = useState<string[]>([]);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [personalInfo, setPersonalInfo] = useState<
-    { section: string; studyYear: number } | undefined
-  >(undefined);
+  const [personalInfo, setPersonalInfo] = useState<{ section: string; studyYear: number } | undefined>(undefined);
   const [studyYear, setStudyYear] = useState<number>(0);
   const [section, setSection] = useState("");
 
@@ -37,10 +35,7 @@ const Workshops = () => {
 
   function saveSignupInfo() {
     setPersonalInfo({ section, studyYear });
-    localStorage.setItem(
-      "personalInfo",
-      JSON.stringify({ section, studyYear })
-    );
+    localStorage.setItem("personalInfo", JSON.stringify({ section, studyYear }));
   }
 
   useEffect(() => {
@@ -52,16 +47,13 @@ const Workshops = () => {
   useEffect(() => {
     (async () => {
       if (user) {
-        const resp = await fetch(
-          `https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`,
-          {
-            headers: {
-              Authorization: `Bearer ${user.access_token}`,
-              Accept: "application/json",
-            },
-            method: "GET",
-          }
-        );
+        const resp = await fetch(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`, {
+          headers: {
+            Authorization: `Bearer ${user.access_token}`,
+            Accept: "application/json",
+          },
+          method: "GET",
+        });
         const data = await resp.json();
         setProfile(data);
       }
@@ -106,15 +98,11 @@ const Workshops = () => {
       <div className="flex h-screen flex-col items-center justify-center px-5 lg:mx-auto lg:w-2/3">
         {" "}
         <p className="pb-6 text-center text-sm font-semibold text-gray-600">
-          Add meg a karod és évfolyamod, hogy a megfelelő műhelymukákat
-          mutathassuk neked. Ezt csak egyszer tudod megadni, utólag nem lehet
-          módosítani!
+          Add meg a karod és évfolyamod, hogy a megfelelő műhelymukákat mutathassuk neked. Ezt csak egyszer tudod
+          megadni, utólag nem lehet módosítani!
         </p>
         <div className="flex w-full flex-col px-5">
-          <label
-            htmlFor="section-select"
-            className="mb-2 block text-lg font-medium text-gray-900"
-          >
+          <label htmlFor="section-select" className="mb-2 block text-lg font-medium text-gray-900">
             Kar
           </label>
           <select
@@ -132,10 +120,7 @@ const Workshops = () => {
           </select>
         </div>
         <div className="flex w-full flex-col px-5 pt-5 md:pt-0">
-          <label
-            htmlFor="study-year-select"
-            className="mb-2 block text-lg font-medium text-gray-900"
-          >
+          <label htmlFor="study-year-select" className="mb-2 block text-lg font-medium text-gray-900">
             Évfolyam
           </label>
           <select
@@ -171,8 +156,7 @@ const Workshops = () => {
   if (error) {
     return (
       <div className="h-screen items-center justify-center text-sm font-semibold text-rose-500">
-        Sajnos egy hiba lépett fel. Vedd fel a kapcsolatot a szervezőkkel a
-        következő címen: tdk@mmdsz.ro
+        Sajnos egy hiba lépett fel. Vedd fel a kapcsolatot a szervezőkkel a következő címen: tdk@mmdsz.ro
       </div>
     );
   }
@@ -188,16 +172,13 @@ const Workshops = () => {
   if (!profile) {
     return (
       <div className="mx-auto flex h-screen flex-col items-center justify-center px-10 pb-10 font-semibold text-neutral-500 lg:w-2/3">
-        A műhelymunkákra való jelentkezéshez csatlakoztatnod kell a Google
-        fiókod az oldalhoz!
+        A műhelymunkákra való jelentkezéshez csatlakoztatnod kell a Google fiókod az oldalhoz!
         <button
           className="my-10 flex w-48 items-center justify-center rounded-full border bg-neutral-100 px-3 py-1 drop-shadow-md hover:underline"
           onClick={() => login()}
         >
           <img src={googleIcon} className="h-6 w-6" />
-          <div className=" mx-3 my-2 font-semibold text-neutral-600 lg:block lg:px-3">
-            Bejelentkezés
-          </div>
+          <div className=" mx-3 my-2 font-semibold text-neutral-600 lg:block lg:px-3">Bejelentkezés</div>
         </button>
       </div>
     );
@@ -210,14 +191,8 @@ const Workshops = () => {
           className="flex items-center justify-center rounded-full border bg-neutral-100 px-3 py-2 drop-shadow-md"
           onClick={() => login()}
         >
-          <img
-            src={profile.picture}
-            referrerPolicy="no-referrer"
-            className="mx-1 h-10 w-10 rounded-full"
-          />
-          <div className="mx-1 text-sm font-semibold text-neutral-600">
-            {profile.name}
-          </div>
+          <img src={profile.picture} referrerPolicy="no-referrer" className="mx-1 h-10 w-10 rounded-full" />
+          <div className="mx-1 text-sm font-semibold text-neutral-600">{profile.name}</div>
           <div className="ml-1 text-sm font-light text-neutral-500">
             {personalInfo.section} - {personalInfo.studyYear}
           </div>

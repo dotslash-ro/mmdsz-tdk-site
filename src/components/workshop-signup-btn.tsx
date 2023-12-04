@@ -39,18 +39,13 @@ const WorkshopSignupButton = ({
   if (noOfAvailableSeats <= 0) {
     return (
       <div className="flex w-full justify-center">
-        Erre a műhelymunkára elfogytak a helyek. Esetleges felszabadult
-        helyekért kövesd ezt az oldalt!
+        Erre a műhelymunkára elfogytak a helyek. Esetleges felszabadult helyekért kövesd ezt az oldalt!
       </div>
     );
   }
 
   if (!canSignUp) {
-    return (
-      <div className="flex w-full justify-center">
-        Nem jelentkezhetsz több műhelymunkára!
-      </div>
-    );
+    return <div className="flex w-full justify-center">Nem jelentkezhetsz több műhelymunkára!</div>;
   }
   return (
     <button

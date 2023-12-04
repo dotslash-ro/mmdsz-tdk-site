@@ -32,21 +32,13 @@ const Navbar = () => {
                   ></path>
                 </svg>
               ) : (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="h-auto w-6"
-                >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-auto w-6">
                   <path d="M12.0007 10.5865L16.9504 5.63672L18.3646 7.05093L13.4149 12.0007L18.3646 16.9504L16.9504 18.3646L12.0007 13.4149L7.05093 18.3646L5.63672 16.9504L10.5865 12.0007L5.63672 7.05093L7.05093 5.63672L12.0007 10.5865Z"></path>
                 </svg>
               )}
             </button>
           </div>
-          <div
-            className="w-full bg-tdk-primary lg:block lg:w-auto"
-            hidden={!showMenu}
-          >
+          <div className="w-full bg-tdk-primary lg:block lg:w-auto" hidden={!showMenu}>
             <ul
               className="mt-4 flex flex-col items-center font-medium lg:mt-0 lg:flex-row lg:space-x-4 lg:border-0 lg:p-0 lg:py-4 xl:space-x-8"
               hidden={!showMenu}
@@ -63,7 +55,7 @@ const Navbar = () => {
                   Szabályzat
                 </NavLink>
               </li>
-              <li>
+              {/* <li>
                 <NavLink
                   to="/akkreditacio"
                   className={({ isActive }) =>
@@ -74,7 +66,7 @@ const Navbar = () => {
                 >
                   Akkreditáció
                 </NavLink>
-              </li>
+              </li> */}
               <li>
                 <NavLink
                   to="/rolunk"

@@ -7,14 +7,9 @@ interface CoAuthorInfosProps {
   setCoAuthorInfosParent: (coAuthorInfos: Array<CoAuthorInfoSchema>) => void;
 }
 
-const CoAuthorInfos = ({
-  setCurrentStep,
-  setCoAuthorInfosParent,
-}: CoAuthorInfosProps) => {
+const CoAuthorInfos = ({ setCurrentStep, setCoAuthorInfosParent }: CoAuthorInfosProps) => {
   const [coAuthorCount, setCoAuthorCount] = useState(0);
-  const [coAuthorInfos, setCoAuthorInfos] = useState<Array<CoAuthorInfoSchema>>(
-    []
-  );
+  const [coAuthorInfos, setCoAuthorInfos] = useState<Array<CoAuthorInfoSchema>>([]);
   const [isDirty, setIsDirty] = useState(false);
 
   return (
@@ -29,9 +24,7 @@ const CoAuthorInfos = ({
             return (
               <div key={index}>
                 <CoAuthorInfo
-                  setCoAuthorInfo={(coAuthorInfo) =>
-                    setCoAuthorInfos([...coAuthorInfos, coAuthorInfo])
-                  }
+                  setCoAuthorInfo={(coAuthorInfo) => setCoAuthorInfos([...coAuthorInfos, coAuthorInfo])}
                   removeCoAuthorForm={() => setCoAuthorCount(coAuthorCount - 1)}
                   index={index}
                   setIsDirty={setIsDirty}
@@ -55,9 +48,7 @@ const CoAuthorInfos = ({
           <div className="overflow-hidden rounded-full bg-gray-200">
             <div className="h-2 w-1/2 rounded-full bg-blue-400"></div>
           </div>
-          <p className="mt-4 text-sm font-light text-gray-500">
-            3/6 - Társszerzők adatai
-          </p>
+          <p className="mt-4 text-sm font-light text-gray-500">3/6 - Társszerzők adatai</p>
         </div>
         {!isDirty ? (
           <button

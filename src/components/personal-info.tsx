@@ -8,14 +8,9 @@ import { ClipLoader } from "react-spinners";
 const personalInfoSchema = z.object({
   applicantName: z.string().min(1, { message: "Add meg a neved!" }),
   university: z.string().min(1, { message: "Válaszd ki az egyetemed!" }),
-  otherUniversity: z
-    .string()
-    .min(1, { message: "Add meg az egyetemed nevét!" })
-    .optional(),
+  otherUniversity: z.string().min(1, { message: "Add meg az egyetemed nevét!" }).optional(),
   email: z.string().email({ message: "Add meg az e-mail címed!" }),
-  department: z
-    .string()
-    .min(1, { message: "Add meg a kart, amelyen tanulsz!" }),
+  department: z.string().min(1, { message: "Add meg a kart, amelyen tanulsz!" }),
   phoneNumber: z
     .string()
     .min(1, { message: "Add meg a telefonszámod!" })
@@ -30,10 +25,7 @@ interface PersonalInfoFormProps {
   setCurrentStep: (step: SignupStep) => void;
 }
 
-const PersonalInfo = ({
-  setPersonalInfo,
-  setCurrentStep,
-}: PersonalInfoFormProps) => {
+const PersonalInfo = ({ setPersonalInfo, setCurrentStep }: PersonalInfoFormProps) => {
   const {
     register,
     handleSubmit,
@@ -60,10 +52,7 @@ const PersonalInfo = ({
     <div>
       <form className="py-10" onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-6">
-          <label
-            htmlFor="name"
-            className="mb-2 block text-lg font-medium text-gray-900"
-          >
+          <label htmlFor="name" className="mb-2 block text-lg font-medium text-gray-900">
             Teljes név
           </label>
           <input
@@ -72,18 +61,10 @@ const PersonalInfo = ({
             className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500"
             {...register("applicantName")}
           />
-          {errors.applicantName && (
-            <p className="mt-2 text-xs italic text-red-500">
-              {" "}
-              {errors.applicantName?.message}
-            </p>
-          )}
+          {errors.applicantName && <p className="mt-2 text-xs italic text-red-500"> {errors.applicantName?.message}</p>}
         </div>
         <div className="mb-6">
-          <label
-            htmlFor="email"
-            className="mb-2 block text-lg font-medium text-gray-900"
-          >
+          <label htmlFor="email" className="mb-2 block text-lg font-medium text-gray-900">
             Email cím
           </label>
           <input
@@ -93,18 +74,10 @@ const PersonalInfo = ({
             {...register("email")}
             aria-invalid={errors.email ? "true" : "false"}
           />
-          {errors.email && (
-            <p className="mt-2 text-xs italic text-red-500">
-              {" "}
-              {errors.email?.message}
-            </p>
-          )}
+          {errors.email && <p className="mt-2 text-xs italic text-red-500"> {errors.email?.message}</p>}
         </div>
         <div className="mb-6">
-          <label
-            htmlFor="phone"
-            className="mb-2 block text-lg font-medium text-gray-900"
-          >
+          <label htmlFor="phone" className="mb-2 block text-lg font-medium text-gray-900">
             Telefonszám
           </label>
           <input
@@ -114,18 +87,10 @@ const PersonalInfo = ({
             {...register("phoneNumber")}
             aria-invalid={errors.phoneNumber ? "true" : "false"}
           />
-          {errors.phoneNumber && (
-            <p className="mt-2 text-xs italic text-red-500">
-              {" "}
-              {errors.phoneNumber?.message}
-            </p>
-          )}
+          {errors.phoneNumber && <p className="mt-2 text-xs italic text-red-500"> {errors.phoneNumber?.message}</p>}
         </div>
         <div className="mb-6">
-          <label
-            htmlFor="universities"
-            className="mb-2 block text-lg font-medium text-gray-900"
-          >
+          <label htmlFor="universities" className="mb-2 block text-lg font-medium text-gray-900">
             Egyetem
           </label>
           <select
@@ -141,19 +106,11 @@ const PersonalInfo = ({
               );
             })}
           </select>
-          {errors.university && (
-            <p className="mt-2 text-xs italic text-red-500">
-              {" "}
-              {errors.university?.message}
-            </p>
-          )}
+          {errors.university && <p className="mt-2 text-xs italic text-red-500"> {errors.university?.message}</p>}
         </div>
         {watch("university") === "Egyéb" && (
           <div className="mb-6">
-            <label
-              htmlFor="other-university"
-              className="mb-2 block text-lg font-medium text-gray-900"
-            >
+            <label htmlFor="other-university" className="mb-2 block text-lg font-medium text-gray-900">
               Egyetem neve
             </label>
             <input
@@ -164,18 +121,12 @@ const PersonalInfo = ({
               aria-invalid={errors.otherUniversity ? "true" : "false"}
             />
             {errors.otherUniversity && (
-              <p className="mt-2 text-xs italic text-red-500">
-                {" "}
-                {errors.otherUniversity?.message}
-              </p>
+              <p className="mt-2 text-xs italic text-red-500"> {errors.otherUniversity?.message}</p>
             )}
           </div>
         )}
         <div className="mb-6">
-          <label
-            htmlFor="department"
-            className="mb-2 block text-lg font-medium text-gray-900"
-          >
+          <label htmlFor="department" className="mb-2 block text-lg font-medium text-gray-900">
             Kar
           </label>
           <input
@@ -185,12 +136,7 @@ const PersonalInfo = ({
             {...register("department")}
             aria-invalid={errors.department ? "true" : "false"}
           />
-          {errors.department && (
-            <p className="mt-2 text-xs italic text-red-500">
-              {" "}
-              {errors.department?.message}
-            </p>
-          )}
+          {errors.department && <p className="mt-2 text-xs italic text-red-500"> {errors.department?.message}</p>}
         </div>
         <div className="mb-6">
           <h3 className="mb-4 text-lg font-medium text-gray-900">Évfolyam</h3>
@@ -216,21 +162,14 @@ const PersonalInfo = ({
                 </div>
               ))}
           </fieldset>
-          {errors.studyYear && (
-            <p className="mt-2 text-xs italic text-red-500">
-              {" "}
-              {errors.studyYear?.message}
-            </p>
-          )}
+          {errors.studyYear && <p className="mt-2 text-xs italic text-red-500"> {errors.studyYear?.message}</p>}
         </div>
         <div className="flex flex-col justify-center gap-x-4 py-2 md:flex-row md:justify-evenly">
           <div className="flex w-full flex-col px-3">
             <div className="overflow-hidden rounded-full bg-gray-200">
               <div className="h-2 w-1/6 rounded-full bg-blue-400"></div>
             </div>
-            <p className="py-3 text-sm font-light text-gray-500">
-              1/6 - Személyes adatok
-            </p>
+            <p className="py-3 text-sm font-light text-gray-500">1/6 - Személyes adatok</p>
           </div>
           {isValid ? (
             <button
