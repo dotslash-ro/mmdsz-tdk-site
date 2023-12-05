@@ -60,7 +60,7 @@ const Landing = () => {
             className="w-full rounded-lg shadow-tdk-primary drop-shadow-lg xl:h-fit xl:w-auto"
           />
         </div>
-        <div className="flex flex-col gap-10 px-20 py-20 md:flex-row">
+        <div className="flex flex-col gap-10 px-5 py-20 md:flex-row">
           <Link
             to="/osszefoglalo"
             className="rounded-full bg-tdk-accent px-10 py-4 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-xl"
