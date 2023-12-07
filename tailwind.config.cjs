@@ -3,16 +3,18 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      screens: { xs: "320px" },
       spacing: {
+        120: "30rem",
         128: "32rem",
       },
       colors: {
-        "tdk-primary": "#2b5955",
+        "tdk-primary": "#012a27",
         "tdk-secondary": "#0a3032",
         "tdk-accent": "#f16d2d",
       },
       backgroundImage: {
-        banner: "url(/src/assets/tdk-banner2.jpg)",
+        banner: "url(/src/assets/tdk-2024-cover-2.jpg)",
       },
       fontFamily: {
         hero: ["Akzidenz Grotesk"],

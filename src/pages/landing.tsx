@@ -14,13 +14,13 @@ const Landing = () => {
             <h2 className="font-hero text-6xl uppercase tracking-tighter text-white md:text-5xl lg:text-8xl">
               <div>
                 {" "}
-                <span className="text-tdk-accent">30.</span> Tudományos
+                <span className="text-tdk-accent">31.</span> Tudományos
               </div>{" "}
               <div className="text-tdk-accent">Diákköri</div> Konferencia
             </h2>
           </div>
           <div className="py-8 text-center font-medium uppercase text-white md:text-lg lg:text-2xl">
-            <span className="font-bold">Marosvásárhely 2023.</span> Május 10-13.
+            <span className="font-bold">Marosvásárhely 2024.</span> Április 24-27.
           </div>
         </div>
       </div>

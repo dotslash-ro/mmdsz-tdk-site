@@ -157,7 +157,7 @@ const OrganizerInfoForm = ({
       </div>
       <div className="mb-6">
         <h3 className="mb-4 text-lg font-medium text-gray-900">Évfolyam</h3>
-        <fieldset className="flex-start ml-4 flex gap-3">
+        <fieldset className="flex-start ml-4 flex gap-3 flex-wrap">
           {[...Array(6).keys()]
             .map((i) => i + 1)
             .map((i) => (
@@ -178,6 +178,22 @@ const OrganizerInfoForm = ({
                 </label>
               </div>
             ))}
+            <div>
+                <input
+                  type="radio"
+                  value="Mesterképzés"
+                  id={`masters`}
+                  className="peer hidden"
+                  {...register("studyYear")}
+                  name="studyYear"
+                />
+                <label
+                  htmlFor={`masters`}
+                  className="flex h-10 w-fit px-2 cursor-pointer items-center justify-center rounded-md border border-gray-300 text-gray-900 hover:border-gray-300 peer-checked:bg-tdk-accent peer-checked:text-white"
+                >
+                  <p className="text-sm font-medium">Mesterképzés</p>
+                </label>
+              </div>
         </fieldset>
         {errors.studyYear && <p className="mt-2 text-xs italic text-red-500"> {errors.studyYear?.message}</p>}
       </div>

@@ -9,8 +9,8 @@ const Organizers = () => {
     <div className="px-5 py-20 md:mx-auto md:w-1/2 md:px-0">
       <h1 className="pb-20 text-center text-5xl font-bold">Szervezőknek</h1>
       <p className="pb-10 text-sm font-semibold text-neutral-500">
-        A 31. Marosvásárhelyi Tudományos Diákköri Konferenciára való szervezői jelentekezés 2023. december 6.-án
-        kezdődik.{" "}
+        A 31. Marosvásárhelyi Tudományos Diákköri Konferenciára való szervezői jelentekezés 2023. december 7.-én
+        kezdődik és 2023. december 11.-én, 23:59-kor ér véget.{" "}
         <a
           className="cursor-pointer text-tdk-accent hover:underline"
           onClick={() => {
