@@ -20,6 +20,7 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 import { oauthClientId } from "./constants";
 import Summary from "./pages/summary";
 import OrganizerSignup from "./pages/organizer-signup";
+import NotFound from "./pages/not-found";
 
 const router = createHashRouter([
   {
@@ -70,10 +71,10 @@ const router = createHashRouter([
     path: "/osszefoglalo",
     element: <Summary />,
   },
-  {
-    path: "/szervezoi-jelentkezes",
-    element: <OrganizerSignup />,
-  },
+  // {
+  //   path: "/szervezoi-jelentkezes",
+  //   element: <OrganizerSignup />,
+  // },
   {
     path: "/osszefoglalok",
     element: <PastJournals />,
@@ -93,6 +94,7 @@ const router = createHashRouter([
       },
     ],
   },
+  { path: "*", element: <NotFound /> },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(

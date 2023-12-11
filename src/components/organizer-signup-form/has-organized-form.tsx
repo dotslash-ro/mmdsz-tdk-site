@@ -101,8 +101,7 @@ const HasOrganizedForm = ({
             </div>
             <p className="py-3 text-sm font-light text-gray-500">3/6 - Tapasztalatok</p>
           </div>
-          {watch("hasOrganized") == "Nem" ||
-          (watch("hasOrganized") == "Igen" && watch("organizerGroup") != null) ? (
+          {watch("hasOrganized") == "Nem" || (watch("hasOrganized") == "Igen" && watch("organizerGroup") != null) ? (
             <button
               className="rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-lg"
               type="submit"

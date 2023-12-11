@@ -31,7 +31,7 @@ const PreSignup = ({ setCurrentStep }: { setCurrentStep: (next: SignupStep) => v
           jelentkező hallgatók részére (15 hely - motivációs kérdések) -159 szervezőt áll módunkban felvenni{" "}
         </li>
       </ul>
-      <div className="mb-6 flex items-start mt-10">
+      <div className="mb-6 mt-10 flex items-start">
         <div className="ml-4 flex h-5 items-center">
           <input
             id="terms"
@@ -42,11 +42,11 @@ const PreSignup = ({ setCurrentStep }: { setCurrentStep: (next: SignupStep) => v
           />
         </div>
         <label htmlFor="terms" className="ml-2 text-sm text-neutral-600">
-          Elolvastam és tisztában vagyok a {" "}
+          Elolvastam és tisztában vagyok a{" "}
           <Link to="/szabalyzat" target="_blank" className="text-tdk-accent underline">
             weboldalon található szabályzattal
-          </Link>
-          {" "} és a {" "}
+          </Link>{" "}
+          és a{" "}
           <Link to="/szervezoknek" target="_blank" className="text-tdk-accent underline">
             munkacsoportok feladatköreivel.
           </Link>

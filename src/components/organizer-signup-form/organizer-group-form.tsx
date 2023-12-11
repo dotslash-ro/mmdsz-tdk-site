@@ -109,7 +109,7 @@ const OrganizerGroupSelectForm = ({
       <div className="flex flex-col justify-center gap-x-4 py-2 md:flex-row md:justify-evenly">
         <div className="flex w-full flex-col px-3">
           <div className="overflow-hidden rounded-full bg-gray-200">
-            <div className="w-5/6 h-2 rounded-full bg-tdk-accent"></div>
+            <div className="h-2 w-5/6 rounded-full bg-tdk-accent"></div>
           </div>
           <p className="py-3 text-sm font-light text-gray-500">5/6 - TDK szervezés</p>
         </div>

@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 import { ClipLoader } from "react-spinners";
 import { z } from "zod";
 
-
 const miscInfOFormSchema = z.object({
   willBePresenting: z.string(),
   drivesACar: z.string(),
@@ -12,11 +11,7 @@ const miscInfOFormSchema = z.object({
 
 export type MiscInfoFormSchema = z.infer<typeof miscInfOFormSchema>;
 
-const MiscInfoForm = ({
-  setMiscInfo,
-}: {
-  setMiscInfo: (data: MiscInfoFormSchema) => void;
-}) => {
+const MiscInfoForm = ({ setMiscInfo }: { setMiscInfo: (data: MiscInfoFormSchema) => void }) => {
   const {
     register,
     handleSubmit,
