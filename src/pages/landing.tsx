@@ -67,12 +67,12 @@ const Landing = () => {
           >
             Összefoglaló 2023 →
           </Link>
-          <Link
+          {/* <Link
             to="/szervezok"
             className="rounded-full border border-gray-300 px-10 py-4 font-semibold uppercase drop-shadow-md hover:underline xl:text-xl"
           >
             Jelentkezz szervezőnek (2024) →
-          </Link>
+          </Link> */}
         </div>
       </div>
       <Sponsors />
