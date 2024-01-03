@@ -5,26 +5,26 @@ const Organizers = () => {
   return (
     <div className="px-5 py-20 md:px-10 lg:px-20">
       <h1 className="pb-20 text-center text-5xl font-bold">Szervezőknek</h1>
-      <div className="grid grid-cols-1 justify-items-stretch gap-10 py-8 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
-        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-5 py-8 drop-shadow-md md:px-10">
+      <div className="grid grid-cols-1 justify-items-stretch gap-10 py-8 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+        <div className="px-5 py-8 md:px-10">
           <h2 className="py-5 text-xl font-light">Akkreditáció</h2>
-          <ul className="list-disc">
+          <ul className="pl-5 list-disc">
             <li className="font-bold">Römer Ambrus Júlia</li>
             <li>Boros Andrea-Brigitta</li>
             <li>Cozma Paula-Sophia</li>
             <li>Kakasi András</li>
             <li>Márton Tamás</li>
           </ul>
-          <p className="p-5 text-sm font-light">
+          <p className="pt-5 text-sm font-light">
             Az akkrediátációért felelős kiscsoport szorosan együttműködik az Infóiroda kiscsoporttal. Feladata a
             helyszínre érkező és az online regisztrált oktatók, orvosok és szakemberek fogadása, részvételi diplomáinak
             kiállítása és ezek eljuttatása a konferenciát követően a megfelelő személyekhez. Ez a feladatkör pontosságot
             és jó kiállást igényel.
           </p>
         </div>
-        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-5 py-8 drop-shadow-md md:px-10">
+        <div className="px-5 py-8 md:px-10">
           <h2 className="py-5 text-xl font-light">Díjak</h2>
-          <ul className="list-disc">
+          <ul className="pl-5 list-disc">
             <li className="font-bold">Sándor Lilla</li>
             <li className="font-bold">Tófalvi Ágnes </li>
             <li>Kovács Ágnes</li>
@@ -32,15 +32,15 @@ const Organizers = () => {
             <li>Szabó Antónia</li>
             <li>Szabó-Benedek Nóra</li>
           </ul>
-          <p className="p-5 text-sm font-light">
+          <p className="pt-5 text-sm font-light">
             Ezen kiscsoport tagjai gondoskodnak a konferencia előtt a díjak és virágok beszerzéséről, összeállításáról,
             illetve elosztásáról. Záróünnepség előtt ők csomagolják be a díjakat, amiket előkészítenek az átadásra és
             eljuttatják annak helyszínére.
           </p>
         </div>
-        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-5 py-8 drop-shadow-md md:px-10">
+        <div className="px-5 py-8 md:px-10">
           <h2 className="py-5 text-xl font-light">Étkezés</h2>
-          <ul className="list-disc">
+          <ul className="pl-5 list-disc">
             <li className="font-bold">Demeter Orsolya</li>
             <li className="font-bold">Mărmureanu-Biró Krisztina</li>
             <li>Albert Anikó</li>
@@ -52,16 +52,16 @@ const Organizers = () => {
             <li>Szántó Sarolta</li>
             <li>Varga Ágnes</li>
           </ul>
-          <p className="p-5 text-sm font-light">
+          <p className="pt-5 text-sm font-light">
             Az étkezésért felelős szervezők rendezvény előtti feladata a bevásárlás. Rendezvény alatt ők azok, akik
             reggelente megkenik a szendvicseket, felelnek azért, hogy ezek kijussanak a helyszínre, majd ott napközben a
             büfé asztal mögül kiszolgálják a résztvevőket (szervezők, oktatók, meghívottak) szendviccsel, kiflivel,
             kávéval, teával és vízzel. Az étkezéssel kapcsolatos utómunkák szintén a kiscsoport feladatkörébe tartoznak.
           </p>
         </div>
-        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-5 py-8 drop-shadow-md md:px-10">
+        <div className="px-5 py-8 md:px-10">
           <h2 className="py-5 text-xl font-light">Fotó</h2>
-          <ul className="list-disc">
+          <ul className="pl-5 list-disc">
             <li className="font-bold">Adlevák Dóra</li>
             <li>Ábrahám Ákos</li>
             <li>Csegzi Andrea</li>
@@ -75,9 +75,9 @@ const Organizers = () => {
             <li>Török Tina Erika</li>
           </ul>
         </div>
-        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-5 py-8 drop-shadow-md md:px-10">
+        <div className="px-5 py-8 md:px-10">
           <h2 className="py-5 text-xl font-light">Gála</h2>
-          <ul className="list-disc">
+          <ul className="pl-5 list-disc">
             <li className="font-bold">Miklósi Réka</li>
             <li className="font-bold">Timár Oren</li>
             <li>Balázs Hanna</li>
@@ -86,15 +86,15 @@ const Organizers = () => {
             <li>Somorai Tamás</li>
             <li>Stekbauer Anett</li>
           </ul>
-          <p className="p-5 text-sm font-light">
+          <p className="pt-5 text-sm font-light">
             A rendezvény megkoronázása a gála. Ezen kiscsoport tagjai felelnek a gála megálmodásáért és
             megvalósításáért. Rendezvény alatt feladatuk az oktatók fogadása és asztalhoz kísérése, illetve ők
             ellenőrzik, hogy csak jogosult személyek vehessenek részt az estélyen.
           </p>
         </div>
-        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-5 py-8 drop-shadow-md md:px-10">
+        <div className="px-5 py-8 md:px-10">
           <h2 className="py-5 text-xl font-light">Infóiroda</h2>
-          <ul className="list-disc">
+          <ul className="pl-5 list-disc">
             <li className="font-bold">Ábrán Annamária</li>
             <li className="font-bold">Balázs Boglárka</li>
             <li>Adorján Johanna</li>
@@ -110,7 +110,7 @@ const Organizers = () => {
             <li>Szász Anita</li>
             <li>Szilveszter Andrea</li>
           </ul>
-          <p className="p-5 text-sm font-light">
+          <p className="pt-5 text-sm font-light">
             Már a rendezvény előtt feladatuk van, ők készítik elő a meghívókat az oktatóknak, válogatják és rendezik a
             kitűzőket, állítják össze az ajándékcsomagokat. A rendezvény alatt regisztrációs és információs pontot
             működtetnek. Ezen kiscsoport tagjai az ülésvezetők mellett szintén a rendezvény arcait képezik, hiszen
@@ -118,16 +118,16 @@ const Organizers = () => {
             nyújtanak.
           </p>
         </div>
-        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-5 py-8 drop-shadow-md md:px-10">
+        <div className="px-5 py-8 md:px-10">
           <h2 className="py-5 text-xl font-light">Korrektúra</h2>
-          <ul className="list-disc">
+          <ul className="pl-5 list-disc">
             <li className="font-bold">Sebesi Hanna </li>
             <li>Biró Konrád-János</li>
             <li>Györfi Szidónia-Brigitta</li>
             <li>Márton Kincső</li>
             <li>Varga László</li>
           </ul>
-          <p className="p-5 text-sm font-light">
+          <p className="pt-5 text-sm font-light">
             A korrektúrás kiscsoport legfőbb feladata egységes, vállalható küllemet biztosítani a beérkezett
             dolgozatoknak. A munkaidő teljes mértékben a rendezvény előttre korlátozódik és főként szövegszerkesztési
             munkát foglal magába. Ezáltal fontossá válik a számítógép kezelési alapok ismerete (Microsoft Word és
@@ -135,9 +135,9 @@ const Organizers = () => {
             munkát kedvelő személyek ideális szervezési lehetősége ez.
           </p>
         </div>
-        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-5 py-8 drop-shadow-md md:px-10">
+        <div className="px-5 py-8 md:px-10">
           <h2 className="py-5 text-xl font-light">Média és kommunikáció</h2>
-          <ul className="list-disc">
+          <ul className="pl-5 list-disc">
             <li className="font-bold">Ferencz Gergő</li>
             <li className="font-bold">Nagy Nóra</li>
             <li>Dakó Diána</li>
@@ -146,15 +146,15 @@ const Organizers = () => {
             <li>Sánta Máté-Levente</li>
             <li>Török Andrea</li>
           </ul>
-          <p className="p-5 text-sm font-light">
+          <p className="pt-5 text-sm font-light">
             Ez a kiscsoport végzi az összes közösségi média platformon megjelenő információ megtervezését, megírását és
             közlését, Facebook- és Instagram oldalát. Ugyancsak ebbe a csoportba tartozó emberek tartják a kapcsolatot a
             sajtóval, szervezik meg a sajtótájékoztatót és intézik a tudósítást a rendezvény előtt, alatt és után.
           </p>
         </div>
-        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-5 py-8 drop-shadow-md md:px-10">
+        <div className="px-5 py-8 md:px-10">
           <h2 className="py-5 text-xl font-light">Pontozás</h2>
-          <ul className="list-disc">
+          <ul className="pl-5 list-disc">
             <li className="font-bold">Budik Kriszta-Andrea</li>
             <li>Antal Anita-Mária</li>
             <li>Bogyó Barbara</li>
@@ -167,16 +167,16 @@ const Organizers = () => {
             <li>Szabó Orsolya</li>
             <li>Tövissi Szilvia</li>
           </ul>
-          <p className="p-5 text-sm font-light">
+          <p className="pt-5 text-sm font-light">
             Ez a kiscsoport segít az előadó diákok bemutatóinak rangsorolásában. Ők készítik elő a pontozó lapokat a
             rendezvény előtt a szekcióknak megfelelően. Rendezvény közben a pontozó lapokat, névtáblákat eljuttatják az
             adott ülésre, ők egyesítik a pontokat, megszerkesztik az okleveleket, kinyomtatják őket és ők adják át a
             díjakért felelős kiscsoport vezetőknek.
           </p>
         </div>
-        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-5 py-8 drop-shadow-md md:px-10">
+        <div className="px-5 py-8 md:px-10">
           <h2 className="py-5 text-xl font-light">Protokoll</h2>
-          <ul className="list-disc">
+          <ul className="pl-5 list-disc">
             <li>Cseke Krisztina</li>
             <li>Deák Gellért Gedeon</li>
             <li>Kiss Boglárka</li>
@@ -187,18 +187,18 @@ const Organizers = () => {
             <li>Zsidó Imola</li>
           </ul>
         </div>
-        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-5 py-8 drop-shadow-md md:px-10">
+        <div className="px-5 py-8 md:px-10">
           <h2 className="py-5 text-xl font-light">Külügy</h2>
-          <ul className="list-disc">
+          <ul className="pl-5 list-disc">
             <li className="font-bold">Pándi Aliz</li>
             <li>Koszta-Demeter Anna</li>
             <li>Márton Kinga</li>
             <li>Szigyártó Anita</li>
           </ul>
         </div>
-        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-5 py-8 drop-shadow-md md:px-10">
+        <div className="px-5 py-8 md:px-10">
           <h2 className="py-5 text-xl font-light">Szponzor</h2>
-          <ul className="list-disc">
+          <ul className="pl-5 list-disc">
             <li className="font-bold">Bonda Boglár</li>
             <li>Balázs Boglárka</li>
             <li>Cozma Paula-Sophia</li>
@@ -211,15 +211,15 @@ const Organizers = () => {
             <li>Toth Robert Szabolcs</li>
             <li>Varga Alexandra</li>
           </ul>
-          <p className="p-5 text-sm font-light">
+          <p className="pt-5 text-sm font-light">
             A szponzor kiscsoport feladatkörébe tartozik a szponzorokkal való kapcsolattartás. Rendezvény előtt ők
             keresik fel a támogatókat, támogatás adminisztratív részét lebonyolítják és elhozzák a roll-up-okat,
             bannereket a cégektől és a konferencia lejárta után visszajuttatják ezen kellékeket.
           </p>
         </div>
-        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-5 py-8 drop-shadow-md md:px-10">
+        <div className="px-5 py-8 md:px-10">
           <h2 className="py-5 text-xl font-light">Technika</h2>
-          <ul className="list-disc">
+          <ul className="pl-5 list-disc">
             <li className="font-bold">Fodor Csanád</li>
             <li className="font-bold">Tischler Hunor</li>
             <li>András Krisztián</li>
@@ -239,7 +239,7 @@ const Organizers = () => {
             <li>Ugron Ákos-Bence</li>
             <li>Veress Károly-Tamás</li>
           </ul>
-          <p className="p-5 text-sm font-light">
+          <p className="pt-5 text-sm font-light">
             A technikás kiscsoport tagjai azok a szervezők, akik irányítják az előadások háttér feladatait: felszerelik
             és kezelik a videóprojektorokat, biztosítják az előadó diákok, valamint a meghívottak előadásainak technikai
             hátterét. A rendezvény előtt összeírják a kellő mennyiségű technikai eszközök listáját, beszerzik,
@@ -247,9 +247,9 @@ const Organizers = () => {
             esemény után mindezeket rendberakják.
           </p>
         </div>
-        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-5 py-8 drop-shadow-md md:px-10">
+        <div className="px-5 py-8 md:px-10">
           <h2 className="py-5 text-xl font-light">Teremrendezés</h2>
-          <ul className="list-disc">
+          <ul className="pl-5 list-disc">
             <li className="font-bold">Adorján Előd</li>
             <li className="font-bold">Ambrus Beáta</li>
             <li>Barna-Kund Portik</li>
@@ -267,7 +267,7 @@ const Organizers = () => {
             <li>Todor Krisztián</li>
             <li>Zsombori Zalán</li>
           </ul>
-          <p className="p-5 text-sm font-light">
+          <p className="pt-5 text-sm font-light">
             A teremrendezés kiscsoport szervezői a helyszínért felelősek. Ehhez hozzátartozik minden, a termekben lévő
             kellék beszerzése és a rendezvény ideje alatt be-, illetve elpakolása. Ugyanakkor a roll-upok, a pop-up, a
             székek, asztalok, virágok egyik teremből a másikba való áthordása és a teremrendezés alatt felhasznált
@@ -275,17 +275,17 @@ const Organizers = () => {
             bizottság számára víz, pohár, nasi biztosítása.
           </p>
         </div>
-        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-5 py-8 drop-shadow-md md:px-10">
+        <div className="px-5 py-8 md:px-10">
           <h2 className="py-5 text-xl font-light">Tördelés</h2>
-          <ul className="list-disc">
+          <ul className="pl-5 list-disc">
             <li className="font-bold">Pap Gyopárka</li>
             <li className="font-bold">Sztáncsuj Eszter</li>
             <li>Salló Hanna-Boglárka</li>
           </ul>
         </div>
-        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-5 py-8 drop-shadow-md md:px-10">
+        <div className="px-5 py-8 md:px-10">
           <h2 className="py-5 text-xl font-light">Ülésvezetés</h2>
-          <ul className="list-disc">
+          <ul className="pl-5 list-disc">
             <li className="font-bold">Popovits Gertrúd</li>
             <li className="font-bold">Rédai Ádám</li>
             <li>Keserű Kriszta</li>
@@ -297,7 +297,7 @@ const Organizers = () => {
             <li>Szőcs Kriszta</li>
             <li>Urkon Krisztina</li>
           </ul>
-          <p className="p-5 text-sm font-light">
+          <p className="pt-5 text-sm font-light">
             Az ülésvezetők az előadások tulajdonképpeni moderátorai. Ők azok akik felkonferálják az előadó diákokat és a
             meghívott előadókat, valamint levezénylik az ülésszakokat (szekciókat). Ezen szervezők olyan személyek, akik
             jó beszédkészséggel, színpadi kiállással, problémamegoldó készséggel rendelkeznek, elegáns megjelenésűek,
@@ -305,9 +305,9 @@ const Organizers = () => {
             részvételért járó ajándékcsomagot. Munkaidejük többnyire a rendezvény idejére tehető.
           </p>
         </div>
-        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-5 py-8 drop-shadow-md md:px-10">
+        <div className="px-5 py-8 md:px-10">
           <h2 className="py-5 text-xl font-light">Műhelymunkák</h2>
-          <ul className="list-disc">
+          <ul className="pl-5 list-disc">
             <li className="font-bold">Kocsis Imola</li>
             <li className="font-bold">Lukács Szilárd</li>
             <li>Barthi Dóra</li>
@@ -324,7 +324,7 @@ const Organizers = () => {
             <li>Péter Kriszta-Enikő</li>
             <li>Szász Róbert Máté</li>
           </ul>
-          <p className="p-5 text-sm font-light">
+          <p className="pt-5 text-sm font-light">
             A workshopok szervezése talpraesettséget és kreativitást kíván. A váratlan helyzetek megoldása elvárás a
             szervezőktől. A pontosság és jó kommunikációs készség pedig elengedhetetlen az események gördülékenyen
             lezajlásához. A különböző egyetemi oktatók és helyszínek ismerete, valamint a kérvények és egyeztetések
@@ -334,18 +334,18 @@ const Organizers = () => {
             emléklapok kiküldéséért.
           </p>
         </div>
-        <div className="flex flex-col items-center justify-center rounded-lg border border-gray-300 px-5 py-8 drop-shadow-md md:px-10">
+        <div className="px-5 py-8 md:px-10">
           <h2 className="py-5 text-xl font-light">Főszervezők</h2>
-          <ul className="list-disc">
+          <ul className="pl-5 list-disc">
             <div className="font-bold">Barcsay Zselyke</div>
             <div className="font-bold">Biró Edina-Kata</div>
             <div className="font-bold">Gál Zsuzsánna</div>
             <div className="font-bold">Geréd Ákos</div>
             <div className="font-bold">Miklós Noémi </div>
-            <h2 className="py-5 text-center text-xl font-light">MMDSZ elnök</h2>
-            <div className="text-center font-bold">Czink Gergő</div>
-            <h2 className="py-5 text-center text-xl font-light">Tiszteletbeli konzultáns elnök</h2>
-            <div className="text-center font-bold">Varga László</div>
+            <h2 className="-ml-5 py-5 text-xl font-light">MMDSZ elnök</h2>
+            <div className="font-bold">Czink Gergő</div>
+            <h2 className="-ml-5 py-5 text-xl font-light">Tiszteletbeli konzultáns elnök</h2>
+            <div className="font-bold">Varga László</div>
           </ul>
         </div>
       </div>
