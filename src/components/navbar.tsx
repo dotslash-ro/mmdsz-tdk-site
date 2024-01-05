@@ -38,7 +38,7 @@ const Navbar = () => {
               )}
             </button>
           </div>
-          <div className="w-full bg-tdk-primary lg:block lg:w-auto" hidden={!showMenu}>
+          <div className="w-full bg-tdk-primary drop-shadow-md lg:block lg:w-auto" hidden={!showMenu}>
             <ul
               className="mt-4 flex flex-col items-center font-medium lg:mt-0 lg:flex-row lg:space-x-4 lg:border-0 lg:p-0 lg:py-4 xl:space-x-8"
               hidden={!showMenu}

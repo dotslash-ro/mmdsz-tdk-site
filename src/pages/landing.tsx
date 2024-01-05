@@ -4,14 +4,15 @@ import { Link } from "react-router-dom";
 import tdkPicture1 from "../assets/tdk-pic1.png";
 import tdkPicture2 from "../assets/tdk-pic2.png";
 import tdkPicture3 from "../assets/tdk-pic3.png";
+import dnsImage from "../assets/tdk-dns.png";
 
 const Landing = () => {
   return (
     <>
-      <div className="flex justify-center bg-banner bg-cover bg-local bg-center">
-        <div className="flex flex-grow flex-col items-center bg-gradient-to-t from-transparent to-tdk-primary pt-20 bg-blend-lighten">
+      <div className="bg-tdk-primary py-20">
+        <div className="z-20 flex flex-grow flex-col items-center bg-contain bg-left bg-no-repeat px-10 md:bg-dns lg:items-end xl:items-center">
           <div className="">
-            <h2 className="font-hero text-6xl uppercase tracking-tighter text-white md:text-5xl lg:text-8xl">
+            <h2 className="text-left font-hero text-6xl uppercase tracking-tighter text-white md:text-5xl lg:text-right lg:text-8xl xl:text-left">
               <div>
                 {" "}
                 <span className="text-tdk-accent">31.</span> Tudományos
@@ -19,7 +20,7 @@ const Landing = () => {
               <div className="text-tdk-accent">Diákköri</div> Konferencia
             </h2>
           </div>
-          <div className="py-8 text-center font-medium uppercase text-white md:text-lg lg:text-2xl">
+          <div className="py-8 text-left font-medium uppercase text-white md:text-lg lg:text-right lg:text-2xl xl:text-left">
             <span className="font-bold">Marosvásárhely 2024.</span> Április 24-27.
           </div>
         </div>

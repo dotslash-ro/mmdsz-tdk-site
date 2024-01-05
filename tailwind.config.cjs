@@ -15,6 +15,7 @@ module.exports = {
       },
       backgroundImage: {
         banner: "url(/src/assets/tdk-2024-cover-2.jpg)",
+        dns: "url(/src/assets/tdk-dns.png)",
       },
       fontFamily: {
         hero: ["Akzidenz Grotesk"],

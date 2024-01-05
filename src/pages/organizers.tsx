@@ -1,14 +1,13 @@
 import { withLayout } from "../layout/withLayout";
-import { organizerGroups } from "../constants";
 
 const Organizers = () => {
   return (
-    <div className="px-5 py-20 md:px-10 lg:px-20">
+    <div className="px-5 py-20 sm:px-10 lg:px-20">
       <h1 className="pb-20 text-center text-5xl font-bold">Szervezőknek</h1>
-      <div className="grid grid-cols-1 justify-items-stretch gap-10 py-8 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+      <div className="grid grid-cols-1 justify-items-stretch gap-10 py-8 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
         <div className="px-5 py-8 md:px-10">
           <h2 className="py-5 text-xl font-light">Akkreditáció</h2>
-          <ul className="pl-5 list-disc">
+          <ul className="list-disc pl-5">
             <li className="font-bold">Römer Ambrus Júlia</li>
             <li>Boros Andrea-Brigitta</li>
             <li>Cozma Paula-Sophia</li>
@@ -24,7 +23,7 @@ const Organizers = () => {
         </div>
         <div className="px-5 py-8 md:px-10">
           <h2 className="py-5 text-xl font-light">Díjak</h2>
-          <ul className="pl-5 list-disc">
+          <ul className="list-disc pl-5">
             <li className="font-bold">Sándor Lilla</li>
             <li className="font-bold">Tófalvi Ágnes </li>
             <li>Kovács Ágnes</li>
@@ -40,7 +39,7 @@ const Organizers = () => {
         </div>
         <div className="px-5 py-8 md:px-10">
           <h2 className="py-5 text-xl font-light">Étkezés</h2>
-          <ul className="pl-5 list-disc">
+          <ul className="list-disc pl-5">
             <li className="font-bold">Demeter Orsolya</li>
             <li className="font-bold">Mărmureanu-Biró Krisztina</li>
             <li>Albert Anikó</li>
@@ -61,7 +60,7 @@ const Organizers = () => {
         </div>
         <div className="px-5 py-8 md:px-10">
           <h2 className="py-5 text-xl font-light">Fotó</h2>
-          <ul className="pl-5 list-disc">
+          <ul className="list-disc pl-5">
             <li className="font-bold">Adlevák Dóra</li>
             <li>Ábrahám Ákos</li>
             <li>Csegzi Andrea</li>
@@ -74,10 +73,15 @@ const Organizers = () => {
             <li>Szász Krisztián</li>
             <li>Török Tina Erika</li>
           </ul>
+          <p className="pt-5 text-sm font-light">
+            A fotósok örökítik meg a rendezvény mozzanatait. Kiválogatják és megszerkesztik a képeket, amik kikerülnek
+            az online platformokra. Előnyös, ha ezen személyek rendelkeznek saját felszereléssel és jártasak a
+            fotózásban.{" "}
+          </p>
         </div>
         <div className="px-5 py-8 md:px-10">
           <h2 className="py-5 text-xl font-light">Gála</h2>
-          <ul className="pl-5 list-disc">
+          <ul className="list-disc pl-5">
             <li className="font-bold">Miklósi Réka</li>
             <li className="font-bold">Timár Oren</li>
             <li>Balázs Hanna</li>
@@ -94,7 +98,7 @@ const Organizers = () => {
         </div>
         <div className="px-5 py-8 md:px-10">
           <h2 className="py-5 text-xl font-light">Infóiroda</h2>
-          <ul className="pl-5 list-disc">
+          <ul className="list-disc pl-5">
             <li className="font-bold">Ábrán Annamária</li>
             <li className="font-bold">Balázs Boglárka</li>
             <li>Adorján Johanna</li>
@@ -120,7 +124,7 @@ const Organizers = () => {
         </div>
         <div className="px-5 py-8 md:px-10">
           <h2 className="py-5 text-xl font-light">Korrektúra</h2>
-          <ul className="pl-5 list-disc">
+          <ul className="list-disc pl-5">
             <li className="font-bold">Sebesi Hanna </li>
             <li>Biró Konrád-János</li>
             <li>Györfi Szidónia-Brigitta</li>
@@ -137,7 +141,7 @@ const Organizers = () => {
         </div>
         <div className="px-5 py-8 md:px-10">
           <h2 className="py-5 text-xl font-light">Média és kommunikáció</h2>
-          <ul className="pl-5 list-disc">
+          <ul className="list-disc pl-5">
             <li className="font-bold">Ferencz Gergő</li>
             <li className="font-bold">Nagy Nóra</li>
             <li>Dakó Diána</li>
@@ -154,7 +158,7 @@ const Organizers = () => {
         </div>
         <div className="px-5 py-8 md:px-10">
           <h2 className="py-5 text-xl font-light">Pontozás</h2>
-          <ul className="pl-5 list-disc">
+          <ul className="list-disc pl-5">
             <li className="font-bold">Budik Kriszta-Andrea</li>
             <li>Antal Anita-Mária</li>
             <li>Bogyó Barbara</li>
@@ -176,7 +180,7 @@ const Organizers = () => {
         </div>
         <div className="px-5 py-8 md:px-10">
           <h2 className="py-5 text-xl font-light">Protokoll</h2>
-          <ul className="pl-5 list-disc">
+          <ul className="list-disc pl-5">
             <li>Cseke Krisztina</li>
             <li>Deák Gellért Gedeon</li>
             <li>Kiss Boglárka</li>
@@ -186,19 +190,28 @@ const Organizers = () => {
             <li>Szabó Stefánia</li>
             <li>Zsidó Imola</li>
           </ul>
+          <p className="pt-5 text-sm font-light">
+            Ezen kiscsoport tagjai felelnek a meghívott előadókkal való kapcsolattartásért már a meghívók kiküldésével
+            kezdődően. A konferencia ideje alatt a meghívott előadók rendelkezésére állnak, segítséget nyújtanak, ők
+            juttatják el a meghívottakat a konferencia különböző helyszíneire.{" "}
+          </p>
         </div>
         <div className="px-5 py-8 md:px-10">
           <h2 className="py-5 text-xl font-light">Külügy</h2>
-          <ul className="pl-5 list-disc">
+          <ul className="list-disc pl-5">
             <li className="font-bold">Pándi Aliz</li>
             <li>Koszta-Demeter Anna</li>
             <li>Márton Kinga</li>
             <li>Szigyártó Anita</li>
           </ul>
+          <p className="pt-5 text-sm font-light">
+            Ez a kiscsoport felel a külföldi bemutató diákok szabadidős tevékenységéért. Feladatuk a különböző közösségi
+            programok megszervezése és lebonyolítása (pl városnézés, ismerkedés, kulturális programok).
+          </p>
         </div>
         <div className="px-5 py-8 md:px-10">
           <h2 className="py-5 text-xl font-light">Szponzor</h2>
-          <ul className="pl-5 list-disc">
+          <ul className="list-disc pl-5">
             <li className="font-bold">Bonda Boglár</li>
             <li>Balázs Boglárka</li>
             <li>Cozma Paula-Sophia</li>
@@ -219,7 +232,7 @@ const Organizers = () => {
         </div>
         <div className="px-5 py-8 md:px-10">
           <h2 className="py-5 text-xl font-light">Technika</h2>
-          <ul className="pl-5 list-disc">
+          <ul className="list-disc pl-5">
             <li className="font-bold">Fodor Csanád</li>
             <li className="font-bold">Tischler Hunor</li>
             <li>András Krisztián</li>
@@ -249,7 +262,7 @@ const Organizers = () => {
         </div>
         <div className="px-5 py-8 md:px-10">
           <h2 className="py-5 text-xl font-light">Teremrendezés</h2>
-          <ul className="pl-5 list-disc">
+          <ul className="list-disc pl-5">
             <li className="font-bold">Adorján Előd</li>
             <li className="font-bold">Ambrus Beáta</li>
             <li>Barna-Kund Portik</li>
@@ -277,15 +290,19 @@ const Organizers = () => {
         </div>
         <div className="px-5 py-8 md:px-10">
           <h2 className="py-5 text-xl font-light">Tördelés</h2>
-          <ul className="pl-5 list-disc">
+          <ul className="list-disc pl-5">
             <li className="font-bold">Pap Gyopárka</li>
             <li className="font-bold">Sztáncsuj Eszter</li>
             <li>Salló Hanna-Boglárka</li>
           </ul>
+          <p className="pt-5 text-sm font-light">
+            Ezen kiscsoport feladata az Orvostudományi Értesítőben megjelenő absztraktok tördelése. A munkaidő teljes
+            mértékben a rendezvény előttre korlátozódik.
+          </p>
         </div>
         <div className="px-5 py-8 md:px-10">
           <h2 className="py-5 text-xl font-light">Ülésvezetés</h2>
-          <ul className="pl-5 list-disc">
+          <ul className="list-disc pl-5">
             <li className="font-bold">Popovits Gertrúd</li>
             <li className="font-bold">Rédai Ádám</li>
             <li>Keserű Kriszta</li>
@@ -307,7 +324,7 @@ const Organizers = () => {
         </div>
         <div className="px-5 py-8 md:px-10">
           <h2 className="py-5 text-xl font-light">Műhelymunkák</h2>
-          <ul className="pl-5 list-disc">
+          <ul className="list-disc pl-5">
             <li className="font-bold">Kocsis Imola</li>
             <li className="font-bold">Lukács Szilárd</li>
             <li>Barthi Dóra</li>
@@ -336,16 +353,14 @@ const Organizers = () => {
         </div>
         <div className="px-5 py-8 md:px-10">
           <h2 className="py-5 text-xl font-light">Főszervezők</h2>
-          <ul className="pl-5 list-disc">
+          <ul className="list-disc pl-5">
             <div className="font-bold">Barcsay Zselyke</div>
             <div className="font-bold">Biró Edina-Kata</div>
             <div className="font-bold">Gál Zsuzsánna</div>
             <div className="font-bold">Geréd Ákos</div>
             <div className="font-bold">Miklós Noémi </div>
-            <h2 className="-ml-5 py-5 text-xl font-light">MMDSZ elnök</h2>
-            <div className="font-bold">Czink Gergő</div>
-            <h2 className="-ml-5 py-5 text-xl font-light">Tiszteletbeli konzultáns elnök</h2>
-            <div className="font-bold">Varga László</div>
+            <div className="font-bold">Czink Gergő -MMDSZ elnök</div>
+            <div className="font-bold">Varga László - Tiszteletbeli konzultáns elnök</div>
           </ul>
         </div>
       </div>
