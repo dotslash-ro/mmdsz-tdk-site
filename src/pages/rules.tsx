@@ -3,7 +3,7 @@ import rules from "../assets/tdk-rules-2024.png";
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import posterSectionZip from "../assets/poszter-szekció-sablonok.zip";
+import posterSectionZip from "../assets/poszter-szekcio-sablonok.zip";
 
 const Rules = () => {
   return (
