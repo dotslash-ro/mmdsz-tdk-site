@@ -12,7 +12,7 @@ const Rules = () => {
       <h2>1. Röviden a Tudományos Diákköri Konferenciáról</h2>
       <p>
         A Tudományos Diákköri Konferencia (TDK) egy közel 30 éves múltra visszatekintő rendezvény Marosvásárhelyen,
-        melyet évi rendszerességgel szervez meg a Marosvásárhelyi Magyar Diákszövetség és a
+        melyet évi rendszerességgel szervez meg a Marosvásárhelyi Magyar Diákszövetség és a{" "}
         <span>Marosvásárhelyi George Emil Palade Orvosi, Gyógyszerészeti, Tudomány és Technológiai Egyetem</span>.
         Rendezvényünk lehetőséget nyújt mind az erdélyi, mind a határon túli magyar hallgatók számára, hogy Erdélyben
         egyedülálló módon, anyanyelvükön mutassák be dolgozataikat egészségtudományi témakörben. A konferencia célja
@@ -67,8 +67,6 @@ const Rules = () => {
           <li>A dolgozat már bemutatásra került bármilyen hazai vagy nemzetközi konferencián;</li>
           <li>A TDT nem tulajdonít a dolgozatnak megfelelő tudományos értéket.</li>
         </ol>
-      </ol>
-      <ol>
         <li>
           A benevezési díj az aktuális évben a főszervezők által meghatározott összeg, amely magába foglalja az
           iratkozást, az ünnepi gálavacsorán való részvétel díját, illetve a promóciós anyagokból álló ajándékcsomagot.
@@ -177,8 +175,10 @@ const Rules = () => {
       <p>A bemutatandó poszterek a konferencia állandó kiállítását fogják képezni.</p>
       <p>
         A poszterszekcióba történő jelentkezéskor a kész absztraktot valamint a saját hozzájárulási és publikációs
-        nyilatkozatot a honlapra kérjük feltölteni a megadott dátumig. Emellett a bemutató diák köteles a posztert
-        fizikai formában (az előre meghatározott formai követelményeknek megfelelően) magával hozni a szervezők által
+        nyilatkozatot a honlapra kérjük feltölteni a megadott dátumig. Emellett a <strong>
+          bemutató diák köteles a posztert
+          fizikai formában
+        </strong> (az előre meghatározott formai követelményeknek megfelelően) magával hozni a szervezők által
         meghatározott időpontra.
       </p>
       <p>
@@ -244,8 +244,8 @@ const Rules = () => {
       </p>
       <h2>4. Tudományos Diákköri Tanács (TDT)</h2>
       <ul>
-        <li>A TDT egyetemi oktatókból, a TDK főszervezőiből és az MMDSZ elnökéből álló tanács.</li>
-        <li>A TDT feladata:</li>
+        <p>A TDT egyetemi oktatókból, a TDK főszervezőiből és az MMDSZ elnökéből álló tanács.</p>
+        <p>A TDT feladata:</p>
         <li>A TDT a Tudományos Diákköri Konferencia védnöke.</li>
         <li>A TDT átnézi a dolgozatok kivonatait, ellenőrzi azok helyességét.</li>
         <li>
@@ -323,7 +323,7 @@ const Rules = () => {
       </p>
       <p>
         Szekciónként legfeljebb 1 dolgozat jelölhető. Amennyiben az elbíráló bizottság egy dolgozatot sem talál erre
-        érdemesnek, nem köteles jelölést adnia Poszter szekcióból nem történik jelölés.
+        érdemesnek, nem köteles jelölést adnia. Poszter szekcióból nem történik jelölés.
       </p>
       <p>Megjegyzés:</p>
       <p>
@@ -333,7 +333,6 @@ const Rules = () => {
           <span> tdk@mmdsz.ro</span>
         </a>
       </p>
-      <p>Minden információ megtalálható a marosvásárhelyi TDK hivatalos honlapján: tdk.mmdsz.ro.</p>
     </div>
   );
 };
