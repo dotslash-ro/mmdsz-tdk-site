@@ -6,10 +6,10 @@ const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   return (
     <header className="">
-      <nav className="fixed left-0 top-0 z-20 h-16 w-full bg-tdk-primary text-neutral-100 drop-shadow-md">
+      <nav className="fixed left-0 top-0 z-20 h-20 w-full bg-tdk-primary text-neutral-100 drop-shadow-md">
         <div className="flex w-full flex-wrap items-center justify-between lg:px-10">
           <NavLink to="/" className="pl-4">
-            <img src={tdkLogo} alt="logo" className="h-16 w-auto" />
+            <img src={tdkLogo} alt="logo" className="h-20 w-auto" />
           </NavLink>
           <div className="flex gap-2 lg:order-2">
             <button
@@ -115,6 +115,16 @@ const Navbar = () => {
                   Összefoglaló kötetek
                 </NavLink>
               </li>
+              <NavLink
+                to="/jelentkezes"
+                className={({ isActive }) =>
+                  isActive
+                    ? "hidden"
+                    : "flex items-center justify-center px-5 py-2 text-sm font-bold uppercase text-tdk-accent drop-shadow-lg hover:underline lg:rounded-full lg:bg-tdk-accent lg:text-base lg:font-bold lg:text-white"
+                }
+              >
+                Információk
+              </NavLink>
             </ul>
           </div>
         </div>

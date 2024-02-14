@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import tdkPicture1 from "../assets/tdk-pic1.png";
 import tdkPicture2 from "../assets/tdk-pic2.png";
 import tdkPicture3 from "../assets/tdk-pic3.png";
-import dnsImage from "../assets/tdk-dns.png";
 
 const Landing = () => {
   return (
@@ -64,16 +63,16 @@ const Landing = () => {
         <div className="flex flex-col gap-10 px-5 py-20 md:flex-row">
           <Link
             to="/osszefoglalo"
-            className="rounded-full bg-tdk-accent px-10 py-4 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-xl"
+            className="rounded-full border border-gray-300 px-10 py-4 font-semibold uppercase drop-shadow-md hover:underline xl:text-xl"
           >
             Összefoglaló 2023 →
           </Link>
-          {/* <Link
-            to="/szervezok"
-            className="rounded-full border border-gray-300 px-10 py-4 font-semibold uppercase drop-shadow-md hover:underline xl:text-xl"
+          <Link
+            to="/jelentkezes"
+            className="rounded-full bg-tdk-accent px-10 py-4 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-xl"
           >
-            Jelentkezz szervezőnek (2024) →
-          </Link> */}
+            Információk →
+          </Link>
         </div>
       </div>
       <Sponsors />

@@ -256,8 +256,8 @@ const SignupWrapper = ({ scrollToRef }: { scrollToRef: MutableRefObject<HTMLDivE
         </ul>
         <h3 className="mb-4 mt-6 text-lg font-light text-gray-800">A beküldéshez az alábbi adatokra lesz szükség: </h3>
         <ul className="ml-6 list-disc text-gray-500">
-          <li>A szerző neve, egyetem, évfolyam, email, kar, telefonszám.</li>
-          <li>Társszerzők neve, e-mail címe, egyeteme, évfolyama, kara </li>
+          <li>A szerző neve, egyetem, évfolyam, szak, email, kar, telefonszám.</li>
+          <li>Társszerzők neve, e-mail címe, egyeteme, évfolyama, szak, kara </li>
           <li>Témavezető neve és beosztása, valamint egyetem (intézet). </li>
         </ul>
         <h3 className="mb-4 mt-6 text-lg font-light text-gray-800">Saját hozzájárulási nyilatkozat</h3>
@@ -293,7 +293,7 @@ const SignupWrapper = ({ scrollToRef }: { scrollToRef: MutableRefObject<HTMLDivE
           konferencia Facebook oldalán.
         </p>
         <button
-          className="mt-6 rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-xl"
+          className="pointer-events-none mt-6 rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white opacity-50 drop-shadow-md grayscale hover:underline xl:text-xl"
           onClick={() => setCurrentStep("personalInfo")}
         >
           Jelentkezés

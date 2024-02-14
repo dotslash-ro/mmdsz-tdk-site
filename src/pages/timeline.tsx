@@ -1,37 +1,122 @@
-import { useEffect, useState } from "react";
+import { useRef } from "react";
+import PresentationUpload from "../components/presentation-upload";
+import SecondUploadForm from "../components/second-upload";
+import SignupWrapper from "../components/signup-wrapper";
 import { withLayout } from "../layout/withLayout";
 
 const Timeline = () => {
-  const [current, setCurrent] = useState(6);
-
-  useEffect(() => {
-    document.querySelector(`#slide-${current > 6 ? 1 : current}`)?.scrollIntoView({ behavior: "smooth" });
-  }, [current]);
-
+  const initialSignupContainerRef = useRef<HTMLDivElement | null>(null);
   return (
-    <div className="flex h-screen justify-center py-20 px-8">
-      {/* <button onClick={() => setCurrent(current + 1 > 6 ? 1 : current + 1)}>
-        <svg
-          clip-rule="evenodd"
-          fill-rule="evenodd"
-          stroke-linejoin="round"
-          stroke-miterlimit="2"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-          className="fixed bottom-10 right-10 z-10 h-14 w-14 fill-tdk-accent drop-shadow-md md:left-1/2"
-        >
-          <path
-            d="m2.005 12.002c0-5.517 4.48-9.997 9.997-9.997 5.518 0 9.998 4.48 9.998 9.997 0 5.518-4.48 9.998-9.998 9.998-5.517 0-9.997-4.48-9.997-9.998zm6.21 1.524s1.505 1.501 3.259 3.254c.147.147.338.22.53.22s.384-.073.531-.22c1.753-1.752 3.258-3.254 3.258-3.254.145-.145.217-.335.216-.526 0-.192-.074-.384-.22-.53-.293-.293-.766-.295-1.057-.004l-1.978 1.977v-6.693c0-.414-.336-.75-.75-.75s-.75.336-.75.75v6.693l-1.978-1.978c-.289-.289-.762-.287-1.055.006-.146.147-.22.339-.221.53s.071.38.215.525z"
-            fill-rule="nonzero"
-          />
-        </svg>
-      </button> */}
+    <div className="flex justify-center py-20 px-6">
       <ol className="relative space-y-32 border-l border-gray-300 lg:w-1/2">
-        <li className="mb-10 ml-10 scroll-mt-10 md:scroll-mt-32" id="slide-1">
+        <li className="mb-4 ml-10 font-light text-gray-500">
           <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border-2 border-white bg-gray-500"></div>
-          <h3 className="pb-4 text-2xl font-semibold text-gray-900">A 30. TDK véget ért.</h3>
-          <time className="mb-10 font-light leading-none text-gray-500">2023. május 10-13.</time>
-          <div className="flex items-center pt-10 font-light text-gray-500">Találkozzunk jövőre, a 31.-ik TDK-n!</div>
+          Görgess lefele, hogy többet megtudj a TDK-n való részvételhez szükséges lépésekről.
+        </li>
+        <li className="mb-10 ml-10">
+          <div
+            className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border-2 border-white bg-gray-500"
+            ref={initialSignupContainerRef}
+          ></div>
+          <h3 className="pb-4 text-2xl font-semibold text-gray-900">Jelentkezés és dolgozatok feltöltése</h3>
+          <time className="mb-10 font-light leading-none text-gray-500">2024. február 26. - 2024 március 3.</time>
+          <div>
+            <SignupWrapper scrollToRef={initialSignupContainerRef} />
+          </div>
+        </li>
+        {/* <li className="mb-10 ml-10">
+          <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border-2 border-white bg-gray-500"></div>
+          <h3 className="pb-4 text-2xl font-semibold text-gray-900">Dolgozatok ellenőrzése</h3>
+          <time className="mb-10 font-light leading-none text-gray-500">2023. március 13-20.</time>
+          <div className="m-6">
+            <p className="text-gray-500">
+              Miután a tanárok ellenőrzik a dolgozatokat, az el nem fogadott dolgozatokat van lehetőség kijavítani és
+              újra feltölteni.{" "}
+            </p>
+            <p className="text-gray-500">A dolgozatok elbírálásáról email-ben értesítenek majd a szervezők.</p>
+          </div>
+        </li> */}
+        <li className="mb-10 ml-10">
+          <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border-2 border-white bg-gray-500"></div>
+          <div className="pointer-events-none opacity-50 grayscale">
+            <h3 className="pb-4 text-2xl font-semibold text-gray-900">Javított dolgozatok feltöltése</h3>
+            <time className="mb-10 font-light leading-none text-gray-500">2023. március 10-16.</time>
+            <div className="m-6">
+              <SecondUploadForm />
+            </div>
+          </div>
+        </li>
+        {/* <li className="mb-10 ml-10">
+          <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border-2 border-white bg-gray-500"></div>
+          <div>
+            <h3 className="pb-4 text-2xl font-semibold text-gray-900">A dolgozatok végső elbírálása</h3>
+            <time className="mb-10 font-light leading-none text-gray-500">2023. március 27-29.</time>
+            <div className="m-6">
+              <p className="text-gray-500">A kijavított dolgozatokat ismét ellenőrzik a szervezők és tanárok.</p>
+              <p className="text-gray-500">
+                A bemutatásra választott dolgozatokról a szervezők email-ben értesítik majd a jelentkezőket.
+              </p>
+            </div>
+          </div>
+        </li> */}
+        <li className="mb-10 ml-10">
+          <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border-2 border-white bg-gray-500"></div>
+          <div>
+            <h3 className="pb-4 text-2xl font-semibold text-gray-900">Regisztrációs díj befizetése</h3>
+            <time className="mb-10 font-light leading-none text-gray-500">2024. március 20-29.</time>
+            <ul className="ml-8 list-disc pt-10">
+              <li>Belföldi hallgatók számára: 130 RON- 1. dolgozat, 110 RON- 2. dolgozat*</li>
+              <li>Poszter szekció: 110 RON- 1. dolgozat. dolgozat</li>
+              <li className="pt-2">Külföldi hallgatók számára: 10500 Ft- 1. dolgozat 9000, Ft- 2. dolgozat*</li>
+              <li>Poszter szekció: 9000 Ft- 1. dolgozat dolgozat</li>
+              <li className="pt-2 font-semibold">Az MMDSZ kártyát felmutató diákok 10% kedvezményben részesülnek.</li>
+            </ul>{" "}
+            <h4 className="pt-4 pb-2 font-bold">Fizetési lehetőségek:</h4>{" "}
+            <div>
+              <h5 className="pb-2 pt-4 text-lg font-light">Személyesen</h5>{" "}
+              <p>
+                A Marosvásárhelyi Magyar Diákszövetség székházában (Nicolae Grigorescu 15A/1), irodaprogramban. (Az
+                irodaprogram megtalálható a kapcsolat menüpontban.)
+              </p>
+            </div>{" "}
+            <div>
+              <h5 className="pb-2 pt-4 text-lg font-light">
+                Banki átutalással (kizárólagosan külföldön tanuló diákok számára):
+              </h5>{" "}
+              <ul className="ml-6 list-disc">
+                <li>
+                  <b>Asociația Studenților Maghiari din Târgu Mureș CIF:</b> 8434501
+                </li>{" "}
+                <li>
+                  <b>Sediu:</b> Str. Gh. Marinescu, nr. 38., jud. Mureș
+                </li>{" "}
+                <li>
+                  <b>OTP Bank Codul Swift:</b> BTRLRO22
+                </li>{" "}
+                <li>
+                  <b>Cont bancar:</b> RO 06 BTRL RONCRT 0674086402
+                </li>
+              </ul>
+            </div>{" "}
+            <p className="pt-4 italic">
+              Kérjük az átutalás megjegyzésében feltüntetni: “Registration Fee 31.TDK - Teljes Név”, például:
+              “Registration Fee 31.TDK - Kis János”.
+            </p>{" "}
+            <p className="pt-6 text-sm font-light text-gray-600">
+              * A befizetett díj tartalmazza a konferencián való részvételt, beleértve a gálát, valamint a promóciós
+              anyagokból való részesedést (mindezt az első szerző számára).
+            </p>
+          </div>
+        </li>
+        <li className="mb-10 ml-10">
+          <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border-2 border-white bg-gray-500"></div>
+          <div className="pointer-events-none opacity-50 grayscale">
+            <h3 className="pb-4 text-2xl font-semibold text-gray-900">Prezentációk feltöltése</h3>
+            <time className="mb-10 font-light leading-none text-gray-500">2023. április 1-5.</time>
+            <div className="m-6">
+              <PresentationUpload />
+            </div>
+          </div>
         </li>
       </ol>
     </div>
