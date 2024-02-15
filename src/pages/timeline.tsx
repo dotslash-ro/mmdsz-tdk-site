@@ -91,7 +91,7 @@ const Timeline = () => {
                   <b>Sediu:</b> Str. Gh. Marinescu, nr. 38., jud. Mureș
                 </li>{" "}
                 <li>
-                  <b>OTP Bank Codul Swift:</b> BTRLRO22
+                  <b>Banca Transilvania Codul Swift:</b> BTRLRO22
                 </li>{" "}
                 <li>
                   <b>Cont bancar:</b> RO 06 BTRL RONCRT 0674086402
