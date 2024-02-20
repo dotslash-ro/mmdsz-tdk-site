@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import PresentationUpload from "../components/presentation-upload";
 import SecondUploadForm from "../components/second-upload";
 import SignupWrapper from "../components/signup-wrapper";
@@ -6,6 +6,13 @@ import { withLayout } from "../layout/withLayout";
 
 const Timeline = () => {
   const initialSignupContainerRef = useRef<HTMLDivElement | null>(null);
+
+  // TODO: Remove this when the signup starts
+  useEffect(() => {
+    localStorage.removeItem("signupStatus");
+  }, []);
+
+
   return (
     <div className="flex justify-center py-20 px-6">
       <ol className="relative space-y-32 border-l border-gray-300 lg:w-1/2">
