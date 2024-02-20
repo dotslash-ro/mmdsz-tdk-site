@@ -194,7 +194,7 @@ const SignupWrapper = ({ scrollToRef }: { scrollToRef: MutableRefObject<HTMLDivE
     return (
       <div className="flex h-48 flex-col items-center justify-center">
         <div className="py-6 text-center text-xl font-semibold text-red-400">
-          Sajnos a hozzájárulási nyilatkozat feltöltése alatt egy hiba lépett fel!
+          Sajnos a hozzájárulási és publikációs nyilatkozat feltöltése alatt egy hiba lépett fel!
         </div>
         <button
           className="rounded-full bg-tdk-accent py-2 px-5 text-lg font-bold uppercase text-white hover:underline"
@@ -260,9 +260,9 @@ const SignupWrapper = ({ scrollToRef }: { scrollToRef: MutableRefObject<HTMLDivE
           <li>Társszerzők neve, e-mail címe, egyeteme, évfolyama, szak, kara </li>
           <li>Témavezető neve és beosztása, valamint egyetem (intézet). </li>
         </ul>
-        <h3 className="mb-4 mt-6 text-lg font-light text-gray-800">Saját hozzájárulási nyilatkozat</h3>
+        <h3 className="mb-4 mt-6 text-lg font-light text-gray-800">Saját hozzájárulási és publikásciós nyilatkozat</h3>
         <p className="mt-8 text-gray-500">
-          A tavalyi évhez hasonlóan idén is szükséges a saját hozzájárulási nyilatkozat kitöltése.{" "}
+          A tavalyi évhez hasonlóan idén is szükséges a saját hozzájárulási és publikációs nyilatkozat kitöltése.{" "}
         </p>
         <p className="mt-4 text-gray-500">
           Egy kitöltött, példa dokumentum{" "}
