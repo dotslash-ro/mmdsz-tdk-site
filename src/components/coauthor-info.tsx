@@ -9,8 +9,9 @@ const CoAuthorInfoSchema = z.object({
   coAuthorName: z.literal("").or(z.string().min(1, { message: "Add meg a társszerző nevét!" })),
   university: z.literal("").or(z.string().min(1, { message: "Add meg a társszerző egyetemét!" })),
   otherUniversity: z.string().min(1, { message: "Add meg a társszerző egyetemének nevét!" }).optional(),
-  department: z.string().min(1, { message: "Add meg a kart, amelyen tanulsz!" }),
-  email: z.literal("").or(z.string().email({ message: "Add meg a társszerző email címét" })),
+  department: z.string().min(1, { message: "Add meg a társszerző karát!" }),
+  section: z.string().min(1, { message: "Add meg a társszerző szakát!" }),
+  email: z.literal("").or(z.string().email({ message: "Add meg a társszerző email címét!" })),
   studyYear: z.literal("").or(z.string().regex(/[123456]/, { message: "Add meg a társszerző évfolyamát!" })),
 });
 
@@ -21,9 +22,16 @@ interface CoAuthorInfoFormProps {
   removeCoAuthorForm: () => void;
   setIsDirty: (isDirty: boolean) => void;
   index: number;
+  defaultValues?: CoAuthorInfoSchema;
 }
 
-const CoAuthorInfo = ({ setCoAuthorInfo, removeCoAuthorForm, index, setIsDirty }: CoAuthorInfoFormProps) => {
+const CoAuthorInfo = ({
+  setCoAuthorInfo,
+  removeCoAuthorForm,
+  index,
+  setIsDirty,
+  defaultValues,
+}: CoAuthorInfoFormProps) => {
   const {
     register,
     handleSubmit,
@@ -31,6 +39,7 @@ const CoAuthorInfo = ({ setCoAuthorInfo, removeCoAuthorForm, index, setIsDirty }
     formState: { errors, isValid, isSubmitting, isDirty, isSubmitted },
   } = useForm<CoAuthorInfoSchema>({
     resolver: zodResolver(CoAuthorInfoSchema),
+    defaultValues,
   });
 
   const onSubmit: SubmitHandler<CoAuthorInfoSchema> = (data) => {
@@ -127,6 +136,18 @@ const CoAuthorInfo = ({ setCoAuthorInfo, removeCoAuthorForm, index, setIsDirty }
             aria-invalid={errors.department ? "true" : "false"}
           />
           {errors.department && <p className="mt-2 text-xs italic text-red-500"> {errors.department?.message}</p>}
+        </div>
+        <div className="mb-6">
+          <label htmlFor="section" className="mb-2 block text-lg font-medium text-gray-900">
+            Társszerző szaka
+          </label>
+          <input
+            type="text"
+            id="section"
+            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            {...register("section")}
+          />
+          {errors.section && <p className="mt-2 text-xs italic text-red-500"> {errors.section?.message}</p>}
         </div>
         <div className="mb-6">
           <h3 className="mb-4 text-lg font-medium text-gray-900">Társszerző évfolyama</h3>

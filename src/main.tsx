@@ -40,6 +40,10 @@ const router = createHashRouter([
     element: <Timeline />,
   },
   {
+    path: "/teszt-jelentkezes",
+    element: <Timeline />,
+  },
+  {
     path: "/szabalyzat",
     element: <Rules />,
   },

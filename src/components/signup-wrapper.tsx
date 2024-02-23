@@ -28,7 +28,13 @@ export type SignupStep = (typeof signupSteps)[number];
 const signupStatuses = ["not-signedup", "signed-up", "error"] as const;
 type SignupStatus = (typeof signupStatuses)[number];
 
-const SignupWrapper = ({ scrollToRef }: { scrollToRef: MutableRefObject<HTMLDivElement | null> }) => {
+const SignupWrapper = ({
+  scrollToRef,
+  signupEnabled,
+}: {
+  scrollToRef: MutableRefObject<HTMLDivElement | null>;
+  signupEnabled: boolean;
+}) => {
   const [signupStatus, setSignupStatus] = useState<SignupStatus>("not-signedup");
   const [dataUploaded, setDataUploaded] = useState(false);
 
@@ -102,6 +108,11 @@ const SignupWrapper = ({ scrollToRef }: { scrollToRef: MutableRefObject<HTMLDivE
         })),
         coordinatorInfos,
       });
+      // persist form data for later use if file upload fails
+      localStorage.setItem("personalInfo", JSON.stringify(personalInfo));
+      localStorage.setItem("documentInfo", JSON.stringify(documentInfo));
+      localStorage.setItem("coAuthorInfos", JSON.stringify(coAuthorInfos));
+      localStorage.setItem("coordinatorInfos", JSON.stringify(coordinatorInfos));
       try {
         setLoading(true);
         scrollToRef?.current?.scrollIntoView({ behavior: "smooth" });
@@ -126,12 +137,6 @@ const SignupWrapper = ({ scrollToRef }: { scrollToRef: MutableRefObject<HTMLDivE
       // after successful upload, set flag to no longer require applicant data
       setDataUploaded(true);
       localStorage.setItem("dataUploaded", "true");
-
-      // persist form data for later use if file upload fails
-      localStorage.setItem("personalInfo", JSON.stringify(personalInfo));
-      localStorage.setItem("documentInfo", JSON.stringify(documentInfo));
-      localStorage.setItem("coAuthorInfos", JSON.stringify(coAuthorInfos));
-      localStorage.setItem("coordinatorInfos", JSON.stringify(coordinatorInfos));
     }
     // prepare form data for file upload
     const data = new FormData();
@@ -242,7 +247,7 @@ const SignupWrapper = ({ scrollToRef }: { scrollToRef: MutableRefObject<HTMLDivE
 
   if (currentStep == "preSignup") {
     return (
-      <p className="">
+      <div className="">
         <h3 className="mb-4 mt-8 text-lg font-light text-gray-800">
           A kivonat feltöltéséhez: az alábbi adatokra lesz szükség:
         </h3>
@@ -281,38 +286,63 @@ const SignupWrapper = ({ scrollToRef }: { scrollToRef: MutableRefObject<HTMLDivE
           A kék színnel kiegészített részek példaként szolgálnak az űrlap kitöltéséhez. Kérünk, hogy figyelmesen olvasd
           végig a dokumentumot kitöltés közben.
         </p>
-        <p className="mt-4 text-gray-500">
+        <div className="mt-4 text-gray-500">
           A fájlra vonatkozó követelmények:
           <ul className="ml-4 list-disc">
             <li>.pdf fájl formátum</li>
             <li>Maximum 1 MB fájl méret.</li>
           </ul>
-        </p>
+        </div>
         <p className="mt-4 text-gray-500">
           Amennyiben további kérdések merülnének fel, keress minket az e-mail címünkön (tdk@mmdsz.ro), vagy írj a
           konferencia Facebook oldalán.
         </p>
-        <button
-          className="pointer-events-none mt-6 rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white opacity-50 drop-shadow-md grayscale hover:underline xl:text-xl"
-          onClick={() => setCurrentStep("personalInfo")}
-        >
-          Jelentkezés
-        </button>
-      </p>
+        {signupEnabled ? (
+          <button
+            className="mt-6 rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-xl"
+            onClick={() => setCurrentStep("personalInfo")}
+          >
+            Jelentkezés
+          </button>
+        ) : (
+          <button
+            className="pointer-events-none mt-6 rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white opacity-50 drop-shadow-md grayscale hover:underline xl:text-xl"
+            onClick={() => setCurrentStep("personalInfo")}
+          >
+            Jelentkezés
+          </button>
+        )}
+      </div>
     );
   }
 
   if (currentStep == "personalInfo") {
-    return <PersonalInfo setPersonalInfo={setPersonalInfo} setCurrentStep={setCurrentStep} />;
+    return (
+      <PersonalInfo setPersonalInfo={setPersonalInfo} setCurrentStep={setCurrentStep} defaultValues={personalInfo} />
+    );
   }
   if (currentStep == "documentInfo") {
-    return <DocumentInfo setDocumentInfo={setDocumentInfo} setCurrentStep={setCurrentStep} />;
+    return (
+      <DocumentInfo setDocumentInfo={setDocumentInfo} setCurrentStep={setCurrentStep} defaultValues={documentInfo} />
+    );
   }
   if (currentStep == "coAuthorInfo") {
-    return <CoAuthorInfos setCoAuthorInfosParent={setCoAuthorInfos} setCurrentStep={setCurrentStep} />;
+    return (
+      <CoAuthorInfos
+        setCoAuthorInfosParent={setCoAuthorInfos}
+        setCurrentStep={setCurrentStep}
+        defaultValues={coAuthorInfos}
+      />
+    );
   }
   if (currentStep == "coordinatorInfo") {
-    return <CoordinatorInfos setCoordinatorInfosParent={setCoordinatorInfos} setCurrentStep={setCurrentStep} />;
+    return (
+      <CoordinatorInfos
+        setCoordinatorInfosParent={setCoordinatorInfos}
+        setCurrentStep={setCurrentStep}
+        defaultValues={coordinatorInfos}
+      />
+    );
   }
   if (currentStep == "agreementDoc") {
     return (

@@ -175,11 +175,9 @@ const Rules = () => {
       <p>A bemutatandó poszterek a konferencia állandó kiállítását fogják képezni.</p>
       <p>
         A poszterszekcióba történő jelentkezéskor a kész absztraktot valamint a saját hozzájárulási és publikációs
-        nyilatkozatot a honlapra kérjük feltölteni a megadott dátumig. Emellett a <strong>
-          bemutató diák köteles a posztert
-          fizikai formában
-        </strong> (az előre meghatározott formai követelményeknek megfelelően) magával hozni a szervezők által
-        meghatározott időpontra.
+        nyilatkozatot a honlapra kérjük feltölteni a megadott dátumig. Emellett a{" "}
+        <strong>bemutató diák köteles a posztert fizikai formában</strong> (az előre meghatározott formai
+        követelményeknek megfelelően) magával hozni a szervezők által meghatározott időpontra.
       </p>
       <p>
         A poszter szekcióban bemutatott dolgozatok kivonata, az előadás szekció dolgozatainak kivonataihoz hasonlóan és

@@ -7,7 +7,7 @@ const PastJournals = () => {
   return (
     <div className="flex min-h-screen flex-grow flex-col py-5 md:flex-row">
       <div className="mb-6 border-gray-300 px-10 md:w-1/5 md:border-r">
-        <label htmlFor="journals" className="mb-2 block text-lg pt-10 font-medium text-gray-900">
+        <label htmlFor="journals" className="mb-2 block pt-10 text-lg font-medium text-gray-900">
           Év
         </label>
         <select

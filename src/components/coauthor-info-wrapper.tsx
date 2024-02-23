@@ -1,14 +1,15 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import CoAuthorInfo, { CoAuthorInfoSchema } from "./coauthor-info";
 import { SignupStep } from "./signup-wrapper";
 
 interface CoAuthorInfosProps {
   setCurrentStep: (step: SignupStep) => void;
   setCoAuthorInfosParent: (coAuthorInfos: Array<CoAuthorInfoSchema>) => void;
+  defaultValues?: Array<CoAuthorInfoSchema>;
 }
 
-const CoAuthorInfos = ({ setCurrentStep, setCoAuthorInfosParent }: CoAuthorInfosProps) => {
-  const [coAuthorCount, setCoAuthorCount] = useState(0);
+const CoAuthorInfos = ({ setCurrentStep, setCoAuthorInfosParent, defaultValues }: CoAuthorInfosProps) => {
+  const [coAuthorCount, setCoAuthorCount] = useState(defaultValues?.length ?? 0);
   const [coAuthorInfos, setCoAuthorInfos] = useState<Array<CoAuthorInfoSchema>>([]);
   const [isDirty, setIsDirty] = useState(false);
 
@@ -28,6 +29,7 @@ const CoAuthorInfos = ({ setCurrentStep, setCoAuthorInfosParent }: CoAuthorInfos
                   removeCoAuthorForm={() => setCoAuthorCount(coAuthorCount - 1)}
                   index={index}
                   setIsDirty={setIsDirty}
+                  defaultValues={defaultValues && defaultValues[index]}
                 />
               </div>
             );

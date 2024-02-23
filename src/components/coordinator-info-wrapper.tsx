@@ -1,14 +1,15 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { SignupStep } from "./signup-wrapper";
 import CoordinatorInfo, { CoordinatorInfoSchema } from "./coordinator-info";
 
 interface CoordinatorInfosProps {
   setCurrentStep: (step: SignupStep) => void;
   setCoordinatorInfosParent: (CoordinatorInfos: Array<CoordinatorInfoSchema>) => void;
+  defaultValues?: Array<CoordinatorInfoSchema>;
 }
 
-const CoordinatorInfos = ({ setCurrentStep, setCoordinatorInfosParent }: CoordinatorInfosProps) => {
-  const [coordinatorCount, setCoordinatorCount] = useState(1);
+const CoordinatorInfos = ({ setCurrentStep, setCoordinatorInfosParent, defaultValues }: CoordinatorInfosProps) => {
+  const [coordinatorCount, setCoordinatorCount] = useState(defaultValues?.length ?? 1);
   const [coordinatorInfos, setCoordinatorInfos] = useState<Array<CoordinatorInfoSchema>>([]);
 
   return (
@@ -24,6 +25,7 @@ const CoordinatorInfos = ({ setCurrentStep, setCoordinatorInfosParent }: Coordin
               <div key={index}>
                 <CoordinatorInfo
                   setCoordinatorInfo={(coordinatorInfo) => setCoordinatorInfos([...coordinatorInfos, coordinatorInfo])}
+                  defaultValues={defaultValues && defaultValues[index]}
                 />
               </div>
             );

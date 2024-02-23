@@ -1,7 +1,7 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { sectionList, universityList } from "../constants";
+import { sectionList } from "../constants";
 import { SignupStep } from "./signup-wrapper";
 import { ClipLoader } from "react-spinners";
 
@@ -28,17 +28,17 @@ export type DocumentInfoSchema = z.infer<typeof DocumentInfoSchema>;
 interface DocumentInfoFormProps {
   setDocumentInfo: (DocumentInfo: DocumentInfoSchema) => void;
   setCurrentStep: (step: SignupStep) => void;
+  defaultValues?: DocumentInfoSchema;
 }
 
-const DocumentInfo = ({ setDocumentInfo, setCurrentStep }: DocumentInfoFormProps) => {
+const DocumentInfo = ({ setDocumentInfo, setCurrentStep, defaultValues }: DocumentInfoFormProps) => {
   const {
     register,
     handleSubmit,
-    watch,
-    reset,
     formState: { errors, isValid, isSubmitting },
   } = useForm<DocumentInfoSchema>({
     resolver: zodResolver(DocumentInfoSchema),
+    defaultValues,
   });
 
   const onSubmit: SubmitHandler<DocumentInfoSchema> = (data) => {

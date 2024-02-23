@@ -99,6 +99,7 @@ export const sectionList = [
   "Anatómia és Patológia",
   "Aneszteziológia És Intenzív Terápia",
   "Angiológia",
+  "Betteggondozás (nursing)",
   "Bioinformatika",
   "Bőrgyógyászat",
   "Diabetológia",

@@ -15,9 +15,10 @@ export type CoordinatorInfoSchema = z.infer<typeof coordinatorInfoSchema>;
 
 interface CoordinatorInfoFormProps {
   setCoordinatorInfo: (CoordinatorInfo: CoordinatorInfoSchema) => void;
+  defaultValues?: CoordinatorInfoSchema;
 }
 
-const CoordinatorInfo = ({ setCoordinatorInfo }: CoordinatorInfoFormProps) => {
+const CoordinatorInfo = ({ setCoordinatorInfo, defaultValues }: CoordinatorInfoFormProps) => {
   const {
     register,
     handleSubmit,
@@ -25,6 +26,7 @@ const CoordinatorInfo = ({ setCoordinatorInfo }: CoordinatorInfoFormProps) => {
     formState: { errors, isValid, isSubmitting, isSubmitted },
   } = useForm<CoordinatorInfoSchema>({
     resolver: zodResolver(coordinatorInfoSchema),
+    defaultValues,
   });
 
   const onSubmit: SubmitHandler<CoordinatorInfoSchema> = (data) => {

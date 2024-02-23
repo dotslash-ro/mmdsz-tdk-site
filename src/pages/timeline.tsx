@@ -3,15 +3,20 @@ import PresentationUpload from "../components/presentation-upload";
 import SecondUploadForm from "../components/second-upload";
 import SignupWrapper from "../components/signup-wrapper";
 import { withLayout } from "../layout/withLayout";
+import { useLocation } from "react-router-dom";
 
 const Timeline = () => {
   const initialSignupContainerRef = useRef<HTMLDivElement | null>(null);
 
   // TODO: Remove this when the signup starts
   useEffect(() => {
-    localStorage.removeItem("signupStatus");
+    if (route.pathname == "/jelentkezes") {
+      localStorage.removeItem("signupStatus");
+    }
   }, []);
 
+  const route = useLocation();
+  console.log(route.pathname);
 
   return (
     <div className="flex justify-center py-20 px-6">
@@ -28,7 +33,10 @@ const Timeline = () => {
           <h3 className="pb-4 text-2xl font-semibold text-gray-900">Jelentkezés és dolgozatok feltöltése</h3>
           <time className="mb-10 font-light leading-none text-gray-500">2024. február 26. - 2024 március 3.</time>
           <div>
-            <SignupWrapper scrollToRef={initialSignupContainerRef} />
+            <SignupWrapper
+              scrollToRef={initialSignupContainerRef}
+              signupEnabled={route.pathname == "/teszt-jelentkezes"}
+            />
           </div>
         </li>
         {/* <li className="mb-10 ml-10">
