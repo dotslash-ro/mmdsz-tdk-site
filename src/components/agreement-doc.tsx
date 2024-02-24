@@ -1,6 +1,6 @@
-// @ts-ignore
+// @ts-expect-error vite import
 import exampleAgreementDocUrl from "../assets/tdk-pelda-nyilatkozat.docx";
-// @ts-ignore
+// @ts-expect-error vite import
 import agreementDocUrl from "../assets/tdk-nyilatkozat.docx";
 import { SignupStep } from "./signup-wrapper";
 

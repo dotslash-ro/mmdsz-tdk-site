@@ -90,7 +90,7 @@ const PersonalInfo = ({ setPersonalInfo, setCurrentStep, defaultValues }: Person
           <input
             type="tel"
             id="phone"
-            data-error={errors.phoneNumber}
+            data-error={errors.phoneNumber != undefined}
             className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
             {...register("phoneNumber")}
             aria-invalid={errors.phoneNumber ? "true" : "false"}
@@ -103,7 +103,7 @@ const PersonalInfo = ({ setPersonalInfo, setCurrentStep, defaultValues }: Person
           </label>
           <select
             id="universities"
-            data-error={errors.university}
+            data-error={errors.university != undefined}
             className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
             {...register("university")}
           >
@@ -125,7 +125,7 @@ const PersonalInfo = ({ setPersonalInfo, setCurrentStep, defaultValues }: Person
             <input
               type="text"
               id="other-university"
-              data-error={errors.otherUniversity}
+              data-error={errors.otherUniversity != undefined}
               className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
               {...register("otherUniversity")}
               aria-invalid={errors.otherUniversity ? "true" : "false"}
@@ -142,7 +142,7 @@ const PersonalInfo = ({ setPersonalInfo, setCurrentStep, defaultValues }: Person
           <input
             type="text"
             id="department"
-            data-error={errors.department}
+            data-error={errors.department != undefined}
             className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
             {...register("department")}
             aria-invalid={errors.department ? "true" : "false"}
@@ -156,7 +156,7 @@ const PersonalInfo = ({ setPersonalInfo, setCurrentStep, defaultValues }: Person
           <input
             type="text"
             id="section"
-            data-error={errors.section}
+            data-error={errors.section != undefined}
             className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
             {...register("section")}
           />
