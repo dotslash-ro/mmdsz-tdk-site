@@ -359,6 +359,7 @@ const SignupWrapper = ({
         agreementDoc={agreementDoc}
         coordinatorInfos={coordinatorInfos}
         onSignup={onSignup}
+        setCurrentStep={setCurrentStep}
       />
     );
   }

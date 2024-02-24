@@ -6,7 +6,10 @@ import { ClipLoader } from "react-spinners";
 const coordinatorInfoSchema = z.object({
   coordinatorName: z.string().min(1, { message: "Add meg témavezető nevét!" }),
   institute: z.string().min(1, { message: "Add meg a témavezető intézményét!!" }),
-  email: z.string().email({ message: "Add meg a témavezető e-mail címét!" }),
+  email: z
+    .string()
+    .min(1, { message: "Add meg a témavezető e-mail címét!" })
+    .email({ message: "Helytelen e-mail cím" }),
   title: z.string().min(1, { message: "Add meg a témavezető titulusát!" }),
   otherTitle: z.string().min(1, { message: "Add meg a témavezető titulusát!" }).optional(),
 });
@@ -27,6 +30,7 @@ const CoordinatorInfo = ({ setCoordinatorInfo, defaultValues }: CoordinatorInfoF
   } = useForm<CoordinatorInfoSchema>({
     resolver: zodResolver(coordinatorInfoSchema),
     defaultValues,
+    mode: "onBlur",
   });
 
   const onSubmit: SubmitHandler<CoordinatorInfoSchema> = (data) => {
@@ -51,7 +55,8 @@ const CoordinatorInfo = ({ setCoordinatorInfo, defaultValues }: CoordinatorInfoF
           <input
             type="text"
             id="name"
-            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            data-error={errors.coordinatorName != undefined}
+            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
             {...register("coordinatorName")}
           />
           {errors.coordinatorName && (
@@ -65,7 +70,8 @@ const CoordinatorInfo = ({ setCoordinatorInfo, defaultValues }: CoordinatorInfoF
           <input
             type="email"
             id="email"
-            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            data-error={errors.email != undefined}
+            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
             {...register("email")}
             aria-invalid={errors.email ? "true" : "false"}
           />
@@ -78,7 +84,8 @@ const CoordinatorInfo = ({ setCoordinatorInfo, defaultValues }: CoordinatorInfoF
           <input
             type="institute"
             id="name"
-            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            data-error={errors.institute != undefined}
+            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
             {...register("institute")}
           />
 
@@ -90,7 +97,7 @@ const CoordinatorInfo = ({ setCoordinatorInfo, defaultValues }: CoordinatorInfoF
           </label>
           <select
             id="titles"
-            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-tdk-primary"
+            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-tdk-primary focus:outline-none"
             {...register("title")}
           >
             {["Egyetemi tanár", "Egyetemi docens", "Egyetemi adjunktus", "Egyetemi tanársegéd", "Egyéb"].map(
@@ -113,7 +120,8 @@ const CoordinatorInfo = ({ setCoordinatorInfo, defaultValues }: CoordinatorInfoF
             <input
               type="text"
               id="other-title"
-              className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              data-error={errors.otherTitle != undefined}
+              className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
               {...register("otherTitle")}
               aria-invalid={errors.otherTitle ? "true" : "false"}
             />

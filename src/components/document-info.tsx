@@ -38,12 +38,14 @@ const DocumentInfo = ({ setDocumentInfo, setCurrentStep, defaultValues }: Docume
     formState: { errors, isValid, isSubmitting },
   } = useForm<DocumentInfoSchema>({
     resolver: zodResolver(DocumentInfoSchema),
+    mode: "onBlur",
     defaultValues,
   });
 
   const onSubmit: SubmitHandler<DocumentInfoSchema> = (data) => {
     setDocumentInfo(data);
     setCurrentStep("coAuthorInfo");
+    localStorage.setItem("documentInfo", JSON.stringify(data));
   };
 
   if (isSubmitting) {
@@ -64,7 +66,8 @@ const DocumentInfo = ({ setDocumentInfo, setCurrentStep, defaultValues }: Docume
           <input
             type="text"
             id="title"
-            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            data-error={errors.hungarianTitle}
+            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
             {...register("hungarianTitle")}
           />
           {errors.hungarianTitle && (
@@ -78,7 +81,8 @@ const DocumentInfo = ({ setDocumentInfo, setCurrentStep, defaultValues }: Docume
           <input
             type="text"
             id="title"
-            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            data-error={errors.romanianTitle}
+            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
             {...register("romanianTitle")}
           />
           {errors.romanianTitle && <p className="mt-2 text-xs italic text-red-500"> {errors.romanianTitle?.message}</p>}
@@ -90,7 +94,8 @@ const DocumentInfo = ({ setDocumentInfo, setCurrentStep, defaultValues }: Docume
           <input
             type="text"
             id="title"
-            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            data-error={errors.englishTitle}
+            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
             {...register("englishTitle")}
           />
           {errors.englishTitle && <p className="mt-2 text-xs italic text-red-500"> {errors.englishTitle?.message}</p>}
@@ -101,7 +106,7 @@ const DocumentInfo = ({ setDocumentInfo, setCurrentStep, defaultValues }: Docume
           </label>
           <select
             id="sections"
-            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-tdk-primary"
+            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-tdk-primary focus:outline-none"
             {...register("section")}
           >
             {sectionList.map((section, index) => {
@@ -126,8 +131,8 @@ const DocumentInfo = ({ setDocumentInfo, setCurrentStep, defaultValues }: Docume
             Bevezetés
           </label>
           <textarea
-            id="large-input"
-            className="sm:text-md block w-full whitespace-pre-line rounded-lg border border-gray-300 bg-gray-50 p-6 text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+            id="introduction"
+            className="sm:text-md block w-full whitespace-pre-line rounded-lg border border-gray-300 bg-gray-50 p-6 text-gray-900 focus:border-tdk-primary focus:outline-none"
             {...register("introduction")}
           />
           {errors.introduction && <p className="mt-2 text-xs italic text-red-500"> {errors.introduction?.message}</p>}
@@ -138,7 +143,7 @@ const DocumentInfo = ({ setDocumentInfo, setCurrentStep, defaultValues }: Docume
           </label>
           <textarea
             id="mission"
-            className="sm:text-md block w-full whitespace-pre-line rounded-lg border border-gray-300 bg-gray-50 p-6 text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+            className="sm:text-md block w-full whitespace-pre-line rounded-lg border border-gray-300 bg-gray-50 p-6 text-gray-900 focus:border-tdk-primary focus:outline-none"
             {...register("mission")}
           />
           {errors.mission && <p className="mt-2 text-xs italic text-red-500"> {errors.mission?.message}</p>}
@@ -149,7 +154,7 @@ const DocumentInfo = ({ setDocumentInfo, setCurrentStep, defaultValues }: Docume
           </label>
           <textarea
             id="methods"
-            className="sm:text-md block w-full whitespace-pre-line rounded-lg border border-gray-300 bg-gray-50 p-6 text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+            className="sm:text-md block w-full whitespace-pre-line rounded-lg border border-gray-300 bg-gray-50 p-6 text-gray-900 focus:border-tdk-primary focus:outline-none"
             {...register("methods")}
           />
           {errors.methods && <p className="mt-2 text-xs italic text-red-500"> {errors.methods?.message}</p>}
@@ -160,7 +165,7 @@ const DocumentInfo = ({ setDocumentInfo, setCurrentStep, defaultValues }: Docume
           </label>
           <textarea
             id="results"
-            className="sm:text-md block w-full whitespace-pre-line rounded-lg border border-gray-300 bg-gray-50 p-6 text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+            className="sm:text-md block w-full whitespace-pre-line rounded-lg border border-gray-300 bg-gray-50 p-6 text-gray-900 focus:border-tdk-primary focus:outline-none"
             {...register("results")}
           />
           {errors.results && <p className="mt-2 text-xs italic text-red-500"> {errors.results?.message}</p>}
@@ -171,7 +176,7 @@ const DocumentInfo = ({ setDocumentInfo, setCurrentStep, defaultValues }: Docume
           </label>
           <textarea
             id="conclusions"
-            className="sm:text-md block w-full whitespace-pre-line rounded-lg border border-gray-300 bg-gray-50 p-6 text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+            className="sm:text-md block w-full whitespace-pre-line rounded-lg border border-gray-300 bg-gray-50 p-6 text-gray-900 focus:border-tdk-primary focus:outline-none"
             {...register("conclusions")}
           />
           {errors.conclusions && <p className="mt-2 text-xs italic text-red-500"> {errors.conclusions?.message}</p>}
@@ -180,7 +185,7 @@ const DocumentInfo = ({ setDocumentInfo, setCurrentStep, defaultValues }: Docume
         <div className="flex flex-col justify-center gap-x-4 py-2 md:flex-row md:justify-evenly">
           <div className="flex w-full flex-col px-3">
             <div className="overflow-hidden rounded-full bg-gray-200">
-              <div className="h-2 w-1/3 rounded-full bg-blue-400"></div>
+              <div className="h-2 w-1/3 rounded-full bg-tdk-primary"></div>
             </div>
             <p className="py-4 text-sm font-light text-gray-500">2/6 - Kivonat feltöltése</p>
           </div>

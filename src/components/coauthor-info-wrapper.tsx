@@ -48,7 +48,7 @@ const CoAuthorInfos = ({ setCurrentStep, setCoAuthorInfosParent, defaultValues }
       <div className="flex flex-col justify-center gap-x-4 py-2 md:flex-row md:justify-evenly">
         <div className="flex w-full flex-col px-3">
           <div className="overflow-hidden rounded-full bg-gray-200">
-            <div className="h-2 w-1/2 rounded-full bg-blue-400"></div>
+            <div className="h-2 w-1/2 rounded-full bg-tdk-primary"></div>
           </div>
           <p className="mt-4 text-sm font-light text-gray-500">3/6 - Társszerzők adatai</p>
         </div>
@@ -58,6 +58,7 @@ const CoAuthorInfos = ({ setCurrentStep, setCoAuthorInfosParent, defaultValues }
             onClick={() => {
               setCoAuthorInfosParent(coAuthorInfos);
               setCurrentStep("coordinatorInfo");
+              localStorage.setItem("coAuthorInfos", JSON.stringify(coAuthorInfos));
             }}
           >
             Tovább

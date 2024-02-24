@@ -94,7 +94,6 @@ export const organizerGroups = [
 export const sectionList = [
   "",
   "Általános Belgyógyászat",
-  "Általános Orvosi Asszisztens",
   "Általános Sebészet",
   "Anatómia és Patológia",
   "Aneszteziológia És Intenzív Terápia",

@@ -16,7 +16,6 @@ const Timeline = () => {
   }, []);
 
   const route = useLocation();
-  console.log(route.pathname);
 
   return (
     <div className="flex justify-center py-20 px-6">

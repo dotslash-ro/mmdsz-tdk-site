@@ -7,6 +7,7 @@ import { PersonalInfoSchema } from "./personal-info";
 import { DocumentInfoSchema } from "./document-info";
 import { CoAuthorInfoSchema } from "./coauthor-info";
 import { CoordinatorInfoSchema } from "./coordinator-info";
+import { SignupStep } from "./signup-wrapper";
 
 const confirmSignupSchema = z.object({
   acceptedTerms: z.literal(true, {
@@ -23,6 +24,7 @@ interface ConfirmSignupProps {
   coordinatorInfos: Array<CoordinatorInfoSchema>;
   agreementDoc?: File;
   onSignup: () => void;
+  setCurrentStep: (step: SignupStep) => void;
 }
 
 const ConfirmSignup = ({
@@ -32,6 +34,7 @@ const ConfirmSignup = ({
   agreementDoc,
   documentInfo,
   onSignup,
+  setCurrentStep,
 }: ConfirmSignupProps) => {
   const {
     register,
@@ -41,7 +44,7 @@ const ConfirmSignup = ({
     resolver: zodResolver(confirmSignupSchema),
   });
 
-  const onSubmit: SubmitHandler<ConfirmSingupSchema> = ({ acceptedTerms }) => {
+  const onSubmit: SubmitHandler<ConfirmSingupSchema> = () => {
     onSignup();
   };
 
@@ -55,8 +58,31 @@ const ConfirmSignup = ({
   return (
     <div>
       <div className="pt-10 pb-14">
-        <div>
-          <h2 className="pt-4 pb-2 text-lg font-semibold">Személyes adatok</h2>
+        <div className="group">
+          <div className="flex items-center gap-2 pt-4 pb-2">
+            <h2 className="text-lg font-semibold group-hover:underline">Személyes adatok</h2>
+            <button
+              onClick={() => {
+                setCurrentStep("personalInfo");
+              }}
+              className="group hidden h-6 w-6 rounded-md border border-gray-300 px-1 hover:border-gray-900 group-hover:block"
+            >
+              <svg
+                clip-rule="evenodd"
+                fill-rule="evenodd"
+                stroke-linejoin="round"
+                stroke-miterlimit="2"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                className="stroke-gray-300 group-hover:stroke-gray-900"
+              >
+                <path
+                  d="m9.134 19.319 11.587-11.588c.171-.171.279-.423.279-.684 0-.229-.083-.466-.28-.662l-3.115-3.104c-.185-.185-.429-.277-.672-.277s-.486.092-.672.277l-11.606 11.566c-.569 1.763-1.555 4.823-1.626 5.081-.02.075-.029.15-.029.224 0 .461.349.848.765.848.511 0 .991-.189 5.369-1.681zm-3.27-3.342 2.137 2.137-3.168 1.046zm.955-1.166 10.114-10.079 2.335 2.327-10.099 10.101z"
+                  fill-rule="nonzero"
+                />
+              </svg>
+            </button>
+          </div>
           <ul className="ml-6 list-disc">
             <li>
               <label htmlFor="applicantName" className="mr-2 font-light italic text-gray-600">
@@ -84,8 +110,31 @@ const ConfirmSignup = ({
             </li>
           </ul>
         </div>
-        <div>
-          <h2 className="pt-8 pb-2 text-lg font-semibold">Kivonat tartalma</h2>
+        <div className="group">
+          <div className="flex items-center gap-2 pt-4 pb-2">
+            <h2 className="text-lg font-semibold group-hover:underline">Kivonat tartalma</h2>
+            <button
+              onClick={() => {
+                setCurrentStep("documentInfo");
+              }}
+              className="group hidden h-6 w-6 rounded-md border border-gray-300 px-1 hover:border-gray-900 group-hover:block"
+            >
+              <svg
+                clip-rule="evenodd"
+                fill-rule="evenodd"
+                stroke-linejoin="round"
+                stroke-miterlimit="2"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                className="stroke-gray-300 group-hover:stroke-gray-900"
+              >
+                <path
+                  d="m9.134 19.319 11.587-11.588c.171-.171.279-.423.279-.684 0-.229-.083-.466-.28-.662l-3.115-3.104c-.185-.185-.429-.277-.672-.277s-.486.092-.672.277l-11.606 11.566c-.569 1.763-1.555 4.823-1.626 5.081-.02.075-.029.15-.029.224 0 .461.349.848.765.848.511 0 .991-.189 5.369-1.681zm-3.27-3.342 2.137 2.137-3.168 1.046zm.955-1.166 10.114-10.079 2.335 2.327-10.099 10.101z"
+                  fill-rule="nonzero"
+                />
+              </svg>
+            </button>
+          </div>
           <ul className="ml-6 list-disc">
             <li>
               <label htmlFor="hungarianTitle" className="mr-2 font-light italic text-gray-600">
@@ -113,8 +162,31 @@ const ConfirmSignup = ({
             </li>
           </ul>
         </div>
-        <div>
-          <h2 className="pt-8 text-lg font-semibold">Társszerzők adatai</h2>
+        <div className="group">
+          <div className="flex items-center gap-2 pt-4 pb-2">
+            <h2 className="text-lg font-semibold group-hover:underline">Társszerzők adatai</h2>
+            <button
+              onClick={() => {
+                setCurrentStep("coAuthorInfo");
+              }}
+              className="group hidden h-6 w-6 rounded-md border border-gray-300 px-1 hover:border-gray-900 group-hover:block"
+            >
+              <svg
+                clip-rule="evenodd"
+                fill-rule="evenodd"
+                stroke-linejoin="round"
+                stroke-miterlimit="2"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                className="stroke-gray-300 group-hover:stroke-gray-900"
+              >
+                <path
+                  d="m9.134 19.319 11.587-11.588c.171-.171.279-.423.279-.684 0-.229-.083-.466-.28-.662l-3.115-3.104c-.185-.185-.429-.277-.672-.277s-.486.092-.672.277l-11.606 11.566c-.569 1.763-1.555 4.823-1.626 5.081-.02.075-.029.15-.029.224 0 .461.349.848.765.848.511 0 .991-.189 5.369-1.681zm-3.27-3.342 2.137 2.137-3.168 1.046zm.955-1.166 10.114-10.079 2.335 2.327-10.099 10.101z"
+                  fill-rule="nonzero"
+                />
+              </svg>
+            </button>
+          </div>
           <ul>
             {coAuthorInfos.map((coAuthorInfo, index) => {
               return (
@@ -151,8 +223,31 @@ const ConfirmSignup = ({
             })}
           </ul>
         </div>
-        <div>
-          <h2 className="pt-8 text-lg font-semibold">Témavezetők adatai</h2>
+        <div className="group">
+          <div className="flex items-center gap-2 pt-4 pb-2">
+            <h2 className="text-lg font-semibold group-hover:underline">Témavezetők adatai</h2>
+            <button
+              onClick={() => {
+                setCurrentStep("coordinatorInfo");
+              }}
+              className="group hidden h-6 w-6 rounded-md border border-gray-300 px-1 hover:border-gray-900 group-hover:block"
+            >
+              <svg
+                clip-rule="evenodd"
+                fill-rule="evenodd"
+                stroke-linejoin="round"
+                stroke-miterlimit="2"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                className="stroke-gray-300 group-hover:stroke-gray-900"
+              >
+                <path
+                  d="m9.134 19.319 11.587-11.588c.171-.171.279-.423.279-.684 0-.229-.083-.466-.28-.662l-3.115-3.104c-.185-.185-.429-.277-.672-.277s-.486.092-.672.277l-11.606 11.566c-.569 1.763-1.555 4.823-1.626 5.081-.02.075-.029.15-.029.224 0 .461.349.848.765.848.511 0 .991-.189 5.369-1.681zm-3.27-3.342 2.137 2.137-3.168 1.046zm.955-1.166 10.114-10.079 2.335 2.327-10.099 10.101z"
+                  fill-rule="nonzero"
+                />
+              </svg>
+            </button>
+          </div>
           <ul>
             {coordinatorInfos.map((coordinatorInfo, index) => {
               return (
@@ -189,8 +284,31 @@ const ConfirmSignup = ({
             })}
           </ul>
         </div>
-        <div>
-          <h2 className="pt-8 pb-4 text-lg font-semibold">Saját hozzájárulási nyilatkozat</h2>
+        <div className="group">
+          <div className="flex items-center gap-2 pt-4 pb-2">
+            <h2 className="text-lg font-semibold group-hover:underline">Saját hozzájárulási nyilatkozat</h2>
+            <button
+              onClick={() => {
+                setCurrentStep("agreementDoc");
+              }}
+              className="group hidden h-6 w-6 rounded-md border border-gray-300 px-1 hover:border-gray-900 group-hover:block"
+            >
+              <svg
+                clip-rule="evenodd"
+                fill-rule="evenodd"
+                stroke-linejoin="round"
+                stroke-miterlimit="2"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                className="stroke-gray-300 group-hover:stroke-gray-900"
+              >
+                <path
+                  d="m9.134 19.319 11.587-11.588c.171-.171.279-.423.279-.684 0-.229-.083-.466-.28-.662l-3.115-3.104c-.185-.185-.429-.277-.672-.277s-.486.092-.672.277l-11.606 11.566c-.569 1.763-1.555 4.823-1.626 5.081-.02.075-.029.15-.029.224 0 .461.349.848.765.848.511 0 .991-.189 5.369-1.681zm-3.27-3.342 2.137 2.137-3.168 1.046zm.955-1.166 10.114-10.079 2.335 2.327-10.099 10.101z"
+                  fill-rule="nonzero"
+                />
+              </svg>
+            </button>
+          </div>
           <li>
             <span className="font-light italic">{agreementDoc?.name}</span>
           </li>
@@ -203,7 +321,7 @@ const ConfirmSignup = ({
               id="terms"
               type="checkbox"
               value=""
-              className="focus:ring-3 h-4 w-4 rounded border border-gray-300 bg-gray-50 focus:ring-blue-300 "
+              className="focus:ring-3 h-4 w-4 cursor-pointer rounded-md border border-gray-300 bg-gray-50 accent-tdk-accent focus:ring-blue-300"
               {...register("acceptedTerms")}
             />
             {errors.acceptedTerms && (
@@ -221,7 +339,7 @@ const ConfirmSignup = ({
         <div className="flex flex-col items-end justify-evenly gap-x-4 py-2 md:flex-row">
           <div className="flex w-full flex-col px-3">
             <div className="overflow-hidden rounded-full bg-gray-200">
-              <div className="h-2 w-full rounded-full bg-blue-500"></div>
+              <div className="h-2 w-full rounded-full bg-tdk-primary"></div>
             </div>
             <p className="pt-3 text-sm font-light text-gray-400">6/6 - Adatok ellenőrzése</p>
           </div>

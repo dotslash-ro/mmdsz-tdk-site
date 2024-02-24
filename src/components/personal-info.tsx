@@ -10,7 +10,7 @@ const personalInfoSchema = z.object({
   university: z.string().min(1, { message: "Válaszd ki az egyetemed!" }),
   section: z.string().min(1, { message: "Add meg a karod!" }),
   otherUniversity: z.string().min(1, { message: "Add meg az egyetemed nevét!" }).optional(),
-  email: z.string().email({ message: "Add meg az e-mail címed!" }),
+  email: z.string().min(1, { message: "Add meg az e-mail címed!" }).email({ message: "Helytelen e-mail cím" }),
   department: z.string().min(1, { message: "Add meg a kart, amelyen tanulsz!" }),
   phoneNumber: z
     .string()
@@ -35,12 +35,14 @@ const PersonalInfo = ({ setPersonalInfo, setCurrentStep, defaultValues }: Person
     formState: { errors, isValid, isSubmitting },
   } = useForm<PersonalInfoSchema>({
     resolver: zodResolver(personalInfoSchema),
+    mode: "all",
     defaultValues,
   });
 
   const onSubmit: SubmitHandler<PersonalInfoSchema> = (data) => {
     setPersonalInfo(data);
     setCurrentStep("documentInfo");
+    localStorage.setItem("personalInfo", JSON.stringify(data));
   };
 
   if (isSubmitting) {
@@ -61,7 +63,8 @@ const PersonalInfo = ({ setPersonalInfo, setCurrentStep, defaultValues }: Person
           <input
             type="text"
             id="name"
-            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            data-error={errors.applicantName != undefined}
+            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
             {...register("applicantName")}
           />
           {errors.applicantName && <p className="mt-2 text-xs italic text-red-500"> {errors.applicantName?.message}</p>}
@@ -73,7 +76,8 @@ const PersonalInfo = ({ setPersonalInfo, setCurrentStep, defaultValues }: Person
           <input
             type="email"
             id="email"
-            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            data-error={errors.email != undefined}
+            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
             {...register("email")}
             aria-invalid={errors.email ? "true" : "false"}
           />
@@ -86,7 +90,8 @@ const PersonalInfo = ({ setPersonalInfo, setCurrentStep, defaultValues }: Person
           <input
             type="tel"
             id="phone"
-            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            data-error={errors.phoneNumber}
+            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
             {...register("phoneNumber")}
             aria-invalid={errors.phoneNumber ? "true" : "false"}
           />
@@ -98,7 +103,8 @@ const PersonalInfo = ({ setPersonalInfo, setCurrentStep, defaultValues }: Person
           </label>
           <select
             id="universities"
-            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-tdk-primary"
+            data-error={errors.university}
+            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
             {...register("university")}
           >
             {universityList.map((university, index) => {
@@ -119,7 +125,8 @@ const PersonalInfo = ({ setPersonalInfo, setCurrentStep, defaultValues }: Person
             <input
               type="text"
               id="other-university"
-              className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              data-error={errors.otherUniversity}
+              className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
               {...register("otherUniversity")}
               aria-invalid={errors.otherUniversity ? "true" : "false"}
             />
@@ -135,7 +142,8 @@ const PersonalInfo = ({ setPersonalInfo, setCurrentStep, defaultValues }: Person
           <input
             type="text"
             id="department"
-            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            data-error={errors.department}
+            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
             {...register("department")}
             aria-invalid={errors.department ? "true" : "false"}
           />
@@ -148,7 +156,8 @@ const PersonalInfo = ({ setPersonalInfo, setCurrentStep, defaultValues }: Person
           <input
             type="text"
             id="section"
-            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            data-error={errors.section}
+            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
             {...register("section")}
           />
           {errors.section && <p className="mt-2 text-xs italic text-red-500"> {errors.section?.message}</p>}
@@ -182,7 +191,7 @@ const PersonalInfo = ({ setPersonalInfo, setCurrentStep, defaultValues }: Person
         <div className="flex flex-col justify-center gap-x-4 py-2 md:flex-row md:justify-evenly">
           <div className="flex w-full flex-col px-3">
             <div className="overflow-hidden rounded-full bg-gray-200">
-              <div className="h-2 w-1/6 rounded-full bg-blue-400"></div>
+              <div className="h-2 w-1/6 rounded-full bg-tdk-primary"></div>
             </div>
             <p className="py-3 text-sm font-light text-gray-500">1/6 - Személyes adatok</p>
           </div>

@@ -6,13 +6,16 @@ import { ClipLoader } from "react-spinners";
 import { useEffect } from "react";
 
 const CoAuthorInfoSchema = z.object({
-  coAuthorName: z.literal("").or(z.string().min(1, { message: "Add meg a társszerző nevét!" })),
-  university: z.literal("").or(z.string().min(1, { message: "Add meg a társszerző egyetemét!" })),
+  coAuthorName: z.string().min(1, { message: "Add meg a társszerző nevét!" }),
+  university: z.string().min(1, { message: "Add meg a társszerző egyetemét!" }),
   otherUniversity: z.string().min(1, { message: "Add meg a társszerző egyetemének nevét!" }).optional(),
   department: z.string().min(1, { message: "Add meg a társszerző karát!" }),
   section: z.string().min(1, { message: "Add meg a társszerző szakát!" }),
-  email: z.literal("").or(z.string().email({ message: "Add meg a társszerző email címét!" })),
-  studyYear: z.literal("").or(z.string().regex(/[123456]/, { message: "Add meg a társszerző évfolyamát!" })),
+  email: z
+    .string()
+    .min(1, { message: "Add meg a társszerző email címét!" })
+    .email({ message: "Helytelen e-mail cím!" }),
+  studyYear: z.string().regex(/[123456]/, { message: "Add meg a társszerző évfolyamát!" }),
 });
 
 export type CoAuthorInfoSchema = z.infer<typeof CoAuthorInfoSchema>;
@@ -40,6 +43,7 @@ const CoAuthorInfo = ({
   } = useForm<CoAuthorInfoSchema>({
     resolver: zodResolver(CoAuthorInfoSchema),
     defaultValues,
+    mode: "onBlur",
   });
 
   const onSubmit: SubmitHandler<CoAuthorInfoSchema> = (data) => {
@@ -59,8 +63,11 @@ const CoAuthorInfo = ({
 
   return (
     <div className="relative">
-      <button className="fixed right-1 top-1 text-lg font-semibold text-gray-400" onClick={removeCoAuthorForm}>
-        x
+      <button
+        className="absolute right-0 top-8 flex h-6 w-6 items-center justify-center rounded-md border border-gray-300 text-lg font-semibold text-gray-400 transition-colors hover:border-gray-900 hover:text-gray-900"
+        onClick={removeCoAuthorForm}
+      >
+        &times;
       </button>
       <form className="py-10" onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-6">
@@ -70,7 +77,8 @@ const CoAuthorInfo = ({
           <input
             type="text"
             id="name"
-            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            data-error={errors.coAuthorName != undefined}
+            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
             {...register("coAuthorName")}
           />
           {errors.coAuthorName && <p className="mt-2 text-xs italic text-red-500"> {errors.coAuthorName?.message}</p>}
@@ -82,7 +90,8 @@ const CoAuthorInfo = ({
           <input
             type="email"
             id="email"
-            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            data-error={errors.email != undefined}
+            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
             {...register("email")}
             aria-invalid={errors.email ? "true" : "false"}
           />
@@ -94,7 +103,8 @@ const CoAuthorInfo = ({
           </label>
           <select
             id="universities"
-            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-tdk-primary"
+            data-error={errors.university}
+            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-tdk-primary focus:outline-none"
             {...register("university")}
           >
             {universityList.map((university, index) => {
@@ -115,7 +125,8 @@ const CoAuthorInfo = ({
             <input
               type="text"
               id="other-university"
-              className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              data-error={errors.otherUniversity}
+              className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
               {...register("otherUniversity")}
               aria-invalid={errors.otherUniversity ? "true" : "false"}
             />
@@ -131,7 +142,8 @@ const CoAuthorInfo = ({
           <input
             type="text"
             id="department"
-            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            data-error={errors.department}
+            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
             {...register("department")}
             aria-invalid={errors.department ? "true" : "false"}
           />
@@ -139,12 +151,13 @@ const CoAuthorInfo = ({
         </div>
         <div className="mb-6">
           <label htmlFor="section" className="mb-2 block text-lg font-medium text-gray-900">
-            Társszerző szaka
+            Társszerző szakja
           </label>
           <input
             type="text"
             id="section"
-            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            data-error={errors.section}
+            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
             {...register("section")}
           />
           {errors.section && <p className="mt-2 text-xs italic text-red-500"> {errors.section?.message}</p>}
@@ -175,10 +188,17 @@ const CoAuthorInfo = ({
           </fieldset>
           {errors.studyYear && <p className="mt-2 text-xs italic text-red-500"> {errors.studyYear?.message}</p>}
         </div>
-        {!isSubmitted && (!isDirty || isValid) && (
+        {!isSubmitted && isValid ? (
           <button
             className="mt-2 mb-4 w-full rounded-full bg-tdk-accent py-2 text-center font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-lg"
             type="submit"
+          >
+            Társszerző adatainak elmentése
+          </button>
+        ) : (
+          <button
+            className="mt-2 mb-4 w-full cursor-not-allowed rounded-full bg-tdk-accent py-2 text-center font-semibold uppercase text-white opacity-50 drop-shadow-md grayscale xl:text-lg"
+            disabled
           >
             Társszerző adatainak elmentése
           </button>
