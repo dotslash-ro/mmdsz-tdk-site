@@ -58,7 +58,7 @@ const DocumentInfo = ({ setDocumentInfo, setCurrentStep, defaultValues }: Docume
 
   return (
     <div>
-      <form className="py-10" onSubmit={handleSubmit(onSubmit)}>
+      <form className="py-10 pr-4" onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-6">
           <label htmlFor="title" className="mb-2 block text-lg font-medium text-gray-900">
             Kivonat címe magyarul

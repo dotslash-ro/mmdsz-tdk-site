@@ -26,6 +26,7 @@ const CoordinatorInfos = ({ setCurrentStep, setCoordinatorInfosParent, defaultVa
                 <CoordinatorInfo
                   setCoordinatorInfo={(coordinatorInfo) => setCoordinatorInfos([...coordinatorInfos, coordinatorInfo])}
                   defaultValues={defaultValues && defaultValues[index]}
+                  removeCoordinatorForm={() => setCoordinatorCount(coordinatorCount - 1)}
                 />
               </div>
             );

@@ -48,7 +48,7 @@ const SignupWrapper = ({
 
   useEffect(() => {
     // fetch signup status from localstorage
-    const _signupStatus = localStorage.getItem("signupStatus");
+    const _signupStatus = localStorage.getItem("signupStatus24");
     if (!_signupStatus) {
       setSignupStatus("not-signedup");
     } else if (signupStatuses.find((validStatus) => validStatus === _signupStatus)) {
@@ -58,7 +58,7 @@ const SignupWrapper = ({
     }
 
     // fetch dataUploaded from localstorage
-    const _dataUploaded = localStorage.getItem("dataUploaded");
+    const _dataUploaded = localStorage.getItem("dataUploaded24");
     if (_dataUploaded && _dataUploaded === "true") {
       setDataUploaded(true);
       setCurrentStep("agreementDoc");
@@ -136,7 +136,7 @@ const SignupWrapper = ({
       }
       // after successful upload, set flag to no longer require applicant data
       setDataUploaded(true);
-      localStorage.setItem("dataUploaded", "true");
+      localStorage.setItem("dataUploaded24", "true");
     }
     // prepare form data for file upload
     const data = new FormData();
@@ -155,7 +155,7 @@ const SignupWrapper = ({
         setSignupStatus("error");
       } else {
         setSignupStatus("signed-up");
-        localStorage.setItem("signupStatus", "signed-up");
+        localStorage.setItem("signupStatus24", "signed-up");
       }
     } catch (e) {
       console.log(e);
@@ -179,15 +179,15 @@ const SignupWrapper = ({
         <div
           className="py-3 text-sm text-sky-600 hover:cursor-pointer hover:underline"
           onClick={() => {
-            localStorage.removeItem("signupStatus");
+            localStorage.removeItem("signupStatus24");
             localStorage.removeItem("personalInfo");
             localStorage.removeItem("documentInfo");
             localStorage.removeItem("coAuthorInfos");
             localStorage.removeItem("coordinatorInfos");
-            localStorage.removeItem("dataUploaded");
+            localStorage.removeItem("dataUploaded24");
             setSignupStatus("not-signedup");
             setDataUploaded(false);
-            setCurrentStep("personalInfo");
+            setCurrentStep("preSignup");
           }}
         >
           Új kivonat feltöltése →
@@ -259,14 +259,14 @@ const SignupWrapper = ({
             következtetés.
           </li>
         </ul>
-        <h3 className="mb-4 mt-6 text-lg font-light text-gray-800">A beküldéshez az alábbi adatokra lesz szükség: </h3>
-        <ul className="ml-6 list-disc text-gray-500">
+        <h3 className="mb-4 mt-8 text-lg font-light text-gray-800">A beküldéshez az alábbi adatokra lesz szükség: </h3>
+        <ul className="list-disc text-gray-500">
           <li>A szerző neve, egyetem, évfolyam, szak, email, kar, telefonszám.</li>
           <li>Társszerzők neve, e-mail címe, egyeteme, évfolyama, szak, kara </li>
           <li>Témavezető neve és beosztása, valamint egyetem (intézet). </li>
         </ul>
-        <h3 className="mb-4 mt-6 text-lg font-light text-gray-800">Saját hozzájárulási és publikásciós nyilatkozat</h3>
-        <p className="mt-8 text-gray-500">
+        <h3 className="mb-4 mt-8 text-lg font-light text-gray-800">Saját hozzájárulási és publikásciós nyilatkozat</h3>
+        <p className=" text-gray-500">
           A tavalyi évhez hasonlóan idén is szükséges a saját hozzájárulási és publikációs nyilatkozat kitöltése.{" "}
         </p>
         <p className="mt-4 text-gray-500">
@@ -299,14 +299,14 @@ const SignupWrapper = ({
         </p>
         {signupEnabled ? (
           <button
-            className="mt-6 rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-xl"
+            className="mt-12 rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-xl"
             onClick={() => setCurrentStep("personalInfo")}
           >
             Jelentkezés
           </button>
         ) : (
           <button
-            className="pointer-events-none mt-6 rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white opacity-50 drop-shadow-md grayscale hover:underline xl:text-xl"
+            className="pointer-events-none mt-12 rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white opacity-50 drop-shadow-md grayscale hover:underline xl:text-xl"
             onClick={() => setCurrentStep("personalInfo")}
           >
             Jelentkezés

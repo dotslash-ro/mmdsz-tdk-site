@@ -19,9 +19,10 @@ export type CoordinatorInfoSchema = z.infer<typeof coordinatorInfoSchema>;
 interface CoordinatorInfoFormProps {
   setCoordinatorInfo: (CoordinatorInfo: CoordinatorInfoSchema) => void;
   defaultValues?: CoordinatorInfoSchema;
+  removeCoordinatorForm: () => void;
 }
 
-const CoordinatorInfo = ({ setCoordinatorInfo, defaultValues }: CoordinatorInfoFormProps) => {
+const CoordinatorInfo = ({ setCoordinatorInfo, defaultValues, removeCoordinatorForm }: CoordinatorInfoFormProps) => {
   const {
     register,
     handleSubmit,
@@ -46,8 +47,14 @@ const CoordinatorInfo = ({ setCoordinatorInfo, defaultValues }: CoordinatorInfoF
   }
 
   return (
-    <div>
-      <form className="py-10" onSubmit={handleSubmit(onSubmit)}>
+    <div className="relative">
+      <button
+        className="absolute right-4 top-8 flex h-6 w-6 items-center justify-center rounded-md border border-gray-300 text-lg font-semibold text-gray-400 transition-colors hover:border-gray-900 hover:text-gray-900"
+        onClick={removeCoordinatorForm}
+      >
+        &times;
+      </button>
+      <form className="py-10 pr-4" onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-6">
           <label htmlFor="name" className="mb-2 block text-lg font-medium text-gray-900">
             Témavezető neve

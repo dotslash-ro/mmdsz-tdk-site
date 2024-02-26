@@ -19,7 +19,6 @@ import Accreditation from "./pages/accreditation";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { oauthClientId } from "./constants";
 import Summary from "./pages/summary";
-import OrganizerSignup from "./pages/organizer-signup";
 import NotFound from "./pages/not-found";
 
 const router = createHashRouter([
@@ -37,10 +36,6 @@ const router = createHashRouter([
   },
   {
     path: "/jelentkezes",
-    element: <Timeline />,
-  },
-  {
-    path: "/teszt-jelentkezes",
     element: <Timeline />,
   },
   {

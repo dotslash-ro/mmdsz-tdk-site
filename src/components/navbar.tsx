@@ -5,8 +5,8 @@ import { useState } from "react";
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   return (
-    <header className="">
-      <nav className="fixed left-0 top-0 z-20 h-20 w-full bg-tdk-primary text-neutral-100 drop-shadow-md">
+    <header className="sticky top-0 z-20 drop-shadow-md">
+      <nav className="h-20 w-full bg-tdk-primary text-neutral-100">
         <div className="flex w-full flex-wrap items-center justify-between lg:px-10">
           <NavLink to="/" className="pl-4">
             <img src={tdkLogo} alt="logo" className="h-20 w-auto" />
@@ -123,7 +123,7 @@ const Navbar = () => {
                     : "flex items-center justify-center px-5 py-2 text-sm font-bold uppercase text-tdk-accent drop-shadow-lg hover:underline lg:rounded-full lg:bg-tdk-accent lg:text-base lg:font-bold lg:text-white"
                 }
               >
-                Információk
+                Jelentkezés
               </NavLink>
             </ul>
           </div>

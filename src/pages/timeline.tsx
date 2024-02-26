@@ -1,21 +1,11 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import PresentationUpload from "../components/presentation-upload";
 import SecondUploadForm from "../components/second-upload";
 import SignupWrapper from "../components/signup-wrapper";
 import { withLayout } from "../layout/withLayout";
-import { useLocation } from "react-router-dom";
 
 const Timeline = () => {
   const initialSignupContainerRef = useRef<HTMLDivElement | null>(null);
-
-  // TODO: Remove this when the signup starts
-  useEffect(() => {
-    if (route.pathname == "/jelentkezes") {
-      localStorage.removeItem("signupStatus");
-    }
-  }, []);
-
-  const route = useLocation();
 
   return (
     <div className="flex justify-center py-20 px-6">
@@ -26,16 +16,13 @@ const Timeline = () => {
         </li>
         <li className="mb-10 ml-10">
           <div
-            className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border-2 border-white bg-gray-500"
+            className="absolute -left-1.5 mt-1.5 h-3 w-3 scroll-mt-32 rounded-full border-2 border-white bg-gray-500"
             ref={initialSignupContainerRef}
           ></div>
           <h3 className="pb-4 text-2xl font-semibold text-gray-900">Jelentkezés és dolgozatok feltöltése</h3>
           <time className="mb-10 font-light leading-none text-gray-500">2024. február 26. - 2024 március 3.</time>
           <div>
-            <SignupWrapper
-              scrollToRef={initialSignupContainerRef}
-              signupEnabled={route.pathname == "/teszt-jelentkezes"}
-            />
+            <SignupWrapper scrollToRef={initialSignupContainerRef} signupEnabled={true} />
           </div>
         </li>
         {/* <li className="mb-10 ml-10">

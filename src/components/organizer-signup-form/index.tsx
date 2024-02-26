@@ -121,7 +121,7 @@ const OrganizerSignupMultistepForm = ({ scrollToRef }: { scrollToRef: MutableRef
         setLoading(false);
       }
       setSignupStatus("signed-up");
-      localStorage.setItem("signupStatus", "signed-up");
+      localStorage.setItem("signupStatus24", "signed-up");
     }
   };
 

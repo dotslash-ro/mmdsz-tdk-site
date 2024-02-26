@@ -55,7 +55,7 @@ const PersonalInfo = ({ setPersonalInfo, setCurrentStep, defaultValues }: Person
 
   return (
     <div>
-      <form className="py-10" onSubmit={handleSubmit(onSubmit)}>
+      <form className="py-10 pr-4" onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-6">
           <label htmlFor="name" className="mb-2 block text-lg font-medium text-gray-900">
             Teljes név
