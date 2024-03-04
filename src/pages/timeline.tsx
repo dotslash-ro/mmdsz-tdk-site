@@ -20,7 +20,7 @@ const Timeline = () => {
             ref={initialSignupContainerRef}
           ></div>
           <h3 className="pb-4 text-2xl font-semibold text-gray-900">Jelentkezés és dolgozatok feltöltése</h3>
-          <time className="mb-10 font-light leading-none text-gray-500">2024. február 26. - 2024 március 3.</time>
+          <time className="mb-10 font-light leading-none text-gray-500">2024. február 26. - 2024 március 6.</time>
           <div>
             <SignupWrapper scrollToRef={initialSignupContainerRef} signupEnabled={true} />
           </div>
