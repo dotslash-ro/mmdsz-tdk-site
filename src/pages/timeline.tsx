@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import PresentationUpload from "../components/presentation-upload";
 import SecondUploadForm from "../components/second-upload";
-import SignupWrapper from "../components/signup-wrapper";
 import { withLayout } from "../layout/withLayout";
 
 const Timeline = () => {
@@ -22,7 +21,13 @@ const Timeline = () => {
           <h3 className="pb-4 text-2xl font-semibold text-gray-900">Jelentkezés és dolgozatok feltöltése</h3>
           <time className="mb-10 font-light leading-none text-gray-500">2024. február 26. - 2024 március 6.</time>
           <div>
-            <SignupWrapper scrollToRef={initialSignupContainerRef} signupEnabled={true} />
+            {/* <SignupWrapper scrollToRef={initialSignupContainerRef} signupEnabled={true} /> */}
+            <div className="flex h-40 flex-col items-center justify-center gap-2 text-sm font-light text-gray-500">
+              A jelentkezési határidő lejárt.
+              {localStorage.getItem("signupStatus24") == "signed-up" && (
+                <div>Köszönjük a jelentkezésed! További teendőkért görgess lennebb!</div>
+              )}
+            </div>
           </div>
         </li>
         {/* <li className="mb-10 ml-10">

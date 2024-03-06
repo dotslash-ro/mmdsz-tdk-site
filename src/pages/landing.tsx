@@ -8,7 +8,7 @@ import tdkPicture3 from "../assets/tdk-pic3.png";
 const Landing = () => {
   return (
     <>
-      <div className="h-[80vh] bg-tdk-primary pt-32 drop-shadow-md">
+      <div className="h-[75vh] bg-tdk-primary pt-32 drop-shadow-md">
         <div className="z-20 flex flex-grow flex-col items-center bg-contain bg-left bg-no-repeat px-10 md:bg-dns lg:items-end xl:items-center">
           <div className="">
             <h2 className="text-left font-hero text-6xl uppercase tracking-tighter text-white md:text-5xl lg:text-right lg:text-8xl xl:text-left">
@@ -22,14 +22,6 @@ const Landing = () => {
           <div className="py-8 text-left font-medium uppercase text-white md:text-lg lg:text-right lg:text-2xl xl:text-left">
             <span className="font-bold">Marosvásárhely 2024.</span> Április 24-27.
           </div>
-        </div>
-        <div className="flex justify-center py-20">
-          <Link
-            to="/jelentkezes"
-            className="rounded-full bg-tdk-accent px-10 py-4 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-xl"
-          >
-            Jelentkezés →
-          </Link>
         </div>
       </div>
       <div className="flex flex-col items-center gap-8 bg-white py-20">
@@ -79,7 +71,7 @@ const Landing = () => {
             to="/jelentkezes"
             className="rounded-full bg-tdk-accent px-10 py-4 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-xl"
           >
-            Jelentkezés →
+            Információk →
           </Link>
         </div>
       </div>
