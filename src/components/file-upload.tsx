@@ -44,7 +44,7 @@ const FileUpload = ({ file, setFile, fileFormats, id }: FileUploadProps) => {
             id={id}
             type="file"
             name="document"
-            accept="application/pdf"
+            accept=".docx,.doc"
             className="hidden"
             onChange={(e) => {
               if (e.target.files) {
