@@ -44,7 +44,7 @@ const Timeline = () => {
         </li> */}
         <li className="mb-10 ml-10">
           <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border-2 border-white bg-gray-500"></div>
-          <div className="pointer-events-none opacity-50 grayscale">
+          <div className="">
             <h3 className="pb-4 text-2xl font-semibold text-gray-900">Javított dolgozatok feltöltése</h3>
             <time className="mb-10 font-light leading-none text-gray-500">2023. március 10-16.</time>
             <div className="m-6">
