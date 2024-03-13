@@ -49,7 +49,7 @@ const Organizers = () => {
             <li>Mate Zsófia</li>
             <li>Sándor Emőke Ágnes</li>
             <li>Szántó Sarolta</li>
-            <li>Varga Ágnes</li>
+            <li>Fehér Anna</li>
           </ul>
           <p className="pt-5 text-sm font-light">
             Az étkezésért felelős szervezők rendezvény előtti feladata a bevásárlás. Rendezvény alatt ők azok, akik
@@ -102,7 +102,7 @@ const Organizers = () => {
             <li className="font-bold">Ábrán Annamária</li>
             <li className="font-bold">Balázs Boglárka</li>
             <li>Adorján Johanna</li>
-            <li>Bogyó Boróka</li>
+            <li>Antal Helga </li>
             <li>Borbáth Lidia</li>
             <li>Deák Csenge</li>
             <li>Dobrai Laura</li>
@@ -123,7 +123,7 @@ const Organizers = () => {
           </p>
         </div>
         <div className="px-5 py-8 md:px-10">
-          <h2 className="py-5 text-xl font-light">Korrektúra</h2>
+          <h2 className="py-5 text-xl font-light">Korrektúra és kivonatok</h2>
           <ul className="list-disc pl-5">
             <li className="font-bold">Sebesi Hanna </li>
             <li>Biró Konrád-János</li>
@@ -147,7 +147,7 @@ const Organizers = () => {
             <li>Dakó Diána</li>
             <li>Debrenti Réka-Lilla</li>
             <li>Czimbalmos Eszter-Réka</li>
-            <li>Sánta Máté-Levente</li>
+            <li>Béres Anna-Boróka</li>
             <li>Török Andrea</li>
           </ul>
           <p className="pt-5 text-sm font-light">
@@ -293,7 +293,7 @@ const Organizers = () => {
           <ul className="list-disc pl-5">
             <li className="font-bold">Pap Gyopárka</li>
             <li className="font-bold">Sztáncsuj Eszter</li>
-            <li>Salló Hanna-Boglárka</li>
+            <li>Ilonczai Hunor</li>
           </ul>
           <p className="pt-5 text-sm font-light">
             Ezen kiscsoport feladata az Orvostudományi Értesítőben megjelenő absztraktok tördelése. A munkaidő teljes
