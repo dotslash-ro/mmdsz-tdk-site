@@ -75,7 +75,7 @@ const Timeline = () => {
               <li>Poszter szekció: 110 RON- 1. dolgozat. dolgozat</li>
               <li className="pt-2">Külföldi hallgatók számára: 10500 Ft- 1. dolgozat 9000, Ft- 2. dolgozat*</li>
               <li>Poszter szekció: 9000 Ft- 1. dolgozat dolgozat</li>
-              <li className="pt-2 font-semibold">Az MMDSZ kártyát felmutató diákok 10 lej kedvezményben részesülnek.</li>
+              <li className="pt-2 font-semibold">Az MMDSZ kártyát felmutató diákok 10 RON kedvezményben részesülnek.</li>
             </ul>{" "}
             <h4 className="pt-4 pb-2 font-bold">Fizetési lehetőségek:</h4>{" "}
             <div>
