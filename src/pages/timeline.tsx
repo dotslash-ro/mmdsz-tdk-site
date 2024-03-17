@@ -47,9 +47,7 @@ const Timeline = () => {
           <div className="">
             <h3 className="pb-4 text-2xl font-semibold text-gray-900">Javított dolgozatok feltöltése</h3>
             <time className="mb-10 font-light leading-none text-gray-500">2023. március 10-17.</time>
-            <div className="m-6">
-              <SecondUploadForm />
-            </div>
+            <div className="m-6">{/* <SecondUploadForm /> */}</div>
           </div>
         </li>
         {/* <li className="mb-10 ml-10">
@@ -75,7 +73,9 @@ const Timeline = () => {
               <li>Poszter szekció: 110 RON- 1. dolgozat. dolgozat</li>
               <li className="pt-2">Külföldi hallgatók számára: 10500 Ft- 1. dolgozat 9000, Ft- 2. dolgozat*</li>
               <li>Poszter szekció: 9000 Ft- 1. dolgozat dolgozat</li>
-              <li className="pt-2 font-semibold">Az MMDSZ kártyát felmutató diákok 10 RON kedvezményben részesülnek.</li>
+              <li className="pt-2 font-semibold">
+                Az MMDSZ kártyát felmutató diákok 10 RON kedvezményben részesülnek.
+              </li>
             </ul>{" "}
             <h4 className="pt-4 pb-2 font-bold">Fizetési lehetőségek:</h4>{" "}
             <div>
