@@ -118,7 +118,7 @@ const Timeline = () => {
           <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border-2 border-white bg-gray-500"></div>
           <div className="pointer-events-none opacity-50 grayscale">
             <h3 className="pb-4 text-2xl font-semibold text-gray-900">Prezentációk feltöltése</h3>
-            <time className="mb-10 font-light leading-none text-gray-500">2023. április 1-5.</time>
+            <time className="mb-10 font-light leading-none text-gray-500">2024. április 8-12.</time>
             <div className="m-6">
               <PresentationUpload />
             </div>
