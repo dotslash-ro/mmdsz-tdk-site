@@ -46,7 +46,7 @@ const Timeline = () => {
           <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border-2 border-white bg-gray-500"></div>
           <div className="">
             <h3 className="pb-4 text-2xl font-semibold text-gray-900">Javított dolgozatok feltöltése</h3>
-            <time className="mb-10 font-light leading-none text-gray-500">2023. március 10-17.</time>
+            <time className="mb-10 font-light leading-none text-gray-500">2024. március 10-17.</time>
             <div className="m-6">{/* <SecondUploadForm /> */}</div>
           </div>
         </li>
@@ -103,7 +103,7 @@ const Timeline = () => {
                   <b>Cont bancar (RON):</b> RO 06 BTRL RONCRT 0674086402
                 </li>
                 <li>
-                  <b>Cont bancar (HUF):</b> RO 93 BTRL HUFCRT 0674086401
+                  <b>Bankszámlaszám (HUF):</b> RO 93 BTRL HUFCRT 0674086401
                 </li>
               </ul>
             </div>{" "}
