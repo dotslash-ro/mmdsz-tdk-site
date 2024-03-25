@@ -100,7 +100,10 @@ const Timeline = () => {
                   <b>Banca Transilvania Codul Swift:</b> BTRLRO22
                 </li>{" "}
                 <li>
-                  <b>Cont bancar:</b> RO 06 BTRL RONCRT 0674086402
+                  <b>Cont bancar (RON):</b> RO 06 BTRL RONCRT 0674086402
+                </li>
+                <li>
+                  <b>Cont bancar (HUF):</b> RO 93 BTRL HUFCRT 0674086401
                 </li>
               </ul>
             </div>{" "}
