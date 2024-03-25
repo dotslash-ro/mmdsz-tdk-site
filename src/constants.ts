@@ -2,7 +2,10 @@ export const serverUrl = /*"http://localhost:3000/api"*/ "https://mmdsz-tdk-func
 export const workshopServerUrl = "https://mmdsz-tdk-workshop-backend-production.up.railway.app/api"; //"http://localhost:8000/api";
 export const maxSignUpPerEmail = 4;
 export const universityList = ["", "MOGYTTE", "SE", "DE", "PTE", "SZTE", "Egyéb"];
-
+export const strapiUrl = "https://mmdsz-tdk-strapi.up.railway.app/api";
+export const strapiToken =
+  // "487cf146a38a290c45bbf6088c21e885066d40b7dc071841de715a7011126d704e05d7dd6ef9126cdb1940ddc79a003df4605f7f889dc79e7c04094d198c1f417c7391ed4955d45b1eb7fe2d89c8770b6b574c94a608e91853b0192a4985f682c0f015cf439a13612547a3b06479dc0c5a927a25a978445559f35c06a0e97a47"; // dev
+  "331527b65aaea1c2f9d682e2a2c274cc89cbfd7bd0042e1d164b504b8692da89050758171df382f97f4933c6ab862df13154e072a6b771c67bfaa58e89f7bc89780d4a6019e6cdcf2e54f3a7ec7b92922217d3ba44acdb520e62aac98775b2c5a4ef96b4cec7c4d7b7e7f358a0718671a9d3d889e888d39db77e5106eec86602"; //prod
 export const organizerGroups = [
   {
     name: "Akkreditáció",
