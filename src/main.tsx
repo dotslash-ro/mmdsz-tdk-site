@@ -20,6 +20,7 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 import { oauthClientId } from "./constants";
 import Summary from "./pages/summary";
 import NotFound from "./pages/not-found";
+import WorkshopSignup from "./pages/workshop-signup";
 
 const router = createHashRouter([
   {

@@ -5,11 +5,12 @@ import { maxSignUpPerEmail, workshopServerUrl } from "../constants";
 import googleIcon from "../assets/google_icon.svg";
 import { ClipLoader } from "react-spinners";
 import SignupWorkshop from "../components/signup-workshop";
+import { WorkshopType } from "../components/workshop";
 
-const Workshops = () => {
+const WorkshopSignup = () => {
   const [user, setUser] = useState<any>();
   const [profile, setProfile] = useState<any>();
-  const [workshops, setWorkshops] = useState<string[]>([]);
+  const [workshops, setWorkshops] = useState<WorkshopType[]>([]);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
   const [personalInfo, setPersonalInfo] = useState<{ section: string; studyYear: number } | undefined>(undefined);
@@ -19,6 +20,7 @@ const Workshops = () => {
   const login = useGoogleLogin({ onSuccess: (res) => setUser(res) });
 
   async function fetchWorkshops(section: string, studyYear: number) {
+    setLoading(true);
     const resp = await fetch(`${workshopServerUrl}/workshop/filter`, {
       method: "POST",
       body: JSON.stringify({ studyYear: studyYear, section: section }),
@@ -79,23 +81,23 @@ const Workshops = () => {
       if (profile) {
         localStorage.setItem("profile", JSON.stringify(profile));
 
-        await fetchApplicationNumberInfo();
+        // await fetchApplicationNumberInfo();
       }
     })();
   }, [profile]);
 
-  async function fetchApplicationNumberInfo() {
-    // fetch applications of user
-    // const resp = await fetch(
-    //   `${workshopServerUrl}/application/${profile.email}`
-    // );
-    // const data = await resp.json();
-    // setCanSingUp(data.length < maxSignUpPerEmail);
-  }
+  // async function fetchApplicationNumberInfo() {
+  //   // fetch applications of user
+  //   const resp = await fetch(
+  //     `${workshopServerUrl}/application/${profile.email}`
+  //   );
+  //   const data = await resp.json();
+  //   // setCanSingUp(data.length < maxSignUpPerEmail);
+  // }
 
   if (!personalInfo) {
     return (
-      <div className="flex h-screen flex-col items-center justify-center px-5 lg:mx-auto lg:w-2/3">
+      <div className="flex h-screen flex-col items-center px-5 pt-24 sm:justify-center sm:pt-0 lg:mx-auto lg:w-2/3">
         {" "}
         <p className="pb-6 text-center text-sm font-semibold text-gray-600">
           Add meg a karod és évfolyamod, hogy a megfelelő műhelymukákat mutathassuk neked. Ezt csak egyszer tudod
@@ -119,7 +121,7 @@ const Workshops = () => {
             })}
           </select>
         </div>
-        <div className="flex w-full flex-col px-5 pt-5 md:pt-0">
+        <div className="flex w-full flex-col px-5 pt-5 sm:pt-2">
           <label htmlFor="study-year-select" className="mb-2 block text-lg font-medium text-gray-900">
             Évfolyam
           </label>
@@ -171,7 +173,7 @@ const Workshops = () => {
 
   if (!profile) {
     return (
-      <div className="mx-auto flex h-screen flex-col items-center justify-center px-10 pb-10 font-semibold text-neutral-500 lg:w-2/3">
+      <div className="mx-auto flex h-screen flex-col items-center px-10 pt-20 pb-10 font-semibold text-neutral-500 sm:justify-center sm:pt-0 lg:w-2/3">
         A műhelymunkákra való jelentkezéshez csatlakoztatnod kell a Google fiókod az oldalhoz!
         <button
           className="my-10 flex w-48 items-center justify-center rounded-full border bg-neutral-100 px-3 py-1 drop-shadow-md hover:underline"
@@ -199,8 +201,8 @@ const Workshops = () => {
         </button>
       </div>
       <div className="mx-auto py-20 px-5 lg:w-2/3">
-        <h2 className="pb-10 text-center text-5xl font-bold">Műhelymunkák</h2>
-        <p className="pt-10 pb-20 text-center text-2xl font-thin">
+        <h2 className="pb-12 text-center text-5xl font-bold">Műhelymunkák</h2>
+        {/* <p className="pt-10 pb-20 text-center text-2xl font-thin">
           A műhelymukák időszerinti beosztását{" "}
           <a
             className="text-sky-500 hover:underline"
@@ -210,14 +212,17 @@ const Workshops = () => {
             ebben
           </a>{" "}
           a táblázatban találjátok.
-        </p>
-        {workshops.map((workshop, index) => (
-          <div key={index}>
+        </p> */}
+        {workshops.map((workshop) => (
+          <div key={workshop.id}>
             <SignupWorkshop
-              id={workshop}
-              email={profile ? profile.email : null}
+              workshop={workshop}
+              email={profile.email}
+              name={profile.name}
               canSignUp={true}
-              fetchApplicationsNumber={fetchApplicationNumberInfo}
+              updateWorkshop={(ws) =>
+                setWorkshops([...workshops.filter((_ws) => _ws.id != ws.id), ws].sort((a, b) => a.id - b.id))
+              }
             />
           </div>
         ))}
@@ -226,4 +231,4 @@ const Workshops = () => {
   );
 };
 
-export default withLayout(Workshops);
+export default withLayout(WorkshopSignup);

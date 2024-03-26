@@ -1,22 +1,37 @@
-import Workshop, { WorkshopType } from "../components/workshop";
+import { ClipLoader } from "react-spinners";
+import Workshop, { type WorkshopType } from "../components/workshop";
+import { workshopServerUrl } from "../constants";
 import { withLayout } from "../layout/withLayout";
 import { useEffect, useState } from "react";
-import { workshops } from "../constants";
 
 const Workshops = () => {
-  const [workshopsToShow, setWorkshopsToShow] = useState<WorkshopType[]>([]);
-  const [studyYear, setStudyYear] = useState<number | undefined>(undefined);
-  const [section, setSection] = useState("");
+  const [allWorkshops, setAllWorkshops] = useState<WorkshopType[]>([]);
+  const [studyYear, setStudyYear] = useState<number>(0);
+  const [section, setSection] = useState("Mindenkinek");
+
+  const workshopsToShow = allWorkshops.filter(
+    (ws) =>
+      (section == "Mindenkinek" || ws.department.includes(section)) &&
+      (studyYear == 0 || (studyYear <= ws.maxYear && studyYear >= ws.minYear))
+  );
+
+  async function fetchWorkshops() {
+    const res = await fetch(`${workshopServerUrl}/workshop/all-all`);
+    const data = await res.json();
+    return data as WorkshopType[];
+  }
 
   useEffect(() => {
-    setWorkshopsToShow(
-      workshops
-        .filter((workshop) =>
-          section.length ? workshop.section === section || workshop.section === "Mindenkinek" : true
-        )
-        .filter((workshop) => (studyYear ? studyYear <= workshop.yearTo && studyYear >= workshop.yearFrom : true))
+    fetchWorkshops().then((data) => setAllWorkshops(data));
+  }, []);
+
+  if (!allWorkshops.length) {
+    return (
+      <div className="flex h-screen items-center justify-center">
+        <ClipLoader />
+      </div>
     );
-  }, [section, studyYear]);
+  }
 
   return (
     <>
@@ -29,10 +44,10 @@ const Workshops = () => {
             </label>
             <select
               id="section-select"
-              className="ml-4 block w-full rounded-full border border-gray-400 bg-white p-2.5 text-gray-900 focus:border-tdk-primary"
+              className="ml-4 block w-full rounded-full border border-gray-400 bg-white p-2.5 text-gray-900 focus:border-tdk-primary focus:outline-none"
               onChange={(e) => setSection((e.target as HTMLSelectElement).value)}
             >
-              {["", "ÁOK", "FOK", "GYK", "Mindenkinek"].map((section, index) => {
+              {["Mindenkinek", "ÁOK", "FOK", "GYK"].map((section, index) => {
                 return (
                   <option className="text-md" key={index}>
                     {section}
@@ -47,16 +62,16 @@ const Workshops = () => {
             </label>
             <select
               id="study-year-select"
-              className="ml-4 block w-full rounded-full border border-gray-400 bg-white p-2.5 text-gray-900 focus:border-tdk-primary"
+              className="ml-4 block w-full rounded-full border border-gray-400 bg-white p-2.5 text-gray-900 focus:border-tdk-primary focus:outline-none"
               onChange={(e) =>
                 setStudyYear(
-                  (e.target as HTMLSelectElement).value.length
+                  (e.target as HTMLSelectElement).value != "Mind"
                     ? Number.parseInt((e.target as HTMLSelectElement).value)
-                    : undefined
+                    : 0
                 )
               }
             >
-              {["", "1", "2", "3", "4", "5", "6"].map((studyYear, index) => {
+              {["Mind", "1", "2", "3", "4", "5", "6"].map((studyYear, index) => {
                 return (
                   <option className="text-md" key={index}>
                     {studyYear}
@@ -68,8 +83,8 @@ const Workshops = () => {
         </div>
         {workshopsToShow.map((workshop, index) => (
           <div key={index}>
-            <Workshop id={workshop.id} email={undefined} canSignUp={false} />
-            <hr className="my-8 h-px border-0 bg-gray-200 dark:bg-gray-700"></hr>
+            <Workshop workshop={workshop} email={undefined} canSignUp={false} />
+            <hr className="my-8 h-px border-0 bg-gray-200"></hr>
           </div>
         ))}
       </div>

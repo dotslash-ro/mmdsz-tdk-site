@@ -4,33 +4,43 @@ interface WorkshopSignupButtonProps {
   hasSignedUp: boolean;
   canSignUp: boolean;
   hasLoggedIn: boolean;
+  loading: boolean;
   onSignUp: () => void;
   onCancelSignup: () => void;
   noOfAvailableSeats: number;
-  loading: boolean;
 }
 
 const WorkshopSignupButton = ({
   hasSignedUp,
   hasLoggedIn,
   canSignUp,
+  loading,
   onSignUp,
   onCancelSignup,
   noOfAvailableSeats,
-  loading,
 }: WorkshopSignupButtonProps) => {
   if (!hasLoggedIn) {
     return null;
+  }
+  if (loading) {
+    return (
+      <div className="flex w-full items-center justify-between">
+        Már jelenteztél erre a workshopra!
+        <button className="text-md rounded-full border px-4 py-2 font-light drop-shadow-md hover:underline" disabled>
+          <ClipLoader size={20} color="#000000" />
+        </button>
+      </div>
+    );
   }
   if (hasSignedUp) {
     return (
       <div className="flex w-full items-center justify-between">
         Már jelenteztél erre a workshopra!
         <button
-          className="text-md rounded-full border px-6 py-4 font-light drop-shadow-md hover:underline"
+          className="text-md rounded-full border px-4 py-2 font-light drop-shadow-md hover:underline"
           onClick={onCancelSignup}
         >
-          {loading ? <ClipLoader /> : "Jelentkezés visszavonása"}
+          Jelentkezés visszavonása
         </button>
       </div>
     );
@@ -49,10 +59,10 @@ const WorkshopSignupButton = ({
   }
   return (
     <button
-      className="text-md rounded-full bg-tdk-primary px-6 py-4 font-semibold text-white hover:underline"
+      className="text-md rounded-full bg-tdk-primary px-4 py-2 font-semibold text-white hover:underline"
       onClick={onSignUp}
     >
-      {loading ? <ClipLoader color="white" /> : "Jelentkezés"}
+      Jelentkezés
     </button>
   );
 };
