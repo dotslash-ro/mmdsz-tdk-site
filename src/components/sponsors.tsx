@@ -13,6 +13,7 @@ const Sponsors = () => {
   const sponsors = allSponsors.filter((sponsor) => sponsor.type == "Támogató");
   const specialSponsors = allSponsors.filter((sponsor) => sponsor.type == "Kiemelet támogató");
   const patrons = allSponsors.filter((sponsor) => sponsor.type == "Védnök");
+  const mainSponsors = allSponsors.filter((sponsor) => sponsor.type == "Főtámogató");
 
   useEffect(() => {
     fetchSponsors().then((data) => {
@@ -24,7 +25,7 @@ const Sponsors = () => {
     <div className="space-y-10">
       <div className="bg-tdk-primary pt-20">
         <h2 className="pb-20 text-center text-5xl font-bold text-white">Védnökeink</h2>
-        <div className="flex flex-wrap justify-center gap-4 space-y-2 px-20 pb-20">
+        <div className="flex flex-wrap justify-center gap-5 space-y-2 px-20 pb-20">
           <img
             src={umfstLogo}
             className="h-32 w-64 object-scale-down brightness-0 grayscale invert transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
@@ -43,8 +44,23 @@ const Sponsors = () => {
         {partners.length > 0 && (
           <>
             <h2 className="pb-20 text-center text-5xl font-bold">Partnereink</h2>
-            <div className="flex flex-wrap justify-center gap-4 space-y-2 px-20 pb-20">
+            <div className="flex flex-wrap justify-center gap-5 space-y-2 px-20 pb-20">
               {partners.map((partner, index) => (
+                <a href={partner.sponsorLink} target="_blank" key={index}>
+                  <img
+                    src={partner.sponsorLogo}
+                    className="h-32 w-64 object-scale-down mix-blend-multiply transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
+                  />
+                </a>
+              ))}
+            </div>
+          </>
+        )}
+        {mainSponsors.length > 0 && (
+          <>
+            <h2 className="pb-20 text-center text-5xl font-bold">Főtámogatóink</h2>
+            <div className="flex flex-wrap justify-center gap-5 space-y-2 px-20 pb-20">
+              {mainSponsors.map((partner, index) => (
                 <a href={partner.sponsorLink} target="_blank" key={index}>
                   <img
                     src={partner.sponsorLogo}
@@ -58,7 +74,7 @@ const Sponsors = () => {
         {specialSponsors.length > 0 && (
           <>
             <h2 className="text-center text-5xl font-bold">Kiemelt Támogatóink</h2>
-            <div className="flex flex-wrap justify-center gap-4 space-y-2 px-20 pb-20">
+            <div className="flex flex-wrap justify-center gap-5 space-y-2 px-20 pb-20">
               {specialSponsors.map((sponsor, index) => (
                 <a href={sponsor.sponsorLink} target="_blank" key={index}>
                   <img
@@ -73,7 +89,7 @@ const Sponsors = () => {
         {sponsors.length > 0 && (
           <>
             <h2 className="text-center text-5xl font-bold">Támogatóink</h2>
-            <div className="flex flex-wrap justify-center gap-4 space-y-2 px-20 pb-20">
+            <div className="flex flex-wrap justify-center gap-5 space-y-2 px-20 pb-20">
               {sponsors.map((sponsor, index) => (
                 <a href={sponsor.sponsorLink} target="_blank" key={index}>
                   <img

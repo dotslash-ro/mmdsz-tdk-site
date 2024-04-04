@@ -95,7 +95,7 @@ const Footer = () => {
           <a href="https://mmdsz.ro/" className="hover:underline" target="_blank">
             MMDSZ
           </a>{" "}
-          © 2023. All Rights Reserved.
+          © 2024. All Rights Reserved.
         </div>
         <div className="px-2 text-center text-sm text-neutral-500">
           {""}
