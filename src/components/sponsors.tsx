@@ -11,7 +11,7 @@ const Sponsors = () => {
 
   const partners = allSponsors.filter((sponsor) => sponsor.type == "Partner");
   const sponsors = allSponsors.filter((sponsor) => sponsor.type == "Támogató");
-  const specialSponsors = allSponsors.filter((sponsor) => sponsor.type == "Kiemelet támogató");
+  const specialSponsors = allSponsors.filter((sponsor) => sponsor.type == "Kiemelt támogató");
   const patrons = allSponsors.filter((sponsor) => sponsor.type == "Védnök");
   const mainSponsors = allSponsors.filter((sponsor) => sponsor.type == "Főtámogató");
 
