@@ -57,7 +57,7 @@ const PresentationUploadForm = () => {
         setUploadStatus("error");
       } else {
         setUploadStatus("uploaded");
-        localStorage.setItem("secondUpload24", "uploaded");
+        localStorage.setItem("presentationUpload24", "uploaded");
       }
     } catch (e) {
       console.log(e);
@@ -66,7 +66,7 @@ const PresentationUploadForm = () => {
   };
 
   useEffect(() => {
-    const _uploadStatus = localStorage.getItem("secondUpload24");
+    const _uploadStatus = localStorage.getItem("presentationUpload24");
     if (!_uploadStatus) {
       setUploadStatus("not-uploaded");
     } else if (uploadStatuses.find((validStatus) => validStatus === _uploadStatus)) {
@@ -93,6 +93,16 @@ const PresentationUploadForm = () => {
     return (
       <div className="flex h-40 flex-col items-center justify-center gap-2 text-sm font-light text-gray-500">
         Prezentáció sikeresen feltötlve!
+        <div
+          className="py-3 text-sm text-sky-600 hover:cursor-pointer hover:underline"
+          onClick={() => {
+            localStorage.removeItem("presentationUpload24");
+            setUploadStatus("not-uploaded")
+            setFile(undefined);
+          }}
+        >
+          Új prezentáció feltöltése →
+        </div>
       </div>
     );
   } else if (uploadStatus === "error") {
