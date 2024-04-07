@@ -3,9 +3,10 @@ type FileUploadProps = {
   setFile: (file: File) => void;
   fileFormats: string;
   id: string;
+  accept?: string;
 };
 
-const FileUpload = ({ file, setFile, fileFormats, id }: FileUploadProps) => {
+const FileUpload = ({ file, setFile, fileFormats, id, accept }: FileUploadProps) => {
   return (
     <div>
       <div className="my-6 flex w-full items-center justify-center">
@@ -44,7 +45,7 @@ const FileUpload = ({ file, setFile, fileFormats, id }: FileUploadProps) => {
             id={id}
             type="file"
             name="document"
-            accept=".docx,.doc"
+            accept={accept ?? ".docx,.doc"}
             className="hidden"
             onChange={(e) => {
               if (e.target.files) {

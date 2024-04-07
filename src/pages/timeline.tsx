@@ -1,7 +1,6 @@
 import { useRef } from "react";
-import PresentationUpload from "../components/presentation-upload";
-import SecondUploadForm from "../components/second-upload";
 import { withLayout } from "../layout/withLayout";
+import PresentationUploadForm from "../components/presentation-upload-form";
 
 const Timeline = () => {
   const initialSignupContainerRef = useRef<HTMLDivElement | null>(null);
@@ -123,7 +122,7 @@ const Timeline = () => {
             <h3 className="pb-4 text-2xl font-semibold text-gray-900">Prezentációk feltöltése</h3>
             <time className="mb-10 font-light leading-none text-gray-500">2024. április 8-12.</time>
             <div className="m-6">
-              <PresentationUpload />
+              <PresentationUploadForm />
             </div>
           </div>
         </li>
