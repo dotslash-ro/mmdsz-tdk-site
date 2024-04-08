@@ -15,7 +15,10 @@ const Navbar = () => {
             <button
               type="button"
               className="mr-4 block rounded-md border bg-neutral-50 p-2 text-tdk-primary drop-shadow-md transition hover:bg-neutral-200 lg:hidden"
-              onClick={() => setShowMenu(!showMenu)}
+              onClick={(e) => {
+                e.stopPropagation();
+                setShowMenu(!showMenu);
+              }}
             >
               {!showMenu ? (
                 <svg
@@ -38,6 +41,12 @@ const Navbar = () => {
               )}
             </button>
           </div>
+          {showMenu && (
+            <div
+              className="absolute top-0 left-0 z-0 h-screen w-screen bg-transparent"
+              onClick={() => setShowMenu(false)}
+            />
+          )}
           <div className="w-full bg-tdk-primary drop-shadow-md lg:block lg:w-auto" hidden={!showMenu}>
             <ul
               className="mt-4 flex flex-col items-center font-medium lg:mt-0 lg:flex-row lg:space-x-4 lg:border-0 lg:p-0 lg:py-4 xl:space-x-8"

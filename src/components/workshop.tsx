@@ -9,8 +9,8 @@ export type WorkshopType = {
   speakers: string;
   department: string;
   description: string;
-  location: string;
-  date: string;
+  location?: string;
+  date?: string;
   maxAttendeeCount: number;
   applicantsCount: number;
   minYear: number;
@@ -63,7 +63,7 @@ const Workshop = ({ workshop, email, canSignUp }: WorkshopProps) => {
     <div className="">
       <h3 className="text-sm font-medium text-gray-500">{workshop.speakers}:</h3>
       <h2 className="pb-2 text-lg font-bold">{workshop.title}</h2>
-      {!!workshop.location.length && (
+      {!!workshop.location && (
         <div className="ml-4 flex items-center gap-3">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -77,16 +77,18 @@ const Workshop = ({ workshop, email, canSignUp }: WorkshopProps) => {
           <h4 className="text-sm text-gray-600">{workshop.location}</h4>
         </div>
       )}
-      <div className="ml-4 flex pt-2">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-5 w-5 fill-gray-600">
-          <path d="M17 3v-2c0-.552.447-1 1-1s1 .448 1 1v2c0 .552-.447 1-1 1s-1-.448-1-1zm-12 1c.553 0 1-.448 1-1v-2c0-.552-.447-1-1-1-.553 0-1 .448-1 1v2c0 .552.447 1 1 1zm13 13v-3h-1v4h3v-1h-2zm-5 .5c0 2.481 2.019 4.5 4.5 4.5s4.5-2.019 4.5-4.5-2.019-4.5-4.5-4.5-4.5 2.019-4.5 4.5zm11 0c0 3.59-2.91 6.5-6.5 6.5s-6.5-2.91-6.5-6.5 2.91-6.5 6.5-6.5 6.5 2.91 6.5 6.5zm-14.237 3.5h-7.763v-13h19v1.763c.727.33 1.399.757 2 1.268v-9.031h-3v1c0 1.316-1.278 2.339-2.658 1.894-.831-.268-1.342-1.111-1.342-1.984v-.91h-9v1c0 1.316-1.278 2.339-2.658 1.894-.831-.268-1.342-1.111-1.342-1.984v-.91h-3v21h11.031c-.511-.601-.938-1.273-1.268-2z" />
-        </svg>
-        <h4 className="ml-4 text-sm text-gray-600">
-          {new Intl.DateTimeFormat("hu-HU", { dateStyle: "medium", timeStyle: "short" }).format(
-            new Date(workshop.date)
-          )}
-        </h4>
-      </div>
+      {!!workshop.date && (
+        <div className="ml-4 flex pt-2">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-5 w-5 fill-gray-600">
+            <path d="M17 3v-2c0-.552.447-1 1-1s1 .448 1 1v2c0 .552-.447 1-1 1s-1-.448-1-1zm-12 1c.553 0 1-.448 1-1v-2c0-.552-.447-1-1-1-.553 0-1 .448-1 1v2c0 .552.447 1 1 1zm13 13v-3h-1v4h3v-1h-2zm-5 .5c0 2.481 2.019 4.5 4.5 4.5s4.5-2.019 4.5-4.5-2.019-4.5-4.5-4.5-4.5 2.019-4.5 4.5zm11 0c0 3.59-2.91 6.5-6.5 6.5s-6.5-2.91-6.5-6.5 2.91-6.5 6.5-6.5 6.5 2.91 6.5 6.5zm-14.237 3.5h-7.763v-13h19v1.763c.727.33 1.399.757 2 1.268v-9.031h-3v1c0 1.316-1.278 2.339-2.658 1.894-.831-.268-1.342-1.111-1.342-1.984v-.91h-9v1c0 1.316-1.278 2.339-2.658 1.894-.831-.268-1.342-1.111-1.342-1.984v-.91h-3v21h11.031c-.511-.601-.938-1.273-1.268-2z" />
+          </svg>
+          <h4 className="ml-4 text-sm text-gray-600">
+            {new Intl.DateTimeFormat("hu-HU", { dateStyle: "medium", timeStyle: "short" }).format(
+              new Date(workshop.date)
+            )}
+          </h4>
+        </div>
+      )}
       <div className="ml-4 flex pt-3">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-6 w-6 fill-gray-600">
           <path d="M10.644 17.08c2.866-.662 4.539-1.241 3.246-3.682-3.932-7.427-1.042-11.398 3.111-11.398 4.235 0 7.054 4.124 3.11 11.398-1.332 2.455.437 3.034 3.242 3.682 2.483.574 2.647 1.787 2.647 3.889v1.031h-18c0-2.745-.22-4.258 2.644-4.92zm-12.644 4.92h7.809c-.035-8.177 3.436-5.313 3.436-11.127 0-2.511-1.639-3.873-3.748-3.873-3.115 0-5.282 2.979-2.333 8.549.969 1.83-1.031 2.265-3.181 2.761-1.862.43-1.983 1.34-1.983 2.917v.773z" />
