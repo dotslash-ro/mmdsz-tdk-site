@@ -38,27 +38,44 @@ const PresentationUploadForm = () => {
     },
   });
 
-  const onSubmit: SubmitHandler<SecondUploadSchema> = async (data) => {
-    if (!file) return;
-    // prepare form data for file upload
-    const formData = new FormData();
-    formData.append("files", file);
-    formData.append("section", data.section);
-    formData.append("university", data.university);
-    formData.append("applicantName", data.applicantName);
-
-    // upload document to backend
+  const onSubmitDirectlyToS3: SubmitHandler<SecondUploadSchema> = async (data) => {
+    if (!file) {
+      return;
+    }
     try {
-      const response = await fetch(`${serverUrl}/presentation-upload`, {
+      const res = await fetch(`${serverUrl}/get-presigned-url`, {
         method: "POST",
-        body: formData,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ fileName: file.name }),
       });
-      if (response.status != 200) {
+      if (!res.ok) {
         setUploadStatus("error");
-      } else {
-        setUploadStatus("uploaded");
-        localStorage.setItem("presentationUpload24", "uploaded");
       }
+      const presignedUrl = ((await res.json()) as { signedUrl: string }).signedUrl;
+
+      const uploadRes = await fetch(presignedUrl, {
+        method: "PUT",
+        headers: { "Content-Type": "multipart/form-data" },
+        body: file,
+      });
+      if (!uploadRes.ok) {
+        setUploadStatus("error");
+      }
+
+      const gDriveUploadRes = await fetch(`${serverUrl}/presentation-upload-aws`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          section: data.section,
+          university: data.university ?? data.otherUniversity,
+          applicantName: data.applicantName,
+          fileName: file.name,
+        }),
+      });
+      if (!gDriveUploadRes.ok) {
+        setUploadStatus("error");
+      }
+      setUploadStatus("uploaded");
     } catch (e) {
       console.log(e);
       setUploadStatus("error");
@@ -97,7 +114,7 @@ const PresentationUploadForm = () => {
           className="py-3 text-sm text-sky-600 hover:cursor-pointer hover:underline"
           onClick={() => {
             localStorage.removeItem("presentationUpload24");
-            setUploadStatus("not-uploaded")
+            setUploadStatus("not-uploaded");
             setFile(undefined);
           }}
         >
@@ -122,7 +139,7 @@ const PresentationUploadForm = () => {
   }
 
   return (
-    <form className="py-10 pr-4" onSubmit={handleSubmit(onSubmit)}>
+    <form className="py-10 pr-4" onSubmit={handleSubmit(onSubmitDirectlyToS3)}>
       <div className="mb-6">
         <label htmlFor="name" className="mb-2 block text-lg font-medium text-gray-900">
           Teljes név
