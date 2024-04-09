@@ -4,6 +4,7 @@ export type Sponsor = {
   sponsorLogo: string;
   type: SponsorType;
   sponsorLink: string;
+  order: number;
 };
 
 export type StrapiSponsors = {
@@ -13,6 +14,7 @@ export type StrapiSponsors = {
       attributes: {
         sponsorLink: string;
         type: SponsorType;
+        order?: number;
         sponsorLogo: {
           data: {
             id: number;

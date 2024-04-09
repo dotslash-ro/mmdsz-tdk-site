@@ -13,5 +13,6 @@ export async function fetchSponsors(): Promise<Sponsor[]> {
     sponsorLink: data.attributes.sponsorLink,
     sponsorLogo: data.attributes.sponsorLogo.data.attributes.url,
     type: data.attributes.type,
+    order: data.attributes.order ?? 20,
   }));
 }
