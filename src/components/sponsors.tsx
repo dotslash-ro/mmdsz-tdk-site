@@ -9,15 +9,15 @@ import { fetchSponsors } from "../api/sponsors.api";
 const Sponsors = () => {
   const [allSponsors, setAllSponsors] = useState<Sponsor[]>([]);
 
-  const partners = allSponsors.filter((sponsor) => sponsor.type == "Partner").toSorted((a, b) => a.order - b.order);
-  const sponsors = allSponsors.filter((sponsor) => sponsor.type == "Támogató").toSorted((a, b) => a.order - b.order);
+  const partners = allSponsors.filter((sponsor) => sponsor.type == "Partner").sort((a, b) => a.order - b.order);
+  const sponsors = allSponsors.filter((sponsor) => sponsor.type == "Támogató").sort((a, b) => a.order - b.order);
   const specialSponsors = allSponsors
     .filter((sponsor) => sponsor.type == "Kiemelt támogató")
-    .toSorted((a, b) => a.order - b.order);
-  const patrons = allSponsors.filter((sponsor) => sponsor.type == "Védnök").toSorted((a, b) => a.order - b.order);
+    .sort((a, b) => a.order - b.order);
+  const patrons = allSponsors.filter((sponsor) => sponsor.type == "Védnök").sort((a, b) => a.order - b.order);
   const mainSponsors = allSponsors
     .filter((sponsor) => sponsor.type == "Főtámogató")
-    .toSorted((a, b) => a.order - b.order);
+    .sort((a, b) => a.order - b.order);
 
   console.log(specialSponsors);
 
