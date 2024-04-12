@@ -15,7 +15,9 @@ const Sponsors = () => {
     .filter((sponsor) => sponsor.type == "Kiemelt támogató")
     .sort((a, b) => a.order - b.order);
   const patrons = allSponsors.filter((sponsor) => sponsor.type == "Védnök").sort((a, b) => a.order - b.order);
-  const mainSponsors = allSponsors.filter((sponsor) => sponsor.type == "Főtámogató").sort((a, b) => a.order - b.order);
+  const mainSponsors = allSponsors
+    .filter((sponsor) => sponsor.type == "Főtámogató")
+    .sort((a, b) => a.order - b.order);
 
   console.log(specialSponsors);
 

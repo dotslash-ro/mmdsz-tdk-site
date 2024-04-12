@@ -7,24 +7,26 @@ const Timeline = () => {
 
   return (
     <div className="flex justify-center py-20 px-6">
-      <ol className="relative space-y-20 border-l border-gray-300 lg:w-1/2">
+      <ol className="relative space-y-32 border-l border-gray-300 lg:w-1/2">
         <li className="mb-4 ml-10 font-light text-gray-500">
           <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border-2 border-white bg-gray-500"></div>
           Görgess lefele, hogy többet megtudj a TDK-n való részvételhez szükséges lépésekről.
         </li>
-        <li className="ml-10">
+        <li className="mb-10 ml-10">
           <div
             className="absolute -left-1.5 mt-1.5 h-3 w-3 scroll-mt-32 rounded-full border-2 border-white bg-gray-500"
             ref={initialSignupContainerRef}
           ></div>
           <h3 className="pb-4 text-2xl font-semibold text-gray-900">Jelentkezés és dolgozatok feltöltése</h3>
           <time className="mb-10 font-light leading-none text-gray-500">2024. február 26. - 2024 március 6.</time>
-          {/* <SignupWrapper scrollToRef={initialSignupContainerRef} signupEnabled={true} /> */}
-          <div className="mt-8 flex flex-col items-center justify-center gap-2 text-sm font-light text-gray-500">
-            A jelentkezési határidő lejárt.
-            {localStorage.getItem("signupStatus24") == "signed-up" && (
-              <div>Köszönjük a jelentkezésed! További teendőkért görgess lennebb!</div>
-            )}
+          <div>
+            {/* <SignupWrapper scrollToRef={initialSignupContainerRef} signupEnabled={true} /> */}
+            <div className="flex h-40 flex-col items-center justify-center gap-2 text-sm font-light text-gray-500">
+              A jelentkezési határidő lejárt.
+              {localStorage.getItem("signupStatus24") == "signed-up" && (
+                <div>Köszönjük a jelentkezésed! További teendőkért görgess lennebb!</div>
+              )}
+            </div>
           </div>
         </li>
         {/* <li className="mb-10 ml-10">
@@ -44,7 +46,7 @@ const Timeline = () => {
           <div className="">
             <h3 className="pb-4 text-2xl font-semibold text-gray-900">Javított dolgozatok feltöltése</h3>
             <time className="mb-10 font-light leading-none text-gray-500">2024. március 10-17.</time>
-            {/* <div className="m-6"><SecondUploadForm /></div> */}
+            <div className="m-6">{/* <SecondUploadForm /> */}</div>
           </div>
         </li>
         {/* <li className="mb-10 ml-10">
@@ -119,14 +121,8 @@ const Timeline = () => {
           <div className="">
             <h3 className="pb-4 text-2xl font-semibold text-gray-900">Prezentációk feltöltése</h3>
             <time className="mb-10 font-light leading-none text-gray-500">2024. április 8-12.</time>
-            {/* <div className="m-6">
+            <div className="m-6">
               <PresentationUploadForm />
-            </div> */}
-            <div className="mt-8 flex flex-col items-center justify-center gap-2 text-sm font-light text-gray-500">
-              A feltöltési határidő lejárt.
-              {localStorage.getItem("presentationUpload24") == "uploaded" && (
-                <div>A feltöltésed megkaptuk. Találkozzunk a TDK-n!</div>
-              )}
             </div>
           </div>
         </li>
