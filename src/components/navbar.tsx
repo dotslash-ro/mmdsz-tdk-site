@@ -124,6 +124,18 @@ const Navbar = () => {
                   Összefoglaló kötetek
                 </NavLink>
               </li>
+              <li>
+                <NavLink
+                  to="/workshop"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "lg:font-base flex items-center justify-center px-3 py-3 text-sm font-bold uppercase text-white underline lg:py-0"
+                      : "lg:font-base flex items-center justify-center px-3 py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
+                  }
+                >
+                  Műhelymunkák
+                </NavLink>
+              </li>
               <NavLink
                 to="/jelentkezes"
                 className={({ isActive }) =>
