@@ -101,7 +101,7 @@ const Workshop = ({ workshop, email, canSignUp }: WorkshopProps) => {
       <div className="pt-1 text-gray-600">
         <b>Elérhető helyek száma: </b> {workshop.maxAttendeeCount - workshop.applicantsCount}/
         {workshop.maxAttendeeCount}
-        {workshop.maxAttendeeCount - workshop.applicantsCount > 0 ? " fentmaradó hely" : ""}
+        {workshop.maxAttendeeCount - workshop.applicantsCount > 0 ? " fennmaradó hely" : ""}
       </div>
       <div className="flex justify-end pt-4">
         <WorkshopSignupButton

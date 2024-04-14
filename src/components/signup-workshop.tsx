@@ -120,7 +120,7 @@ const SignupWorkshop = ({ workshop, email, name, canSignUp, updateWorkshop }: Si
       <p className="whitespace-pre-line pt-6 text-gray-700"> {workshop.description}</p>
       <div className="pt-4">
         <b>Elérhető helyek száma: </b> {workshop.maxAttendeeCount - workshop.applicantsCount}/
-        {workshop.maxAttendeeCount} {workshop.maxAttendeeCount - workshop.applicantsCount > 0 ? " fentmaradó hely" : ""}
+        {workshop.maxAttendeeCount} {workshop.maxAttendeeCount - workshop.applicantsCount > 0 ? " fennmaradó hely" : ""}
       </div>
       <div className="flex justify-end pt-4">
         <WorkshopSignupButton
