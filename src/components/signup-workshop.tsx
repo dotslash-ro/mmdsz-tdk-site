@@ -22,10 +22,20 @@ type SignupWorkshopProps = {
   email: string;
   name: string;
   canSignUp: boolean;
-  updateWorkshop: (workshop: WorkshopType) => void;
+  onSignupSuccess: (workshop: WorkshopType) => void;
+  onSignupStart: () => void;
+  disableButton: boolean;
 };
 
-const SignupWorkshop = ({ workshop, email, name, canSignUp, updateWorkshop }: SignupWorkshopProps) => {
+const SignupWorkshop = ({
+  workshop,
+  email,
+  name,
+  canSignUp,
+  onSignupSuccess,
+  onSignupStart,
+  disableButton,
+}: SignupWorkshopProps) => {
   const [hasSignedUp, setHasSignedUp] = useState<boolean>(false);
   const [loading, setLoading] = useState(false);
 
@@ -44,6 +54,7 @@ const SignupWorkshop = ({ workshop, email, name, canSignUp, updateWorkshop }: Si
   }, []);
 
   async function onSignup() {
+    onSignupStart();
     setLoading(true);
     await fetch(`${workshopServerUrl}/application`, {
       method: "POST",
@@ -54,7 +65,7 @@ const SignupWorkshop = ({ workshop, email, name, canSignUp, updateWorkshop }: Si
     });
     setLoading(false);
     setHasSignedUp(true);
-    updateWorkshop({ ...workshop, applicantsCount: workshop.applicantsCount + 1 });
+    onSignupSuccess({ ...workshop, applicantsCount: workshop.applicantsCount + 1 });
   }
 
   async function onCancelSignup() {
@@ -68,7 +79,7 @@ const SignupWorkshop = ({ workshop, email, name, canSignUp, updateWorkshop }: Si
     });
     setLoading(false);
     setHasSignedUp(false);
-    updateWorkshop({ ...workshop, applicantsCount: workshop.applicantsCount - 1 });
+    onSignupSuccess({ ...workshop, applicantsCount: workshop.applicantsCount - 1 });
   }
 
   if (!workshop) {
@@ -124,13 +135,14 @@ const SignupWorkshop = ({ workshop, email, name, canSignUp, updateWorkshop }: Si
       </div>
       <div className="flex justify-end pt-4">
         <WorkshopSignupButton
-          canSignUp={true}
+          canSignUp={canSignUp}
           hasLoggedIn={!!email}
           hasSignedUp={hasSignedUp}
           onSignUp={onSignup}
           onCancelSignup={onCancelSignup}
           loading={loading}
           noOfAvailableSeats={workshop.maxAttendeeCount}
+          disable={disableButton}
         />
       </div>
       <hr className="my-8 h-px border-0 bg-gray-200 dark:bg-gray-700"></hr>

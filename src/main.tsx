@@ -60,6 +60,10 @@ const router = createHashRouter([
     element: <Workshops />,
   },
   {
+    path: "/workshop-jelentkezes",
+    element: <WorkshopSignup />,
+  },
+  {
     path: "/akkreditacio",
     element: <Accreditation />,
   },

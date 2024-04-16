@@ -8,6 +8,7 @@ interface WorkshopSignupButtonProps {
   onSignUp: () => void;
   onCancelSignup: () => void;
   noOfAvailableSeats: number;
+  disable: boolean;
 }
 
 const WorkshopSignupButton = ({
@@ -18,6 +19,7 @@ const WorkshopSignupButton = ({
   onSignUp,
   onCancelSignup,
   noOfAvailableSeats,
+  disable,
 }: WorkshopSignupButtonProps) => {
   if (!hasLoggedIn) {
     return null;
@@ -59,8 +61,9 @@ const WorkshopSignupButton = ({
   }
   return (
     <button
-      className="text-md rounded-full bg-tdk-primary px-4 py-2 font-semibold text-white hover:underline"
+      className="text-md rounded-full bg-tdk-primary px-4 py-2 font-semibold text-white hover:underline disabled:pointer-events-none disabled:opacity-75"
       onClick={onSignUp}
+      disabled={disable}
     >
       Jelentkezés
     </button>

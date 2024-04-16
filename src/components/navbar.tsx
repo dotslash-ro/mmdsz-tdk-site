@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <header className="sticky top-0 z-20 drop-shadow-md">
       <nav className="h-20 w-full bg-tdk-primary text-neutral-100">
-        <div className="flex w-full flex-wrap items-center justify-between lg:px-10">
+        <div className="flex w-full flex-wrap items-center justify-between lg:px-5 xl:px-8">
           <NavLink to="/" className="pl-4">
             <img src={tdkLogo} alt="logo" className="h-20 w-auto" />
           </NavLink>
@@ -49,7 +49,7 @@ const Navbar = () => {
           )}
           <div className="w-full bg-tdk-primary drop-shadow-md lg:block lg:w-auto" hidden={!showMenu}>
             <ul
-              className="mt-4 flex flex-col items-center font-medium lg:mt-0 lg:flex-row lg:space-x-4 lg:border-0 lg:p-0 lg:py-4 xl:space-x-8"
+              className="mt-4 flex flex-col items-center justify-evenly gap-2 font-medium lg:mt-0 lg:flex-row lg:space-x-2 lg:border-0 lg:p-0 lg:py-4 xl:space-x-4"
               hidden={!showMenu}
             >
               <li>
@@ -57,8 +57,8 @@ const Navbar = () => {
                   to="/szabalyzat"
                   className={({ isActive }) =>
                     isActive
-                      ? "lg:font-base flex items-center justify-center px-3 py-3 text-sm font-bold uppercase text-white underline lg:py-0"
-                      : "lg:font-base flex items-center justify-center px-3 py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
+                      ? "lg:font-base flex items-center justify-center py-3 text-sm font-bold uppercase text-white underline lg:py-0"
+                      : "lg:font-base flex items-center justify-center py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
                   }
                 >
                   Szabályzat
@@ -66,35 +66,23 @@ const Navbar = () => {
               </li>
               {/* <li>
                 <NavLink
-                  to="/akkreditacio"
-                  className={({ isActive }) =>
-                    isActive
-                      ? "lg:font-base flex items-center justify-center px-3 py-3 text-sm font-bold uppercase text-white underline lg:py-0"
-                      : "lg:font-base flex items-center justify-center px-3 py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
-                  }
-                >
-                  Akkreditáció
-                </NavLink>
-              </li> */}
-              <li>
-                <NavLink
                   to="/rolunk"
                   className={({ isActive }) =>
                     isActive
-                      ? "lg:font-base flex items-center justify-center px-3 py-3 text-sm font-bold uppercase text-white underline lg:py-0"
-                      : "lg:font-base flex items-center justify-center px-3 py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
+                      ? "lg:font-base flex items-center justify-center py-3 text-sm font-bold uppercase text-white underline lg:py-0"
+                      : "lg:font-base flex items-center justify-center py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
                   }
                 >
                   Rólunk
                 </NavLink>
-              </li>
+              </li> */}
               <li>
                 <NavLink
                   to="/szervezok"
                   className={({ isActive }) =>
                     isActive
-                      ? "lg:font-base flex items-center justify-center px-3 py-3 text-sm font-bold uppercase text-white underline lg:py-0"
-                      : "lg:font-base flex items-center justify-center px-3 py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
+                      ? "lg:font-base flex items-center justify-center py-3 text-sm font-bold uppercase text-white underline lg:py-0"
+                      : "lg:font-base flex items-center justify-center py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
                   }
                 >
                   Szervezőknek
@@ -105,8 +93,8 @@ const Navbar = () => {
                   to="/kapcsolat"
                   className={({ isActive }) =>
                     isActive
-                      ? "lg:font-base flex items-center justify-center px-3 py-3 text-sm font-bold uppercase text-white underline lg:py-0"
-                      : "lg:font-base flex items-center justify-center px-3 py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
+                      ? "lg:font-base flex items-center justify-center py-3 text-sm font-bold uppercase text-white underline lg:py-0"
+                      : "lg:font-base flex items-center justify-center py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
                   }
                 >
                   Kapcsolat
@@ -117,8 +105,8 @@ const Navbar = () => {
                   to="/osszefoglalok"
                   className={({ isActive }) =>
                     isActive
-                      ? "lg:font-base flex items-center justify-center px-3 py-3 text-sm font-bold uppercase text-white underline lg:py-0"
-                      : "lg:font-base flex items-center justify-center px-3 py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
+                      ? "lg:font-base flex items-center justify-center py-3 text-sm font-bold uppercase text-white underline lg:py-0"
+                      : "lg:font-base flex items-center justify-center py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
                   }
                 >
                   Összefoglaló kötetek
@@ -129,8 +117,8 @@ const Navbar = () => {
                   to="/workshop"
                   className={({ isActive }) =>
                     isActive
-                      ? "lg:font-base flex items-center justify-center px-3 py-3 text-sm font-bold uppercase text-white underline lg:py-0"
-                      : "lg:font-base flex items-center justify-center px-3 py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
+                      ? "lg:font-base flex items-center justify-center py-3 text-sm font-bold uppercase text-white underline lg:py-0"
+                      : "lg:font-base flex items-center justify-center py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
                   }
                 >
                   Műhelymunkák

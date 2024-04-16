@@ -1,9 +1,10 @@
 import { useGoogleLogin } from "@react-oauth/google";
-import { withLayout } from "../layout/withLayout";
 import { useEffect, useState } from "react";
+import { ClipLoader } from "react-spinners";
+
+import { withLayout } from "../layout/withLayout";
 import { maxSignUpPerEmail, workshopServerUrl } from "../constants";
 import googleIcon from "../assets/google_icon.svg";
-import { ClipLoader } from "react-spinners";
 import SignupWorkshop from "../components/signup-workshop";
 import { WorkshopType } from "../components/workshop";
 
@@ -16,6 +17,8 @@ const WorkshopSignup = () => {
   const [personalInfo, setPersonalInfo] = useState<{ section: string; studyYear: number } | undefined>(undefined);
   const [studyYear, setStudyYear] = useState<number>(0);
   const [section, setSection] = useState("");
+  const [canSignUp, setCanSingUp] = useState(true);
+  const [disableButtons, setDisableButtons] = useState(false);
 
   const login = useGoogleLogin({ onSuccess: (res) => setUser(res) });
 
@@ -81,23 +84,36 @@ const WorkshopSignup = () => {
       if (profile) {
         localStorage.setItem("profile", JSON.stringify(profile));
 
-        // await fetchApplicationNumberInfo();
+        await fetchApplicationNumberInfo();
       }
     })();
   }, [profile]);
 
-  // async function fetchApplicationNumberInfo() {
-  //   // fetch applications of user
-  //   const resp = await fetch(
-  //     `${workshopServerUrl}/application/${profile.email}`
-  //   );
-  //   const data = await resp.json();
-  //   // setCanSingUp(data.length < maxSignUpPerEmail);
-  // }
+  async function fetchApplicationNumberInfo() {
+    // fetch applications of user
+    const resp = await fetch(`${workshopServerUrl}/application/${profile.email}`);
+    const data = await resp.json();
+    setCanSingUp(data.length < maxSignUpPerEmail);
+  }
+
+  if (!profile) {
+    return (
+      <div className="mx-auto flex h-screen flex-col items-center px-10 pt-20 pb-10 font-semibold text-neutral-500 sm:justify-center sm:pt-0 lg:w-2/3">
+        A műhelymunkákra való jelentkezéshez csatlakoztatnod kell a Google fiókod az oldalhoz!
+        <button
+          className="my-10 flex w-48 items-center justify-center rounded-full border bg-neutral-100 px-3 py-1 drop-shadow-md hover:underline"
+          onClick={() => login()}
+        >
+          <img src={googleIcon} className="h-6 w-6" />
+          <div className=" mx-3 my-2 font-semibold text-neutral-600 lg:block lg:px-3">Bejelentkezés</div>
+        </button>
+      </div>
+    );
+  }
 
   if (!personalInfo) {
     return (
-      <div className="flex h-screen flex-col items-center px-5 pt-24 sm:justify-center sm:pt-0 lg:mx-auto lg:w-2/3">
+      <div className="flex h-screen flex-col items-center px-5 pt-24 sm:justify-center sm:pt-0 lg:mx-auto lg:w-1/3">
         {" "}
         <p className="pb-6 text-center text-sm font-semibold text-gray-600">
           Add meg a karod és évfolyamod, hogy a megfelelő műhelymukákat mutathassuk neked. Ezt csak egyszer tudod
@@ -171,21 +187,6 @@ const WorkshopSignup = () => {
     );
   }
 
-  if (!profile) {
-    return (
-      <div className="mx-auto flex h-screen flex-col items-center px-10 pt-20 pb-10 font-semibold text-neutral-500 sm:justify-center sm:pt-0 lg:w-2/3">
-        A műhelymunkákra való jelentkezéshez csatlakoztatnod kell a Google fiókod az oldalhoz!
-        <button
-          className="my-10 flex w-48 items-center justify-center rounded-full border bg-neutral-100 px-3 py-1 drop-shadow-md hover:underline"
-          onClick={() => login()}
-        >
-          <img src={googleIcon} className="h-6 w-6" />
-          <div className=" mx-3 my-2 font-semibold text-neutral-600 lg:block lg:px-3">Bejelentkezés</div>
-        </button>
-      </div>
-    );
-  }
-
   return (
     <>
       <div className="top-25 right-5 flex justify-center pt-8 pr-2 lg:fixed lg:justify-end lg:pt-5 lg:pr-5">
@@ -219,10 +220,15 @@ const WorkshopSignup = () => {
               workshop={workshop}
               email={profile.email}
               name={profile.name}
-              canSignUp={true}
-              updateWorkshop={(ws) =>
-                setWorkshops([...workshops.filter((_ws) => _ws.id != ws.id), ws].sort((a, b) => a.id - b.id))
-              }
+              canSignUp={canSignUp}
+              disableButton={disableButtons}
+              onSignupStart={() => setDisableButtons(true)}
+              onSignupSuccess={(ws) => {
+                setWorkshops(
+                  [...workshops.filter((_ws) => _ws.id != ws.id), ws].sort((a, b) => a.title.localeCompare(b.title))
+                );
+                fetchApplicationNumberInfo().then(() => setDisableButtons(false));
+              }}
             />
           </div>
         ))}
