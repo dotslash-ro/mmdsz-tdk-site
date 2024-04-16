@@ -1,7 +1,4 @@
-import { useState } from "react";
-import { workshopServerUrl } from "../constants";
 import { ClipLoader } from "react-spinners";
-import WorkshopSignupButton from "./workshop-signup-btn";
 
 export type WorkshopType = {
   id: number;
@@ -20,36 +17,9 @@ export type WorkshopType = {
 export type WorkshopProps = {
   workshop: WorkshopType;
   email: string | undefined;
-  canSignUp: boolean;
 };
 
-const Workshop = ({ workshop, email, canSignUp }: WorkshopProps) => {
-  const [loading, setLoading] = useState(false);
-  const [hasSignedUp, setHasSignedUp] = useState(false);
-
-  async function onSignup() {
-    setLoading(true);
-    await fetch(`${workshopServerUrl}/application`, {
-      method: "POST",
-      body: JSON.stringify({ email: email, workshopId: workshop.id }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    setLoading(false);
-  }
-
-  async function onCancelSignup() {
-    setLoading(true);
-    await fetch(`${workshopServerUrl}/application`, {
-      method: "DELETE",
-      body: JSON.stringify({ email: email, workshopId: workshop.id }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    setLoading(false);
-  }
+const Workshop = ({ workshop }: WorkshopProps) => {
 
   if (!workshop) {
     return (
