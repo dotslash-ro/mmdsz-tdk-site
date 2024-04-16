@@ -40,7 +40,7 @@ const WorkshopSignup = () => {
 
   function saveSignupInfo() {
     setPersonalInfo({ section, studyYear });
-    localStorage.setItem("personalInfo", JSON.stringify({ section, studyYear }));
+    localStorage.setItem("workshopPersonalInfo", JSON.stringify({ section, studyYear }));
   }
 
   useEffect(() => {
@@ -72,7 +72,7 @@ const WorkshopSignup = () => {
       setProfile(JSON.parse(profileStr));
     }
 
-    const personalInfoStr = localStorage.getItem("personalInfo");
+    const personalInfoStr = localStorage.getItem("workshopPersonalInfo");
     if (!personalInfoStr) {
       return;
     }
