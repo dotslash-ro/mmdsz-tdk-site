@@ -83,7 +83,7 @@ const Workshops = () => {
         </div>
         {workshopsToShow.map((workshop, index) => (
           <div key={index}>
-            <Workshop workshop={workshop} email={undefined} canSignUp={false} />
+            <Workshop workshop={workshop} email={undefined} />
             <hr className="my-8 h-px border-0 bg-gray-200"></hr>
           </div>
         ))}
