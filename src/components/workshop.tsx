@@ -103,17 +103,6 @@ const Workshop = ({ workshop, email, canSignUp }: WorkshopProps) => {
         {workshop.maxAttendeeCount}
         {workshop.maxAttendeeCount - workshop.applicantsCount > 0 ? " fennmaradó hely" : ""}
       </div>
-      <div className="flex justify-end pt-4">
-        <WorkshopSignupButton
-          canSignUp={canSignUp}
-          hasLoggedIn={!!email}
-          hasSignedUp={hasSignedUp}
-          onSignUp={onSignup}
-          loading={loading}
-          onCancelSignup={onCancelSignup}
-          noOfAvailableSeats={workshop.maxAttendeeCount}
-        />
-      </div>
     </div>
   );
 };
