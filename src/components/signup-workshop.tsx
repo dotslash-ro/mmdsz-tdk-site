@@ -21,6 +21,8 @@ type SignupWorkshopProps = {
   workshop: WorkshopType;
   email: string;
   name: string;
+  section: string;
+  studyYear: number;
   canSignUp: boolean;
   onSignupSuccess: (workshop: WorkshopType) => void;
   onSignupStart: () => void;
@@ -32,6 +34,8 @@ const SignupWorkshop = ({
   email,
   name,
   canSignUp,
+  studyYear,
+  section,
   onSignupSuccess,
   onSignupStart,
   disableButton,
@@ -58,7 +62,7 @@ const SignupWorkshop = ({
     setLoading(true);
     await fetch(`${workshopServerUrl}/application`, {
       method: "POST",
-      body: JSON.stringify({ email, workshopId: workshop.id, name }),
+      body: JSON.stringify({ email, workshopId: workshop.id, name, section, studyYear }),
       headers: {
         "Content-Type": "application/json",
       },

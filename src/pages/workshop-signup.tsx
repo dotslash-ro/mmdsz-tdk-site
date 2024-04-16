@@ -220,6 +220,8 @@ const WorkshopSignup = () => {
               workshop={workshop}
               email={profile.email}
               name={profile.name}
+              section={personalInfo.section}
+              studyYear={personalInfo.studyYear}
               canSignUp={canSignUp}
               disableButton={disableButtons}
               onSignupStart={() => setDisableButtons(true)}
