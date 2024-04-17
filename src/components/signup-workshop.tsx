@@ -62,7 +62,7 @@ const SignupWorkshop = ({
     setLoading(true);
     await fetch(`${workshopServerUrl}/application`, {
       method: "POST",
-      body: JSON.stringify({ email, workshopId: workshop.id, name, section, studyYear }),
+      body: JSON.stringify({ email, workshopId: workshop.id, name, section, studyYear, workshopTitle: workshop.title }),
       headers: {
         "Content-Type": "application/json",
       },
