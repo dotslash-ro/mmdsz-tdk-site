@@ -145,7 +145,7 @@ const SignupWorkshop = ({
           onSignUp={onSignup}
           onCancelSignup={onCancelSignup}
           loading={loading}
-          noOfAvailableSeats={workshop.maxAttendeeCount}
+          noOfAvailableSeats={workshop.maxAttendeeCount - workshop.applicantsCount}
           disable={disableButton}
         />
       </div>
