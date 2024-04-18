@@ -64,18 +64,18 @@ const Navbar = () => {
                   Szabályzat
                 </NavLink>
               </li>
-              {/* <li>
+              <li>
                 <NavLink
-                  to="/rolunk"
+                  to="/program"
                   className={({ isActive }) =>
                     isActive
                       ? "lg:font-base flex items-center justify-center py-3 text-sm font-bold uppercase text-white underline lg:py-0"
                       : "lg:font-base flex items-center justify-center py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
                   }
                 >
-                  Rólunk
+                  Programfüzet
                 </NavLink>
-              </li> */}
+              </li>
               <li>
                 <NavLink
                   to="/szervezok"
@@ -100,7 +100,7 @@ const Navbar = () => {
                   Kapcsolat
                 </NavLink>
               </li>
-              <li>
+              {/* <li>
                 <NavLink
                   to="/osszefoglalok"
                   className={({ isActive }) =>
@@ -111,7 +111,7 @@ const Navbar = () => {
                 >
                   Összefoglaló kötetek
                 </NavLink>
-              </li>
+              </li> */}
               <li>
                 <NavLink
                   to="/workshop-jelentkezes"

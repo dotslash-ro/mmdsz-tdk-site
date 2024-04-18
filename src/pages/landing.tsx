@@ -13,7 +13,7 @@ const Landing = () => {
       <Helmet>
         <title>31. TDK - MMDSZ</title>
       </Helmet>
-      <div className="h-[75vh] bg-tdk-primary pt-32 drop-shadow-md">
+      <div className="bg-tdk-primary py-16 drop-shadow-md">
         <div className="z-20 flex flex-grow flex-col items-center bg-contain bg-left bg-no-repeat px-10 md:bg-dns lg:items-end xl:items-center">
           <div className="">
             <h2 className="text-left font-hero text-6xl uppercase tracking-tighter text-white md:text-5xl lg:text-right lg:text-8xl xl:text-left">

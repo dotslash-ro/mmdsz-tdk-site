@@ -3,7 +3,7 @@ import { ScrollMode, SpecialZoomLevel, Worker } from "@react-pdf-viewer/core";
 import { Viewer } from "@react-pdf-viewer/core";
 import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
 import "@react-pdf-viewer/default-layout/lib/styles/index.css";
-import programmePdf from "../assets/programme.pdf";
+import programmePdf from "../assets/tdk-programfuzet-24.pdf";
 import { Helmet } from "react-helmet";
 
 const Programme = () => {

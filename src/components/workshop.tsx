@@ -20,7 +20,6 @@ export type WorkshopProps = {
 };
 
 const Workshop = ({ workshop }: WorkshopProps) => {
-
   if (!workshop) {
     return (
       <div className="flex h-64 w-full items-center justify-center">
