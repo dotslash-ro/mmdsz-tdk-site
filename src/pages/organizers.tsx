@@ -1,8 +1,12 @@
+import { Helmet } from "react-helmet";
 import { withLayout } from "../layout/withLayout";
 
 const Organizers = () => {
   return (
     <div className="px-5 py-20 sm:px-10 lg:px-20">
+      <Helmet>
+        <title>31. TDK - Szervezőknek</title>
+      </Helmet>
       <h1 className="pb-20 text-center text-5xl font-bold">Szervezőknek</h1>
       <div className="grid grid-cols-1 justify-items-stretch gap-10 py-8 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
         <div className="px-5 py-8 md:px-10">

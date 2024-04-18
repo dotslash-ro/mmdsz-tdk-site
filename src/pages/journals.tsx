@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { withLayout } from "../layout/withLayout";
 import { Outlet, useNavigate } from "react-router-dom";
 
@@ -6,6 +7,9 @@ const PastJournals = () => {
 
   return (
     <div className="flex min-h-screen flex-grow flex-col py-5 md:flex-row">
+      <Helmet>
+        <title>31. TDK - Összefoglaló kötetek</title>
+      </Helmet>
       <div className="mb-6 border-gray-300 px-10 md:w-1/5 md:border-r">
         <label htmlFor="journals" className="mb-2 block pt-10 text-lg font-medium text-gray-900">
           Év

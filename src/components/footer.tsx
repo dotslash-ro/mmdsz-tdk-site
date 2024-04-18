@@ -99,7 +99,7 @@ const Footer = () => {
         </div>
         <div className="px-2 text-center text-sm text-neutral-500">
           {""}
-          Made by <a className="hover:underline">DotSlash Romania</a>
+          Made by <a className="hover:underline" href="https://dotslash.ro" target="_blank">DotSlash Romania</a>
         </div>
       </div>
       <div className="flex justify-center space-x-6">

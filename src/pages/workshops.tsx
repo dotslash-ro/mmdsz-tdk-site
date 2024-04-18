@@ -3,6 +3,7 @@ import Workshop, { type WorkshopType } from "../components/workshop";
 import { workshopServerUrl } from "../constants";
 import { withLayout } from "../layout/withLayout";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 
 const Workshops = () => {
   const [allWorkshops, setAllWorkshops] = useState<WorkshopType[]>([]);
@@ -35,6 +36,9 @@ const Workshops = () => {
 
   return (
     <>
+      <Helmet>
+        <title>31. TDK - Műhelymukák</title>
+      </Helmet>
       <div className="mx-auto py-20 px-5 lg:w-2/3">
         <h2 className="pb-20 text-center text-5xl font-bold">Műhelymunkák</h2>
         <div className="flex flex-col items-center justify-center pb-10 md:flex-row md:space-x-10">

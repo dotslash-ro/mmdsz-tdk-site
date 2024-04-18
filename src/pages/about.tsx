@@ -1,8 +1,12 @@
 import { withLayout } from "../layout/withLayout";
+import { Helmet } from "react-helmet";
 
 const About = () => {
   return (
     <div className="mx-auto py-20 px-5 lg:w-1/2">
+      <Helmet>
+        <title>31. TDK - Rólunk</title>
+      </Helmet>
       <div>
         <h2 className="pb-10 text-center text-5xl font-bold">Az MMDSZ-ről</h2>
         <p className="font-light">

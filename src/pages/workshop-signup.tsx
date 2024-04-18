@@ -7,6 +7,7 @@ import { maxSignUpPerEmail, workshopServerUrl } from "../constants";
 import googleIcon from "../assets/google_icon.svg";
 import SignupWorkshop from "../components/signup-workshop";
 import { WorkshopType } from "../components/workshop";
+import { Helmet } from "react-helmet";
 
 const WorkshopSignup = () => {
   const [user, setUser] = useState<any>();
@@ -99,6 +100,9 @@ const WorkshopSignup = () => {
   if (!profile) {
     return (
       <div className="mx-auto flex h-screen flex-col items-center px-10 pt-20 pb-10 font-semibold text-neutral-500 sm:justify-center sm:pt-0 lg:w-2/3">
+        <Helmet>
+          <title>31. TDK - Műhelymukák</title>
+        </Helmet>
         A műhelymunkákra való jelentkezéshez csatlakoztatnod kell a Google fiókod az oldalhoz!
         <button
           className="my-10 flex w-48 items-center justify-center rounded-full border bg-neutral-100 px-3 py-1 drop-shadow-md hover:underline"
@@ -114,7 +118,9 @@ const WorkshopSignup = () => {
   if (!personalInfo) {
     return (
       <div className="flex h-screen flex-col items-center px-5 pt-24 sm:justify-center sm:pt-0 lg:mx-auto lg:w-1/3">
-        {" "}
+        <Helmet>
+          <title>31. TDK - Műhelymukák</title>
+        </Helmet>
         <p className="pb-6 text-center text-sm font-semibold text-gray-600">
           Add meg a karod és évfolyamod, hogy a megfelelő műhelymukákat mutathassuk neked. Ezt csak egyszer tudod
           megadni, utólag nem lehet módosítani!
@@ -174,6 +180,9 @@ const WorkshopSignup = () => {
   if (error) {
     return (
       <div className="h-screen items-center justify-center text-sm font-semibold text-rose-500">
+        <Helmet>
+          <title>31. TDK - Műhelymukák</title>
+        </Helmet>
         Sajnos egy hiba lépett fel. Vedd fel a kapcsolatot a szervezőkkel a következő címen: tdk@mmdsz.ro
       </div>
     );
@@ -182,6 +191,9 @@ const WorkshopSignup = () => {
   if (loading) {
     return (
       <div className="flex h-screen items-center justify-center">
+        <Helmet>
+          <title>31. TDK - Műhelymukák</title>
+        </Helmet>
         <ClipLoader />
       </div>
     );
@@ -189,6 +201,9 @@ const WorkshopSignup = () => {
 
   return (
     <>
+      <Helmet>
+        <title>31. TDK - Műhelymukák</title>
+      </Helmet>
       <div className="top-25 right-5 flex justify-center pt-8 pr-2 lg:fixed lg:justify-end lg:pt-5 lg:pr-5">
         <button
           className="flex items-center justify-center rounded-full border bg-neutral-100 px-3 py-2 drop-shadow-md"

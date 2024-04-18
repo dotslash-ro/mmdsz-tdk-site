@@ -1,8 +1,12 @@
+import { Helmet } from "react-helmet";
 import { withLayout } from "../layout/withLayout";
 
 const FAQ = () => {
   return (
     <div className="py-20 px-5">
+      <Helmet>
+        <title>31. TDK - TDKérdezz</title>
+      </Helmet>
       <h1 className="pb-20 text-center text-5xl font-bold">TDKérdezz</h1>
       <div className="mx-auto lg:w-1/2">
         <h2 className="pt-6 pb-4 text-xl font-bold">Kérdések a tudományos dolgozat megírását megelőző folyamatról: </h2>

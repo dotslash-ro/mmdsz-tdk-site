@@ -1,8 +1,12 @@
+import { Helmet } from "react-helmet";
 import { withLayout } from "../layout/withLayout";
 
 const Contact = () => {
   return (
     <div className="h-min-screen px-10 py-20 md:mx-auto md:w-1/2 md:px-0">
+      <Helmet>
+        <title>31. TDK - Elérhetőségek</title>
+      </Helmet>
       <h2 className="pb-10 text-center text-5xl font-bold">Elérhetőségek</h2>
       <div className="space-y-8">
         <div>

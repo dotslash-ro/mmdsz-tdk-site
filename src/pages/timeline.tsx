@@ -1,12 +1,15 @@
 import { useRef } from "react";
+import { Helmet } from "react-helmet";
 import { withLayout } from "../layout/withLayout";
-import PresentationUploadForm from "../components/presentation-upload-form";
 
 const Timeline = () => {
   const initialSignupContainerRef = useRef<HTMLDivElement | null>(null);
 
   return (
     <div className="flex justify-center py-20 px-6">
+      <Helmet>
+        <title>31. TDK - Információ</title>
+      </Helmet>
       <ol className="relative space-y-20 border-l border-gray-300 lg:w-1/2">
         <li className="mb-4 ml-10 font-light text-gray-500">
           <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border-2 border-white bg-gray-500"></div>

@@ -4,10 +4,14 @@ import rules from "../assets/tdk-rules-2024.png";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import posterSectionZip from "../assets/poszter-szekcio-sablonok.zip";
+import { Helmet } from "react-helmet";
 
 const Rules = () => {
   return (
     <div className="prose mx-auto py-20 px-10 prose-a:text-sky-400 prose-img:my-0 prose-img:py-0 sm:w-2/3 xl:w-1/2">
+      <Helmet>
+        <title>31. TDK - Szabályzat</title>
+      </Helmet>
       <h1>Tudományos Diákköri Konferencia szabályzata</h1>
       <h2>1. Röviden a Tudományos Diákköri Konferenciáról</h2>
       <p>

@@ -1,8 +1,12 @@
+import { Helmet } from "react-helmet";
 import { withLayout } from "../layout/withLayout";
 
 const Accreditation = () => {
   return (
     <div className="mx-auto py-20 px-5 lg:w-1/2">
+      <Helmet>
+        <title>31. TDK - Akkreditáció</title>
+      </Helmet>
       <h2 className="pb-10 text-center text-5xl font-bold">Akkreditáció</h2>
       <p className="py-2 text-gray-800">
         A Tudományos Diákköri Konferencia 31. kiadása akkreditált <span className="italic">Romániai Orvosi Kamara</span>{" "}

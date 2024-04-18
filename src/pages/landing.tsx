@@ -1,6 +1,8 @@
+import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
+
 import Sponsors from "../components/sponsors";
 import { withLayout } from "../layout/withLayout";
-import { Link } from "react-router-dom";
 import tdkPicture1 from "../assets/tdk-pic1.png";
 import tdkPicture2 from "../assets/tdk-pic2.png";
 import tdkPicture3 from "../assets/tdk-pic3.png";
@@ -8,6 +10,9 @@ import tdkPicture3 from "../assets/tdk-pic3.png";
 const Landing = () => {
   return (
     <>
+      <Helmet>
+        <title>31. TDK - MMDSZ</title>
+      </Helmet>
       <div className="h-[75vh] bg-tdk-primary pt-32 drop-shadow-md">
         <div className="z-20 flex flex-grow flex-col items-center bg-contain bg-left bg-no-repeat px-10 md:bg-dns lg:items-end xl:items-center">
           <div className="">
