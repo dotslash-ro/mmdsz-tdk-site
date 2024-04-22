@@ -85,7 +85,7 @@ const WorkshopSignup = () => {
       if (profile) {
         localStorage.setItem("profile", JSON.stringify(profile));
 
-        await fetchApplicationNumberInfo();
+        // await fetchApplicationNumberInfo();
       }
     })();
   }, [profile]);
@@ -244,7 +244,8 @@ const WorkshopSignup = () => {
                 setWorkshops(
                   [...workshops.filter((_ws) => _ws.id != ws.id), ws].sort((a, b) => a.title.localeCompare(b.title))
                 );
-                fetchApplicationNumberInfo().then(() => setDisableButtons(false));
+                setDisableButtons(false);
+                //fetchApplicationNumberInfo().then(() => );
               }}
             />
           </div>

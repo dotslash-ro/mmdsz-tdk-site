@@ -17,8 +17,6 @@ const Sponsors = () => {
   const patrons = allSponsors.filter((sponsor) => sponsor.type == "Védnök").sort((a, b) => a.order - b.order);
   const mainSponsors = allSponsors.filter((sponsor) => sponsor.type == "Főtámogató").sort((a, b) => a.order - b.order);
 
-  console.log(specialSponsors);
-
   useEffect(() => {
     fetchSponsors().then((data) => {
       setAllSponsors(data);

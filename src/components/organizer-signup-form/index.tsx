@@ -47,7 +47,7 @@ const OrganizerSignupMultistepForm = ({ scrollToRef }: { scrollToRef: MutableRef
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (!!organizerMiscInfo) {
+    if (organizerMiscInfo) {
       onSignup();
     }
   }, [organizerMiscInfo]);
@@ -84,7 +84,6 @@ const OrganizerSignupMultistepForm = ({ scrollToRef }: { scrollToRef: MutableRef
       organizerMiscInfo,
     };
     const body = JSON.stringify(payload);
-    console.log(body);
     if (
       !organizerGroupData ||
       !organizerInfo ||
