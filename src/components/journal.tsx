@@ -10,6 +10,7 @@ import journal2015 from "../assets/2015-suppl1.pdf";
 import journal2014 from "../assets/2014-suppl1.pdf";
 import journal2013 from "../assets/2013-suppl1.pdf";
 import journal2012 from "../assets/2012-suppl1.pdf";
+import journal2024 from "../assets/2024-suppl1.pdf";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { ScrollMode, SpecialZoomLevel, Worker } from "@react-pdf-viewer/core";
@@ -30,13 +31,14 @@ const yearToJournalMap: Map<string, string> = new Map([
   ["2014", journal2014],
   ["2013", journal2013],
   ["2012", journal2012],
+  ["2024", journal2024]
 ]);
 
 const Journal = () => {
   const { year } = useParams();
   const [journal, setJournal] = useState("");
   const defaultLayoutPluginInstance = defaultLayoutPlugin({
-    sidebarTabs: (_) => [],
+    sidebarTabs: () => [],
   });
 
   useEffect(() => {

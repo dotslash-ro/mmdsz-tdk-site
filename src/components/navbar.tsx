@@ -100,7 +100,7 @@ const Navbar = () => {
                   Kapcsolat
                 </NavLink>
               </li>
-              {/* <li>
+              <li>
                 <NavLink
                   to="/osszefoglalok"
                   className={({ isActive }) =>
@@ -111,7 +111,7 @@ const Navbar = () => {
                 >
                   Összefoglaló kötetek
                 </NavLink>
-              </li> */}
+              </li>
               <li>
                 <NavLink
                   to="/workshop-jelentkezes"
@@ -124,7 +124,7 @@ const Navbar = () => {
                   Műhelymunkák
                 </NavLink>
               </li>
-              <NavLink
+              {/* <NavLink
                 to="/akkreditacio"
                 className={({ isActive }) =>
                   isActive
@@ -133,7 +133,7 @@ const Navbar = () => {
                 }
               >
                 Akkreditáció
-              </NavLink>
+              </NavLink> */}
             </ul>
           </div>
         </div>
