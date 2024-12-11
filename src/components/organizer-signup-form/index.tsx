@@ -35,7 +35,13 @@ export type OrganizerSignupFullSchema = {
   organizerMiscInfo: MiscInfoFormSchema;
 };
 
-const OrganizerSignupMultistepForm = ({ scrollToRef }: { scrollToRef: MutableRefObject<HTMLDivElement | null> }) => {
+const OrganizerSignupMultistepForm = ({
+  scrollToRef,
+  enabled,
+}: {
+  scrollToRef: MutableRefObject<HTMLDivElement | null>;
+  enabled: boolean;
+}) => {
   const [signupStatus, setSignupStatus] = useState<SignupStatus>("not-signedup");
   const [currentStep, setCurrentStep] = useState<SignupStep>("preSignup");
   const [organizerInfo, setOrganizerInfo] = useState<OrganizerInfoSchema | undefined>(undefined);
@@ -174,7 +180,7 @@ const OrganizerSignupMultistepForm = ({ scrollToRef }: { scrollToRef: MutableRef
   }
 
   if (currentStep == "preSignup") {
-    return <PreSignup setCurrentStep={setCurrentStep} />;
+    return <PreSignup setCurrentStep={setCurrentStep} enabled={enabled} />;
   }
   if (currentStep == "organizerInfo") {
     return <OrganizerInfoForm setOrganizerInfo={setOrganizerInfo} setCurrentStep={setCurrentStep} />;

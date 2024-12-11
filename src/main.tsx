@@ -79,7 +79,11 @@ const router = createHashRouter([
   },
   {
     path: "/szervezoi-jelentkezes",
-    element: <OrganizerSignup />,
+    element: <OrganizerSignup enabled={false} />,
+  },
+  {
+    path: "/szervezoi-jelentkezes-teszt",
+    element: <OrganizerSignup enabled={true} />,
   },
   {
     path: "/osszefoglalok",

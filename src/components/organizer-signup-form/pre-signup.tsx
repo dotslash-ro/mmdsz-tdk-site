@@ -2,7 +2,7 @@ import { useState } from "react";
 import { type SignupStep } from ".";
 import { Link } from "react-router-dom";
 
-const PreSignup = ({ setCurrentStep }: { setCurrentStep: (next: SignupStep) => void }) => {
+const PreSignup = ({ setCurrentStep, enabled }: { setCurrentStep: (next: SignupStep) => void; enabled: boolean }) => {
   const [acceptedRules, setAcceptedRules] = useState(false);
   return (
     <div>
@@ -31,34 +31,38 @@ const PreSignup = ({ setCurrentStep }: { setCurrentStep: (next: SignupStep) => v
           jelentkező hallgatók részére (15 hely - motivációs kérdések) -159 szervezőt áll módunkban felvenni{" "}
         </li>
       </ul>
-      {/* <div className="mb-6 mt-10 flex items-start">
-        <div className="ml-4 flex h-5 items-center">
-          <input
-            id="terms"
-            type="checkbox"
-            checked={acceptedRules}
-            onChange={() => setAcceptedRules(!acceptedRules)}
-            className="focus:ring-3 h-5 w-5 cursor-pointer rounded border border-tdk-accent bg-gray-50 accent-tdk-accent focus:ring-tdk-accent"
-          />
-        </div>
-        <label htmlFor="terms" className="ml-2 text-sm text-neutral-600">
-          Elolvastam és tisztában vagyok a{" "}
-          <Link to="/szabalyzat" target="_blank" className="text-tdk-accent underline">
-            weboldalon található szabályzattal
-          </Link>{" "}
-          és a{" "}
-          <Link to="/szervezoknek" target="_blank" className="text-tdk-accent underline">
-            munkacsoportok feladatköreivel.
-          </Link>
-        </label>
-      </div> */}
-      {/* <button
-        className="mt-6 rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white drop-shadow-md hover:underline disabled:opacity-50 disabled:hover:cursor-not-allowed xl:text-xl"
-        onClick={() => setCurrentStep("organizerInfo")}
-        disabled={!acceptedRules}
-      >
-        Jelentkezés
-      </button> */}
+      {enabled && (
+        <>
+          <div className="mb-6 mt-10 flex items-start">
+            <div className="ml-4 flex h-5 items-center">
+              <input
+                id="terms"
+                type="checkbox"
+                checked={acceptedRules}
+                onChange={() => setAcceptedRules(!acceptedRules)}
+                className="focus:ring-3 h-5 w-5 cursor-pointer rounded border border-tdk-accent bg-gray-50 accent-tdk-accent focus:ring-tdk-accent"
+              />
+            </div>
+            <label htmlFor="terms" className="ml-2 text-sm text-neutral-600">
+              Elolvastam és tisztában vagyok a{" "}
+              <Link to="/szabalyzat" target="_blank" className="text-tdk-accent underline">
+                weboldalon található szabályzattal
+              </Link>{" "}
+              és a{" "}
+              <Link to="/szervezoknek" target="_blank" className="text-tdk-accent underline">
+                munkacsoportok feladatköreivel.
+              </Link>
+            </label>
+          </div>
+          <button
+            className="mt-6 rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white drop-shadow-md hover:underline disabled:opacity-50 disabled:hover:cursor-not-allowed xl:text-xl"
+            onClick={() => setCurrentStep("organizerInfo")}
+            disabled={!acceptedRules}
+          >
+            Jelentkezés
+          </button>
+        </>
+      )}
       <div className="py-20 text-center text-sm font-medium text-gray-700">
         A szervezői jelentkezés 2024. december 16.-án kezdődik.
       </div>
