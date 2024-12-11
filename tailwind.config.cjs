@@ -14,7 +14,7 @@ module.exports = {
         "tdk-accent": "#f16d2d",
       },
       backgroundImage: {
-        banner: "url(/src/assets/tdk-hero-bg-2025.png)",
+        banner: "url(/src/assets/tdk-hero-bg-2025-min.webp)",
         decor1: "url(/src/assets/tdk-hero-decor1-2025.png)",
         decor2: "url(/src/assets/tdk-hero-decor2-2025.png)",
         dns: "url(/src/assets/tdk-dns.png)",
