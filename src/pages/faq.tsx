@@ -5,7 +5,7 @@ const FAQ = () => {
   return (
     <div className="py-20 px-5">
       <Helmet>
-        <title>31. TDK - TDKérdezz</title>
+        <title>32. TDK - TDKérdezz</title>
       </Helmet>
       <h1 className="pb-20 text-center text-5xl font-bold">TDKérdezz</h1>
       <div className="mx-auto lg:w-1/2">

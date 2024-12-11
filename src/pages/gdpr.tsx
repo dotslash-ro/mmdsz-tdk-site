@@ -5,7 +5,7 @@ const GDPR = () => {
   return (
     <div className="mx-auto py-20 px-5 lg:w-1/2">
       <Helmet>
-        <title>31. TDK - GDPR</title>
+        <title>32. TDK - GDPR</title>
       </Helmet>
       <h2 className="pb-10 text-center text-5xl font-bold">GDPR</h2>
       <h3 className="py-10 font-semibold">Detaliile privind prelucrarea datelor cu caracter personal</h3>

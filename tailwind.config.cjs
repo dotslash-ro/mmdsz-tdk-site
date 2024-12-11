@@ -9,12 +9,14 @@ module.exports = {
         128: "32rem",
       },
       colors: {
-        "tdk-primary": "#012a27",
+        "tdk-primary": "#0f2930",
         "tdk-secondary": "#0a3032",
         "tdk-accent": "#f16d2d",
       },
       backgroundImage: {
-        banner: "url(/src/assets/tdk-2024-cover-2.jpg)",
+        banner: "url(/src/assets/tdk-hero-bg-2025.png)",
+        decor1: "url(/src/assets/tdk-hero-decor1-2025.png)",
+        decor2: "url(/src/assets/tdk-hero-decor2-2025.png)",
         dns: "url(/src/assets/tdk-dns.png)",
       },
       fontFamily: {

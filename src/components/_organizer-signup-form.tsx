@@ -215,7 +215,7 @@ const OrganizerSingupForm = () => {
               className="rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-lg"
               type="submit"
             >
-              Jelentekezés
+              Jelentkezés
             </button>
           ) : (
             <button
@@ -224,7 +224,7 @@ const OrganizerSingupForm = () => {
               type="submit"
               title="A továbblépéshez ki kell töltedened az adataid!"
             >
-              Jelentekezés
+              Jelentkezés
             </button>
           )}
         </div>

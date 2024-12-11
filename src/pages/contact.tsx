@@ -5,7 +5,7 @@ const Contact = () => {
   return (
     <div className="h-min-screen px-10 py-20 md:mx-auto md:w-1/2 md:px-0">
       <Helmet>
-        <title>31. TDK - Elérhetőségek</title>
+        <title>32. TDK - Elérhetőségek</title>
       </Helmet>
       <h2 className="pb-10 text-center text-5xl font-bold">Elérhetőségek</h2>
       <div className="space-y-8">
@@ -23,11 +23,11 @@ const Contact = () => {
           <div className="space-y-4">
             <div className="flex justify-between">
               <div>
-                <span className="">Barthi Dóra</span>
+                <span className="">Stekbauer Anett</span>
                 <span className="pl-2 text-sm font-bold text-neutral-700">Irodavezető</span>
               </div>
-              <a className="font-light italic hover:text-tdk-accent hover:underline" href="tel:+40 765 411 295">
-                +40 765 411 295
+              <a className="font-light italic hover:text-tdk-accent hover:underline" href="tel:+40 743 658 979">
+                +40 743 658 979
               </a>
             </div>
             <div className="flex justify-between">
@@ -41,47 +41,47 @@ const Contact = () => {
             </div>
             <div className="flex justify-between">
               <div>
-                <span className="">Barcsay Zselyke</span>
+                <span className="">Berkeczi Blanka</span>
                 <span className="pl-2 text-sm font-bold text-neutral-700">Főszervező</span>
               </div>
-              <a className="font-light italic hover:text-tdk-accent hover:underline" href="tel:+40 747 647 457">
-                +40 747 647 457
+              <a className="font-light italic hover:text-tdk-accent hover:underline" href="tel:+40 761 985 576">
+                +40 761 985 576
               </a>
             </div>
             <div className="flex justify-between">
               <div>
-                <span className="">Biró Edina-Kata</span>
+                <span className="">Cozma Paula-Sophia</span>
                 <span className="pl-2 text-sm font-bold text-neutral-700">Főszervező</span>
               </div>
-              <a className="font-light italic hover:text-tdk-accent hover:underline" href="tel:+40 746 412 041">
-                +40 746 412 041
+              <a className="font-light italic hover:text-tdk-accent hover:underline" href="tel:+40 746 620 542">
+                +40 746 620 542
               </a>
             </div>
             <div className="flex justify-between">
               <div>
-                <span className="">Gál Zsuzsánna</span>
+                <span className="">Fehér Anna</span>
                 <span className="pl-2 text-sm font-bold text-neutral-700">Főszervező</span>
               </div>
-              <a className="font-light italic hover:text-tdk-accent hover:underline" href="tel:+40 741 554 554">
-                +40 741 554 554
+              <a className="font-light italic hover:text-tdk-accent hover:underline" href="tel:+40 751 114 981">
+                +40 751 114 981
               </a>
             </div>
             <div className="flex justify-between">
               <div>
-                <span className="">Geréd Ákos</span>
+                <span className="">Ilyés Norbert-István</span>
                 <span className="pl-2 text-sm font-bold text-neutral-700">Főszervező</span>
               </div>
-              <a className="font-light italic hover:text-tdk-accent hover:underline" href="tel:+40 741 100 578">
-                +40 741 100 578
+              <a className="font-light italic hover:text-tdk-accent hover:underline" href="tel:+40 737 444 099">
+                +40 737 444 099
               </a>
             </div>
             <div className="flex justify-between">
               <div>
-                <span className="">Miklós Noémi</span>
+                <span className="">Toth Robert-Szabolcs</span>
                 <span className="pl-2 text-sm font-bold text-neutral-700">Főszervező</span>
               </div>
-              <a className="font-light italic hover:text-tdk-accent hover:underline" href="tel:+40 741 761 518">
-                +40 741 761 518
+              <a className="font-light italic hover:text-tdk-accent hover:underline" href="tel:++40 743 342 275">
+                +40 743 342 275
               </a>
             </div>
           </div>

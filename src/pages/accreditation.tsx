@@ -5,11 +5,11 @@ const Accreditation = () => {
   return (
     <div className="mx-auto py-20 px-5 lg:w-1/2">
       <Helmet>
-        <title>31. TDK - Akkreditáció</title>
+        <title>32. TDK - Akkreditáció</title>
       </Helmet>
       <h2 className="pb-10 text-center text-5xl font-bold">Akkreditáció</h2>
       <p className="py-2 text-gray-800">
-        A Tudományos Diákköri Konferencia 31. kiadása akkreditált <span className="italic">Romániai Orvosi Kamara</span>{" "}
+        A Tudományos Diákköri Konferencia 32. kiadása akkreditált <span className="italic">Romániai Orvosi Kamara</span>{" "}
         és <span className="italic">Romániai Gyógyszerész Kollégium</span> által.
       </p>{" "}
       <p className="py-2 text-gray-800">

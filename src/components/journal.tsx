@@ -31,7 +31,7 @@ const yearToJournalMap: Map<string, string> = new Map([
   ["2014", journal2014],
   ["2013", journal2013],
   ["2012", journal2012],
-  ["2024", journal2024]
+  ["2024", journal2024],
 ]);
 
 const Journal = () => {

@@ -36,7 +36,7 @@ const MiscInfoForm = ({ setMiscInfo }: { setMiscInfo: (data: MiscInfoFormSchema)
     <div>
       <form className="py-10" onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-6">
-          <h3 className="mb-4 text-lg font-medium text-gray-900">A 31.TDK-ra készülsz dolgozattal?</h3>
+          <h3 className="mb-4 text-lg font-medium text-gray-900">A 32.TDK-ra készülsz dolgozattal?</h3>
           <fieldset className="ml-4 space-y-3">
             {["Igen", "Nem"].map((answer, index) => (
               <label

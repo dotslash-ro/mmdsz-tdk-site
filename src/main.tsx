@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createHashRouter, RouterProvider } from "react-router-dom";
+
 import "./index.css";
 import Landing from "./pages/landing";
 import About from "./pages/about";
@@ -13,14 +14,15 @@ import Organizers from "./pages/organizers";
 import FAQ from "./pages/faq";
 import GDPR from "./pages/gdpr";
 import JournalError from "./components/journal-error";
-import Workshops from "./pages/workshops";
+// import Workshops from "./pages/workshops";
 import Programme from "./pages/program";
-import Accreditation from "./pages/accreditation";
+// import Accreditation from "./pages/accreditation";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { oauthClientId } from "./constants";
 import Summary from "./pages/summary";
 import NotFound from "./pages/not-found";
-import WorkshopSignup from "./pages/workshop-signup";
+import OrganizerSignup from "./pages/organizer-signup";
+// import WorkshopSignup from "./pages/workshop-signup";
 
 const router = createHashRouter([
   {
@@ -55,18 +57,18 @@ const router = createHashRouter([
     path: "/gdpr",
     element: <GDPR />,
   },
-  {
-    path: "/workshop",
-    element: <Workshops />,
-  },
-  {
-    path: "/workshop-jelentkezes",
-    element: <WorkshopSignup />,
-  },
-  {
-    path: "/akkreditacio",
-    element: <Accreditation />,
-  },
+  // {
+  //   path: "/workshop",
+  //   element: <Workshops />,
+  // },
+  // {
+  //   path: "/workshop-jelentkezes",
+  //   element: <WorkshopSignup />,
+  // },
+  // {
+  //   path: "/akkreditacio",
+  //   element: <Accreditation />,
+  // },
   {
     path: "/program",
     element: <Programme />,
@@ -75,10 +77,10 @@ const router = createHashRouter([
     path: "/osszefoglalo",
     element: <Summary />,
   },
-  // {
-  //   path: "/szervezoi-jelentkezes",
-  //   element: <OrganizerSignup />,
-  // },
+  {
+    path: "/szervezoi-jelentkezes",
+    element: <OrganizerSignup />,
+  },
   {
     path: "/osszefoglalok",
     element: <PastJournals />,

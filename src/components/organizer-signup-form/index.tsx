@@ -84,6 +84,7 @@ const OrganizerSignupMultistepForm = ({ scrollToRef }: { scrollToRef: MutableRef
       organizerMiscInfo,
     };
     const body = JSON.stringify(payload);
+    console.log(body);
     if (
       !organizerGroupData ||
       !organizerInfo ||

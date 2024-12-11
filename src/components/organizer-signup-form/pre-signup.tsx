@@ -12,7 +12,7 @@ const PreSignup = ({ setCurrentStep }: { setCurrentStep: (next: SignupStep) => v
         <li>
           túljelentkezés esetén a szervezőket az{" "}
           <a
-            className="text-tdk-accent hover:underline"
+            className="text-tdk-accent transition-opacity hover:text-tdk-accent/75 hover:underline"
             href="https://docs.google.com/spreadsheets/d/1DTMlc9kZvpVGmCKLQQJDZs4T9PgqcWPWfQjfjcqJs6U/edit#gid=1404488936"
             target="_blank"
           >
@@ -31,7 +31,7 @@ const PreSignup = ({ setCurrentStep }: { setCurrentStep: (next: SignupStep) => v
           jelentkező hallgatók részére (15 hely - motivációs kérdések) -159 szervezőt áll módunkban felvenni{" "}
         </li>
       </ul>
-      <div className="mb-6 mt-10 flex items-start">
+      {/* <div className="mb-6 mt-10 flex items-start">
         <div className="ml-4 flex h-5 items-center">
           <input
             id="terms"
@@ -51,14 +51,17 @@ const PreSignup = ({ setCurrentStep }: { setCurrentStep: (next: SignupStep) => v
             munkacsoportok feladatköreivel.
           </Link>
         </label>
-      </div>
-      <button
+      </div> */}
+      {/* <button
         className="mt-6 rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white drop-shadow-md hover:underline disabled:opacity-50 disabled:hover:cursor-not-allowed xl:text-xl"
         onClick={() => setCurrentStep("organizerInfo")}
         disabled={!acceptedRules}
       >
         Jelentkezés
-      </button>
+      </button> */}
+      <div className="py-20 text-center text-sm font-medium text-gray-700">
+        A szervezői jelentkezés 2024. december 16.-án kezdődik.
+      </div>
     </div>
   );
 };
