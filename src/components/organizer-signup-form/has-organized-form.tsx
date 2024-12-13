@@ -8,8 +8,15 @@ import { organizerGroups } from "../../constants";
 
 const hasOrganizedFormSchema = z.object({
   hasOrganized: z.string(),
-  organizerGroup: z.string().min(1, { message: "Add meg a szervezői csoport nevét!" }).nullable().default("-"),
+  organizerGroup: z
+    .array(z.string().min(1, { message: "Add meg a szervezői csoport nevét!" }).default("-"))
+    .default([]),
 });
+
+const additionalOrganizerGroups = [
+  { name: "Főszervező", description: "" },
+  { name: "Protokoll", description: "" },
+];
 
 export type HasOrganizedFormSchema = z.infer<typeof hasOrganizedFormSchema>;
 
@@ -71,21 +78,21 @@ const HasOrganizedForm = ({
           <div className="mb-6">
             <h3 className="mb-4 text-lg font-medium text-gray-900">Milyen munkacsoportban tevékenykedtél?</h3>
             <fieldset className="ml-4 space-y-3">
-              {organizerGroups.map(({ name }, index) => (
+              {[...organizerGroups, ...additionalOrganizerGroups].map(({ name }, index) => (
                 <label
                   key={index}
                   htmlFor={name}
                   className="has-[:checked]:bg-tdk-accent has-[:checked]:text-white flex cursor-pointer gap-2 rounded-md border border-gray-200 py-2 px-3 text-gray-900  hover:border-tdk-accent"
                 >
                   <input
-                    type="radio"
+                    type="checkbox"
                     value={name}
                     id={name}
                     className="accent-tdk-accent"
                     {...register("organizerGroup")}
                     name="organizerGroup"
                   />
-                  <p className="text-sm">{name}.</p>
+                  <p className="text-sm">{name}</p>
                 </label>
               ))}
             </fieldset>

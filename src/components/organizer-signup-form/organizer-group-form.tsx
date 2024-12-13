@@ -63,7 +63,7 @@ const OrganizerGroupSelectForm = ({
                 {...register("firstChoice")}
                 name="firstChoice"
               />
-              <p className="text-sm">{name}.</p>
+              <p className="text-sm">{name}</p>
             </label>
           ))}
         </fieldset>
@@ -88,7 +88,7 @@ const OrganizerGroupSelectForm = ({
                 {...register("secondChoice")}
                 name="secondChoice"
               />
-              <p className="text-sm">{name}.</p>
+              <p className="text-sm">{name}</p>
             </label>
           ))}
         </fieldset>
@@ -100,7 +100,7 @@ const OrganizerGroupSelectForm = ({
         </label>
         <textarea
           id="reason"
-          className="sm:text-md block w-full whitespace-pre-line rounded-lg border border-gray-300 bg-gray-50 p-6 text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+          className="sm:text-md block w-full whitespace-pre-line rounded-lg border border-gray-300 bg-gray-50 p-6 text-gray-900 focus:border-tdk-accent focus:outline-none"
           {...register("reason")}
         />
         {errors.reason && <p className="mt-2 text-xs italic text-red-500">{errors.reason?.message}</p>}
@@ -113,23 +113,14 @@ const OrganizerGroupSelectForm = ({
           </div>
           <p className="py-3 text-sm font-light text-gray-500">5/6 - TDK szervezés</p>
         </div>
-        {isValid ? (
-          <button
-            className="rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-lg"
-            type="submit"
-          >
-            Tovább
-          </button>
-        ) : (
-          <button
-            className="rounded-full bg-gray-300 px-10 py-2 font-semibold uppercase text-black drop-shadow-md xl:text-lg"
-            disabled
-            type="submit"
-            title="Ki kell választanod egy választ!"
-          >
-            Tovább
-          </button>
-        )}
+        <button
+          className="rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white drop-shadow-md hover:underline disabled:bg-gray-300 disabled:text-black disabled:hover:no-underline xl:text-lg"
+          type="submit"
+          disabled={!isValid}
+          title={isValid ? "Tovább" : "Ki kell választanod egy választ!"}
+        >
+          Tovább
+        </button>
       </div>
     </form>
   );
