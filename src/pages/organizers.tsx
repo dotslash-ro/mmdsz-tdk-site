@@ -23,12 +23,14 @@ const Organizers = () => {
       </p>
       <h2 className="text-3xl font-light">Szervezői csoportok</h2>
       <div className="grid grid-cols-1 gap-y-4 gap-x-10 xl:grid-cols-2">
-        {organizerGroups.map(({ name, description }, index) => (
-          <div key={index}>
-            <h2 className="pt-8 text-xl font-light">{name}</h2>
-            <p className="pt-4 font-light text-neutral-700">{description}</p>
-          </div>
-        ))}
+        {organizerGroups
+          .filter((group) => group.name != "Főszervező")
+          .map(({ name, description }, index) => (
+            <div key={index}>
+              <h2 className="pt-8 text-xl font-light">{name}</h2>
+              <p className="pt-4 font-light text-neutral-700">{description}</p>
+            </div>
+          ))}
 
         <div>
           <h2 className="pt-8 text-xl font-light">Minden szervezőre vonatkozóan</h2>
