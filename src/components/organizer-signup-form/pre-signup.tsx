@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { type SignupStep } from ".";
 import { Link } from "react-router-dom";
+
+import { type SignupStep } from ".";
 
 const PreSignup = ({ setCurrentStep, enabled }: { setCurrentStep: (next: SignupStep) => void; enabled: boolean }) => {
   const [acceptedRules, setAcceptedRules] = useState(false);
@@ -25,10 +26,14 @@ const PreSignup = ({ setCurrentStep, enabled }: { setCurrentStep: (next: SignupS
           azoknak a diákoknak, akik ebben az időintervallumban részképzésen vettek részt, elfogadjuk a kihagyott
           félév(ek)nek megfelelő előző évi félév(ek) tevékenységét, tehát az utolsó két aktív félévet
         </li>
-        <li>az elsőéves hallgatók külön elbírálásban részesülnek (30 hely: 10 pontrendszer, 20 motivációs kérdések)</li>
+        <li>az elsőéves hallgatók külön elbírálásban részesülnek (30 hely: 10 pontrendszer, 20 kifejtős kérdés)</li>
         <li>
           külön helyet biztosítunk a Sapientia EMTE, a BBTE - Pedagógia szak és a Marosvásárhelyi Művészeti Egyetemről
-          jelentkező hallgatók részére (15 hely - motivációs kérdések) -159 szervezőt áll módunkban felvenni{" "}
+          jelentkező hallgatók részére (15 hely - kifejtős kérdések)
+        </li>
+        <li>
+          a szervezői jelentkezés során megjelölt munkacsoport csak irányadó a főszervezők számára; a főszervezők
+          fenntartják a jogot arra, hogy a jelentkezőt ettől eltérően más munkacsoportba sorolják be
         </li>
       </ul>
       {enabled && (

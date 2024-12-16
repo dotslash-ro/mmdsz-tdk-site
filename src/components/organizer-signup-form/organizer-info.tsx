@@ -17,6 +17,7 @@ const organizerInfoSchema = z.object({
   email: z.string().email({ message: "Add meg az e-mail címed!" }),
   facebookLink: z.string().min(1, { message: "Add meg a Facebook linkedet!" }),
   department: z.string().min(1, { message: "Add meg a kart, amelyen tanulsz!" }),
+  section: z.string().min(1, { message: "Add meg a szakod!" }),
   studentId: z.string().min(1, { message: "Add meg a beiskolázási azonosítód (Nr. matricol):" }),
   phoneNumber: z
     .string()
@@ -66,7 +67,7 @@ const OrganizerInfoForm = ({
         <input
           type="text"
           id="name"
-          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-accent focus:outline-tdk-accent focus:ring-tdk-accent"
+          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-tdk-accent focus:outline-tdk-accent focus:ring-tdk-accent"
           {...register("applicantName")}
         />
         {errors.applicantName && <p className="mt-2 text-xs italic text-red-500"> {errors.applicantName?.message}</p>}
@@ -78,7 +79,7 @@ const OrganizerInfoForm = ({
         <input
           type="text"
           id="studentId"
-          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-accent focus:outline-tdk-accent focus:ring-tdk-accent"
+          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-tdk-accent focus:outline-tdk-accent focus:ring-tdk-accent"
           {...register("studentId")}
         />
         {errors.studentId && <p className="mt-2 text-xs italic text-red-500"> {errors.studentId?.message}</p>}
@@ -90,7 +91,7 @@ const OrganizerInfoForm = ({
         <input
           type="email"
           id="email"
-          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-accent focus:outline-tdk-accent focus:ring-tdk-accent"
+          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-tdk-accent focus:outline-tdk-accent focus:ring-tdk-accent"
           {...register("email")}
           aria-invalid={errors.email ? "true" : "false"}
         />
@@ -103,7 +104,7 @@ const OrganizerInfoForm = ({
         <input
           type="text"
           id="fb-link"
-          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-accent focus:outline-tdk-accent focus:ring-tdk-accent"
+          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-tdk-accent focus:outline-tdk-accent focus:ring-tdk-accent"
           {...register("facebookLink")}
           aria-invalid={errors.email ? "true" : "false"}
         />
@@ -116,7 +117,7 @@ const OrganizerInfoForm = ({
         <input
           type="tel"
           id="phone"
-          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-accent focus:outline-tdk-accent focus:ring-tdk-accent"
+          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-tdk-accent focus:outline-tdk-accent focus:ring-tdk-accent"
           {...register("phoneNumber")}
           aria-invalid={errors.phoneNumber ? "true" : "false"}
         />
@@ -149,9 +150,22 @@ const OrganizerInfoForm = ({
         <input
           type="text"
           id="department"
-          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-accent focus:outline-tdk-accent focus:ring-tdk-accent"
+          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-tdk-accent focus:outline-tdk-accent focus:ring-tdk-accent"
           {...register("department")}
           aria-invalid={errors.department ? "true" : "false"}
+        />
+        {errors.department && <p className="mt-2 text-xs italic text-red-500"> {errors.department?.message}</p>}
+      </div>
+      <div className="mb-6">
+        <label htmlFor="department" className="mb-2 block text-lg font-medium text-gray-900">
+          Szak
+        </label>
+        <input
+          type="text"
+          id="section"
+          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-tdk-accent focus:outline-tdk-accent focus:ring-tdk-accent"
+          {...register("section")}
+          aria-invalid={errors.section ? "true" : "false"}
         />
         {errors.department && <p className="mt-2 text-xs italic text-red-500"> {errors.department?.message}</p>}
       </div>

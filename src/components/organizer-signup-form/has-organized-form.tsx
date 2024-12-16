@@ -13,11 +13,6 @@ const hasOrganizedFormSchema = z.object({
     .default([]),
 });
 
-const additionalOrganizerGroups = [
-  { name: "Főszervező", description: "" },
-  { name: "Protokoll", description: "" },
-];
-
 export type HasOrganizedFormSchema = z.infer<typeof hasOrganizedFormSchema>;
 
 const HasOrganizedForm = ({
@@ -78,7 +73,7 @@ const HasOrganizedForm = ({
           <div className="mb-6">
             <h3 className="mb-4 text-lg font-medium text-gray-900">Milyen munkacsoportban tevékenykedtél?</h3>
             <fieldset className="ml-4 space-y-3">
-              {[...organizerGroups, ...additionalOrganizerGroups].map(({ name }, index) => (
+              {organizerGroups.map(({ name }, index) => (
                 <label
                   key={index}
                   htmlFor={name}

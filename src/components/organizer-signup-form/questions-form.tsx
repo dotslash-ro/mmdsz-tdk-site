@@ -55,7 +55,7 @@ const QuestionsForm = ({
           </label>
           <textarea
             id={question}
-            className="sm:text-md block w-full whitespace-pre-line rounded-lg border border-gray-300 bg-gray-50 p-6 text-gray-900 focus:border-tdk-accent focus:outline-none"
+            className="block w-full whitespace-pre-line rounded-lg border border-gray-300 bg-gray-50 p-6 text-gray-900 focus:border-tdk-accent focus:outline-none"
             {...register(question)}
           />
           {errors[question] && <p className="mt-2 text-xs italic text-red-500">{errors[question]?.message}</p>}

@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { ClipLoader } from "react-spinners";
 import { z } from "zod";
 import { type SignupStep } from ".";
+import { useMemo } from "react";
 import { organizerGroups } from "../../constants";
 
 const organizerGroupFormSchema = z.object({
@@ -34,6 +35,8 @@ const OrganizerGroupSelectForm = ({
     setCurrentStep("miscInfo");
   };
 
+  const selectableGroups = useMemo(() => organizerGroups.filter(({ canSelect }) => canSelect), [organizerGroups]);
+
   if (isSubmitting) {
     return (
       <div className="flex h-48 items-center justify-center">
@@ -49,7 +52,7 @@ const OrganizerGroupSelectForm = ({
           A következő munkacsoportban szeretnék szervező lenni - 1. opció:
         </h3>
         <fieldset className="ml-4 space-y-3">
-          {organizerGroups.map(({ name }, index) => (
+          {selectableGroups.map(({ name }, index) => (
             <label
               key={index}
               htmlFor={`first-choice-${name}`}
@@ -74,7 +77,7 @@ const OrganizerGroupSelectForm = ({
           A következő munkacsoportban szeretnék szervező lenni - 2. opció:
         </h3>
         <fieldset className="ml-4 space-y-3">
-          {organizerGroups.map(({ name }, index) => (
+          {selectableGroups.map(({ name }, index) => (
             <label
               key={index}
               htmlFor={`second-choice-${name}`}
@@ -100,7 +103,7 @@ const OrganizerGroupSelectForm = ({
         </label>
         <textarea
           id="reason"
-          className="sm:text-md block w-full whitespace-pre-line rounded-lg border border-gray-300 bg-gray-50 p-6 text-gray-900 focus:border-tdk-accent focus:outline-none"
+          className="block w-full whitespace-pre-line rounded-lg border border-gray-300 bg-gray-50 p-6 text-gray-900 focus:border-tdk-accent focus:outline-none"
           {...register("reason")}
         />
         {errors.reason && <p className="mt-2 text-xs italic text-red-500">{errors.reason?.message}</p>}
