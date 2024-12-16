@@ -16,12 +16,15 @@ const Rules = () => {
       <h2>1. Röviden a Tudományos Diákköri Konferenciáról</h2>
       <p>
         A Tudományos Diákköri Konferencia (TDK) egy több, mint 30 éves múltra visszatekintő rendezvény Marosvásárhelyen,
-        melyet évi rendszerességgel szervez meg a Marosvásárhelyi Magyar Diákszövetség és a Marosvásárhelyi George Emil
-        Palade Orvosi, Gyógyszerészeti, Tudomány és Technológiai Egyetem. Rendezvényünk lehetőséget nyújt mind az
-        erdélyi, mind a határon túli magyar hallgatók számára, hogy Erdélyben egyedülálló módon, anyanyelvükön mutassák
-        be dolgozataikat egészségtudományi témakörben. Továbbá, a konferencia célja elősegíteni az államvizsga dolgozat
-        (szakdolgozat) megfelelő színvonalú elkészítését és megvédését. Ezen felül a magyar tudományos szaknyelv
-        fejlesztésére is lehetőséget biztosít a hallgatók számára.
+        melyet évi rendszerességgel szervez meg a{" "}
+        <strong>
+          Marosvásárhelyi Magyar Diákszövetség és a Marosvásárhelyi George Emil Palade Orvosi, Gyógyszerészeti, Tudomány
+          és Technológiai Egyetem
+        </strong>
+        . Rendezvényünk lehetőséget nyújt mind az erdélyi, mind a határon túli magyar hallgatók számára, hogy Erdélyben
+        egyedülálló módon, anyanyelvükön mutassák be dolgozataikat egészségtudományi témakörben. Továbbá, a konferencia
+        célja elősegíteni az államvizsga dolgozat (szakdolgozat) megfelelő színvonalú elkészítését és megvédését. Ezen
+        felül a magyar tudományos szaknyelv fejlesztésére is lehetőséget biztosít a hallgatók számára.
       </p>
       <p>
         A hagyományokhoz híven a diákok tudományos bemutatói mellett neves meghívottak előadásai színezik az esemény
