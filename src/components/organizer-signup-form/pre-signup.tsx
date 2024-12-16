@@ -54,7 +54,7 @@ const PreSignup = ({ setCurrentStep, enabled }: { setCurrentStep: (next: SignupS
                 weboldalon található szabályzattal
               </Link>{" "}
               és a{" "}
-              <Link to="/szervezoknek" target="_blank" className="text-tdk-accent underline">
+              <Link to="/szervezok" target="_blank" className="text-tdk-accent underline">
                 munkacsoportok feladatköreivel.
               </Link>
             </label>
