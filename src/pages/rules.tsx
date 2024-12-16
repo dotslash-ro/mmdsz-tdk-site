@@ -324,7 +324,7 @@ const Rules = () => {
       <p>A szervezők a TDK alatt kötelesek részt venni legkevesebb 2 felkért előadó előadásán.</p>
       <p>A munkacsoportok vezetői kötelesek számon tartani a helyszínen tartózkodó szervezők kilétét.</p>
       <p>A munkacsoport vezetők beszámolót írnak a konferencia kiértékelő gyűlésére.</p>
-      <p>6. Országos Tudományos Diákköri Konferencia (OTDK)</p>
+      <h2>6. Országos Tudományos Diákköri Konferencia (OTDK)</h2>
       <p>
         A marosvásárhelyi Tudományos Diákköri Konferencia az Erdélyi Tudományos Diákköri Konferencia (ETDK) orvos- és
         egészségtudomány szekciójaként továbbjutási lehetőséget biztosít a Magyarországon minden második évben
