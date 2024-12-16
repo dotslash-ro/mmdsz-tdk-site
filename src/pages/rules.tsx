@@ -15,23 +15,24 @@ const Rules = () => {
       <h1>Tudományos Diákköri Konferencia szabályzata</h1>
       <h2>1. Röviden a Tudományos Diákköri Konferenciáról</h2>
       <p>
-        A Tudományos Diákköri Konferencia (TDK) egy közel 30 éves múltra visszatekintő rendezvény Marosvásárhelyen,
-        melyet évi rendszerességgel szervez meg a Marosvásárhelyi Magyar Diákszövetség és a{" "}
-        <span>Marosvásárhelyi George Emil Palade Orvosi, Gyógyszerészeti, Tudomány és Technológiai Egyetem</span>.
-        Rendezvényünk lehetőséget nyújt mind az erdélyi, mind a határon túli magyar hallgatók számára, hogy Erdélyben
-        egyedülálló módon, anyanyelvükön mutassák be dolgozataikat egészségtudományi témakörben. A konferencia célja
-        továbbá elősegíteni az államvizsga dolgozat (szakdolgozat) megfelelő színvonalú elkészítését és megvédését. Ezen
-        felül a magyar tudományos szaknyelv fejlesztésére is lehetőséget biztosít a hallgatók számára.
+        A Tudományos Diákköri Konferencia (TDK) egy több, mint 30 éves múltra visszatekintő rendezvény Marosvásárhelyen,
+        melyet évi rendszerességgel szervez meg a Marosvásárhelyi Magyar Diákszövetség és a Marosvásárhelyi George Emil
+        Palade Orvosi, Gyógyszerészeti, Tudomány és Technológiai Egyetem. Rendezvényünk lehetőséget nyújt mind az
+        erdélyi, mind a határon túli magyar hallgatók számára, hogy Erdélyben egyedülálló módon, anyanyelvükön mutassák
+        be dolgozataikat egészségtudományi témakörben. Továbbá, a konferencia célja elősegíteni az államvizsga dolgozat
+        (szakdolgozat) megfelelő színvonalú elkészítését és megvédését. Ezen felül a magyar tudományos szaknyelv
+        fejlesztésére is lehetőséget biztosít a hallgatók számára.
       </p>
       <p>
-        A konferenciának a marosvásárhelyi Kultúrpalota ad otthont. A hagyományokhoz híven a diákok tudományos bemutatói
-        mellett neves meghívottak előadásai színezik az esemény programját. Mindezek mellett a diákok számos egyedi
-        műhelymunkán vehetnek részt. A TDK-t a díjkiosztó és az ünnepi gálavacsora zárja.
+        A hagyományokhoz híven a diákok tudományos bemutatói mellett neves meghívottak előadásai színezik az esemény
+        programját; mindezek mellett, a diákok számos egyedi műhelymunkán vehetnek részt. A TDK-t a díjkiosztó és az
+        ünnepi gálavacsora zárja.
       </p>
       <p>
         A rendezvény lehetőséget nyújt mind a személyes, mind az egyetemek közötti kapcsolatok kiépítésére, illetve
         ápolására.
       </p>
+      <h2>2. Az előadó diákokra vonatkozó szabályok</h2>
       <h3>2.1. Iratkozás és regisztráció:</h3>
       <p>
         A Tudományos Diákköri Konferenciára bármely romániai és külföldi felsőoktatásbeli diák jelentkezhet
@@ -66,31 +67,30 @@ const Rules = () => {
           A Tudományos Diákköri Tanács fenntartja a dolgozatok elutasításának jogát, amennyiben az nem felel meg a
           szabályzatban leírt feltételeknek.
         </li>
-        <li>A dolgozatok szakmai értékelésen esnek át. A dolgozat elutasítható ha:</li>
+        <li>A dolgozatok szakmai értékelésen esnek át. A dolgozat elutasítható, ha:</li>
         <ol>
-          <li>A dolgozat már bemutatásra került bármilyen hazai vagy nemzetközi konferencián;</li>
-          <li>A TDT nem tulajdonít a dolgozatnak megfelelő tudományos értéket.</li>
+          <li>a dolgozat már bemutatásra került bármilyen hazai vagy nemzetközi konferencián;</li>
+          <li>a TDT nem tulajdonít a dolgozatnak megfelelő tudományos értéket.</li>
         </ol>
         <li>
           A benevezési díj az aktuális évben a főszervezők által meghatározott összeg, amely magába foglalja az
           iratkozást, az ünnepi gálavacsorán való részvétel díját, illetve a promóciós anyagokból álló ajándékcsomagot.
         </li>
         <li>
-          A benevezési díjat a Marosvásárhelyi Magyar Diákszövetség Székházában vagy az MMDSZ bankszámlaszámára átutalva
-          lehet befizetni.
+          A benevezési díjat a Marosvásárhelyi Magyar Diákszövetség Székházában vagy az MMDSZ bankszámlaszámlájára
+          átutalva lehet befizetni.
         </li>
         <li>
-          Sikeres iratkozás a kivonat helyes feltöltésével, a kivonat TDT általi jóváhagyásával és a részvételi díj
-          időben való befizetésével történik.
+          Sikeres iratkozás a kivonat helyes feltöltésével, a kivonat TDT általi jóváhagyásával, illetve a saját
+          hozzájárulási és publikációs nyilatkozat feltöltésével történik.
         </li>
-        <li>A saját hozzájárulási és publikációs nyilatkozat feltöltése.</li>
         <li>
           Ha egy dolgozatot a főszerző objektív okok miatt nem tud bemutatni, kötelessége ezt legkésőbb 24 órával a
           szekció kezdete előtt e-mailben jelezni. A főszerző motivációja alapján, amennyiben a TDT úgy ítéli meg, a
           témavezető által támogatott társszerző is bemutathatja a dolgozatot.
         </li>
       </ol>
-      <h3>2.3. Előadások és poszterbemutatók szabályzata:</h3>
+      <h3>2.3. Előadások és poszterbemutatók</h3>
       <p>
         Az előadások bemutatásának időtartama maximum 7 perc, amit 3 perc vitaidő követ, a poszter szekció esetében a
         bemutatás 5 perc, a vitaidő 2 perc.
@@ -106,7 +106,7 @@ const Rules = () => {
       </p>
       <p>
         A bizottságnak legkevesebb négy tagból kell állnia. Az elbíráló bizottság változtatása legkésőbb két órával a
-        szekció megkezdése előtt lehetséges, kivéve, ha kevesebb, mint négy tag van. A bizottság akármilyen
+        szekció megkezdése előtt lehetséges, kivéve, ha kevesebb, mint négy tagból áll. A bizottság akármilyen
         változtatását illetően az összes főszervező beleegyezése szükséges.
       </p>
       <p>
@@ -128,8 +128,14 @@ const Rules = () => {
       </p>
       <ul>
         <li>3 vagy kevesebb külföldi dolgozat: 1 különdíj</li>
-        <li>4-6 dolgozat: 2 különdíj</li>
-        <li>7 vagy több dolgozat: 3 különdíj</li>
+        <li>4-6 külföldi dolgozat: 2 különdíj</li>
+        <li>7 vagy több külföldi dolgozat: 3 különdíj</li>
+        <li>A szekciónkénti hazai díjak megosztása a következő:</li>
+        <li>6 vagy kevesebb hazai dolgozat: 1. díj</li>
+        <li>7 - 9 hazai dolgozat: 1 - 2. díj</li>
+        <li>10 - 15 hazai dolgozat: 1 - 2 - 3. díj</li>
+        <li>16 - 20 hazai dolgozat: 1 - 2 - 3. díj és 1. dicséret</li>
+        <li>20 hazai dolgozaton felül: 1 - 2 - 3. díj, 1. és 2. dicséret</li>
       </ul>
       <p>Hatnál kevesebb dolgozat (határon túli és hazai együttesen) nem képezhet önálló témakört.</p>
       <p>A szekciónkénti díjak megosztása a következő:</p>
@@ -159,21 +165,22 @@ const Rules = () => {
         <strong>A poszter bemutatókra vonatkozóan:</strong>
       </p>
       <p>
-        A poszteren kötelezően szerepel: a 31. Tudományos Diákköri Konferencia - Marosvásárhely, keltezés, a szerző(k)
-        család- és keresztneve, illetve egyetemének adatai (egyetem, kar, szak, évfolyam); a témavezető(k) család- és
-        keresztneve, tudományos fokozata, illetve egyetemének (egyetem, kar, tanszék) vagy intézményének (intézmény,
-        beosztás) adatai, a főszerző egyetemének logója.
+        A poszteren szükséges szerepelnie az alábbiaknak: a 32. Tudományos Diákköri Konferencia - Marosvásárhely,
+        keltezés, a szerző(k) család- és keresztneve, illetve egyetemének adatai (egyetem, kar, szak, évfolyam); a
+        témavezető(k) család- és keresztneve, tudományos fokozata, illetve egyetemének (egyetem, kar, tanszék) vagy
+        intézményének (intézmény, beosztás) adatai, a főszerző egyetemének logója.
       </p>
       <p>
-        Tartalom: bevezetés, anyag és módszer, eredmények, (megbeszélés), következtetés. Ezen részek kötelező módon kell
-        szerepeljenek összefoglalt, tömör szöveg, adatok és ábrák, képek formájában.
+        Tartalmi szempontból a poszter kötelező elemei a következők: bevezetés, anyag és módszer, eredmények,
+        (megbeszélés), következtetés. Ezen részek kötelező módon kell szerepeljenek összefoglalt, tömör szöveg, adatok
+        és ábrák, képek formájában.
       </p>
       <p>
         A megbeszélés rész feltüntetése opcionális, ezt a poszter bemutatása alatt elég szóban is kifejtenie a
         szerzőnek.
       </p>
       <p>
-        A poszter mérete A1 méretben adandó le, illetve a vázát a 31.TDK arculatával ellátott sablon adja, amely
+        A poszter mérete A1 méretben adandó le, illetve a vázát a 32.TDK arculatával ellátott sablon adja, amely
         <a href={posterSectionZip}> ezen linken keresztül elérhető</a>, a sablon tetszés szerint választható.
       </p>
       <p>A bemutatandó poszterek a konferencia állandó kiállítását fogják képezni.</p>
@@ -205,7 +212,7 @@ const Rules = () => {
       <p>Az elbíráló bizottság a pontozási rendszernek megfelelően értékeli a dolgozatokat.</p>
       <p>
         Az elbíráló bizottság tagjai pontozzák a dolgozatokat (kivételt képez az az eset, amikor az elbíráló bizottsági
-        tag/tagok az adott dolgozat témavezetője/témavezetői).
+        tag(ok) az adott dolgozat témavezetője).
       </p>
       <h3>SZEMPONT ÉS ADHATÓ PONTSZÁM</h3>
       <div className="border-2 border-neutral-800">
@@ -214,20 +221,20 @@ const Rules = () => {
       <ol>
         <li>
           A TUDOMÁNYOS KÉRDÉS MEGFOGALMAZÁSA, KIDOLGOZÁSA (a tanulmány alapjául szolgáló tudományos kérdés érthető
-          megfogalmazása) 1-20
+          megfogalmazása) 1-20 pont
         </li>
         <li>
           EREDMÉNYEK, MÓDSZERTAN (módszerek helyes megválasztása és leírásának pontossága; az elért eredmények
-          ismertetése és értelmezése; az adatok megfelelő statisztikai feldolgozása) 1-20
+          ismertetése és értelmezése; az adatok megfelelő statisztikai feldolgozása) 1-20 pont
         </li>
         <li>
           ELŐADÓKÉSZSÉG, VITAKÉSZSÉG, SZAKMAI TÁJÉKOZOTTSÁG (világos okfejtés, érthető kidolgozás, előadásmód, témában
-          való jártasság) 1-20
+          való jártasság) 1-20 pont
         </li>
-        <li>EGYÉNI HOZZÁJÁRULÁS (szerzői hozzájárulás mértéke) 1-20</li>
+        <li>EGYÉNI HOZZÁJÁRULÁS (szerzői hozzájárulás mértéke) 1-20 pont</li>
         <li>
           TUDOMÁNYOS NYELVEZET HELYESSÉGE, KIVONAT MINŐSÉGE (tudományos nyelvezet használata, háttérismeretek,
-          nyelvhelyesség, helyesírás) 1-20
+          nyelvhelyesség, helyesírás) 1-20 pont
         </li>
       </ol>
       <p>Összesen adható pontszám: 100</p>
@@ -247,22 +254,22 @@ const Rules = () => {
       <h2>4. Tudományos Diákköri Tanács (TDT)</h2>
       <ul>
         <p>A TDT egyetemi oktatókból, a TDK főszervezőiből és az MMDSZ elnökéből álló tanács.</p>
-        <p>A TDT feladata:</p>
+        <h3>4.1 A TDT feladata:</h3>
         <li>A TDT a Tudományos Diákköri Konferencia védnöke.</li>
         <li>A TDT átnézi a dolgozatok kivonatait, ellenőrzi azok helyességét.</li>
         <li>
-          Átcsoportosítja a dolgozatokat témaköröknek megfelelően abban az esetben, ha tematikájában nem a megjelölt
+          Átcsoportosítja a dolgozatokat témaköröknek megfelelően abban az esetben, ha az tematikájában nem a megjelölt
           szekcióba illeszkedik.
         </li>
         <li>Kiválasztja az elbíráló bizottság tagjait.</li>
-        <li>Létrehozhat új szekciókat, meglévőket összevonhat, vagy tagolhat.</li>
+        <li>Létrehozhat új szekciókat, meglévőket összevonhat vagy tagolhat.</li>
         <li>Segít a konferencia ideje alatt felmerülő vitás kérdések megoldásában.</li>
       </ul>
       <h2>5. A TDK szervezői</h2>
       <p>
         A Marosvásárhelyi Magyar Diákszövetség tagjai közül kerülnek ki a főszervezők, illetve a szervezők, akik az
         alábbi munkacsoportokba szerveződnek: akkreditáció, díjak, étkezés, fotó, gála, infóiroda, korrektúra és
-        kivonatok, külügy, média és kommunikáció, műhelymunkák, pontozás, protokoll, szponzor, szállítás, technika,
+        kivonatok, külügy, média és kommunikáció, műhelymunkák, pontozás, protokoll, szállítás, szponzor, technika,
         teremrendezés, tördelés, ülésvezetés.
       </p>
       <h3>5.1. A szervezők jogai:</h3>
@@ -273,12 +280,12 @@ const Rules = () => {
       <p>
         Bármelyik egyetemi hallgató lehet TDK szervező, minden szervezőnek joga van javaslatokat tenni a programmal,
         szervezéssel kapcsolatban. A szervezői létszámot a TDK főszervezők szabják meg, túljelentkezés esetén a
-        szervezők felvétele pontrendszer alapján történik. A pontrendszer az MMDSZ Belső Működési Szabályzatán (BMSZ)
-        alapszik.
+        szervezők felvétele pontrendszer és motivációs levél alapján történik. A pontrendszer az MMDSZ Belső Működési
+        Szabályzatán (BMSZ) alapszik.
       </p>
       <p>
         A TDK főszervezők megválasztják a munkacsoport vezetőket és tagokat, meghatározzák a munkacsoportok tagjainak
-        számát és tevékenységét, jogukban áll a tevékenységet ellenőrizni, feladatokat számon kérni.
+        számát és tevékenységét, jogukban áll a tevékenységet ellenőrizni, a feladatokat számon kérni.
       </p>
       <p>
         A munkacsoport vezetőknek jogában áll számon kérni a munkacsoport tagjainak tevékenységét. A TDK főszervezői
@@ -286,6 +293,14 @@ const Rules = () => {
         maradéktalanul eleget tettek.
       </p>
       <p>Minden szervező részesül az aktuális promóciós csomagból.</p>
+      <p>
+        A szervezői jelentkezés során megjelölt munkacsoport csak irányadó a főszervezők számára. A főszervezők
+        fenntartják a jogot arra, hogy a jelentkezőt ettől eltérően más munkacsoportba sorolják be.
+      </p>
+      <p>
+        A szponzor munkacsoport egy előre meghatározott csapat, amely egész éves munkát végez a Diákszövetség számára,
+        és ennek részeként a konferenciához kapcsolódó feladatokat is ők látják el.
+      </p>
       <h3>5.2. A szervezők kötelezettségei:</h3>
       <p>A TDK főszervezők kötelesek időszakosan beszámolni a szervezés fejleményeiről az MMDSZ vezetőségének.</p>
       <p>
@@ -302,14 +317,11 @@ const Rules = () => {
         közösen megszabott határidőn belül.
       </p>
       <p>
-        A szervezők a konferencia előtt vagy alatt felmerülő problémákról kötelesek értesíteni a TDK főszervezőket, nem
-        hozhatnak döntéseket egyeztetés nélkül.
+        A szervezők kötelesek a konferencia alatt vagy annak elő- és utómunkálatai során felmerülő problémákról
+        értesíteni a TDK főszervezőket, nem hozhatnak döntéseket egyeztetés nélkül.
       </p>
       <p>A szervezők kötelesek részt venni a konferencián, bizalmasan kezelni a belső információkat.</p>
-      <p>
-        A szervezők a TDK alatt kötelesek részt venni legkevesebb 2 felkért előadó előadásán. Emellett kötelesek napi
-        legkevesebb 3 órát, ezen felül amennyit a feladat megkövetel a helyszínen tartózkodni.
-      </p>
+      <p>A szervezők a TDK alatt kötelesek részt venni legkevesebb 2 felkért előadó előadásán.</p>
       <p>A munkacsoportok vezetői kötelesek számon tartani a helyszínen tartózkodó szervezők kilétét.</p>
       <p>A munkacsoport vezetők beszámolót írnak a konferencia kiértékelő gyűlésére.</p>
       <p>6. Országos Tudományos Diákköri Konferencia (OTDK)</p>
@@ -327,13 +339,18 @@ const Rules = () => {
         Szekciónként legfeljebb 1 dolgozat jelölhető. Amennyiben az elbíráló bizottság egy dolgozatot sem talál erre
         érdemesnek, nem köteles jelölést adnia. Poszter szekcióból nem történik jelölés.
       </p>
-      <p>Megjegyzés:</p>
+      <h2>7. Egyéb:</h2>
       <p>
         Bármilyen felmerülő kérdés vagy probléma esetén kérjük vegyék fel a kapcsolatot a TDK főszervezőivel
         személyesen, telefonon vagy az alábbi e-mail címen:
         <a target="_blank" href="mailto:tdk@mmdsz.ro">
-          <span> tdk@mmdsz.ro</span>
+          <span> tdk@mmdsz.ro</span>.{" "}
         </a>
+        Minden információ megtalálható a marosvásárhelyi TDK hivatalos honlapján:{" "}
+        <a href="https://tdk.mmdsz.ro" target="_blank">
+          tdk.mmdsz.ro
+        </a>
+        .
       </p>
     </div>
   );
