@@ -44,7 +44,7 @@ const PreSignup = ({ setCurrentStep, enabled }: { setCurrentStep: (next: SignupS
           fenntartják a jogot arra, hogy a jelentkezőt ettől eltérően más munkacsoportba sorolják be
         </li>
       </ul>
-      {enabled && live && (
+      {enabled && live ? (
         <>
           <div className="mb-6 mt-10 flex items-start">
             <div className="ml-4 flex h-5 items-center">
@@ -75,10 +75,11 @@ const PreSignup = ({ setCurrentStep, enabled }: { setCurrentStep: (next: SignupS
             Jelentkezés
           </button>
         </>
+      ) : (
+        <div className="py-20 text-center text-sm font-medium text-gray-700">
+          A szervezői jelentkezés 2024. december 20.-án lezárult.
+        </div>
       )}
-      <div className="py-20 text-center text-sm font-medium text-gray-700">
-        A szervezői jelentkezés 2024. december 20.-án lezárult.
-      </div>
     </div>
   );
 };
