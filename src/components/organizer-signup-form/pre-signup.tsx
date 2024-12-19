@@ -1,10 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { type SignupStep } from ".";
+import { organizerSignupEndUnix } from "../../constants";
 
 const PreSignup = ({ setCurrentStep, enabled }: { setCurrentStep: (next: SignupStep) => void; enabled: boolean }) => {
   const [acceptedRules, setAcceptedRules] = useState(false);
+  const [live, setLive] = useState(Date.now() / 1000 < organizerSignupEndUnix);
+
+  useEffect(() => {
+    const interval = setInterval(() => setLive(Date.now() / 1000 < organizerSignupEndUnix), 1000);
+    return () => clearInterval(interval);
+  });
+
   return (
     <div>
       A szervezői válogatást a következő kritériumok szerint valósítjuk meg:
@@ -36,7 +44,7 @@ const PreSignup = ({ setCurrentStep, enabled }: { setCurrentStep: (next: SignupS
           fenntartják a jogot arra, hogy a jelentkezőt ettől eltérően más munkacsoportba sorolják be
         </li>
       </ul>
-      {enabled && (
+      {enabled && live && (
         <>
           <div className="mb-6 mt-10 flex items-start">
             <div className="ml-4 flex h-5 items-center">
@@ -69,7 +77,7 @@ const PreSignup = ({ setCurrentStep, enabled }: { setCurrentStep: (next: SignupS
         </>
       )}
       <div className="py-20 text-center text-sm font-medium text-gray-700">
-        A szervezői jelentkezés 2024. december 16.-án kezdődik.
+        A szervezői jelentkezés 2024. december 20.-án lezárult.
       </div>
     </div>
   );

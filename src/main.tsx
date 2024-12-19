@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createHashRouter, RouterProvider } from "react-router-dom";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 
 import "./index.css";
 import Landing from "./pages/landing";
@@ -17,7 +18,6 @@ import JournalError from "./components/journal-error";
 // import Workshops from "./pages/workshops";
 import Programme from "./pages/program";
 // import Accreditation from "./pages/accreditation";
-import { GoogleOAuthProvider } from "@react-oauth/google";
 import { oauthClientId } from "./constants";
 import Summary from "./pages/summary";
 import NotFound from "./pages/not-found";
