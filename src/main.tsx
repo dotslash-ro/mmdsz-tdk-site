@@ -82,10 +82,6 @@ const router = createHashRouter([
     element: <OrganizerSignup enabled={true} />,
   },
   {
-    path: "/szervezoi-jelentkezes-teszt",
-    element: <OrganizerSignup enabled={true} />,
-  },
-  {
     path: "/osszefoglalok",
     element: <PastJournals />,
     children: [

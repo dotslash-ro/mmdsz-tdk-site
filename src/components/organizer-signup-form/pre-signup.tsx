@@ -1,17 +1,17 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import { type SignupStep } from ".";
-import { organizerSignupEndUnix } from "../../constants";
+// import { organizerSignupEndUnix } from "../../constants";
 
 const PreSignup = ({ setCurrentStep, enabled }: { setCurrentStep: (next: SignupStep) => void; enabled: boolean }) => {
   const [acceptedRules, setAcceptedRules] = useState(false);
-  const [live, setLive] = useState(Date.now() / 1000 < organizerSignupEndUnix);
+  // const [live, setLive] = useState(Date.now() / 1000 < organizerSignupEndUnix);
 
-  useEffect(() => {
-    const interval = setInterval(() => setLive(Date.now() / 1000 < organizerSignupEndUnix), 1000);
-    return () => clearInterval(interval);
-  });
+  // useEffect(() => {
+  //   const interval = setInterval(() => setLive(Date.now() / 1000 < organizerSignupEndUnix), 1000);
+  //   return () => clearInterval(interval);
+  // });
 
   return (
     <div>
@@ -44,7 +44,7 @@ const PreSignup = ({ setCurrentStep, enabled }: { setCurrentStep: (next: SignupS
           fenntartják a jogot arra, hogy a jelentkezőt ettől eltérően más munkacsoportba sorolják be
         </li>
       </ul>
-      {enabled && live ? (
+      {enabled ? (
         <>
           <div className="mb-6 mt-10 flex items-start">
             <div className="ml-4 flex h-5 items-center">

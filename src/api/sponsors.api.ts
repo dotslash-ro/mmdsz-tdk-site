@@ -1,5 +1,5 @@
 import { strapiToken, strapiUrl } from "../constants";
-import { Sponsor, StrapiSponsors } from "../types/sponsors.types";
+import type { Sponsor, StrapiSponsors } from "../types/sponsors.types";
 
 export async function fetchSponsors(): Promise<Sponsor[]> {
   const res = await fetch(`${strapiUrl}/sponsors?populate[0]=sponsorLogo`, {
