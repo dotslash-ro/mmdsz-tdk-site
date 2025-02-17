@@ -44,7 +44,7 @@ const Landing = () => {
           <img
             src={tdkPicture1}
             alt="TDK"
-            className="w-full shadow-tdk-primary drop-shadow-lg sm:rounded-lg xl:h-fit xl:w-2/3"
+            className="w-full shadow-tdk-primary drop-shadow-lg sm:rounded-lg xl:w-2/3"
           />
         </div>
         <div className="flex flex-col items-center justify-center gap-10 sm:mx-auto sm:w-2/3 sm:px-0 xl:flex-row-reverse">
@@ -56,7 +56,7 @@ const Landing = () => {
           <img
             src={tdkPicture2}
             alt="TDK"
-            className="w-full shadow-tdk-primary drop-shadow-lg sm:rounded-lg xl:h-fit xl:w-2/3"
+            className="w-full shadow-tdk-primary drop-shadow-lg sm:rounded-lg xl:w-2/3"
           />
         </div>
         <div className="flex flex-col items-center justify-center gap-10  sm:mx-auto sm:w-2/3 xl:flex-row">
@@ -68,7 +68,7 @@ const Landing = () => {
           <img
             src={tdkPicture3}
             alt="TDK"
-            className="w-full shadow-tdk-primary drop-shadow-lg sm:rounded-lg xl:h-fit xl:w-2/3"
+            className="w-full shadow-tdk-primary drop-shadow-lg sm:rounded-lg xl:w-2/3"
           />
         </div>
         <div className="flex flex-col gap-10 px-5 py-20 md:flex-row">
