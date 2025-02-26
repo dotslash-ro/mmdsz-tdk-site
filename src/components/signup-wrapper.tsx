@@ -48,7 +48,7 @@ const SignupWrapper = ({
 
   useEffect(() => {
     // fetch signup status from localstorage
-    const _signupStatus = localStorage.getItem("signupStatus24");
+    const _signupStatus = localStorage.getItem("signupStatus25");
     if (!_signupStatus) {
       setSignupStatus("not-signedup");
     } else if (signupStatuses.find((validStatus) => validStatus === _signupStatus)) {
@@ -155,7 +155,7 @@ const SignupWrapper = ({
         setSignupStatus("error");
       } else {
         setSignupStatus("signed-up");
-        localStorage.setItem("signupStatus24", "signed-up");
+        localStorage.setItem("signupStatus25", "signed-up");
       }
     } catch (e) {
       console.log(e);
@@ -179,7 +179,7 @@ const SignupWrapper = ({
         <div
           className="py-3 text-sm text-sky-600 hover:cursor-pointer hover:underline"
           onClick={() => {
-            localStorage.removeItem("signupStatus24");
+            localStorage.removeItem("signupStatus25");
             localStorage.removeItem("personalInfo");
             localStorage.removeItem("documentInfo");
             localStorage.removeItem("coAuthorInfos");

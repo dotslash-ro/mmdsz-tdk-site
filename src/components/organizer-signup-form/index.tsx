@@ -127,7 +127,7 @@ const OrganizerSignupMultistepForm = ({
         setLoading(false);
       }
       setSignupStatus("signed-up");
-      localStorage.setItem("signupStatus24", "signed-up");
+      localStorage.setItem("signupStatus25", "signed-up");
     }
   };
 

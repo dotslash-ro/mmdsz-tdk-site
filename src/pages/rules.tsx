@@ -1,14 +1,18 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+import { Helmet } from "react-helmet";
+
 import { withLayout } from "../layout/withLayout";
 import rules from "../assets/tdk-rules-2024.png";
-
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import posterSectionZip from "../assets/poszter-szekcio-sablonok.zip";
-import { Helmet } from "react-helmet";
+// @ts-ignore
+import presentationRightsDoc from "../assets/tdk-bemutatasi-jog-2025.docx";
+// @ts-ignore
+import contributionDoc from "../assets/tdk-hozzajarulas-2025.docx";
 
 const Rules = () => {
   return (
-    <div className="prose mx-auto py-20 px-10 prose-a:text-sky-400 prose-img:my-0 prose-img:py-0 sm:w-2/3 xl:w-1/2">
+    <div className="prose mx-auto py-20 px-10 prose-a:text-tdk-accent prose-a:hover:underline prose-img:my-0 prose-img:py-0 sm:w-2/3 xl:w-1/2">
       <Helmet>
         <title>32. TDK - Szabályzat</title>
       </Helmet>
@@ -84,13 +88,15 @@ const Rules = () => {
           átutalva lehet befizetni.
         </li>
         <li>
-          Sikeres iratkozás a kivonat helyes feltöltésével, a kivonat TDT általi jóváhagyásával, illetve a saját
-          hozzájárulási és publikációs nyilatkozat feltöltésével történik.
+          Sikeres iratkozás a kivonat helyes feltöltésével, a kivonat TDT általi jóváhagyásával és a részvételi díj
+          időben való befizetésével, illetve a saját <a href={contributionDoc}>hozzájárulási nyilatkozat</a> és
+          publikációs nyilatkozat feltöltésével történik.
         </li>
         <li>
-          Ha egy dolgozatot a főszerző objektív okok miatt nem tud bemutatni, kötelessége ezt legkésőbb 24 órával a
-          szekció kezdete előtt e-mailben jelezni. A főszerző motivációja alapján, amennyiben a TDT úgy ítéli meg, a
-          témavezető által támogatott társszerző is bemutathatja a dolgozatot.
+          Ha egy dolgozatot a főszerző objektív okok miatt nem tud bemutatni, kötelessége ezt legkésőbb egy héttel a
+          konferencia kezdete előtt e-mailben (<a href="mailto:tdk@mmdsz.ro">tdk@mmdsz.ro</a>) jelezni a megadott{" "}
+          <a href={presentationRightsDoc}>formanyomtatvány</a> kitöltésével. A főszerző motivációja alapján, amennyiben
+          a főszervezők úgy ítélik meg, a témavezető által támogatott társszerző is bemutathatja a dolgozatot.
         </li>
       </ol>
       <h3>2.3. Előadások és poszterbemutatók</h3>

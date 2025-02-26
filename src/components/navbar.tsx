@@ -55,6 +55,18 @@ const Navbar = () => {
             >
               <li>
                 <NavLink
+                  to="/jelentkezes"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "lg:font-base flex items-center justify-center py-3 text-sm font-bold uppercase text-white underline lg:py-0"
+                      : "lg:font-base flex items-center justify-center py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
+                  }
+                >
+                  Jelentkezés
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
                   to="/szabalyzat"
                   className={({ isActive }) =>
                     isActive
