@@ -70,7 +70,16 @@ const Timeline = () => {
           <div>
             <time className="mb-10 font-light leading-none text-gray-500">2024. március 21-30.</time>
             <h3 className="pb-4 text-2xl font-semibold text-gray-900">Regisztrációs díj befizetése</h3>
-            {/* <h4 className="pt-4 pb-2 font-bold">Fizetési lehetőségek:</h4>{" "}
+            <ul className="ml-8 list-disc pt-10">
+              <li>Belföldi hallgatók számára: 140 RON- 1. dolgozat, 110 RON- 2. dolgozat*</li>
+              <li>Poszter szekció: 120 RON- 1. dolgozat. dolgozat</li>
+              <li className="pt-2">Külföldi hallgatók számára: 11000 HUF- 1. dolgozat 9000 HUF- 2. dolgozat*</li>
+              <li>Poszter szekció: 10000 Ft- 1. dolgozat</li>
+              {/* <li className="pt-2 font-semibold">
+                Az MMDSZ kártyát felmutató diákok 10 RON kedvezményben részesülnek.
+              </li> */}
+            </ul>{" "}
+            <h4 className="pt-4 pb-2 font-bold">Fizetési lehetőségek:</h4>{" "}
             <div>
               <h5 className="pb-2 pt-4 text-lg font-light">Személyesen</h5>{" "}
               <p>
@@ -79,35 +88,33 @@ const Timeline = () => {
               </p>
             </div>{" "}
             <div>
-              <h5 className="pb-2 pt-4 text-lg font-light">
-                Banki átutalással (kizárólagosan külföldön tanuló diákok számára):
-              </h5>{" "}
+              <h5 className="pb-2 pt-4 text-lg font-light">Banki átutalással</h5>{" "}
               <ul className="ml-6 list-disc">
                 <li>
-                  <b>Asociația Studenților Maghiari din Târgu Mureș CIF:</b> 8434501
+                  <b>Név: </b>ASOCIATIA STUDENTILOR MAGHIARI TARGU MURES
                 </li>{" "}
-                <li>
+                {/* <li>
                   <b>Sediu:</b> Str. Gh. Marinescu, nr. 38., jud. Mureș
+                </li>{" "} */}
+                <li>
+                  <b>Swift kód:</b> BTRLRO22
                 </li>{" "}
                 <li>
-                  <b>Banca Transilvania Codul Swift:</b> BTRLRO22
-                </li>{" "}
-                <li>
-                  <b>Cont bancar (RON):</b> RO 06 BTRL RONCRT 0674086402
+                  <b>Cont bancar (RON):</b> RO76BTRLRONCRT0674086403
                 </li>
                 <li>
-                  <b>Bankszámlaszám (HUF):</b> RO 93 BTRL HUFCRT 0674086401
+                  <b>Bankszámlaszám (HUF):</b> RO93BTRLHUFCRT0674086401
                 </li>
               </ul>
             </div>{" "}
             <p className="pt-4 italic">
-              Kérjük az átutalás megjegyzésében feltüntetni: “Registration Fee 31.TDK - Teljes Név”, például:
+              Kérjük az átutalás megjegyzésében feltüntetni: “Registration Fee 32.TDK - Teljes Név”, például:
               “Registration Fee 32.TDK - Kis János”.
             </p>{" "}
             <p className="pt-6 text-sm font-light text-gray-600">
               * A befizetett díj tartalmazza a konferencián való részvételt, beleértve a gálát, valamint a promóciós
               anyagokból való részesedést (mindezt az első szerző számára).
-            </p> */}
+            </p>
           </div>
         </li>
         {/* <li className="mb-10 ml-10">
