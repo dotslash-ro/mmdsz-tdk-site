@@ -110,7 +110,10 @@ const SignupWrapper = ({
           ...coAuthorInfo,
           university: coAuthorInfo.university == "Egyéb" ? coAuthorInfo.otherUniversity : coAuthorInfo.university,
         })),
-        coordinatorInfos,
+        coordinatorInfos: coordinatorInfos.map((coordinatorInfo) => ({
+          ...coordinatorInfo,
+          title: coordinatorInfo.title == "Egyéb" ? coordinatorInfo.otherTitle : coordinatorInfo.title,
+        })),
       });
       // persist form data for later use if file upload fails
       localStorage.setItem("personalInfo", JSON.stringify(personalInfo));
