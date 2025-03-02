@@ -32,7 +32,7 @@ const SignupWrapper = ({
   scrollToRef,
   signupEnabled,
 }: {
-  scrollToRef: MutableRefObject<HTMLDivElement | null>;
+  scrollToRef?: MutableRefObject<HTMLDivElement | null>;
   signupEnabled: boolean;
 }) => {
   const [signupStatus, setSignupStatus] = useState<SignupStatus>("not-signedup");
@@ -58,7 +58,7 @@ const SignupWrapper = ({
     }
 
     // fetch dataUploaded from localstorage
-    const _dataUploaded = localStorage.getItem("dataUploaded24");
+    const _dataUploaded = localStorage.getItem("dataUploaded25");
     if (_dataUploaded && _dataUploaded === "true") {
       setDataUploaded(true);
       setCurrentStep("agreementDoc");
@@ -87,7 +87,11 @@ const SignupWrapper = ({
   }, []);
 
   useEffect(() => {
-    scrollToRef?.current?.scrollIntoView({ behavior: "smooth" });
+    if (scrollToRef) {
+      scrollToRef.current?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   }, [currentStep]);
 
   const onSignup = async () => {
@@ -115,7 +119,11 @@ const SignupWrapper = ({
       localStorage.setItem("coordinatorInfos", JSON.stringify(coordinatorInfos));
       try {
         setLoading(true);
-        scrollToRef?.current?.scrollIntoView({ behavior: "smooth" });
+        if (scrollToRef) {
+          scrollToRef.current?.scrollIntoView({ behavior: "smooth" });
+        } else {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
         const response = await fetch(`${serverUrl}/signup`, {
           method: "POST",
           body: body,
@@ -136,7 +144,7 @@ const SignupWrapper = ({
       }
       // after successful upload, set flag to no longer require applicant data
       setDataUploaded(true);
-      localStorage.setItem("dataUploaded24", "true");
+      localStorage.setItem("dataUploaded25", "true");
     }
     // prepare form data for file upload
     const data = new FormData();
@@ -184,7 +192,7 @@ const SignupWrapper = ({
             localStorage.removeItem("documentInfo");
             localStorage.removeItem("coAuthorInfos");
             localStorage.removeItem("coordinatorInfos");
-            localStorage.removeItem("dataUploaded24");
+            localStorage.removeItem("dataUploaded25");
             setSignupStatus("not-signedup");
             setDataUploaded(false);
             setCurrentStep("preSignup");

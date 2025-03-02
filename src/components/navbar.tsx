@@ -55,7 +55,7 @@ const Navbar = () => {
             >
               <li>
                 <NavLink
-                  to="/jelentkezes"
+                  to="/idovonal"
                   className={({ isActive }) =>
                     isActive
                       ? "lg:font-base flex items-center justify-center py-3 text-sm font-bold uppercase text-white underline lg:py-0"

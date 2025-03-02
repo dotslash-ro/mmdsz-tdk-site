@@ -137,6 +137,7 @@ export const sectionList = [
   "Endokrinológia",
   "Farmakológia",
   "Fogorvostudomány",
+  "Fogorvostudomány Poszter",
   "Fül-Orr-Gégészet",
   "Gasztroenterológia",
   "Genetika",

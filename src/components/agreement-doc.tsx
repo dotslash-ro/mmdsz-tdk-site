@@ -15,7 +15,8 @@ const AgreementDoc = ({ agreementDoc, setAgreementDoc, setCurrentStep }: Agreeme
     <div>
       <div className="ml-4">
         <p className="mt-8 text-gray-500">
-          A saját hozzájárulási nyilatkozat nevű dokumentum igazolja a szerző hozzájárulását a Kivonathoz.{" "}
+          A Saját hozzájárulási és publikációs nyilatkozat nevű dokumentum igazolja a szerző hozzájárulását a
+          Kivonathoz.{" "}
         </p>
         <p className="mt-4 text-gray-500">
           Egy kitöltött, példa dokumentum{" "}
@@ -83,7 +84,7 @@ const AgreementDoc = ({ agreementDoc, setAgreementDoc, setCurrentStep }: Agreeme
                 <path d="M23 17h-3v-3h-2v3h-3v2h3v3h2v-3h3v-2zm-7 5v2h-15v-24h10.189c3.163 0 9.811 7.223 9.811 9.614v2.386h-2v-1.543c0-4.107-6-2.457-6-2.457s1.518-6-2.638-6h-7.362v20h13z" />
               </svg>
               <p className="mb-2 py-3 text-gray-900">
-                A hozzájárulási nyilatkozat feltöltéséhez kattints erre a mezőre
+                A Saját hozzájárulási és publikációs nyilatkozat feltöltéséhez kattints erre a mezőre
               </p>
               <p className="text-xs text-gray-500">.pdf vagy .docx</p>
             </div>

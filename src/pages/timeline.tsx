@@ -1,6 +1,8 @@
 import { useRef } from "react";
 import { Helmet } from "react-helmet";
 import { withLayout } from "../layout/withLayout";
+import SignupWrapper from "../components/signup-wrapper";
+import { Link } from "react-router-dom";
 // import SignupWrapper from "../components/signup-wrapper";
 
 const Timeline = () => {
@@ -23,14 +25,14 @@ const Timeline = () => {
           ></div>
           <time className="mb-10 font-light leading-none text-gray-500">2025. március 3. - 2025 március 7.</time>
           <h3 className="pb-4 text-2xl font-semibold text-gray-900">Jelentkezés és absztraktok feltöltése</h3>
-          {/* <SignupWrapper scrollToRef={initialSignupContainerRef} signupEnabled={true} />
-           */}
-          <button
-            disabled
+          {/* <SignupWrapper scrollToRef={initialSignupContainerRef} signupEnabled={true} /> */}
+
+          <Link
+            to="/jelentkezes"
             className="pointer-events-none mt-12 rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white opacity-50 drop-shadow-md grayscale hover:underline xl:text-xl"
           >
             Jelentkezés →
-          </button>
+          </Link>
         </li>
         <li className="mb-10 ml-10">
           <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border-2 border-white bg-gray-500"></div>

@@ -22,6 +22,7 @@ import { oauthClientId } from "./constants";
 import Summary from "./pages/summary";
 import NotFound from "./pages/not-found";
 import OrganizerSignup from "./pages/organizer-signup";
+import Signup from "./pages/signup";
 // import WorkshopSignup from "./pages/workshop-signup";
 
 const router = createHashRouter([
@@ -38,8 +39,16 @@ const router = createHashRouter([
     element: <Contact />,
   },
   {
-    path: "/jelentkezes",
+    path: "/idovonal",
     element: <Timeline />,
+  },
+  {
+    path: "/jelentkezes",
+    element: <Signup />,
+  },
+  {
+    path: "/jelentkezes-teszt",
+    element: <Signup />,
   },
   {
     path: "/szabalyzat",
