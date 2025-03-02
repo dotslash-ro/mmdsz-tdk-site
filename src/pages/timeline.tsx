@@ -29,7 +29,7 @@ const Timeline = () => {
 
           <Link
             to="/jelentkezes"
-            className="pointer-events-none mt-12 rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white opacity-50 drop-shadow-md grayscale hover:underline xl:text-xl"
+            className="mt-16 rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-xl"
           >
             Jelentkezés →
           </Link>
