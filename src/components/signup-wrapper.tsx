@@ -276,7 +276,7 @@ const SignupWrapper = ({
           <li>Társszerzők neve, e-mail címe, egyeteme, évfolyama, szak, kara </li>
           <li>Témavezető neve és beosztása, valamint egyetem (intézet). </li>
         </ul>
-        <h3 className="mb-4 mt-8 text-lg font-light text-gray-800">Saját hozzájárulási és publikásciós nyilatkozat</h3>
+        <h3 className="mb-4 mt-8 text-lg font-light text-gray-800">Saját hozzájárulási és publikációs nyilatkozat</h3>
         <p className=" text-gray-500">
           A tavalyi évhez hasonlóan idén is szükséges a saját hozzájárulási és publikációs nyilatkozat kitöltése.{" "}
         </p>
