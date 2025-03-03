@@ -8,7 +8,7 @@ const Signup = () => {
       <Helmet>
         <title>32. TDK - Jelentkezés</title>
       </Helmet>
-      <div className="mx-auto max-w-3xl">
+      <div className="mx-auto max-w-3xl px-6 pb-10">
         <SignupWrapper signupEnabled={true} />
       </div>
     </>

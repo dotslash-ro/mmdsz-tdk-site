@@ -1,9 +1,7 @@
 import { useRef } from "react";
 import { Helmet } from "react-helmet";
 import { withLayout } from "../layout/withLayout";
-import SignupWrapper from "../components/signup-wrapper";
 import { Link } from "react-router-dom";
-// import SignupWrapper from "../components/signup-wrapper";
 
 const Timeline = () => {
   const initialSignupContainerRef = useRef<HTMLDivElement | null>(null);
