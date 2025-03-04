@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import { withLayout } from "../layout/withLayout";
 import rules from "../assets/tdk-rules-2024.png";
 // @ts-ignore
-import posterSectionZip from "../assets/poszter-szekcio-sablonok.zip";
+import posterSectionZip from "../assets/poszter-sablonok-25.zip";
 // @ts-ignore
 import presentationRightsDoc from "../assets/tdk-bemutatasi-jog-2025.docx";
 // @ts-ignore
