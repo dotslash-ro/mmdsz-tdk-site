@@ -148,6 +148,11 @@ const Rules = () => {
       </ul>
       <p>Hatnál kevesebb dolgozat (határon túli és hazai együttesen) nem képezhet önálló témakört.</p>
       <p>
+        Kevesebb mint 6 hazai dolgozat esetén, amennyiben az elbíráló bizottság nem találja a dolgozatokat díjazásra
+        méltónak, nem köteles helyezéseket osztani. Egy diák egy adott szekción belül legfeljebb egy helyezést érhet el,
+        a bemutatott dolgozatok számától függetlenül.
+      </p>
+      <p>
         <strong>A digitális bemutatókra vonatkozóan:</strong>
       </p>
       <p>
