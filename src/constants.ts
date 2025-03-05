@@ -162,7 +162,9 @@ export const sectionList = [
   "Reumatológia",
   "Szemészet",
   "Traumatológia",
+  "Tüdőgyógyászat",
   "Urológia",
+  "Egyéb",
 ] as const;
 
 export const oauthClientId = "858299120064-428uvpomj4tre0ek9mh58uc7ushudiio.apps.googleusercontent.com";
