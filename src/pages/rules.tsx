@@ -88,7 +88,7 @@ const Rules = () => {
           átutalva lehet befizetni.
         </li>
         <li>
-          Sikeres iratkozás a kivonat helyes feltöltésével, a kivonat TDT általi jóváhagyásával és a részvételi díj
+          Sikeres iratkozás a kivonat helyes feltöltésével, a kivonat TDT általi jóváhagyásával és a publikációs díj
           időben való befizetésével, illetve a saját <a href={contributionDoc}>hozzájárulási nyilatkozat</a> és
           publikációs nyilatkozat feltöltésével történik.
         </li>
@@ -147,27 +147,14 @@ const Rules = () => {
         <li>20 hazai dolgozaton felül: 1 - 2 - 3. díj, 1. és 2. dicséret</li>
       </ul>
       <p>Hatnál kevesebb dolgozat (határon túli és hazai együttesen) nem képezhet önálló témakört.</p>
-      <p>A szekciónkénti díjak megosztása a következő:</p>
-      <ul>
-        <li>6 dolgozat összesen: 1. díj</li>
-        <li>7 - 9 hazai dolgozat: 1 - 2. díj</li>
-        <li>10 - 15 hazai dolgozat: 1 - 2 - 3. díj</li>
-        <li>16 - 20 hazai dolgozat: 1 - 2 - 3. díj és 1. dicséret</li>
-        <li>20 hazai dolgozaton felül: 1 - 2 - 3. díj, 1. és 2. dicséret</li>
-      </ul>
-      <p>
-        Kevesebb mint 6 hazai dolgozat esetén, amennyiben az elbíráló bizottság nem találja a dolgozatokat díjazásra
-        méltónak, nem köteles helyezéseket osztani.
-      </p>
       <p>
         <strong>A digitális bemutatókra vonatkozóan:</strong>
       </p>
       <p>
-        Az előadás digitális változatát (Power Point/Open Office bemutatót) a honlapra kérjük feltölteni a megadott
-        dátumig. Amennyiben a feltöltés nem történt meg a kijelölt időpontig, a dolgozat nem mutatható be. A Prezi
-        típusú bemutatókat a megszabott határidőig e-mailben kell eljuttatni a szervezőknek, ezen dolgozatokat nem kell
-        feltölteni. A dolgozatokat végleges formátumban kell feltölteni, utólagos módosítás nem lehetséges. A bemutató
-        diákok (Power Point, Open Office) neve a főszerző neve kell legyen (pl: Kerekes János.ppt).
+        Az előadás digitális változatát Power Point bemutató formájában (.pptx kiterjesztésben) kérjük egy adathordozó
+        eszközön hozni a szekció előtt, a főszervezők által meghatározott időre. A bemutató (Power Point) címe a
+        főszerző nevét kell tartalmazza, úgy ahogyan a személyi igazolványában szerepel, ékezetek nélkül (pl. Kerekes
+        Janos.pptx). A bemutató utolsó képkockájának tartalmaznia kell a dolgozathoz való saját hozzájárulást.
       </p>
       <p>A bemutató utolsó képkockájának tartalmaznia kell a dolgozathoz való saját hozzájárulást.</p>
       <p>
@@ -189,10 +176,14 @@ const Rules = () => {
         szerzőnek.
       </p>
       <p>
-        A poszter mérete A1 méretben adandó le, illetve a vázát a 32.TDK arculatával ellátott sablon adja, amely
-        <a href={posterSectionZip}> ezen linken keresztül elérhető</a>, a sablon tetszés szerint választható.
+        A1 méretben adandó le, minimális betűméret cím esetén 90 pt, szöveg esetén 30 pt, illetve a vázát a 32. TDK
+        arculatával ellátott <a href={posterSectionZip}>sablon</a> adja, amelyet a résztvevők rendelkezésére bocsátunk.
       </p>
       <p>A bemutatandó poszterek a konferencia állandó kiállítását fogják képezni.</p>
+      <p>
+        A poszter digitális változatát PDF formájában kérjük egy adathordozó eszközön hozni a szekció előtt, a
+        főszervezők által meghatározott időre; ez a verzió kerül majd bemutatásra.
+      </p>
       <p>
         A poszterszekcióba történő jelentkezéskor a kész absztraktot valamint a saját hozzájárulási és publikációs
         nyilatkozatot a honlapra kérjük feltölteni a megadott dátumig. Emellett a{" "}
@@ -206,6 +197,8 @@ const Rules = () => {
       <p>
         A dolgozatok bemutatása betűrendben történik, a főszerzők családnevének kezdőbetűje szerint. Ettől a sorrendtől
         abban az esetben tekintünk el, ha két dolgozat témája közös és ezt a diák a bemutató előtt egy héttel jelzi.
+        Továbbá, ha egy diák különböző szekciókban több dolgozatot is be kell mutasson, és az időpontok ütköznek, a
+        sorrend módosítható. Egyéb, jól megindokolt esetekben a főszervezők dönthetnek a sorrend megváltoztatásáról.
       </p>
       <h3>2.4. Témakörök (szekciók) felosztása:</h3>
       <p>A konferencia témaköreit a TDT határozza meg a beérkező dolgozatok függvényében.</p>
