@@ -76,7 +76,7 @@ const Timeline = () => {
             <h3 className="pb-4 text-2xl font-semibold text-gray-900">Regisztrációs díj befizetése</h3>
             <ul className="ml-8 list-disc pt-10">
               <li>Belföldi hallgatók számára: 140 RON- 1. dolgozat, 110 RON- 2. dolgozat*</li>
-              <li>Poszter szekció: 120 RON- 1. dolgozat. dolgozat</li>
+              <li>Poszter szekció: 120 RON- 1. dolgozat</li>
               <li className="pt-2">Külföldi hallgatók számára: 11000 HUF- 1. dolgozat 9000 HUF- 2. dolgozat*</li>
               <li>Poszter szekció: 10000 Ft- 1. dolgozat</li>
               {/* <li className="pt-2 font-semibold">
