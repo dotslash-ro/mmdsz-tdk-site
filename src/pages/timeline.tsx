@@ -29,12 +29,12 @@ const Timeline = () => {
             kivonatokat nem áll módunkban elfogadni.{" "}
           </p>
 
-          <Link
+          {/* <Link
             to="/jelentkezes"
             className="mt-16 rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-xl"
           >
             Jelentkezés →
-          </Link>
+          </Link> */}
         </li>
         <li className="mb-10 ml-10">
           <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border-2 border-white bg-gray-500"></div>

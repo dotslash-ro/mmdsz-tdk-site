@@ -42,10 +42,10 @@ const router = createHashRouter([
     path: "/idovonal",
     element: <Timeline />,
   },
-  {
-    path: "/jelentkezes",
-    element: <Signup />,
-  },
+  // {
+  //   path: "/jelentkezes",
+  //   element: <Signup />,
+  // },
   {
     path: "/jelentkezes-teszt",
     element: <Signup />,
