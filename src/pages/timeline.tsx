@@ -24,7 +24,7 @@ const Timeline = () => {
           <time className="mb-10 font-light leading-none text-gray-500">2025. március 3. - 2025 március 9.</time>
           <h3 className="pb-4 text-2xl font-semibold text-gray-900">Jelentkezés és absztraktok feltöltése</h3>
           {/* <SignupWrapper scrollToRef={initialSignupContainerRef} signupEnabled={true} /> */}
-          <p className="text-gray-500">
+          <p className="pb-10 text-gray-500">
             A jelentkezés kelet-európai téli időszámítás szerint (GMT+2) 19:59-kor zárul. Az időn túl beérkező
             kivonatokat nem áll módunkban elfogadni.{" "}
           </p>
