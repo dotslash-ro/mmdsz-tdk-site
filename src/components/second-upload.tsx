@@ -57,7 +57,7 @@ const SecondUploadForm = () => {
         setUploadStatus("error");
       } else {
         setUploadStatus("uploaded");
-        localStorage.setItem("secondUpload24", "uploaded");
+        localStorage.setItem("secondUpload25", "uploaded");
       }
     } catch (e) {
       console.log(e);
@@ -66,7 +66,7 @@ const SecondUploadForm = () => {
   };
 
   useEffect(() => {
-    const _uploadStatus = localStorage.getItem("secondUpload24");
+    const _uploadStatus = localStorage.getItem("secondUpload25");
     if (!_uploadStatus) {
       setUploadStatus("not-uploaded");
     } else if (uploadStatuses.find((validStatus) => validStatus === _uploadStatus)) {

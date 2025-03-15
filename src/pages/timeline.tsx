@@ -1,33 +1,38 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Helmet } from "react-helmet";
 import { withLayout } from "../layout/withLayout";
-import { Link } from "react-router-dom";
+import SecondUploadForm from "../components/second-upload";
 
 const Timeline = () => {
-  const initialSignupContainerRef = useRef<HTMLDivElement | null>(null);
+  const scrollToRef = useRef<HTMLLIElement | null>(null);
+
+  useEffect(() => {
+    if (scrollToRef.current) {
+      scrollToRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [scrollToRef.current]);
 
   return (
     <div className="flex justify-center py-20 px-6">
       <Helmet>
         <title>32. TDK - Információ</title>
       </Helmet>
-      <ol className="relative space-y-20 border-l border-gray-300 lg:w-1/2">
+      <ol className="relative space-y-10 border-l border-gray-300 lg:w-1/2">
         <li className="mb-4 ml-10 font-light text-gray-500 sm:hidden">
           <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border-2 border-white bg-gray-500"></div>
           Görgess lefele, hogy többet megtudj a TDK-n való részvételhez szükséges lépésekről.
         </li>
         <li className="ml-10">
-          <div
-            className="absolute -left-1.5 mt-1.5 h-3 w-3 scroll-mt-32 rounded-full border-2 border-white bg-gray-500"
-            ref={initialSignupContainerRef}
-          ></div>
+          <div className="absolute -left-1.5 mt-1.5 h-3 w-3 scroll-mt-32 rounded-full border-2 border-white bg-gray-500"></div>
           <time className="mb-10 font-light leading-none text-gray-500">2025. március 3. - 2025 március 9.</time>
-          <h3 className="pb-4 text-2xl font-semibold text-gray-900">Jelentkezés és absztraktok feltöltése</h3>
+          <h3 className="pb-4 text-2xl font-semibold text-gray-900 opacity-50">
+            Jelentkezés és absztraktok feltöltése
+          </h3>
           {/* <SignupWrapper scrollToRef={initialSignupContainerRef} signupEnabled={true} /> */}
-          <p className="pb-10 text-gray-500">
+          {/* <p className="pb-10 text-gray-500">
             A jelentkezés kelet-európai téli időszámítás szerint (GMT+2) 19:59-kor zárul. Az időn túl beérkező
             kivonatokat nem áll módunkban elfogadni.{" "}
-          </p>
+          </p> */}
 
           {/* <Link
             to="/jelentkezes"
@@ -39,21 +44,21 @@ const Timeline = () => {
         <li className="mb-10 ml-10">
           <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border-2 border-white bg-gray-500"></div>
           <time className="mb-10 font-light leading-none text-gray-500">2025. március 10-15.</time>
-          <h3 className="pb-4 text-2xl font-semibold text-gray-900">Absztraktok ellenőrzése</h3>
-          <div className="m-6">
+          <h3 className="pb-4 text-2xl font-semibold text-gray-900 opacity-50">Absztraktok ellenőrzése</h3>
+          {/* <div className="m-6">
             <p className="text-gray-500">
               Miután a tanárok ellenőrzik az absztraktokat, az el nem fogadott absztraktokat van lehetőség kijavítani és
               újra feltölteni.{" "}
             </p>
             <p className="text-gray-500">Az absztraktok elbírálásáról email-ben értesítenek majd a szervezők.</p>
-          </div>
+          </div> */}
         </li>
-        <li className="mb-10 ml-10">
+        <li className="mb-10 ml-10 scroll-mt-32" id="javitott-feltoltes" ref={scrollToRef}>
           <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border-2 border-white bg-gray-500"></div>
           <div className="">
             <time className="mb-10 font-light leading-none text-gray-500">2024. március 15-18.</time>
             <h3 className="pb-4 text-2xl font-semibold text-gray-900">Javított absztraktok feltöltése</h3>
-            {/* <div className="m-6"><SecondUploadForm /></div>  */}
+            <SecondUploadForm />
           </div>
         </li>
         {/* <li className="mb-10 ml-10">
