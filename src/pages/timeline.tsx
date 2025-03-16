@@ -56,7 +56,7 @@ const Timeline = () => {
         <li className="mb-10 ml-10 scroll-mt-32" id="javitott-feltoltes" ref={scrollToRef}>
           <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border-2 border-white bg-gray-500"></div>
           <div className="">
-            <time className="mb-10 font-light leading-none text-gray-500">2024. március 15-18.</time>
+            <time className="mb-10 font-light leading-none text-gray-500">2025. március 15-17.</time>
             <h3 className="pb-4 text-2xl font-semibold text-gray-900">Javított absztraktok feltöltése</h3>
             <SecondUploadForm />
           </div>
@@ -77,7 +77,7 @@ const Timeline = () => {
         <li className="mb-10 ml-10">
           <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border-2 border-white bg-gray-500"></div>
           <div>
-            <time className="mb-10 font-light leading-none text-gray-500">2024. március 21-30.</time>
+            <time className="mb-10 font-light leading-none text-gray-500">2025. március 21-30.</time>
             <h3 className="pb-4 text-2xl font-semibold text-gray-900">Regisztrációs díj befizetése</h3>
             <ul className="ml-8 list-disc pt-10">
               <li>Belföldi hallgatók számára: 140 RON- 1. dolgozat, 110 RON- 2. dolgozat*</li>
