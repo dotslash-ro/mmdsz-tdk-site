@@ -1,17 +1,7 @@
-import { useEffect, useRef } from "react";
 import { Helmet } from "react-helmet";
 import { withLayout } from "../layout/withLayout";
-import SecondUploadForm from "../components/second-upload";
 
 const Timeline = () => {
-  const scrollToRef = useRef<HTMLLIElement | null>(null);
-
-  useEffect(() => {
-    if (scrollToRef.current) {
-      scrollToRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  }, [scrollToRef.current]);
-
   return (
     <div className="flex justify-center py-20 px-6">
       <Helmet>
@@ -53,12 +43,12 @@ const Timeline = () => {
             <p className="text-gray-500">Az absztraktok elbírálásáról email-ben értesítenek majd a szervezők.</p>
           </div> */}
         </li>
-        <li className="mb-10 ml-10 scroll-mt-32" id="javitott-feltoltes" ref={scrollToRef}>
+        <li className="mb-10 ml-10 scroll-mt-32" id="javitott-feltoltes">
           <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border-2 border-white bg-gray-500"></div>
           <div className="">
             <time className="mb-10 font-light leading-none text-gray-500">2025. március 15-17.</time>
-            <h3 className="pb-4 text-2xl font-semibold text-gray-900">Javított absztraktok feltöltése</h3>
-            <SecondUploadForm />
+            <h3 className="pb-4 text-2xl font-semibold text-gray-900 opacity-50">Javított absztraktok feltöltése</h3>
+            {/* <SecondUploadForm /> */}
           </div>
         </li>
         {/* <li className="mb-10 ml-10">
