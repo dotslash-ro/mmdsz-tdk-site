@@ -67,7 +67,7 @@ const Timeline = () => {
         <li className="mb-10 ml-10">
           <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border-2 border-white bg-gray-500"></div>
           <div>
-            <time className="mb-10 font-light leading-none text-gray-500">2025. március 21-30.</time>
+            <time className="mb-10 font-light leading-none text-gray-500">2025. március 22-29.</time>
             <h3 className="pb-4 text-2xl font-semibold text-gray-900">Regisztrációs díj befizetése</h3>
             <ul className="ml-8 list-disc pt-10">
               <li>Belföldi hallgatók számára: 140 RON- 1. dolgozat, 110 RON- 2. dolgozat*</li>
@@ -82,12 +82,12 @@ const Timeline = () => {
             <div>
               <h5 className="pb-2 pt-4 text-lg font-light">Személyesen</h5>{" "}
               <p>
-                A Marosvásárhelyi Magyar Diákszövetség székházában (Nicolae Grigorescu 15A/1), irodaprogramban. (Az
-                irodaprogram megtalálható a kapcsolat menüpontban.)
+                A belföldi diákok befizetést a Marosvásárhelyi Magyar Diákszövetség székházában (Nicolae Grigorescu 15A/1), tehetik meg, minden nap 12-17 óra között.
               </p>
             </div>{" "}
             <div>
               <h5 className="pb-2 pt-4 text-lg font-light">Banki átutalással</h5>{" "}
+              A külföldi diákok banki átutalással fizethetik ki a regisztrációs díjat.
               <ul className="ml-6 list-disc">
                 <li>
                   <b>Név: </b>ASOCIATIA STUDENTILOR MAGHIARI TARGU MURES
