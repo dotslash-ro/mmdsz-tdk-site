@@ -1,34 +1,25 @@
-import { withLayout } from "../layout/withLayout";
-import { ScrollMode, SpecialZoomLevel, Worker } from "@react-pdf-viewer/core";
-import { Viewer } from "@react-pdf-viewer/core";
-import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
-import "@react-pdf-viewer/default-layout/lib/styles/index.css";
-import programmePdf from "../assets/tdk-programfuzet-24.pdf";
 import { Helmet } from "react-helmet";
 
-const Programme = () => {
-  const defaultLayoutPluginInstance = defaultLayoutPlugin({
-    sidebarTabs: () => [],
-  });
+import { withLayout } from "../layout/withLayout";
+import { useProgram } from "../hooks/useProgram";
+import ProgramDay from "../components/program/program-day";
 
+const Programme = () => {
+  const { program, fetching } = useProgram();
   return (
-    <div className="mx-auto py-40 px-5 lg:w-1/2">
+    <div className="px-5 py-20 max-w-2xl mx-auto">
       <Helmet>
-        <title>32. TDK - Programfüzet</title>
+        <title>32. TDK - Program</title>
       </Helmet>
-      <h2 className="pb-10 text-center text-5xl font-bold">Programfüzet</h2>
-      <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.3.122/build/pdf.worker.min.js">
-        <div className="flex flex-grow flex-col overflow-y-scroll">
-          <Viewer
-            fileUrl={programmePdf}
-            plugins={[defaultLayoutPluginInstance]}
-            defaultScale={SpecialZoomLevel.PageFit}
-            scrollMode={ScrollMode.Vertical}
-            initialPage={2}
-          />
-          ;
+      <h1 className="pb-20 text-6xl font-bold text-tdk-primary">Program</h1>
+      {fetching && <div className="flex h-screen items-center justify-center text-sm text-gray-700">Betöltés</div>}
+      {program && (
+        <div className="space-y-14">
+          {program.attributes.programDays.map((day, index) => (
+            <ProgramDay day={day} key={index} />
+          ))}
         </div>
-      </Worker>
+      )}
     </div>
   );
 };
