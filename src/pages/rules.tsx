@@ -12,7 +12,7 @@ import contributionDoc from "../assets/tdk-hozzajarulas-2025.docx";
 
 const Rules = () => {
   return (
-    <div className="prose mx-auto py-20 px-10 prose-a:text-tdk-accent prose-a:hover:underline prose-img:my-0 prose-img:py-0 sm:w-2/3 xl:w-1/2">
+    <div className="prose mx-auto py-20 px-10 prose-a:text-tdk-accent prose-a:hover:underline prose-img:my-0 prose-img:py-0 w-max-2xl">
       <Helmet>
         <title>32. TDK - Szabályzat</title>
       </Helmet>
