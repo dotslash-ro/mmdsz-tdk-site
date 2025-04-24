@@ -7,7 +7,10 @@ const ProgramItem = ({ item }: { item: ProgramItem }) => {
       <span className="font-bold whitespace-nowrap">
         {formatTime(item.startTime)} - {formatTime(item.endTime)}
       </span>
-      <span>{item.title}</span>
+      <div>
+        <span className="font-medium">{item.title.split("-")[0]}</span>
+        {item.title.split("-")[1] && <span className="italic"> - {item.title.split("-")[1]}</span>}
+      </div>
     </div>
   );
 };
