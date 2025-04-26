@@ -159,7 +159,7 @@ const Rules = () => {
         Az előadás digitális változatát Power Point bemutató formájában (.pptx kiterjesztésben) kérjük egy adathordozó
         eszközön hozni a szekció előtt, a főszervezők által meghatározott időre. A bemutató (Power Point) címe a
         főszerző nevét kell tartalmazza, úgy ahogyan a személyi igazolványában szerepel, ékezetek nélkül (pl. Kerekes
-        Janos.pptx). A bemutató utolsó képkockájának tartalmaznia kell a dolgozathoz való saját hozzájárulást.
+        Janos.pptx).
       </p>
       <p>A bemutató utolsó képkockájának tartalmaznia kell a dolgozathoz való saját hozzájárulást.</p>
       <p>

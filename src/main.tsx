@@ -23,6 +23,7 @@ import Summary from "./pages/summary";
 import NotFound from "./pages/not-found";
 import OrganizerSignup from "./pages/organizer-signup";
 import Signup from "./pages/signup";
+import Presenters from "./pages/presenters";
 // import WorkshopSignup from "./pages/workshop-signup";
 
 const router = createHashRouter([
@@ -41,6 +42,10 @@ const router = createHashRouter([
   {
     path: "/idovonal",
     element: <Timeline />,
+  },
+  {
+    path: "/eloadok",
+    element: <Presenters />,
   },
   // {
   //   path: "/jelentkezes",
