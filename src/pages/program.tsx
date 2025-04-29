@@ -7,7 +7,7 @@ import ProgramDay from "../components/program/program-day";
 const Programme = () => {
   const { program, fetching } = useProgram();
   return (
-    <div className="px-5 pt-20 max-w-2xl xl:max-w-none pb-40 xl:px-20 mx-auto">
+    <div className="mx-auto max-w-2xl px-5 pt-20 pb-40 xl:max-w-none xl:px-20">
       <Helmet>
         <title>32. TDK - Program</title>
       </Helmet>

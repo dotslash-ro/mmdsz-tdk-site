@@ -79,6 +79,18 @@ const Navbar = () => {
               </li>
               {/* <li>
                 <NavLink
+                  to="/workshop"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "lg:font-base flex items-center justify-center py-3 text-sm font-bold uppercase text-white underline lg:py-0"
+                      : "lg:font-base flex items-center justify-center py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
+                  }
+                >
+                  Műhelymunkák
+                </NavLink>
+              </li> */}
+              {/* <li>
+                <NavLink
                   to="/idovonal"
                   className={({ isActive }) =>
                     isActive
@@ -138,18 +150,7 @@ const Navbar = () => {
                   Összefoglaló kötetek
                 </NavLink>
               </li>
-              {/* <li>
-                <NavLink
-                  to="/szervezoi-jelentkezes"
-                  className={({ isActive }) =>
-                    isActive
-                      ? "lg:font-base flex items-center justify-center py-3 text-sm font-bold uppercase text-white underline lg:py-0"
-                      : "lg:font-base flex items-center justify-center py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
-                  }
-                >
-                  Szervezői jelentkezés
-                </NavLink>
-              </li> */}
+
               {/* <NavLink
                 to="/akkreditacio"
                 className={({ isActive }) =>

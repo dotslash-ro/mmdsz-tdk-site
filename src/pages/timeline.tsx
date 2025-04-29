@@ -82,12 +82,13 @@ const Timeline = () => {
             <div>
               <h5 className="pb-2 pt-4 text-lg font-light">Személyesen</h5>{" "}
               <p>
-                A belföldi diákok befizetést a Marosvásárhelyi Magyar Diákszövetség székházában (Nicolae Grigorescu 15A/1), tehetik meg, minden nap 12-17 óra között.
+                A belföldi diákok befizetést a Marosvásárhelyi Magyar Diákszövetség székházában (Nicolae Grigorescu
+                15A/1), tehetik meg, minden nap 12-17 óra között.
               </p>
             </div>{" "}
             <div>
-              <h5 className="pb-2 pt-4 text-lg font-light">Banki átutalással</h5>{" "}
-              A külföldi diákok banki átutalással fizethetik ki a regisztrációs díjat.
+              <h5 className="pb-2 pt-4 text-lg font-light">Banki átutalással</h5> A külföldi diákok banki átutalással
+              fizethetik ki a regisztrációs díjat.
               <ul className="ml-6 list-disc">
                 <li>
                   <b>Név: </b>ASOCIATIA STUDENTILOR MAGHIARI TARGU MURES

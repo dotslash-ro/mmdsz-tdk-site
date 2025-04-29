@@ -37,7 +37,7 @@ const Workshops = () => {
   return (
     <>
       <Helmet>
-        <title>31. TDK - Műhelymukák</title>
+        <title>32. TDK - Műhelymukák</title>
       </Helmet>
       <div className="mx-auto py-20 px-5 lg:w-2/3">
         <h2 className="pb-20 text-center text-5xl font-bold">Műhelymunkák</h2>
