@@ -43,8 +43,8 @@ const Contact = () => {
                   src={presenter.image.data.attributes.url}
                   alt={presenter.name}
                   className={`${
-                    isEven ? "sm:float-right" : "sm:float-left"
-                  } m-4 h-48 w-48 rounded-full object-cover drop-shadow`}
+                    isEven ? "sm:float-right sm:ml-5" : "sm:float-left sm:mr-5"
+                  } sm:mb-5 h-48 w-48 rounded-full object-cover drop-shadow`}
                   style={{ shapeOutside: "circle()" }}
                 />
                 <div className="">
