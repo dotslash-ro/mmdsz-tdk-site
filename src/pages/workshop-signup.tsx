@@ -110,7 +110,8 @@ const WorkshopSignup = () => {
 
   async function fetchApplicationNumberInfo() {
     // fetch applications of user
-    const resp = await fetch(`${workshopServerUrl}/application/${profile.email}`);
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    const resp = await fetch(`${workshopServerUrl}/application/${profile!.email}`);
     const data = await resp.json();
     setCanSingUp(data.length < maxSignUpPerEmail);
   }
