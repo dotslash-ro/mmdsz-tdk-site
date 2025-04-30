@@ -8,6 +8,7 @@ export type WorkshopType = {
   description: string;
   location?: string;
   date?: string;
+  endDate?: string;
   maxAttendeeCount: number;
   applicantsCount: number;
   minYear: number;
@@ -55,6 +56,13 @@ const Workshop = ({ workshop }: WorkshopProps) => {
             {new Intl.DateTimeFormat("hu-HU", { dateStyle: "medium", timeStyle: "short" }).format(
               new Date(workshop.date)
             )}
+            {workshop.endDate &&
+              ` - ${new Intl.DateTimeFormat("hu-HU", {
+                hour: "2-digit",
+                minute: "2-digit",
+                second: "2-digit",
+                timeZone: "Europe/Bucharest",
+              }).format(new Date(workshop.endDate))}`}
           </h4>
         </div>
       )}
