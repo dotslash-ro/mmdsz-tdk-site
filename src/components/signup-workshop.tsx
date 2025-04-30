@@ -24,7 +24,7 @@ type SignupWorkshopProps = {
   section: string;
   studyYear: number;
   canSignUp: boolean;
-  onSignupSuccess: (workshop: WorkshopType) => void;
+  onSignupSuccess: (result: { success: true; workshop: WorkshopType } | { success: false }) => void;
   onSignupStart: () => void;
   disableButton: boolean;
 };
@@ -42,6 +42,7 @@ const SignupWorkshop = ({
 }: SignupWorkshopProps) => {
   const [hasSignedUp, setHasSignedUp] = useState<boolean>(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     setLoading(true);
@@ -60,16 +61,33 @@ const SignupWorkshop = ({
   async function onSignup() {
     onSignupStart();
     setLoading(true);
-    await fetch(`${workshopServerUrl}/application`, {
+    let isError = false;
+    const resp = await fetch(`${workshopServerUrl}/application`, {
       method: "POST",
-      body: JSON.stringify({ email, workshopId: workshop.id, name, section, studyYear, workshopTitle: workshop.title }),
+      body: JSON.stringify({
+        email,
+        workshopId: workshop.id,
+        name,
+        section,
+        studyYear,
+        workshopTitle: workshop.title,
+      }),
       headers: {
         "Content-Type": "application/json",
       },
     });
+    if (!resp.ok) {
+      isError = true;
+      setError(true);
+    }
+
     setLoading(false);
     setHasSignedUp(true);
-    onSignupSuccess({ ...workshop, applicantsCount: workshop.applicantsCount + 1 });
+    if (isError) {
+      onSignupSuccess({ success: false });
+    } else {
+      onSignupSuccess({ success: true, workshop: { ...workshop, applicantsCount: workshop.applicantsCount + 1 } });
+    }
   }
 
   async function onCancelSignup() {
@@ -83,7 +101,7 @@ const SignupWorkshop = ({
     });
     setLoading(false);
     setHasSignedUp(false);
-    onSignupSuccess({ ...workshop, applicantsCount: workshop.applicantsCount - 1 });
+    onSignupSuccess({ success: true, workshop: { ...workshop, applicantsCount: workshop.applicantsCount - 1 } });
   }
 
   if (!workshop) {
@@ -137,18 +155,25 @@ const SignupWorkshop = ({
         <b>Elérhető helyek száma: </b> {workshop.maxAttendeeCount - workshop.applicantsCount}/
         {workshop.maxAttendeeCount} {workshop.maxAttendeeCount - workshop.applicantsCount > 0 ? " fennmaradó hely" : ""}
       </div>
-      <div className="flex justify-end pt-4">
-        <WorkshopSignupButton
-          canSignUp={canSignUp}
-          hasLoggedIn={!!email}
-          hasSignedUp={hasSignedUp}
-          onSignUp={onSignup}
-          onCancelSignup={onCancelSignup}
-          loading={loading}
-          noOfAvailableSeats={workshop.maxAttendeeCount - workshop.applicantsCount}
-          disable={disableButton}
-        />
-      </div>
+      {error ? (
+        <p className="pt-4 text-red-500">
+          Hiba történt a jelentkezés során! Ez előfordulhat abben az esetben ha az utolsó helyre egyszerre többen
+          jelentkeztek. Kérlek frissítsd az oldalt!
+        </p>
+      ) : (
+        <div className="flex justify-end pt-4">
+          <WorkshopSignupButton
+            canSignUp={canSignUp}
+            hasLoggedIn={!!email}
+            hasSignedUp={hasSignedUp}
+            onSignUp={onSignup}
+            onCancelSignup={onCancelSignup}
+            loading={loading}
+            noOfAvailableSeats={workshop.maxAttendeeCount - workshop.applicantsCount}
+            disable={disableButton}
+          />
+        </div>
+      )}
       <hr className="my-8 h-px border-0 bg-gray-200 dark:bg-gray-700"></hr>
     </div>
   );

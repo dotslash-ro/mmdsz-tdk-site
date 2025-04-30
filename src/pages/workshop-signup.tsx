@@ -1,17 +1,25 @@
 import { useGoogleLogin } from "@react-oauth/google";
 import { useEffect, useState } from "react";
 import { ClipLoader } from "react-spinners";
+import { Helmet } from "react-helmet";
 
 import { withLayout } from "../layout/withLayout";
 import { maxSignUpPerEmail, workshopServerUrl } from "../constants";
 import googleIcon from "../assets/google_icon.svg";
 import SignupWorkshop from "../components/signup-workshop";
 import { WorkshopType } from "../components/workshop";
-import { Helmet } from "react-helmet";
 
 const WorkshopSignup = () => {
   const [user, setUser] = useState<any>();
-  const [profile, setProfile] = useState<any>();
+  const [profile, setProfile] = useState<{
+    id: string;
+    email: string;
+    verified_email: boolean;
+    name: string;
+    given_name: string;
+    family_name: string;
+    picture: string;
+  }>();
   const [workshops, setWorkshops] = useState<WorkshopType[]>([]);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -23,8 +31,10 @@ const WorkshopSignup = () => {
 
   const login = useGoogleLogin({ onSuccess: (res) => setUser(res) });
 
-  async function fetchWorkshops(section: string, studyYear: number) {
-    setLoading(true);
+  async function fetchWorkshops(section: string, studyYear: number, setLoader = true) {
+    if (setLoader) {
+      setLoading(true);
+    }
     const resp = await fetch(`${workshopServerUrl}/workshop/filter`, {
       method: "POST",
       body: JSON.stringify({ studyYear: studyYear, section: section }),
@@ -36,17 +46,25 @@ const WorkshopSignup = () => {
     }
     const data = await resp.json();
     setWorkshops(data);
-    setLoading(false);
+    if (setLoader) {
+      setLoading(false);
+    }
   }
 
   function saveSignupInfo() {
     setPersonalInfo({ section, studyYear });
-    localStorage.setItem("workshopPersonalInfo", JSON.stringify({ section, studyYear }));
+    localStorage.setItem("workshopPersonalInfo25", JSON.stringify({ section, studyYear }));
   }
 
   useEffect(() => {
     if (personalInfo) {
       fetchWorkshops(personalInfo.section, personalInfo.studyYear);
+      const interval = setInterval(
+        () => fetchWorkshops(personalInfo.section, personalInfo.studyYear, false),
+        10 * 1000
+      );
+
+      return () => clearInterval(interval);
     }
   }, [personalInfo]);
 
@@ -73,7 +91,7 @@ const WorkshopSignup = () => {
       setProfile(JSON.parse(profileStr));
     }
 
-    const personalInfoStr = localStorage.getItem("workshopPersonalInfo");
+    const personalInfoStr = localStorage.getItem("workshopPersonalInfo25");
     if (!personalInfoStr) {
       return;
     }
@@ -240,12 +258,16 @@ const WorkshopSignup = () => {
               canSignUp={canSignUp}
               disableButton={disableButtons}
               onSignupStart={() => setDisableButtons(true)}
-              onSignupSuccess={(ws) => {
-                setWorkshops(
-                  [...workshops.filter((_ws) => _ws.id != ws.id), ws].sort((a, b) => a.title.localeCompare(b.title))
-                );
+              onSignupSuccess={(res) => {
+                if (res.success) {
+                  setWorkshops(
+                    [...workshops.filter((_ws) => _ws.id != res.workshop.id), res.workshop].sort((a, b) =>
+                      a.title.localeCompare(b.title)
+                    )
+                  );
+                  fetchApplicationNumberInfo();
+                }
                 setDisableButtons(false);
-                fetchApplicationNumberInfo();
               }}
             />
           </div>
