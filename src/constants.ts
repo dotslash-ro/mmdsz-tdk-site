@@ -1,6 +1,6 @@
 export const serverUrl = /*"http://localhost:3000/api";*/ "https://mmdsz-tdk-functions.vercel.app/api";
 export const workshopServerUrl = "https://tdk-workshop-express.up.railway.app/api"; // "http://localhost:8000/api";
-export const maxSignUpPerEmail = 4;
+export const maxSignUpPerEmail = 2;
 export const universityList = ["", "MOGYTTE", "SE", "DE", "PTE", "SZTE", "Egyéb"];
 export const strapiUrl = /*"http://localhost:1337/api"; */ "https://cms.tdk.mmdsz.ro/api";
 export const strapiToken =
