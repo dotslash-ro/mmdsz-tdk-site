@@ -79,7 +79,7 @@ const Navbar = () => {
               </li>
               <li>
                 <NavLink
-                  to="/workshop-jelentkezes"
+                  to="/workshop"
                   className={({ isActive }) =>
                     isActive
                       ? "lg:font-base flex items-center justify-center py-3 text-sm font-bold uppercase text-white underline lg:py-0"
