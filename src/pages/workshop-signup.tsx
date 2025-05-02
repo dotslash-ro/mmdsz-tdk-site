@@ -35,11 +35,16 @@ const WorkshopSignup = () => {
     if (setLoader) {
       setLoading(true);
     }
-    const resp = await fetch(`${workshopServerUrl}/workshop/filter`, {
-      method: "POST",
-      body: JSON.stringify({ studyYear: studyYear, section: section }),
-      headers: { "Content-Type": "application/json" },
-    });
+    let resp;
+    if (profile?.email == "tdk@mmdsz.ro") {
+      resp = await fetch(`${workshopServerUrl}/workshop/all-all`);
+    } else {
+      resp = await fetch(`${workshopServerUrl}/workshop/filter`, {
+        method: "POST",
+        body: JSON.stringify({ studyYear: studyYear, section: section }),
+        headers: { "Content-Type": "application/json" },
+      });
+    }
     if (resp.status != 200) {
       setError(true);
       return;
