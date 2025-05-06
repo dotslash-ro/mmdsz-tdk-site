@@ -44,7 +44,7 @@ const Contact = () => {
                   alt={presenter.name}
                   className={`${
                     isEven ? "sm:float-right sm:ml-5" : "sm:float-left sm:mr-5"
-                  } sm:mb-5 h-48 w-48 rounded-full object-cover drop-shadow`}
+                  } h-48 w-48 rounded-full object-cover drop-shadow sm:mb-5`}
                   style={{ shapeOutside: "circle()" }}
                 />
                 <div className="">

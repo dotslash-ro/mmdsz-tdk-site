@@ -7,7 +7,7 @@ const ProgramDay = ({ day }: { day: ProgramDay }) => {
       <h2 className="pb-4 font-hero text-5xl text-tdk-accent">{day.name}</h2>
       <div className="space-y-8">
         {day.sections.map((section, index) => (
-          <ProgramSection section={section} key={index} />
+          <ProgramSection section={section} key={index} date={day.date} />
         ))}
       </div>
     </div>

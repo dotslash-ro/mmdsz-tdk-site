@@ -12,6 +12,7 @@ module.exports = {
         "tdk-primary": "#0f2930",
         "tdk-secondary": "#0a3032",
         "tdk-accent": "#f16d2d",
+        "tdk-primary-light": "#01ac9e",
       },
       backgroundImage: {
         banner: "url(/src/assets/tdk-hero-bg-2025-min.webp)",

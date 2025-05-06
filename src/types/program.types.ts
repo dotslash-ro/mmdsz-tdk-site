@@ -28,5 +28,6 @@ export type ProgramSection = {
 export type ProgramDay = {
   id: number;
   name: string;
+  date: string;
   sections: Array<ProgramSection>;
 };
