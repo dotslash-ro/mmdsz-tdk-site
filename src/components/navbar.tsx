@@ -77,7 +77,7 @@ const Navbar = () => {
                   Előadók
                 </NavLink>
               </li>
-              <li>
+              {/* <li>
                 <NavLink
                   to="/workshop"
                   className={({ isActive }) =>
@@ -88,7 +88,7 @@ const Navbar = () => {
                 >
                   Műhelymunkák
                 </NavLink>
-              </li>
+              </li> */}
               {/* <li>
                 <NavLink
                   to="/idovonal"

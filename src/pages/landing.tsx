@@ -79,12 +79,12 @@ const Landing = () => {
           >
             Összefoglaló 2024 →
           </Link> */}
-          <Link
+          {/* <Link
             to="/idovonal"
             className="rounded-full bg-tdk-accent px-10 py-4 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-xl"
           >
             Információk →
-          </Link>
+          </Link> */}
         </div>
       </div>
       <Sponsors />

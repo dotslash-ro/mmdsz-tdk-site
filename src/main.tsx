@@ -22,10 +22,10 @@ import { oauthClientId } from "./constants";
 import Summary from "./pages/summary";
 import NotFound from "./pages/not-found";
 import OrganizerSignup from "./pages/organizer-signup";
-import Signup from "./pages/signup";
+// import Signup from "./pages/signup";
 import Presenters from "./pages/presenters";
 // import Workshops from "./pages/workshops";
-import WorkshopSignup from "./pages/workshop-signup";
+// import WorkshopSignup from "./pages/workshop-signup";
 // import WorkshopSignup from "./pages/workshop-signup";
 
 const router = createHashRouter([
@@ -53,10 +53,10 @@ const router = createHashRouter([
   //   path: "/jelentkezes",
   //   element: <Signup />,
   // },
-  {
-    path: "/jelentkezes-teszt",
-    element: <Signup />,
-  },
+  // {
+  //   path: "/jelentkezes-teszt",s
+  //   element: <Signup />,
+  // },
   {
     path: "/szabalyzat",
     element: <Rules />,
@@ -73,14 +73,14 @@ const router = createHashRouter([
     path: "/gdpr",
     element: <GDPR />,
   },
-  {
-    path: "/workshop",
-    element: <WorkshopSignup />,
-  },
-  {
-    path: "/workshop-jelentkezes",
-    element: <WorkshopSignup />,
-  },
+  // {
+  //   path: "/workshop",
+  //   element: <WorkshopSignup />,
+  // },
+  // {
+  //   path: "/workshop-jelentkezes",
+  //   element: <WorkshopSignup />,
+  // },
   // {
   //   path: "/akkreditacio",
   //   element: <Accreditation />,
