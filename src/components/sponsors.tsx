@@ -78,7 +78,7 @@ const Sponsors = () => {
         )}
         {specialSponsors.length > 0 && (
           <>
-            <h2 className="text-center text-5xl font-bold">Kiemelt Támogatóink</h2>
+            <h2 className="pb-20 text-center text-5xl font-bold">Kiemelt Támogatóink</h2>
             <div className="flex flex-wrap justify-center gap-5 space-y-2 px-20 pb-20">
               {specialSponsors.map((sponsor, index) => (
                 <a href={sponsor.sponsorLink} target="_blank" key={index}>
@@ -93,7 +93,7 @@ const Sponsors = () => {
         )}
         {specialSponsors.length > 0 && (
           <>
-            <h2 className="text-center text-5xl font-bold">Állandó Támogatóink</h2>
+            <h2 className="pb-20 text-center text-5xl font-bold">Állandó Támogatóink</h2>
             <div className="flex flex-wrap justify-center gap-5 space-y-2 px-20 pb-20">
               {constantSponsors.map((sponsor, index) => (
                 <a href={sponsor.sponsorLink} target="_blank" key={index}>
@@ -108,7 +108,7 @@ const Sponsors = () => {
         )}
         {sponsors.length > 0 && (
           <>
-            <h2 className="text-center text-5xl font-bold">Támogatóink</h2>
+            <h2 className="pb-20 text-center text-5xl font-bold">Támogatóink</h2>
             <div className="flex flex-wrap justify-center gap-5 space-y-2 px-20 pb-20">
               {sponsors.map((sponsor, index) => (
                 <a href={sponsor.sponsorLink} target="_blank" key={index}>

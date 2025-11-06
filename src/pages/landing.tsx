@@ -7,7 +7,6 @@ import tdkPicture2 from "../assets/tdk-pic-5.jpg";
 import tdkPicture3 from "../assets/tdk-pic-6.jpg";
 import heroDecor1 from "../assets/tdk-hero-decor1-2025.png";
 import heroDecor2 from "../assets/tdk-hero-decor2-2025.png";
-import { Link } from "react-router-dom";
 
 const Landing = () => {
   return (
