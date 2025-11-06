@@ -1,4 +1,4 @@
-type SponsorType = "Támogató" | "Kiemelt támogató" | "Partner" | "Védnök" | "Főtámogató";
+type SponsorType = "Támogató" | "Kiemelt támogató" | "Partner" | "Védnök" | "Főtámogató" | "Állandó Támogató";
 
 export type Sponsor = {
   sponsorLogo: string;

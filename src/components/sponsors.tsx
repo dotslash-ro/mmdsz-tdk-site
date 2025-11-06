@@ -16,6 +16,9 @@ const Sponsors = () => {
     .sort((a, b) => a.order - b.order);
   const patrons = allSponsors.filter((sponsor) => sponsor.type == "Védnök").sort((a, b) => a.order - b.order);
   const mainSponsors = allSponsors.filter((sponsor) => sponsor.type == "Főtámogató").sort((a, b) => a.order - b.order);
+  const constantSponsors = allSponsors
+    .filter((sponsor) => sponsor.type == "Állandó Támogató")
+    .sort((a, b) => a.order - b.order);
 
   useEffect(() => {
     fetchSponsors().then((data) => {
@@ -78,6 +81,21 @@ const Sponsors = () => {
             <h2 className="text-center text-5xl font-bold">Kiemelt Támogatóink</h2>
             <div className="flex flex-wrap justify-center gap-5 space-y-2 px-20 pb-20">
               {specialSponsors.map((sponsor, index) => (
+                <a href={sponsor.sponsorLink} target="_blank" key={index}>
+                  <img
+                    src={sponsor.sponsorLogo}
+                    className="h-32 w-64 object-scale-down mix-blend-multiply transition-transform duration-150 ease-linear hover:scale-105 md:h-48 lg:w-96"
+                  />
+                </a>
+              ))}
+            </div>
+          </>
+        )}
+        {specialSponsors.length > 0 && (
+          <>
+            <h2 className="text-center text-5xl font-bold">Állandó Támogatóink</h2>
+            <div className="flex flex-wrap justify-center gap-5 space-y-2 px-20 pb-20">
+              {constantSponsors.map((sponsor, index) => (
                 <a href={sponsor.sponsorLink} target="_blank" key={index}>
                   <img
                     src={sponsor.sponsorLogo}
