@@ -32,20 +32,11 @@ const Contact = () => {
             </div>
             <div className="flex justify-between">
               <div>
-                <span className="">Czink Gergő</span>
+                <span className="">Jankó-Szép Ákos</span>
                 <span className="pl-2 text-sm font-bold text-neutral-700">MMDSZ elnök</span>
               </div>
               <a className="font-light italic hover:text-tdk-accent hover:underline" href="tel:+40 753 115 741">
                 +40 753 115 741
-              </a>
-            </div>
-            <div className="flex justify-between">
-              <div>
-                <span className="">Berkeczi Blanka</span>
-                <span className="pl-2 text-sm font-bold text-neutral-700">Főszervező</span>
-              </div>
-              <a className="font-light italic hover:text-tdk-accent hover:underline" href="tel:+40 761 985 576">
-                +40 761 985 576
               </a>
             </div>
             <div className="flex justify-between">
@@ -73,6 +64,15 @@ const Contact = () => {
               </div>
               <a className="font-light italic hover:text-tdk-accent hover:underline" href="tel:+40 737 444 099">
                 +40 737 444 099
+              </a>
+            </div>
+            <div className="flex justify-between">
+              <div>
+                <span className="">Kovács Ágnes</span>
+                <span className="pl-2 text-sm font-bold text-neutral-700">Főszervező</span>
+              </div>
+              <a className="font-light italic hover:text-tdk-accent hover:underline" href="tel:+40 745 859 837">
+                +40 745 859 837
               </a>
             </div>
             <div className="flex justify-between">

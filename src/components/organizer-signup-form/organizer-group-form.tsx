@@ -56,7 +56,7 @@ const OrganizerGroupSelectForm = ({
             <label
               key={index}
               htmlFor={`first-choice-${name}`}
-              className="has-[:checked]:bg-tdk-accent has-[:checked]:text-white flex cursor-pointer gap-2 rounded-md border border-gray-200 py-2 px-3 text-gray-900  hover:border-tdk-accent"
+              className="has-[:checked]:bg-tdk-accent has-[:checked]:text-white flex cursor-pointer items-center gap-2 rounded-md border border-gray-200 py-2 px-3 text-gray-900  hover:border-tdk-accent"
             >
               <input
                 type="radio"
@@ -81,7 +81,7 @@ const OrganizerGroupSelectForm = ({
             <label
               key={index}
               htmlFor={`second-choice-${name}`}
-              className="has-[:checked]:bg-tdk-accent has-[:checked]:text-white flex cursor-pointer gap-2 rounded-md border border-gray-200 py-2 px-3 text-gray-900  hover:border-tdk-accent"
+              className="has-[:checked]:bg-tdk-accent has-[:checked]:text-white flex cursor-pointer items-center gap-2 rounded-md border border-gray-200 py-2 px-3 text-gray-900  hover:border-tdk-accent"
             >
               <input
                 type="radio"

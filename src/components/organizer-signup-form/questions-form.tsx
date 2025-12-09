@@ -6,9 +6,8 @@ import { type SignupStep } from ".";
 
 const questions = [
   "Milyen, az MMDSZ-től független szervezési tapasztalatokkal rendelkezel?",
-  "Mit gondolsz, mi a legnehezebb egy rendezvény megszervezésében?",
-  "Mit gondolsz, hogyan lehet az általad említett nehézségeket a leghatékonyabban kijavítani, esetleg kiküszöbölni?",
-  "Lenne valamilyen innovatív ötleted a rendezvényt illetően? Mi az ami nélkül a TDK nem lehetne TDK?",
+  "Hogyan magyaráznád el egy 5 évesnek, hogy mi a TDK?",
+  "Hogyan ösztönöznéd a résztvevőket, hogy beüljenek alacsony látogatottságú előadásokra?",
 ] as const;
 
 const questionsAswersFormSchema = z.object({

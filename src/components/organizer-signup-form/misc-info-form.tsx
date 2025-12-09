@@ -36,13 +36,13 @@ const MiscInfoForm = ({ setMiscInfo }: { setMiscInfo: (data: MiscInfoFormSchema)
     <div>
       <form className="py-10" onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-6">
-          <h3 className="mb-4 text-lg font-medium text-gray-900">A 32.TDK-ra készülsz dolgozattal?</h3>
+          <h3 className="mb-4 text-lg font-medium text-gray-900">A 33. TDK-ra készülsz dolgozattal?</h3>
           <fieldset className="ml-4 space-y-3">
             {["Igen", "Nem"].map((answer, index) => (
               <label
                 key={index}
                 htmlFor={answer}
-                className="has-[:checked]:bg-tdk-accent has-[:checked]:text-white flex cursor-pointer gap-2 rounded-md border border-gray-200 py-2 px-3 text-gray-900  hover:border-tdk-accent"
+                className="has-[:checked]:bg-tdk-accent has-[:checked]:text-white flex cursor-pointer items-center gap-2 rounded-md border border-gray-200 py-2 px-3 text-gray-900  hover:border-tdk-accent"
               >
                 <input
                   type="radio"
@@ -64,7 +64,7 @@ const MiscInfoForm = ({ setMiscInfo }: { setMiscInfo: (data: MiscInfoFormSchema)
               <label
                 key={index}
                 htmlFor={`dance-${answer}`}
-                className="has-[:checked]:bg-tdk-accent has-[:checked]:text-white flex cursor-pointer gap-2 rounded-md border border-gray-200 py-2 px-3 text-gray-900  hover:border-tdk-accent"
+                className="has-[:checked]:bg-tdk-accent has-[:checked]:text-white flex cursor-pointer items-center gap-2 rounded-md border border-gray-200 py-2 px-3 text-gray-900  hover:border-tdk-accent"
               >
                 <input
                   type="radio"
@@ -89,7 +89,7 @@ const MiscInfoForm = ({ setMiscInfo }: { setMiscInfo: (data: MiscInfoFormSchema)
               <label
                 key={index}
                 htmlFor={`drive-${answer}`}
-                className="has-[:checked]:bg-tdk-accent has-[:checked]:text-white flex cursor-pointer gap-2 rounded-md border border-gray-200 py-2 px-3 text-gray-900  hover:border-tdk-accent"
+                className="has-[:checked]:bg-tdk-accent has-[:checked]:text-white flex cursor-pointer items-center gap-2 rounded-md border border-gray-200 py-2 px-3 text-gray-900  hover:border-tdk-accent"
               >
                 <input
                   type="radio"
@@ -124,7 +124,7 @@ const MiscInfoForm = ({ setMiscInfo }: { setMiscInfo: (data: MiscInfoFormSchema)
               className="rounded-full bg-gray-300 px-10 py-2 font-semibold uppercase text-black drop-shadow-md xl:text-lg"
               disabled
               type="submit"
-              title="Add meg a szervezői csoport nevét!"
+              title="Töltsd ki a kötelező mezőket!"
             >
               Jelentkezés
             </button>

@@ -60,7 +60,7 @@ const OrganizerSignupMultistepForm = ({
 
   useEffect(() => {
     // fetch signup status from local storage
-    const _signupStatus = localStorage.getItem("signupStatus");
+    const _signupStatus = localStorage.getItem("organizerSignupStatus26");
     if (!_signupStatus) {
       setSignupStatus("not-signedup");
     } else if (signupStatuses.find((validStatus) => validStatus === _signupStatus)) {
@@ -90,7 +90,6 @@ const OrganizerSignupMultistepForm = ({
       organizerMiscInfo,
     };
     const body = JSON.stringify(payload);
-    console.log(body);
     if (
       !organizerGroupData ||
       !organizerInfo ||
@@ -127,7 +126,7 @@ const OrganizerSignupMultistepForm = ({
         setLoading(false);
       }
       setSignupStatus("signed-up");
-      localStorage.setItem("signupStatus25", "signed-up");
+      localStorage.setItem("organizerSignupStatus26", "signed-up");
     }
   };
 

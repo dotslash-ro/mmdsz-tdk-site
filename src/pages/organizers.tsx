@@ -5,6 +5,7 @@ import Markdown from "react-markdown";
 import { withLayout } from "../layout/withLayout";
 import { fetchOrganizerGroups } from "../api/organizer-groups.api";
 import { StrapiOrganizerGroups } from "../types/organizer-groups.types";
+import { Link } from "react-router-dom";
 
 const Organizers = () => {
   const [organizerGroups, setOrganizerGroups] = useState<StrapiOrganizerGroups["data"] | undefined>();
@@ -48,8 +49,11 @@ const Organizers = () => {
           </p>
         </>
       ) : (
-        <div className="flex min-h-screen items-center justify-center text-sm text-gray-700">Betoltes...</div>
+        <div className="flex min-h-screen items-center justify-center text-sm text-gray-700">Betöltés...</div>
       )}
+      <Link to="/szervezoi-jelentkezes" className="mt-10 font-light text-tdk-accent hover:underline xl:text-lg">
+        Jelentkezz Szervezőnek! →
+      </Link>
     </div>
   );
 };

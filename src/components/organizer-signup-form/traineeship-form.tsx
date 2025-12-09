@@ -4,7 +4,7 @@ import { ClipLoader } from "react-spinners";
 import { z } from "zod";
 import { type SignupStep } from ".";
 
-const options = ["Első félévben", "Második félévben", "Első és második félévben", "Nem voltam részképzésen"] as const;
+const options = ["Igen, első félévben", "Igen, második félévben", "Igen, egész évben", "Nem"] as const;
 
 const traineeShipFormSchema = z.object({
   answer: z.enum(options),
@@ -52,7 +52,7 @@ const TraineeshipInfoForm = ({
             <label
               key={index}
               htmlFor={answer}
-              className="has-[:checked]:bg-tdk-accent has-[:checked]:text-white flex cursor-pointer gap-2 rounded-md border border-gray-200 py-2 px-3 text-gray-900  hover:border-tdk-accent"
+              className="has-[:checked]:bg-tdk-accent has-[:checked]:text-white flex cursor-pointer items-center gap-2 rounded-md border border-gray-200 py-2 px-3 text-gray-900  hover:border-tdk-accent"
             >
               <input
                 type="radio"

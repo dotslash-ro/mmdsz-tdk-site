@@ -62,12 +62,12 @@ const OrganizerInfoForm = ({
     <form className="py-10" onSubmit={handleSubmit(onSubmit)}>
       <div className="mb-6">
         <label htmlFor="name" className="mb-2 block text-lg font-medium text-gray-900">
-          Teljes név
+          Teljes név (ahogy a személyi igazolványban szerepel)
         </label>
         <input
           type="text"
           id="name"
-          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-tdk-accent focus:outline-tdk-accent focus:ring-tdk-accent"
+          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none"
           {...register("applicantName")}
         />
         {errors.applicantName && <p className="mt-2 text-xs italic text-red-500"> {errors.applicantName?.message}</p>}
@@ -79,7 +79,7 @@ const OrganizerInfoForm = ({
         <input
           type="text"
           id="studentId"
-          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-tdk-accent focus:outline-tdk-accent focus:ring-tdk-accent"
+          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none"
           {...register("studentId")}
         />
         {errors.studentId && <p className="mt-2 text-xs italic text-red-500"> {errors.studentId?.message}</p>}
@@ -91,7 +91,7 @@ const OrganizerInfoForm = ({
         <input
           type="email"
           id="email"
-          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-tdk-accent focus:outline-tdk-accent focus:ring-tdk-accent"
+          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none"
           {...register("email")}
           aria-invalid={errors.email ? "true" : "false"}
         />
@@ -104,7 +104,7 @@ const OrganizerInfoForm = ({
         <input
           type="text"
           id="fb-link"
-          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-tdk-accent focus:outline-tdk-accent focus:ring-tdk-accent"
+          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none"
           {...register("facebookLink")}
           aria-invalid={errors.email ? "true" : "false"}
         />
@@ -117,7 +117,7 @@ const OrganizerInfoForm = ({
         <input
           type="tel"
           id="phone"
-          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-tdk-accent focus:outline-tdk-accent focus:ring-tdk-accent"
+          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none"
           {...register("phoneNumber")}
           aria-invalid={errors.phoneNumber ? "true" : "false"}
         />
@@ -150,7 +150,7 @@ const OrganizerInfoForm = ({
         <input
           type="text"
           id="department"
-          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-tdk-accent focus:outline-tdk-accent focus:ring-tdk-accent"
+          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none"
           {...register("department")}
           aria-invalid={errors.department ? "true" : "false"}
         />
@@ -163,7 +163,7 @@ const OrganizerInfoForm = ({
         <input
           type="text"
           id="section"
-          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-tdk-accent focus:outline-tdk-accent focus:ring-tdk-accent"
+          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none"
           {...register("section")}
           aria-invalid={errors.section ? "true" : "false"}
         />

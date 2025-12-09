@@ -54,7 +54,7 @@ const HasOrganizedForm = ({
               <label
                 key={index}
                 htmlFor={answer}
-                className="has-[:checked]:bg-tdk-accent has-[:checked]:text-white flex cursor-pointer gap-2 rounded-md border border-gray-200 py-2 px-3 text-gray-900  hover:border-tdk-accent"
+                className="has-[:checked]:bg-tdk-accent has-[:checked]:text-white flex cursor-pointer items-center gap-2 rounded-md border border-gray-200 py-2 px-3 text-gray-900  hover:border-tdk-accent"
               >
                 <input
                   type="radio"
@@ -77,7 +77,7 @@ const HasOrganizedForm = ({
                 <label
                   key={index}
                   htmlFor={name}
-                  className="has-[:checked]:bg-tdk-accent has-[:checked]:text-white flex cursor-pointer gap-2 rounded-md border border-gray-200 py-2 px-3 text-gray-900  hover:border-tdk-accent"
+                  className="has-[:checked]:bg-tdk-accent has-[:checked]:text-white flex cursor-pointer items-center gap-2 rounded-md border border-gray-200 py-2 px-3 text-gray-900  hover:border-tdk-accent"
                 >
                   <input
                     type="checkbox"

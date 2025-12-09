@@ -2,11 +2,12 @@ import { Helmet } from "react-helmet";
 
 import Sponsors from "../components/sponsors";
 import { withLayout } from "../layout/withLayout";
-import tdkPicture1 from "../assets/tdk-pic-4.jpg";
-import tdkPicture2 from "../assets/tdk-pic-5.jpg";
-import tdkPicture3 from "../assets/tdk-pic-6.jpg";
+import tdkPicture1 from "../assets/tdk_2025_1.png";
+import tdkPicture2 from "../assets/tdk_2025_2.png";
+import tdkPicture3 from "../assets/tdk_2025_3.jpg";
 import heroDecor1 from "../assets/tdk-hero-decor1-2025.png";
 import heroDecor2 from "../assets/tdk-hero-decor2-2025.png";
+import { Link } from "react-router-dom";
 
 const Landing = () => {
   return (
@@ -37,7 +38,7 @@ const Landing = () => {
       <div className="flex flex-col items-center gap-8 bg-white py-20">
         <div className="flex flex-col items-center justify-center gap-10 sm:mx-auto sm:w-2/3 xl:flex-row">
           <p className="px-5 font-light sm:px-0 md:text-xl xl:w-1/3">
-            A Marosvásárhelyi Tudományos Diákköri Konferencia 31. kiadása 2024. április 24-27. között zajlott. Ez az
+            A Marosvásárhelyi Tudományos Diákköri Konferencia 32. kiadása 2025. május 7-10. között zajlott. Ez az
             esemény egyedülállónak számít, ugyanis az egyetemek magyar hallgatói anyanyelvükön mutathatják be tudományos
             dolgozataikat.
           </p>
@@ -49,9 +50,8 @@ const Landing = () => {
         </div>
         <div className="flex flex-col items-center justify-center gap-10 sm:mx-auto sm:w-2/3 sm:px-0 xl:flex-row-reverse">
           <p className="px-5 font-light sm:px-0 md:text-xl xl:w-1/3">
-            A 31. TDK-n egy hazai és 12 külföldi meghívott előadó aktuális kutatásairól hallhattak az érdeklődők,
-            mindemellett 3 panelbeszélgetésre is sor került, amelyek során 2 külföldi, illetve 5 hazai szakember
-            beszélgetésébe csatlakozhattak be a résztvevők.
+            A 32. TDK-n egy hazai és 11 külföldi meghívott előadó aktuális kutatásairól hallhattak az érdeklődők,
+            mindemellett 2 panelbeszélgetésre is sor került.
           </p>
           <img
             src={tdkPicture2}
@@ -61,9 +61,9 @@ const Landing = () => {
         </div>
         <div className="flex flex-col items-center justify-center gap-10  sm:mx-auto sm:w-2/3 xl:flex-row">
           <p className="px-5 font-light sm:px-0 md:text-xl xl:w-1/3 ">
-            A konferencia alkalmával 270 dolgozat került bemutatásra, melyből 190 hazai, illetve 80 külföldi hallgatók
-            által készített. Mindemellett 70 hazai illetve külföldi szakemberek által vezetett műhelymunkába is
-            becsatlakozhattak az egyeteme hallgatói.
+            A konferencia alkalmával 216 dolgozat került bemutatásra, melyből 155 hazai, illetve 61 külföldi hallgatók
+            által készített. Mindemellett 48 hazai illetve külföldi szakemberek által vezetett műhelymunkába is
+            becsatlakozhattak az egyetem hallgatói.
           </p>
           <img
             src={tdkPicture3}
@@ -72,18 +72,12 @@ const Landing = () => {
           />
         </div>
         <div className="flex flex-col gap-10 px-5 py-20 md:flex-row">
-          {/* <Link
-            to="/osszefoglalo"
-            className="rounded-full border border-gray-300 px-10 py-4 font-semibold uppercase drop-shadow-md hover:underline xl:text-xl"
-          >
-            Összefoglaló 2024 →
-          </Link> */}
-          {/* <Link
-            to="/idovonal"
+          <Link
+            to="/szervezoi-jelentkezes"
             className="rounded-full bg-tdk-accent px-10 py-4 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-xl"
           >
-            Információk →
-          </Link> */}
+            Jelentkezz Szervezőnek! →
+          </Link>
         </div>
       </div>
       <Sponsors />

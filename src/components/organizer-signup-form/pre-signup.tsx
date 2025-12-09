@@ -1,23 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { type SignupStep } from ".";
-// import { organizerSignupEndUnix } from "../../constants";
+import { organizerSignupEndUnix } from "../../constants";
 
 const PreSignup = ({ setCurrentStep, enabled }: { setCurrentStep: (next: SignupStep) => void; enabled: boolean }) => {
   const [acceptedRules, setAcceptedRules] = useState(false);
-  // const [live, setLive] = useState(Date.now() / 1000 < organizerSignupEndUnix);
+  const [live, setLive] = useState(Date.now() / 1000 < organizerSignupEndUnix);
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => setLive(Date.now() / 1000 < organizerSignupEndUnix), 1000);
-  //   return () => clearInterval(interval);
-  // });
+  useEffect(() => {
+    const interval = setInterval(() => setLive(Date.now() / 1000 < organizerSignupEndUnix), 1000);
+    return () => clearInterval(interval);
+  });
 
   return (
     <div>
       A szervezői válogatást a következő kritériumok szerint valósítjuk meg:
       <ul className="ml-6 list-disc">
-        <li>a szervezőket a motivációs kérdésekre adott válaszaik alapján válogatjuk be a szervezői csapatunkba </li>
+        <li>
+          a szervezőket a <span className="font-semibold">kifejtős kérdésekre</span> adott válaszaik alapján válogatjuk
+          be a szervezői csapatunkba{" "}
+        </li>
         <li>
           túljelentkezés esetén a szervezőket az{" "}
           <a
@@ -44,7 +47,8 @@ const PreSignup = ({ setCurrentStep, enabled }: { setCurrentStep: (next: SignupS
           fenntartják a jogot arra, hogy a jelentkezőt ettől eltérően más munkacsoportba sorolják be
         </li>
       </ul>
-      {enabled ? (
+      <div className="pt-5 font-semibold">Jelentkezési határidő: 2025. december 12. 23:59</div>
+      {enabled && live ? (
         <>
           <div className="mb-6 mt-10 flex items-start">
             <div className="ml-4 flex h-5 items-center">
