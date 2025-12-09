@@ -47,7 +47,7 @@ const PreSignup = ({ setCurrentStep, enabled }: { setCurrentStep: (next: SignupS
           fenntartják a jogot arra, hogy a jelentkezőt ettől eltérően más munkacsoportba sorolják be
         </li>
       </ul>
-      <div className="pt-5 font-semibold">Jelentkezési határidő: 2025. december 12. 23:59</div>
+      <div className="pt-5 font-semibold">Jelentkezési határidő: 2025. december 14. 23:59</div>
       {enabled && live ? (
         <>
           <div className="mb-6 mt-10 flex items-start">
