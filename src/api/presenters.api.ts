@@ -6,6 +6,5 @@ export async function fetchPresenters() {
     headers: { Authorization: `Bearer ${strapiToken}` },
   });
   const data = (await res.json()) as StrapiPresenters;
-  console.log(data);
   return data;
 }

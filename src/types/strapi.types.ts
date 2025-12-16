@@ -15,6 +15,11 @@ export type StrapiSingle<T> = {
   attributes: T;
 };
 
+export type StrapiSingleEnvelope<T> = {
+  data: StrapiSingle<T>;
+  meta: object;
+};
+
 export type StrapiTypeWithInclude<T, K extends Record<string, unknown>> = T & {
   [key in keyof K]: StrapiSingle<K[key]>;
 };
