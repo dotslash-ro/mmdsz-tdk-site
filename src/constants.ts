@@ -2,10 +2,10 @@ export const serverUrl = /*"http://localhost:3000/api"; */ "https://mmdsz-tdk-fu
 export const workshopServerUrl = "https://tdk-workshop-express.up.railway.app/api"; // "http://localhost:8000/api";
 export const maxSignUpPerEmail = 4;
 export const universityList = ["", "MOGYTTE", "SE", "DE", "PTE", "SZTE", "Egyéb"];
-export const strapiUrl = "http://localhost:1337/api"; // "https://cms.tdk.mmdsz.ro/api";
+export const strapiUrl = /*"http://localhost:1337/api"; */ "https://cms.tdk.mmdsz.ro/api";
 export const strapiToken =
-  "5bbcfb65041607dac0c315ee3d4ace6177926fb3b1bea851ed26e03fb81133d28ee0adddf6dd77671e2f087078dffa0878d6beca0d74f55a53ae2131f9e44cafcbe720f1858f65374434e449c6a3858e86c040a0685f81963fee554e1f51e50b52ca5a7f60e5f017dbbe846bebf1ac3c0557833a755c18d5a59ca69b2e8496e0"; // dev
-  //"331527b65aaea1c2f9d682e2a2c274cc89cbfd7bd0042e1d164b504b8692da89050758171df382f97f4933c6ab862df13154e072a6b771c67bfaa58e89f7bc89780d4a6019e6cdcf2e54f3a7ec7b92922217d3ba44acdb520e62aac98775b2c5a4ef96b4cec7c4d7b7e7f358a0718671a9d3d889e888d39db77e5106eec86602"; //prod
+  //"5bbcfb65041607dac0c315ee3d4ace6177926fb3b1bea851ed26e03fb81133d28ee0adddf6dd77671e2f087078dffa0878d6beca0d74f55a53ae2131f9e44cafcbe720f1858f65374434e449c6a3858e86c040a0685f81963fee554e1f51e50b52ca5a7f60e5f017dbbe846bebf1ac3c0557833a755c18d5a59ca69b2e8496e0"; // dev
+  "331527b65aaea1c2f9d682e2a2c274cc89cbfd7bd0042e1d164b504b8692da89050758171df382f97f4933c6ab862df13154e072a6b771c67bfaa58e89f7bc89780d4a6019e6cdcf2e54f3a7ec7b92922217d3ba44acdb520e62aac98775b2c5a4ef96b4cec7c4d7b7e7f358a0718671a9d3d889e888d39db77e5106eec86602"; //prod
 
 export const organizerSignupEndUnix = 1765756799;
 
