@@ -51,9 +51,9 @@ const Organizers = () => {
       ) : (
         <div className="flex min-h-screen items-center justify-center text-sm text-gray-700">Betöltés...</div>
       )}
-      <Link to="/szervezoi-jelentkezes" className="mt-10 font-light text-tdk-accent hover:underline xl:text-lg">
+      {/* <Link to="/szervezoi-jelentkezes" className="mt-10 font-light text-tdk-accent hover:underline xl:text-lg">
         Jelentkezz Szervezőnek! →
-      </Link>
+      </Link> */}
     </div>
   );
 };

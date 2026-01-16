@@ -13,9 +13,11 @@ module.exports = {
         "tdk-secondary": "#0a3032",
         "tdk-accent": "#f16d2d",
         "tdk-primary-light": "#01ac9e",
+        "tdk-beige": "#f2e7d0",
+        "tdk-beige-dark": "rgb(213 188 153)",
       },
       backgroundImage: {
-        banner: "url(/src/assets/tdk-hero-bg-2025-min.webp)",
+        banner: "url(/src/assets/background.png)",
         decor1: "url(/src/assets/tdk-hero-decor1-2025.png)",
         decor2: "url(/src/assets/tdk-hero-decor2-2025.png)",
         dns: "url(/src/assets/tdk-dns.png)",
