@@ -9,7 +9,7 @@ const Programme = () => {
   return (
     <div className="mx-auto max-w-2xl px-5 pt-20 pb-40 xl:max-w-none xl:px-20">
       <Helmet>
-        <title>32. TDK - Program</title>
+        <title>33. TDK - Program</title>
       </Helmet>
       <h1 className="pb-20 text-6xl font-bold text-tdk-primary">Program</h1>
       {fetching && <div className="flex h-screen items-center justify-center text-sm text-gray-700">Betöltés</div>}

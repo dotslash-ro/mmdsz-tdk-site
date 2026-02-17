@@ -25,7 +25,7 @@ const Organizers = () => {
   return (
     <div className="px-5 py-20 sm:px-10 lg:px-20">
       <Helmet>
-        <title>32. TDK - Szervezőknek</title>
+        <title>33. TDK - Szervezőknek</title>
       </Helmet>
       <h1 className="pb-20 text-center text-5xl font-bold">Szervezőknek</h1>
       {organizerGroups ? (

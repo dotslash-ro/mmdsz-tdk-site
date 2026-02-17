@@ -17,7 +17,7 @@ const Contact = () => {
     return (
       <div className="h-min-screen px-10 py-20 md:mx-auto md:w-1/2 md:px-0">
         <Helmet>
-          <title>32. TDK - Előadók</title>
+          <title>33. TDK - Előadók</title>
         </Helmet>
         <h2 className="pb-10 text-center text-5xl font-bold">Előadók</h2>
         <div className="flex h-screen items-center justify-center text-sm text-gray-700">Betöltés</div>
@@ -28,7 +28,7 @@ const Contact = () => {
   return (
     <div className="h-min-screen py-20">
       <Helmet>
-        <title>32. TDK - Előadók</title>
+        <title>33. TDK - Előadók</title>
       </Helmet>
       <h2 className="pb-10 text-center text-5xl font-bold">Előadók</h2>
       <div className="space-y-6">
