@@ -21,9 +21,10 @@ import Programme from "./pages/program";
 import { oauthClientId } from "./constants";
 import Summary from "./pages/summary";
 import NotFound from "./pages/not-found";
-import OrganizerSignup from "./pages/organizer-signup";
+// import OrganizerSignup from "./pages/organizer-signup";
 // import Signup from "./pages/signup";
 import Presenters from "./pages/presenters";
+import Signup from "./pages/signup";
 // import Workshops from "./pages/workshops";
 // import WorkshopSignup from "./pages/workshop-signup";
 // import WorkshopSignup from "./pages/workshop-signup";
@@ -49,10 +50,10 @@ const router = createHashRouter([
     path: "/eloadok",
     element: <Presenters />,
   },
-  // {
-  //   path: "/jelentkezes",
-  //   element: <Signup />,
-  // },
+  {
+    path: "/jelentkezes",
+    element: <Signup />,
+  },
   // {
   //   path: "/jelentkezes-teszt",s
   //   element: <Signup />,
@@ -93,10 +94,10 @@ const router = createHashRouter([
     path: "/osszefoglalo",
     element: <Summary />,
   },
-  {
-    path: "/szervezoi-jelentkezes",
-    element: <OrganizerSignup enabled={true} />,
-  },
+  // {
+  //   path: "/szervezoi-jelentkezes",
+  //   element: <OrganizerSignup enabled={true} />,
+  // },
   {
     path: "/osszefoglalok",
     element: <PastJournals />,

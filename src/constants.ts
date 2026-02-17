@@ -2,6 +2,10 @@ export const serverUrl = /*"http://localhost:3000/api"; */ "https://mmdsz-tdk-fu
 export const workshopServerUrl = "https://tdk-workshop-express.up.railway.app/api"; // "http://localhost:8000/api";
 export const maxSignUpPerEmail = 4;
 export const universityList = ["", "MOGYTTE", "SE", "DE", "PTE", "SZTE", "Egyéb"];
+export const academicDegreeList = ["", "BSc - Természettudományok alapképzés", "MSc - Természettudományok mesterképzés", "BA - Humán tudományok alapképzés", "MA - Humán tudományok mesterképzés", "O - Osztatlan"];
+export const scheduleTypes = ["Nappali", "Esti", "Levelezős", "Távoktatás"];
+export const departments = ["", "ÁOK", "FOK", "GYK", "Egyéb"];
+export const sections = ["", "ÁOSZ", "FOSZ", "GYSZ", "Egyéb"];
 export const strapiUrl = /*"http://localhost:1337/api"; */ "https://cms.tdk.mmdsz.ro/api";
 export const strapiToken =
   //"5bbcfb65041607dac0c315ee3d4ace6177926fb3b1bea851ed26e03fb81133d28ee0adddf6dd77671e2f087078dffa0878d6beca0d74f55a53ae2131f9e44cafcbe720f1858f65374434e449c6a3858e86c040a0685f81963fee554e1f51e50b52ca5a7f60e5f017dbbe846bebf1ac3c0557833a755c18d5a59ca69b2e8496e0"; // dev
@@ -164,7 +168,7 @@ export const sectionList = [
   "Traumatológia",
   "Tüdőgyógyászat",
   "Urológia",
-  "Egyéb",
+  // "Egyéb",
 ] as const;
 
 export const oauthClientId = "858299120064-428uvpomj4tre0ek9mh58uc7ushudiio.apps.googleusercontent.com";

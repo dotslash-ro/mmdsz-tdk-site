@@ -1,22 +1,28 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { universityList } from "../constants";
+import { academicDegreeList, departments, scheduleTypes, sections, universityList } from "../constants";
 import { SignupStep } from "./signup-wrapper";
 import { ClipLoader } from "react-spinners";
 
 const personalInfoSchema = z.object({
-  applicantName: z.string().min(1, { message: "Add meg a neved!" }),
-  university: z.string().min(1, { message: "Válaszd ki az egyetemed!" }),
-  section: z.string().min(1, { message: "Add meg a karod!" }),
-  otherUniversity: z.string().min(1, { message: "Add meg az egyetemed nevét!" }).optional(),
+  firstName: z.string().min(1, { message: "Add meg a vezetékneved!" }),
+  lastName: z.string().min(1, { message: "Add meg a kereszteneved!" }),
   email: z.string().min(1, { message: "Add meg az e-mail címed!" }).email({ message: "Helytelen e-mail cím" }),
+  university: z.string().min(1, { message: "Válaszd ki az egyetemed!" }),
+  otherUniversity: z.string().min(1, { message: "Add meg az egyetemed nevét!" }).optional(),
+  section: z.string().min(1, { message: "Add meg a karod!" }),
+  otherSection: z.string().min(1, { message: "Add meg a szakod nevét!" }).optional(),
   department: z.string().min(1, { message: "Add meg a kart, amelyen tanulsz!" }),
+  otherDepartment: z.string().min(1, { message: "Add meg a karod nevét!" }).optional(),
   phoneNumber: z
     .string()
     .min(1, { message: "Add meg a telefonszámod!" })
     .max(13, { message: "Helytelen telefonszám!" }),
   studyYear: z.string(),
+  nrOfActiveSemesters: z.string().min(1, { message: "Add meg az aktív féléveid számát!" }),
+  academicDegree: z.string().min(1, { message: "Add meg a jogviszonyod típusát!" }),
+  scheduleType: z.string().min(1, { message: "Add meg a jogviszonyod munkarendjét!" }),
 });
 
 export type PersonalInfoSchema = z.infer<typeof personalInfoSchema>;
@@ -57,17 +63,32 @@ const PersonalInfo = ({ setPersonalInfo, setCurrentStep, defaultValues }: Person
     <div>
       <form className="py-10 pr-4" onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-6">
-          <label htmlFor="name" className="mb-2 block text-lg font-medium text-gray-900">
-            Teljes név
+          <label htmlFor="first-name" className="mb-2 block text-lg font-medium text-gray-900">
+            Vezetéknév
           </label>
           <input
             type="text"
-            id="name"
-            data-error={errors.applicantName != undefined}
+            id="first-name"
+            autoComplete="family-name"
+            data-error={errors.firstName != undefined}
             className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
-            {...register("applicantName")}
+            {...register("firstName")}
           />
-          {errors.applicantName && <p className="mt-2 text-xs italic text-red-500"> {errors.applicantName?.message}</p>}
+          {errors.firstName && <p className="mt-2 text-xs italic text-red-500"> {errors.firstName?.message}</p>}
+        </div>
+        <div className="mb-6">
+          <label htmlFor="last-name" className="mb-2 block text-lg font-medium text-gray-900">
+            Keresztnév
+          </label>
+          <input
+            type="text"
+            id="last-name"
+            autoComplete="given-name"
+            data-error={errors.lastName != undefined}
+            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
+            {...register("lastName")}
+          />
+          {errors.lastName && <p className="mt-2 text-xs italic text-red-500"> {errors.lastName?.message}</p>}
         </div>
         <div className="mb-6">
           <label htmlFor="email" className="mb-2 block text-lg font-medium text-gray-900">
@@ -76,6 +97,7 @@ const PersonalInfo = ({ setPersonalInfo, setCurrentStep, defaultValues }: Person
           <input
             type="email"
             id="email"
+            autoComplete="email"
             data-error={errors.email != undefined}
             className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
             {...register("email")}
@@ -91,6 +113,7 @@ const PersonalInfo = ({ setPersonalInfo, setCurrentStep, defaultValues }: Person
             type="tel"
             id="phone"
             data-error={errors.phoneNumber != undefined}
+            autoComplete="tel"
             className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
             {...register("phoneNumber")}
             aria-invalid={errors.phoneNumber ? "true" : "false"}
@@ -139,29 +162,76 @@ const PersonalInfo = ({ setPersonalInfo, setCurrentStep, defaultValues }: Person
           <label htmlFor="department" className="mb-2 block text-lg font-medium text-gray-900">
             Kar
           </label>
-          <input
-            type="text"
+          <select
             id="department"
             data-error={errors.department != undefined}
             className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
             {...register("department")}
-            aria-invalid={errors.department ? "true" : "false"}
-          />
+          >
+            {departments.map((dep, index) => {
+              return (
+                <option className="text-md" key={index}>
+                  {dep}
+                </option>
+              );
+            })}
+          </select>
           {errors.department && <p className="mt-2 text-xs italic text-red-500"> {errors.department?.message}</p>}
         </div>
+        {watch("department") === "Egyéb" && (
+          <div className="mb-6">
+            <label htmlFor="other-department" className="mb-2 block text-lg font-medium text-gray-900">
+              Kar neve
+            </label>
+            <input
+              type="text"
+              id="other-department"
+              data-error={errors.otherDepartment != undefined}
+              className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
+              {...register("otherDepartment")}
+              aria-invalid={errors.otherDepartment ? "true" : "false"}
+            />
+            {errors.otherDepartment && (
+              <p className="mt-2 text-xs italic text-red-500"> {errors.otherDepartment?.message}</p>
+            )}
+          </div>
+        )}
         <div className="mb-6">
           <label htmlFor="section" className="mb-2 block text-lg font-medium text-gray-900">
             Szak
           </label>
-          <input
-            type="text"
+          <select
             id="section"
             data-error={errors.section != undefined}
             className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
             {...register("section")}
-          />
+          >
+            {sections.map((section, index) => {
+              return (
+                <option className="text-md" key={index}>
+                  {section}
+                </option>
+              );
+            })}
+          </select>
           {errors.section && <p className="mt-2 text-xs italic text-red-500"> {errors.section?.message}</p>}
         </div>
+        {watch("section") === "Egyéb" && (
+          <div className="mb-6">
+            <label htmlFor="other-section" className="mb-2 block text-lg font-medium text-gray-900">
+              Kar neve
+            </label>
+            <input
+              type="text"
+              id="other-section"
+              data-error={errors.otherSection != undefined}
+              className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
+              {...register("otherSection")}
+              aria-invalid={errors.otherSection ? "true" : "false"}
+            />
+            {errors.otherSection && <p className="mt-2 text-xs italic text-red-500"> {errors.otherSection?.message}</p>}
+          </div>
+        )}
         <div className="mb-6">
           <h3 className="mb-4 text-lg font-medium text-gray-900">Évfolyam</h3>
           <fieldset className="flex flex-wrap justify-evenly gap-3">
@@ -179,7 +249,7 @@ const PersonalInfo = ({ setPersonalInfo, setCurrentStep, defaultValues }: Person
                   />
                   <label
                     htmlFor={`studyYear-${i}`}
-                    className="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 py-2 px-3 text-gray-900 hover:border-gray-300 peer-checked:bg-tdk-accent peer-checked:text-white md:px-5"
+                    className="flex cursor-pointer items-center justify-center rounded-md border border-gray-300 py-2 px-3 text-gray-900 hover:border-gray-300 peer-checked:bg-tdk-accent peer-checked:text-white md:px-5"
                   >
                     <p className="text-sm font-medium">{i}.</p>
                   </label>
@@ -187,6 +257,67 @@ const PersonalInfo = ({ setPersonalInfo, setCurrentStep, defaultValues }: Person
               ))}
           </fieldset>
           {errors.studyYear && <p className="mt-2 text-xs italic text-red-500"> {errors.studyYear?.message}</p>}
+        </div>
+        <div className="mb-6">
+          <label htmlFor="academic-degree" className="mb-2 block text-lg font-medium text-gray-900">
+            Jogviszony típusa
+          </label>
+          <select
+            id="academic-degree"
+            data-error={errors.academicDegree != undefined}
+            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
+            {...register("academicDegree")}
+          >
+            {academicDegreeList.map((ad, index) => {
+              return (
+                <option className="text-md" key={index}>
+                  {ad}
+                </option>
+              );
+            })}
+          </select>
+          {errors.academicDegree && (
+            <p className="mt-2 text-xs italic text-red-500"> {errors.academicDegree?.message}</p>
+          )}
+        </div>
+        <div className="mb-6">
+          <h3 className="mb-4 text-lg font-medium text-gray-900">Jogviszony munkarendje</h3>
+          <fieldset className="flex flex-wrap justify-evenly gap-3">
+            {scheduleTypes.map((it) => (
+              <div key={it}>
+                <input
+                  type="radio"
+                  value={it}
+                  id={`schedule-type-${it}`}
+                  className="peer hidden"
+                  {...register("scheduleType")}
+                  name="scheduleType"
+                />
+                <label
+                  htmlFor={`schedule-type-${it}`}
+                  className="flex cursor-pointer items-center justify-center rounded-md border border-gray-300 py-2 px-3 text-gray-900 hover:border-gray-300 peer-checked:bg-tdk-accent peer-checked:text-white md:px-5"
+                >
+                  <p className="text-sm font-medium">{it}</p>
+                </label>
+              </div>
+            ))}
+          </fieldset>
+          {errors.scheduleType && <p className="mt-2 text-xs italic text-red-500"> {errors.scheduleType?.message}</p>}
+        </div>
+        <div className="mb-6">
+          <label htmlFor="nr-of-active-semesters" className="mb-2 block text-lg font-medium text-gray-900">
+            Aktív félévek száma
+          </label>
+          <input
+            type="number"
+            id="nr-of-active-semesters"
+            data-error={errors.nrOfActiveSemesters != undefined}
+            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
+            {...register("nrOfActiveSemesters")}
+          />
+          {errors.nrOfActiveSemesters && (
+            <p className="mt-2 text-xs italic text-red-500"> {errors.nrOfActiveSemesters?.message}</p>
+          )}
         </div>
         <div className="flex flex-col justify-center gap-x-4 py-2 md:flex-row md:justify-evenly">
           <div className="flex w-full flex-col px-3">

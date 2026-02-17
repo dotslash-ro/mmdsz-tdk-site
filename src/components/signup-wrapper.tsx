@@ -48,7 +48,7 @@ const SignupWrapper = ({
 
   useEffect(() => {
     // fetch signup status from localstorage
-    const _signupStatus = localStorage.getItem("signupStatus25");
+    const _signupStatus = localStorage.getItem("signupStatus26");
     if (!_signupStatus) {
       setSignupStatus("not-signedup");
     } else if (signupStatuses.find((validStatus) => validStatus === _signupStatus)) {
@@ -58,7 +58,7 @@ const SignupWrapper = ({
     }
 
     // fetch dataUploaded from localstorage
-    const _dataUploaded = localStorage.getItem("dataUploaded25");
+    const _dataUploaded = localStorage.getItem("dataUploaded26");
     if (_dataUploaded && _dataUploaded === "true") {
       setDataUploaded(true);
       setCurrentStep("agreementDoc");
@@ -147,14 +147,15 @@ const SignupWrapper = ({
       }
       // after successful upload, set flag to no longer require applicant data
       setDataUploaded(true);
-      localStorage.setItem("dataUploaded25", "true");
+      localStorage.setItem("dataUploaded26", "true");
     }
     // prepare form data for file upload
     const data = new FormData();
     data.append("files", agreementDoc);
     data.append("section", documentInfo.section);
     data.append("university", personalInfo.university);
-    data.append("applicantName", personalInfo.applicantName);
+    data.append("firstName", personalInfo.firstName);
+    data.append("lastName", personalInfo.lastName);
 
     // upload document to backend
     try {
@@ -166,7 +167,7 @@ const SignupWrapper = ({
         setSignupStatus("error");
       } else {
         setSignupStatus("signed-up");
-        localStorage.setItem("signupStatus25", "signed-up");
+        localStorage.setItem("signupStatus26", "signed-up");
       }
     } catch (e) {
       console.log(e);
@@ -190,12 +191,12 @@ const SignupWrapper = ({
         <div
           className="py-3 text-sm text-sky-600 hover:cursor-pointer hover:underline"
           onClick={() => {
-            localStorage.removeItem("signupStatus25");
+            localStorage.removeItem("signupStatus26");
             localStorage.removeItem("personalInfo");
             localStorage.removeItem("documentInfo");
             localStorage.removeItem("coAuthorInfos");
             localStorage.removeItem("coordinatorInfos");
-            localStorage.removeItem("dataUploaded25");
+            localStorage.removeItem("dataUploaded26");
             setSignupStatus("not-signedup");
             setDataUploaded(false);
             setCurrentStep("preSignup");
@@ -259,10 +260,10 @@ const SignupWrapper = ({
   if (currentStep == "preSignup") {
     return (
       <div className="">
-        <h3 className="mb-4 mt-8 text-lg font-light text-gray-800">
-          A kivonat feltöltéséhez: az alábbi adatokra lesz szükség:
+        <h3 className="mb-2.5 mt-8 text-gray-900">
+          A kivonat feltöltéséhez az alábbi adatokra lesz szükség:
         </h3>
-        <ul className="ml-6 list-disc text-gray-500">
+        <ul className="ml-6 list-disc text-gray-500 space-y-2">
           <li>A kivonat maximális hossza 2200 karakter (szóköz nélkül, cím nélkül). </li>
           <li>A cím 3 nyelven (magyar, román, angol).</li>
           <li>
@@ -270,13 +271,19 @@ const SignupWrapper = ({
             következtetés.
           </li>
         </ul>
-        <h3 className="mb-4 mt-8 text-lg font-light text-gray-800">A beküldéshez az alábbi adatokra lesz szükség: </h3>
-        <ul className="list-disc text-gray-500">
-          <li>A szerző neve, egyetem, évfolyam, szak, email, kar, telefonszám.</li>
-          <li>Társszerzők neve, e-mail címe, egyeteme, évfolyama, szak, kara </li>
+        <h3 className="mb-2.5 mt-8 text-gray-900">A beküldéshez az alábbi adatokra lesz szükség: </h3>
+        <ul className="ml-6 list-disc text-gray-500 space-y-2">
+          <li>
+            A szerző neve, egyeteme, évfolyama, szakja, email címe, kara, telefonszáma, jogviszonyának típusa (BSc,
+            MSc...), jogviszonyának munkarendje (nappali, esti...), aktív féléveinek száma.
+          </li>
+          <li>
+            Társszerzők neve, e-mail címe, egyeteme, évfolyama, szakja, kara, jogviszonyának típusa, jogviszonyána munkarendje,
+            aktív féléveinek száma.
+          </li>
           <li>Témavezető neve és beosztása, valamint egyetem (intézet). </li>
         </ul>
-        <h3 className="mb-4 mt-8 text-lg font-light text-gray-800">Saját hozzájárulási és publikációs nyilatkozat</h3>
+        <h3 className="mb-2.5 mt-8 text-gray-900">Saját hozzájárulási és publikációs nyilatkozat</h3>
         <p className=" text-gray-500">
           A tavalyi évhez hasonlóan idén is szükséges a saját hozzájárulási és publikációs nyilatkozat kitöltése.{" "}
         </p>
