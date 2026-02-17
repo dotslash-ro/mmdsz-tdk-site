@@ -18,7 +18,7 @@ const Timeline = () => {
         </li>
         <li className="ml-10">
           <div className="absolute -left-1.5 mt-1.5 h-3 w-3 scroll-mt-32 rounded-full border-2 border-white bg-gray-500"></div>
-          <time className="mb-10 font-light leading-none text-gray-500">2025. március 3. - 2025 március 9.</time>
+          <time className="mb-10 font-light leading-none text-gray-500">2026. február 28. - 2025 március 5.</time>
           <h3 className="pb-4 text-2xl font-semibold text-gray-900">
             Jelentkezés és absztraktok feltöltése
           </h3>
@@ -37,7 +37,7 @@ const Timeline = () => {
         </li>
         <li className="mb-10 ml-10">
           <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border-2 border-white bg-gray-500"></div>
-          <time className="mb-10 font-light leading-none text-gray-500">2025. március 10-15.</time>
+          <time className="mb-10 font-light leading-none text-gray-500">2026. március 8-15.</time>
           <h3 className="pb-4 text-2xl font-semibold text-gray-900">Absztraktok ellenőrzése</h3>
           <div className="m-6">
             <p className="text-gray-500">
@@ -50,7 +50,7 @@ const Timeline = () => {
         <li className="mb-10 ml-10 scroll-mt-32" id="javitott-feltoltes">
           <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border-2 border-white bg-gray-500"></div>
           <div className="">
-            <time className="mb-10 font-light leading-none text-gray-500">2025. március 15-17.</time>
+            <time className="mb-10 font-light leading-none text-gray-500">2026. március 15-16.</time>
             <h3 className="pb-4 text-2xl font-semibold text-gray-900">Javított absztraktok feltöltése</h3>
             {/* <SecondUploadForm /> */}
           </div>
@@ -71,13 +71,13 @@ const Timeline = () => {
         <li className="mb-10 ml-10">
           <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border-2 border-white bg-gray-500"></div>
           <div>
-            <time className="mb-10 font-light leading-none text-gray-500">2025. március 22-29.</time>
-            <h3 className="pb-4 text-2xl font-semibold text-gray-900">Regisztrációs díj befizetése</h3>
+            <time className="mb-10 font-light leading-none text-gray-500">2026. március 20-29.</time>
+            <h3 className="pb-4 text-2xl font-semibold text-gray-900">Bemutatási díj befizetése</h3>
             <ul className="ml-8 list-disc pt-10">
-              <li>Belföldi hallgatók számára: 140 RON- 1. dolgozat, 110 RON- 2. dolgozat*</li>
-              <li>Poszter szekció: 120 RON- 1. dolgozat</li>
-              <li className="pt-2">Külföldi hallgatók számára: 11000 HUF- 1. dolgozat 9000 HUF- 2. dolgozat*</li>
-              <li>Poszter szekció: 10000 Ft- 1. dolgozat</li>
+              <li>Belföldi hallgatók számára: 150 RON- 1. dolgozat, 120 RON- 2. dolgozat*</li>
+              <li>Poszter szekció: 130 RON- 1. dolgozat</li>
+              <li className="pt-2">Külföldi hallgatók számára: 12.000 HUF- 1. dolgozat 10.000 HUF- 2. dolgozat*</li>
+              <li>Poszter szekció: 11.000 Ft- 1. dolgozat</li>
               {/* <li className="pt-2 font-semibold">
                 Az MMDSZ kártyát felmutató diákok 10 RON kedvezményben részesülnek.
               </li> */}
