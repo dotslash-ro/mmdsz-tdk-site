@@ -348,6 +348,7 @@ const SignupWrapper = ({
         setCoAuthorInfosParent={setCoAuthorInfos}
         setCurrentStep={setCurrentStep}
         defaultValues={coAuthorInfos}
+        isCoAuthorContributionRelevant={documentInfo?.isRatioOfAuthorshipRelevant ?? false}
       />
     );
   }

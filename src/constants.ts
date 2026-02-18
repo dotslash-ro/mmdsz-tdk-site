@@ -3,7 +3,6 @@ export const workshopServerUrl = "https://tdk-workshop-express.up.railway.app/ap
 export const maxSignUpPerEmail = 4;
 export const universityList = ["", "MOGYTTE", "SE", "DE", "PTE", "SZTE", "Egyéb"];
 export const academicDegreeList = [
-  "",
   "BSc - Természettudományok alapképzés",
   "MSc - Természettudományok mesterképzés",
   "BA - Humán tudományok alapképzés",

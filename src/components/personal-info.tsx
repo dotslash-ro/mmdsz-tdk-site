@@ -268,6 +268,7 @@ const PersonalInfo = ({ setPersonalInfo, setCurrentStep, defaultValues }: Person
           </fieldset>
           {errors.studyYear && <p className="mt-2 text-xs italic text-red-500"> {errors.studyYear?.message}</p>}
         </div>
+        {/* Jogviszony típusa */}
         <div className="mb-6">
           <label htmlFor="academic-degree" className="mb-2 block text-lg font-medium text-gray-900">
             Jogviszony típusa
@@ -290,6 +291,7 @@ const PersonalInfo = ({ setPersonalInfo, setCurrentStep, defaultValues }: Person
             <p className="mt-2 text-xs italic text-red-500"> {errors.academicDegree?.message}</p>
           )}
         </div>
+        {/* Jogviszony munkarendje */}
         <div className="mb-6">
           <h3 className="mb-4 text-lg font-medium text-gray-900">Jogviszony munkarendje</h3>
           <fieldset className="flex flex-wrap justify-evenly gap-3">
@@ -314,6 +316,7 @@ const PersonalInfo = ({ setPersonalInfo, setCurrentStep, defaultValues }: Person
           </fieldset>
           {errors.scheduleType && <p className="mt-2 text-xs italic text-red-500"> {errors.scheduleType?.message}</p>}
         </div>
+        {/* Aktív félévek száma  */}
         <div className="mb-6">
           <label htmlFor="nr-of-active-semesters" className="mb-2 block text-lg font-medium text-gray-900">
             Aktív félévek száma
@@ -329,6 +332,7 @@ const PersonalInfo = ({ setPersonalInfo, setCurrentStep, defaultValues }: Person
             <p className="mt-2 text-xs italic text-red-500"> {errors.nrOfActiveSemesters?.message}</p>
           )}
         </div>
+        {/* Egyetem megkezdésének éve */}
         <div className="mb-6">
           <label htmlFor="start-year" className="mb-2 block text-lg font-medium text-gray-900">
             Egyetem megkezdésének éve
@@ -351,6 +355,7 @@ const PersonalInfo = ({ setPersonalInfo, setCurrentStep, defaultValues }: Person
             <p className="mt-2 text-xs italic text-red-500"> {errors.startYearOfStudies?.message}</p>
           )}
         </div>
+        {/* Tovabb */}
         <div className="flex flex-col justify-center gap-x-4 py-2 md:flex-row md:justify-evenly">
           <div className="flex w-full flex-col px-3">
             <div className="overflow-hidden rounded-full bg-gray-200">
@@ -360,14 +365,14 @@ const PersonalInfo = ({ setPersonalInfo, setCurrentStep, defaultValues }: Person
           </div>
           {isValid ? (
             <button
-              className="rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-lg"
+              className="h-fit rounded-md bg-tdk-accent px-10 py-2 font-semibold uppercase text-white drop-shadow-md hover:underline"
               type="submit"
             >
               Tovább
             </button>
           ) : (
             <button
-              className="rounded-full bg-gray-300 px-10 py-2 font-semibold uppercase text-black drop-shadow-md xl:text-lg"
+              className="h-fit rounded-md bg-gray-300 px-10 py-2 font-semibold uppercase text-black drop-shadow-md"
               disabled
               type="submit"
               title="A továbblépéshez ki kell töltedened az adataid!"

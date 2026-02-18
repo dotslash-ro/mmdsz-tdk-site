@@ -51,7 +51,7 @@ const CoordinatorInfos = ({ setCurrentStep, setCoordinatorInfosParent, defaultVa
         </div>
         {coordinatorInfos.length > 0 ? (
           <button
-            className="my-2 rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-lg"
+            className="my-2 h-fit rounded-md bg-tdk-accent px-10 py-2 font-semibold uppercase text-white drop-shadow-md hover:underline"
             onClick={() => {
               setCoordinatorInfosParent(coordinatorInfos);
               setCurrentStep("agreementDoc");
@@ -61,7 +61,7 @@ const CoordinatorInfos = ({ setCurrentStep, setCoordinatorInfosParent, defaultVa
           </button>
         ) : (
           <button
-            className="my-2 rounded-full bg-gray-300 px-10 py-2 font-semibold uppercase drop-shadow-md xl:text-lg"
+            className="my-2 h-fit rounded-md bg-gray-300 px-10 py-2 font-semibold uppercase drop-shadow-md"
             disabled
           >
             Tovább

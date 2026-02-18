@@ -89,7 +89,7 @@ const ConfirmSignup = ({
                 Jelentkező neve:
               </label>
               <span id="applicantName" className="mt-2 font-light">
-                {personalInfo?.applicantName}
+                {personalInfo?.firstName} {personalInfo?.lastName}
               </span>
             </li>
             <li>
@@ -198,7 +198,7 @@ const ConfirmSignup = ({
                         Társszerző neve:
                       </label>
                       <span id="applicantName" className="mt-2 font-light">
-                        {coAuthorInfo.coAuthorName}
+                        {coAuthorInfo.firstName} {coAuthorInfo.lastName}
                       </span>
                     </li>
                     <li>
@@ -259,7 +259,7 @@ const ConfirmSignup = ({
                         Témavezető neve:
                       </label>
                       <span id="applicantName" className="mt-2 font-light">
-                        {coordinatorInfo.coordinatorName}
+                        {coordinatorInfo.firstName} {coordinatorInfo.lastName}
                       </span>
                     </li>
                     <li>

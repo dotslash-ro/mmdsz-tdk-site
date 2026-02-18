@@ -251,16 +251,13 @@ const CoordinatorInfo = ({ setCoordinatorInfo, defaultValues, removeCoordinatorF
         {!isSubmitted &&
           (isValid ? (
             <button
-              className="mt-2 mb-4 w-full rounded-full bg-tdk-accent py-2 text-center font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-lg"
+              className="mt-2 mb-4 h-fit w-full rounded-md bg-tdk-accent py-2 text-center font-semibold uppercase text-white drop-shadow-md hover:underline"
               type="submit"
             >
               Témavezető adatainak elmentése
             </button>
           ) : (
-            <button
-              className="my-1 w-full rounded-full border bg-gray-300 py-2 text-center uppercase xl:text-lg"
-              disabled
-            >
+            <button className="my-1 h-fit w-full rounded-md border bg-gray-300 py-2 text-center uppercase" disabled>
               Témavezető adatainak elmentése
             </button>
           ))}

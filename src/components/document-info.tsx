@@ -5,25 +5,45 @@ import { sectionList } from "../constants";
 import { SignupStep } from "./signup-wrapper";
 import { ClipLoader } from "react-spinners";
 
-const DocumentInfoSchema = z.object({
-  section: z.enum(sectionList, {
-    errorMap: () => ({
-      message: "Válassz egy témakört!",
+const DocumentInfoSchema = z
+  .object({
+    section: z.enum(sectionList, {
+      errorMap: () => ({
+        message: "Válassz egy témakört!",
+      }),
     }),
-  }),
-  hungarianTitle: z.string().min(1, { message: "Add meg a Kivonatod magyar címét!" }),
-  romanianTitle: z.string().min(1, { message: "Add meg a Kivonatod román címét!" }),
-  englishTitle: z.string().min(1, { message: "Add meg a Kivonatod angol címét!" }),
-  introduction: z.string().min(1, { message: 'Vezesd be a Kivonatod "Bevezetés" bekezdését!' }),
-  mission: z.string().min(1, { message: 'Vezesd be a Kivonatod "Célkitűzések" bekezdését!' }),
-  methods: z.string().min(1, { message: 'Vezesd be a Kivonatod "Módszerek" bekezdését!' }),
-  results: z.string().min(1, { message: 'Vezesd be a Kivonatod "Eredmények" bekezdését!' }),
-  conclusions: z.string().min(1, {
-    message: 'Vezesd be a Kivonatod "Következtetések" bekezdését!',
-  }),
-  isOrderOfAuthorsRelevant: z.boolean(),
-  isRatioOfAuthorshipRelevant: z.boolean(),
-});
+    hungarianTitle: z.string().min(1, { message: "Add meg a Kivonatod magyar címét!" }),
+    romanianTitle: z.string().min(1, { message: "Add meg a Kivonatod román címét!" }),
+    englishTitle: z.string().min(1, { message: "Add meg a Kivonatod angol címét!" }),
+    introduction: z.string().min(1, { message: 'Vezesd be a Kivonatod "Bevezetés" bekezdését!' }),
+    mission: z.string().min(1, { message: 'Vezesd be a Kivonatod "Célkitűzések" bekezdését!' }),
+    methods: z.string().min(1, { message: 'Vezesd be a Kivonatod "Módszerek" bekezdését!' }),
+    results: z.string().min(1, { message: 'Vezesd be a Kivonatod "Eredmények" bekezdését!' }),
+    conclusions: z.string().min(1, {
+      message: 'Vezesd be a Kivonatod "Következtetések" bekezdését!',
+    }),
+    isOrderOfAuthorsRelevant: z.boolean(),
+    isRatioOfAuthorshipRelevant: z.boolean(),
+    ownContributionPercentage: z.string().optional(),
+  })
+  .refine(
+    (it) => {
+      return (
+        !it.isRatioOfAuthorshipRelevant || (it.ownContributionPercentage && it.ownContributionPercentage?.length > 0)
+      );
+    },
+    { message: "Add meg a saját hozzájárulási arányod!", path: ["ownContributionPercentage"] }
+  )
+  .refine(
+    (it) => {
+      if (!it.isRatioOfAuthorshipRelevant) {
+        return true;
+      }
+      const asNumber = Number(it.ownContributionPercentage);
+      return !Number.isNaN(asNumber) && asNumber > 0 && asNumber <= 100;
+    },
+    { message: "A hozzájárulási arány százalékban értendő (0-100)", path: ["ownContributionPercentage"] }
+  );
 
 export type DocumentInfoSchema = z.infer<typeof DocumentInfoSchema>;
 
@@ -36,6 +56,7 @@ interface DocumentInfoFormProps {
 const DocumentInfo = ({ setDocumentInfo, setCurrentStep, defaultValues }: DocumentInfoFormProps) => {
   const {
     register,
+    watch,
     handleSubmit,
     formState: { errors, isValid, isSubmitting },
   } = useForm<DocumentInfoSchema>({
@@ -49,6 +70,8 @@ const DocumentInfo = ({ setDocumentInfo, setCurrentStep, defaultValues }: Docume
     setCurrentStep("coAuthorInfo");
     localStorage.setItem("documentInfo", JSON.stringify(data));
   };
+
+  const isRatioOfAuthorshipRelevant = watch("isRatioOfAuthorshipRelevant");
 
   if (isSubmitting) {
     return (
@@ -145,6 +168,24 @@ const DocumentInfo = ({ setDocumentInfo, setCurrentStep, defaultValues }: Docume
             Több szerző esetén a szerzőségi arány releváns
           </label>
         </div>
+        {isRatioOfAuthorshipRelevant && (
+          <div className="mb-6">
+            <label htmlFor="own-contribution" className="mb-2 block text-lg font-medium text-gray-900">
+              Saját hozzájárulási arány (százalékban)
+            </label>
+            <input
+              type="number"
+              id="own-contribution"
+              data-error={errors.ownContributionPercentage != undefined}
+              placeholder="Pl. 80%"
+              className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
+              {...register("ownContributionPercentage")}
+            />
+            {errors.ownContributionPercentage && (
+              <p className="mt-2 text-xs italic text-red-500"> {errors.ownContributionPercentage?.message}</p>
+            )}
+          </div>
+        )}
         <h3 className="mt-10 block text-lg font-medium text-gray-900">Kivonat tartalmának feltöltése</h3>
         <ul className="mb-6 text-sm text-gray-400">
           <li className="">A kivonat maximális hossza 2200 karakter (szóköz nélkül, cím nélkül).</li>
@@ -214,14 +255,14 @@ const DocumentInfo = ({ setDocumentInfo, setCurrentStep, defaultValues }: Docume
           </div>
           {isValid ? (
             <button
-              className="rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-lg"
+              className="h-fit rounded-md bg-tdk-accent px-10 py-2 font-semibold uppercase text-white drop-shadow-md hover:underline"
               type="submit"
             >
               Tovább
             </button>
           ) : (
             <button
-              className="rounded-full bg-gray-300 px-10 py-2 font-semibold uppercase text-black drop-shadow-md xl:text-lg"
+              className="h-fit rounded-md bg-gray-300 px-10 py-2 font-semibold uppercase text-black drop-shadow-md"
               disabled
               title="A továbblépéshez ki kell töltedened a kivonat adatait!"
             >

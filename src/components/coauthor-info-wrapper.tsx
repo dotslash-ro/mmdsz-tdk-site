@@ -6,9 +6,15 @@ interface CoAuthorInfosProps {
   setCurrentStep: (step: SignupStep) => void;
   setCoAuthorInfosParent: (coAuthorInfos: Array<CoAuthorInfoSchema>) => void;
   defaultValues?: Array<CoAuthorInfoSchema>;
+  isCoAuthorContributionRelevant: boolean;
 }
 
-const CoAuthorInfos = ({ setCurrentStep, setCoAuthorInfosParent, defaultValues }: CoAuthorInfosProps) => {
+const CoAuthorInfos = ({
+  setCurrentStep,
+  setCoAuthorInfosParent,
+  defaultValues,
+  isCoAuthorContributionRelevant,
+}: CoAuthorInfosProps) => {
   const [coAuthorCount, setCoAuthorCount] = useState(defaultValues?.length ?? 0);
   const [coAuthorInfos, setCoAuthorInfos] = useState<Array<CoAuthorInfoSchema>>([]);
   const [isDirty, setIsDirty] = useState(false);
@@ -30,6 +36,7 @@ const CoAuthorInfos = ({ setCurrentStep, setCoAuthorInfosParent, defaultValues }
                   index={index}
                   setIsDirty={setIsDirty}
                   defaultValues={defaultValues && defaultValues[index]}
+                  isCoAuthorContributionRelevant={isCoAuthorContributionRelevant}
                 />
               </div>
             );
@@ -54,7 +61,7 @@ const CoAuthorInfos = ({ setCurrentStep, setCoAuthorInfosParent, defaultValues }
         </div>
         {!isDirty ? (
           <button
-            className="my-2 rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-xl"
+            className="h-fit rounded-md bg-tdk-accent px-10 py-2 font-semibold uppercase text-white drop-shadow-md hover:underline"
             onClick={() => {
               setCoAuthorInfosParent(coAuthorInfos);
               setCurrentStep("coordinatorInfo");
@@ -64,10 +71,7 @@ const CoAuthorInfos = ({ setCurrentStep, setCoAuthorInfosParent, defaultValues }
             Tovább
           </button>
         ) : (
-          <button
-            className="my-2 rounded-full bg-gray-300 px-10 py-2 font-semibold uppercase drop-shadow-md xl:text-xl"
-            disabled
-          >
+          <button className="h-fit rounded-md bg-gray-300 px-10 py-2 font-semibold uppercase drop-shadow-md" disabled>
             Tovább
           </button>
         )}

@@ -35,13 +35,13 @@ const AgreementDoc = ({ agreementDoc, setAgreementDoc, setCurrentStep }: Agreeme
           A kék színnel kiegészített részek példaként szolgálnak az űrlap kitöltéséhez. Kérünk, hogy figyelmesen olvasd
           végig a dokumentumot kitöltés közben.
         </p>
-        <p className="mt-4 text-gray-500">
+        {/* <p className="mt-4 text-gray-500">
           A fájlra vonatkozó követelmények:
           <ul className="ml-4 list-disc">
             <li>.pdf fájl formátum</li>
             <li>Maximum 1 MB fájl méret.</li>
           </ul>
-        </p>
+        </p> */}
         <p className="mt-4 text-gray-500">
           Amennyiben további kérdések merülnének fel, keress minket az e-mail címünkön (tdk@mmdsz.ro), vagy írj a
           konferencia Facebook oldalán.
@@ -83,10 +83,10 @@ const AgreementDoc = ({ agreementDoc, setAgreementDoc, setCurrentStep }: Agreeme
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="h-16 w-16">
                 <path d="M23 17h-3v-3h-2v3h-3v2h3v3h2v-3h3v-2zm-7 5v2h-15v-24h10.189c3.163 0 9.811 7.223 9.811 9.614v2.386h-2v-1.543c0-4.107-6-2.457-6-2.457s1.518-6-2.638-6h-7.362v20h13z" />
               </svg>
-              <p className="mb-2 py-3 text-gray-900">
+              <p className="px-4 py-3 text-sm text-gray-700">
                 A Saját hozzájárulási és publikációs nyilatkozat feltöltéséhez kattints erre a mezőre
               </p>
-              <p className="text-xs text-gray-500">.pdf vagy .docx</p>
+              <p className="text-xs text-gray-500">.pdf vagy .docx, max. 1MB</p>
             </div>
           ) : (
             <div>
