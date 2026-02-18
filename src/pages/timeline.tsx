@@ -4,7 +4,7 @@ import { withLayout } from "../layout/withLayout";
 import SignupWrapper from "../components/signup-wrapper";
 
 const Timeline = () => {
-    const initialSignupContainerRef = useRef<HTMLDivElement | null>(null);
+  const initialSignupContainerRef = useRef<HTMLLIElement | null>(null);
 
   return (
     <div className="flex justify-center py-20 px-6">
@@ -16,12 +16,10 @@ const Timeline = () => {
           <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border-2 border-white bg-gray-500"></div>
           Görgess lefele, hogy többet megtudj a TDK-n való részvételhez szükséges lépésekről.
         </li>
-        <li className="ml-10">
+        <li className="ml-10 scroll-mt-24" ref={initialSignupContainerRef}>
           <div className="absolute -left-1.5 mt-1.5 h-3 w-3 scroll-mt-32 rounded-full border-2 border-white bg-gray-500"></div>
           <time className="mb-10 font-light leading-none text-gray-500">2026. február 28. - 2025 március 5.</time>
-          <h3 className="pb-4 text-2xl font-semibold text-gray-900">
-            Jelentkezés és absztraktok feltöltése
-          </h3>
+          <h3 className="pb-4 text-2xl font-semibold text-gray-900">Jelentkezés és absztraktok feltöltése</h3>
           <SignupWrapper scrollToRef={initialSignupContainerRef} signupEnabled={true} />
           {/* <p className="pb-10 text-gray-500">
             A jelentkezés kelet-európai téli időszámítás szerint (GMT+2) 19:59-kor zárul. Az időn túl beérkező

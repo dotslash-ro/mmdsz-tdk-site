@@ -21,6 +21,8 @@ const DocumentInfoSchema = z.object({
   conclusions: z.string().min(1, {
     message: 'Vezesd be a Kivonatod "Következtetések" bekezdését!',
   }),
+  isOrderOfAuthorsRelevant: z.boolean(),
+  isRatioOfAuthorshipRelevant: z.boolean(),
 });
 
 export type DocumentInfoSchema = z.infer<typeof DocumentInfoSchema>;
@@ -119,13 +121,34 @@ const DocumentInfo = ({ setDocumentInfo, setCurrentStep, defaultValues }: Docume
           </select>
           {errors.section && <p className="mt-2 text-xs italic text-red-500"> {errors.section?.message}</p>}
         </div>
-        <h3 className="mt-10 mb-4 block text-lg font-medium text-gray-900">Kivonat tartalmának feltöltése</h3>
-        <div className="py-2">
-          Formai követelmények:
-          <ul className="list-disc py-2 text-sm text-gray-400">
-            <li>A kivonat maximális hossza 2200 karakter (szóköz nélkül, cím nélkül).</li>
-          </ul>
+        <div className="mb-6 ml-6 flex h-5 items-center">
+          <input
+            id="order-of-authors"
+            type="checkbox"
+            value=""
+            className="focus:ring-3 h-4 w-4 cursor-pointer rounded border border-tdk-accent bg-gray-50 accent-tdk-accent focus:ring-tdk-accent"
+            {...register("isOrderOfAuthorsRelevant")}
+          />
+          <label htmlFor="order-of-authors" className="ml-2 text-neutral-900">
+            Több szerző esetén a sorrend releváns
+          </label>
         </div>
+        <div className="mb-6 ml-6 flex h-5 items-center">
+          <input
+            id="ratio-of-authorship"
+            type="checkbox"
+            value=""
+            className="focus:ring-3 h-4 w-4 cursor-pointer rounded border border-tdk-accent bg-gray-50 accent-tdk-accent focus:ring-tdk-accent"
+            {...register("isRatioOfAuthorshipRelevant")}
+          />
+          <label htmlFor="ratio-of-authorship" className="ml-2 text-neutral-900">
+            Több szerző esetén a szerzőségi arány releváns
+          </label>
+        </div>
+        <h3 className="mt-10 block text-lg font-medium text-gray-900">Kivonat tartalmának feltöltése</h3>
+        <ul className="mb-6 text-sm text-gray-400">
+          <li className="">A kivonat maximális hossza 2200 karakter (szóköz nélkül, cím nélkül).</li>
+        </ul>
         <div className="mb-6">
           <label htmlFor="introduction" className="mb-2 block text-sm font-medium text-gray-900">
             Bevezetés

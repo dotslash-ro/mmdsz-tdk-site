@@ -19,12 +19,19 @@ const CoAuthorInfoSchema = z.object({
     .min(1, { message: "Add meg a társszerző email címét!" })
     .email({ message: "Helytelen e-mail cím!" }),
   studyYear: z.string().regex(/[123456]/, { message: "Add meg a társszerző évfolyamát!" }),
-  nrOfActiveSemesters: z.coerce
-    .number()
-    .gt(0, { message: "Nem lehet kevesebb mint 1!" })
-    .lte(12, { message: "Nem lehet több mint 12!" }),
+  nrOfActiveSemesters: z
+    .string()
+    .min(1, { message: "Add meg az aktív féléveid számát!" })
+    .refine(
+      (it) => {
+        const asNumber = Number(it);
+        return !Number.isNaN(asNumber) && asNumber <= 12 && asNumber > 0;
+      },
+      { message: "Nem lehet kisebb mint 1 vagy több mint 12" }
+    ),
   academicDegree: z.string().min(1, { message: "Add meg a társszerző jogviszonyának típusát!" }),
   scheduleType: z.string().min(1, { message: "Add meg a jogviszonyának munkarendjét!" }),
+  startYearOfStudies: z.string(),
 });
 
 export type CoAuthorInfoSchema = z.infer<typeof CoAuthorInfoSchema>;
@@ -292,13 +299,13 @@ const CoAuthorInfo = ({
                   id={`schedule-type-${it}`}
                   className="peer hidden"
                   {...register("scheduleType")}
-                  name="schedule-type"
+                  name="scheduleType"
                 />
                 <label
                   htmlFor={`schedule-type-${it}`}
                   className="flex cursor-pointer items-center justify-center rounded-md border border-gray-300 py-2 px-3 text-gray-900 hover:border-gray-300 peer-checked:bg-tdk-accent peer-checked:text-white md:px-5"
                 >
-                  <p className="text-sm font-medium">{it}.</p>
+                  <p className="text-sm font-medium">{it}</p>
                 </label>
               </div>
             ))}
@@ -318,6 +325,28 @@ const CoAuthorInfo = ({
           />
           {errors.nrOfActiveSemesters && (
             <p className="mt-2 text-xs italic text-red-500"> {errors.nrOfActiveSemesters?.message}</p>
+          )}
+        </div>
+        <div className="mb-6">
+          <label htmlFor="start-year" className="mb-2 block text-lg font-medium text-gray-900">
+            Egyetem megkezdésének éve
+          </label>
+          <select
+            id="start-year"
+            data-error={errors.startYearOfStudies != undefined}
+            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
+            {...register("startYearOfStudies")}
+          >
+            {Array.from({ length: 11 }, (_, i) => new Date().getFullYear() - i).map((year, index) => {
+              return (
+                <option className="text-md" key={index}>
+                  {year}
+                </option>
+              );
+            })}
+          </select>
+          {errors.startYearOfStudies && (
+            <p className="mt-2 text-xs italic text-red-500"> {errors.startYearOfStudies?.message}</p>
           )}
         </div>
         {!isSubmitted && isValid ? (

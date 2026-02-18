@@ -32,7 +32,7 @@ const SignupWrapper = ({
   scrollToRef,
   signupEnabled,
 }: {
-  scrollToRef?: MutableRefObject<HTMLDivElement | null>;
+  scrollToRef?: MutableRefObject<HTMLElement | null>;
   signupEnabled: boolean;
 }) => {
   const [signupStatus, setSignupStatus] = useState<SignupStatus>("not-signedup");
@@ -260,10 +260,8 @@ const SignupWrapper = ({
   if (currentStep == "preSignup") {
     return (
       <div className="">
-        <h3 className="mb-2.5 mt-8 text-gray-900">
-          A kivonat feltöltéséhez az alábbi adatokra lesz szükség:
-        </h3>
-        <ul className="ml-6 list-disc text-gray-500 space-y-2">
+        <h3 className="mb-2.5 mt-8 text-gray-900">A kivonat feltöltéséhez az alábbi adatokra lesz szükség:</h3>
+        <ul className="ml-6 list-disc space-y-2 text-gray-500">
           <li>A kivonat maximális hossza 2200 karakter (szóköz nélkül, cím nélkül). </li>
           <li>A cím 3 nyelven (magyar, román, angol).</li>
           <li>
@@ -272,14 +270,14 @@ const SignupWrapper = ({
           </li>
         </ul>
         <h3 className="mb-2.5 mt-8 text-gray-900">A beküldéshez az alábbi adatokra lesz szükség: </h3>
-        <ul className="ml-6 list-disc text-gray-500 space-y-2">
+        <ul className="ml-6 list-disc space-y-2 text-gray-500">
           <li>
             A szerző neve, egyeteme, évfolyama, szakja, email címe, kara, telefonszáma, jogviszonyának típusa (BSc,
             MSc...), jogviszonyának munkarendje (nappali, esti...), aktív féléveinek száma.
           </li>
           <li>
-            Társszerzők neve, e-mail címe, egyeteme, évfolyama, szakja, kara, jogviszonyának típusa, jogviszonyána munkarendje,
-            aktív féléveinek száma.
+            Társszerzők neve, e-mail címe, egyeteme, évfolyama, szakja, kara, jogviszonyának típusa, jogviszonyána
+            munkarendje, aktív féléveinek száma.
           </li>
           <li>Témavezető neve és beosztása, valamint egyetem (intézet). </li>
         </ul>

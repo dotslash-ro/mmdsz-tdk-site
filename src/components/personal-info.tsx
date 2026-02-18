@@ -20,9 +20,19 @@ const personalInfoSchema = z.object({
     .min(1, { message: "Add meg a telefonszámod!" })
     .max(13, { message: "Helytelen telefonszám!" }),
   studyYear: z.string(),
-  nrOfActiveSemesters: z.string().min(1, { message: "Add meg az aktív féléveid számát!" }),
+  nrOfActiveSemesters: z
+    .string()
+    .min(1, { message: "Add meg az aktív féléveid számát!" })
+    .refine(
+      (it) => {
+        const asNumber = Number(it);
+        return !Number.isNaN(asNumber) && asNumber <= 12 && asNumber > 0;
+      },
+      { message: "Nem lehet kisebb mint 1 vagy több mint 12" }
+    ),
   academicDegree: z.string().min(1, { message: "Add meg a jogviszonyod típusát!" }),
   scheduleType: z.string().min(1, { message: "Add meg a jogviszonyod munkarendjét!" }),
+  startYearOfStudies: z.string(),
 });
 
 export type PersonalInfoSchema = z.infer<typeof personalInfoSchema>;
@@ -317,6 +327,28 @@ const PersonalInfo = ({ setPersonalInfo, setCurrentStep, defaultValues }: Person
           />
           {errors.nrOfActiveSemesters && (
             <p className="mt-2 text-xs italic text-red-500"> {errors.nrOfActiveSemesters?.message}</p>
+          )}
+        </div>
+        <div className="mb-6">
+          <label htmlFor="start-year" className="mb-2 block text-lg font-medium text-gray-900">
+            Egyetem megkezdésének éve
+          </label>
+          <select
+            id="start-year"
+            data-error={errors.startYearOfStudies != undefined}
+            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
+            {...register("startYearOfStudies")}
+          >
+            {Array.from({ length: 11 }, (_, i) => new Date().getFullYear() - i).map((year, index) => {
+              return (
+                <option className="text-md" key={index}>
+                  {year}
+                </option>
+              );
+            })}
+          </select>
+          {errors.startYearOfStudies && (
+            <p className="mt-2 text-xs italic text-red-500"> {errors.startYearOfStudies?.message}</p>
           )}
         </div>
         <div className="flex flex-col justify-center gap-x-4 py-2 md:flex-row md:justify-evenly">
