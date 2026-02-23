@@ -54,10 +54,10 @@ const router = createHashRouter([
     path: "/jelentkezes",
     element: <Signup />,
   },
-  // {
-  //   path: "/jelentkezes-teszt",s
-  //   element: <Signup />,
-  // },
+  {
+    path: "/jelentkezes-teszt",
+    element: <Signup />,
+  },
   {
     path: "/szabalyzat",
     element: <Rules />,

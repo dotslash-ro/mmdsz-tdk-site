@@ -9,16 +9,16 @@ const personalInfoSchema = z.object({
   firstName: z.string().min(1, { message: "Add meg a vezetékneved!" }),
   lastName: z.string().min(1, { message: "Add meg a kereszteneved!" }),
   email: z.string().min(1, { message: "Add meg az e-mail címed!" }).email({ message: "Helytelen e-mail cím" }),
-  university: z.string().min(1, { message: "Válaszd ki az egyetemed!" }),
-  otherUniversity: z.string().min(1, { message: "Add meg az egyetemed nevét!" }).optional(),
-  section: z.string().min(1, { message: "Add meg a karod!" }),
-  otherSection: z.string().min(1, { message: "Add meg a szakod nevét!" }).optional(),
-  department: z.string().min(1, { message: "Add meg a kart, amelyen tanulsz!" }),
-  otherDepartment: z.string().min(1, { message: "Add meg a karod nevét!" }).optional(),
   phoneNumber: z
     .string()
     .min(1, { message: "Add meg a telefonszámod!" })
     .max(13, { message: "Helytelen telefonszám!" }),
+  university: z.string().min(1, { message: "Válaszd ki az egyetemed!" }),
+  otherUniversity: z.string().min(1, { message: "Add meg az egyetemed nevét!" }).optional(),
+  department: z.string().min(1, { message: "Add meg a kart, amelyen tanulsz!" }),
+  otherDepartment: z.string().min(1, { message: "Add meg a karod nevét!" }).optional(),
+  section: z.string().min(1, { message: "Add meg a karod!" }),
+  otherSection: z.string().min(1, { message: "Add meg a szakod nevét!" }).optional(),
   studyYear: z.string(),
   nrOfActiveSemesters: z
     .string()

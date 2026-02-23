@@ -1,4 +1,4 @@
-export const serverUrl = /*"http://localhost:3000/api"; */ "https://mmdsz-tdk-functions.vercel.app/api";
+export const serverUrl = /* "http://localhost:3000/api"; */ "https://mmdsz-tdk-functions.vercel.app/api";
 export const workshopServerUrl = "https://tdk-workshop-express.up.railway.app/api"; // "http://localhost:8000/api";
 export const maxSignUpPerEmail = 4;
 export const universityList = ["", "MOGYTTE", "SE", "DE", "PTE", "SZTE", "Egyéb"];
@@ -138,7 +138,8 @@ export const sectionList = [
   "Anatómia és Patológia",
   "Aneszteziológia És Intenzív Terápia",
   "Angiológia",
-  "Betteggondozás (nursing)",
+  // "Betteggondozás (nursing)",
+  "Ápolástan",
   "Bioinformatika",
   "Bőrgyógyászat",
   "Diabetológia",
@@ -147,7 +148,7 @@ export const sectionList = [
   "Endokrinológia",
   "Farmakológia",
   "Fogorvostudomány",
-  "Fogorvostudomány Poszter",
+  "Fogorvostudományi Poszter Szekció",
   "Fül-Orr-Gégészet",
   "Gasztroenterológia",
   "Genetika",

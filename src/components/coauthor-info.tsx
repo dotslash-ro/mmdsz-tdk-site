@@ -10,16 +10,16 @@ const getCoAuthorInfoSchema = (isCoAuthorContributionRelevant: boolean) =>
     .object({
       firstName: z.string().min(1, { message: "Add meg a társszerző vezetéknevét!" }),
       lastName: z.string().min(1, { message: "Add meg a társszerző keresztenevét!" }),
+      email: z
+        .string()
+        .min(1, { message: "Add meg a társszerző email címét!" })
+        .email({ message: "Helytelen e-mail cím!" }),
       university: z.string().min(1, { message: "Add meg a társszerző egyetemét!" }),
       otherUniversity: z.string().min(1, { message: "Add meg a társszerző egyetemének nevét!" }).optional(),
       department: z.string().min(1, { message: "Add meg a társszerző karát!" }),
       otherDepartment: z.string().min(1, { message: "Add meg a karod nevét!" }).optional(),
       section: z.string().min(1, { message: "Add meg a társszerző szakát!" }),
       otherSection: z.string().min(1, { message: "Add meg a szakod nevét!" }).optional(),
-      email: z
-        .string()
-        .min(1, { message: "Add meg a társszerző email címét!" })
-        .email({ message: "Helytelen e-mail cím!" }),
       studyYear: z.string().regex(/[123456]/, { message: "Add meg a társszerző évfolyamát!" }),
       nrOfActiveSemesters: z
         .string()
@@ -338,13 +338,13 @@ const CoAuthorInfo = ({
                 <input
                   type="radio"
                   value={it}
-                  id={`schedule-type-${it}`}
+                  id={`schedule-type-${it}-${index}`}
                   className="peer hidden"
                   {...register("scheduleType")}
                   name="scheduleType"
                 />
                 <label
-                  htmlFor={`schedule-type-${it}`}
+                  htmlFor={`schedule-type-${it}-${index}`}
                   className="flex cursor-pointer items-center justify-center rounded-md border border-gray-300 py-2 px-3 text-gray-900 hover:border-gray-300 peer-checked:bg-tdk-accent peer-checked:text-white md:px-5"
                 >
                   <p className="text-sm font-medium">{it}</p>

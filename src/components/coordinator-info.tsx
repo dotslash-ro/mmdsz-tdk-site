@@ -16,8 +16,8 @@ const coordinatorInfoSchema = z
     otherTitle: z.string().min(1, { message: "Add meg a témavezető titulusát!" }).optional(),
     universityJobTitle: z.string(),
     universityJobDepartment: z.string(),
-    otherJobTitle: z.string().optional(),
     otherJobName: z.string().optional(),
+    otherJobTitle: z.string().optional(),
     hasUniversityJob: z.boolean(),
   })
   .refine(
@@ -37,9 +37,10 @@ interface CoordinatorInfoFormProps {
   setCoordinatorInfo: (CoordinatorInfo: CoordinatorInfoSchema) => void;
   defaultValues?: CoordinatorInfoSchema;
   removeCoordinatorForm: () => void;
+  index: number
 }
 
-const CoordinatorInfo = ({ setCoordinatorInfo, defaultValues, removeCoordinatorForm }: CoordinatorInfoFormProps) => {
+const CoordinatorInfo = ({ setCoordinatorInfo, defaultValues, removeCoordinatorForm, index }: CoordinatorInfoFormProps) => {
   const {
     register,
     handleSubmit,
@@ -153,13 +154,13 @@ const CoordinatorInfo = ({ setCoordinatorInfo, defaultValues, removeCoordinatorF
         )}
         <div className="mb-6 ml-6 flex h-5 items-center">
           <input
-            id="uni-job"
+            id={`has-uni-job-${index}`}
             type="checkbox"
             value=""
             className="focus:ring-3 h-4 w-4 cursor-pointer rounded border border-tdk-accent bg-gray-50 accent-tdk-accent focus:ring-tdk-accent"
             {...register("hasUniversityJob")}
           />
-          <label htmlFor="uni-job" className="ml-2 text-neutral-900">
+          <label htmlFor={`has-uni-job-${index}`} className="ml-2 text-neutral-900">
             A témavezető intézményi munkahellyel rendelkezik
           </label>
         </div>

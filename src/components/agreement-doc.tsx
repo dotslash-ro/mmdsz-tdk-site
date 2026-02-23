@@ -130,7 +130,7 @@ const AgreementDoc = ({ agreementDoc, setAgreementDoc, setCurrentStep }: Agreeme
         </div>
         {agreementDoc ? (
           <button
-            className="mt-4 rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-xl"
+            className="mt-4 h-fit rounded-md bg-tdk-accent px-10 py-2 font-semibold uppercase text-white drop-shadow-md hover:underline"
             onClick={() => {
               setCurrentStep("confirmSignup");
             }}
@@ -139,7 +139,7 @@ const AgreementDoc = ({ agreementDoc, setAgreementDoc, setCurrentStep }: Agreeme
           </button>
         ) : (
           <button
-            className="mt-4 rounded-full bg-gray-300 px-10 py-2 font-semibold uppercase text-black drop-shadow-md xl:text-xl"
+            className="mt-4 h-fit rounded-md bg-gray-300 px-10 py-2 font-semibold uppercase text-black drop-shadow-md"
             disabled
             title="A továbblépéshez fel kell töltened a hozzájárulási nyilatkozatot!"
           >
