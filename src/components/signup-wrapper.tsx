@@ -279,7 +279,7 @@ const SignupWrapper = ({
             Társszerzők neve, e-mail címe, egyeteme, évfolyama, szakja, kara, jogviszonyának típusa, jogviszonyána
             munkarendje, aktív féléveinek száma.
           </li>
-          <li>Témavezető neve és beosztása, valamint egyetem (intézet). </li>
+          <li>Témavezető neve, e-mail címe és beosztása, valamint egyetem (intézet)/egyéb munkahely. </li>
         </ul>
         <h3 className="mb-2.5 mt-8 text-gray-900">Saját hozzájárulási és publikációs nyilatkozat</h3>
         <p className=" text-gray-500">

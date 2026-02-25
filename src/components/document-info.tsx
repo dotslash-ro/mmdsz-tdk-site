@@ -5,7 +5,19 @@ import { sectionList } from "../constants";
 import { SignupStep } from "./signup-wrapper";
 import { ClipLoader } from "react-spinners";
 
-const DocumentInfoSchema = z
+function checkLength(it: {
+  conclusions: string;
+  introduction: string;
+  mission: string;
+  methods: string;
+  results: string;
+}) {
+  return (
+    it.conclusions.length + it.introduction.length + it.methods.length + it.mission.length + it.results.length < 2200
+  );
+}
+
+const documentInfoSchema = z
   .object({
     section: z.enum(sectionList, {
       errorMap: () => ({
@@ -43,9 +55,14 @@ const DocumentInfoSchema = z
       return !Number.isNaN(asNumber) && asNumber > 0 && asNumber <= 100;
     },
     { message: "A hozzájárulási arány százalékban értendő (0-100)", path: ["ownContributionPercentage"] }
-  );
+  )
+  .refine(checkLength, { message: "A dolgozat max. hossza 2200 karakter!", path: ["introduction"] })
+  .refine(checkLength, { message: "A dolgozat max. hossza 2200 karakter!", path: ["methods"] })
+  .refine(checkLength, { message: "A dolgozat max. hossza 2200 karakter!", path: ["results"] })
+  .refine(checkLength, { message: "A dolgozat max. hossza 2200 karakter!", path: ["conclusions"] })
+  .refine(checkLength, { message: "A dolgozat max. hossza 2200 karakter!", path: ["mission"] });
 
-export type DocumentInfoSchema = z.infer<typeof DocumentInfoSchema>;
+export type DocumentInfoSchema = z.infer<typeof documentInfoSchema>;
 
 interface DocumentInfoFormProps {
   setDocumentInfo: (DocumentInfo: DocumentInfoSchema) => void;
@@ -60,7 +77,7 @@ const DocumentInfo = ({ setDocumentInfo, setCurrentStep, defaultValues }: Docume
     handleSubmit,
     formState: { errors, isValid, isSubmitting },
   } = useForm<DocumentInfoSchema>({
-    resolver: zodResolver(DocumentInfoSchema),
+    resolver: zodResolver(documentInfoSchema),
     mode: "onBlur",
     defaultValues,
   });
@@ -245,7 +262,8 @@ const DocumentInfo = ({ setDocumentInfo, setCurrentStep, defaultValues }: Docume
           />
           {errors.conclusions && <p className="mt-2 text-xs italic text-red-500"> {errors.conclusions?.message}</p>}
         </div>
-
+        {/* @ts-expect-error it's just confused */}
+        {errors.docLength && <p className="mt-2 text-xs italic text-red-500"> {errors.conclusions?.message}</p>}
         <div className="flex flex-col justify-center gap-x-4 py-2 md:flex-row md:justify-evenly">
           <div className="flex w-full flex-col px-3">
             <div className="overflow-hidden rounded-full bg-gray-200">
