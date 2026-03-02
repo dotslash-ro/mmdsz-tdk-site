@@ -12,9 +12,8 @@ function checkLength(it: {
   methods: string;
   results: string;
 }) {
-  return (
-    it.conclusions.length + it.introduction.length + it.methods.length + it.mission.length + it.results.length < 2200
-  );
+  const trimmed = (it.conclusions + it.introduction + it.methods + it.mission + it.results).replace(/\s/g, "");
+  return trimmed.length < 2200;
 }
 
 const documentInfoSchema = z
