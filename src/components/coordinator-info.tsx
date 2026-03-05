@@ -7,15 +7,15 @@ const coordinatorInfoSchema = z
   .object({
     firstName: z.string().min(1, { message: "Add meg témavezető vezetéknevét!" }),
     lastName: z.string().min(1, { message: "Add meg témavezető keresztnevét!" }),
-    institute: z.string().min(1, { message: "Add meg a témavezető intézményét!!" }),
+    institute: z.string(),
     email: z
       .string()
       .min(1, { message: "Add meg a témavezető e-mail címét!" })
       .email({ message: "Helytelen e-mail cím" }),
     title: z.string().min(1, { message: "Add meg a témavezető titulusát!" }),
-    otherTitle: z.string().min(1, { message: "Add meg a témavezető titulusát!" }).optional(),
     universityJobTitle: z.string(),
     universityJobDepartment: z.string(),
+    otherTitle: z.string().optional(),
     otherJobName: z.string().optional(),
     otherJobTitle: z.string().optional(),
     hasUniversityJob: z.boolean(),
@@ -23,13 +23,45 @@ const coordinatorInfoSchema = z
   .refine(
     (it) => {
       if (it.hasUniversityJob) {
-        return it.universityJobTitle && it.universityJobDepartment && it.institute;
-      } else {
-        return it.otherJobName && it.otherJobTitle;
+        return !!it.universityJobTitle?.length;
       }
+      return true
     },
-    { message: "Add meg a témavezető munkahelyére vonatkozó adatokat!" }
-  );
+    { message: "Add meg a témavezető intézményi beosztását!", path: ["universityJobTitle"] }
+  ).refine(
+    (it) => {
+      if (it.hasUniversityJob) {
+        return !!it.universityJobDepartment?.length;
+      }
+      return true
+    },
+    { message: "Add meg a témavezető intézményi karát!", path: ["universityJobDepartment"] }
+  ).refine(
+    (it) => {
+      if (it.hasUniversityJob) {
+        return !!it.institute?.length;
+      }
+      return true
+    },
+    { message: "Add meg a témavezető intézményét!", path: ["institute"] }
+  ).refine(
+    (it) => {
+      if (!it.hasUniversityJob) {
+        return !!it.otherJobName?.length;
+      }
+      return true
+    },
+    { message: "Add meg a témavezető  munkahelyének nevét!", path: ["otherJobName"] }
+  )
+  .refine(
+    (it) => {
+      if (!it.hasUniversityJob) {
+        return !!it.otherJobTitle?.length;
+      }
+      return true
+    },
+    { message: "Add meg a témavezető  munkahelyi beosztását!", path: ["otherJobTitle"] }
+  )
 
 export type CoordinatorInfoSchema = z.infer<typeof coordinatorInfoSchema>;
 
