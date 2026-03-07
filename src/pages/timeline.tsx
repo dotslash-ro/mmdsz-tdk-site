@@ -20,7 +20,7 @@ const Timeline = () => {
           <div className="absolute -left-1.5 mt-1.5 h-3 w-3 scroll-mt-32 rounded-full border-2 border-white bg-gray-500"></div>
           <time className="mb-10 font-light leading-none text-gray-500">2026. február 28. - 2026 március 7, 20:00.</time>
           <h3 className="pb-4 text-2xl font-semibold text-gray-900">Jelentkezés és absztraktok feltöltése</h3>
-          <SignupWrapper scrollToRef={initialSignupContainerRef} signupEnabled={true} />
+          <SignupWrapper scrollToRef={initialSignupContainerRef} signupEnabled={false} />
           {/* <p className="pb-10 text-gray-500">
             A jelentkezés kelet-európai téli időszámítás szerint (GMT+2) 19:59-kor zárul. Az időn túl beérkező
             kivonatokat nem áll módunkban elfogadni.{" "}
