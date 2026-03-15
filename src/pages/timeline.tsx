@@ -1,10 +1,19 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Helmet } from "react-helmet";
 import { withLayout } from "../layout/withLayout";
 import SignupWrapper from "../components/signup-wrapper";
+import SecondUploadForm from "../components/second-upload";
 
 const Timeline = () => {
   const initialSignupContainerRef = useRef<HTMLLIElement | null>(null);
+
+  useEffect(() => {
+    const target = document.getElementById("javitott-feltoltes");
+    if (!target) return;
+    requestAnimationFrame(() => {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }, []);
 
   return (
     <div className="flex justify-center py-20 px-6">
@@ -52,7 +61,7 @@ const Timeline = () => {
           <div className="">
             <time className="mb-10 font-light leading-none text-gray-500">2026. március 15-16.</time>
             <h3 className="pb-4 text-2xl font-semibold text-gray-900">Javított absztraktok feltöltése</h3>
-            {/* <SecondUploadForm /> */}
+            <SecondUploadForm />
           </div>
         </li>
         {/* <li className="mb-10 ml-10">

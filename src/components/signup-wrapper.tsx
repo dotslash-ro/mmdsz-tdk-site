@@ -28,6 +28,8 @@ export type SignupStep = (typeof signupSteps)[number];
 const signupStatuses = ["not-signedup", "signed-up", "error"] as const;
 type SignupStatus = (typeof signupStatuses)[number];
 
+const uploadDeadlineUnix = 1772906456;
+
 const SignupWrapper = ({
   scrollToRef,
   signupEnabled,
@@ -37,6 +39,7 @@ const SignupWrapper = ({
 }) => {
   const [signupStatus, setSignupStatus] = useState<SignupStatus>("not-signedup");
   const [dataUploaded, setDataUploaded] = useState(false);
+  const isUploadClosed = Date.now() / 1000 > uploadDeadlineUnix;
 
   const [currentStep, setCurrentStep] = useState<SignupStep>("preSignup");
   const [personalInfo, setPersonalInfo] = useState<PersonalInfoSchema | undefined>(undefined);
@@ -260,59 +263,74 @@ const SignupWrapper = ({
   if (currentStep == "preSignup") {
     return (
       <div className="">
-        <h3 className="mb-2.5 mt-8 text-gray-900">A kivonat feltöltéséhez az alábbi adatokra lesz szükség:</h3>
-        <ul className="ml-6 list-disc space-y-2 text-gray-500">
-          <li>A kivonat maximális hossza 2200 karakter (szóköz nélkül, cím nélkül). </li>
-          <li>A cím 3 nyelven (magyar, román, angol).</li>
-          <li>
-            A kivonat szövegének az alábbi szerkezetet kell követnie: bevezetés, célkitűzések, módszerek, eredmények és
-            következtetés.
-          </li>
-        </ul>
-        <h3 className="mb-2.5 mt-8 text-gray-900">A beküldéshez az alábbi adatokra lesz szükség: </h3>
-        <ul className="ml-6 list-disc space-y-2 text-gray-500">
-          <li>
-            A szerző neve, egyeteme, évfolyama, szakja, email címe, kara, telefonszáma, jogviszonyának típusa (BSc,
-            MSc...), jogviszonyának munkarendje (nappali, esti...), aktív féléveinek száma.
-          </li>
-          <li>
-            Társszerzők neve, e-mail címe, egyeteme, évfolyama, szakja, kara, jogviszonyának típusa, jogviszonyána
-            munkarendje, aktív féléveinek száma.
-          </li>
-          <li>Témavezető neve, e-mail címe és beosztása, valamint egyetem (intézet)/egyéb munkahely. </li>
-        </ul>
-        <h3 className="mb-2.5 mt-8 text-gray-900">Saját hozzájárulási és publikációs nyilatkozat</h3>
-        <p className=" text-gray-500">
-          A tavalyi évhez hasonlóan idén is szükséges a saját hozzájárulási és publikációs nyilatkozat kitöltése.{" "}
-        </p>
-        <p className="mt-4 text-gray-500">
-          Egy kitöltött, példa dokumentum{" "}
-          <a className="text-sky-600 underline" href={exampleAgreementDocUrl}>
-            ide{" "}
-          </a>
-          kattintással tölthető le.
-        </p>
-        <p className="mt-4 text-gray-500">
-          Az eredeti, kitöltendő dokumentum{" "}
-          <a className="text-sky-600 underline" href={agreementDocUrl}>
-            innen tölthető le.
-          </a>
-        </p>
-        <p className="text-gray-500">
-          A kék színnel kiegészített részek példaként szolgálnak az űrlap kitöltéséhez. Kérünk, hogy figyelmesen olvasd
-          végig a dokumentumot kitöltés közben.
-        </p>
-        <div className="mt-4 text-gray-500">
-          A fájlra vonatkozó követelmények:
-          <ul className="ml-4 list-disc">
-            <li>.pdf fájl formátum</li>
-            <li>Maximum 1 MB fájl méret.</li>
-          </ul>
-        </div>
-        <p className="mt-4 text-gray-500">
-          Amennyiben további kérdések merülnének fel, keress minket az e-mail címünkön (tdk@mmdsz.ro), vagy írj a
-          konferencia Facebook oldalán.
-        </p>
+        {isUploadClosed ? (
+          <>
+            <h3 className="mb-2.5 mt-8 text-gray-900">A kivonatok feltöltési határideje lejárt.</h3>
+            <p className="text-gray-500">
+              A javított dokumentumok feltöltéséhez kérünk, görgess le a “Javított absztraktok feltöltése” részhez.
+            </p>
+            <p className="mt-4 text-gray-500">
+              Amennyiben további kérdések merülnének fel, keress minket az e-mail címünkön (tdk@mmdsz.ro), vagy írj a
+              konferencia Facebook oldalán.
+            </p>
+          </>
+        ) : (
+          <>
+            <h3 className="mb-2.5 mt-8 text-gray-900">A kivonat feltöltéséhez az alábbi adatokra lesz szükség:</h3>
+            <ul className="ml-6 list-disc space-y-2 text-gray-500">
+              <li>A kivonat maximális hossza 2200 karakter (szóköz nélkül, cím nélkül). </li>
+              <li>A cím 3 nyelven (magyar, román, angol).</li>
+              <li>
+                A kivonat szövegének az alábbi szerkezetet kell követnie: bevezetés, célkitűzések, módszerek, eredmények
+                és következtetés.
+              </li>
+            </ul>
+            <h3 className="mb-2.5 mt-8 text-gray-900">A beküldéshez az alábbi adatokra lesz szükség: </h3>
+            <ul className="ml-6 list-disc space-y-2 text-gray-500">
+              <li>
+                A szerző neve, egyeteme, évfolyama, szakja, email címe, kara, telefonszáma, jogviszonyának típusa (BSc,
+                MSc...), jogviszonyának munkarendje (nappali, esti...), aktív féléveinek száma.
+              </li>
+              <li>
+                Társszerzők neve, e-mail címe, egyeteme, évfolyama, szakja, kara, jogviszonyának típusa, jogviszonyána
+                munkarendje, aktív féléveinek száma.
+              </li>
+              <li>Témavezető neve, e-mail címe és beosztása, valamint egyetem (intézet)/egyéb munkahely. </li>
+            </ul>
+            <h3 className="mb-2.5 mt-8 text-gray-900">Saját hozzájárulási és publikációs nyilatkozat</h3>
+            <p className=" text-gray-500">
+              A tavalyi évhez hasonlóan idén is szükséges a saját hozzájárulási és publikációs nyilatkozat kitöltése.{" "}
+            </p>
+            <p className="mt-4 text-gray-500">
+              Egy kitöltött, példa dokumentum{" "}
+              <a className="text-sky-600 underline" href={exampleAgreementDocUrl}>
+                ide{" "}
+              </a>
+              kattintással tölthető le.
+            </p>
+            <p className="mt-4 text-gray-500">
+              Az eredeti, kitöltendő dokumentum{" "}
+              <a className="text-sky-600 underline" href={agreementDocUrl}>
+                innen tölthető le.
+              </a>
+            </p>
+            <p className="text-gray-500">
+              A kék színnel kiegészített részek példaként szolgálnak az űrlap kitöltéséhez. Kérünk, hogy figyelmesen
+              olvasd végig a dokumentumot kitöltés közben.
+            </p>
+            <div className="mt-4 text-gray-500">
+              A fájlra vonatkozó követelmények:
+              <ul className="ml-4 list-disc">
+                <li>.pdf fájl formátum</li>
+                <li>Maximum 1 MB fájl méret.</li>
+              </ul>
+            </div>
+            <p className="mt-4 text-gray-500">
+              Amennyiben további kérdések merülnének fel, keress minket az e-mail címünkön (tdk@mmdsz.ro), vagy írj a
+              konferencia Facebook oldalán.
+            </p>
+          </>
+        )}
         {signupEnabled ? (
           <button
             className="mt-12 rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-xl"
