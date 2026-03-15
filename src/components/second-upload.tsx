@@ -51,6 +51,8 @@ const SecondUploadForm = () => {
   const [uploadStatus, setUploadStatus] = useState<UploadStatus>("not-uploaded");
   const formContainerRef = useRef<HTMLDivElement | null>(null);
 
+  const isEnabled = false;
+
   const _personalInfo = localStorage.getItem("personalInfo");
   const _documentInfo = localStorage.getItem("documentInfo");
   const personalInfoDefaults = _personalInfo ? JSON.parse(_personalInfo) : {};
@@ -362,7 +364,7 @@ const SecondUploadForm = () => {
       {/* @ts-expect-error it's just confused */}
       {errors.docLength && <p className="mt-2 text-xs italic text-red-500"> {errors.conclusions?.message}</p>}
       <div className="flex flex-col justify-center gap-x-4 py-2 md:flex-row md:justify-evenly">
-        {isValid ? (
+        {isValid && isEnabled ? (
           <button
             className="rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-lg"
             type="submit"
