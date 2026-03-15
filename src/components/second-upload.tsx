@@ -51,7 +51,7 @@ const SecondUploadForm = () => {
   const [uploadStatus, setUploadStatus] = useState<UploadStatus>("not-uploaded");
   const formContainerRef = useRef<HTMLDivElement | null>(null);
 
-  const isEnabled = false;
+  const isEnabled = true;
 
   const _personalInfo = localStorage.getItem("personalInfo");
   const _documentInfo = localStorage.getItem("documentInfo");
