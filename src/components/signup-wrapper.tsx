@@ -266,13 +266,6 @@ const SignupWrapper = ({
         {isUploadClosed ? (
           <>
             <h3 className="mb-2.5 mt-8 text-gray-900">A kivonatok feltöltési határideje lejárt.</h3>
-            <p className="text-gray-500">
-              A javított dokumentumok feltöltéséhez kérünk, görgess le a “Javított absztraktok feltöltése” részhez.
-            </p>
-            <p className="mt-4 text-gray-500">
-              Amennyiben további kérdések merülnének fel, keress minket az e-mail címünkön (tdk@mmdsz.ro), vagy írj a
-              konferencia Facebook oldalán.
-            </p>
           </>
         ) : (
           <>

@@ -7,6 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 const uploadStatuses = ["not-uploaded", "in-progress", "uploaded", "error"] as const;
 type UploadStatus = (typeof uploadStatuses)[number];
+const secondUploadDeadline = 1773784799999;
 
 function checkLength(it: {
   conclusions: string;
@@ -49,9 +50,8 @@ export type SecondUploadSchema = z.infer<typeof secondUploadFormSchema>;
 
 const SecondUploadForm = () => {
   const [uploadStatus, setUploadStatus] = useState<UploadStatus>("not-uploaded");
+  const [isDeadlinePassed, setIsDeadlinePassed] = useState(() => Date.now() > secondUploadDeadline);
   const formContainerRef = useRef<HTMLDivElement | null>(null);
-
-  const isEnabled = true;
 
   const _personalInfo = localStorage.getItem("personalInfo");
   const _documentInfo = localStorage.getItem("documentInfo");
@@ -72,6 +72,10 @@ const SecondUploadForm = () => {
   });
 
   const onSubmit: SubmitHandler<SecondUploadSchema> = async (data) => {
+    if (isDeadlinePassed) {
+      return;
+    }
+
     setUploadStatus("in-progress");
     requestAnimationFrame(() => {
       formContainerRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -146,6 +150,17 @@ const SecondUploadForm = () => {
   }, []);
 
   useEffect(() => {
+    const updateDeadlineState = () => {
+      setIsDeadlinePassed(Date.now() > secondUploadDeadline);
+    };
+
+    updateDeadlineState();
+    const interval = window.setInterval(updateDeadlineState, 1000);
+
+    return () => window.clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
     const subscription = watch((value) => {
       if (!value) return;
       localStorage.setItem(
@@ -182,19 +197,27 @@ const SecondUploadForm = () => {
       </div>
     );
   }
+
   if (uploadStatus === "in-progress") {
     return (
       <div ref={formContainerRef} className="flex h-48 items-center justify-center">
         <ClipLoader loading={true} />
       </div>
     );
-  } else if (uploadStatus === "uploaded") {
+  }
+
+  if (uploadStatus === "uploaded") {
     return (
-      <div ref={formContainerRef} className="flex h-40 flex-col items-center justify-center gap-2 text-sm font-light text-gray-500">
+      <div
+        ref={formContainerRef}
+        className="flex h-40 flex-col items-center justify-center gap-2 text-sm font-light text-gray-500"
+      >
         Dokumentum sikeresen feltötlve!
       </div>
     );
-  } else if (uploadStatus === "error") {
+  }
+
+  if (uploadStatus === "error") {
     return (
       <div ref={formContainerRef} className="flex h-48 flex-col items-center justify-center gap-3">
         <div className="text-xl font-semibold text-red-400">
@@ -210,178 +233,190 @@ const SecondUploadForm = () => {
     );
   }
 
+  if (isDeadlinePassed) {
+    return (
+      <>
+        <h3 className="mb-2.5 mt-8 text-gray-900">A javított dokumentumok feltöltése lejárt.</h3>
+        <p className="mt-4 text-gray-500">
+          Amennyiben további kérdések merülnének fel, keress minket az e-mail címünkön (tdk@mmdsz.ro), vagy írj a
+          konferencia Facebook oldalán.
+        </p>
+      </>
+    );
+  }
+
   return (
     <div ref={formContainerRef}>
       <form className="py-10 pr-4" onSubmit={handleSubmit(onSubmit)}>
-      <div className="mb-6">
-        <label htmlFor="first-name" className="mb-2 block text-lg font-medium text-gray-900">
-          Vezetéknév
-        </label>
-        <input
-          type="text"
-          id="first-name"
-          autoComplete="family-name"
-          data-error={errors.firstName != undefined}
-          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
-          {...register("firstName")}
-        />
-        {errors.firstName && <p className="mt-2 text-xs italic text-red-500"> {errors.firstName?.message}</p>}
-      </div>
+        <div className="mb-6">
+          <label htmlFor="first-name" className="mb-2 block text-lg font-medium text-gray-900">
+            Vezetéknév
+          </label>
+          <input
+            type="text"
+            id="first-name"
+            autoComplete="family-name"
+            data-error={errors.firstName != undefined}
+            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
+            {...register("firstName")}
+          />
+          {errors.firstName && <p className="mt-2 text-xs italic text-red-500"> {errors.firstName?.message}</p>}
+        </div>
 
-      <div className="mb-6">
-        <label htmlFor="last-name" className="mb-2 block text-lg font-medium text-gray-900">
-          Keresztnév
-        </label>
-        <input
-          type="text"
-          id="last-name"
-          autoComplete="given-name"
-          data-error={errors.lastName != undefined}
-          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
-          {...register("lastName")}
-        />
-        {errors.lastName && <p className="mt-2 text-xs italic text-red-500"> {errors.lastName?.message}</p>}
-      </div>
-      <div className="mb-6">
-        <label htmlFor="title-hu" className="mb-2 block text-lg font-medium text-gray-900">
-          Kivonat címe magyarul
-        </label>
-        <input
-          type="text"
-          id="title-hu"
-          data-error={errors.hungarianTitle}
-          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
-          {...register("hungarianTitle")}
-        />
-        {errors.hungarianTitle && (
-          <p className="mt-2 text-xs italic text-red-500"> {errors.hungarianTitle?.message}</p>
-        )}
-      </div>
-      <div className="mb-6">
-        <label htmlFor="title-ro" className="mb-2 block text-lg font-medium text-gray-900">
-          Kivonat címe románul
-        </label>
-        <input
-          type="text"
-          id="title-ro"
-          data-error={errors.romanianTitle}
-          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
-          {...register("romanianTitle")}
-        />
-        {errors.romanianTitle && <p className="mt-2 text-xs italic text-red-500"> {errors.romanianTitle?.message}</p>}
-      </div>
-      <div className="mb-6">
-        <label htmlFor="title-en" className="mb-2 block text-lg font-medium text-gray-900">
-          Kivonat címe angolul
-        </label>
-        <input
-          type="text"
-          id="title-en"
-          data-error={errors.englishTitle}
-          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
-          {...register("englishTitle")}
-        />
-        {errors.englishTitle && <p className="mt-2 text-xs italic text-red-500"> {errors.englishTitle?.message}</p>}
-      </div>
-      <div className="mb-6">
-        <label htmlFor="sections" className="mb-2 block text-lg font-medium text-gray-900">
-          Témakör
-        </label>
-        <select
-          id="sections"
-          className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-tdk-primary focus:outline-none"
-          {...register("section")}
-        >
-          {sectionList.map((section, index) => {
-            return (
-              <option className="text-md" key={index}>
-                {section}
-              </option>
-            );
-          })}
-        </select>
-        {errors.section && <p className="mt-2 text-xs italic text-red-500"> {errors.section?.message}</p>}
-      </div>
-      <h3 className="mt-10 block text-lg font-medium text-gray-900">Kivonat tartalmának feltöltése</h3>
-      <ul className="mb-6 text-sm text-gray-400">
-        <li className="">A kivonat maximális hossza 2200 karakter (szóköz nélkül, cím nélkül).</li>
-      </ul>
-      <div className="mb-6">
-        <label htmlFor="introduction" className="mb-2 block text-sm font-medium text-gray-900">
-          Bevezetés
-        </label>
-        <textarea
-          id="introduction"
-          className="sm:text-md block w-full whitespace-pre-line rounded-lg border border-gray-300 bg-gray-50 p-6 text-gray-900 focus:border-tdk-primary focus:outline-none"
-          {...register("introduction")}
-        />
-        {errors.introduction && <p className="mt-2 text-xs italic text-red-500"> {errors.introduction?.message}</p>}
-      </div>
-      <div className="mb-6">
-        <label htmlFor="mission" className="mb-2 block text-sm font-medium text-gray-900">
-          Célkitűzések
-        </label>
-        <textarea
-          id="mission"
-          className="sm:text-md block w-full whitespace-pre-line rounded-lg border border-gray-300 bg-gray-50 p-6 text-gray-900 focus:border-tdk-primary focus:outline-none"
-          {...register("mission")}
-        />
-        {errors.mission && <p className="mt-2 text-xs italic text-red-500"> {errors.mission?.message}</p>}
-      </div>
-      <div className="mb-6">
-        <label htmlFor="methods" className="mb-2 block text-sm font-medium text-gray-900">
-          Módszer
-        </label>
-        <textarea
-          id="methods"
-          className="sm:text-md block w-full whitespace-pre-line rounded-lg border border-gray-300 bg-gray-50 p-6 text-gray-900 focus:border-tdk-primary focus:outline-none"
-          {...register("methods")}
-        />
-        {errors.methods && <p className="mt-2 text-xs italic text-red-500"> {errors.methods?.message}</p>}
-      </div>
-      <div className="mb-6">
-        <label htmlFor="results" className="mb-2 block text-sm font-medium text-gray-900">
-          Eredmények
-        </label>
-        <textarea
-          id="results"
-          className="sm:text-md block w-full whitespace-pre-line rounded-lg border border-gray-300 bg-gray-50 p-6 text-gray-900 focus:border-tdk-primary focus:outline-none"
-          {...register("results")}
-        />
-        {errors.results && <p className="mt-2 text-xs italic text-red-500"> {errors.results?.message}</p>}
-      </div>
-      <div className="mb-6">
-        <label htmlFor="conclusions" className="mb-2 block text-sm font-medium text-gray-900">
-          Következtetés
-        </label>
-        <textarea
-          id="conclusions"
-          className="sm:text-md block w-full whitespace-pre-line rounded-lg border border-gray-300 bg-gray-50 p-6 text-gray-900 focus:border-tdk-primary focus:outline-none"
-          {...register("conclusions")}
-        />
-        {errors.conclusions && <p className="mt-2 text-xs italic text-red-500"> {errors.conclusions?.message}</p>}
-      </div>
-      {/* @ts-expect-error it's just confused */}
-      {errors.docLength && <p className="mt-2 text-xs italic text-red-500"> {errors.conclusions?.message}</p>}
-      <div className="flex flex-col justify-center gap-x-4 py-2 md:flex-row md:justify-evenly">
-        {isValid && isEnabled ? (
-          <button
-            className="rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-lg"
-            type="submit"
+        <div className="mb-6">
+          <label htmlFor="last-name" className="mb-2 block text-lg font-medium text-gray-900">
+            Keresztnév
+          </label>
+          <input
+            type="text"
+            id="last-name"
+            autoComplete="given-name"
+            data-error={errors.lastName != undefined}
+            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
+            {...register("lastName")}
+          />
+          {errors.lastName && <p className="mt-2 text-xs italic text-red-500"> {errors.lastName?.message}</p>}
+        </div>
+        <div className="mb-6">
+          <label htmlFor="title-hu" className="mb-2 block text-lg font-medium text-gray-900">
+            Kivonat címe magyarul
+          </label>
+          <input
+            type="text"
+            id="title-hu"
+            data-error={errors.hungarianTitle}
+            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
+            {...register("hungarianTitle")}
+          />
+          {errors.hungarianTitle && (
+            <p className="mt-2 text-xs italic text-red-500"> {errors.hungarianTitle?.message}</p>
+          )}
+        </div>
+        <div className="mb-6">
+          <label htmlFor="title-ro" className="mb-2 block text-lg font-medium text-gray-900">
+            Kivonat címe románul
+          </label>
+          <input
+            type="text"
+            id="title-ro"
+            data-error={errors.romanianTitle}
+            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
+            {...register("romanianTitle")}
+          />
+          {errors.romanianTitle && <p className="mt-2 text-xs italic text-red-500"> {errors.romanianTitle?.message}</p>}
+        </div>
+        <div className="mb-6">
+          <label htmlFor="title-en" className="mb-2 block text-lg font-medium text-gray-900">
+            Kivonat címe angolul
+          </label>
+          <input
+            type="text"
+            id="title-en"
+            data-error={errors.englishTitle}
+            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-tdk-primary focus:outline-none data-[error=true]:border-red-400"
+            {...register("englishTitle")}
+          />
+          {errors.englishTitle && <p className="mt-2 text-xs italic text-red-500"> {errors.englishTitle?.message}</p>}
+        </div>
+        <div className="mb-6">
+          <label htmlFor="sections" className="mb-2 block text-lg font-medium text-gray-900">
+            Témakör
+          </label>
+          <select
+            id="sections"
+            className="ml-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-tdk-primary focus:outline-none"
+            {...register("section")}
           >
-            Feltöltés
-          </button>
-        ) : (
-          <button
-            className="rounded-full bg-gray-300 px-10 py-2 font-semibold uppercase text-black drop-shadow-md xl:text-lg"
-            disabled
-            type="submit"
-            title="A továbblépéshez ki kell töltedened az adataid!"
-          >
-            Feltöltés
-          </button>
-        )}
-      </div>
+            {sectionList.map((section, index) => {
+              return (
+                <option className="text-md" key={index}>
+                  {section}
+                </option>
+              );
+            })}
+          </select>
+          {errors.section && <p className="mt-2 text-xs italic text-red-500"> {errors.section?.message}</p>}
+        </div>
+        <h3 className="mt-10 block text-lg font-medium text-gray-900">Kivonat tartalmának feltöltése</h3>
+        <ul className="mb-6 text-sm text-gray-400">
+          <li className="">A kivonat maximális hossza 2200 karakter (szóköz nélkül, cím nélkül).</li>
+        </ul>
+        <div className="mb-6">
+          <label htmlFor="introduction" className="mb-2 block text-sm font-medium text-gray-900">
+            Bevezetés
+          </label>
+          <textarea
+            id="introduction"
+            className="sm:text-md block w-full whitespace-pre-line rounded-lg border border-gray-300 bg-gray-50 p-6 text-gray-900 focus:border-tdk-primary focus:outline-none"
+            {...register("introduction")}
+          />
+          {errors.introduction && <p className="mt-2 text-xs italic text-red-500"> {errors.introduction?.message}</p>}
+        </div>
+        <div className="mb-6">
+          <label htmlFor="mission" className="mb-2 block text-sm font-medium text-gray-900">
+            Célkitűzések
+          </label>
+          <textarea
+            id="mission"
+            className="sm:text-md block w-full whitespace-pre-line rounded-lg border border-gray-300 bg-gray-50 p-6 text-gray-900 focus:border-tdk-primary focus:outline-none"
+            {...register("mission")}
+          />
+          {errors.mission && <p className="mt-2 text-xs italic text-red-500"> {errors.mission?.message}</p>}
+        </div>
+        <div className="mb-6">
+          <label htmlFor="methods" className="mb-2 block text-sm font-medium text-gray-900">
+            Módszer
+          </label>
+          <textarea
+            id="methods"
+            className="sm:text-md block w-full whitespace-pre-line rounded-lg border border-gray-300 bg-gray-50 p-6 text-gray-900 focus:border-tdk-primary focus:outline-none"
+            {...register("methods")}
+          />
+          {errors.methods && <p className="mt-2 text-xs italic text-red-500"> {errors.methods?.message}</p>}
+        </div>
+        <div className="mb-6">
+          <label htmlFor="results" className="mb-2 block text-sm font-medium text-gray-900">
+            Eredmények
+          </label>
+          <textarea
+            id="results"
+            className="sm:text-md block w-full whitespace-pre-line rounded-lg border border-gray-300 bg-gray-50 p-6 text-gray-900 focus:border-tdk-primary focus:outline-none"
+            {...register("results")}
+          />
+          {errors.results && <p className="mt-2 text-xs italic text-red-500"> {errors.results?.message}</p>}
+        </div>
+        <div className="mb-6">
+          <label htmlFor="conclusions" className="mb-2 block text-sm font-medium text-gray-900">
+            Következtetés
+          </label>
+          <textarea
+            id="conclusions"
+            className="sm:text-md block w-full whitespace-pre-line rounded-lg border border-gray-300 bg-gray-50 p-6 text-gray-900 focus:border-tdk-primary focus:outline-none"
+            {...register("conclusions")}
+          />
+          {errors.conclusions && <p className="mt-2 text-xs italic text-red-500"> {errors.conclusions?.message}</p>}
+        </div>
+        {/* @ts-expect-error it's just confused */}
+        {errors.docLength && <p className="mt-2 text-xs italic text-red-500"> {errors.conclusions?.message}</p>}
+        <div className="flex flex-col justify-center gap-x-4 py-2 md:flex-row md:justify-evenly">
+          {isValid ? (
+            <button
+              className="rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white drop-shadow-md hover:underline xl:text-lg"
+              type="submit"
+            >
+              Feltöltés
+            </button>
+          ) : (
+            <button
+              className="rounded-full bg-gray-300 px-10 py-2 font-semibold uppercase text-black drop-shadow-md xl:text-lg"
+              disabled
+              type="submit"
+              title="A továbblépéshez ki kell töltedened az adataid!"
+            >
+              Feltöltés
+            </button>
+          )}
+        </div>
       </form>
     </div>
   );

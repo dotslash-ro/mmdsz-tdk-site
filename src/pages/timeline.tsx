@@ -59,7 +59,7 @@ const Timeline = () => {
         <li className="mb-10 ml-10 scroll-mt-32" id="javitott-feltoltes">
           <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border-2 border-white bg-gray-500"></div>
           <div className="">
-            <time className="mb-10 font-light leading-none text-gray-500">2026. március 15-16.</time>
+            <time className="mb-10 font-light leading-none text-gray-500">2026. március 15-17.</time>
             <h3 className="pb-4 text-2xl font-semibold text-gray-900">Javított absztraktok feltöltése</h3>
             <SecondUploadForm />
           </div>
