@@ -25,6 +25,7 @@ import NotFound from "./pages/not-found";
 // import Signup from "./pages/signup";
 import Presenters from "./pages/presenters";
 import Signup from "./pages/signup";
+import Workshops from "./pages/workshops";
 // import Workshops from "./pages/workshops";
 // import WorkshopSignup from "./pages/workshop-signup";
 // import WorkshopSignup from "./pages/workshop-signup";
@@ -74,10 +75,10 @@ const router = createHashRouter([
     path: "/gdpr",
     element: <GDPR />,
   },
-  // {
-  //   path: "/workshop",
-  //   element: <WorkshopSignup />,
-  // },
+  {
+    path: "/workshop",
+    element: <Workshops />,
+  },
   // {
   //   path: "/workshop-jelentkezes",
   //   element: <WorkshopSignup />,
