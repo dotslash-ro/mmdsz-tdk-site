@@ -60,7 +60,6 @@ const Workshop = ({ workshop }: WorkshopProps) => {
               ` - ${new Intl.DateTimeFormat("hu-HU", {
                 hour: "2-digit",
                 minute: "2-digit",
-                second: "2-digit",
                 timeZone: "Europe/Bucharest",
               }).format(new Date(workshop.endDate))}`}
           </h4>
