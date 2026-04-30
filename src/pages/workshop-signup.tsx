@@ -1,5 +1,5 @@
 import { useGoogleLogin } from "@react-oauth/google";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { ClipLoader } from "react-spinners";
 import { Helmet } from "react-helmet";
 
@@ -8,6 +8,8 @@ import { maxSignUpPerEmail, workshopServerUrl } from "../constants";
 import googleIcon from "../assets/google_icon.svg";
 import SignupWorkshop from "../components/signup-workshop";
 import { WorkshopType } from "../components/workshop";
+
+const workshopPollingIntervalMs = 5 * 1000;
 
 const WorkshopSignup = () => {
   const [user, setUser] = useState<any>();
@@ -31,30 +33,44 @@ const WorkshopSignup = () => {
 
   const login = useGoogleLogin({ onSuccess: (res) => setUser(res) });
 
-  async function fetchWorkshops(section: string, studyYear: number, setLoader = true) {
-    if (setLoader) {
-      setLoading(true);
-    }
-    let resp;
-    if (profile?.email == "tdk@mmdsz.ro") {
-      resp = await fetch(`${workshopServerUrl}/workshop/all-all`);
-    } else {
-      resp = await fetch(`${workshopServerUrl}/workshop/filter`, {
-        method: "POST",
-        body: JSON.stringify({ studyYear: studyYear, section: section }),
-        headers: { "Content-Type": "application/json" },
-      });
-    }
-    if (resp.status != 200) {
-      setError(true);
-      return;
-    }
-    const data = await resp.json();
-    setWorkshops(data);
-    if (setLoader) {
-      setLoading(false);
-    }
-  }
+  const fetchWorkshops = useCallback(
+    async (section: string, studyYear: number, setLoader = true) => {
+      if (setLoader) {
+        setLoading(true);
+      }
+
+      try {
+        let resp;
+        if (profile?.email == "tdk@mmdsz.ro") {
+          resp = await fetch(`${workshopServerUrl}/workshop/all-all`);
+        } else {
+          resp = await fetch(`${workshopServerUrl}/workshop/filter`, {
+            method: "POST",
+            body: JSON.stringify({ studyYear: studyYear, section: section }),
+            headers: { "Content-Type": "application/json" },
+          });
+        }
+        if (resp.status != 200) {
+          if (setLoader) {
+            setError(true);
+          }
+          return;
+        }
+        const data = await resp.json();
+        setWorkshops(data);
+        setError(false);
+      } catch {
+        if (setLoader) {
+          setError(true);
+        }
+      } finally {
+        if (setLoader) {
+          setLoading(false);
+        }
+      }
+    },
+    [profile?.email]
+  );
 
   function saveSignupInfo() {
     setPersonalInfo({ section, studyYear });
@@ -66,12 +82,12 @@ const WorkshopSignup = () => {
       fetchWorkshops(personalInfo.section, personalInfo.studyYear);
       const interval = setInterval(
         () => fetchWorkshops(personalInfo.section, personalInfo.studyYear, false),
-        10 * 1000
+        workshopPollingIntervalMs
       );
 
       return () => clearInterval(interval);
     }
-  }, [personalInfo]);
+  }, [fetchWorkshops, personalInfo]);
 
   useEffect(() => {
     (async () => {

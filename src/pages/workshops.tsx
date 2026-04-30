@@ -4,11 +4,15 @@ import { workshopServerUrl } from "../constants";
 import { withLayout } from "../layout/withLayout";
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
+import { useNavigate } from "react-router-dom";
+import { useWorkshopSignupOpen } from "../hooks/useWorkshopSignupTime";
 
 const Workshops = () => {
   const [allWorkshops, setAllWorkshops] = useState<WorkshopType[]>([]);
   const [studyYear, setStudyYear] = useState<number>(0);
   const [section, setSection] = useState("Mindenkinek");
+  const navigate = useNavigate();
+  const isWorkshopSignupOpen = useWorkshopSignupOpen();
 
   const workshopsToShow = allWorkshops.filter(
     (ws) =>
@@ -25,6 +29,12 @@ const Workshops = () => {
   useEffect(() => {
     fetchWorkshops().then((data) => setAllWorkshops(data));
   }, []);
+
+  useEffect(() => {
+    if (isWorkshopSignupOpen) {
+      navigate("workshop-jelentkezes", { replace: true });
+    }
+  }, [isWorkshopSignupOpen, navigate]);
 
   if (!allWorkshops.length) {
     return (

@@ -5,6 +5,7 @@ import tdkLogo from "../assets/tdk-logo.jpg";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
+
   return (
     <header className="sticky top-0 z-20 drop-shadow-md">
       <nav className="h-20 w-full bg-tdk-primary text-neutral-100">

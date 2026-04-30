@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createHashRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, Navigate, RouterProvider } from "react-router-dom";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 
 import "./index.css";
@@ -27,9 +27,20 @@ import Presenters from "./pages/presenters";
 import Signup from "./pages/signup";
 import Workshops from "./pages/workshops";
 import WorkshopSignup from "./pages/workshop-signup";
+import { useWorkshopSignupOpen } from "./hooks/useWorkshopSignupTime";
 // import Workshops from "./pages/workshops";
 // import WorkshopSignup from "./pages/workshop-signup";
 // import WorkshopSignup from "./pages/workshop-signup";
+
+const WorkshopSignupRoute = () => {
+  const isWorkshopSignupOpen = useWorkshopSignupOpen();
+
+  if (!isWorkshopSignupOpen) {
+    return <Workshops />;
+  }
+
+  return <WorkshopSignup />;
+};
 
 const router = createHashRouter([
   {
@@ -78,13 +89,13 @@ const router = createHashRouter([
   },
   {
     path: "/workshop",
-    element: <Workshops />,
+    element: <WorkshopSignupRoute />,
   },
   {
     path: "/workshop-jelentkezes",
-    element: <WorkshopSignup />,
+    element: <WorkshopSignupRoute />,
   },
-    {
+  {
     path: "/workshop-jelentkezes-teszt-pssszt",
     element: <WorkshopSignup />,
   },
