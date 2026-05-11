@@ -26,8 +26,10 @@ import NotFound from "./pages/not-found";
 import Presenters from "./pages/presenters";
 import Signup from "./pages/signup";
 import Workshops from "./pages/workshops";
-import WorkshopSignup from "./pages/workshop-signup";
+// import WorkshopSignup from "./pages/workshop-signup";
 import { useWorkshopSignupOpen } from "./hooks/useWorkshopSignupTime";
+import MyWorkshops from "./pages/my-workshops";
+import Hmaa from "./pages/hmaa";
 // import Workshops from "./pages/workshops";
 // import WorkshopSignup from "./pages/workshop-signup";
 // import WorkshopSignup from "./pages/workshop-signup";
@@ -39,7 +41,8 @@ const WorkshopSignupRoute = () => {
     return <Workshops />;
   }
 
-  return <WorkshopSignup />;
+  // return <WorkshopSignup />;
+  return <MyWorkshops />
 };
 
 const router = createHashRouter([
@@ -63,14 +66,14 @@ const router = createHashRouter([
     path: "/eloadok",
     element: <Presenters />,
   },
-  {
-    path: "/jelentkezes",
-    element: <Signup />,
-  },
-  {
-    path: "/jelentkezes-teszt",
-    element: <Signup />,
-  },
+  // {
+  //   path: "/jelentkezes",
+  //   element: <Signup />,
+  // },
+  // {
+  //   path: "/jelentkezes-teszt",
+  //   element: <Signup />,
+  // },
   {
     path: "/szabalyzat",
     element: <Rules />,
@@ -87,22 +90,22 @@ const router = createHashRouter([
     path: "/gdpr",
     element: <GDPR />,
   },
-  {
-    path: "/workshop",
-    element: <WorkshopSignupRoute />,
-  },
-  {
-    path: "/workshop-jelentkezes",
-    element: <WorkshopSignupRoute />,
-  },
-  {
-    path: "/workshop-jelentkezes-teszt-pssszt",
-    element: <WorkshopSignup />,
-  },
+  // {
+  //   path: "/workshop",
+  //   element: <WorkshopSignupRoute />,
+  // },
+  // {
+  //   path: "/workshop-jelentkezes",
+  //   element: <WorkshopSignupRoute />,
+  // },
   // {
   //   path: "/akkreditacio",
   //   element: <Accreditation />,
   // },
+   {
+    path: "/hmaa",
+    element: <Hmaa />,
+  },
   {
     path: "/program",
     element: <Programme />,

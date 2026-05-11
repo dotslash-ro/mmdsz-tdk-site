@@ -16,6 +16,7 @@ const Landing = () => {
       <Helmet>
         <title>33. TDK - MMDSZ</title>
       </Helmet>
+      <div className="px-5 py-3 shadow-md bg-tdk-accent text-center underline text-sm font-semibold text-white"><Link to="/hmaa">Jelentkezz az 57. HMAA Konferenciára!</Link></div>
       <div className="relative flex w-full flex-col justify-center bg-banner bg-[size:110%_110%] bg-center py-8 drop-shadow-md md:flex-row">
         <div className="absolute bottom-16 left-16 hidden h-56 w-56 md:block lg:bottom-24">
           <img src={heroDecor2} className="object-contain" />

@@ -4,10 +4,10 @@ export type WorkshopType = {
   id: number;
   title: string;
   speakers: string;
-  department: string;
   description: string;
-  location?: string;
   date?: string;
+  location?: string;
+  department: string;
   endDate?: string;
   maxAttendeeCount: number;
   applicantsCount: number;
