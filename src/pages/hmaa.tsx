@@ -54,9 +54,7 @@ const HMAA = () => {
             <li>Angol nyelvű absztrakt (a TDK-n bemutatott előadásé).</li>
             <li>Korábbi intézményi vagy országos TDK-részvételt igazoló okirat (ha van).</li>
           </ol>
-          <p>
-            Jelentkezni május 18., 20:00 óráig lehet az alábbi linken:
-          </p>
+          <p>Jelentkezni május 18., 20:00 óráig lehet az alábbi linken:</p>
           <div className="not-prose">
             {isSignupOpen ? (
               <a

@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createHashRouter, Navigate, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 
 import "./index.css";
@@ -24,7 +24,7 @@ import NotFound from "./pages/not-found";
 // import OrganizerSignup from "./pages/organizer-signup";
 // import Signup from "./pages/signup";
 import Presenters from "./pages/presenters";
-import Signup from "./pages/signup";
+// import Signup from "./pages/signup";
 import Workshops from "./pages/workshops";
 // import WorkshopSignup from "./pages/workshop-signup";
 import { useWorkshopSignupOpen } from "./hooks/useWorkshopSignupTime";

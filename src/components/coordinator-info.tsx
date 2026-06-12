@@ -25,31 +25,34 @@ const coordinatorInfoSchema = z
       if (it.hasUniversityJob) {
         return !!it.universityJobTitle?.length;
       }
-      return true
+      return true;
     },
     { message: "Add meg a témavezető intézményi beosztását!", path: ["universityJobTitle"] }
-  ).refine(
+  )
+  .refine(
     (it) => {
       if (it.hasUniversityJob) {
         return !!it.universityJobDepartment?.length;
       }
-      return true
+      return true;
     },
     { message: "Add meg a témavezető intézményi karát!", path: ["universityJobDepartment"] }
-  ).refine(
+  )
+  .refine(
     (it) => {
       if (it.hasUniversityJob) {
         return !!it.institute?.length;
       }
-      return true
+      return true;
     },
     { message: "Add meg a témavezető intézményét!", path: ["institute"] }
-  ).refine(
+  )
+  .refine(
     (it) => {
       if (!it.hasUniversityJob) {
         return !!it.otherJobName?.length;
       }
-      return true
+      return true;
     },
     { message: "Add meg a témavezető  munkahelyének nevét!", path: ["otherJobName"] }
   )
@@ -58,10 +61,10 @@ const coordinatorInfoSchema = z
       if (!it.hasUniversityJob) {
         return !!it.otherJobTitle?.length;
       }
-      return true
+      return true;
     },
     { message: "Add meg a témavezető  munkahelyi beosztását!", path: ["otherJobTitle"] }
-  )
+  );
 
 export type CoordinatorInfoSchema = z.infer<typeof coordinatorInfoSchema>;
 
@@ -69,10 +72,15 @@ interface CoordinatorInfoFormProps {
   setCoordinatorInfo: (CoordinatorInfo: CoordinatorInfoSchema) => void;
   defaultValues?: CoordinatorInfoSchema;
   removeCoordinatorForm: () => void;
-  index: number
+  index: number;
 }
 
-const CoordinatorInfo = ({ setCoordinatorInfo, defaultValues, removeCoordinatorForm, index }: CoordinatorInfoFormProps) => {
+const CoordinatorInfo = ({
+  setCoordinatorInfo,
+  defaultValues,
+  removeCoordinatorForm,
+  index,
+}: CoordinatorInfoFormProps) => {
   const {
     register,
     handleSubmit,
