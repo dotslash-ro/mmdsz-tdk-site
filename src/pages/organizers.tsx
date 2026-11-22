@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import Markdown from "react-markdown";
 
 import { withLayout } from "../layout/withLayout";
 import { fetchOrganizerGroups } from "../api/organizer-groups.api";
 import { StrapiOrganizerGroups } from "../types/organizer-groups.types";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const Organizers = () => {
   const [organizerGroups, setOrganizerGroups] = useState<StrapiOrganizerGroups["data"] | undefined>();
@@ -35,7 +34,6 @@ const Organizers = () => {
               <div className="px-5 py-8 md:px-10" key={group.id}>
                 <h2 className="py-5 text-xl font-light">{group.attributes.name}</h2>
                 <p className="pt-5 pb-4 text-sm font-light">{group.attributes.description}</p>
-                <Markdown className="prose-sm prose-li:list-disc">{group.attributes.organizerList}</Markdown>
               </div>
             ))}
           </div>
@@ -51,7 +49,8 @@ const Organizers = () => {
       ) : (
         <div className="flex min-h-screen items-center justify-center text-sm text-gray-700">Betöltés...</div>
       )}
-      {/* <Link to="/szervezoi-jelentkezes" className="mt-10 font-light text-tdk-accent hover:underline xl:text-lg">
+      {/* hidden until signup goes live; testers use /szervezoi-jelentkezes-teszt
+      <Link to="/szervezoi-jelentkezes" className="mt-10 font-light text-tdk-accent hover:underline xl:text-lg">
         Jelentkezz Szervezőnek! →
       </Link> */}
     </div>

@@ -30,6 +30,7 @@ import Workshops from "./pages/workshops";
 import { useWorkshopSignupOpen } from "./hooks/useWorkshopSignupTime";
 import MyWorkshops from "./pages/my-workshops";
 import Hmaa from "./pages/hmaa";
+import OrganizerSignup from "./pages/organizer-signup";
 // import Workshops from "./pages/workshops";
 // import WorkshopSignup from "./pages/workshop-signup";
 // import WorkshopSignup from "./pages/workshop-signup";
@@ -114,10 +115,10 @@ const router = createHashRouter([
     path: "/osszefoglalo",
     element: <Summary />,
   },
-  // {
-  //   path: "/szervezoi-jelentkezes",
-  //   element: <OrganizerSignup enabled={true} />,
-  // },
+  {
+    path: "/szervezoi-jelentkezes-teszt",
+    element: <OrganizerSignup enabled={true} />,
+  },
   {
     path: "/osszefoglalok",
     element: <PastJournals />,

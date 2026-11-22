@@ -2,16 +2,25 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { type SignupStep } from ".";
-import { organizerSignupEndUnix } from "../../constants";
+import { organizerSignupEnd, organizerSignupStart } from "../../constants";
+import { formatRomanianDate, formatRomanianDateTime, romanianTimeToMs } from "../../utils/datetime.util";
+
+const signupStartMs = romanianTimeToMs(organizerSignupStart);
+const signupEndMs = romanianTimeToMs(organizerSignupEnd);
+
+type SignupPhase = "not-started" | "open" | "closed";
+
+const getSignupPhase = (nowMs = Date.now()): SignupPhase =>
+  nowMs < signupStartMs ? "not-started" : nowMs <= signupEndMs ? "open" : "closed";
 
 const PreSignup = ({ setCurrentStep, enabled }: { setCurrentStep: (next: SignupStep) => void; enabled: boolean }) => {
   const [acceptedRules, setAcceptedRules] = useState(false);
-  const [live, setLive] = useState(Date.now() / 1000 < organizerSignupEndUnix);
+  const [phase, setPhase] = useState<SignupPhase>(getSignupPhase);
 
   useEffect(() => {
-    const interval = setInterval(() => setLive(Date.now() / 1000 < organizerSignupEndUnix), 1000);
+    const interval = setInterval(() => setPhase(getSignupPhase()), 1000);
     return () => clearInterval(interval);
-  });
+  }, []);
 
   return (
     <div>
@@ -47,8 +56,10 @@ const PreSignup = ({ setCurrentStep, enabled }: { setCurrentStep: (next: SignupS
           fenntartják a jogot arra, hogy a jelentkezőt ettől eltérően más munkacsoportba sorolják be
         </li>
       </ul>
-      <div className="pt-5 font-semibold">Jelentkezési határidő: 2025. december 14. 23:59</div>
-      {enabled && live ? (
+      <div className="pt-5 font-semibold">
+        Jelentkezési időszak: {formatRomanianDateTime(signupStartMs)} – {formatRomanianDateTime(signupEndMs)}
+      </div>
+      {enabled && phase === "open" ? (
         <>
           <div className="mb-6 mt-10 flex items-start">
             <div className="ml-4 flex h-5 items-center">
@@ -81,7 +92,9 @@ const PreSignup = ({ setCurrentStep, enabled }: { setCurrentStep: (next: SignupS
         </>
       ) : (
         <div className="py-20 text-center text-sm font-medium text-gray-700">
-          A szervezői jelentkezés 2024. december 20.-án lezárult.
+          {phase === "not-started"
+            ? `A szervezői jelentkezés ${formatRomanianDateTime(signupStartMs)}-kor nyílik.`
+            : `A szervezői jelentkezés ${formatRomanianDate(signupEndMs)}-án lezárult.`}
         </div>
       )}
     </div>
