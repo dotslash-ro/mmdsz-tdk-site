@@ -15,6 +15,7 @@ module.exports = {
         "tdk-primary-light": "#01ac9e",
         "tdk-beige": "#f2e7d0",
         "tdk-beige-dark": "rgb(213 188 153)",
+        "tdk-brown": "#3d1c1e",
       },
       backgroundImage: {
         banner: "url(/src/assets/background.png)",
@@ -24,6 +25,7 @@ module.exports = {
       },
       fontFamily: {
         hero: ["Akzidenz Grotesk"],
+        condensed: ["Barlow Condensed", "Arial Narrow", "sans-serif"],
       },
     },
   },

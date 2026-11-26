@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-import tdkLogo from "../assets/tdk-logo.jpg";
+import tdkLogo from "../assets/hero/tdk-logo.png";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -10,8 +10,8 @@ const Navbar = () => {
     <header className="sticky top-0 z-20 drop-shadow-md">
       <nav className="h-20 w-full bg-tdk-primary text-neutral-100">
         <div className="flex w-full flex-wrap items-center justify-between lg:px-5 xl:px-8">
-          <NavLink to="/" className="pl-4">
-            <img src={tdkLogo} alt="logo" className="h-20 w-auto" />
+          <NavLink to="/" className="ml-4 flex h-20 items-center bg-[#f7f1e6] px-3">
+            <img src={tdkLogo} alt="TDK Marosvásárhely" className="h-14 w-auto" />
           </NavLink>
           <div className="flex gap-2 lg:order-2">
             <button
