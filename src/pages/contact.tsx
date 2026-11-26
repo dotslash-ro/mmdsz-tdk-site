@@ -23,11 +23,11 @@ const Contact = () => {
           <div className="space-y-4">
             <div className="flex justify-between">
               <div>
-                <span className="">Stekbauer Anett</span>
+                <span className="">Stemmer József</span>
                 <span className="pl-2 text-sm font-bold text-neutral-700">Irodavezető</span>
               </div>
               <a className="font-light italic hover:text-tdk-accent hover:underline" href="tel:+40 743 658 979">
-                +40 743 658 979
+                +40 740 194 056
               </a>
             </div>
             <div className="flex justify-between">
@@ -41,47 +41,47 @@ const Contact = () => {
             </div>
             <div className="flex justify-between">
               <div>
-                <span className="">Cozma Paula-Sophia</span>
+                <span className="">Benedek Zsuzsanna</span>
                 <span className="pl-2 text-sm font-bold text-neutral-700">Főszervező</span>
               </div>
               <a className="font-light italic hover:text-tdk-accent hover:underline" href="tel:+40 746 620 542">
-                +40 746 620 542
+                +40 737 013 620
               </a>
             </div>
             <div className="flex justify-between">
               <div>
-                <span className="">Fehér Anna</span>
+                <span className="">Nagy Zente-Ádám</span>
                 <span className="pl-2 text-sm font-bold text-neutral-700">Főszervező</span>
               </div>
               <a className="font-light italic hover:text-tdk-accent hover:underline" href="tel:+40 751 114 981">
-                +40 751 114 981
+                +40 731 238 532
               </a>
             </div>
             <div className="flex justify-between">
               <div>
-                <span className="">Ilyés Norbert-István</span>
+                <span className="">Nistor Minola-Andrea</span>
                 <span className="pl-2 text-sm font-bold text-neutral-700">Főszervező</span>
               </div>
               <a className="font-light italic hover:text-tdk-accent hover:underline" href="tel:+40 737 444 099">
-                +40 737 444 099
+                +40 742 560 426
               </a>
             </div>
             <div className="flex justify-between">
               <div>
-                <span className="">Kovács Ágnes</span>
+                <span className="">Pál Katinka-Szidónia</span>
                 <span className="pl-2 text-sm font-bold text-neutral-700">Főszervező</span>
               </div>
               <a className="font-light italic hover:text-tdk-accent hover:underline" href="tel:+40 745 859 837">
-                +40 745 859 837
+                +40 749 344 747
               </a>
             </div>
             <div className="flex justify-between">
               <div>
-                <span className="">Toth Robert-Szabolcs</span>
+                <span className="">Sándor Deborah-Barbara</span>
                 <span className="pl-2 text-sm font-bold text-neutral-700">Főszervező</span>
               </div>
               <a className="font-light italic hover:text-tdk-accent hover:underline" href="tel:++40 743 342 275">
-                +40 743 342 275
+                +40 760 842 513 
               </a>
             </div>
           </div>
