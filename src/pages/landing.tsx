@@ -35,8 +35,8 @@ const Landing = () => {
           mindemellett 2 panel beszélgetésre is sor került.
         </p>
         <p>
-          A konferencia alkalmával 216 dolgozat került bemutatásra, melyből 155 hazai, illetve 61 külföldi hallgatók
-          által készített. Mindemellett 48 hazai illetve külföldi szakemberek által vezetett műhelymunkába is
+          A konferencia alkalmával 289 dolgozat került bemutatásra, melyből 194 hazai, illetve 95 külföldi hallgatók
+          által készített. Mindemellett 51 hazai illetve külföldi szakemberek által vezetett műhelymunkába is
           becsatlakozhattak az egyetem hallgatói.
         </p>
       </section>
