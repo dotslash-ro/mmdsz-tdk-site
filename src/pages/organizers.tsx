@@ -58,7 +58,7 @@ const Organizers = () => {
   return (
     <div className="mx-auto max-w-6xl px-5 py-16 sm:px-10 md:py-20">
       <Helmet>
-        <title>33. TDK - Szervezőknek</title>
+        <title>34. TDK - Szervezőknek</title>
       </Helmet>
 
       <header className="mx-auto max-w-3xl pb-12 text-center md:pb-16">

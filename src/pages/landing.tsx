@@ -14,7 +14,7 @@ const Landing = () => {
   return (
     <>
       <Helmet>
-        <title>33. TDK - MMDSZ</title>
+        <title>34. TDK - MMDSZ</title>
       </Helmet>
       {/* <div className="bg-tdk-accent px-5 py-3 text-center text-sm font-semibold text-white underline shadow-md">
         <Link to="/hmaa">Jelentkezz az 57. HMAA Konferenciára!</Link>
@@ -27,12 +27,12 @@ const Landing = () => {
           <h2 className="z-10 text-left font-hero text-6xl uppercase tracking-tight text-tdk-primary md:text-5xl lg:text-right lg:text-8xl xl:text-left">
             <div>
               {" "}
-              <span className="text-tdk-accent">33.</span> Tudományos
+              <span className="text-tdk-accent">34.</span> Tudományos
             </div>{" "}
             <div className="text-tdk-accent">Diákköri</div> Konferencia
           </h2>
           <div className="py-8 text-left font-medium uppercase text-tdk-primary md:text-lg lg:text-right lg:text-2xl xl:text-left">
-            <span className="font-bold">Marosvásárhely 2026.</span> Május 6-9.
+            <span className="font-bold">Marosvásárhely 2027.</span> Április 26-29.
           </div>
           <div className="absolute bottom-0 right-0 h-28 w-28 -translate-x-1/2 -translate-y-1/2 ">
             <img src={coffeStain} className="object-contain" />

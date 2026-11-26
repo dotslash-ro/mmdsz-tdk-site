@@ -26,7 +26,7 @@ const HMAA = () => {
   return (
     <div className="mx-auto">
       <Helmet>
-        <title>33. TDK - HMAA</title>
+        <title>34. TDK - HMAA</title>
       </Helmet>
       <div className="w-full">
         <div className="mx-auto max-w-prose sm:px-10">
@@ -50,7 +50,7 @@ const HMAA = () => {
           </p>
           <p>A preszelekcióhoz az alábbi dokumentumok benyújtása szükséges:</p>
           <ol>
-            <li>Igazolás arról, hogy a jelentkező részt vett a 33. Tudományos Diákköri Konferencián.</li>
+            <li>Igazolás arról, hogy a jelentkező részt vett a 34. Tudományos Diákköri Konferencián.</li>
             <li>Angol nyelvű absztrakt (a TDK-n bemutatott előadásé).</li>
             <li>Korábbi intézményi vagy országos TDK-részvételt igazoló okirat (ha van).</li>
           </ol>

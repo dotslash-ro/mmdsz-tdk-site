@@ -15,7 +15,7 @@ const Rules = () => {
   return (
     <div className="w-max-2xl prose mx-auto py-20 px-10 prose-a:text-tdk-accent prose-a:hover:underline prose-img:my-0 prose-img:py-0">
       <Helmet>
-        <title>33. TDK - Szabályzat</title>
+        <title>34. TDK - Szabályzat</title>
       </Helmet>
       <h1>A Marosvásárhelyi Tudományos Diákköri Konferencia szabályzata</h1>
       {rules ? <Markdown>{rules}</Markdown> : "Betöltés..."}

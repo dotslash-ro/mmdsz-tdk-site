@@ -18,7 +18,7 @@ const Timeline = () => {
   return (
     <div className="flex justify-center py-20 px-6">
       <Helmet>
-        <title>33. TDK - Információ</title>
+        <title>34. TDK - Információ</title>
       </Helmet>
       <ol className="relative space-y-10 border-l border-gray-300 lg:w-1/2">
         <li className="mb-4 ml-10 font-light text-gray-500 sm:hidden">
@@ -121,8 +121,8 @@ const Timeline = () => {
               </ul>
             </div>{" "}
             <p className="pt-4 italic">
-              Kérjük az átutalás megjegyzésében feltüntetni: “Registration Fee 33.TDK - Teljes Név”, például:
-              “Registration Fee 33.TDK - Kis János”.
+              Kérjük az átutalás megjegyzésében feltüntetni: “Registration Fee 34.TDK - Teljes Név”, például:
+              “Registration Fee 34.TDK - Kis János”.
             </p>{" "}
             <p className="pt-6 text-sm font-light text-gray-600">
               * A befizetett díj tartalmazza a konferencián való részvételt, beleértve a gálát, valamint a promóciós

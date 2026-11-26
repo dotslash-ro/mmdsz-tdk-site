@@ -9,9 +9,9 @@ module.exports = {
         128: "32rem",
       },
       colors: {
-        "tdk-primary": "#0f2930",
-        "tdk-secondary": "#0a3032",
-        "tdk-accent": "#f16d2d",
+        "tdk-primary": "#442023",
+        "tdk-secondary": "#442023",
+        "tdk-accent": "#ec6f26",
         "tdk-primary-light": "#01ac9e",
         "tdk-beige": "#f2e7d0",
         "tdk-beige-dark": "rgb(213 188 153)",

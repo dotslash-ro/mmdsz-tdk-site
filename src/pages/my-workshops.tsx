@@ -113,7 +113,7 @@ const MyWorkshops = () => {
     return (
       <div className="mx-auto flex h-screen flex-col items-center px-10 pt-20 pb-10 font-semibold text-neutral-500 sm:justify-center sm:pt-0 lg:w-2/3">
         <Helmet>
-          <title>33. TDK - Műhelymunkáim</title>
+          <title>34. TDK - Műhelymunkáim</title>
         </Helmet>
         A műhelymunkáid megtekintéséhez csatlakoztatnod kell a Google fiókod az oldalhoz!
         <button
@@ -131,7 +131,7 @@ const MyWorkshops = () => {
     return (
       <div className="flex h-screen items-center justify-center px-5 text-center text-sm font-semibold text-rose-500">
         <Helmet>
-          <title>33. TDK - Műhelymunkáim</title>
+          <title>34. TDK - Műhelymunkáim</title>
         </Helmet>
         Sajnos egy hiba lépett fel. Vedd fel a kapcsolatot a szervezőkkel a következő címen: tdk@mmdsz.ro
       </div>
@@ -141,7 +141,7 @@ const MyWorkshops = () => {
   return (
     <>
       <Helmet>
-        <title>33. TDK - Műhelymunkáim</title>
+        <title>34. TDK - Műhelymunkáim</title>
       </Helmet>
       <div className="top-25 right-5 flex justify-center pt-8 pr-2 lg:fixed lg:justify-end lg:pt-5 lg:pr-5">
         <button
