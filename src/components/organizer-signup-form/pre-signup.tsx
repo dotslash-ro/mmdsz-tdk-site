@@ -1,25 +1,23 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import { organizerSignupEnd, organizerSignupStart } from "../../constants";
-import { formatRomanianDate, formatRomanianDateTime, romanianTimeToMs } from "../../utils/datetime.util";
+import { formatRomanianDateTime } from "../../utils/datetime.util";
+import {
+  organizerSignupEndMs as signupEndMs,
+  organizerSignupStartMs as signupStartMs,
+  useOrganizerSignupPhase,
+} from "../../utils/organizer-signup.util";
 
-const signupStartMs = romanianTimeToMs(organizerSignupStart);
-const signupEndMs = romanianTimeToMs(organizerSignupEnd);
-
-type SignupPhase = "not-started" | "open" | "closed";
-
-const getSignupPhase = (nowMs = Date.now()): SignupPhase =>
-  nowMs < signupStartMs ? "not-started" : nowMs <= signupEndMs ? "open" : "closed";
-
-const PreSignup = ({ onStart, enabled }: { onStart: () => void; enabled: boolean }) => {
+const PreSignup = ({ onStart }: { onStart: () => void }) => {
   const [acceptedRules, setAcceptedRules] = useState(false);
-  const [phase, setPhase] = useState<SignupPhase>(getSignupPhase);
+  const phase = useOrganizerSignupPhase();
+  const isOpen = phase === "open";
 
-  useEffect(() => {
-    const interval = setInterval(() => setPhase(getSignupPhase()), 1000);
-    return () => clearInterval(interval);
-  }, []);
+  const buttonLabel = {
+    "not-started": `Nyílik: ${formatRomanianDateTime(signupStartMs)}`,
+    open: "Jelentkezés",
+    closed: "A jelentkezés lezárult",
+  }[phase];
 
   return (
     <div className="space-y-8">
@@ -66,8 +64,8 @@ const PreSignup = ({ onStart, enabled }: { onStart: () => void; enabled: boolean
         </ul>
       </section>
 
-      {enabled && phase === "open" ? (
-        <div className="space-y-6 border-t border-gray-200 pt-8">
+      <div className="space-y-6 border-t border-gray-200 pt-8">
+        {isOpen && (
           <label htmlFor="terms" className="flex cursor-pointer items-start gap-3 text-sm text-neutral-600">
             <input
               id="terms"
@@ -88,23 +86,17 @@ const PreSignup = ({ onStart, enabled }: { onStart: () => void; enabled: boolean
               .
             </span>
           </label>
-          <div className="flex justify-center sm:justify-end">
-            <button
-              className="rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white drop-shadow-md transition hover:underline disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:no-underline xl:text-lg"
-              onClick={onStart}
-              disabled={!acceptedRules}
-            >
-              Jelentkezés
-            </button>
-          </div>
+        )}
+        <div className="flex justify-center sm:justify-end">
+          <button
+            className="rounded-full bg-tdk-accent px-10 py-2 font-semibold uppercase text-white drop-shadow-md transition hover:underline disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:no-underline xl:text-lg"
+            onClick={onStart}
+            disabled={!isOpen || !acceptedRules}
+          >
+            {buttonLabel}
+          </button>
         </div>
-      ) : (
-        <div className="rounded-lg bg-gray-50 py-10 text-center font-medium text-gray-700">
-          {phase === "not-started"
-            ? `A szervezői jelentkezés ${formatRomanianDateTime(signupStartMs)}-kor nyílik.`
-            : `A szervezői jelentkezés ${formatRomanianDate(signupEndMs)}-án lezárult.`}
-        </div>
-      )}
+      </div>
     </div>
   );
 };

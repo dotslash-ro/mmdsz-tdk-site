@@ -43,7 +43,7 @@ const WorkshopSignupRoute = () => {
   }
 
   // return <WorkshopSignup />;
-  return <MyWorkshops />
+  return <MyWorkshops />;
 };
 
 const router = createHashRouter([
@@ -103,7 +103,7 @@ const router = createHashRouter([
   //   path: "/akkreditacio",
   //   element: <Accreditation />,
   // },
-   {
+  {
     path: "/hmaa",
     element: <Hmaa />,
   },
@@ -117,7 +117,7 @@ const router = createHashRouter([
   },
   {
     path: "/szervezoi-jelentkezes",
-    element: <OrganizerSignup enabled={true} />,
+    element: <OrganizerSignup />,
   },
   {
     path: "/osszefoglalok",

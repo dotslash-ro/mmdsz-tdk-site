@@ -43,13 +43,7 @@ const signupStatusStorageKey = "organizerSignupStatus27";
 const isComplete = (data: Partial<OrganizerSignupFullSchema>): data is OrganizerSignupFullSchema =>
   formSteps.every(({ key }) => data[key] !== undefined);
 
-const OrganizerSignupMultistepForm = ({
-  scrollToRef,
-  enabled,
-}: {
-  scrollToRef: MutableRefObject<HTMLDivElement | null>;
-  enabled: boolean;
-}) => {
+const OrganizerSignupMultistepForm = ({ scrollToRef }: { scrollToRef: MutableRefObject<HTMLDivElement | null> }) => {
   const [signupStatus, setSignupStatus] = useState<SignupStatus>("not-signedup");
   const [currentStep, setCurrentStep] = useState<SignupStep>("preSignup");
   const [formData, setFormData] = useState<Partial<OrganizerSignupFullSchema>>({});
@@ -148,7 +142,7 @@ const OrganizerSignupMultistepForm = ({
   }
 
   if (currentStep === "preSignup") {
-    return <PreSignup onStart={() => setCurrentStep("organizerInfo")} enabled={enabled} />;
+    return <PreSignup onStart={() => setCurrentStep("organizerInfo")} />;
   }
 
   const stepIndex = formSteps.findIndex(({ key }) => key === currentStep);
