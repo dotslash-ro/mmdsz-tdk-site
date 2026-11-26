@@ -54,7 +54,7 @@ const Navbar = () => {
               className="mt-4 flex flex-col items-center justify-evenly gap-2 font-medium lg:mt-0 lg:flex-row lg:space-x-2 lg:border-0 lg:p-0 lg:py-4 xl:space-x-4"
               hidden={!showMenu}
             >
-              <li>
+              {/* <li>
                 <NavLink
                   to="/program"
                   className={({ isActive }) =>
@@ -65,8 +65,8 @@ const Navbar = () => {
                 >
                   Program
                 </NavLink>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <NavLink
                   to="/eloadok"
                   className={({ isActive }) =>
@@ -77,7 +77,7 @@ const Navbar = () => {
                 >
                   Előadók
                 </NavLink>
-              </li>
+              </li> */}
               {/* <li>
                 <NavLink
                   to="/workshop"

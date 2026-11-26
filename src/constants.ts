@@ -61,7 +61,7 @@ export const organizerGroups = [
   },
   {
     name: "Korrektúra és kivonatok",
-    canSelect: true,
+    canSelect: false,
     description:
       "A korrektúrás kiscsoport legfőbb feladata egységes küllemet biztosítani a beérkezett dolgozatoknak. A munkaidő teljes mértékben a rendezvény előttre korlátozódik és főként szövegszerkesztési munkát foglal magába. Ezáltal fontossá válik a számítógép kezelési alapok ismerete (Microsoft Word és Dropbox programok használata), valamint helyesírási hibák észrevételére való hajlam. Az alapos és szorgalmas munkát kedvelő személyek ideális szervezési lehetősége ez.",
   },
