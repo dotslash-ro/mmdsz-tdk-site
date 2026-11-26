@@ -181,3 +181,11 @@ export const sectionList = [
 ] as const;
 
 export const oauthClientId = "858299120064-428uvpomj4tre0ek9mh58uc7ushudiio.apps.googleusercontent.com";
+
+/** Main site pages, shown in the navbar and in the footer's site map. */
+export const navLinks = [
+  { to: "/szabalyzat", label: "Szabályzat" },
+  { to: "/szervezok", label: "Szervezőknek" },
+  { to: "/kapcsolat", label: "Kapcsolat" },
+  { to: "/osszefoglalok", label: "Összefoglaló kötetek" },
+];

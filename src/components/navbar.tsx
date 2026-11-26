@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 
 import tdkLogo from "../assets/hero/tdk-logo.png";
+import { navLinks } from "../constants";
 
 const menuTransitionMs = 300;
 
@@ -156,27 +157,13 @@ const Navbar = () => {
                   Jelentkezés
                 </NavLink>
               </li> */}
-                <li>
-                  <NavLink to="/szabalyzat" className={linkClass}>
-                    Szabályzat
-                  </NavLink>
-                </li>
-
-                <li>
-                  <NavLink to="/szervezok" className={linkClass}>
-                    Szervezőknek
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/kapcsolat" className={linkClass}>
-                    Kapcsolat
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/osszefoglalok" className={linkClass}>
-                    Összefoglaló kötetek
-                  </NavLink>
-                </li>
+                {navLinks.map(({ to, label }) => (
+                  <li key={to}>
+                    <NavLink to={to} className={linkClass}>
+                      {label}
+                    </NavLink>
+                  </li>
+                ))}
 
                 {/* <NavLink
                 to="/akkreditacio"
