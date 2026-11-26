@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { formatRomanianDateTime } from "../../utils/datetime.util";
 import {
   organizerSignupEndMs as signupEndMs,
+  organizerSignupCtaLabel,
   organizerSignupStartMs as signupStartMs,
   useOrganizerSignupPhase,
 } from "../../utils/organizer-signup.util";
@@ -13,11 +14,7 @@ const PreSignup = ({ onStart }: { onStart: () => void }) => {
   const phase = useOrganizerSignupPhase();
   const isOpen = phase === "open";
 
-  const buttonLabel = {
-    "not-started": `Nyílik: ${formatRomanianDateTime(signupStartMs)}`,
-    open: "Jelentkezés",
-    closed: "A jelentkezés lezárult",
-  }[phase];
+  const buttonLabel = organizerSignupCtaLabel(phase, "Jelentkezés");
 
   return (
     <div className="space-y-8">

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { organizerSignupEnd, organizerSignupStart } from "../constants";
-import { romanianTimeToMs } from "./datetime.util";
+import { formatRomanianDateTime, romanianTimeToMs } from "./datetime.util";
 
 export const organizerSignupStartMs = romanianTimeToMs(organizerSignupStart);
 export const organizerSignupEndMs = romanianTimeToMs(organizerSignupEnd);
@@ -22,3 +22,11 @@ export const useOrganizerSignupPhase = () => {
 
   return phase;
 };
+
+/** Call-to-action label for each phase, e.g. for signup buttons. */
+export const organizerSignupCtaLabel = (phase: OrganizerSignupPhase, openLabel: string) =>
+  ({
+    "not-started": `Nyílik: ${formatRomanianDateTime(organizerSignupStartMs)}`,
+    open: openLabel,
+    closed: "A jelentkezés lezárult",
+  }[phase]);

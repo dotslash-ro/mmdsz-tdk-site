@@ -17,7 +17,7 @@ const Landing = () => {
       </div> */}
       <LandingHero>
         <Link
-          to="/szervezoi-jelentkezes"
+          to="/szervezok"
           className="inline-block whitespace-nowrap rounded-full bg-tdk-accent px-4 py-2.5 font-sans text-[13px] font-semibold uppercase text-white drop-shadow-md transition hover:underline sm:px-8 sm:py-3 sm:text-base xl:text-lg"
         >
           Jelentkezz szervezőnek! →
