@@ -1,14 +1,61 @@
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 
 import tdkLogo from "../assets/hero/tdk-logo.png";
 
+const menuTransitionMs = 300;
+
+/** Pages whose first section is a full-bleed hero that the navbar can sit on top of. */
+const overlayRoutes = ["/"];
+
+const useScrolled = (threshold = 8) => {
+  const [scrolled, setScrolled] = useState(() => typeof window !== "undefined" && window.scrollY > threshold);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > threshold);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [threshold]);
+  return scrolled;
+};
+
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
+  // true while the mobile menu slides open/closed, so the bar stays solid until it's fully closed
+  const [menuAnimating, setMenuAnimating] = useState(false);
+  const { pathname } = useLocation();
+  const scrolled = useScrolled();
+  // transparent with dark text while at the top of a page with a hero; solid otherwise
+  const solid = !overlayRoutes.includes(pathname) || scrolled || showMenu || menuAnimating;
+
+  const toggleMenu = (open: boolean) => {
+    setShowMenu(open);
+    setMenuAnimating(true);
+  };
+
+  useEffect(() => {
+    if (!menuAnimating) return;
+    const timer = setTimeout(() => setMenuAnimating(false), menuTransitionMs);
+    return () => clearTimeout(timer);
+  }, [menuAnimating, showMenu]);
+
+  // close the menu when navigating
+  useEffect(() => setShowMenu(false), [pathname]);
+
+  const linkClass = ({ isActive }: { isActive: boolean }) =>
+    `lg:font-base flex items-center justify-center py-3 text-sm font-bold uppercase transition-colors duration-300 lg:py-0 ${
+      solid ? "text-white" : "text-white lg:text-tdk-brown"
+    } ${isActive ? "underline" : "hover:underline"}`;
 
   return (
-    <header className="sticky top-0 z-20 drop-shadow-md">
-      <nav className="h-20 w-full bg-tdk-primary text-neutral-100">
+    <header
+      className={`sticky top-0 z-20 transition-[filter] duration-300 ${solid ? "drop-shadow-md" : "drop-shadow-none"}`}
+    >
+      <nav
+        className={`h-20 w-full transition-colors duration-300 ${
+          solid ? "bg-tdk-primary text-neutral-100" : "bg-transparent text-tdk-brown"
+        }`}
+      >
         <div className="flex w-full flex-wrap items-center justify-between lg:px-5 xl:px-8">
           <NavLink to="/" className="ml-4 flex h-20 items-center bg-[#f7f1e6] px-3">
             <img src={tdkLogo} alt="TDK Marosvásárhely" className="h-14 w-auto" />
@@ -16,10 +63,13 @@ const Navbar = () => {
           <div className="flex gap-2 lg:order-2">
             <button
               type="button"
-              className="mr-4 block rounded-md border bg-neutral-50 p-2 text-tdk-primary drop-shadow-md transition hover:bg-neutral-200 lg:hidden"
+              aria-expanded={showMenu}
+              aria-controls="main-menu"
+              aria-label={showMenu ? "Menü bezárása" : "Menü megnyitása"}
+              className="relative z-10 mr-4 block rounded-md border bg-neutral-50 p-2 text-tdk-primary drop-shadow-md transition hover:bg-neutral-200 lg:hidden"
               onClick={(e) => {
                 e.stopPropagation();
-                setShowMenu(!showMenu);
+                toggleMenu(!showMenu);
               }}
             >
               {!showMenu ? (
@@ -46,15 +96,19 @@ const Navbar = () => {
           {showMenu && (
             <div
               className="absolute top-0 left-0 z-0 h-screen w-screen bg-transparent"
-              onClick={() => setShowMenu(false)}
+              onClick={() => toggleMenu(false)}
             />
           )}
-          <div className="w-full bg-tdk-primary lg:block lg:w-auto" hidden={!showMenu}>
-            <ul
-              className="mt-4 flex flex-col items-center justify-evenly gap-2 font-medium lg:mt-0 lg:flex-row lg:space-x-2 lg:border-0 lg:p-0 lg:py-4 xl:space-x-4"
-              hidden={!showMenu}
-            >
-              {/* <li>
+          <div
+            id="main-menu"
+            style={{ transitionDuration: `${menuTransitionMs}ms` }}
+            className={`relative z-10 grid w-full transition-[grid-template-rows] ease-out motion-reduce:transition-none lg:block lg:w-auto ${
+              showMenu ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+            } ${!showMenu && !menuAnimating ? "max-lg:invisible" : ""}`}
+          >
+            <div className="min-h-0 overflow-hidden bg-tdk-primary lg:overflow-visible lg:bg-transparent">
+              <ul className="flex flex-col items-center justify-evenly gap-2 py-4 font-medium lg:flex-row lg:space-x-2 lg:border-0 lg:p-0 lg:py-4 xl:space-x-4">
+                {/* <li>
                 <NavLink
                   to="/program"
                   className={({ isActive }) =>
@@ -66,7 +120,7 @@ const Navbar = () => {
                   Program
                 </NavLink>
               </li> */}
-              {/* <li>
+                {/* <li>
                 <NavLink
                   to="/eloadok"
                   className={({ isActive }) =>
@@ -78,7 +132,7 @@ const Navbar = () => {
                   Előadók
                 </NavLink>
               </li> */}
-              {/* <li>
+                {/* <li>
                 <NavLink
                   to="/workshop"
                   className={({ isActive }) =>
@@ -90,7 +144,7 @@ const Navbar = () => {
                   Műhelymunkák
                 </NavLink>
               </li> */}
-              {/* <li>
+                {/* <li>
                 <NavLink
                   to="/idovonal"
                   className={({ isActive }) =>
@@ -102,57 +156,29 @@ const Navbar = () => {
                   Jelentkezés
                 </NavLink>
               </li> */}
-              <li>
-                <NavLink
-                  to="/szabalyzat"
-                  className={({ isActive }) =>
-                    isActive
-                      ? "lg:font-base flex items-center justify-center py-3 text-sm font-bold uppercase text-white underline lg:py-0"
-                      : "lg:font-base flex items-center justify-center py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
-                  }
-                >
-                  Szabályzat
-                </NavLink>
-              </li>
+                <li>
+                  <NavLink to="/szabalyzat" className={linkClass}>
+                    Szabályzat
+                  </NavLink>
+                </li>
 
-              <li>
-                <NavLink
-                  to="/szervezok"
-                  className={({ isActive }) =>
-                    isActive
-                      ? "lg:font-base flex items-center justify-center py-3 text-sm font-bold uppercase text-white underline lg:py-0"
-                      : "lg:font-base flex items-center justify-center py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
-                  }
-                >
-                  Szervezőknek
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/kapcsolat"
-                  className={({ isActive }) =>
-                    isActive
-                      ? "lg:font-base flex items-center justify-center py-3 text-sm font-bold uppercase text-white underline lg:py-0"
-                      : "lg:font-base flex items-center justify-center py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
-                  }
-                >
-                  Kapcsolat
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/osszefoglalok"
-                  className={({ isActive }) =>
-                    isActive
-                      ? "lg:font-base flex items-center justify-center py-3 text-sm font-bold uppercase text-white underline lg:py-0"
-                      : "lg:font-base flex items-center justify-center py-3 text-sm font-bold uppercase text-white hover:underline lg:py-0"
-                  }
-                >
-                  Összefoglaló kötetek
-                </NavLink>
-              </li>
+                <li>
+                  <NavLink to="/szervezok" className={linkClass}>
+                    Szervezőknek
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/kapcsolat" className={linkClass}>
+                    Kapcsolat
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/osszefoglalok" className={linkClass}>
+                    Összefoglaló kötetek
+                  </NavLink>
+                </li>
 
-              {/* <NavLink
+                {/* <NavLink
                 to="/akkreditacio"
                 className={({ isActive }) =>
                   isActive
@@ -162,7 +188,8 @@ const Navbar = () => {
               >
                 Akkreditáció
               </NavLink> */}
-            </ul>
+              </ul>
+            </div>
           </div>
         </div>
       </nav>

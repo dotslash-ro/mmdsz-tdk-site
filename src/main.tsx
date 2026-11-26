@@ -116,7 +116,7 @@ const router = createHashRouter([
     element: <Summary />,
   },
   {
-    path: "/szervezoi-jelentkezes-teszt",
+    path: "/szervezoi-jelentkezes",
     element: <OrganizerSignup enabled={true} />,
   },
   {

@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 import background from "../assets/hero/background.jpg";
 import brainBottom from "../assets/hero/brain-bottom.png";
 import brainSide from "../assets/hero/brain-side.png";
@@ -21,10 +23,10 @@ const Decor = ({ src, className }: { src: string; className: string }) => (
  * Below `lg` it uses the portrait poster layout (text left, three brains stacked on the right);
  * from `lg` up it switches to the wide banner layout (text left, side-view brain right).
  */
-const LandingHero = () => (
+const LandingHero = ({ children }: { children?: ReactNode }) => (
   <section
     aria-label="34. Tudományos Diákköri Konferencia"
-    className="relative isolate overflow-hidden bg-[#efe7d8] bg-cover bg-center font-condensed text-tdk-brown"
+    className="relative isolate -mt-20 overflow-hidden bg-[#efe7d8] bg-cover bg-center pt-20 font-condensed text-tdk-brown"
     style={{ backgroundImage: `url(${background})` }}
   >
     {/* paint splashes */}
@@ -87,6 +89,8 @@ const LandingHero = () => (
             </li>
           ))}
         </ul>
+
+        {children && <div className="relative z-10 mt-[7vw] sm:mt-10">{children}</div>}
       </div>
 
       <div className="hidden lg:flex lg:max-w-[46%] lg:flex-1 lg:justify-center">
