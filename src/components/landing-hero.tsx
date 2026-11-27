@@ -38,15 +38,15 @@ const LandingHero = ({ children }: { children?: ReactNode }) => (
     <Decor src={neuron4} className="-top-[6%] left-[6%] hidden h-[40%] opacity-60 2xl:block" />
     <Decor src={neuron2} className="-bottom-[30%] left-[40%] h-[70%] opacity-30 lg:left-[44%]" />
     <Decor src={neuron3} className="-bottom-[12%] left-[6%] h-[35%] opacity-50 lg:hidden" />
-    <Decor src={neuron3} className="-top-[12%] right-[17%] hidden h-[50%] opacity-40 lg:block" />
-    <Decor src={neuron4} className="-bottom-[8%] right-[22%] hidden h-[42%] opacity-50 lg:block" />
+    <Decor src={neuron3} className="-top-[14%] right-[30%] hidden h-[28%] opacity-40 lg:block" />
+    <Decor src={neuron4} className="-bottom-[8%] right-[26%] hidden h-[28%] opacity-50 lg:block" />
 
     {/* desktop: large, faded brains cropped at the edges */}
     <Decor
       src={brainBottom}
       className="-bottom-[38%] -left-[9%] hidden w-[19%] max-w-[420px] rotate-[65deg] opacity-60 lg:block xl:-bottom-[32%] xl:w-[21%]"
     />
-    <Decor src={brainTop} className="-right-[6%] -top-[12%] hidden w-[17%] max-w-[340px] opacity-60 lg:block" />
+    <Decor src={brainTop} className="right-0 top-0 hidden w-[17%] max-w-[340px] -translate-y-[52%] translate-x-[62%] opacity-60 lg:block" />
 
     {/* mobile / tablet: brains stacked on the right, like the portrait poster */}
     <div
@@ -60,7 +60,7 @@ const LandingHero = ({ children }: { children?: ReactNode }) => (
 
     <div className="relative mx-auto flex max-w-7xl items-center px-5 py-10 sm:px-10 sm:py-16 lg:min-h-[clamp(520px,38vw,760px)] lg:gap-10 lg:px-16 xl:px-24 2xl:max-w-[1600px]">
       <div className="w-[58%] sm:w-[60%] lg:w-auto lg:flex-none">
-        <h1 className="flex flex-col uppercase lg:flex-row lg:items-end lg:gap-5">
+        <h1 className="flex flex-col font-hero uppercase lg:flex-row lg:items-end lg:gap-5">
           <span className="text-[min(44vw,17rem)] font-medium leading-[0.8] tracking-tight text-transparent [-webkit-text-stroke:2px_#f16d2d] sm:[-webkit-text-stroke:3px_#f16d2d] lg:text-[clamp(11rem,17vw,19rem)]">
             34.
           </span>
