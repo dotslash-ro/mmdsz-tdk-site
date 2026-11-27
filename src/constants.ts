@@ -19,7 +19,7 @@ export const strapiToken =
 
 // Organizer signup window, in Romanian local time (Europe/Bucharest), format "YYYY-MM-DD HH:mm[:ss]"
 export const organizerSignupStart = "2026-11-30 08:00";
-export const organizerSignupEnd = "2026-12-03 23:59:59";
+export const organizerSignupEnd = "2026-12-06 23:59:59";
 
 export const organizerGroups = [
   {
